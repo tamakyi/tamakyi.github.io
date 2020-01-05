@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>测试</title>
+      <link href="/2020/01/05/f_ckyou/"/>
+      <url>/2020/01/05/f_ckyou/</url>
+      
+        <content type="html"><![CDATA[<p>新写了个hexo博客在github上，可能不怎么更新，主要还是看 <a href="https://blog.tamakyi.club" target="_blank" rel="noopener">这里</a>.</p><p>二号字体测试</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><p>三号字体测试</p><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><p>代码测试</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>关于我</title>
+      <link href="/2020/01/05/aboutme/"/>
+      <url>/2020/01/05/aboutme/</url>
+      
+        <content type="html"><![CDATA[<p>和主站一样，本站是站长为了自娱自乐而搭建的，并没有什么实际内容（也许偶尔也会有一些）。同时，本站作为备胎的存在，一般是不怎么打理的，只有当主站发生危机（<del>水逆或者服务器drop</del>）的时候才会使用。<br>但是，hexo也挺好玩的。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>这个文件是在手机上码出来的</title>
+      <link href="/2020/01/05/test2/"/>
+      <url>/2020/01/05/test2/</url>
+      
+        <content type="html"><![CDATA[<p><em>看一下手机的md做出来的效果怎样</em><br>#1个井#<br>##2个井##<br>###3个井###<br><strong>这里加粗</strong><br><em>这里变斜</em><br>++这里有下划线++<br><del>这里是被划掉了</del><br>==高亮？==<br>上标^^2^^</p><p>图片测试：<br><img src="https://raw.githubusercontent.com/tamakyi/blog_pic/master/images/2019/09/21/44f53442094f213eb77da7b302605e71.jpg" alt="测试"><br>看起来并不是完全匹配的啊…</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
