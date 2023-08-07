@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="##记录一些容易忘但是久不久会用得到的东西：## ###1.eset 国内更新慢###在hosts文件添加 119.29.72.159 update.eset.com  ###2.archlinux 服务器访问慢###修改 &#x2F;etc&#x2F;pacman.d&#x2F;mirrorlist  把 Server &#x3D; http:&#x2F;&#x2F;de3.mirror.archlinuxarm.org&#x2F;$arch&#x2F;$repo  修改成">
+    <meta name="description" content="##记录一些容易忘但是久不久会用得到的东西： ###1.eset 国内更新慢在hosts文件添加 119.29.72.159 update.eset.com  ###2.archlinux 服务器访问慢修改 &#x2F;etc&#x2F;pacman.d&#x2F;mirrorlist  把 Server &#x3D; http:&#x2F;&#x2F;de3.mirror.archlinuxarm.org&#x2F;$arch&#x2F;$repo  修改成 Server">
 <meta property="og:type" content="article">
 <meta property="og:title" content="碎碎念">
 <meta property="og:url" content="http://tamakyi.github.io/2023/08/08/%E7%A2%8E%E7%A2%8E%E5%BF%B5/index.html">
 <meta property="og:site_name" content="狼的备用站">
-<meta property="og:description" content="##记录一些容易忘但是久不久会用得到的东西：## ###1.eset 国内更新慢###在hosts文件添加 119.29.72.159 update.eset.com  ###2.archlinux 服务器访问慢###修改 &#x2F;etc&#x2F;pacman.d&#x2F;mirrorlist  把 Server &#x3D; http:&#x2F;&#x2F;de3.mirror.archlinuxarm.org&#x2F;$arch&#x2F;$repo  修改成">
+<meta property="og:description" content="##记录一些容易忘但是久不久会用得到的东西： ###1.eset 国内更新慢在hosts文件添加 119.29.72.159 update.eset.com  ###2.archlinux 服务器访问慢修改 &#x2F;etc&#x2F;pacman.d&#x2F;mirrorlist  把 Server &#x3D; http:&#x2F;&#x2F;de3.mirror.archlinuxarm.org&#x2F;$arch&#x2F;$repo  修改成 Server">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2023-08-07T17:30:05.000Z">
-<meta property="article:modified_time" content="2023-08-07T17:36:16.219Z">
+<meta property="article:modified_time" content="2023-08-07T17:39:42.677Z">
 <meta property="article:author" content="tamakyi">
 <meta name="twitter:card" content="summary">
     
@@ -163,11 +163,11 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <p>##记录一些容易忘但是久不久会用得到的东西：##</p>
-<p>###1.eset 国内更新慢###<br>在hosts文件添加</p>
+    <p>##记录一些容易忘但是久不久会用得到的东西：</p>
+<p>###1.eset 国内更新慢<br>在hosts文件添加</p>
 <pre class="line-numbers language-shell"><code class="language-shell">119.29.72.159 update.eset.com
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>###2.archlinux 服务器访问慢###<br>修改</p>
+<p>###2.archlinux 服务器访问慢<br>修改</p>
 <pre class="line-numbers language-shell"><code class="language-shell">/etc/pacman.d/mirrorlist
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>把</p>
@@ -176,14 +176,14 @@
 <p>修改成</p>
 <pre class="line-numbers language-shell"><code class="language-shell">Server = http://ca.us.mirror.archlinuxarm.org/$arch/$repo
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>###3.pikvm的登陆密码###<br>网页端的默认用户名和密码为</p>
+<p>###3.pikvm的登陆密码<br>####网页端的默认用户名和密码为</p>
 <pre class="line-numbers language-shell"><code class="language-shell">username=admin
 password=admin
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>修改网页端密码的方式为</p>
+<p>####修改网页端密码的方式为</p>
 <pre class="line-numbers language-shell"><code class="language-shell">kvmd-htpasswd set admin
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>SSH默认账号密码为</p>
+<p>####SSH默认账号密码为</p>
 <pre class="line-numbers language-shell"><code class="language-shell">username=root
 password=root
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
