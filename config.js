@@ -18,6 +18,10 @@ window.Config = {
   // 导航栏菜单
   Navi: [
     {
+      text: '狼的导航页',
+      url: 'https://tama.host'
+    },
+    {
       text: '狼的公告板',
       url: 'https://blog.tama.guru'
     },
