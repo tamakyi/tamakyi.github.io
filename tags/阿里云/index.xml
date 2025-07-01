@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>阿里云 on 狼的公告板 ver.Hugo</title>
+        <link>https://example.com/tags/%E9%98%BF%E9%87%8C%E4%BA%91.html</link>
+        <description>Recent content in 阿里云 on 狼的公告板 ver.Hugo</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>tamakyi</copyright>
+        <lastBuildDate>Mon, 20 May 2024 21:04:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/%E9%98%BF%E9%87%8C%E4%BA%91/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>使用acme.sh申请通配ssl证书</title>
+        <link>https://example.com/record/acme-sh_zerossl.html</link>
+        <pubDate>Mon, 20 May 2024 21:04:00 +0000</pubDate>
+        
+        <guid>https://example.com/record/acme-sh_zerossl.html</guid>
+        <description>&lt;p&gt;从今年3-4月起，国内主流的域名平台都开始把原来一年期的免费证书调整成三个月（参见：&lt;a class=&#34;link&#34; href=&#34;https://help.aliyun.com/zh/ssl-certificate/user-guide/upgrade-a-free-certificate-upgrade-a-free-certificate&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;免费版SSL证书升级指南&lt;/a&gt;），但是阿里另外给了个解决方案，单域名一年缴68元可以获得原来一样的一年证书。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;尊敬的阿里云用户：
+接收到厂商关于免费证书服务收费策略调整的通知，我们将在2023年11月14号开始生效厂商策略。在策略生效后，免费证书规则如下：
+对于免费领取的SSL证书，签发后的证书有效期统一变更为3个月。如果您希望继续使用12个月有效期的免费证书，则需收取相关服务费，费用为68元/张/年。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;对于我们这些白嫖用户来说这就非常难搞了，证书时间大幅缩短意味着一年要申请四次，而且如果域名很多的话每个还需要单独申请，想想都很酸爽&amp;hellip;但是花钱是不可能的，单个证书68对我们来说也是一笔不小的开销，对我们这种小站站长确实不值得。&lt;/p&gt;
+&lt;p&gt;那么现在摆在我们面前的有两条路：
+&lt;del&gt;1.关站跑路&lt;/del&gt;
+2.想办法做自动化申请替换。&lt;/p&gt;
+&lt;p&gt;比较常见的方法就是&lt;a class=&#34;link&#34; href=&#34;https://github.com/acmesh-official/acme.sh&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;acme.sh&lt;/a&gt;，这是个可以申请签发、部署管理、ssl证书的脚本，操作起来也比较方便，甚至可以通过corntab之类的工具实现自动续期，算是当前状况下一个解决方案了。&lt;/p&gt;
+&lt;p&gt;而证书提供商我推荐使用&lt;a class=&#34;link&#34; href=&#34;https://zerossl.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;zerossl&lt;/a&gt;，最主要的是它能提供免费的范域名甚至是IP证书，虽然只有三个月，但是结合acme.sh就能实现自动续签，相当于无限续期。&lt;/p&gt;
+&lt;h3 id=&#34;正常操作流程&#34;&gt;正常操作流程
+&lt;/h3&gt;&lt;p&gt;首先肯定是先去zerossl申请一个账号，这个不多说了。
+接下来安装acme.sh
+如果服务器在国外的，直接使用官方的
+curl &lt;a class=&#34;link&#34; href=&#34;https://get.acme.sh&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://get.acme.sh&lt;/a&gt; | sh
+即可，如果服务器在国内的，考虑到直连github可能会抽风，建议使用
+curl &lt;a class=&#34;link&#34; href=&#34;https://gitee.com/acmesh-offical/acme.sh/raw/master/acme.sh&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://gitee.com/acmesh-offical/acme.sh/raw/master/acme.sh&lt;/a&gt; | sh -s &lt;a class=&#34;link&#34; href=&#34;mailto:email=your@zerosslaccount.com&#34; &gt;email=your@zerosslaccount.com&lt;/a&gt;
+其中&lt;code&gt;your@zerosslaccount.com&lt;/code&gt;换成自己申请zerossl账号用的邮箱。
+然后使环境生效：
+source ~/.bashrc
+使用第一种方法会安装到&lt;code&gt;~/.acme.sh/&lt;/code&gt;下，不执行环境变量生效的可以手动在文件夹内执行脚本。
+然后把zerossl配置为默认的ca服务：
+acme.sh &amp;ndash;set-default-ca &amp;ndash;server zerossl
+因为当前我使用的是DNSPOD的解析，需要先去&lt;a class=&#34;link&#34; href=&#34;https://console.dnspod.cn/account/token/token&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;DNSPOD Token&lt;/a&gt;页面生成一组密钥，生成之后页面会生成一个ID和TOKEN，假设：
+ID=XXXXXX
+TOKEN=QWERTYUIOPASADFGHJKL
+那么需要配置以下内容到环境变量：
+export DP_Id=&amp;ldquo;XXXXXX&amp;rdquo;
+export DP_Key=&amp;ldquo;QWERTYUIOPASADFGHJKL&amp;rdquo;
+这里的DP指的是DNSPOD，如果使用的是其他服务商可以参考&lt;a class=&#34;link&#34; href=&#34;https://github.com/acmesh-official/acme.sh/tree/master/dnsapi&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;dnsapi文档&lt;/a&gt;和&lt;a class=&#34;link&#34; href=&#34;https://github.com/acmesh-official/acme.sh/wiki&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;acme.sh wiki&lt;/a&gt;。
+然后配置zerossl的账号信息到acme.sh:
+acme.sh &amp;ndash;register-account -m &lt;a class=&#34;link&#34; href=&#34;mailto:your@zerosslaccount.com&#34; &gt;your@zerosslaccount.com&lt;/a&gt; &amp;ndash;server zerossl
+这里会生成一个&lt;code&gt;ACCOUNT_THUMBPRINT&lt;/code&gt;，一般用不到，可以忽略。
+到此就可以进行证书申请操作了：
+比如我要申请的证书域名是&lt;code&gt;*.tama.guru&lt;/code&gt;，那么需要执行：
+acme.sh &amp;ndash;dns dns_dp &amp;ndash;issue -d *.tama.guru -d tama.guru
+如果执行过程中报错可以执行：
+acme.sh &amp;ndash;dns dns_dp &amp;ndash;issue -d *.tama.guru -d tama.guru &amp;ndash;debug
+来检查是什么步骤报错。
+如果没有任何错误，目录结构应该如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;-********-  8 root root    187 May 20 17:17  .
+-********- 24 root root   4096 May 20 20:28  ..
+-********-  1 root root    433 May 20 16:56  account.conf
+-********-  1 root root 223427 May 20 16:29  acme.sh
+-********-  1 root root     78 May 20 16:29  acme.sh.env
+-********-  3 root root     30 May 20 16:48  ca
+-********-  2 root root   4096 May 20 16:29  deploy
+-********-  2 root root   8192 May 20 16:29  dnsapi
+-********-  1 root root    221 May 20 17:17  fetch.sh
+-********-  1 root root    393 May 20 16:56  http.header
+-********-  2 root root   4096 May 20 16:29  notify
+-********-  2 root root    162 May 20 16:56 &#39;*.tama.guru_ecc&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;我们的证书就保存在&lt;code&gt;&#39;*.tama.guru_ecc&#39;&lt;/code&gt;内，配置&lt;code&gt;*.tama.guru.key&lt;/code&gt;和&lt;code&gt;fullchain.cer&lt;/code&gt;到nginx/apache上即可。&lt;/p&gt;
+&lt;h3 id=&#34;自动化&#34;&gt;自动化
+&lt;/h3&gt;&lt;p&gt;根据上面的步骤基本上就知道自动化脚本怎么写了:
+# nano /root/.acme.sh/autocert.sh&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+cd /root/.acme.sh #根据acme安装路径选择
+export DP_Id=&amp;quot;XXXXXX&amp;quot;
+export DP_Key=&amp;quot;QWERTYUIOPASADFGHJKL&amp;quot;
+#./acme.sh --register-account -m your@zerosslaccount.com --server zerossl
+./acme.sh --dns dns_dp --issue -d *.tama.guru -d tama.guru
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后添加到crontab:
+0 23 1 * * sh nano /root/.acme.sh/autocert.sh #每月1号的23点执行以上脚本
+如果acme.sh所在机器就是网站服务器，可以参照&lt;a class=&#34;link&#34; href=&#34;https://www.rmedgar.com/blog/using-acme-sh-with-nginx/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Using acme.sh with nginx&lt;/a&gt;把应用证书的工作也交给服务器自动完成，更简单的方法就是先指定输出文件位置然后直接在nginx的配置文件里面修改:
+#导出文件
+acme.sh &amp;ndash;install-cert -d tama.guru &amp;ndash;key-file       /path/to/keyfile/tama.guru.pem  &amp;ndash;fullchain-file /path/to/fullchain/tama.guru.cer &amp;ndash;reloadcmd     &amp;ldquo;service nginx force-reload&amp;rdquo;
+#修改nginx配置文件
+ssl_certificate /path/to/fullchain/tama.guru.cer;
+ssl_certificate_key /path/to/keyfile/tama.guru.pem;&lt;/p&gt;
+&lt;h3 id=&#34;其他&#34;&gt;其他
+&lt;/h3&gt;&lt;p&gt;Q：我不想敲一堆命令，有更直观的方法吗？
+A：可以使用开源工具&lt;a class=&#34;link&#34; href=&#34;https://github.com/certd/certd&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;certd&lt;/a&gt;，该工具提供了一个网页前端供用户配置自动化流水线申请证书。
+Q：那你为什么不用？
+A：它只支持Let&amp;rsquo;s encrypt证书。&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>阿里云服务器的买后优化记录</title>
+        <link>https://example.com/record/aliyun_server.html</link>
+        <pubDate>Sun, 16 Oct 2022 00:15:00 +0000</pubDate>
+        
+        <guid>https://example.com/record/aliyun_server.html</guid>
+        <description>&lt;p&gt;腾讯云香港服务器蹲了半年都蹲不出台正常点的，中低端经常售罄，至少都要2C2T+4G起步，一个月就要六七十，这谁受得了？？？月初打开阿里云一看，哟嚯，2C（其实是1C2T）+2G一个月才30，试用下访问速度基本上接近国内服务器，这我直呼受不了，赶紧把之前那破腾讯云上的数据迁移咯。使用体验基本复合我的预期，但是2G跑个debian在加几个网站基本就没用想别的了，内存这块有优化的必要。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;[scode type=&amp;ldquo;lblue&amp;rdquo;]No.1 mysql[/scode]&lt;/p&gt;
+&lt;p&gt;对于小内存的机子来说mysql跑一段时间之后内存占用会高得恐怖。我中午刚新开的服务器，到晚上11点多用&lt;code&gt;htop&lt;/code&gt;一看，单mysqld这个进程已经吃了18.5%的内存，也就是差不多400M，你也是真的能吃 ::acfun:01:: 。查了些资料然后进行比对，发现镜像原本的配置也已经优化的差不多了，但是我们还需要打开&lt;code&gt;my.cnf&lt;/code&gt;，在&lt;code&gt;[mysqld]&lt;/code&gt;字段添加&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;performance_schema = off&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;然后保存重启mysql进程，也是有一定效果。&lt;/p&gt;
+&lt;p&gt;[scode type=&amp;ldquo;lblue&amp;rdquo;]No.2 AliyunDun（阿里云盾）[/scode]&lt;/p&gt;
+&lt;p&gt;这玩意是预装在系统里的，平时啥也不干也会吃掉5到6个点的内存，在官方的介绍页上，对这个产品的表述是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;云盾是阿里巴巴集团多年来安全技术研究积累的成果，结合阿里云云计算平台强大的数据分析能力。为中小网站提供如安全漏洞检测、网页木马检测以及面向云服务器用户提供的主机入侵检测、防DDOS等一站式安全服务。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;其实平时不乱开端口，不乱往主机上塞文件问题就不大，至于DDoS，真要打我这小破站你这盾也不够用啊。。。&lt;/p&gt;
+&lt;p&gt;以下是卸载步骤：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget http://update.aegis.aliyun.com/download/uninstall.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sh uninstall.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget http://update.aegis.aliyun.com/download/quartz_uninstall.sh sh
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;quartz_uninstall.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pkill aliyun-service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rm -fr /etc/init.d/agentwatch /usr/sbin/aliyun-service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rm -rf /usr/local/aegis*
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;未完待续 ::acfun:2003::&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

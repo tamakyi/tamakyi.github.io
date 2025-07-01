@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="为什么要用umami 在此之前，本站及相关网站服务需要用到统计的地方，都用的是自建的matomo，这是个非常强大的网页统计服务，强大到有些臃肿，这次大搬家我就在想，我真的有必要耗费有限的服务器资源来实现到头来可能一次都用不到的功能吗？答案当然是不，经过一番对比，最终我决定换用ackee或者umami。这两个统计工具都支持无服务器部署，但我还是选择了umami。以下是umami和matomo的一些区别：\n">
+<title>使用vercel&#43;neon方案搭建无需服务器的umami统计服务</title>
+
+<link rel='canonical' href='http://localhost:1313/umami.html.html'>
+
+<link rel="stylesheet" href="/scss/style.min.6a6b3f9159829e2ab92859ca6f195fce9a66f7e31fb62518aaeea99361e6dc9e.css"><meta property='og:title' content="使用vercel+neon方案搭建无需服务器的umami统计服务">
+<meta property='og:description' content="为什么要用umami 在此之前，本站及相关网站服务需要用到统计的地方，都用的是自建的matomo，这是个非常强大的网页统计服务，强大到有些臃肿，这次大搬家我就在想，我真的有必要耗费有限的服务器资源来实现到头来可能一次都用不到的功能吗？答案当然是不，经过一番对比，最终我决定换用ackee或者umami。这两个统计工具都支持无服务器部署，但我还是选择了umami。以下是umami和matomo的一些区别：\n">
+<meta property='og:url' content='http://localhost:1313/umami.html.html'>
+<meta property='og:site_name' content='狼的公告板 ver.Hugo'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='serverless' /><meta property='article:tag' content='网页统计' /><meta property='article:tag' content='umami' /><meta property='article:tag' content='vercel' /><meta property='article:tag' content='neno' /><meta property='article:tag' content='postgre' /><meta property='article:published_time' content='2025-03-26T12:23:06&#43;00:00'/><meta property='article:modified_time' content='2025-03-26T12:23:06&#43;00:00'/>
+<meta name="twitter:title" content="使用vercel+neon方案搭建无需服务器的umami统计服务">
+<meta name="twitter:description" content="为什么要用umami 在此之前，本站及相关网站服务需要用到统计的地方，都用的是自建的matomo，这是个非常强大的网页统计服务，强大到有些臃肿，这次大搬家我就在想，我真的有必要耗费有限的服务器资源来实现到头来可能一次都用不到的功能吗？答案当然是不，经过一番对比，最终我决定换用ackee或者umami。这两个统计工具都支持无服务器部署，但我还是选择了umami。以下是umami和matomo的一些区别：\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_d6a5c15246229c7b.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">狼的公告板 ver.Hugo</a></h1>
+            <h2 class="site-description">念念不忘，必有回响</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="http://localhost:1313/en/" >English</option>
+                                
+                                    <option value="http://localhost:1313/" selected>中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li>
+          <ol>
+            <li></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/record.html" >
+                Record
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/umami.html.html">使用vercel&#43;neon方案搭建无需服务器的umami统计服务</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Mar 26, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 4 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h5 id="为什么要用umami">为什么要用umami
+</h5><p>在此之前，本站及相关网站服务需要用到统计的地方，都用的是自建的matomo，这是个非常强大的网页统计服务，强大到有些臃肿，这次大搬家我就在想，我真的有必要耗费有限的服务器资源来实现到头来可能一次都用不到的功能吗？答案当然是不，经过一番对比，最终我决定换用ackee或者umami。这两个统计工具都支持无服务器部署，但我还是选择了umami。以下是umami和matomo的一些区别：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: center">对比项目</th>
+          <th style="text-align: center">matomo</th>
+          <th style="text-align: center">umami</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">项目大小</td>
+          <td style="text-align: center">26MB（5.3.1）</td>
+          <td style="text-align: center">1.83MB（github仓库）</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">JS文件大小</td>
+          <td style="text-align: center">67460 bytes</td>
+          <td style="text-align: center">2,713 bytes</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">支持serverless</td>
+          <td style="text-align: center">理论上支持</td>
+          <td style="text-align: center">支持</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">支持2FA</td>
+          <td style="text-align: center">是</td>
+          <td style="text-align: center">否</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">可定制化JS名称</td>
+          <td style="text-align: center">否</td>
+          <td style="text-align: center">是</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">使用数据库</td>
+          <td style="text-align: center">mysql</td>
+          <td style="text-align: center">mysql/PostgreSQL</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">API丰富程度</td>
+          <td style="text-align: center">非常丰富</td>
+          <td style="text-align: center">无</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>从文件大小上来看umami真的是轻量化了很多，对网站速度都有很大优化。不支持2FA是个扣分项，但服务和数据库都在云端，不需要登录服务器使用，算是没太大影响。数据库这方面使用neon提供的免费Postgre套餐可以满足项目使用需求，所以理论上是不需要投入任何费用的。至于API，仅有官方服务的会提供，自建的版本是没有的。</p>
+<h5 id="vercel部署和neon数据库">vercel部署和neon数据库
+</h5><p>先去<a class="link" href="https://console.neon.tech"  target="_blank" rel="noopener"
+    >neon</a>使用github或者google账号登录，首次登录会要求新建项目(<code>Create Project</code>)，只需要输入项目名称(<code>Project Name</code>)、数据库名称(<code>Database name</code>)并选择地域(<code>Region</code>)，前两项根据自己需求填写，地域根据vercel分配一般选择AWS US三个中的一个即可。</p>
+<p>新建完先要点进项目，左侧<code>Project</code>下有个<code>Branches</code>，点击<code>Primary compute</code>下方的蓝字，默认是0.25-2CU，点进去把<code>Configure the autoscaling range</code>拖动到只有0.25，并点击<code>SAVE</code>。之所以要这么做，是因为neon的免费套餐包含0.5G的存储、0.5G的每月数据传输、10个项目和每个项目10个分支、10000的最大并发数，<strong>190的计算时长</strong>。这里的计算时长(compute hours)关联的是运行的CPU数据、服务器运行时长，比如CU是2，每天运行24小时，一个月的计算时长=2x24x30=1440，这对190来说显然是超出太多了，而调整成0.25则=0.25x24*30=180，正好够用。虽然他支持0.25-2之间的动态调整，谁知道什么情况下突然拉起来，这个情况下数据库就被停了，所以最好调整下。</p>
+<p>然后回到项目页面，找到<code>Connect</code>，点进去把左下角的<code>Show Passowrd</code>点开，然后复制<code>Connect to your database</code>的内容备用。</p>
+<p>注册vercel账号并使用github登录，按照官方文档<a class="link" href="https://umami.is/docs/guides/running-on-vercel"  target="_blank" rel="noopener"
+    >官方文档</a>直接把项目仓库Fork到自己的github并登录vercel导入这个仓库，或者直接<a class="link" href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fumami-software%2Fumami&amp;env=DATABASE_URL"  target="_blank" rel="noopener"
+    >一键Deploy</a>。在<code>New Project</code>页面输入<code>Private Repository Name</code>，随意即可，再点<code>Create</code>。</p>
+<p>然后配置环境变量，一般只需要三个：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: center">变量名称</th>
+          <th style="text-align: center">含义</th>
+          <th style="text-align: center">必须</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">DATABASE_URL</td>
+          <td style="text-align: center">数据库地址，即上面使用neon拿到的<code>Connect to your database</code>的内容。如果是mysql格式为:mysql://username:mypassword@localhost:3306/数据库名称</td>
+          <td style="text-align: center">是</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">HASH_SALT</td>
+          <td style="text-align: center">一串随机字符串</td>
+          <td style="text-align: center">否</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">TRACKER_SCRIPT_NAME</td>
+          <td style="text-align: center">追踪JS文件的名称，不设置默认是umami.js</td>
+          <td style="text-align: center">否</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>再点击<code>Deploy</code>，等待2~3分钟即完成部署。</p>
+<p>因为vercel提供的vercel.app域名在国内无法解析，部署完成后点进项目的<code>Settings</code>下的<code>Domains</code>，选择<code>Add</code>，在<code>Domain</code>输入你自己的域名，点<code>Add Domain</code>保存。至于域名从哪来，可以去一些提供免费二级域名的服务商获取。然后去服务商CNAME解析域名到cname.vercel-dns.com保存，一两分钟后会自动申请好SSL证书，就可以通过自己的域名访问了。</p>
+<h5 id="umami设置">umami设置
+</h5><p>umami部署后默认的用户名密码是admin/umami，登录进去在个人资料可以修改语言成中文，在设置下的用户可以修改和添加用户名和密码。</p>
+<p>在网站页面点击添加网站，输入名称和域名，完成后点击域名的设置，在跟踪代码下可以找到那串script，放到网页的**</head>**之前即可。</p>
+<p>完成之后刷新一下访问统计就出来了。</p>
+<h5 id="感觉">感觉
+</h5><p>因为直接使用vercel的cdn，访问速度真的很快，而且也没有什么多余的东西。使用matomo的时候不知道是不是我的配置问题访问来源一直出不来，现在也能显示了。虽然没有独立app，直接使用网页访问也是非常顺滑的，而且他没有办法显示访客的具体机型、浏览器版本、系统版本等信息，比如matomo下会显示为<code>Xiaomi 15, Chrome 117.xx.xx, Android 15</code>，umami就只有<code>Android, Chrome</code>这种信息，对我来说意义不大。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/serverless.html">Serverless</a>
+        
+            <a href="/tags/%E7%BD%91%E9%A1%B5%E7%BB%9F%E8%AE%A1.html">网页统计</a>
+        
+            <a href="/tags/umami.html">Umami</a>
+        
+            <a href="/tags/vercel.html">Vercel</a>
+        
+            <a href="/tags/neno.html">Neno</a>
+        
+            <a href="/tags/postgre.html">Postgre</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/waline-on-html.html.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">在静态网站上使用waline评论系统</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/acfun-gift-count.html.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">关于AcFun礼物统计网页的说明</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/anti-360albumviewer.html.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">如何避免大数字自动安装大数字看图(360AlbumViewer)</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/traccar.html.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">搭建自己的轨迹记录程序 Traccar</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/tinystatus.html.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用tinystatus构建一个轻量化的状态监测站</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        --waline-font-size: var(--article-font-size);
+    }
+    .waline-container .wl-count {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://unpkg.com/@waline/emojis@1.0.1/weibo"],"lang":"zh-CN","locale":{"admin":"博主","placeholder":"欢迎评论"},"pageview":false,"requiredMeta":["name","email"],"serverURL":"https://artalk.tama.guru"});
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2022 - 
+        
+        2025 tamakyi
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.8382466cdcb1c0571ef261e5654d7d81331fcbd60eaefd6a14e7253cae165eb6.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

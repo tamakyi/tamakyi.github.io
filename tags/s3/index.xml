@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>S3 on 狼的公告板 ver.Hugo</title>
+        <link>https://example.com/tags/s3.html</link>
+        <description>Recent content in S3 on 狼的公告板 ver.Hugo</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>tamakyi</copyright>
+        <lastBuildDate>Sat, 13 Jan 2024 22:53:02 +0000</lastBuildDate><atom:link href="https://example.com/tags/s3/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>使用S3 Browser管理Cloudflare R2存储桶</title>
+        <link>https://example.com/record/s3browser_r2_manager.html</link>
+        <pubDate>Sat, 13 Jan 2024 22:53:02 +0000</pubDate>
+        
+        <guid>https://example.com/record/s3browser_r2_manager.html</guid>
+        <description>&lt;p&gt;本来我是要把导航页所有的文件搬到Github上并&lt;strong&gt;试图&lt;/strong&gt;通过jsdelivr加速访问，但是我发现国内移动网络根本无法直连jsdelivr&amp;hellip;在多次反馈网页无法打开之后，最后还是退一步选择迁移到R2上了。但是R2的网页端管理真的是做得一团糟，上传经常半路失败不说，一次还只能上传100个文件，更恶心的是文件夹无法删除，对于我来说是体验真的不好了。&lt;/p&gt;
+&lt;p&gt;既然兼容AWS S3，那就用S3的方法去管理他。
+需要用到&lt;a class=&#34;link&#34; href=&#34;https://s3browser.com/download.aspx&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;S3Browser&lt;/a&gt;这个软件，只有英文，但是不妨碍使用。
+安装完成之后选择&lt;code&gt;Add new account&lt;/code&gt;。
+&lt;code&gt;Display Name&lt;/code&gt;任意填写即可，&lt;code&gt;Account type&lt;/code&gt;选择&lt;code&gt;S3 Compatible Storage&lt;/code&gt;，即兼容S3存储。&lt;code&gt;REST Endpotin&lt;/code&gt;对应的是&lt;code&gt;S3 API&lt;/code&gt;的值，但是不能整个填写进去。比如网页端显示的&lt;code&gt;S3 API&lt;/code&gt;为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://xxxxxxxxxxxxxxxxxxx.r2.cloudflarestorage.com/tamabox
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;那这里要填写的是&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xxxxxxxxxxxxxxxxxxx.r2.cloudflarestorage.com
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;AK&lt;/code&gt;和&lt;code&gt;SK&lt;/code&gt;是创建桶的时候提供的，如果忘记了就没救了，重新弄个桶吧。
+&lt;code&gt;Encrypt Access Keys with a password&lt;/code&gt;和&lt;code&gt;Use secure transfer(SSL/TSL)&lt;/code&gt;选项保留默认即可。
+&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/01/13/65a2a0bdc8b8c.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;add account info 1&#34;
+	
+	
+&gt;
+配置完之后要点开左下角的&lt;code&gt;advanced settings&lt;/code&gt;。
+&lt;code&gt;Signature version&lt;/code&gt;选择&lt;code&gt;Signature V4&lt;/code&gt;.
+&lt;code&gt;Addressing model&lt;/code&gt;选择&lt;code&gt;Virtual hosted style&lt;/code&gt;.
+其他选项保留初始值不用动，点close再save changes&lt;code&gt;即可。 ![add account info 2][3] 这时候应该是能连接进R2内部了，就当作一个文件管理器操作就行了。 ![setting complete][4] &amp;lt;br/&amp;gt; 如果只用来做图床的话可以用&lt;/code&gt;Pic-Go`这个软件，操作方法也类似。&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

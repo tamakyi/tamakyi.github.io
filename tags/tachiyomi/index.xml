@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Tachiyomi on 狼的公告板 ver.Hugo</title>
+        <link>https://example.com/tags/tachiyomi.html</link>
+        <description>Recent content in Tachiyomi on 狼的公告板 ver.Hugo</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>tamakyi</copyright>
+        <lastBuildDate>Sat, 09 Jul 2022 13:40:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/tachiyomi/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>唯一指定漫画阅读软件tachiyomi</title>
+        <link>https://example.com/record/tachiyomi.html</link>
+        <pubDate>Sat, 09 Jul 2022 13:40:00 +0000</pubDate>
+        
+        <guid>https://example.com/record/tachiyomi.html</guid>
+        <description>&lt;p&gt;项目地址：[tachiyomi](&lt;a class=&#34;link&#34; href=&#34;https://github.com/tachiyomiorg/tachiyomi&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;tachiyomiorg/tachiyomi: Free and open source manga reader for Android. (github.com)&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;介绍：tachiyomi是一个开源的支持安卓6.0+的漫画阅读器，支持在线阅读漫画源内容，插件更新速度快，界面美观，更新中文/英文/日文插件（包括NSFW）&lt;/p&gt;
+&lt;p&gt;优点：插件更新快，覆盖内容广（包含dmzj等常见内容源，基本上正经漫画都能搜出来），MD界面，开源无广告&lt;/p&gt;
+&lt;p&gt;缺点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;插件使用github源，部分地区无法在软件内安装，需要手动到&lt;a class=&#34;link&#34; href=&#34;https://github.com/tachiyomiorg/tachiyomi-extensions/tree/repo/apk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;tachiyomi-extensions/apk at repo · tachiyomiorg/tachiyomi-extensions (github.com)&lt;/a&gt;手动下载或者开小飞机下载。&lt;/li&gt;
+&lt;li&gt;只支持安卓使用，其他设备使用需要一台服务器部署tachidesk服务：&lt;a class=&#34;link&#34; href=&#34;https://github.com/Suwayomi/Tachidesk-Server&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Suwayomi/Tachidesk-Server: A rewrite of Tachiyomi for the Desktop (github.com)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,1971 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="###前言 很久之前买过一款kvm套件，基于树莓派4b的拓展版，能够通过USB和跳线起到控制设备开关机以及远程操作的作用，但是pikvm官方只发布了基于32位archlinuxarm的固件，在其官网的QA处有这么一段描述：\n">
+<title>记录在raspbian上折腾pikvm的失败过程</title>
+
+<link rel='canonical' href='http://localhost:1313/pikvm_with_raspbian.html.html'>
+
+<link rel="stylesheet" href="/scss/style.min.6a6b3f9159829e2ab92859ca6f195fce9a66f7e31fb62518aaeea99361e6dc9e.css"><meta property='og:title' content="记录在raspbian上折腾pikvm的失败过程">
+<meta property='og:description' content="###前言 很久之前买过一款kvm套件，基于树莓派4b的拓展版，能够通过USB和跳线起到控制设备开关机以及远程操作的作用，但是pikvm官方只发布了基于32位archlinuxarm的固件，在其官网的QA处有这么一段描述：\n">
+<meta property='og:url' content='http://localhost:1313/pikvm_with_raspbian.html.html'>
+<meta property='og:site_name' content='狼的公告板 ver.Hugo'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='pikvm' /><meta property='article:tag' content='raspbian' /><meta property='article:published_time' content='2023-08-10T18:02:00&#43;00:00'/><meta property='article:modified_time' content='2023-08-10T18:02:00&#43;00:00'/>
+<meta name="twitter:title" content="记录在raspbian上折腾pikvm的失败过程">
+<meta name="twitter:description" content="###前言 很久之前买过一款kvm套件，基于树莓派4b的拓展版，能够通过USB和跳线起到控制设备开关机以及远程操作的作用，但是pikvm官方只发布了基于32位archlinuxarm的固件，在其官网的QA处有这么一段描述：\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_d6a5c15246229c7b.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">狼的公告板 ver.Hugo</a></h1>
+            <h2 class="site-description">念念不忘，必有回响</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="http://localhost:1313/en/" >English</option>
+                                
+                                    <option value="http://localhost:1313/" selected>中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/record.html" >
+                Record
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/pikvm_with_raspbian.html.html">记录在raspbian上折腾pikvm的失败过程</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Aug 10, 2023</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 11 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>###前言
+很久之前买过一款kvm套件，基于树莓派4b的拓展版，能够通过USB和跳线起到控制设备开关机以及远程操作的作用，但是<a class="link" href="https://pikvm.org/"  target="_blank" rel="noopener"
+    >pikvm官方</a>只发布了基于32位archlinuxarm的固件，在其官网的QA处有这么一段描述：</p>
+<blockquote>
+<p>Why is PiKVM OS based on Arch Linux ARM and not Raspbian / Raspberry Pi OS? &amp;gt; There are several reasons:
+Several years ago, when PiKVM was just starting out, Raspbian didn‘t have a minimalistic image and the transition to systemd was in full swing, which is why the distribution was not too stable. Raspbian did not have all the necessary packages in the repositories to satisfy most software dependencies.
+PiKVM was born as a pet project, and the founder likes Arch the most.
+However, we plan to provide an alternative OS image based on Raspbian in the future - now it is quite stable.</p></blockquote>
+<p>大概意思就是pikvm起步早，当时raspbian还没成型，且raspbian的库中不能满足pikvm的依赖。<strong>但是官方正在计划做基于raspbian的固件</strong>，简而言之就是现在没有。
+但对我来说，arch系的系统确实难用（<strong>我是debian的狗</strong>），另一方面我个人觉得，32位系统并不能发挥4B的全部实力。于是今天在逛pikvm的github的时候发现了这么一个issus：<a class="link" href="https://github.com/pikvm/pikvm/issues/374"  target="_blank" rel="noopener"
+    >Running pikvm on top of another OS</a>下有个评论：<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/08/10/64d4a19558178.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="github issus"
+	
+	
+>
+<a class="link" href="https://kvmnerds.com/RPiKVM/How_to_Install_PiKVM_onRaspbian_32-bit_OS.pdf"  target="_blank" rel="noopener"
+    >第一个PDF</a>介绍了用树莓派官方镜像刷写工具写入32位的raspios并安装pikvm的过程，为什么一定要32位？我不明白。因此决定刷个64位的系统按他的步骤试试看。
+###刷个RaspiOS
+系统方面我选择的是基于debian 11于20230503更新的当前最新系统。 <img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/08/10/64d4a2b421570.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="raspbian system flash"
+	
+	
+>
+安装操作流程依照上面的PDF进行，需要注意的是其中提到的<code>enable &amp;quot;Skip first-run wizard&amp;quot;</code>选项当前已经不存在。
+###尝试安装pikvm
+进入SSH，下载<code>https://kvmnerds.com/RPiKVM/install-pikvm-raspbian.sh</code>这个文件并赋予执行权限，然后直接<code>./install-pikvm-raspbian.sh</code>，开始一长串的wget（请注意:kvmnerds.com这个域名不能直连，需要自配梯子）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Running part <span class="m">1</span> of PiKVM installer v5.6 script <span class="k">for</span> Raspbian by @srepac
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">-&gt; Getting Pi-KVM packages from https://kvmnerds.com/REPO/NEW
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW -O /var/cache/kvmd/packages.txt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/janus-0.11.3-raspbian-armv7l.pkg.tar.xz -O /var/cache/kvmd/janus-0.11.3-raspbian-armv7l.pkg.tar.xz
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/kvmd-3.241-1-any.pkg.tar.xz -O /var/cache/kvmd/kvmd-3.241-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/kvmd-3.47-1-any.pkg.tar.xz -O /var/cache/kvmd/kvmd-3.47-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/kvmd-platform-v0-hdmi-rpi2-3.241-1-any.pkg.tar.xz -O /var/cache/kvmd/kvmd-platform-v0-hdmi-rpi2-3.241-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/kvmd-platform-v0-hdmi-rpi2-3.47-1-any.pkg.tar.xz -O /var/cache/kvmd/kvmd-platform-v0-hdmi-rpi2-3.47-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/kvmd-platform-v0-hdmi-rpi3-3.241-1-any.pkg.tar.xz -O /var/cache/kvmd/kvmd-platform-v0-hdmi-rpi3-3.241-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/kvmd-platform-v0-hdmi-rpi3-3.47-1-any.pkg.tar.xz -O /var/cache/kvmd/kvmd-platform-v0-hdmi-rpi3-3.47-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/kvmd-platform-v0-hdmi-zero2w-3.241-1-any.pkg.tar.xz -O /var/cache/kvmd/kvmd-platform-v0-hdmi-zero2w-3.241-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/kvmd-platform-v0-hdmi-zero2w-3.47-1-any.pkg.tar.xz -O /var/cache/kvmd/kvmd-platform-v0-hdmi-zero2w-3.47-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/kvmd-platform-v0-hdmiusb-rpi2-3.241-1-any.pkg.tar.xz -O /var/cache/kvmd/k
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/kvmd-platform-v0-hdmiusb-rpi2-3.47-1-any.pkg.tar.xz -O /var/cache/kvmd/kv
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/kvmd-platform-v0-hdmiusb-rpi3-3.241-1-any.pkg.tar.xz -O /var/cache/kvmd/k
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/kvmd-platform-v0-hdmiusb-rpi3-3.47-1-any.pkg.tar.xz -O /var/cache/kvmd/kv
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/kvmd-platform-v0-hdmiusb-zero2w-3.241-1-any.pkg.tar.xz -O /var/cache/kvmd
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/kvmd-platform-v0-hdmiusb-zero2w-3.47-1-any.pkg.tar.xz -O /var/cache/kvmd/
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/kvmd-platform-v2-hdmi-rpi4-3.241-1-any.pkg.tar.xz -O /var/cache/kvmd/kvmd
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/kvmd-platform-v2-hdmi-rpi4-3.47-1-any.pkg.tar.xz -O /var/cache/kvmd/kvmd-
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/kvmd-platform-v2-hdmi-zero2w-3.241-1-any.pkg.tar.xz -O /var/cache/kvmd/kv
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/kvmd-platform-v2-hdmi-zero2w-3.47-1-any.pkg.tar.xz -O /var/cache/kvmd/kvm
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/kvmd-platform-v2-hdmi-zerow-3.47-1-any.pkg.tar.xz -O /var/cache/kvmd/kvmd
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/kvmd-platform-v2-hdmi-zerow-3.54-1-any.pkg.tar.xz -O /var/cache/kvmd/kvmd
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/kvmd-platform-v2-hdmiusb-rpi4-3.241-1-any.pkg.tar.xz -O /var/cache/kvmd/k
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/kvmd-platform-v2-hdmiusb-rpi4-3.47-1-any.pkg.tar.xz -O /var/cache/kvmd/kv
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/kvmd-platform-v3-hdmi-rpi4-3.241-1-any.pkg.tar.xz -O /var/cache/kvmd/kvmd
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/kvmd-platform-v3-hdmi-rpi4-3.47-1-any.pkg.tar.xz -O /var/cache/kvmd/kvmd-
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/kvmd-platform-v4mini-hdmi-rpi4-3.241-1-any.pkg.tar.xz -O /var/cache/kvmd/
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/kvmd-platform-v4mini-hdmi-rpi4-3.47-1-any.pkg.tar.xz -O /var/cache/kvmd/k
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/kvmd-platform-v4plus-hdmi-rpi4-3.241-1-any.pkg.tar.xz -O /var/cache/kvmd/
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/kvmd-platform-v4plus-hdmi-rpi4-3.47-1-any.pkg.tar.xz -O /var/cache/kvmd/k
+</span></span><span class="line"><span class="cl">wget https://kvmnerds.com/REPO/NEW/kvmd-webterm-0.42-1-any.pkg.tar.xz -O /var/cache/kvmd/kvmd-webterm-0.42-1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ls -l /var/cache/kvmd
+</span></span><span class="line"><span class="cl">total <span class="m">3912</span>
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">4787</span> Aug <span class="m">10</span> 17:05 installer-20230810-17:04:49.log
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root <span class="m">1858636</span> Feb <span class="m">13</span>  <span class="m">2022</span> janus-0.11.3-raspbian-armv7l.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root <span class="m">1144228</span> Aug  <span class="m">7</span> 08:16 kvmd-3.241-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root  <span class="m">749608</span> Feb <span class="m">10</span>  <span class="m">2022</span> kvmd-3.47-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">6220</span> Aug  <span class="m">7</span> 08:16 kvmd-platform-v0-hdmi-rpi2-3.241-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">6220</span> Aug  <span class="m">7</span> 08:16 kvmd-platform-v0-hdmi-rpi2-3.47-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">6280</span> Aug  <span class="m">7</span> 08:16 kvmd-platform-v0-hdmi-rpi3-3.241-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">6280</span> Aug  <span class="m">7</span> 08:16 kvmd-platform-v0-hdmi-rpi3-3.47-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">6684</span> Aug  <span class="m">7</span> 08:16 kvmd-platform-v0-hdmiusb-rpi2-3.241-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">6684</span> Aug  <span class="m">7</span> 08:16 kvmd-platform-v0-hdmiusb-rpi2-3.47-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">6732</span> Aug  <span class="m">7</span> 08:16 kvmd-platform-v0-hdmiusb-rpi3-3.241-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">6732</span> Aug  <span class="m">7</span> 08:16 kvmd-platform-v0-hdmiusb-rpi3-3.47-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">6704</span> Aug  <span class="m">7</span> 08:16 kvmd-platform-v0-hdmiusb-zero2w-3.241-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">6704</span> Aug  <span class="m">7</span> 08:16 kvmd-platform-v0-hdmiusb-zero2w-3.47-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">6336</span> Aug  <span class="m">7</span> 08:16 kvmd-platform-v0-hdmi-zero2w-3.241-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">6336</span> Aug  <span class="m">7</span> 08:16 kvmd-platform-v0-hdmi-zero2w-3.47-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">6364</span> Aug  <span class="m">7</span> 08:16 kvmd-platform-v2-hdmi-rpi4-3.241-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">6364</span> Aug  <span class="m">7</span> 08:16 kvmd-platform-v2-hdmi-rpi4-3.47-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">6888</span> Aug  <span class="m">7</span> 08:16 kvmd-platform-v2-hdmiusb-rpi4-3.241-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">6888</span> Aug  <span class="m">7</span> 08:16 kvmd-platform-v2-hdmiusb-rpi4-3.47-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">6372</span> Aug  <span class="m">7</span> 08:16 kvmd-platform-v2-hdmi-zero2w-3.241-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">6372</span> Aug  <span class="m">7</span> 08:16 kvmd-platform-v2-hdmi-zero2w-3.47-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">5776</span> Feb <span class="m">19</span>  <span class="m">2022</span> kvmd-platform-v2-hdmi-zerow-3.47-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">5776</span> Feb <span class="m">19</span>  <span class="m">2022</span> kvmd-platform-v2-hdmi-zerow-3.54-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">6628</span> Aug  <span class="m">7</span> 08:16 kvmd-platform-v3-hdmi-rpi4-3.241-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">6628</span> Aug  <span class="m">7</span> 08:16 kvmd-platform-v3-hdmi-rpi4-3.47-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">6792</span> Aug  <span class="m">7</span> 08:16 kvmd-platform-v4mini-hdmi-rpi4-3.241-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">6792</span> Aug  <span class="m">7</span> 08:16 kvmd-platform-v4mini-hdmi-rpi4-3.47-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">6792</span> Aug  <span class="m">7</span> 08:16 kvmd-platform-v4plus-hdmi-rpi4-3.241-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">6792</span> Aug  <span class="m">7</span> 08:16 kvmd-platform-v4plus-hdmi-rpi4-3.47-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">5940</span> Jun <span class="m">26</span>  <span class="m">2022</span> kvmd-webterm-0.42-1-any.pkg.tar.xz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root   <span class="m">14716</span> Aug <span class="m">10</span> 17:04 packages.txt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Choose which capture device you will use:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="m">1</span> - USB dongle
+</span></span><span class="line"><span class="cl"><span class="m">2</span> - v2 CSI
+</span></span><span class="line"><span class="cl"><span class="m">3</span> - V3 HAT
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我的平台是V3 HA3,因此选择3：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Platform selected -&gt; kvmd-platform-v3-hdmi-rpi4
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Please verify the platform selected above.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Press ENTER to <span class="k">continue</span> or CTRL+C to <span class="nb">break</span> out of script.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>回车确认，然后会进入安装依赖和编译过程流程（过程中会有<code>apt does not have a stable CLI interface</code>的提示，忽略即可）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span><span class="lnt">220
+</span><span class="lnt">221
+</span><span class="lnt">222
+</span><span class="lnt">223
+</span><span class="lnt">224
+</span><span class="lnt">225
+</span><span class="lnt">226
+</span><span class="lnt">227
+</span><span class="lnt">228
+</span><span class="lnt">229
+</span><span class="lnt">230
+</span><span class="lnt">231
+</span><span class="lnt">232
+</span><span class="lnt">233
+</span><span class="lnt">234
+</span><span class="lnt">235
+</span><span class="lnt">236
+</span><span class="lnt">237
+</span><span class="lnt">238
+</span><span class="lnt">239
+</span><span class="lnt">240
+</span><span class="lnt">241
+</span><span class="lnt">242
+</span><span class="lnt">243
+</span><span class="lnt">244
+</span><span class="lnt">245
+</span><span class="lnt">246
+</span><span class="lnt">247
+</span><span class="lnt">248
+</span><span class="lnt">249
+</span><span class="lnt">250
+</span><span class="lnt">251
+</span><span class="lnt">252
+</span><span class="lnt">253
+</span><span class="lnt">254
+</span><span class="lnt">255
+</span><span class="lnt">256
+</span><span class="lnt">257
+</span><span class="lnt">258
+</span><span class="lnt">259
+</span><span class="lnt">260
+</span><span class="lnt">261
+</span><span class="lnt">262
+</span><span class="lnt">263
+</span><span class="lnt">264
+</span><span class="lnt">265
+</span><span class="lnt">266
+</span><span class="lnt">267
+</span><span class="lnt">268
+</span><span class="lnt">269
+</span><span class="lnt">270
+</span><span class="lnt">271
+</span><span class="lnt">272
+</span><span class="lnt">273
+</span><span class="lnt">274
+</span><span class="lnt">275
+</span><span class="lnt">276
+</span><span class="lnt">277
+</span><span class="lnt">278
+</span><span class="lnt">279
+</span><span class="lnt">280
+</span><span class="lnt">281
+</span><span class="lnt">282
+</span><span class="lnt">283
+</span><span class="lnt">284
+</span><span class="lnt">285
+</span><span class="lnt">286
+</span><span class="lnt">287
+</span><span class="lnt">288
+</span><span class="lnt">289
+</span><span class="lnt">290
+</span><span class="lnt">291
+</span><span class="lnt">292
+</span><span class="lnt">293
+</span><span class="lnt">294
+</span><span class="lnt">295
+</span><span class="lnt">296
+</span><span class="lnt">297
+</span><span class="lnt">298
+</span><span class="lnt">299
+</span><span class="lnt">300
+</span><span class="lnt">301
+</span><span class="lnt">302
+</span><span class="lnt">303
+</span><span class="lnt">304
+</span><span class="lnt">305
+</span><span class="lnt">306
+</span><span class="lnt">307
+</span><span class="lnt">308
+</span><span class="lnt">309
+</span><span class="lnt">310
+</span><span class="lnt">311
+</span><span class="lnt">312
+</span><span class="lnt">313
+</span><span class="lnt">314
+</span><span class="lnt">315
+</span><span class="lnt">316
+</span><span class="lnt">317
+</span><span class="lnt">318
+</span><span class="lnt">319
+</span><span class="lnt">320
+</span><span class="lnt">321
+</span><span class="lnt">322
+</span><span class="lnt">323
+</span><span class="lnt">324
+</span><span class="lnt">325
+</span><span class="lnt">326
+</span><span class="lnt">327
+</span><span class="lnt">328
+</span><span class="lnt">329
+</span><span class="lnt">330
+</span><span class="lnt">331
+</span><span class="lnt">332
+</span><span class="lnt">333
+</span><span class="lnt">334
+</span><span class="lnt">335
+</span><span class="lnt">336
+</span><span class="lnt">337
+</span><span class="lnt">338
+</span><span class="lnt">339
+</span><span class="lnt">340
+</span><span class="lnt">341
+</span><span class="lnt">342
+</span><span class="lnt">343
+</span><span class="lnt">344
+</span><span class="lnt">345
+</span><span class="lnt">346
+</span><span class="lnt">347
+</span><span class="lnt">348
+</span><span class="lnt">349
+</span><span class="lnt">350
+</span><span class="lnt">351
+</span><span class="lnt">352
+</span><span class="lnt">353
+</span><span class="lnt">354
+</span><span class="lnt">355
+</span><span class="lnt">356
+</span><span class="lnt">357
+</span><span class="lnt">358
+</span><span class="lnt">359
+</span><span class="lnt">360
+</span><span class="lnt">361
+</span><span class="lnt">362
+</span><span class="lnt">363
+</span><span class="lnt">364
+</span><span class="lnt">365
+</span><span class="lnt">366
+</span><span class="lnt">367
+</span><span class="lnt">368
+</span><span class="lnt">369
+</span><span class="lnt">370
+</span><span class="lnt">371
+</span><span class="lnt">372
+</span><span class="lnt">373
+</span><span class="lnt">374
+</span><span class="lnt">375
+</span><span class="lnt">376
+</span><span class="lnt">377
+</span><span class="lnt">378
+</span><span class="lnt">379
+</span><span class="lnt">380
+</span><span class="lnt">381
+</span><span class="lnt">382
+</span><span class="lnt">383
+</span><span class="lnt">384
+</span><span class="lnt">385
+</span><span class="lnt">386
+</span><span class="lnt">387
+</span><span class="lnt">388
+</span><span class="lnt">389
+</span><span class="lnt">390
+</span><span class="lnt">391
+</span><span class="lnt">392
+</span><span class="lnt">393
+</span><span class="lnt">394
+</span><span class="lnt">395
+</span><span class="lnt">396
+</span><span class="lnt">397
+</span><span class="lnt">398
+</span><span class="lnt">399
+</span><span class="lnt">400
+</span><span class="lnt">401
+</span><span class="lnt">402
+</span><span class="lnt">403
+</span><span class="lnt">404
+</span><span class="lnt">405
+</span><span class="lnt">406
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">/boot/config.txt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># For more options and information see</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># http://rpf.io/configtxt</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Some settings may impact device functionality. See link above for details</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># uncomment if you get no picture on HDMI for a default &#34;safe&#34; mode</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#hdmi_safe=1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># uncomment the following to adjust overscan. Use positive numbers if console</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># goes off screen, and negative if there is too much border</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#overscan_left=16</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#overscan_right=16</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#overscan_top=16</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#overscan_bottom=16</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># uncomment to force a console size. By default it will be display&#39;s size minus</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># overscan.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#framebuffer_width=1280</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#framebuffer_height=720</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># uncomment if hdmi display is not detected and composite is being output</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#hdmi_force_hotplug=1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># uncomment to force a specific HDMI mode (this will force VGA)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#hdmi_group=1</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#hdmi_mode=1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># uncomment to force a HDMI mode rather than DVI. This can make audio work in</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># DMT (computer monitor) modes</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#hdmi_drive=2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># uncomment to increase signal to HDMI, if you have interference, blanking, or</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># no display</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#config_hdmi_boost=4</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># uncomment for composite PAL</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#sdtv_mode=2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#uncomment to overclock the arm. 700 MHz is the default.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#arm_freq=800</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Uncomment some or all of these to enable the optional hardware interfaces</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#dtparam=i2c_arm=on</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#dtparam=i2s=on</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#dtparam=spi=on</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Uncomment this to enable infrared communication.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#dtoverlay=gpio-ir,gpio_pin=17</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#dtoverlay=gpio-ir-tx,gpio_pin=18</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Additional overlays and parameters are documented /boot/overlays/README</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Enable audio (loads snd_bcm2835)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">dtparam</span><span class="o">=</span><span class="nv">audio</span><span class="o">=</span>on
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Automatically load overlays for detected cameras</span>
+</span></span><span class="line"><span class="cl"><span class="nv">camera_auto_detect</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Automatically load overlays for detected DSI displays</span>
+</span></span><span class="line"><span class="cl"><span class="nv">display_auto_detect</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Enable DRM VC4 V3D driver</span>
+</span></span><span class="line"><span class="cl"><span class="nv">dtoverlay</span><span class="o">=</span>vc4-kms-v3d
+</span></span><span class="line"><span class="cl"><span class="nv">max_framebuffers</span><span class="o">=</span><span class="m">2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Run in 64-bit mode</span>
+</span></span><span class="line"><span class="cl"><span class="nv">arm_64bit</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Disable compensation for displays with overscan</span>
+</span></span><span class="line"><span class="cl"><span class="nv">disable_overscan</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>cm4<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Enable host mode on the 2711 built-in XHCI USB controller.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># This line should be removed if the legacy DWC2 controller is required</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># (e.g. for USB device mode) or if USB support is not required.</span>
+</span></span><span class="line"><span class="cl"><span class="nv">otg_mode</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>all<span class="o">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>pi4<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Run as fast as firmware / board allows</span>
+</span></span><span class="line"><span class="cl"><span class="nv">arm_boost</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>all<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># srepac custom configs</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">hdmi_force_hotplug</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="nv">gpu_mem</span><span class="o">=</span><span class="m">128</span>
+</span></span><span class="line"><span class="cl"><span class="nv">enable_uart</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="nv">dtoverlay</span><span class="o">=</span>tc358743
+</span></span><span class="line"><span class="cl"><span class="nv">dtoverlay</span><span class="o">=</span>disable-bt
+</span></span><span class="line"><span class="cl"><span class="nv">dtoverlay</span><span class="o">=</span>dwc2,dr_mode<span class="o">=</span>peripheral
+</span></span><span class="line"><span class="cl"><span class="nv">dtparam</span><span class="o">=</span><span class="nv">act_led_gpio</span><span class="o">=</span><span class="m">13</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># HDMI audio capture</span>
+</span></span><span class="line"><span class="cl"><span class="nv">dtoverlay</span><span class="o">=</span>tc358743-audio
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># SPI (AUM)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">dtoverlay</span><span class="o">=</span>spi0-1cs
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># I2C (display)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">dtparam</span><span class="o">=</span><span class="nv">i2c_arm</span><span class="o">=</span>on
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Clock</span>
+</span></span><span class="line"><span class="cl"><span class="nv">dtoverlay</span><span class="o">=</span>i2c-rtc,pcf8563
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">/etc/modules
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># /etc/modules: kernel modules to load at boot time.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># This file contains the names of kernel modules that should be loaded</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># at boot time, one per line. Lines beginning with &#34;#&#34; are ignored.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">i2c-dev
+</span></span><span class="line"><span class="cl">tc358743
+</span></span><span class="line"><span class="cl">dwc2
+</span></span><span class="line"><span class="cl">libcomposite
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">/etc/udev/rules.d/99-kvmd.rules
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># https://unix.stackexchange.com/questions/66901/how-to-bind-usb-device-under-a-static-name</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># https://wiki.archlinux.org/index.php/Udev#Setting_static_device_names</span>
+</span></span><span class="line"><span class="cl"><span class="nv">KERNEL</span><span class="o">==</span><span class="s2">&#34;video[0-9]*&#34;</span>, <span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&#34;video4linux&#34;</span>, <span class="nv">KERNELS</span><span class="o">==</span><span class="s2">&#34;fe801000.csi|fe801000.csi1&#34;</span>, ATTR<span class="o">{</span>name<span class="o">}==</span><span class="s2">&#34;unicam-
+</span></span></span><span class="line"><span class="cl"><span class="s2">KERNEL==&#34;</span>hidg0<span class="s2">&#34;, GROUP=&#34;</span>kvmd<span class="s2">&#34;, SYMLINK+=&#34;</span>kvmd-hid-keyboard<span class="s2">&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">KERNEL==&#34;</span>hidg1<span class="s2">&#34;, GROUP=&#34;</span>kvmd<span class="s2">&#34;, SYMLINK+=&#34;</span>kvmd-hid-mouse<span class="s2">&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">KERNEL==&#34;</span>hidg2<span class="s2">&#34;, GROUP=&#34;</span>kvmd<span class="s2">&#34;, SYMLINK+=&#34;</span>kvmd-hid-mouse-alt<span class="s2">&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">-&gt; Installing dependencies for pikvm
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt install -y nginx python3 net-tools bc expect v4l-utils iptables vim dos2unix screen tmate nfs-common gpi
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt install -y python3-pip
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">pip3 install dbus-next
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-aiofiles
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-aiohttp
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-appdirs
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-asn1crypto
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-async-timeout
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-bottle
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-cffi
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-chardet
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-click
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-colorama
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-cryptography
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-dateutil
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-dbus
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-hidapi
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-idna
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-libgpiod
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-marshmallow
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-more-itertools
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-multidict
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-netifaces
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-packaging
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-passlib
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-pillow
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-ply
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-psutil
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-pycparser
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-pyelftools
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-pyghmi
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-pygments
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-pyparsing
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-requests
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-semantic-version
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-serial
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-setproctitle
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-setuptools
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-six
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-spidev
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-systemd
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-tabulate
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-urllib3
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-wrapt
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-xlib
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-yaml
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-yarl
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt-get install -y python3-serial-asyncio
+</span></span></span><span class="line"><span class="cl"><span class="s2">Selecting previously unselected package libev4:arm64.
+</span></span></span><span class="line"><span class="cl"><span class="s2">(Reading database ... 100902 files and directories currently installed.)
+</span></span></span><span class="line"><span class="cl"><span class="s2">Preparing to unpack libev4_4.33-1_arm64.deb ...
+</span></span></span><span class="line"><span class="cl"><span class="s2">Unpacking libev4:arm64 (1:4.33-1) ...
+</span></span></span><span class="line"><span class="cl"><span class="s2">Setting up libev4:arm64 (1:4.33-1) ...
+</span></span></span><span class="line"><span class="cl"><span class="s2">Processing triggers for libc-bin (2.31-13+rpt2+rpi1+deb11u5) ...
+</span></span></span><span class="line"><span class="cl"><span class="s2">(Reading database ... 100908 files and directories currently installed.)
+</span></span></span><span class="line"><span class="cl"><span class="s2">Preparing to unpack libjson-c5_0.15-2_arm64.deb ...
+</span></span></span><span class="line"><span class="cl"><span class="s2">Unpacking libjson-c5:arm64 (0.15-2) over (0.15-2) ...
+</span></span></span><span class="line"><span class="cl"><span class="s2">Setting up libjson-c5:arm64 (0.15-2) ...
+</span></span></span><span class="line"><span class="cl"><span class="s2">Processing triggers for libc-bin (2.31-13+rpt2+rpi1+deb11u5) ...
+</span></span></span><span class="line"><span class="cl"><span class="s2">(Reading database ... 100908 files and directories currently installed.)
+</span></span></span><span class="line"><span class="cl"><span class="s2">Preparing to unpack libuv1_1.40.0-2_arm64.deb ...
+</span></span></span><span class="line"><span class="cl"><span class="s2">Unpacking libuv1:arm64 (1.40.0-2) over (1.40.0-2) ...
+</span></span></span><span class="line"><span class="cl"><span class="s2">Setting up libuv1:arm64 (1.40.0-2) ...
+</span></span></span><span class="line"><span class="cl"><span class="s2">Processing triggers for libc-bin (2.31-13+rpt2+rpi1+deb11u5) ...
+</span></span></span><span class="line"><span class="cl"><span class="s2">Selecting previously unselected package ttyd.
+</span></span></span><span class="line"><span class="cl"><span class="s2">(Reading database ... 100908 files and directories currently installed.)
+</span></span></span><span class="line"><span class="cl"><span class="s2">Preparing to unpack ttyd_1.6.3-3~bpo11+1_arm64.deb ...
+</span></span></span><span class="line"><span class="cl"><span class="s2">Unpacking ttyd (1.6.3-3~bpo11+1) ...
+</span></span></span><span class="line"><span class="cl"><span class="s2">Setting up ttyd (1.6.3-3~bpo11+1) ...
+</span></span></span><span class="line"><span class="cl"><span class="s2">Created symlink /etc/systemd/system/multi-user.target.wants/ttyd.service → /lib/systemd/system/ttyd.service.
+</span></span></span><span class="line"><span class="cl"><span class="s2">Processing triggers for man-db (2.9.4-2) ...
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">ttyd version: ttyd version 1.6.3
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">-&gt; Building ustreamer
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">apt install -y build-essential libssl-dev libevent-dev libjpeg-dev libbsd-dev libraspberrypi-dev libgpiod-de
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">Cloning into &#39;ustreamer&#39;...
+</span></span></span><span class="line"><span class="cl"><span class="s2">remote: Enumerating objects: 174, done.
+</span></span></span><span class="line"><span class="cl"><span class="s2">remote: Counting objects: 100% (174/174), done.
+</span></span></span><span class="line"><span class="cl"><span class="s2">remote: Compressing objects: 100% (107/107), done.
+</span></span></span><span class="line"><span class="cl"><span class="s2">remote: Total 174 (delta 62), reused 136 (delta 54), pack-reused 0
+</span></span></span><span class="line"><span class="cl"><span class="s2">Receiving objects: 100% (174/174), 172.77 KiB | 1.31 MiB/s, done.
+</span></span></span><span class="line"><span class="cl"><span class="s2">Resolving deltas: 100% (62/62), done.
+</span></span></span><span class="line"><span class="cl"><span class="s2">make apps
+</span></span></span><span class="line"><span class="cl"><span class="s2">make[1]: Entering directory &#39;/tmp/ustreamer&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s2">make -C src
+</span></span></span><span class="line"><span class="cl"><span class="s2">make[2]: Entering directory &#39;/tmp/ustreamer/src&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC libs/base64.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC libs/frame.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC libs/logging.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC libs/memsink.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC libs/options.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC libs/unjpeg.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC ustreamer/blank.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC ustreamer/data/blank_jpeg.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC ustreamer/data/favicon_ico.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC ustreamer/data/index_html.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC ustreamer/device.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC ustreamer/encoder.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC ustreamer/encoders/cpu/encoder.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC ustreamer/encoders/hw/encoder.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC ustreamer/h264.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC ustreamer/http/bev.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC ustreamer/http/mime.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC ustreamer/http/path.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC ustreamer/http/server.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC ustreamer/http/static.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC ustreamer/http/unix.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC ustreamer/http/uri.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC ustreamer/m2m.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC ustreamer/main.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC ustreamer/options.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC ustreamer/stream.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC ustreamer/workers.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC ustreamer/gpio/gpio.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC ustreamer/http/systemd/systemd.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">== LD ustreamer.bin
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC dump/file.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">-- CC dump/main.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">== LD ustreamer-dump.bin
+</span></span></span><span class="line"><span class="cl"><span class="s2">make[2]: Leaving directory &#39;/tmp/ustreamer/src&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s2">make[1]: Leaving directory &#39;/tmp/ustreamer&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s2">make apps
+</span></span></span><span class="line"><span class="cl"><span class="s2">make[1]: Entering directory &#39;/tmp/ustreamer&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s2">make -C src
+</span></span></span><span class="line"><span class="cl"><span class="s2">make[2]: Entering directory &#39;/tmp/ustreamer/src&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s2">make[2]: Nothing to be done for &#39;all&#39;.
+</span></span></span><span class="line"><span class="cl"><span class="s2">make[2]: Leaving directory &#39;/tmp/ustreamer/src&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s2">make[1]: Leaving directory &#39;/tmp/ustreamer&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s2">make -C src install
+</span></span></span><span class="line"><span class="cl"><span class="s2">make[1]: Entering directory &#39;/tmp/ustreamer/src&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s2">mkdir -p /usr/local/bin
+</span></span></span><span class="line"><span class="cl"><span class="s2">install -m755 ustreamer.bin /usr/local/bin/ustreamer
+</span></span></span><span class="line"><span class="cl"><span class="s2">install -m755 ustreamer-dump.bin /usr/local/bin/ustreamer-dump
+</span></span></span><span class="line"><span class="cl"><span class="s2">make[1]: Leaving directory &#39;/tmp/ustreamer/src&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s2">mkdir -p /usr/local/share/man/man1
+</span></span></span><span class="line"><span class="cl"><span class="s2">for man in ustreamer.1 ustreamer-dump.1; do \
+</span></span></span><span class="line"><span class="cl"><span class="s2">	install -m644 man/</span><span class="nv">$man</span><span class="s2"> /usr/local/share/man/man1/</span><span class="nv">$man</span><span class="s2">; \
+</span></span></span><span class="line"><span class="cl"><span class="s2">	gzip -f /usr/local/share/man/man1/</span><span class="nv">$man</span><span class="s2">; \
+</span></span></span><span class="line"><span class="cl"><span class="s2">done
+</span></span></span><span class="line"><span class="cl"><span class="s2">ustreamer version/features: 5.41
+</span></span></span><span class="line"><span class="cl"><span class="s2">+ WITH_GPIO
+</span></span></span><span class="line"><span class="cl"><span class="s2">+ WITH_SYSTEMD
+</span></span></span><span class="line"><span class="cl"><span class="s2">+ WITH_PTHREAD_NP
+</span></span></span><span class="line"><span class="cl"><span class="s2">+ WITH_SETPROCTITLE
+</span></span></span><span class="line"><span class="cl"><span class="s2">+ HAS_PDEATHSIG
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">-&gt; Building wiringpi from source
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">Cloning into &#39;WiringPi&#39;...
+</span></span></span><span class="line"><span class="cl"><span class="s2">remote: Enumerating objects: 1733, done.
+</span></span></span><span class="line"><span class="cl"><span class="s2">remote: Counting objects: 100% (615/615), done.
+</span></span></span><span class="line"><span class="cl"><span class="s2">remote: Compressing objects: 100% (114/114), done.
+</span></span></span><span class="line"><span class="cl"><span class="s2">remote: Total 1733 (delta 555), reused 502 (delta 501), pack-reused 1118
+</span></span></span><span class="line"><span class="cl"><span class="s2">Receiving objects: 100% (1733/1733), 803.57 KiB | 1.24 MiB/s, done.
+</span></span></span><span class="line"><span class="cl"><span class="s2">Resolving deltas: 100% (1188/1188), done.
+</span></span></span><span class="line"><span class="cl"><span class="s2">wiringPi Build script
+</span></span></span><span class="line"><span class="cl"><span class="s2">=====================
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">WiringPi Library
+</span></span></span><span class="line"><span class="cl"><span class="s2">[UnInstall]
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] wiringPi.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] wiringSerial.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] wiringShift.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] piHiPri.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] piThread.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] wiringPiSPI.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] wiringPiI2C.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] softPwm.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] softTone.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] mcp23008.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] mcp23016.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] mcp23017.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] mcp23s08.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] mcp23s17.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] sr595.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] pcf8574.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] pcf8591.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] mcp3002.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] mcp3004.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] mcp4802.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] mcp3422.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] max31855.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] max5322.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] ads1115.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] sn3218.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] bmp180.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] htu21d.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] ds18b20.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] rht03.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] drcSerial.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] drcNet.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] pseudoPins.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] wpiExtensions.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">pseudoPins.c: In function ‘myAnalogRead’:
+</span></span></span><span class="line"><span class="cl"><span class="s2">pseudoPins.c:50:16: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+</span></span></span><span class="line"><span class="cl"><span class="s2">   50 |   int *ptr   = (int *)node-&gt;data0 ;
+</span></span></span><span class="line"><span class="cl"><span class="s2">      |                ^
+</span></span></span><span class="line"><span class="cl"><span class="s2">pseudoPins.c: In function ‘myAnalogWrite’:
+</span></span></span><span class="line"><span class="cl"><span class="s2">pseudoPins.c:59:16: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+</span></span></span><span class="line"><span class="cl"><span class="s2">   59 |   int *ptr   = (int *)node-&gt;data0 ;
+</span></span></span><span class="line"><span class="cl"><span class="s2">      |                ^
+</span></span></span><span class="line"><span class="cl"><span class="s2">pseudoPins.c: In function ‘pseudoPinsSetup’:
+</span></span></span><span class="line"><span class="cl"><span class="s2">pseudoPins.c:89:17: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+</span></span></span><span class="line"><span class="cl"><span class="s2">   89 |   node-&gt;data0 = (unsigned int)ptr ;
+</span></span></span><span class="line"><span class="cl"><span class="s2">      |                 ^
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Link (Dynamic)]
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Install Headers]
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Install Dynamic Lib]
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">WiringPi Devices Library
+</span></span></span><span class="line"><span class="cl"><span class="s2">[UnInstall]
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] ds1302.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] maxdetect.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] piNes.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] gertboard.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] piFace.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] lcd128x64.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] lcd.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] scrollPhat.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] piGlow.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Link (Dynamic)]
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Install Headers]
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Install Dynamic Lib]
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">GPIO Utility
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] gpio.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Compile] readall.c
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Link]
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Install]
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">All Done.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">NOTE: To compile programs with wiringPi, you need to add:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    -lwiringPi
+</span></span></span><span class="line"><span class="cl"><span class="s2">  to your compile line(s) To use the Gertboard, MaxDetect, etc.
+</span></span></span><span class="line"><span class="cl"><span class="s2">  code (the devLib), you need to also add:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    -lwiringPiDev
+</span></span></span><span class="line"><span class="cl"><span class="s2">  to your compile line(s).
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">gpio version: 2.70
+</span></span></span><span class="line"><span class="cl"><span class="s2">Copyright (c) 2012-2018 Gordon Henderson
+</span></span></span><span class="line"><span class="cl"><span class="s2">This is free software with ABSOLUTELY NO WARRANTY.
+</span></span></span><span class="line"><span class="cl"><span class="s2">For details type: gpio -warranty
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">Raspberry Pi Details:
+</span></span></span><span class="line"><span class="cl"><span class="s2">  Type: Pi 4B, Revision: 01, Memory: 4096MB, Maker: Sony 
+</span></span></span><span class="line"><span class="cl"><span class="s2">  * Device tree is enabled.
+</span></span></span><span class="line"><span class="cl"><span class="s2">  *--&gt; Raspberry Pi 4 Model B Rev 1.1
+</span></span></span><span class="line"><span class="cl"><span class="s2">  * This Raspberry Pi supports user-level GPIO access.
+</span></span></span><span class="line"><span class="cl"><span class="s2">-&gt; Enabling kvmd-nginx kvmd-webterm kvmd-otg and kvmd services, but do not start them.
+</span></span></span><span class="line"><span class="cl"><span class="s2">Created symlink /etc/systemd/system/multi-user.target.wants/kvmd-nginx.service → /lib/systemd/system/kvmd-ng
+</span></span></span><span class="line"><span class="cl"><span class="s2">Created symlink /etc/systemd/system/multi-user.target.wants/kvmd-webterm.service → /lib/systemd/system/kvmd-
+</span></span></span><span class="line"><span class="cl"><span class="s2">Created symlink /etc/systemd/system/multi-user.target.wants/kvmd-otg.service → /lib/systemd/system/kvmd-otg.
+</span></span></span><span class="line"><span class="cl"><span class="s2">Created symlink /etc/systemd/system/multi-user.target.wants/kvmd.service → /lib/systemd/system/kvmd.service.
+</span></span></span><span class="line"><span class="cl"><span class="s2">Created symlink /etc/systemd/system/multi-user.target.wants/kvmd-fix.service → /lib/systemd/system/kvmd-fix.
+</span></span></span><span class="line"><span class="cl"><span class="s2">Created symlink /etc/systemd/system/multi-user.target.wants/kvmd-tc358743.service → /lib/systemd/system/kvmd
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">Reboot is required to create kvmd users and groups.
+</span></span></span><span class="line"><span class="cl"><span class="s2">Please re-run this script after reboot to complete the install.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">Press ENTER to continue or CTRL+C to break out of script.
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>最后这里提示<code>Reboot is required to create kvmd users and groups.Please re-run this script after reboot to complete the install.</code>，会在重启之后创建一个kvmd用户和组，要求重启后再次运行这个脚本，按下回车之后会自动重启。重启过后再次执行脚本进入第二阶段：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Running part <span class="m">2</span> of PiKVM installer v5.6 script <span class="k">for</span> Raspbian by @srepac
+</span></span><span class="line"><span class="cl"><span class="o">==</span>&gt; Ensuring KVMD users and groups ...
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">-&gt; Disabling nginx service, so that we can use kvmd-nginx instead
+</span></span><span class="line"><span class="cl">Synchronizing state of nginx.service with SysV service script with /lib/systemd/systemd-sysv-install.
+</span></span><span class="line"><span class="cl">Executing: /lib/systemd/systemd-sysv-install disable nginx
+</span></span><span class="line"><span class="cl">Removed /etc/systemd/system/multi-user.target.wants/nginx.service.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">-&gt; Creating symlinks <span class="k">for</span> use with kvmd python scripts
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">-&gt; Creating kvmd-webterm homedir
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">2</span> kvmd-webterm root <span class="m">4096</span> Aug <span class="m">10</span> 17:16 /home/kvmd-webterm
+</span></span><span class="line"><span class="cl">ConfigError: Invalid value <span class="s1">&#39;&#39;</span> <span class="k">for</span> key <span class="s1">&#39;kvmd/streamer/unix&#39;</span>: None argument is not a valid absolute path
+</span></span><span class="line"><span class="cl">Did kvmd -m run properly?  <span class="o">[</span>y/n<span class="o">]</span> y
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">-&gt; Restoring config files
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root <span class="m">11360</span> Nov <span class="m">20</span>  <span class="m">2021</span> tools.js
+</span></span><span class="line"><span class="cl">Getting most current tools.js file... <span class="k">done</span>
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root <span class="m">11856</span> Aug <span class="m">10</span> 17:18 tools.js
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root <span class="m">11360</span> Nov <span class="m">20</span>  <span class="m">2021</span> tools.js.20230810
+</span></span><span class="line"><span class="cl">Updating CSS files as per pikvm/pikvm#599: fixed webui windows oversizing
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> /usr/share/kvmd/web/share/css/kvm/stream.css
+</span></span><span class="line"><span class="cl"> /usr/share/kvmd/web/share/css/login/login.css
+</span></span><span class="line"><span class="cl"> /usr/share/kvmd/web/share/css/modal.css
+</span></span><span class="line"><span class="cl"> /usr/share/kvmd/web/share/css/start.css
+</span></span><span class="line"><span class="cl"> /usr/share/kvmd/web/share/css/vars.css
+</span></span><span class="line"><span class="cl"> /usr/share/kvmd/web/share/css/window.css
+</span></span><span class="line"><span class="cl">Job <span class="k">for</span> kvmd-otg.service failed because the control process exited with error code.
+</span></span><span class="line"><span class="cl">See <span class="s2">&#34;systemctl status kvmd-otg.service&#34;</span> and <span class="s2">&#34;journalctl -xe&#34;</span> <span class="k">for</span> details.
+</span></span><span class="line"><span class="cl">Found existing installation: Pillow 8.1.2
+</span></span><span class="line"><span class="cl">Not uninstalling pillow at /usr/lib/python3/dist-packages, outside environment /usr
+</span></span><span class="line"><span class="cl">Can<span class="s1">&#39;t uninstall &#39;</span>Pillow<span class="s1">&#39;. No files were found to uninstall.
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">Check kvmd devices
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">lrwxrwxrwx 1 root root 6 Aug 10 17:18 /dev/kvmd-video -&gt; video0
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">You should see devices for keyboard, mouse, and video.
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">Point a browser to https://tama
+</span></span></span><span class="line"><span class="cl"><span class="s1">If it doesn&#39;</span>t work, <span class="k">then</span> reboot one last time.
+</span></span><span class="line"><span class="cl">Please make sure kvmd services are running after reboot.
+</span></span><span class="line"><span class="cl">Raspbian pikvm installer script completed on Thu <span class="m">10</span> Aug 17:18:18 CST <span class="m">2023</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>好像是受上面的配置影响，字面上理解是OTG这部分出问题了，但是不管了，先进<code>https://tama</code>看看 ： <img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/08/10/64d4ac937ca7b.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="500报错"
+	
+	
+> 直接报错了&hellip;查日志看看：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">root@tama:~/pikvm# journalctl -fu kvmd
+</span></span><span class="line"><span class="cl">-- Journal begins at Wed 2023-05-03 11:23:19 CST. --
+</span></span><span class="line"><span class="cl">Aug 10 17:25:26 tama systemd[1]: kvmd.service: Main process exited, code=exited, status=1/FAILURE
+</span></span><span class="line"><span class="cl">Aug 10 17:25:27 tama kvmd-cleanup[3136]: ConfigError: Invalid value &#39;&#39; for key &#39;kvmd/streamer/unix&#39;: None ar
+</span></span><span class="line"><span class="cl">Aug 10 17:25:27 tama systemd[1]: kvmd.service: Control process exited, code=exited, status=1/FAILURE
+</span></span><span class="line"><span class="cl">Aug 10 17:25:27 tama systemd[1]: kvmd.service: Failed with result &#39;exit-code&#39;.
+</span></span><span class="line"><span class="cl">Aug 10 17:25:27 tama systemd[1]: kvmd.service: Consumed 1.483s CPU time.
+</span></span><span class="line"><span class="cl">Aug 10 17:25:30 tama systemd[1]: kvmd.service: Scheduled restart job, restart counter is at 93.
+</span></span><span class="line"><span class="cl">Aug 10 17:25:30 tama systemd[1]: Stopped PiKVM - The main daemon.
+</span></span><span class="line"><span class="cl">Aug 10 17:25:30 tama systemd[1]: kvmd.service: Consumed 1.483s CPU time.
+</span></span><span class="line"><span class="cl">Aug 10 17:25:30 tama systemd[1]: Started PiKVM - The main daemon.
+</span></span><span class="line"><span class="cl">Aug 10 17:25:31 tama kvmd[3148]: ConfigError: Invalid value &#39;&#39; for key &#39;kvmd/streamer/unix&#39;: None argument i
+</span></span><span class="line"><span class="cl">Aug 10 17:25:31 tama systemd[1]: kvmd.service: Main process exited, code=exited, status=1/FAILURE
+</span></span><span class="line"><span class="cl">Aug 10 17:25:31 tama kvmd-cleanup[3150]: ConfigError: Invalid value &#39;&#39; for key &#39;kvmd/streamer/unix&#39;: None ar
+</span></span><span class="line"><span class="cl">Aug 10 17:25:32 tama systemd[1]: kvmd.service: Control process exited, code=exited, status=1/FAILURE
+</span></span><span class="line"><span class="cl">Aug 10 17:25:32 tama systemd[1]: kvmd.service: Failed with result &#39;exit-code&#39;.
+</span></span><span class="line"><span class="cl">Aug 10 17:25:32 tama systemd[1]: kvmd.service: Consumed 1.490s CPU time.
+</span></span><span class="line"><span class="cl">qAug 10 17:25:35 tama systemd[1]: kvmd.service: Scheduled restart job, restart counter is at 94.
+</span></span><span class="line"><span class="cl">Aug 10 17:25:35 tama systemd[1]: Stopped PiKVM - The main daemon.
+</span></span><span class="line"><span class="cl">Aug 10 17:25:35 tama systemd[1]: kvmd.service: Consumed 1.490s CPU time.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>直接就卡在启动过程中反复重启了&hellip;
+如果再次运行脚本，会提示让你确认命令<code>kvmd -n</code>能否运行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Running part <span class="m">2</span> of PiKVM installer v5.6 script <span class="k">for</span> Raspbian by @srepac
+</span></span><span class="line"><span class="cl"><span class="o">==</span>&gt; Ensuring KVMD users and groups ...
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">-&gt; Disabling nginx service, so that we can use kvmd-nginx instead
+</span></span><span class="line"><span class="cl">Synchronizing state of nginx.service with SysV service script with /lib/systemd/systemd-sysv-install.
+</span></span><span class="line"><span class="cl">Executing: /lib/systemd/systemd-sysv-install disable nginx
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">-&gt; Creating symlinks <span class="k">for</span> use with kvmd python scripts
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">-&gt; Creating kvmd-webterm homedir
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">2</span> kvmd-webterm root <span class="m">4096</span> Aug <span class="m">10</span> 17:16 /home/kvmd-webterm
+</span></span><span class="line"><span class="cl">ConfigError: Invalid value <span class="s1">&#39;&#39;</span> <span class="k">for</span> key <span class="s1">&#39;kvmd/streamer/unix&#39;</span>: None argument is not a valid absolute path
+</span></span><span class="line"><span class="cl">Did kvmd -m run properly?  <span class="o">[</span>y/n<span class="o">]</span> n
+</span></span><span class="line"><span class="cl">Please install missing packages as per the kvmd -m output in another ssh/terminal.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>但是直接运行<code>kvmd -m</code>又会报同样的错：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">root@tama:~/pikvm# kvmd -m
+</span></span><span class="line"><span class="cl">ConfigError: Invalid value <span class="s1">&#39;&#39;</span> <span class="k">for</span> key <span class="s1">&#39;kvmd/streamer/unix&#39;</span>: None argument is not a valid absolute path
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后我看了眼脚本文件里面有这么一行:
+<code># 5.6   05/24/23 - added override entry to fix the Invalid value '' for key 'kvmd/server/unix': None argument error</code>
+(|||ﾟДﾟ)?server报错是没有，但是还有个streamer报错啊？
+我上discord翻了下，发现有人也报过这个错误：
+<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/08/10/64d4b8cc9513b.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="discord"
+	
+	
+>
+我试着把他这句加到我的配置文件的streamer下面：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">    streamer:
+</span></span><span class="line"><span class="cl">        unix: /run/kvmd/kvmd.sock
+</span></span><span class="line"><span class="cl">        h264_bitrate:
+</span></span><span class="line"><span class="cl">            default: 5000
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>重启之后报错发生改变：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">root@tama:/etc/kvmd# journalctl -fu kvmd
+</span></span><span class="line"><span class="cl">-- Journal begins at Wed 2023-05-03 11:23:19 CST. --
+</span></span><span class="line"><span class="cl">Aug 10 18:17:01 tama systemd[1]: kvmd.service: Scheduled restart job, restart counter is at 33.
+</span></span><span class="line"><span class="cl">Aug 10 18:17:01 tama systemd[1]: Stopped PiKVM - The main daemon.
+</span></span><span class="line"><span class="cl">Aug 10 18:17:01 tama systemd[1]: kvmd.service: Consumed 1.492s CPU time.
+</span></span><span class="line"><span class="cl">Aug 10 18:17:01 tama systemd[1]: Started PiKVM - The main daemon.
+</span></span><span class="line"><span class="cl">Aug 10 18:17:02 tama kvmd[6664]: ConfigError: Invalid value &#39;&#39; for key &#39;ipmi/kvmd/unix&#39;: None argument is not a valid absolute path
+</span></span><span class="line"><span class="cl">Aug 10 18:17:02 tama systemd[1]: kvmd.service: Main process exited, code=exited, status=1/FAILURE
+</span></span><span class="line"><span class="cl">Aug 10 18:17:02 tama kvmd-cleanup[6670]: ConfigError: Invalid value &#39;&#39; for key &#39;ipmi/kvmd/unix&#39;: None argument is not a valid absolute path
+</span></span><span class="line"><span class="cl">Aug 10 18:17:02 tama systemd[1]: kvmd.service: Control process exited, code=exited, status=1/FAILURE
+</span></span><span class="line"><span class="cl">Aug 10 18:17:02 tama systemd[1]: kvmd.service: Failed with result &#39;exit-code&#39;.
+</span></span><span class="line"><span class="cl">Aug 10 18:17:02 tama systemd[1]: kvmd.service: Consumed 1.489s CPU time.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这个key&hellip;
+要放到哪去？
+我放弃了。</p>
+<hr>
+<p>###转战blikvm
+换个思路，blikvm的文档里面也有一个版本能在64位raspbian上跑，至少看起来是成功了，该文档地址位于：<a class="link" href="https://github.com/ThomasVon2021/blikvm/blob/master/dev-readme.md"  target="_blank" rel="noopener"
+    >https://github.com/ThomasVon2021/blikvm/blob/master/dev-readme.md</a>
+其使用的环境为：</p>
+<ol>
+<li>Raspberry Pi OS Lite</li>
+<li>Release date: 20230201</li>
+<li>System: 64-bit</li>
+<li>Kernel version: 5.15</li>
+<li>Debian version: 11 (bullseye)
+和新版的除了内核高点之外其他也差不到哪去。所以在最新版本上跑试试。
+原文档就不放出来了，真的无力吐槽&hellip;就放一些出问题的地方吧&hellip;</li>
+<li><code>git clone https://libwebsockets.org/repo/libwebsockets</code>链接是失效的，应该使用<code>git clone https://github.com/warmcat/libwebsockets</code></li>
+<li>php安装内容是偏向7.4的，但是<code>pecl install http://pecl.php.net/get/swoole-5.0.3.tgz</code>这个地方会报错表示该版本仅支持php8.0+，所以需要修改成4.8.10或者其他版本。还有就是<code>pecl install inotify</code>这个命令无法直接执行，需要去pecl下载包下来到本地手动安装。</li>
+<li><code>Install kvmd services</code>这个地方更是吐血，首先是安装kvmd-main这个阶段，<code>kvmd-main.service</code>中<code>ExecStart</code>指向<code>/usr/bin/blikvm/kvmd-main</code>，但是这个文件并不在这个目录，导致安装会出错，同时这个<code>kvmd-main.service</code>依赖syslogd，需要手动运行<code>apt install busybox-syslogd</code>。其他的ustreamer以及kvmd-web均是如此，需要进所有文件去检查，路径有很多都是错的&hellip;
+一通修改之后终于见到了熟悉的界面</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="o">----------------------------------------------------------</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Commercial</span> <span class="ne">IP</span> <span class="n">KVM</span> <span class="n">using</span> <span class="n">Raspberry</span> <span class="n">Pi</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl"><span class="o">----------------------------------------------------------</span>
+</span></span><span class="line"><span class="cl"><span class="n">Copyright</span> <span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="n">gzsgcs</span> <span class="o">-</span> <span class="n">All</span> <span class="n">Rights</span> <span class="n">Reserved</span>
+</span></span><span class="line"><span class="cl"><span class="n">Unauthorized</span> <span class="n">copying</span> <span class="n">of</span> <span class="n">any</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">project</span><span class="p">,</span> <span class="n">via</span> <span class="n">any</span> <span class="n">medium</span> <span class="n">is</span> <span class="n">strictly</span> <span class="n">prohibited</span>
+</span></span><span class="line"><span class="cl"><span class="n">Proprietary</span> <span class="ow">and</span> <span class="n">confidential</span>
+</span></span><span class="line"><span class="cl"><span class="n">Written</span> <span class="n">by</span> <span class="n">gzsgcs</span><span class="o">&lt;</span><span class="n">gzsgcs</span><span class="err">@</span><span class="n">gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">September</span> <span class="mi">2022</span>
+</span></span><span class="line"><span class="cl"><span class="o">----------------------------------------------------------</span>
+</span></span><span class="line"><span class="cl"><span class="o">-------------------------</span>
+</span></span><span class="line"><span class="cl"><span class="n">Version</span><span class="p">:</span><span class="mf">2.11</span><span class="o">.</span><span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="n">Build</span><span class="p">:</span><span class="mi">2023</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">08</span> <span class="mi">15</span><span class="p">:</span><span class="mi">13</span><span class="p">:</span><span class="mi">24</span>
+</span></span><span class="line"><span class="cl"><span class="o">-------------------------</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">2023</span><span class="o">/</span><span class="mi">08</span><span class="o">/</span><span class="mi">10</span> <span class="mi">23</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">26</span><span class="p">]</span> <span class="p">[</span><span class="n">Log</span><span class="p">]</span> <span class="n">Program</span> <span class="n">start</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">2023</span><span class="o">/</span><span class="mi">08</span><span class="o">/</span><span class="mi">10</span> <span class="mi">23</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">26</span><span class="p">]</span> <span class="p">[</span><span class="n">Log</span><span class="p">]</span> <span class="n">Bootstrapping</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">2023</span><span class="o">/</span><span class="mi">08</span><span class="o">/</span><span class="mi">10</span> <span class="mi">23</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">26</span><span class="p">]</span> <span class="p">[</span><span class="n">Log</span><span class="p">]</span> <span class="n">Checking</span> <span class="n">file</span> <span class="n">system</span> <span class="n">read</span> <span class="n">write</span> <span class="n">status</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">2023</span><span class="o">/</span><span class="mi">08</span><span class="o">/</span><span class="mi">10</span> <span class="mi">23</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">26</span><span class="p">]</span> <span class="p">[</span><span class="n">Log</span><span class="p">]</span> <span class="n">file</span> <span class="n">system</span> <span class="n">is</span> <span class="n">readable</span><span class="o">/</span><span class="n">writable</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">2023</span><span class="o">/</span><span class="mi">08</span><span class="o">/</span><span class="mi">10</span> <span class="mi">23</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">26</span><span class="p">]</span> <span class="p">[</span><span class="n">Log</span><span class="p">]</span> <span class="n">Emulating</span> <span class="n">network</span> <span class="n">interfaces</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">2023</span><span class="o">/</span><span class="mi">08</span><span class="o">/</span><span class="mi">10</span> <span class="mi">23</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">26</span><span class="p">]</span> <span class="p">[</span><span class="n">Log</span><span class="p">]</span> <span class="n">Interface</span><span class="p">:</span> <span class="p">[</span><span class="n">eth0</span><span class="p">]</span> <span class="p">,</span><span class="ne">IP</span><span class="o">/</span><span class="n">Mask</span><span class="o">/</span><span class="n">Broadcast</span><span class="p">:</span> <span class="p">[</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">50.164</span><span class="o">/</span><span class="mf">255.255</span><span class="o">.</span><span class="mf">255.0</span><span class="o">/</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">50.255</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">2023</span><span class="o">/</span><span class="mi">08</span><span class="o">/</span><span class="mi">10</span> <span class="mi">23</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">26</span><span class="p">]</span> <span class="p">[</span><span class="n">Log</span><span class="p">]</span> <span class="n">You</span> <span class="n">are</span> <span class="n">running</span> <span class="n">Release</span> <span class="n">Version</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">2023</span><span class="o">/</span><span class="mi">08</span><span class="o">/</span><span class="mi">10</span> <span class="mi">23</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">26</span><span class="p">]</span> <span class="p">[</span><span class="n">Warning</span><span class="p">]</span> <span class="n">Custom</span> <span class="n">configure</span> <span class="n">file</span> <span class="ow">not</span> <span class="n">found</span> <span class="p">,</span> <span class="n">skip</span><span class="o">!</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">2023</span><span class="o">/</span><span class="mi">08</span><span class="o">/</span><span class="mi">10</span> <span class="mi">23</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">26</span><span class="p">]</span> <span class="p">[</span><span class="n">Log</span><span class="p">]</span> <span class="n">admin</span> <span class="n">config</span> <span class="n">loaded</span><span class="o">!</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">2023</span><span class="o">/</span><span class="mi">08</span><span class="o">/</span><span class="mi">10</span> <span class="mi">23</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">26</span><span class="p">]</span> <span class="p">[</span><span class="n">Log</span><span class="p">]</span> <span class="n">check</span> <span class="n">msd</span> <span class="n">directory</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">2023</span><span class="o">/</span><span class="mi">08</span><span class="o">/</span><span class="mi">10</span> <span class="mi">23</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">26</span><span class="p">]</span> <span class="p">[</span><span class="n">Log</span><span class="p">]</span> <span class="n">Building</span> <span class="k">static</span> <span class="n">assets</span> <span class="n">cache</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">2023</span><span class="o">/</span><span class="mi">08</span><span class="o">/</span><span class="mi">10</span> <span class="mi">23</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">26</span><span class="p">]</span> <span class="p">[</span><span class="n">Log</span><span class="p">]</span> <span class="n">Static</span> <span class="n">assets</span> <span class="n">cache</span> <span class="n">build</span> <span class="n">success</span><span class="o">!</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">2023</span><span class="o">/</span><span class="mi">08</span><span class="o">/</span><span class="mi">10</span> <span class="mi">23</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">26</span><span class="p">]</span> <span class="p">[</span><span class="n">Log</span><span class="p">]</span> <span class="n">MSD</span><span class="o">.</span><span class="n">JSON</span> <span class="ow">not</span> <span class="n">exists</span><span class="p">,</span><span class="n">initializing</span><span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">2023</span><span class="o">/</span><span class="mi">08</span><span class="o">/</span><span class="mi">10</span> <span class="mi">23</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">26</span><span class="p">]</span> <span class="p">[</span><span class="n">Log</span><span class="p">]</span> <span class="n">MSD</span> <span class="n">json</span> <span class="n">initialize</span> <span class="n">success</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">2023</span><span class="o">/</span><span class="mi">08</span><span class="o">/</span><span class="mi">10</span> <span class="mi">23</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">26</span><span class="p">]</span> <span class="p">[</span><span class="n">Log</span><span class="p">]</span> <span class="n">Current</span> <span class="n">Resolution</span> <span class="n">is</span> <span class="p">[</span><span class="mi">640</span> <span class="n">x</span> <span class="mi">480</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">2023</span><span class="o">/</span><span class="mi">08</span><span class="o">/</span><span class="mi">10</span> <span class="mi">23</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">26</span><span class="p">]</span> <span class="p">[</span><span class="n">Log</span><span class="p">]</span> <span class="n">wait</span> <span class="k">for</span> <span class="n">ustreamer</span> <span class="n">service</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">2023</span><span class="o">/</span><span class="mi">08</span><span class="o">/</span><span class="mi">10</span> <span class="mi">23</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">26</span><span class="p">]</span> <span class="p">[</span><span class="n">Log</span><span class="p">]</span> <span class="n">ustreamer</span> <span class="n">service</span> <span class="n">has</span> <span class="n">started</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">2023</span><span class="o">/</span><span class="mi">08</span><span class="o">/</span><span class="mi">10</span> <span class="mi">23</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">26</span><span class="p">]</span> <span class="p">[</span><span class="n">Log</span><span class="p">]</span> <span class="n">wait</span> <span class="k">for</span> <span class="n">janus</span> <span class="n">service</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>但是依然有好几个服务还没运行成功（janus 和 ustreamer)&hellip;.再慢慢改吧。</p>
+<hr>
+<p>不改了，去死吧。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/pikvm.html">Pikvm</a>
+        
+            <a href="/tags/raspbian.html">Raspbian</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/fruity-pikvm.html.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用fruity-pikvm实现在64位raspios上运行pikvm</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/acfun-gift-count.html.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">关于AcFun礼物统计网页的说明</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/anti-360albumviewer.html.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">如何避免大数字自动安装大数字看图(360AlbumViewer)</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/traccar.html.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">搭建自己的轨迹记录程序 Traccar</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/tinystatus.html.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用tinystatus构建一个轻量化的状态监测站</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        --waline-font-size: var(--article-font-size);
+    }
+    .waline-container .wl-count {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://unpkg.com/@waline/emojis@1.0.1/weibo"],"lang":"zh-CN","locale":{"admin":"博主","placeholder":"欢迎评论"},"pageview":false,"requiredMeta":["name","email"],"serverURL":"https://artalk.tama.guru"});
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2022 - 
+        
+        2025 tamakyi
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.8382466cdcb1c0571ef261e5654d7d81331fcbd60eaefd6a14e7253cae165eb6.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

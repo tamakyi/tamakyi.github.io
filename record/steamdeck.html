@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="I have a d○ck. 不得不说，这东西挺有意思的，amd定制的zen2架构CPU及性能相当于1050的显卡能够应付大部分场景使用以及轻度游戏，还能轻松安装SteamOS+WIN10/11组合，玩一些原系统上因为各种原因玩不了的游戏，如果空间不够，还能自己买一个2230的M2换上去。但是在使用过程中这玩意其实坑挺多的，想要快乐玩耍掌握一些linux基础知识以及“合适的网络”是必不可少的。下面是我在使用过程中碰到的一些问题以及解决办法。 ####·首次开机联网后一直提示正在安装，然后卡在还剩1秒或者弹窗报错·#### 基本上是国内专属问题了，归根结底就是网络原因和&quot;steam.cloud&quot;连接有问题导致更新无法进行，而更新又是必须的就导致了这个死循环。 有网友说我有科技，直接开科技不就行了？如果是在路由的话这必须要设置全局代理，因为SteamDeck的WIFI连接界面不能手动设置代理。用手机开热点或许也是一个好办法，但是实测我的流量根本没走，可能是我的姿势不对吧。 还有网友说在安装界面直接长按电源键硬重启，多几次就能跳过，我试了四五次也不行。其中一次关机重启后进入到一个有LOGO+进度条及网速的界面，也在提示install update，但是更新完自动重启之后还是问题依旧。 目前我唯一测试通过的方法就是手机挂UU加速器（亲测雷神无效）加速steam（仅加速商店是免费的），然后开热点，SteamDeck这边开机的时候要设置为英文+UTC-8时区（即默认设置）再连接热点更新，大概率等待半小时就能通过了，手机这边如果开了流量监控，就会发现流量基本1.5m/s这个速度走（峰值4-5m/s），如果没动的话，建议重启加速器或是点击SteamDeck上的Back返回上一步重新开始，直到流量正常出去。大概也就花费1-2G。（下图是我更新了两次）\n">
+<title>捣鼓SteamDeck的那些事</title>
+
+<link rel='canonical' href='https://example.com/record/steamdeck.html'>
+
+<link rel="stylesheet" href="/scss/style.min.6a6b3f9159829e2ab92859ca6f195fce9a66f7e31fb62518aaeea99361e6dc9e.css"><meta property='og:title' content="捣鼓SteamDeck的那些事">
+<meta property='og:description' content="I have a d○ck. 不得不说，这东西挺有意思的，amd定制的zen2架构CPU及性能相当于1050的显卡能够应付大部分场景使用以及轻度游戏，还能轻松安装SteamOS+WIN10/11组合，玩一些原系统上因为各种原因玩不了的游戏，如果空间不够，还能自己买一个2230的M2换上去。但是在使用过程中这玩意其实坑挺多的，想要快乐玩耍掌握一些linux基础知识以及“合适的网络”是必不可少的。下面是我在使用过程中碰到的一些问题以及解决办法。 ####·首次开机联网后一直提示正在安装，然后卡在还剩1秒或者弹窗报错·#### 基本上是国内专属问题了，归根结底就是网络原因和&quot;steam.cloud&quot;连接有问题导致更新无法进行，而更新又是必须的就导致了这个死循环。 有网友说我有科技，直接开科技不就行了？如果是在路由的话这必须要设置全局代理，因为SteamDeck的WIFI连接界面不能手动设置代理。用手机开热点或许也是一个好办法，但是实测我的流量根本没走，可能是我的姿势不对吧。 还有网友说在安装界面直接长按电源键硬重启，多几次就能跳过，我试了四五次也不行。其中一次关机重启后进入到一个有LOGO+进度条及网速的界面，也在提示install update，但是更新完自动重启之后还是问题依旧。 目前我唯一测试通过的方法就是手机挂UU加速器（亲测雷神无效）加速steam（仅加速商店是免费的），然后开热点，SteamDeck这边开机的时候要设置为英文+UTC-8时区（即默认设置）再连接热点更新，大概率等待半小时就能通过了，手机这边如果开了流量监控，就会发现流量基本1.5m/s这个速度走（峰值4-5m/s），如果没动的话，建议重启加速器或是点击SteamDeck上的Back返回上一步重新开始，直到流量正常出去。大概也就花费1-2G。（下图是我更新了两次）\n">
+<meta property='og:url' content='https://example.com/record/steamdeck.html'>
+<meta property='og:site_name' content='狼的公告板 ver.Hugo'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='SteamDeck' /><meta property='article:tag' content='archlinux' /><meta property='article:tag' content='双系统' /><meta property='article:published_time' content='2023-02-02T09:47:00&#43;00:00'/><meta property='article:modified_time' content='2023-02-02T09:47:00&#43;00:00'/>
+<meta name="twitter:title" content="捣鼓SteamDeck的那些事">
+<meta name="twitter:description" content="I have a d○ck. 不得不说，这东西挺有意思的，amd定制的zen2架构CPU及性能相当于1050的显卡能够应付大部分场景使用以及轻度游戏，还能轻松安装SteamOS+WIN10/11组合，玩一些原系统上因为各种原因玩不了的游戏，如果空间不够，还能自己买一个2230的M2换上去。但是在使用过程中这玩意其实坑挺多的，想要快乐玩耍掌握一些linux基础知识以及“合适的网络”是必不可少的。下面是我在使用过程中碰到的一些问题以及解决办法。 ####·首次开机联网后一直提示正在安装，然后卡在还剩1秒或者弹窗报错·#### 基本上是国内专属问题了，归根结底就是网络原因和&quot;steam.cloud&quot;连接有问题导致更新无法进行，而更新又是必须的就导致了这个死循环。 有网友说我有科技，直接开科技不就行了？如果是在路由的话这必须要设置全局代理，因为SteamDeck的WIFI连接界面不能手动设置代理。用手机开热点或许也是一个好办法，但是实测我的流量根本没走，可能是我的姿势不对吧。 还有网友说在安装界面直接长按电源键硬重启，多几次就能跳过，我试了四五次也不行。其中一次关机重启后进入到一个有LOGO+进度条及网速的界面，也在提示install update，但是更新完自动重启之后还是问题依旧。 目前我唯一测试通过的方法就是手机挂UU加速器（亲测雷神无效）加速steam（仅加速商店是免费的），然后开热点，SteamDeck这边开机的时候要设置为英文+UTC-8时区（即默认设置）再连接热点更新，大概率等待半小时就能通过了，手机这边如果开了流量监控，就会发现流量基本1.5m/s这个速度走（峰值4-5m/s），如果没动的话，建议重启加速器或是点击SteamDeck上的Back返回上一步重新开始，直到流量正常出去。大概也就花费1-2G。（下图是我更新了两次）\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_d6a5c15246229c7b.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">狼的公告板 ver.Hugo</a></h1>
+            <h2 class="site-description">念念不忘，必有回响</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://example.com/en/" >English</option>
+                                
+                                    <option value="https://example.com/" selected>中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/record.html" >
+                Record
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/record/steamdeck.html">捣鼓SteamDeck的那些事</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Feb 02, 2023</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 6 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>I have a d○ck.
+不得不说，这东西挺有意思的，amd定制的zen2架构CPU及性能相当于1050的显卡能够应付大部分场景使用以及轻度游戏，还能轻松安装SteamOS+WIN10/11组合，玩一些原系统上因为各种原因玩不了的游戏，如果空间不够，还能自己买一个2230的M2换上去。但是在使用过程中这玩意其实坑挺多的，想要快乐玩耍掌握一些linux基础知识以及“合适的网络”是必不可少的。下面是我在使用过程中碰到的一些问题以及解决办法。
+####·首次开机联网后一直提示正在安装，然后卡在还剩1秒或者弹窗报错·####
+基本上是国内专属问题了，归根结底就是网络原因和&quot;steam.cloud&quot;连接有问题导致更新无法进行，而更新又是必须的就导致了这个死循环。
+有网友说我有科技，直接开科技不就行了？如果是在路由的话这必须要设置全局代理，因为SteamDeck的WIFI连接界面不能手动设置代理。用手机开热点或许也是一个好办法，但是实测我的流量根本没走，可能是我的姿势不对吧。
+还有网友说在安装界面直接长按电源键硬重启，多几次就能跳过，我试了四五次也不行。其中一次关机重启后进入到一个有LOGO+进度条及网速的界面，也在提示install update，但是更新完自动重启之后还是问题依旧。
+目前我唯一测试通过的方法就是手机挂UU加速器（亲测雷神无效）加速steam（仅加速商店是免费的），然后开热点，SteamDeck这边开机的时候要设置为英文+UTC-8时区（即默认设置）再连接热点更新，大概率等待半小时就能通过了，手机这边如果开了流量监控，就会发现流量基本1.5m/s这个速度走（峰值4-5m/s），如果没动的话，建议重启加速器或是点击SteamDeck上的Back返回上一步重新开始，直到流量正常出去。大概也就花费1-2G。（下图是我更新了两次）<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/02/02/63db0743c8f68.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="2023-02-02T00:43:46.png"
+	
+	
+></p>
+<p>####·登录不上Steam账号·####
+首次登录可能会遇到这个问题，开加速器即可。</p>
+<p>####·我想换SSD，应该注意什么·####
+必须换2230长度的M2硬盘替换，一般能买到的都是二手的SN740或者530（530存货比较少反而比较贵），其他长度的硬盘虽然能够魔改替换上去但是会严重影响和硬盘紧贴在一起的电源芯片的散热，有烧鸡可能。详细拆机更换流程可以直接参考<a class="link" href="https://zh.ifixit.com/Guide/Steam&#43;Deck&#43;SSD&#43;%E6%9B%B4%E6%8D%A2/148989"  target="_blank" rel="noopener"
+    >iFixit</a>或者对着<a class="link" href="https://www.acfun.cn/v/ac39982689"  target="_blank" rel="noopener"
+    >拆机视频</a>操作即可。切记拆机后断开电源再换盘。</p>
+<p>####·我想在固态上装双系统，而且开机能够选择引导·####
+主要分为以下几个步骤：在U盘上载入一个带gparted的系统&ndash;&gt;拆出分区&ndash;&gt;装系统&ndash;&gt;做引导。
+（1）建议找一块USB3.0的U盘，到此处下载<a class="link" href="https://github.com/ventoy/Ventoy/releases"  target="_blank" rel="noopener"
+    >Ventoy</a>最新版本，下载解压执行Ventoy2Disk.exe，插入U盘后点击安装会把P盘数据格式化，然后生成一个Ventoy的空盘，<a class="link" href="https://downloads.sourceforge.net/gparted/gparted-live-1.4.0-6-amd64.iso"  target="_blank" rel="noopener"
+    >下载gparted</a>或其他带gparted的系统镜像直接扔进这个空盘，同时准备好WIN10/11的系统镜像，也一并放进去。
+（2）把SteamDeck关机，用OTG或拓展坞把U盘连接到SteamDeck。按音量-及电源键一秒进入启动项选择，进入Boot from USB,然后会弹出Ventoy的启动界面并显示所有的镜像，选择下载好的gparted的iso镜像，选择normal启动，然后一路回车就进入镜像了。
+（3）选择最大的分区将其resize，在最后部分调整出一块200G的空间，然后新增两个NTFS分区，一个用于装系统（80G），一个用于与SteamOS共享数据及给WIN装游戏。（根据实际情况自行调整）调整完后关机。
+（4）按步骤2进入启动项选择，这次选择WIN镜像，后续步骤不再赘述，安装步骤和一般装系统完全一致。
+（5）等安装完成后重启进入启动项选择，进入SteamOS并进入桌面模式，在右下角菜单找到系统&gt;终端，</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">passwd</span>  <span class="c1">#修改默认密码</span>
+</span></span><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">passwd</span>  <span class="c1">#修改root密码</span>
+</span></span><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">steamos</span><span class="o">-</span><span class="n">readonly</span> <span class="n">disable</span>  <span class="c1">#关闭系统只读</span>
+</span></span><span class="line"><span class="cl"><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">jlobue10</span><span class="o">/</span><span class="n">SteamDeck_rEFInd</span>
+</span></span><span class="line"><span class="cl"><span class="n">mv</span> <span class="n">SteamDeck_rEFInd</span> <span class="o">.</span><span class="n">SteamDeck_rEFInd</span>
+</span></span><span class="line"><span class="cl"><span class="n">cd</span> <span class="o">.</span><span class="n">SteamDeck_rEFInd</span>
+</span></span><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">mkdir</span> <span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">Downloads</span>
+</span></span><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">refind_install_no_pacman</span><span class="o">.</span><span class="n">sh</span>
+</span></span><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">sh</span> <span class="n">refind_install_no_pacman</span><span class="o">.</span><span class="n">sh</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>至此引导脚本安装完成，重启之后就能看到StemaOS和WIN的两个LOGO了，五秒内不选择默认从SteamOS启动。之所以选择<code>refind_install_no_pacman.sh</code>是因为SteamOS默认情况下要开启pacman非常麻烦，而且后续升级的话pacman安装的相关软件都会丢失仅保留配置。</p>
+<p>####·我想玩学习版游戏·####
+自测了几个proton版本以及proton next还有heroics game launcher，还是有很多游戏没办法正常启动，建议直接上WIN系统。</p>
+<p>####·WIN系统设备管理器里面安装了Steam官方的驱动之后还是有几个感叹号·####
+截止2023.2.2，Steam官方仅提供了APU（显卡+声音）、声卡、蓝牙、读卡器、WIFI驱动，一部分驱动在WINDOWS系统更新后自动安装，剩余的部分驱动等待官方跟进放出。</p>
+<p>####·进入gparted镜像时报错无法进入图形界面·####
+如果提示<code>I/O error, dev mmcblk0, sector x op 0x0:(READ) flags 0x0 phys_seg</code>，请检查是否插入了SD卡，如果有，先拔出再重新进入。</p>
+<p>####·steam内游戏下载速度慢·####
+去设置看看下载服务器是否本地位置，不然就开加速器（例如我进系统他自己给我调整到日本札幌，换回国内重启后速度就上来了）。</p>
+<p>####·桌面模式的discovery商店访问速度慢·####
+Steam桌面商店使用的是flathub源，默认使用的是<code>https://glathub.org/repo</code>，在国内访问较慢，建议换到上海交大源：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo steamos-readonly disable
+</span></span><span class="line"><span class="cl">sudo flatpak remote-modify flathub --url=https://mirror.sjtu.edu.cn/flathub
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后进商店里面更新一下就好了。</p>
+<p>####·我账号很多想用家庭共享，但是好像不起作用·####
+因为家庭共享是基于设备的，只在电脑上开通在deck上市无法启用的。这种情况下只能先登陆需要共享的账号，下载个游戏，然后登陆另外一个账号，这里会显示成“借用”状态，点击申请授权即可。</p>
+<p>####·怎么进BIOS/启动菜单·####
+关机状态下：
+<code>音量</code>+ &amp; <code>电源键</code> 一秒（有提示音就放手） = <code>BIOS设置</code>
+<code>音量</code>- &amp; <code>电源键</code> 一秒（有提示音就放手） = <code>引导选择</code></p>
+<p>####·怎么使用Steam自带的Proton环境·####
+在桌面模式下进入Steam，选择添加非Steam游戏，对话框默认之能选择<code>.desktop</code>修改成<code>all files</code>，然后选择需要执行的<code>.exe</code>文件，保存后右键Steam中生成的项目选择属性，兼容性设置中勾选强制使用，然后选择任意一个已安装的Proton环境，再运行即可。</p>
+<p>####·Steam自带的Proton在哪个路径·####
+以Proton7.0为例，其目录位于<code>/home/desk/.local/.(忘了，待查)./driver_c/</code></p>
+<p>####·连接了其他设备切换模式后还能用吗·####
+亲测可以。以蓝牙设备为例，在游戏模式下连接键鼠后切换到桌面模式能正常使用。</p>
+<p>（未完待续）</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/steamdeck.html">SteamDeck</a>
+        
+            <a href="/tags/archlinux.html">Archlinux</a>
+        
+            <a href="/tags/%E5%8F%8C%E7%B3%BB%E7%BB%9F.html">双系统</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/record/archlinux_xrdp.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">在archlinux正确的使用xrdp以及碰到的问题</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/record/archlinux_lnmp.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Archlinux下安装并配置lnmp环境</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/record/archlinux_install_guide.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【转载】一个简单的archlinux安装教程（亲测能用）</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/record/gamehub.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">[好软推荐] 盖世游戏-意外好用的windows游戏模拟器</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/record/acfun-gift-count.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">关于AcFun礼物统计网页的说明</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        --waline-font-size: var(--article-font-size);
+    }
+    .waline-container .wl-count {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://unpkg.com/@waline/emojis@1.0.1/weibo"],"lang":"zh-CN","locale":{"admin":"博主","placeholder":"欢迎评论"},"pageview":false,"requiredMeta":["name","email"],"serverURL":"https://artalk.tama.guru"});
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2022 - 
+        
+        2025 tamakyi
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

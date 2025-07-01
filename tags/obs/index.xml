@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>OBS on 狼的公告板 ver.Hugo</title>
+        <link>https://example.com/tags/obs.html</link>
+        <description>Recent content in OBS on 狼的公告板 ver.Hugo</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>tamakyi</copyright>
+        <lastBuildDate>Sun, 17 Jul 2022 12:38:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/obs/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>使用OBS自动添加字幕识别已经转自动语音</title>
+        <link>https://example.com/record/obs-subtitles-audio.html</link>
+        <pubDate>Sun, 17 Jul 2022 12:38:00 +0000</pubDate>
+        
+        <guid>https://example.com/record/obs-subtitles-audio.html</guid>
+        <description>&lt;p&gt;请直接参考作者文档：&lt;a class=&#34;link&#34; href=&#34;https://github.com/summershrimp/obs-auto-subtitle/blob/master/README-zh.md&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;obs-auto-subtitle/README-zh.md at master · summershrimp/obs-auto-subtitle (github.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;自动转语音部分正在测试中&lt;/p&gt;
+&lt;p&gt;[scode type=&amp;ldquo;yellow&amp;rdquo;]注意：使用中如果出现OBS闪退，多半是因为KEY到期了，先把相关源禁用，再到滤镜里设置新的KEY就能正常使用了。[/scode]&lt;/p&gt;
+&lt;p&gt;[scode type=&amp;ldquo;red&amp;rdquo;]插件不支持obs 28.0及以上版本，如果在steam中误升级可右键obs 属性 测试版 选择27.X版本。[/scode]&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

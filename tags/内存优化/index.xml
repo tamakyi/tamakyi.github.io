@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>内存优化 on 狼的公告板 ver.Hugo</title>
+        <link>https://example.com/tags/%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96.html</link>
+        <description>Recent content in 内存优化 on 狼的公告板 ver.Hugo</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>tamakyi</copyright>
+        <lastBuildDate>Sun, 16 Oct 2022 00:15:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>阿里云服务器的买后优化记录</title>
+        <link>https://example.com/record/aliyun_server.html</link>
+        <pubDate>Sun, 16 Oct 2022 00:15:00 +0000</pubDate>
+        
+        <guid>https://example.com/record/aliyun_server.html</guid>
+        <description>&lt;p&gt;腾讯云香港服务器蹲了半年都蹲不出台正常点的，中低端经常售罄，至少都要2C2T+4G起步，一个月就要六七十，这谁受得了？？？月初打开阿里云一看，哟嚯，2C（其实是1C2T）+2G一个月才30，试用下访问速度基本上接近国内服务器，这我直呼受不了，赶紧把之前那破腾讯云上的数据迁移咯。使用体验基本复合我的预期，但是2G跑个debian在加几个网站基本就没用想别的了，内存这块有优化的必要。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;[scode type=&amp;ldquo;lblue&amp;rdquo;]No.1 mysql[/scode]&lt;/p&gt;
+&lt;p&gt;对于小内存的机子来说mysql跑一段时间之后内存占用会高得恐怖。我中午刚新开的服务器，到晚上11点多用&lt;code&gt;htop&lt;/code&gt;一看，单mysqld这个进程已经吃了18.5%的内存，也就是差不多400M，你也是真的能吃 ::acfun:01:: 。查了些资料然后进行比对，发现镜像原本的配置也已经优化的差不多了，但是我们还需要打开&lt;code&gt;my.cnf&lt;/code&gt;，在&lt;code&gt;[mysqld]&lt;/code&gt;字段添加&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;performance_schema = off&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;然后保存重启mysql进程，也是有一定效果。&lt;/p&gt;
+&lt;p&gt;[scode type=&amp;ldquo;lblue&amp;rdquo;]No.2 AliyunDun（阿里云盾）[/scode]&lt;/p&gt;
+&lt;p&gt;这玩意是预装在系统里的，平时啥也不干也会吃掉5到6个点的内存，在官方的介绍页上，对这个产品的表述是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;云盾是阿里巴巴集团多年来安全技术研究积累的成果，结合阿里云云计算平台强大的数据分析能力。为中小网站提供如安全漏洞检测、网页木马检测以及面向云服务器用户提供的主机入侵检测、防DDOS等一站式安全服务。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;其实平时不乱开端口，不乱往主机上塞文件问题就不大，至于DDoS，真要打我这小破站你这盾也不够用啊。。。&lt;/p&gt;
+&lt;p&gt;以下是卸载步骤：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget http://update.aegis.aliyun.com/download/uninstall.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sh uninstall.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget http://update.aegis.aliyun.com/download/quartz_uninstall.sh sh
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;quartz_uninstall.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pkill aliyun-service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rm -fr /etc/init.d/agentwatch /usr/sbin/aliyun-service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rm -rf /usr/local/aegis*
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;未完待续 ::acfun:2003::&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

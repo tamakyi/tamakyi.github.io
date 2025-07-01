@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>去广告 on 狼的公告板 ver.Hugo</title>
+        <link>https://example.com/tags/%E5%8E%BB%E5%B9%BF%E5%91%8A.html</link>
+        <description>Recent content in 去广告 on 狼的公告板 ver.Hugo</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>tamakyi</copyright>
+        <lastBuildDate>Sun, 28 Apr 2024 11:26:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/%E5%8E%BB%E5%B9%BF%E5%91%8A/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>一些系统及应用的去广告和隐私选项推荐(持续更新)</title>
+        <link>https://example.com/record/app-anti-ad.html</link>
+        <pubDate>Sun, 28 Apr 2024 11:26:00 +0000</pubDate>
+        
+        <guid>https://example.com/record/app-anti-ad.html</guid>
+        <description>&lt;p&gt;有些app的广告实在是太多了，而且关掉的地方都隐藏的很深以至于我需要专门拿个文章记录一下，后续每找一种方法都会在这里更新，并根据不同的软件类型进行分类，以便快速查找。
+按设想会分为系统类，第三方软件类，在各个大类下再进行细分。&lt;/p&gt;
+&lt;h2 id=&#34;系统类&#34;&gt;系统类
+&lt;/h2&gt;&lt;h3 id=&#34;pc端&#34;&gt;PC端
+&lt;/h3&gt;&lt;h3 id=&#34;aosp&#34;&gt;AOSP
+&lt;/h3&gt;&lt;h4 id=&#34;harmonyos-4x&#34;&gt;HarmonyOS 4.X
+&lt;/h4&gt;&lt;p&gt;系统版本4.2.0.120，仅针对我常用的软件，一些从来没点过的就不写了。
+1、文件管理：我的&amp;ndash;设置&amp;ndash;个性化&amp;ndash;关闭个性化广告。
+2、设置&amp;ndash;华为账号&amp;ndash;隐私中心&amp;ndash;管理您的个人偏好&amp;ndash;广告偏好设置，关掉华为智慧助手·今天和华为浏览器的勾选项。
+3、设置-智慧助手-右上角体验增强与改进&amp;ndash;个性化推荐服务和个性化广告，关掉个性化广告功能。
+4、设置&amp;ndash;HMS Core&amp;ndash;分析服务&amp;ndash;勾选限制三方共享信息。
+5、设置&amp;ndash;隐私&amp;ndash;底部的华为广告&amp;ndash;关闭智能推荐服务。
+6、负一屏&amp;ndash;今天（点击头像）&amp;ndash;设置&amp;ndash;关闭搜索热词、个性化推荐所有选项、消息通知、今天改进计划、发现
+7、应用市场&amp;ndash;我的&amp;ndash;设置&amp;ndash;消息通知管理（关闭总开关）数据与隐私（关闭游戏服务内开关、内容推荐服务的个性化推荐）。
+8、华为钱包&amp;ndash;我的&amp;ndash;设置&amp;ndash;更多设置&amp;ndash;关闭个性化推荐和个性化广告。
+9、会员中心&amp;ndash;我的&amp;ndash;设置&amp;ndash;关闭接收系统消息、众测辅助功能、位置信息授权、消息推送社会设置内的所有选项。
+10、设置&amp;ndash;华为账号&amp;ndash;云空间&amp;ndash;右上角更多设置&amp;ndash;个性化&amp;ndash;个性化广告关闭。（如果需要关闭任务中心也可以在更多设置这一级设置，就是那个让你下几个app送你一个月会员的）
+11、主题&amp;ndash;我的&amp;ndash;设置&amp;ndash;内容推荐服务（关闭主题内容推荐服务、音乐内容推荐服务）、广告（关闭个性化广告）、关闭首页显示甄选主题栏目、关闭接受推送通知、消息设置内的相关选项。
+12、我的华为&amp;ndash;我的&amp;ndash;设置&amp;ndash;关闭接收短信和邮件、关闭接收消息、关闭个性化推荐服务底部的个性化推荐、关闭用户体验改进计划和推广信息显示。&lt;/p&gt;
+&lt;h3 id=&#34;ios端&#34;&gt;iOS端
+&lt;/h3&gt;&lt;h2 id=&#34;第三方软件类&#34;&gt;第三方软件类
+&lt;/h2&gt;&lt;h3 id=&#34;社交支付类&#34;&gt;社交支付类
+&lt;/h3&gt;&lt;h4 id=&#34;支付宝&#34;&gt;支付宝
+&lt;/h4&gt;&lt;h5 id=&#34;关闭首页推荐广告&#34;&gt;关闭首页推荐广告
+&lt;/h5&gt;&lt;p&gt;版本号：10.5.66
+路径：设置&amp;ndash;通用&amp;ndash;管理主页&amp;ndash;推荐卡片&amp;ndash;把所有的选项关闭。
+效果：首页底部不再显示相关内容，取而代之的是一段话“上拉进入休闲空间”。
+其实设置&amp;ndash;通用这个路径下还有“管理视频页”、“管理信息页”、“管理我的页面”几个选项，里面可以把相关内容选择性关闭。&lt;/p&gt;
+&lt;h5 id=&#34;关闭垃圾消息推送&#34;&gt;关闭垃圾消息推送
+&lt;/h5&gt;&lt;p&gt;版本号：10.5.66
+路径：设置&amp;ndash;新消息通知&amp;ndash;关闭服务通知和活动通知，朋友消息提醒看有无社交需求，没有的也可以关闭。
+效果：通知栏不再显示相关信息推送。&lt;/p&gt;
+&lt;h5 id=&#34;隐私设置建议&#34;&gt;隐私设置建议
+&lt;/h5&gt;&lt;p&gt;版本号：10.5.66
+路径：
+（1）设置&amp;ndash;隐私&amp;ndash;系统权限管理：这里可以配置整个APP是否能获取系统的位置、相机等权限，不需要的权限可以设置“拒绝访问”。
+（2）设置&amp;ndash;隐私&amp;ndash;个人信息授权管理：这里会展示授权其他平台获取支付宝账号信息，可以在这里解除授权。
+（3）设置&amp;ndash;隐私&amp;ndash;常用隐私设置：可以设置查找/添加/展示真实姓名的相关设置。
+（4）设置&amp;ndash;隐私&amp;ndash;个性化广告、推荐设置：这里可以设置广告推荐类型，注意只是类型，开启设置后只会&lt;strong&gt;减少推荐相关性&lt;/strong&gt;，并不能减少广告。&lt;/p&gt;
+&lt;h3 id=&#34;影音类&#34;&gt;影音类
+&lt;/h3&gt;&lt;h4 id=&#34;网易云音乐&#34;&gt;网易云音乐
+&lt;/h4&gt;&lt;h5 id=&#34;简化页面内容&#34;&gt;简化页面内容
+&lt;/h5&gt;&lt;p&gt;版本号：9.0.40.181620
+路径：设置&amp;ndash;关闭直播内容推荐和个性化广告推荐，底部导航设置仅保留发现、我的和关注。
+效果:减少首页底部和直播等垃圾功能。&lt;/p&gt;
+&lt;h5 id=&#34;减少垃圾消息&#34;&gt;减少垃圾消息
+&lt;/h5&gt;&lt;p&gt;版本号：9.0.40.181620
+路径：设置&amp;ndash;消息和隐私设置&amp;ndash;关闭第三方推送服务开关、关闭提醒设置两个选项和隐私设置按需关闭。
+效果:减少横幅广告和应用内广告弹出、无用消息推送。&lt;/p&gt;
+&lt;p&gt;什么？你说开屏广告？这东西开会员都去不掉。&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>在局域网内安装去广告插件的几种方法(pihole和adguardhome)</title>
+        <link>https://example.com/record/ad-plugin.html</link>
+        <pubDate>Sat, 13 Apr 2024 23:37:00 +0000</pubDate>
+        
+        <guid>https://example.com/record/ad-plugin.html</guid>
+        <description>&lt;p&gt;这东西我主要是放在家里给老人用的，最开始是他们手机碰上七七八八的问题找我解决，然后点开一个个浏览器和应用，卧槽，这能用的下去？横幅的横幅，弹窗的弹窗，真的看不下去，正好家里整了一个24小时开机的J1900双网口软路由，于是想了想在上面安装个插件算了，怎样都比原来好。&lt;/p&gt;
+&lt;h3 id=&#34;pihole-on-docker&#34;&gt;PiHole on Docker
+&lt;/h3&gt;&lt;h4 id=&#34;安装之前&#34;&gt;安装之前
+&lt;/h4&gt;&lt;p&gt;首先需要打开主机的ssh，执行
+&lt;code&gt;ip link set eth0 promisc on&lt;/code&gt;
+打开网卡混杂模式，这个步骤是必须的，不然不能接收到域名解析请求。
+然后新建一个网络，网段和网关要和主机所在的网段一致。比如说宿主机的IP是&lt;code&gt;192.168.101.232&lt;/code&gt;，那么新建的网络子网则为&lt;code&gt;192.168.101.0/24&lt;/code&gt;，网关为&lt;code&gt;192.168.101.1&lt;/code&gt;，还需要把驱动器切换成&lt;code&gt;MAC VLAN&lt;/code&gt;，基设备修改成&lt;code&gt;br-lan&lt;/code&gt;，其它可以不变，&lt;code&gt;IPV6&lt;/code&gt;打不打开都可以，打开之后需要配置和宿主机同级的IPV6的网段和网关。
+创建好网络之后下一步就是下载镜像和新建容器，镜像直接拉取&lt;code&gt;pihole/pihole&lt;/code&gt;，最新的。
+然后在主机上随便一个目标下新建&lt;code&gt;config&lt;/code&gt;和&lt;code&gt;data&lt;/code&gt;文件夹，用于存储pihole的相关数据。比如&lt;code&gt;/opt/pihole/data&lt;/code&gt;和&lt;code&gt;/opt/pihole/config&lt;/code&gt;。
+接下来新建容器，选择pihole的镜像和前面新建的网络，分配一个网段内不冲突的地址，比如&lt;code&gt;192.168.101.102&lt;/code&gt;，并添加如下绑定挂载：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;/opt/pihole/config:/etc/pihole
+/opt/pihole/data:/etc/dnsmasq.d
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后提交并启动。
+点击容器后面的编辑-&amp;gt;控制台-&amp;gt;连接，输入&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo pihole -a -p
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;给pihole配置密码，然后访问&lt;code&gt;192.168.101.103/admin&lt;/code&gt;看看是否能访问。&lt;/p&gt;
+&lt;h4 id=&#34;配置pi-hole&#34;&gt;配置Pi-Hole
+&lt;/h4&gt;&lt;p&gt;一般情况下这里要做的就是三件事：&lt;/p&gt;
+&lt;h5 id=&#34;修改上游dns&#34;&gt;修改上游DNS
+&lt;/h5&gt;&lt;p&gt;位于&lt;code&gt;settings/dns&lt;/code&gt;下的&lt;code&gt;Upstream DNS Servers Custom 1 (IPv4)&lt;/code&gt;和&lt;code&gt;Custom 2 (IPv4)&lt;/code&gt;，一般填写光猫获取到的运营商DNS，也可以写&lt;code&gt;8.8.8.8&lt;/code&gt;这类，只要访问快就行，改完记得滑到底部点击&lt;code&gt;save&lt;/code&gt;。&lt;/p&gt;
+&lt;h5 id=&#34;添加拦截规则&#34;&gt;添加拦截规则
+&lt;/h5&gt;&lt;p&gt;位于&lt;code&gt;adlists&lt;/code&gt;下，直接把拦截规则放进&lt;code&gt;address&lt;/code&gt;下点击&lt;code&gt;add&lt;/code&gt;即可。一般推荐&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;https://anti-ad.net/domains.txt
+https://raw.githubusercontents.com/StevenBlack/hosts/master/hosts
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这两个，第二个是pihole自带的，但是github部分地区无法访问，建议删掉原来的，再把上面这个镜像地址添加进去。添加完之后不会自动下载，需要到&lt;code&gt;tools/update gravity&lt;/code&gt;下点击&lt;code&gt;update&lt;/code&gt;手动更新一次。&lt;/p&gt;
+&lt;h5 id=&#34;导入解析&#34;&gt;导入解析
+&lt;/h5&gt;&lt;p&gt;如果是单个设备，直接到对应的连接选项从DHCP改成静态再把下面把DNS改成&lt;code&gt;192.168.101.103&lt;/code&gt;即可。
+如果是路由器（我的网络是光猫-软路由-硬路由），我用的是梅林，直接在内部网络(lan)下的	基本设置改成静态IP，配置好IP地址和网关，DNS服务器则修改成&lt;code&gt;192.168.101.103&lt;/code&gt;保存即可。
+如果成功了，Dashboard和Query Log应该能看到解析记录。&lt;/p&gt;
+&lt;h4 id=&#34;这样做有什么好处&#34;&gt;这样做有什么好处
+&lt;/h4&gt;&lt;p&gt;docker环境相对于直接在硬路由/软路由上搭建最大的好处就是不用担心53端口冲突，这点就够了&lt;/p&gt;
+&lt;h3 id=&#34;pi-hole-hardware&#34;&gt;Pi-hole Hardware
+&lt;/h3&gt;&lt;h4 id=&#34;安装之前-1&#34;&gt;安装之前
+&lt;/h4&gt;&lt;p&gt;我的测试环境是安装过宝塔php8.1+8.2的64位树莓派raspios。如果是全新安装的可能有些步骤是不必要的。
+安装前一定要确保机器能够访问到Github，如果不能请配置好代理。例如我在&lt;code&gt;192.168.118.214&lt;/code&gt;上搭建了3proxy建议代理服务，端口分别是： &lt;code&gt;1079: http/https 1080:socks5&lt;/code&gt;，因此需要配置临时代理：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;export https_proxy=http://192.168.118.214:1079 http_proxy=http://192.168.118.214:1079 all_proxy=socks5://192.168.118.214:1080
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后就可以执行安装了：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -sSL https://install.pi-hole.net | sudo bash
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;脚本执行时会安装一系列的依赖，需要注意像php这类的软件包部分源只提供了最新版本，比如原来我只安装有8.1，结果在安装：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[i] Checking for php8.1-common (will be installed)
+[i] Checking for php8.1-cgi (will be installed)
+[i] Checking for php8.1-sqlite3 (will be installed)
+[i] Checking for php8.1-xml (will be installed)
+[i] Checking for php8.1-intl (will be installed)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;的时候全部都找不到，然后脚本就退出了&amp;hellip;执行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt search php8.*
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可以看到很多都是8.2的包了&amp;hellip;灰溜溜的去宝塔重新编译安装一个再重新执行脚本：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;php8.2/stable,stable,stable-security,stable-security 8.2.7-1~deb12u1 all
+  server-side, HTML-embedded scripting language (metapackage)
+
+php8.2-amqp/stable 1.11.0-5 arm64
+  AMQP extension for PHP
+
+php8.2-apcu/stable 5.1.22+4.0.11-2 arm64
+  APC User Cache for PHP
+...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安装过程有个简单的交互，无非就是问你是不是真的要安装，使用哪个网卡，使用哪个DNS，要不要装个lighthttp实现网页端管理这类的，基本上全部选是就对了。安装完成后会提示管理网页地址和默认密码，可以使用&lt;code&gt;pihole -a -p&lt;/code&gt;命令更改：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;  [i] Pi-hole blocking will be enabled
+  [i] Enabling blocking
+  [✓] Reloading DNS lists
+  [✓] Pi-hole Enabled
+  [i] Web Interface password: CPlutkpL
+  [i] This can be changed using &#39;pihole -a -p&#39;    
+
+  [i] View the web interface at http://pi.hole/admin or http://192.168.118.164/admin    
+
+  [i] You may now configure your devices to use the Pi-hole as their DNS server
+  [i] Pi-hole DNS (IPv4): 192.168.118.164
+  [i] Pi-hole DNS (IPv6): 2***********34
+  [i] If you have not done so already, the above IP should be set to static.    
+
+  [i] The install log is located at: /etc/pihole/install.log
+  [✓] Installation complete! 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;到这里就算安装完成了。&lt;/p&gt;
+&lt;h4 id=&#34;一些问题&#34;&gt;一些问题
+&lt;/h4&gt;&lt;p&gt;一般情况下现在就可以直接访问pihole了，但是你可能会发现管理页面报错404，如果你有安装过lnmp环境，这可能是80端口冲突导致lighthttp无法启动：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@akarinbot:~# systemctl status lighttpd.service 
+× lighttpd.service - Lighttpd Daemon
+     Loaded: loaded (/lib/systemd/system/lighttpd.service; enabled; preset: enabled)
+     Active: failed (Result: exit-code) since Mon 2024-04-15 23:09:25 CST; 5min ago
+   Duration: 476ms
+    Process: 173339 ExecStartPre=/usr/sbin/lighttpd -tt -f /etc/lighttpd/lighttpd.conf (code=exited, status=0/SUCCESS)
+    Process: 173342 ExecStart=/usr/sbin/lighttpd -D -f /etc/lighttpd/lighttpd.conf (code=exited, status=255/EXCEPTION)
+   Main PID: 173342 (code=exited, status=255/EXCEPTION)
+        CPU: 886ms    
+
+4月 15 23:09:25 akarinbot systemd[1]: lighttpd.service: Scheduled restart job, restart counter is at 7.
+4月 15 23:09:25 akarinbot systemd[1]: Stopped lighttpd.service - Lighttpd Daemon.
+4月 15 23:09:25 akarinbot systemd[1]: lighttpd.service: Start request repeated too quickly.
+4月 15 23:09:25 akarinbot systemd[1]: lighttpd.service: Failed with result &#39;exit-code&#39;.
+4月 15 23:09:25 akarinbot systemd[1]: Failed to start lighttpd.service - Lighttpd Daemon.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;所以我们需要手动修改lighthttp的配置文件：
+root@akarinbot:~# nano /etc/lighttpd/lighttpd.conf
+&amp;hellip;
+#server.port                 = 80
+server.port                 = 88 #这里改成80外的其他端口
+&amp;hellip;&lt;/p&gt;
+&lt;p&gt;然后重启lighthttp服务：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@akarinbot:~# systemctl restart lighttpd.service
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;检查服务状态：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@akarinbot:~# systemctl status lighttpd.service
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果提示active (running)此时应该就完成了。如果timeout了，建议检查防火墙配置，要注意53端口的TCP/UDP都要打开哦。&lt;/p&gt;
+&lt;h3 id=&#34;adguardhome-on-hardware&#34;&gt;AdGuardHome on Hardware
+&lt;/h3&gt;&lt;h4 id=&#34;安装之前-2&#34;&gt;安装之前
+&lt;/h4&gt;&lt;p&gt;需要注意的是，这个方法适用于使用openwrt的系统，并且支持安装luci软件包。
+下载：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;https://github.com/rufengsuixing/luci-app-adguardhome/releases/download/1.8-11/luci-app-adguardhome_1.8-11_all.ipk
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;到本地，在openwrt内的&lt;code&gt;系统-软件包&lt;/code&gt;下选择上传该软件包，无视警告并安装，然后刷新页面。
+到：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;https://github.com/AdguardTeam/AdGuardHome/releases
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;下载适合自己系统版本的软件包。比如X86架构linux的：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;https://github.com/AdguardTeam/AdGuardHome/releases/download/v0.107.48/AdGuardHome_linux_amd64.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;下载后解压到任意目录，解压并增加相关工作目录：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd ~
+wget https://github.com/AdguardTeam/AdGuardHome/releases/download/v0.107.48/AdGuardHome_linux_amd64.tar.gz
+tar zxvf AdGuardHome_linux_amd64.tar.gz
+mkdir conf &amp;amp;&amp;amp; mkdir data
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;此时Adguard的路径应该为&lt;code&gt;/root/AdGuardHome&lt;/code&gt;。&lt;/p&gt;
+&lt;h4 id=&#34;配置adguardhome-luci和adguardhome&#34;&gt;配置AdguardHome luci和AdguardHome
+&lt;/h4&gt;&lt;p&gt;管理界面下的&lt;code&gt;服务-AdGuard Home&lt;/code&gt;，把以下项目修改：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;6060重定向--&amp;gt;作为dnsmasq的上游服务器
+执行文件路径-&amp;gt;/root/AdGuardHome/AdGuardHome
+配置文件路径-&amp;gt;/root/AdGuardHome/conf/AdGuardHome.yaml
+工作目录-&amp;gt;/root/AdGuardHome
+运行日志-&amp;gt;/root/AdGuardHome/data
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后保存并应用，再勾选启用，再次保存，进入路由器IP:3000，配置AdGuardHome。
+需要注意的是一般情况下53端口是被占用了，建议修改成5553。
+进入AdGuardHome之后在&lt;code&gt;设置-DNS设置&lt;/code&gt;下面把上游DNS服务器修改成：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;https://dns.alidns.com/dns-query
+tls://dns.alidns.com
+223.5.5.5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以上都是阿里云的DNS，实测我的网络解析速度还行。
+Bootstrap DNS 服务器则修改为：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;223.5.5.5
+223.6.6.6
+114.114.114.114
+8.8.8.8
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;保存之后再去&lt;code&gt;过滤器-DNS黑名单&lt;/code&gt;下启用需要的规则就行了，自带的几个都不错，打勾就能下载。&lt;/p&gt;
+&lt;h5 id=&#34;导入解析-1&#34;&gt;导入解析
+&lt;/h5&gt;&lt;p&gt;此步骤和使用PiHole一模一样。&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
+</rss>
