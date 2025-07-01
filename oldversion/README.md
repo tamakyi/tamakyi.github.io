@@ -1,1 +1,0 @@
-# tamakyi.github.io
