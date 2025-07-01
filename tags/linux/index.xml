@@ -173,7 +173,7 @@
 首先通过&lt;code&gt;fdisk -l&lt;/code&gt;查询硬盘/分区的路径
 如需要挂载的设备为：
 &lt;code&gt;/dev/sdc4  83888128 468862094 384973967 183.6G Linux filesystem&lt;/code&gt;
-接下来通过&lt;code&gt;blkid``查询设备UUID及分区类型 如查询结果为： &lt;/code&gt;/dev/sdc4: UUID=&amp;ldquo;b958d02b-9f99-4e48-bacf-xxxxxxxx&amp;rdquo; BLOCK_SIZE=&amp;ldquo;512&amp;rdquo; TYPE=&amp;ldquo;xfs&amp;rdquo; PARTUUID=&amp;ldquo;beabe66d-07c2-2d4b-9836-xxxxxxx&amp;rdquo;&lt;code&gt; 如果需要挂载的是硬盘，接下来需要的是UUID，如果需要的是分区，则需要PARTUUID，另一个参数`type=&amp;quot;xfs&amp;quot;`表明了文件系统类型 修改&lt;/code&gt;/etc/fstab```添加以下内容&lt;/p&gt;
+接下来通过&lt;code&gt;blkid``查询设备UUID及分区类型 如查询结果为： &lt;/code&gt;/dev/sdc4: UUID=&amp;ldquo;b958d02b-9f99-4e48-bacf-xxxxxxxx&amp;rdquo; BLOCK_SIZE=&amp;ldquo;512&amp;rdquo; TYPE=&amp;ldquo;xfs&amp;rdquo; PARTUUID=&amp;ldquo;beabe66d-07c2-2d4b-9836-xxxxxxx&amp;rdquo;&lt;code&gt; 如果需要挂载的是硬盘，接下来需要的是UUID，如果需要的是分区，则需要PARTUUID，另一个参数`type=&amp;quot;xfs&amp;quot;`表明了文件系统类型 修改&lt;/code&gt;/etc/fstab```添加以下内容&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1

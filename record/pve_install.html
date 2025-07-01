@@ -497,7 +497,7 @@
 首先通过<code>fdisk -l</code>查询硬盘/分区的路径
 如需要挂载的设备为：
 <code>/dev/sdc4  83888128 468862094 384973967 183.6G Linux filesystem</code>
-接下来通过<code>blkid``查询设备UUID及分区类型 如查询结果为： </code>/dev/sdc4: UUID=&ldquo;b958d02b-9f99-4e48-bacf-xxxxxxxx&rdquo; BLOCK_SIZE=&ldquo;512&rdquo; TYPE=&ldquo;xfs&rdquo; PARTUUID=&ldquo;beabe66d-07c2-2d4b-9836-xxxxxxx&rdquo;<code> 如果需要挂载的是硬盘，接下来需要的是UUID，如果需要的是分区，则需要PARTUUID，另一个参数`type=&quot;xfs&quot;`表明了文件系统类型 修改</code>/etc/fstab```添加以下内容</p>
+接下来通过<code>blkid``查询设备UUID及分区类型 如查询结果为： </code>/dev/sdc4: UUID=&ldquo;b958d02b-9f99-4e48-bacf-xxxxxxxx&rdquo; BLOCK_SIZE=&ldquo;512&rdquo; TYPE=&ldquo;xfs&rdquo; PARTUUID=&ldquo;beabe66d-07c2-2d4b-9836-xxxxxxx&rdquo;<code> 如果需要挂载的是硬盘，接下来需要的是UUID，如果需要的是分区，则需要PARTUUID，另一个参数`type=&quot;xfs&quot;`表明了文件系统类型 修改</code>/etc/fstab```添加以下内容</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1

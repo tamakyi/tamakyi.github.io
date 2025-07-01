@@ -51,7 +51,7 @@
 配置完之后要点开左下角的&lt;code&gt;advanced settings&lt;/code&gt;。
 &lt;code&gt;Signature version&lt;/code&gt;选择&lt;code&gt;Signature V4&lt;/code&gt;.
 &lt;code&gt;Addressing model&lt;/code&gt;选择&lt;code&gt;Virtual hosted style&lt;/code&gt;.
-其他选项保留初始值不用动，点close再save changes&lt;code&gt;即可。 ![add account info 2][3] 这时候应该是能连接进R2内部了，就当作一个文件管理器操作就行了。 ![setting complete][4] &amp;lt;br/&amp;gt; 如果只用来做图床的话可以用&lt;/code&gt;Pic-Go`这个软件，操作方法也类似。&lt;/p&gt;</description>
+其他选项保留初始值不用动，点close再save changes&lt;code&gt;即可。 ![add account info 2][3] 这时候应该是能连接进R2内部了，就当作一个文件管理器操作就行了。 ![setting complete][4] &amp;lt;br/&amp;gt; 如果只用来做图床的话可以用&lt;/code&gt;Pic-Go`这个软件，操作方法也类似。&lt;/p&gt;</description>
         </item>
         
     </channel>

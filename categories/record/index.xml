@@ -186,7 +186,9 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://m.acfun.cn
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;+&lt;/p&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -4320,7 +4322,7 @@ i3w / dwm:&lt;/p&gt;
 配置完之后要点开左下角的&lt;code&gt;advanced settings&lt;/code&gt;。
 &lt;code&gt;Signature version&lt;/code&gt;选择&lt;code&gt;Signature V4&lt;/code&gt;.
 &lt;code&gt;Addressing model&lt;/code&gt;选择&lt;code&gt;Virtual hosted style&lt;/code&gt;.
-其他选项保留初始值不用动，点close再save changes&lt;code&gt;即可。 ![add account info 2][3] 这时候应该是能连接进R2内部了，就当作一个文件管理器操作就行了。 ![setting complete][4] &amp;lt;br/&amp;gt; 如果只用来做图床的话可以用&lt;/code&gt;Pic-Go`这个软件，操作方法也类似。&lt;/p&gt;</description>
+其他选项保留初始值不用动，点close再save changes&lt;code&gt;即可。 ![add account info 2][3] 这时候应该是能连接进R2内部了，就当作一个文件管理器操作就行了。 ![setting complete][4] &amp;lt;br/&amp;gt; 如果只用来做图床的话可以用&lt;/code&gt;Pic-Go`这个软件，操作方法也类似。&lt;/p&gt;</description>
         </item>
         <item>
         <title>在兰空图床配置并使用Cloudflare R2 存储桶</title>
@@ -5831,7 +5833,7 @@ Github:&lt;a class=&#34;link&#34; href=&#34;https://github.com/buxia97/RuleApi&#
 2.应用版本号和应用版本名称应高于前一次配置的值，首次配置可以写1。
 3.app模块配置中根据需要选择Oauth如果没有配置的话把勾取消掉。
 如果不选择Push的话，每次启动app都会有弹窗提示，建议配置，配置需要到&lt;a class=&#34;link&#34; href=&#34;https://dev.dcloud.net.cn/pages/app/detail&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://dev.dcloud.net.cn/pages/app/detail&lt;/a&gt;中&lt;code&gt;我的应用&amp;gt; 应用名称&amp;gt;Android云端证书&lt;/code&gt;中查看证书详情，并记录sha1 sha256和md5值。
+    &gt;https://dev.dcloud.net.cn/pages/app/detail&lt;/a&gt;中&lt;code&gt;我的应用&amp;gt; 应用名称&amp;gt;Android云端证书&lt;/code&gt;中查看证书详情，并记录sha1 sha256和md5值。
 &lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/17/655778cf37399.png&#34;
 	
 	
@@ -10503,7 +10505,7 @@ PS5:在微星H510M爆破弹上开启UEFI resizebar above 4g和安全启动，关
 首先通过&lt;code&gt;fdisk -l&lt;/code&gt;查询硬盘/分区的路径
 如需要挂载的设备为：
 &lt;code&gt;/dev/sdc4  83888128 468862094 384973967 183.6G Linux filesystem&lt;/code&gt;
-接下来通过&lt;code&gt;blkid``查询设备UUID及分区类型 如查询结果为： &lt;/code&gt;/dev/sdc4: UUID=&amp;ldquo;b958d02b-9f99-4e48-bacf-xxxxxxxx&amp;rdquo; BLOCK_SIZE=&amp;ldquo;512&amp;rdquo; TYPE=&amp;ldquo;xfs&amp;rdquo; PARTUUID=&amp;ldquo;beabe66d-07c2-2d4b-9836-xxxxxxx&amp;rdquo;&lt;code&gt; 如果需要挂载的是硬盘，接下来需要的是UUID，如果需要的是分区，则需要PARTUUID，另一个参数`type=&amp;quot;xfs&amp;quot;`表明了文件系统类型 修改&lt;/code&gt;/etc/fstab```添加以下内容&lt;/p&gt;
+接下来通过&lt;code&gt;blkid``查询设备UUID及分区类型 如查询结果为： &lt;/code&gt;/dev/sdc4: UUID=&amp;ldquo;b958d02b-9f99-4e48-bacf-xxxxxxxx&amp;rdquo; BLOCK_SIZE=&amp;ldquo;512&amp;rdquo; TYPE=&amp;ldquo;xfs&amp;rdquo; PARTUUID=&amp;ldquo;beabe66d-07c2-2d4b-9836-xxxxxxx&amp;rdquo;&lt;code&gt; 如果需要挂载的是硬盘，接下来需要的是UUID，如果需要的是分区，则需要PARTUUID，另一个参数`type=&amp;quot;xfs&amp;quot;`表明了文件系统类型 修改&lt;/code&gt;/etc/fstab```添加以下内容&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
