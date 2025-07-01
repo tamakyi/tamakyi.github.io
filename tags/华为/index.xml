@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>华为 on 狼的公告板 ver.Hugo</title>
+        <link>https://example.com/tags/%E5%8D%8E%E4%B8%BA.html</link>
+        <description>Recent content in 华为 on 狼的公告板 ver.Hugo</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>tamakyi</copyright>
+        <lastBuildDate>Tue, 03 Dec 2024 23:03:56 +0000</lastBuildDate><atom:link href="https://example.com/tags/%E5%8D%8E%E4%B8%BA/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>鸿蒙Next居然兼容安卓了？</title>
+        <link>https://example.com/record/android-on-harmony.html</link>
+        <pubDate>Tue, 03 Dec 2024 23:03:56 +0000</pubDate>
+        
+        <guid>https://example.com/record/android-on-harmony.html</guid>
+        <description>&lt;p&gt;昨天，有消息称Next的应用商店上架了出境易，用过华子的都知道这玩意可以用过某些&lt;del&gt;不可告人&lt;/del&gt;的方式来实现对某些国外应用的安装和使用，所以这次上架就有意思了,因为这上面的几乎所有应用目前基本上不会为Next做适配，那就说明它会通过某种方法来兼容安卓应用来实现运行如上应用的能力。&lt;/p&gt;
+&lt;h4 id=&#34;出境易&#34;&gt;出境易
+&lt;/h4&gt;&lt;p&gt;安装过程就不介绍了，首次运行的时候需要下载将近600M的数据并且重启系统，一开始我也以为是个虚拟机，但后面tg上有人放出一张截图，疑似是通过lxc来跑安卓容器实现的。
+&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/12/03/674f145f185fa.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;疑似容器&#34;
+	
+	
+&gt;
+出境易内置了一个microG套件，G家软件基本上都可以使用了，如果是市场里没有的应用可以从GPlay检索获取，但是有一些不是很正规的应用很明显是没办法直接在市场里面找到的。
+市场内可以找到edge浏览器，安装后基本上能够正常使用（存在一些小问题，比如掉帧和莫名的黑屏），然后我去找到个clash的安装包，edge下载之后会调用出境易安装，居然成功了&amp;hellip;
+&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/12/03/674f16631ec7d.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;clash安装成功&#34;
+	
+	
+&gt;
+然后我再试着安装其他应用，却显示&amp;quot;该应用未与出境易达成合作，暂不支持安装&amp;quot;
+&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/12/03/674f16966d219.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;其他应用却无法安装&#34;
+	
+	
+&gt;
+看来正如网上说，出境易是有一套应用白名单的，匹配到的应用才会允许安装。但我尝试去telegram官网下载安装，一样会提示&amp;quot;该应用未与出境易达成合作，暂不支持安装&amp;quot;，而出境易市场内的telegram却能正常安装，我暂且蒙在鼓里。&lt;/p&gt;
+&lt;h4 id=&#34;卓易通&#34;&gt;卓易通
+&lt;/h4&gt;&lt;p&gt;安装出境易之后还带了另一个叫卓易通的应用，这东西默认是隐藏的，需要手动启用。
+具体操作是使用出境易下载程序管理类应用来手动启用。
+比如我是出境易日区的市场，可以找到一个设备信息的应用：
+&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/12/03/674f1909ea64e.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Device Info&#34;
+	
+	
+&gt;
+安装之后切换到应用程序页面的系统菜单项，找到卓易通和文件共享，点开之后点开右上角的小齿轮，选择启用即可。
+&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/12/03/674f19687820e.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;激活应用&#34;
+	
+	
+&gt;&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/12/03/674f198a1881e.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;激活应用2&#34;
+	
+	
+&gt;
+然后我们回到Device Info，找到文件共享这个应用，点开选择发动，就会进入一个类似文件管理器的界面，再这个地方可以选择下载好的apk调用卓易通安装了。
+如果上面的界面无法显示应用，也没有弹窗申请授权获取应用列表的话，需要手动到出境易里面找到Device Info授权。
+卓易通可以安装大部分的应用，但不是全部，因为卓易通和出境易恰恰相反，卓易通采用的是黑名单机制，在黑名单上的应用都无法安装，除此之外一些盗版应用和涩涩应用也无法安装，比如eh&amp;hellip;
+&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/12/03/674f1b7540bf0.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;ehviewer&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;总结&#34;&gt;总结
+&lt;/h4&gt;&lt;p&gt;上架出境易这个应用无疑是能缓解目前Next应用不足且质量参差不齐的情况，这也是鸿蒙生态目前最大的问题，但这次改变会让我留在Next吗？不会，原因如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;操作繁琐。上面使用卓易通安装需要每次都要从Device Info进入文件共享。&lt;/li&gt;
+&lt;li&gt;别扭。总感觉后台多了个容器，耗电会有所增加。而且每次切到后台再切回去有大概率应用会重启，后台驻留能力超弱&amp;hellip;&lt;/li&gt;
+&lt;li&gt;BUG多。目前我碰到的问题包括但不限于：Edge切换页面时的短暂黑屏、视频类应用顶部的大白边、无法调用系统相册（即使授权了）等。&lt;/li&gt;
+&lt;li&gt;搞不来涩涩。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>记录一次在鸿蒙4.0安装GMS套件的过程</title>
+        <link>https://example.com/record/homo4-0-gms.html</link>
+        <pubDate>Fri, 12 Apr 2024 00:06:00 +0000</pubDate>
+        
+        <guid>https://example.com/record/homo4-0-gms.html</guid>
+        <description>&lt;p&gt;换了华子之后，平时我需要用到的那些G系软件基本上都是通过Gspace这类的软件去实现的，但是有一些特殊的软件就无法使用了&amp;hellip;比如litchi这个第三方无人机飞控软件，如果使用gspace去安装，手机在连接遥控器的时候就不会跳转到litchi，图像也没有，结果就是我没提前发现这个问题，某次飞行前东西都准备好了，然后我也崩溃了&amp;hellip;&lt;/p&gt;
+&lt;p&gt;[scode type=&amp;ldquo;red&amp;rdquo;]经测试，安装了GMS之后Litchi依旧无法正常运行，甚至用官方的DJI Fly都无法正常连接，症状为不弹出USB调试提示窗/不启动APP/启动APP后无法连接到遥控器。[/scode]&lt;/p&gt;
+&lt;p&gt;本文的教程主要参考：&lt;a class=&#34;link&#34; href=&#34;https://toalan.com/archives/36/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://toalan.com/archives/36/&lt;/a&gt;。该教程提供了一个adb+手机联动安装的方式，看评论成功率还挺高的。以下根据文中的步骤一步步去执行并记录差异。&lt;/p&gt;
+&lt;h3 id=&#34;-1其他准备工作&#34;&gt;-1.其他准备工作
+&lt;/h3&gt;&lt;p&gt;安装了最新鸿蒙4.0的Mate60Pro一台（版本号4.2.110，nolog的beta通道）。
+稳定的网络环境（指能连接外面的世界）。
+下载好文中所需的文件。
+安装好adb套件并事前做好认证。
+&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/04/11/6617f95f42316.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;我已事前做好授权，因此可能部分步骤与文中不一致。&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;0事前准备&#34;&gt;0.事前准备
+&lt;/h3&gt;&lt;p&gt;&amp;ldquo;设置-系统和更新-系统导航方式-更多-悬浮导航&amp;rdquo;:关闭悬浮导航
+&amp;ldquo;设置-系统和更新-纯净模式&amp;rdquo;:关闭增强防护
+&amp;ldquo;设置-隐私-隐私空间&amp;rdquo;:关闭隐私空间
+&amp;ldquo;设置-应用和服务-应用分身&amp;rdquo;:关闭应用分身
+&lt;strong&gt;以上功能我均没有使用，因此跳过了。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;解压压缩包,将Backup文件夹复制到手机存储空间里的/Huawei 的目录里,压缩包里目录里的软件对应接下来的步骤,按步骤安装!
+&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/04/11/6617faf43512f.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;文件复制好的话在/内部存储&amp;gt;backup&amp;gt;backupFiles&amp;gt;2019-12-07_02-08-38-841文件夹应该能看到以下文件&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;1-清除谷歌应用数据&#34;&gt;1. 清除谷歌应用数据
+&lt;/h3&gt;&lt;p&gt;清除以下app的数据：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Google Play商店
+Google通讯录同步
+Google Play服务
+Google服务框架
+Google账户管理程序
+com.google.android.gms.policy_sidecar_aps
+SharedLibrary
+谷歌服务助手&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;打开”设置”-“应用和服务”-“应用管理”,点击右上角四个点,点击显示系统程序,然后搜索手机里是否有以上软件,若有则删除.
+&lt;strong&gt;因为我之前没有安装过，此步骤省略。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-修改系统时间到2019年12月7日&#34;&gt;2. 修改系统时间到2019年12月7日
+&lt;/h3&gt;&lt;p&gt;“设置”-“系统和更新”-“日期和时间”&lt;/p&gt;
+&lt;p&gt;将自动设置关闭,并修改日期到2019年12月7日&lt;/p&gt;
+&lt;h3 id=&#34;3-打开备份从内部存储恢复&#34;&gt;3. 打开备份,从内部存储恢复
+&lt;/h3&gt;&lt;p&gt;“设置”-“系统和更新”-“备份和恢复”&lt;/p&gt;
+&lt;p&gt;右上角四个点选择”从内部存储恢复”,选择 toalan.com 备份,输入密码恢复(如果没有,就是backup导入没有成功)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果这里没有”从内部存储恢复”，点击从“外部存储”，然后把权限全部打开。返回重新进入，就会有了。
+&lt;strong&gt;符合预期&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;4-激活谷歌服务助手&#34;&gt;4. 激活谷歌服务助手
+&lt;/h3&gt;&lt;p&gt;“设置”-“系统和更新”-“日期和时间”-将自动设置打开
+从桌面打开谷歌服务助手,点击激活,并给权限
+激活后不需要点击”开始下载”,直接返回桌面&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🚨如果打开提示“当前设备不支持”，那就可以放弃治疗了&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注意：此时我已经连接到了国际互联网，并且为了保证稳定，我使用的是移动网络+V*N的方式，而不是在路由搭建全局网络。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;5-安装microg且登录谷歌账号此处对应文件夹的第五步&#34;&gt;5. 安装MicroG,且登录谷歌账号（此处对应文件夹的“第五步”）
+&lt;/h3&gt;&lt;p&gt;安装MicroG,打开后点击”Account”,点击右下角”sign in”,登录自己的谷歌账号(此过程可能会闪退一两次, 重试即可)
+&lt;strong&gt;注意：安装完要立即打开，因为这东西不知道为什么不显示在我的桌面上。若是闪退了可以在设置&amp;gt;应用和服务&amp;gt;应用管理找到MicroG点开之后强行停止上方有个小齿轮，点开就进应用了。如果登录过程中一直停留在&lt;code&gt;Just a sec...&lt;/code&gt;，建议换用其它网络和科学软件或者强行停止MicroG并重新进入。&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;6-安装多个谷歌软件&#34;&gt;6. 安装多个谷歌软件
+&lt;/h4&gt;&lt;p&gt;安装1,2,3,4
+再安装5-1,安装完打开后,点击上面的系统,可以看见兼容的安卓版本
+若是Android10及以下,则安装5-2,若是Android12及以上,则安装5-3
+&lt;strong&gt;符合预期&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;7-卸载microg安装drvice-id&#34;&gt;7. 卸载MicroG、安装Drvice ID
+&lt;/h4&gt;&lt;p&gt;设置-应用和服务-应用管理-搜索 microG 卸载
+安装第七步 Device ID
+&lt;strong&gt;符合预期&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;8-安装play服务&#34;&gt;8. 安装Play服务
+&lt;/h4&gt;&lt;p&gt;安装Play服务,安装完之后,十秒左右状态栏便会报错(&amp;ldquo;此设备未获得Play保护机制认证&amp;rdquo;),不用管.（&lt;strong&gt;如果不弹窗，请检查网络是否正常，这个很重要！&lt;/strong&gt;）
+&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/04/12/661809d6e3525.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;弹窗了说明操作正确&#34;
+	
+	
+&gt;
+&lt;strong&gt;符合预期&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;9-下载edge浏览器设备注册&#34;&gt;9. 下载Edge浏览器、设备注册
+&lt;/h4&gt;&lt;p&gt;华为应用商店搜索 Edge ，下载并安装。
+不要用 华为浏览器 、夸克 、QQ浏览器、UC浏览器 等其他毒瘤浏览器，会导致不跳转。
+打开 Device ID 复制&amp;quot;Google Service Framework(GSF)&amp;ldquo;下面的数据
+打开 Edge 进入 &lt;a class=&#34;link&#34; href=&#34;https://www.google.com/android/uncertified/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.google.com/android/uncertified/&lt;/a&gt; 网站，登录自己Google账号，将数据粘贴进去-注册！
+&lt;strong&gt;符合预期&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;10-通过adb停用gsf重要步骤-注此处我直接用cmd调用adb命令了&#34;&gt;10. 通过ADB停用GSF【重要步骤！】 注：此处我直接用cmd调用adb命令了
+&lt;/h4&gt;&lt;p&gt;1.准备一台PC电脑（win系统）和数据线。
+2.下载&lt;a class=&#34;link&#34; href=&#34;https://developer.android.google.cn/tools/releases/platform-tools?hl=zh-cn&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;adb工具套件&lt;/a&gt;。
+3.手机端操作：
+3.1打开 开发者模式（设置-关于手机-连点7次HarmonyOS版本-输入密码)
+3.2开启 USB调试 和 &amp;ldquo;仅充电&amp;quot;模式下允许ADB调试 （设置-系统和更新-开发者人员选项）
+3.3手机通过数据线到电脑，允许与电脑链接（不弹窗可忽略）
+3.4下滑通知栏，点击 正在通过USB充电,选择 传输文件模式 &lt;strong&gt;其实仅充电也可以的。&lt;/strong&gt;
+4电脑端操作:
+4.1.1解压adb套件压缩包到任意目录并添加到环境变量。
+4.1.2打开cmd，输入&lt;code&gt;adb device&lt;/code&gt;在手机上授权。
+4.2如果一切正常，打开这个界面。（如果你连接有问题， 界面都不会弹出，怎么解决链接问题看弹窗提示帮助或者点击这里跳转）
+5.注意！下面的操作是很关键的，请仔细阅读。！！！重要！！！请阅读完剩余步骤，理解后再操作。
+5.1ADB终端内输入命令：adb shell pm disable-user &amp;ndash;user 0 com.google.android.gsf  &lt;strong&gt;注意！不要回车执行操作！只是粘贴上去好准备。&lt;/strong&gt;
+5.2手机安装第八步的 8.play商店 。
+5.3安装完打开后,会提示&amp;quot;我们正在为您更新Google Play&amp;rdquo;,当跳出可以前往google商店的选项后，直接前往商店，取消更新。
+&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/04/12/66180a07754c1.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;直接进入商店即可&#34;
+	
+	
+&gt;
+5.4如果商店可以正常打开加载数据，关闭play商店后台运行。注意，在教程没有结束之前，不要通过play下载任何应用。
+5.5禁用GSF并且留住FCM功能操作。
+5.5.1手机复制链接 &lt;a class=&#34;link&#34; href=&#34;https://play.google.com/store/apps/details?id=com.google.android.gms&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://play.google.com/store/apps/details?id=com.google.android.gms&lt;/a&gt; 到 Edge 打开。
+5.5.2下方提示 外部应用打开，打开paly商店开应用详情页。
+5.5.3点击更新，要注意下载的进度条，当进度条超过50%以后，立马用 搞机工具箱 禁用。忽略提示信息，继续卸载。（注意：如果下载卡在等待中，建议去应用管理把Google Play服务和Play Store后台进程都杀掉，然后换用其它梯子，重新回到5.5.1，又或者直接把梯子关了等一段时间再打开，然后重新下载即可。）
+&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/04/12/66180a36b8cbb.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;网很快的话这个过程可能就几秒，因此提前要做好准备。&#34;
+	
+	
+&gt;
+&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/04/12/66180a71cf920.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;下载进度超50后电脑上同时执行预先准备好的这个指令。&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;更新完成后，play服务弹窗就会消失，消失后关掉play商店后台，重新打开，随便下载一个应用，正常下载继续11步。
+&lt;strong&gt;符合预期&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;11检查fcm是否开启&#34;&gt;11.检查FCM是否开启
+&lt;/h4&gt;&lt;p&gt;确保网络畅通可访问谷歌
+打开 电话，输入 &lt;code&gt;*#*#426#*#*&lt;/code&gt; 跳转到FCM日志
+提示 Connected 表示已连接，即成功。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Server:Connected
+Host:mtalk.google.com/28.0.0.5
+Port:5228
+Time Connected:00:01
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果Host和Port有数据，而Server提示No Connected，请重启手机
+如Play商店不能正常加载数据和使用FCM，从第八部开始重新操作。
+&lt;strong&gt;符合预期&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;后附&#34;&gt;后附
+&lt;/h4&gt;&lt;p&gt;按照该教程，基本上可以实现正常使用且不会弹窗（至少目前不会），以上经测试商店相关的功能都没问题，后续如果有什么变数再更新。
+再次感谢原作者。&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

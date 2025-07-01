@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 是的，又搭怪东西了，这次上线的是日记。 搭这玩意完全是因为昨晚上准备睡觉前突发奇想，我要不要记一下每天的生活和杂事，省得哪天突然会忘记什么重要的事情。但是日记这东西属于是比较隐私的东西，肯定不能直接往博客里扔，一是时间一长不打理后台会变得乱糟糟的，另一方面我不可能每次都要给文章上密码，就为了写几个字，那样太费劲了。我也曾想过去应用商店找一些APP，但很多都只提供云端备份服务，没办法本地导出，这意味着我需要注册一个账号，提供邮箱甚至手机号等信息，然后还要把我那些屁话上传，反正我是有点精神洁癖，不希望我比较隐私的数据不被自己管控。当然，最重要的一点是鸿蒙Next用户没那么多选择。所以，我的需求就成了：\n">
+<title>狼的日记本 上线了</title>
+
+<link rel='canonical' href='http://localhost:1313/post/dairy.html.html'>
+
+<link rel="stylesheet" href="/scss/style.min.6a6b3f9159829e2ab92859ca6f195fce9a66f7e31fb62518aaeea99361e6dc9e.css"><meta property='og:title' content="狼的日记本 上线了">
+<meta property='og:description' content=" 是的，又搭怪东西了，这次上线的是日记。 搭这玩意完全是因为昨晚上准备睡觉前突发奇想，我要不要记一下每天的生活和杂事，省得哪天突然会忘记什么重要的事情。但是日记这东西属于是比较隐私的东西，肯定不能直接往博客里扔，一是时间一长不打理后台会变得乱糟糟的，另一方面我不可能每次都要给文章上密码，就为了写几个字，那样太费劲了。我也曾想过去应用商店找一些APP，但很多都只提供云端备份服务，没办法本地导出，这意味着我需要注册一个账号，提供邮箱甚至手机号等信息，然后还要把我那些屁话上传，反正我是有点精神洁癖，不希望我比较隐私的数据不被自己管控。当然，最重要的一点是鸿蒙Next用户没那么多选择。所以，我的需求就成了：\n">
+<meta property='og:url' content='http://localhost:1313/post/dairy.html.html'>
+<meta property='og:site_name' content='狼的公告板 ver.Hugo'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='日记' /><meta property='article:tag' content='diary' /><meta property='article:tag' content='纯网页' /><meta property='article:published_time' content='2024-12-30T22:29:00&#43;00:00'/><meta property='article:modified_time' content='2024-12-30T22:29:00&#43;00:00'/>
+<meta name="twitter:title" content="狼的日记本 上线了">
+<meta name="twitter:description" content=" 是的，又搭怪东西了，这次上线的是日记。 搭这玩意完全是因为昨晚上准备睡觉前突发奇想，我要不要记一下每天的生活和杂事，省得哪天突然会忘记什么重要的事情。但是日记这东西属于是比较隐私的东西，肯定不能直接往博客里扔，一是时间一长不打理后台会变得乱糟糟的，另一方面我不可能每次都要给文章上密码，就为了写几个字，那样太费劲了。我也曾想过去应用商店找一些APP，但很多都只提供云端备份服务，没办法本地导出，这意味着我需要注册一个账号，提供邮箱甚至手机号等信息，然后还要把我那些屁话上传，反正我是有点精神洁癖，不希望我比较隐私的数据不被自己管控。当然，最重要的一点是鸿蒙Next用户没那么多选择。所以，我的需求就成了：\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_d6a5c15246229c7b.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">狼的公告板 ver.Hugo</a></h1>
+            <h2 class="site-description">念念不忘，必有回响</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="http://localhost:1313/en/" >English</option>
+                                
+                                    <option value="http://localhost:1313/" selected>中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#日记撰写">日记撰写</a></li>
+            <li><a href="#附属功能">附属功能</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/record.html" >
+                Record
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/dairy.html.html">狼的日记本 上线了</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Dec 30, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 3 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/12/30/6772ae9f88f02.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="主界面"
+	
+	
+>
+是的，又搭怪东西了，这次上线的是<a class="link" href="https://diary.tama.guru/diary"  target="_blank" rel="noopener"
+    >日记</a>。
+搭这玩意完全是因为昨晚上准备睡觉前突发奇想，我要不要记一下每天的生活和杂事，省得哪天突然会忘记什么重要的事情。但是日记这东西属于是比较隐私的东西，肯定不能直接往博客里扔，一是时间一长不打理后台会变得乱糟糟的，另一方面我不可能每次都要给文章上密码，就为了写几个字，那样太费劲了。我也曾想过去应用商店找一些APP，但很多都只提供云端备份服务，没办法本地导出，这意味着我需要注册一个账号，提供邮箱甚至手机号等信息，然后还要把我那些屁话上传，反正我是有点精神洁癖，不希望我比较隐私的数据不被自己管控。当然，最重要的一点是<del>鸿蒙Next用户没那么多选择</del>。所以，我的需求就成了：</p>
+<ul>
+<li>多平台。</li>
+<li>数据不依赖云端，要么就是能自己管控。</li>
+</ul>
+<p>按这个要求最佳的选择自然就是使用浏览器的开源程序了，服务直接放在自己的服务器上自己也放心，而且浏览器就不会有什么客户端的限制了，也非常符合我能用网页绝对不多安装个程序的原则。
+一开始我找到的是<a class="link" href="https://gitee.com/Yu-core/SwashbucklerDiary"  target="_blank" rel="noopener"
+    >侠客日记</a>，看上去功能很强大，但是去看了下源码居然是用.NET的，直接就放弃了，最后选择的是<a class="link" href="https://github.com/KyleBing/diary"  target="_blank" rel="noopener"
+    >标题日记</a>。前端<code>vue3</code>+<code>ts</code>+<code>vite</code>，后端<code>nodejs</code>，运行起来占用非常小，非常适合我这种买不起大鸡的小站长:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">(</span>base<span class="o">)</span> root@*:~# ps aux <span class="p">|</span> grep npm
+</span></span><span class="line"><span class="cl">root     <span class="m">2057203</span>  0.0  1.7 <span class="m">720260</span> <span class="m">64948</span> pts/5    Sl+  16:53   0:00 npm run serve
+</span></span><span class="line"><span class="cl">root     <span class="m">2068496</span>  0.0  0.0   <span class="m">6240</span>   <span class="m">648</span> pts/0    S+   21:38   0:00 grep npm
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>搭建很简单，前后端都有很详细的文档，如果有需要建议直接去项目下面一步一步跟着做。
+功能基本上能满足我的要求：</p>
+<h4 id="日记撰写">日记撰写
+</h4><p>默认提供了很多分类和时间天气等信息的记录，而且支持MD格式写作。
+<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/12/30/6772a4d7d791b.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="选项"
+	
+	
+>
+虽然不支持直接上传图片，但是借助第三方图床工具也能实现图片显示。
+<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/12/30/6772a5ac4353b.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="支持MD和HTML格式"
+	
+	
+><img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/12/30/6772a5c87b729.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="显示效果"
+	
+	
+></p>
+<h4 id="附属功能">附属功能
+</h4><p>附属功能目前包含四个</p>
+<ul>
+<li>银行卡信息记录功能</li>
+<li>记账单</li>
+<li>待办事项记录</li>
+<li><del>经期记录</del></li>
+</ul>
+<p>第一个功能先不说了，谁会把这东西放到网上啊&hellip;姑且也写一下用法，就直接生成一个名为<code>我的银行卡列表</code>的文章，内容按照下面的格式记录，就能得到银行卡信息界面：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="cl">银行：民生银行
+</span></span><span class="line"><span class="cl">卡号：6*** <span class="ge">**</span>** <span class="ge">**</span>** <span class="ge">**</span>**
+</span></span><span class="line"><span class="cl">类别：储蓄卡
+</span></span><span class="line"><span class="cl">开户行：山东济南办卡
+</span></span><span class="line"><span class="cl">刷卡次数：5
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">银行：民生银行
+</span></span><span class="line"><span class="cl">卡号：6*** <span class="ge">**</span>** <span class="ge">**</span>** <span class="ge">**</span>**
+</span></span><span class="line"><span class="cl">类别：信用卡
+</span></span><span class="line"><span class="cl">开户行：山东济南办卡
+</span></span><span class="line"><span class="cl">额度：20000
+</span></span><span class="line"><span class="cl">验证码：123/4
+</span></span><span class="line"><span class="cl">到期日：2029-08-10
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/12/30/6772aa5a7de36.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="银行卡"
+	
+	
+></p>
+<p>第二个倒是挺实用，直接在账单分类下按这样的格式记录信息，就能形成日账单记录：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="cl">买菜 -330
+</span></span><span class="line"><span class="cl">吃饭 -120
+</span></span><span class="line"><span class="cl">敲诈勒索 +200
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/12/30/6772a70da04f4.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="账单信息汇总"
+	
+	
+>
+第三个功能也差不多，类似这样的格式:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="cl"><span class="k">-</span> 阿巴阿巴
+</span></span><span class="line"><span class="cl">= 买大疆 Mavic Classic 3 #￥9000
+</span></span><span class="line"><span class="cl">= 坐飞机
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>即可获得这样的效果：
+<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/12/30/6772a9b331b9b.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="待办事项"
+	
+	
+></p>
+<p>第四个，经期记录，我看了测试站，貌似是在<code>备忘</code>下生成一个经期记录的标题，内容是:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">2024-12-20, 2024-12-26
+</span></span><span class="line"><span class="cl">2024-11-22, 2024-11-28
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>即可在日历界面生成<del>不安全的日子</del>：
+<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/12/30/6772ac1d5223a.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="经期记录"
+	
+	
+></p>
+<p>其他还有一些小功能，比如：</p>
+<ol>
+<li>配置好所在城市后会自动填写当天的天气（根据和风天气API获取）</li>
+<li>前台显示、隐藏文章内容</li>
+<li>支持csv、json、txt、sql格式数据导出和账户注销</li>
+<li>单篇日记内容分享</li>
+</ol>
+<p>当然，这半天的使用我也发现了一些小问题，比如：</p>
+<ol>
+<li>后台总会有奇奇怪怪的报错，这个后续再研究</li>
+<li>支持上传头像，但是只支持七牛云，而七牛云不备案域名是没办法开启HTTPS的，而且临时域名会在30天后过期，对于常年全站HTTPS的站长真的折磨。</li>
+</ol>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E6%97%A5%E8%AE%B0.html">日记</a>
+        
+            <a href="/tags/diary.html">Diary</a>
+        
+            <a href="/tags/%E7%BA%AF%E7%BD%91%E9%A1%B5.html">纯网页</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/post/acfun-gift-count.html.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">关于AcFun礼物统计网页的说明</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/anti-360albumviewer.html.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">如何避免大数字自动安装大数字看图(360AlbumViewer)</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/traccar.html.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">搭建自己的轨迹记录程序 Traccar</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/tinystatus.html.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用tinystatus构建一个轻量化的状态监测站</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/umami.html.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用vercel&#43;neon方案搭建无需服务器的umami统计服务</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        --waline-font-size: var(--article-font-size);
+    }
+    .waline-container .wl-count {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://unpkg.com/@waline/emojis@1.0.1/weibo"],"lang":"zh-CN","locale":{"admin":"博主","placeholder":"欢迎评论"},"pageview":false,"requiredMeta":["name","email"],"serverURL":"https://artalk.tama.guru"});
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2022 - 
+        
+        2025 tamakyi
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.8382466cdcb1c0571ef261e5654d7d81331fcbd60eaefd6a14e7253cae165eb6.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

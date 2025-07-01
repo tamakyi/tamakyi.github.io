@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="今年年初的时候Vultr推出了免费服务器计划，只要满足以下条件就能申请一台服务器：\n绑定了信用卡 开启2FA 服务器的规格如下：\n单核虚拟处理器 0.5GB内存 10GB磁盘 2TB的免费全球带宽 0.5G内存可能是小了点，但是免费的，跑个Debian应该还行。 申请之后一段时间会收到这个提示： 其中有提到这个计划的启动时间和结束时间，但是有网友问过客服，如果到期了再次审核满足条件的话是能继续续下去的。 建立新实例的步骤如下：\n">
+<title>Vultr免费服务器体验</title>
+
+<link rel='canonical' href='http://localhost:1313/categories/record/vultr-free-instance/'>
+
+<link rel="stylesheet" href="/scss/style.min.6a6b3f9159829e2ab92859ca6f195fce9a66f7e31fb62518aaeea99361e6dc9e.css"><meta property='og:title' content="Vultr免费服务器体验">
+<meta property='og:description' content="今年年初的时候Vultr推出了免费服务器计划，只要满足以下条件就能申请一台服务器：\n绑定了信用卡 开启2FA 服务器的规格如下：\n单核虚拟处理器 0.5GB内存 10GB磁盘 2TB的免费全球带宽 0.5G内存可能是小了点，但是免费的，跑个Debian应该还行。 申请之后一段时间会收到这个提示： 其中有提到这个计划的启动时间和结束时间，但是有网友问过客服，如果到期了再次审核满足条件的话是能继续续下去的。 建立新实例的步骤如下：\n">
+<meta property='og:url' content='http://localhost:1313/categories/record/vultr-free-instance/'>
+<meta property='og:site_name' content='狼的公告板 ver.Hugo'>
+<meta property='og:type' content='article'><meta property='article:section' content='Categories' /><meta property='article:tag' content='vultr' /><meta property='article:tag' content='云服务器' /><meta property='article:published_time' content='2023-07-16T01:35:27&#43;00:00'/><meta property='article:modified_time' content='2023-07-16T01:35:27&#43;00:00'/>
+<meta name="twitter:title" content="Vultr免费服务器体验">
+<meta name="twitter:description" content="今年年初的时候Vultr推出了免费服务器计划，只要满足以下条件就能申请一台服务器：\n绑定了信用卡 开启2FA 服务器的规格如下：\n单核虚拟处理器 0.5GB内存 10GB磁盘 2TB的免费全球带宽 0.5G内存可能是小了点，但是免费的，跑个Debian应该还行。 申请之后一段时间会收到这个提示： 其中有提到这个计划的启动时间和结束时间，但是有网友问过客服，如果到期了再次审核满足条件的话是能继续续下去的。 建立新实例的步骤如下：\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_d6a5c15246229c7b.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">狼的公告板 ver.Hugo</a></h1>
+            <h2 class="site-description">念念不忘，必有回响</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="http://localhost:1313/en/" >English</option>
+                                
+                                    <option value="http://localhost:1313/" selected>中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/record/" >
+                Record
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/categories/record/vultr-free-instance/">Vultr免费服务器体验</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jul 16, 2023</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 2 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>今年年初的时候Vultr推出了免费服务器计划，只要满足以下条件就能申请一台服务器：</p>
+<ul>
+<li>绑定了信用卡</li>
+<li>开启2FA</li>
+</ul>
+<p>服务器的规格如下：</p>
+<ul>
+<li>单核虚拟处理器</li>
+<li>0.5GB内存</li>
+<li>10GB磁盘</li>
+<li>2TB的免费全球带宽</li>
+</ul>
+<p>0.5G内存可能是小了点，但是免费的，跑个Debian应该还行。
+申请之后一段时间会收到这个提示：
+<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/07/16/64b2ceba25477.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="2023-07-15T16:52:09.png"
+	
+	
+>
+其中有提到这个计划的启动时间和结束时间，但是有网友问过客服，如果到期了再次审核满足条件的话是能继续续下去的。
+建立新实例的步骤如下：</p>
+<ol>
+<li>选择Cloud Compute</li>
+</ol>
+<p><img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/07/16/64b2cf27838d7.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="D1"
+	
+	
+></p>
+<ul>
+<li>
+<p>选择Regular Performance
+<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/07/16/64b2cf6e27c7a.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="D2"
+	
+	
+></p>
+</li>
+<li>
+<p>选择Server Location。需要注意的是，免费计划只适用于美国西雅图、迈阿密和德国法兰克福，选择其他地方是不会在Server Size出现&quot;Free Tier&quot;这个选项的。
+<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/07/16/64b2d0139c2d4.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="D3"
+	
+	
+><img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/07/16/64b2d0213b511.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="D4"
+	
+	
+>
+新建成功之后去PING了一下IP，居然是通的 (ﾟ∀。)，记得几年前Vultr家的服务器是一封一大片。</p>
+</li>
+<li>
+<p>磁盘占用情况：</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">root@vultr:~# df -h
+</span></span><span class="line"><span class="cl">Filesystem      Size  Used Avail Use% Mounted on
+</span></span><span class="line"><span class="cl">udev            207M     0  207M   0% /dev
+</span></span><span class="line"><span class="cl">tmpfs            46M  696K   46M   2% /run
+</span></span><span class="line"><span class="cl">/dev/vda1       9.4G  2.6G  6.3G  30% /
+</span></span><span class="line"><span class="cl">tmpfs           229M     0  229M   0% /dev/shm
+</span></span><span class="line"><span class="cl">tmpfs           5.0M     0  5.0M   0% /run/lock
+</span></span><span class="line"><span class="cl">tmpfs            46M     0   46M   0% /run/user/0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>还剩6.3G，还行，还能做些事情。</p>
+<ul>
+<li>内存占用情况：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">root@vultr:~# free -m
+</span></span><span class="line"><span class="cl">               total        used        free      shared  buff/cache   available
+</span></span><span class="line"><span class="cl">Mem:             457         104         233           0         140         353
+</span></span><span class="line"><span class="cl">Swap:              0           0           0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>还剩233M&hellip;这下不开swap不行了，给swap划分1个G，那就还剩5个G左右的空间。
+还要配置好swap的使用机制：
+<code>echo &quot;vm.swappiness = 50&quot; &gt;&gt; /etc/sysctl.conf</code>
+这个数值0即完全不使用swap，100即更偏向使用swap。这么小内存的机子，我就配置个五五开差不多了。</p>
+<ul>
+<li>网速测试：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">root</span><span class="err">@</span><span class="n">vultr</span><span class="p">:</span><span class="o">~</span><span class="c1"># speedtest-cli</span>
+</span></span><span class="line"><span class="cl"><span class="n">Retrieving</span> <span class="n">speedtest</span><span class="o">.</span><span class="n">net</span> <span class="n">configuration</span><span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="n">Testing</span> <span class="n">from</span> <span class="n">Choopa</span><span class="p">,</span> <span class="n">LLC</span> <span class="p">(</span><span class="o">********</span><span class="p">)</span><span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="n">Retrieving</span> <span class="n">speedtest</span><span class="o">.</span><span class="n">net</span> <span class="n">server</span> <span class="n">list</span><span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="n">Selecting</span> <span class="n">best</span> <span class="n">server</span> <span class="n">based</span> <span class="n">on</span> <span class="n">ping</span><span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="n">Hosted</span> <span class="n">by</span> <span class="n">Wowrack</span> <span class="p">(</span><span class="n">Seattle</span><span class="p">,</span> <span class="n">WA</span><span class="p">)</span> <span class="p">[</span><span class="mf">1.31</span> <span class="n">km</span><span class="p">]:</span> <span class="mf">9.041</span> <span class="n">ms</span>
+</span></span><span class="line"><span class="cl"><span class="n">Testing</span> <span class="n">download</span> <span class="n">speed</span><span class="o">................................................................................</span>
+</span></span><span class="line"><span class="cl"><span class="n">Download</span><span class="p">:</span> <span class="mf">655.26</span> <span class="n">Mbit</span><span class="o">/</span><span class="n">s</span>
+</span></span><span class="line"><span class="cl"><span class="n">Testing</span> <span class="n">upload</span> <span class="n">speed</span><span class="o">......................................................................................................</span>
+</span></span><span class="line"><span class="cl"><span class="n">Upload</span><span class="p">:</span> <span class="mf">3234.36</span> <span class="n">Mbit</span><span class="o">/</span><span class="n">s</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>(ﾟ∀。) Really nigger?
+拖个镜像试试看</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">root@vultr:~# wget https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/debian-12.0.0-amd64-DVD-1.iso
+</span></span><span class="line"><span class="cl">--2023-07-15 17:24:53--  https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/debian-12.0.0-amd64-DVD-1.iso
+</span></span><span class="line"><span class="cl">Resolving cdimage.debian.org (cdimage.debian.org)... 2001:6b0:19::163, 2001:6b0:19::173, 2001:6b0:19::165, ...
+</span></span><span class="line"><span class="cl">Connecting to cdimage.debian.org (cdimage.debian.org)|2001:6b0:19::163|:443... connected.
+</span></span><span class="line"><span class="cl">HTTP request sent, awaiting response... 302 Found
+</span></span><span class="line"><span class="cl">Location: https://saimei.ftp.acc.umu.se/debian-cd/current/amd64/iso-dvd/debian-12.0.0-amd64-DVD-1.iso [following]
+</span></span><span class="line"><span class="cl">--2023-07-15 17:24:54--  https://saimei.ftp.acc.umu.se/debian-cd/current/amd64/iso-dvd/debian-12.0.0-amd64-DVD-1.iso
+</span></span><span class="line"><span class="cl">Resolving saimei.ftp.acc.umu.se (saimei.ftp.acc.umu.se)... 2001:6b0:19::138, 194.71.11.138
+</span></span><span class="line"><span class="cl">Connecting to saimei.ftp.acc.umu.se (saimei.ftp.acc.umu.se)|2001:6b0:19::138|:443... connected.
+</span></span><span class="line"><span class="cl">HTTP request sent, awaiting response... 200 OK
+</span></span><span class="line"><span class="cl">Length: 3931095040 (3.7G) [application/x-iso9660-image]
+</span></span><span class="line"><span class="cl">Saving to: ‘debian-12.0.0-amd64-DVD-1.iso’
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">debian-12.0.0-amd64-DVD-1.iso                                100%[===========================================================================================================================================&gt;]   3.66G  87.3MB/s    in 46s     
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">2023-07-15 17:25:41 (81.9 MB/s) - ‘debian-12.0.0-amd64-DVD-1.iso’ saved [3931095040/3931095040]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>欸欸欸 (ﾟ∀。)</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/vultr/">Vultr</a>
+        
+            <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/">云服务器</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/categories/record/idc-rbt/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">丂渐云性能测试</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/categories/record/acfun-gift-count/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">关于AcFun礼物统计网页的说明</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/categories/record/anti-360albumviewer/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">如何避免大数字自动安装大数字看图(360AlbumViewer)</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/categories/record/traccar/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">搭建自己的轨迹记录程序 Traccar</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/categories/record/tinystatus/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用tinystatus构建一个轻量化的状态监测站</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        --waline-font-size: var(--article-font-size);
+    }
+    .waline-container .wl-count {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://unpkg.com/@waline/emojis@1.0.1/weibo"],"lang":"zh-CN","locale":{"admin":"博主","placeholder":"欢迎评论"},"pageview":false,"requiredMeta":["name","email"],"serverURL":"https://artalk.tama.guru"});
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2022 - 
+        
+        2025 tamakyi
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.8382466cdcb1c0571ef261e5654d7d81331fcbd60eaefd6a14e7253cae165eb6.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Stable-Diffusion on 狼的公告板 ver.Hugo</title>
+        <link>https://example.com/tags/stable-diffusion.html</link>
+        <description>Recent content in Stable-Diffusion on 狼的公告板 ver.Hugo</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>tamakyi</copyright>
+        <lastBuildDate>Wed, 19 Oct 2022 23:44:38 +0000</lastBuildDate><atom:link href="https://example.com/tags/stable-diffusion/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>stable-diffusion使用过程中的一些记录</title>
+        <link>https://example.com/record/stable-diffusion-webui.html</link>
+        <pubDate>Wed, 19 Oct 2022 23:44:38 +0000</pubDate>
+        
+        <guid>https://example.com/record/stable-diffusion-webui.html</guid>
+        <description>&lt;p&gt;原文已丢失，以下部分为重写。
+正文部分忘得差不多了，此处就记录一下使用过程中的问题吧。&lt;/p&gt;
+&lt;p&gt;[scode type=&amp;ldquo;lblue&amp;rdquo;]No.1 我想在本地搭建服务并分享出去[/scode]
+修改目录下的&lt;code&gt;webui.py&lt;/code&gt;文件，将101行&lt;code&gt;app,local_url,share_url = demo.launch(&lt;/code&gt;的代码块修改为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        app,local_url,share_url = demo.launch(
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            share=True,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            server_name=&amp;#34;你的本地IP，比如192.168.10.121&amp;#34; if cmd_opts.listen else None,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            server_port=cmd_opts.port,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            debug=cmd_opts.gradio_debug,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            auth=[tuple(cred.split(&amp;#39;:&amp;#39;)) for cred in cmd_opts.gradio_auth.strip(&amp;#39;&amp;#34;&amp;#39;).split(&amp;#39;,&amp;#39;)] if cmd_opts.gradio_auth else None,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            inbrowser=cmd_opts.autolaunch,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            prevent_thread_lock=True
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        )
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;修改完成后保存运行&lt;code&gt;webui-user.bat&lt;/code&gt;即可。
+需要注意的是开启分享需要全程连接谷歌，因为需要调用到谷歌的gradio服务。
+[scode type=&amp;ldquo;lblue&amp;rdquo;]No.2 我想在本地搭建服务但是我的运存有点小[/scode]
+按照官方的说法，只需要修改&lt;code&gt;webui-user.bat&lt;/code&gt;文件，将&lt;code&gt;set COMMANDLINE_ARGS=&lt;/code&gt;添加参数&lt;code&gt;--medvram&lt;/code&gt;即可，即显示为：
+&lt;code&gt;set COMMANDLINE_ARGS=--medvram&lt;/code&gt;
+修改完成后保存运行&lt;code&gt;webui-user.bat&lt;/code&gt;即可。
+[scode type=&amp;ldquo;lblue&amp;rdquo;]No.3 我生成的结果好丑！[/scode]
+我猜你是想画二次元涩图。其一：程序的wiki上留下的模型比较&amp;hellip;正常？所以首先你需要替换掉模型。目前因为一些原因novelai的ckpt模型已泄露，可以将下载到的模型重命名为&lt;code&gt;model.ckpt&lt;/code&gt;并替换到&lt;code&gt;models\Stable-diffusion&lt;/code&gt;目录再重新启动程序即可。
+其二：你需要到网页端把NSFW过滤给关掉了。
+其三：你可能需要添加一些低质量关键词过滤，以下为参考：
+&lt;code&gt;lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet&lt;/code&gt;&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

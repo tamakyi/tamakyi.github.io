@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="前言 放以前啊，如果要在手机上玩galgame，基本都要等krkr ons Artemis这类能够移植到多平台的引起。再后来出现了exgear、winlator等一系列模拟器，通过wine环境模拟windows运行的必要组件实现galgame的运行，但这类软件总是有一些问题，最常见的就是缺少运行库、没有中文字体等，需要自己手动打补丁，因此也有很多网友制作了“整合包”，比如[post cid=&ldquo;345&rdquo; /]这里提供的7.1汉化整合包，能够满足部分游戏的运行要求。但是wine哪怕不同版本，不同系统也经常有一台手机能跑另一台又跑不了的情况，而这个盖世游戏能够提供不少环境组合，貌似是目前的最优解。\n">
+<title>[好软推荐] 盖世游戏-意外好用的windows游戏模拟器</title>
+
+<link rel='canonical' href='http://localhost:1313/categories/software/gamehub/'>
+
+<link rel="stylesheet" href="/scss/style.min.6a6b3f9159829e2ab92859ca6f195fce9a66f7e31fb62518aaeea99361e6dc9e.css"><meta property='og:title' content="[好软推荐] 盖世游戏-意外好用的windows游戏模拟器">
+<meta property='og:description' content="前言 放以前啊，如果要在手机上玩galgame，基本都要等krkr ons Artemis这类能够移植到多平台的引起。再后来出现了exgear、winlator等一系列模拟器，通过wine环境模拟windows运行的必要组件实现galgame的运行，但这类软件总是有一些问题，最常见的就是缺少运行库、没有中文字体等，需要自己手动打补丁，因此也有很多网友制作了“整合包”，比如[post cid=&ldquo;345&rdquo; /]这里提供的7.1汉化整合包，能够满足部分游戏的运行要求。但是wine哪怕不同版本，不同系统也经常有一台手机能跑另一台又跑不了的情况，而这个盖世游戏能够提供不少环境组合，貌似是目前的最优解。\n">
+<meta property='og:url' content='http://localhost:1313/categories/software/gamehub/'>
+<meta property='og:site_name' content='狼的公告板 ver.Hugo'>
+<meta property='og:type' content='article'><meta property='article:section' content='Categories' /><meta property='article:tag' content='Winlator' /><meta property='article:tag' content='wine' /><meta property='article:tag' content='盖世游戏' /><meta property='article:tag' content='模拟器' /><meta property='article:tag' content='proton' /><meta property='article:published_time' content='2025-05-07T00:26:00&#43;00:00'/><meta property='article:modified_time' content='2025-05-07T00:26:00&#43;00:00'/>
+<meta name="twitter:title" content="[好软推荐] 盖世游戏-意外好用的windows游戏模拟器">
+<meta name="twitter:description" content="前言 放以前啊，如果要在手机上玩galgame，基本都要等krkr ons Artemis这类能够移植到多平台的引起。再后来出现了exgear、winlator等一系列模拟器，通过wine环境模拟windows运行的必要组件实现galgame的运行，但这类软件总是有一些问题，最常见的就是缺少运行库、没有中文字体等，需要自己手动打补丁，因此也有很多网友制作了“整合包”，比如[post cid=&ldquo;345&rdquo; /]这里提供的7.1汉化整合包，能够满足部分游戏的运行要求。但是wine哪怕不同版本，不同系统也经常有一台手机能跑另一台又跑不了的情况，而这个盖世游戏能够提供不少环境组合，貌似是目前的最优解。\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_d6a5c15246229c7b.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">狼的公告板 ver.Hugo</a></h1>
+            <h2 class="site-description">念念不忘，必有回响</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="http://localhost:1313/en/" >English</option>
+                                
+                                    <option value="http://localhost:1313/" selected>中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#前言">前言</a></li>
+            <li><a href="#软件介绍">软件介绍</a></li>
+            <li><a href="#软件使用">软件使用</a></li>
+            <li><a href="#总结">总结</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E8%AE%B0%E5%BD%95/" >
+                记录
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/categories/software/gamehub/">[好软推荐] 盖世游戏-意外好用的windows游戏模拟器</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">May 07, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 4 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h4 id="前言">前言
+</h4><p>放以前啊，如果要在手机上玩galgame，基本都要等krkr ons Artemis这类能够移植到多平台的引起。再后来出现了exgear、winlator等一系列模拟器，通过wine环境模拟windows运行的必要组件实现galgame的运行，但这类软件总是有一些问题，最常见的就是缺少运行库、没有中文字体等，需要自己手动打补丁，因此也有很多网友制作了“整合包”，比如[post cid=&ldquo;345&rdquo; /]这里提供的7.1汉化整合包，能够满足部分游戏的运行要求。但是wine哪怕不同版本，不同系统也经常有一台手机能跑另一台又跑不了的情况，而这个盖世游戏能够提供不少环境组合，貌似是目前的最优解。</p>
+<h4 id="软件介绍">软件介绍
+</h4><p>提起盖世大家应该多少听说过小鸡模拟器这东西，后面还做了手柄啥的，我手里的g3s从大一买到现在都还能用,个人对这个牌子还挺有好感的。
+那什么是盖世游戏？</p>
+<blockquote>
+<p>盖世游戏是一款多功能游戏平台，支持PC模拟器、云游戏和游戏串流。它允许用户使用手柄或触摸操作进行游戏，满足各种游戏需求。</p></blockquote>
+<p>是的，除了模拟之外这玩意还能弄串流，最新版本甚至还能登录steam玩上面的游戏，但我没试过，<del>也不想试</del>。
+软件官网：<a class="link" href="https://gamehub.xiaoji.com/zh-cn"  target="_blank" rel="noopener"
+    >https://gamehub.xiaoji.com/zh-cn</a>
+目前是免费的，不知道啥时候会收费。</p>
+<h4 id="软件使用">软件使用
+</h4><p>安装完就是我们熟悉的注册登录环节了。。。没错，这玩意要注册才能用，但也就只需要手机号验证而已，目前不知道有什么必要，但是国产软件嘛。。。
+<img src="https://r2.337845818.best/tamabox/2025/05/07/681b724b0317d.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="主界面"
+	
+	
+>
+主界面不算花里胡哨，基本上都是些串流的游戏，感兴趣可以自己试，我就主要说兼容层等的安装。点击左上角头像的位置（那个流汗黄豆），找到游戏库，然后到PC游戏这个地方，有个运行时，这里可以选择兼容层、转译器、GPU驱动、DXVK、VKD3D等内容的安装。
+<img src="https://r2.337845818.best/tamabox/2025/05/07/681b724b98007.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="运行时维护"
+	
+	
+><img src="https://r2.337845818.best/tamabox/2025/05/07/681b724bce214.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="兼容层"
+	
+	
+>
+以兼容层举例，截至2025年5月6日能够支持wine9.5-10以及proton x64和arm64，这就是重点的地方了，我们跑游戏如果闪退或者碰到奇奇怪怪的地方，可以直接在这里切换兼容层、GPU驱动等内容，相比winlator要到处找包好多了，毕竟手机推galgame真的是需要多次尝试。
+接下来我就拿saga的花之天使的夏日恋歌举例，把所有文件移动到手机上后，在游戏库的PC游戏这里有个加号，直接选中游戏的运行文件，即<code>SiglusEngineCHS.exe</code>，之后会在PC游戏这里生成一个快捷方式，运气好的话直接点击立即游戏就能跑起来了。
+<img src="https://r2.337845818.best/tamabox/2025/05/07/681b724bdfc98.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="花之天使的夏日恋歌"
+	
+	
+><img src="https://r2.337845818.best/tamabox/2025/05/07/681b724b4db06.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="游戏运行主界面"
+	
+	
+>
+有时候碰到闪退，或是花屏等问题，这就需要手动调整运行参数，具体就是点击立即游戏旁边的小齿轮，找到游戏设置。
+<img src="https://r2.337845818.best/tamabox/2025/05/07/681b724c18507.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="兼容性设置"
+	
+	
+><img src="https://r2.337845818.best/tamabox/2025/05/07/681b724c18daf.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="组件设置1"
+	
+	
+><img src="https://r2.337845818.best/tamabox/2025/05/07/681b724b202f3.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="组件设置2"
+	
+	
+>
+需要动的基本就是兼容性设置和组件设置这两个位置，其中兼容性设置选择就是上面我们配置运行时维护安装的兼容层等配置的组合。比如说wine9.5+box64_0.32.1跑不动，就切换到proton兼容层试试，还不行？那试试换个GPU驱动。而如果进入游戏的时候提示缺少xxx组件（比如说dx组件），那就要到组件依赖这里，通过安装新组件的方式手动给当前兼容层环境打组件补丁。（注意组件依赖貌似服务器在国外，部分组件下载极度缓慢，建议尝试多个网络或者干脆挂个梯子）在多次尝试之后，游戏基本都能跑起来。
+经过尝试，我使用OnePlus13+ColorOS15，在8e CPU+24G运存下目前玩的几款游戏都能完美运行：
+<img src="https://r2.337845818.best/tamabox/2025/05/07/681b724c49f99.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="花天使"
+	
+	
+>
+<img src="https://r2.337845818.best/tamabox/2025/05/07/681b724c66488.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="战国兰斯"
+	
+	
+>
+<img src="https://r2.337845818.best/tamabox/2025/05/07/681b724e4fc72.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="你的眼眸命中我心头"
+	
+	
+>
+之前还玩过几个忘记了，现在想起来写文章就把最近玩的放上来。</p>
+<h4 id="总结">总结
+</h4><p>总的来说，盖世游戏能够提供多种兼容层组合方便切换，这是我选择它最主要的原因，而且它提供的组件依赖也比较完善，说到底就是把原来复杂的操作给简单化、图形化了，能一步到位何乐而不为？
+个人评价优缺点：
+优点：</p>
+<ul>
+<li>界面相对友好，白痴化操作</li>
+<li>提供多种兼容层和组件依赖，一步安装</li>
+<li>提供官方的虚拟键盘，也可以映射到实体手柄上</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>需要注册才能使用（关键也没什么需要注册才能用的地方），有精神洁癖估计受不了</li>
+<li>按国内软件的尿性保不齐啥时候就需要开始收费了</li>
+<li>烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/winlator/">Winlator</a>
+        
+            <a href="/tags/wine/">Wine</a>
+        
+            <a href="/tags/%E7%9B%96%E4%B8%96%E6%B8%B8%E6%88%8F/">盖世游戏</a>
+        
+            <a href="/tags/%E6%A8%A1%E6%8B%9F%E5%99%A8/">模拟器</a>
+        
+            <a href="/tags/proton/">Proton</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/categories/software/next-terminal/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">[软件推荐]Next-terminal堡垒机</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/categories/software/winlator/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">[好软推荐]Winlator 在安卓上运行exe程序的更好方案</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/categories/record/apple_jp_giftcard/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">通过自购礼品卡在日服applestore充值使用（也适用于美服）</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        --waline-font-size: var(--article-font-size);
+    }
+    .waline-container .wl-count {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://unpkg.com/@waline/emojis@1.0.1/weibo"],"lang":"zh-CN","locale":{"admin":"博主","placeholder":"欢迎评论"},"pageview":false,"requiredMeta":["name","email"],"serverURL":"https://artalk.tama.guru"});
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2022 - 
+        
+        2025 tamakyi
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.8382466cdcb1c0571ef261e5654d7d81331fcbd60eaefd6a14e7253cae165eb6.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

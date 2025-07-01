@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Aerospace on 狼的公告板 ver.Hugo</title>
+        <link>https://example.com/categories/aerospace.html</link>
+        <description>Recent content in Aerospace on 狼的公告板 ver.Hugo</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>tamakyi</copyright>
+        <lastBuildDate>Fri, 22 Jul 2022 21:30:00 +0000</lastBuildDate><atom:link href="https://example.com/categories/aerospace/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>关于航天系列文章的前言（开新坑）</title>
+        <link>https://example.com/aerospace/space_00.html</link>
+        <pubDate>Fri, 22 Jul 2022 21:30:00 +0000</pubDate>
+        
+        <guid>https://example.com/aerospace/space_00.html</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2022/10/15/634a5d761841f.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;62db7057ae6f8.png&#34;
+	
+	
+&gt;
+对于航天，相信许多人的第一印象是拔地而起的火箭，尾部长长的火焰以及伴随而来的巨大轰鸣声。但可能大多数人的了解也仅限于此了。从上个世纪四十年代人类第一枚液体火箭V2，到现在已经八十年了，许多航天科技也已融入了日常生活。但大多数人对航天的了解仅限于“飞的很高很快”，而且存在许多奇怪的误解。最常见的误区如：火箭是一路垂直着飞上去的；太空不存在引力等。&lt;/p&gt;
+&lt;p&gt;事实上，科普的难度一点不比掌握这门知识更简单，甚至要做到深入浅出，还要理解的更透彻一些。而那些伪“科普”文章显然不具备这样的能力，只能在浅显的地方语焉不详，又在高深的地方复述晦涩的文字。这不仅达不到科普的目的，反而会让人们敬而远之。科普需要首先明确受众，并根据受众的情况对文章进行修改。只要做到让目标受众能快速准确的理解，就是好的科普。&lt;/p&gt;
+&lt;p&gt;因为以上两条原因，我打算写一系列文章来对航天领域进行基本的科普，目标受众是初中以上学历的人。如果他们能够仅靠我的系列文章大致理解航天，我的目的就达到了。如果能引起对航天领域的兴趣，那就更棒了。我在发布科普文章之前，会先让对应基础的人审稿若干遍，以确保文章的专业性与通俗性。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

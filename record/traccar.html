@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="今天外出玩耍的时候突发奇想我能不能每天记录一下自己每天的生活轨迹，百度了下已经有很多成熟的应用了，但是这种比较私密的数据要发送到别人的服务器上说实话我是不太想的，然后去github上找了下，发现了好几个方案，都尝试了一遍，主要是https://github.com/cctyl/TrackRecord，搭完发现太简陋了，不适合我，其他几个更是已经几年没更新了，最后尝试了下traccar，感觉算是比较成熟的方案，也符合我的需求。\n">
+<title>搭建自己的轨迹记录程序 Traccar</title>
+
+<link rel='canonical' href='https://example.com/record/traccar.html'>
+
+<link rel="stylesheet" href="/scss/style.min.6a6b3f9159829e2ab92859ca6f195fce9a66f7e31fb62518aaeea99361e6dc9e.css"><meta property='og:title' content="搭建自己的轨迹记录程序 Traccar">
+<meta property='og:description' content="今天外出玩耍的时候突发奇想我能不能每天记录一下自己每天的生活轨迹，百度了下已经有很多成熟的应用了，但是这种比较私密的数据要发送到别人的服务器上说实话我是不太想的，然后去github上找了下，发现了好几个方案，都尝试了一遍，主要是https://github.com/cctyl/TrackRecord，搭完发现太简陋了，不适合我，其他几个更是已经几年没更新了，最后尝试了下traccar，感觉算是比较成熟的方案，也符合我的需求。\n">
+<meta property='og:url' content='https://example.com/record/traccar.html'>
+<meta property='og:site_name' content='狼的公告板 ver.Hugo'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='java' /><meta property='article:tag' content='traccar' /><meta property='article:tag' content='位置记录' /><meta property='article:tag' content='轨迹记录' /><meta property='article:tag' content='开源' /><meta property='article:published_time' content='2025-04-20T05:57:00&#43;00:00'/><meta property='article:modified_time' content='2025-04-20T05:57:00&#43;00:00'/>
+<meta name="twitter:title" content="搭建自己的轨迹记录程序 Traccar">
+<meta name="twitter:description" content="今天外出玩耍的时候突发奇想我能不能每天记录一下自己每天的生活轨迹，百度了下已经有很多成熟的应用了，但是这种比较私密的数据要发送到别人的服务器上说实话我是不太想的，然后去github上找了下，发现了好几个方案，都尝试了一遍，主要是https://github.com/cctyl/TrackRecord，搭完发现太简陋了，不适合我，其他几个更是已经几年没更新了，最后尝试了下traccar，感觉算是比较成熟的方案，也符合我的需求。\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_d6a5c15246229c7b.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">狼的公告板 ver.Hugo</a></h1>
+            <h2 class="site-description">念念不忘，必有回响</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://example.com/en/" >English</option>
+                                
+                                    <option value="https://example.com/" selected>中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#正常安装">正常安装</a></li>
+            <li><a href="#使用docker安装">使用docker安装</a></li>
+            <li><a href="#修改数据库">修改数据库</a></li>
+            <li><a href="#添加设备">添加设备</a></li>
+            <li><a href="#网页端使用">网页端使用</a></li>
+            <li><a href="#其他">其他</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/record.html" >
+                Record
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/record/traccar.html">搭建自己的轨迹记录程序 Traccar</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Apr 20, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 5 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>今天外出玩耍的时候突发奇想我能不能每天记录一下自己每天的生活轨迹，百度了下已经有很多成熟的应用了，但是这种比较私密的数据要发送到别人的服务器上说实话我是不太想的，然后去github上找了下，发现了好几个方案，都尝试了一遍，主要是<a class="link" href="https://github.com/cctyl/TrackRecord"  target="_blank" rel="noopener"
+    >https://github.com/cctyl/TrackRecord</a>，搭完发现太简陋了，不适合我，其他几个更是已经几年没更新了，最后尝试了下traccar，感觉算是比较成熟的方案，也符合我的需求。</p>
+<h4 id="正常安装">正常安装
+</h4><p>其官网位于：<a class="link" href="https://www.traccar.org/"  target="_blank" rel="noopener"
+    >https://www.traccar.org/</a>，项目主要仓库在Github上：<a class="link" href="https://github.com/traccar/traccar"  target="_blank" rel="noopener"
+    >https://github.com/traccar/traccar</a>。直接去release上根据服务器类型下载对应的文件就行了，目前linux支持arm和x64，windows仅支持x64。以我在树莓派上运行为例，下载之后解压执行就能自动配置好：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">wget https://bgithub.xyz/traccar/traccar/releases/download/v6.6/traccar-linux-arm-6.6.zip
+</span></span><span class="line"><span class="cl">unzip traccar-linux-arm-6.6.zip
+</span></span><span class="line"><span class="cl">sudo ./traccar.run
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后执行:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl start traccar.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>再等个几分钟（树莓派太慢了，所以会很久），就可以访问<code>设备IP:8082</code>进入管理界面。初次使用需要配置服务名称、邮箱和密码，然后使用邮箱和密码登录即可。</p>
+<h4 id="使用docker安装">使用docker安装
+</h4><p>首先执行:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker run  --rm  --entrypoint cat  traccar/traccar:latest  /opt/traccar/conf/traccar.xml &gt; /root/traccar/traccar.xml
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>其中<code>/root/traccar/traccar.xml</code>根据实际情况配置，我的配置文件放在<code>/root/traccar</code>下所以这么弄了。
+然后执行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker run -d --restart always --name traccar --hostname traccar -p 8082:8082 -p 5023:5023 -p 5023:5023/udp -p 5055:5055 -p 5055:5055/udp -v /root/traccar/traccar/logs:/opt/traccar/logs:rw -v /root/traccar/traccar.xml:/opt/traccar/conf/traccar.xml:ro -v /root/traccar/templates:/opt/traccar/templates/short -e <span class="nv">TZ</span><span class="o">=</span>Asia/Shanghai traccar/traccar:latest
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这里所有的<code>/root/traccar</code>都要根据实际情况修改，然后确保<code>8082 5023 5055</code>这三个端口都是没有被占用的，有的话改到其他端口下。
+同样再等个几分钟，就可以访问<code>设备IP:8082</code>进入管理界面。初次使用需要配置服务名称、邮箱和密码，然后使用邮箱和密码登录即可。</p>
+<h4 id="修改数据库">修改数据库
+</h4><p>默认情况下它使用的是h2作为数据库，这是一种开源的关系型数据库，采用Java语言编写，数据存储于内存内，为了保证数据安全建议修改为mysql连接方式。
+具体操作是修改数据目录下的<code>traccar.xml</code>文件，原内容是：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">&lt;?xml <span class="nv">version</span><span class="o">=</span><span class="s2">&#34;1.0&#34;</span> <span class="nv">encoding</span><span class="o">=</span><span class="s2">&#34;UTF-8&#34;</span>?&gt;
+</span></span><span class="line"><span class="cl">&lt;!DOCTYPE properties SYSTEM <span class="s1">&#39;http://java.sun.com/dtd/properties.dtd&#39;</span>&gt;
+</span></span><span class="line"><span class="cl">&lt;properties&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;!-- Documentation: https://www.traccar.org/configuration-file/ --&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;entry <span class="nv">key</span><span class="o">=</span><span class="s1">&#39;database.driver&#39;</span>&gt;org.h2.Driver&lt;/entry&gt;
+</span></span><span class="line"><span class="cl">    &lt;entry <span class="nv">key</span><span class="o">=</span><span class="s1">&#39;database.url&#39;</span>&gt;jdbc:h2:./data/database&lt;/entry&gt;
+</span></span><span class="line"><span class="cl">    &lt;entry <span class="nv">key</span><span class="o">=</span><span class="s1">&#39;database.user&#39;</span>&gt;sa&lt;/entry&gt;
+</span></span><span class="line"><span class="cl">    &lt;entry <span class="nv">key</span><span class="o">=</span><span class="s1">&#39;database.password&#39;</span>&gt;&lt;/entry&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;/properties&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>修改为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">&lt;?xml <span class="nv">version</span><span class="o">=</span><span class="s2">&#34;1.0&#34;</span> <span class="nv">encoding</span><span class="o">=</span><span class="s2">&#34;UTF-8&#34;</span>?&gt;
+</span></span><span class="line"><span class="cl">&lt;!DOCTYPE properties SYSTEM <span class="s1">&#39;http://java.sun.com/dtd/properties.dtd&#39;</span>&gt;
+</span></span><span class="line"><span class="cl">&lt;properties&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;!-- Documentation: https://www.traccar.org/configuration-file/ --&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;entry <span class="nv">key</span><span class="o">=</span><span class="s1">&#39;database.driver&#39;</span>&gt;com.mysql.cj.jdbc.Driver&lt;/entry&gt;
+</span></span><span class="line"><span class="cl">    &lt;entry <span class="nv">key</span><span class="o">=</span><span class="s1">&#39;database.url&#39;</span>&gt;jdbc:mysql://sql地址:端口/数据库名称?zeroDateTimeBehavior<span class="o">=</span>round<span class="p">&amp;</span>amp<span class="p">;</span><span class="nv">serverTimezone</span><span class="o">=</span>UTC<span class="p">&amp;</span>amp<span class="p">;</span><span class="nv">allowPublicKeyRetrieval</span><span class="o">=</span>true<span class="p">&amp;</span>amp<span class="p">;</span><span class="nv">useSSL</span><span class="o">=</span>false<span class="p">&amp;</span>amp<span class="p">;</span><span class="nv">allowMultiQueries</span><span class="o">=</span>true<span class="p">&amp;</span>amp<span class="p">;</span><span class="nv">autoReconnect</span><span class="o">=</span>true<span class="p">&amp;</span>amp<span class="p">;</span><span class="nv">useUnicode</span><span class="o">=</span>yes<span class="p">&amp;</span>amp<span class="p">;</span><span class="nv">characterEncoding</span><span class="o">=</span>UTF-8<span class="p">&amp;</span>a&gt;
+</span></span><span class="line"><span class="cl">    &lt;entry <span class="nv">key</span><span class="o">=</span><span class="s1">&#39;database.user&#39;</span>&gt;数据库用户名&lt;/entry&gt;
+</span></span><span class="line"><span class="cl">    &lt;entry <span class="nv">key</span><span class="o">=</span><span class="s1">&#39;database.password&#39;</span>&gt;数据库密码&lt;/entry&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;/properties&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>保存文件，如果使用正常方式安装的执行:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl restart traccar.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果使用的是docker则执行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker restart 容器ID
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>需要注意的是修改数据库不会把h2上的数据迁移过去，所以需要重新设置密码。</p>
+<h4 id="添加设备">添加设备
+</h4><p>Github上提供了编译好的APP，支持IOS和安卓，可以直接下载安装。
+下载完后需要添加好定位权限并锁定后台，然后在APP中修改服务器地址，比如服务器IP是<code>192.168.50.121</code>，那这里就要填写<code>http://192.168.50.121:5055</code>。当然，这是针对没有公网的情况，如果需要在外网访问就自行做穿透。
+然后记录下显示的<code>设备编码</code>，是个6位数字。
+<code>精度</code>可选高中低，应该是越高耗电越多。
+<code>定位频率</code>：多久一次上报位置信息，我设置了1200秒，不需要太高。
+后面<code>距离</code>、<code>角度</code>等我没调整。</p>
+<h4 id="网页端使用">网页端使用
+</h4><p>要做的主要就是连接设备和配置地图信息了。</p>
+<h5 id="连接设备">连接设备
+</h5><p>点击<code>左上角的加号</code>，会跳转到<code>设备页面</code>，要求的必填项有<code>名称</code>和<code>标识符</code>，<code>名称</code>可以随意填写，<code>标识符</code>就是刚才我们手机上的六位数字，如果手机端配置地址无误，几秒钟之后手机的位置和电量就显示在网页上了。可以查看到详细的经纬度、海拔和轨迹信息。</p>
+<h5 id="配置地图信息">配置地图信息
+</h5><p>设置里的首选项第一行的地图中可选的地图很多，红色需要添加key或者付费，免费的支持LocatioIQ、谷歌、高德等地图，但是高德会因为你知道的原因产生偏移，可以通过修改编译原文件的方式解决，但我就算了，不一定用高德其他效果也还不错。</p>
+<h4 id="其他">其他
+</h4><h5 id="添加两步验证">添加两步验证
+</h5><p>如果要暴露在公网上，建议还是添加个2FA保护登录信息，具体操作是在设置的服务器选项下的属性，点击添加，属性选择启用一次性密码，然后确认添加，在出现的启用一次性密码复选框上打勾，此时到设置的账户界面会多一行一次性密码密钥，点击里面有个刷新按钮，然后就弹出密钥了，把它复制到那些两步验证APP上保存即可，网页端也要记得点击保存。</p>
+<h5 id="感想">感想
+</h5><p>这个东西整体基本符合我的要求，该有的功能都有了，配置里还有很多个性化玩法，也看到有好多人把这东西接入hass或者rednode，后面我也会研究研究。
+当然该吐槽的也要吐槽，基于JAVA的东西是真吃内存啊，光容器就吃掉了800M+的内存，mysql那边也盯着内存不放，还好树莓派买的4G版，不然真不敢玩。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/java.html">Java</a>
+        
+            <a href="/tags/traccar.html">Traccar</a>
+        
+            <a href="/tags/%E4%BD%8D%E7%BD%AE%E8%AE%B0%E5%BD%95.html">位置记录</a>
+        
+            <a href="/tags/%E8%BD%A8%E8%BF%B9%E8%AE%B0%E5%BD%95.html">轨迹记录</a>
+        
+            <a href="/tags/%E5%BC%80%E6%BA%90.html">开源</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/record/ruleproject.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用ruleproject搭建自己的typecho程序客户端</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/record/gamehub.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">[好软推荐] 盖世游戏-意外好用的windows游戏模拟器</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/record/acfun-gift-count.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">关于AcFun礼物统计网页的说明</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/record/anti-360albumviewer.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">如何避免大数字自动安装大数字看图(360AlbumViewer)</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/record/next-terminal.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">[软件推荐]Next-terminal堡垒机</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        --waline-font-size: var(--article-font-size);
+    }
+    .waline-container .wl-count {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://unpkg.com/@waline/emojis@1.0.1/weibo"],"lang":"zh-CN","locale":{"admin":"博主","placeholder":"欢迎评论"},"pageview":false,"requiredMeta":["name","email"],"serverURL":"https://artalk.tama.guru"});
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2022 - 
+        
+        2025 tamakyi
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

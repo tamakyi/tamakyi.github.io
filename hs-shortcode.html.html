@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="来源：短代码 - Handsome 使用文档 (ihewro.com)\n以下进行搬运：\n时间线 1 2 3 4 5 6 [timeline title=&#34;2020大事记&#34; type=&#34;small&#34; start=&#34;梦开始的地方&#34; end=&#34;新的一年开始&#34;] [item date=&#34;2020-1-20&#34;] 武汉封城，疫情让一起变得慌乱起来 [/item] [item date=&#34;2020-3-20&#34;] 开始远程办公，慢慢有序起来[/item] [item]生活变得好起来了[/item] [item date=&#34;2020-10-1&#34;] 国庆节去哈尔滨旅行，和老同学见面[/item] [/timeline] 备注： timeline 属性列表：\n">
+<title>handsome主题短代码</title>
+
+<link rel='canonical' href='http://localhost:1313/hs-shortcode.html.html'>
+
+<link rel="stylesheet" href="/scss/style.min.6a6b3f9159829e2ab92859ca6f195fce9a66f7e31fb62518aaeea99361e6dc9e.css"><meta property='og:title' content="handsome主题短代码">
+<meta property='og:description' content="来源：短代码 - Handsome 使用文档 (ihewro.com)\n以下进行搬运：\n时间线 1 2 3 4 5 6 [timeline title=&#34;2020大事记&#34; type=&#34;small&#34; start=&#34;梦开始的地方&#34; end=&#34;新的一年开始&#34;] [item date=&#34;2020-1-20&#34;] 武汉封城，疫情让一起变得慌乱起来 [/item] [item date=&#34;2020-3-20&#34;] 开始远程办公，慢慢有序起来[/item] [item]生活变得好起来了[/item] [item date=&#34;2020-10-1&#34;] 国庆节去哈尔滨旅行，和老同学见面[/item] [/timeline] 备注： timeline 属性列表：\n">
+<meta property='og:url' content='http://localhost:1313/hs-shortcode.html.html'>
+<meta property='og:site_name' content='狼的公告板 ver.Hugo'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-07-12T01:15:00&#43;00:00'/><meta property='article:modified_time' content='2022-07-12T01:15:00&#43;00:00'/>
+<meta name="twitter:title" content="handsome主题短代码">
+<meta name="twitter:description" content="来源：短代码 - Handsome 使用文档 (ihewro.com)\n以下进行搬运：\n时间线 1 2 3 4 5 6 [timeline title=&#34;2020大事记&#34; type=&#34;small&#34; start=&#34;梦开始的地方&#34; end=&#34;新的一年开始&#34;] [item date=&#34;2020-1-20&#34;] 武汉封城，疫情让一起变得慌乱起来 [/item] [item date=&#34;2020-3-20&#34;] 开始远程办公，慢慢有序起来[/item] [item]生活变得好起来了[/item] [item date=&#34;2020-10-1&#34;] 国庆节去哈尔滨旅行，和老同学见面[/item] [/timeline] 备注： timeline 属性列表：\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_d6a5c15246229c7b.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">狼的公告板 ver.Hugo</a></h1>
+            <h2 class="site-description">念念不忘，必有回响</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="http://localhost:1313/en/" >English</option>
+                                
+                                    <option value="http://localhost:1313/" selected>中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/record.html" >
+                Record
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/hs-shortcode.html.html">handsome主题短代码</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jul 12, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 9 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>来源：<a class="link" href="https://auth.ihewro.com/user/docs#/preference/shortCode"  target="_blank" rel="noopener"
+    >短代码 - Handsome 使用文档 (ihewro.com)</a></p>
+<p>以下进行搬运：</p>
+<ul>
+<li>时间线</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[timeline title=&#34;2020大事记&#34; type=&#34;small&#34; start=&#34;梦开始的地方&#34; end=&#34;新的一年开始&#34;]
+</span></span><span class="line"><span class="cl">[item date=&#34;2020-1-20&#34;] 武汉封城，疫情让一起变得慌乱起来 [/item]
+</span></span><span class="line"><span class="cl">[item date=&#34;2020-3-20&#34;] 开始远程办公，慢慢有序起来[/item]
+</span></span><span class="line"><span class="cl">[item]生活变得好起来了[/item]
+</span></span><span class="line"><span class="cl">[item date=&#34;2020-10-1&#34;] 国庆节去哈尔滨旅行，和老同学见面[/item]
+</span></span><span class="line"><span class="cl">[/timeline]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>备注：
+timeline 属性列表：</p>
+<p>type：可选项，默认为small， 可选值:
+small 小巧款式的时间线
+large 大款式的时间线
+random，可选项，默认为true，可选值为true、false，true表示时间线每一条会使用随机的色彩
+对于 large样式的时间线，提供时间线开始和结束的一个文字自定义：</p>
+<p>start：一些简单的文字
+end:一些简单的文字
+item 属性列表：</p>
+<p>date ：可选项，默认不显示时间，可选值：
+一个日期文字，实际上可以填写任何类型文字（不要太长）
+color：可选项，设置当前时间线条的颜色，可选值：&ldquo;light&rdquo;, &ldquo;info&rdquo;, &ldquo;dark&rdquo;, &ldquo;success&rdquo;, &ldquo;black&rdquo;, &ldquo;warning&rdquo;, &ldquo;primary&rdquo;, &ldquo;danger&rdquo;</p>
+<hr>
+<ul>
+<li>计划表</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[goal title=&#34;2021的小目标&#34;]
+</span></span><span class="line"><span class="cl">[item check=&#34;true&#34;] 每天早睡 [/item]
+</span></span><span class="line"><span class="cl">[item check=&#34;false&#34;] 每天早起 [/item]
+</span></span><span class="line"><span class="cl">[item progress=&#34;50%&#34;] 阅读10本书 [/item]
+</span></span><span class="line"><span class="cl">[item start=&#34;2021-01-02&#34; end=&#34;2021-10-1&#34;] 每天锻炼30分钟 [/item]
+</span></span><span class="line"><span class="cl">[/goal]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>备注：
+计划表中包含了三种类型的任务：
+check类型，该类型任务只有两种状态，完成和未完成
+progress，该类型任务可以显示任务执行的进度，需要手动填写进度
+start、end，该类型任务设置一个起始时间和终止时间，进度会根据当前时间自动更新进度
+时间格式：必须是正确的时间格式，比如2021-01-02 12:00 ，也可以只写日期2021-01-02</p>
+<hr>
+<ul>
+<li>音乐
+云解析歌曲：支持以下媒体：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">网易云音乐 http://music.163.com
+</span></span><span class="line"><span class="cl">单曲 http://music.163.com/#/song?id=424474911
+</span></span><span class="line"><span class="cl">专辑 http://music.163.com/#/album?id=34808540
+</span></span><span class="line"><span class="cl">歌手 http://music.163.com/#/artist?id=3681
+</span></span><span class="line"><span class="cl">歌单 http://music.163.com/#/playlist?id=436843836
+</span></span><span class="line"><span class="cl">榜单 http://music.163.com/#/discover/toplist?id=60198
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">QQ 音乐 https://y.qq.com
+</span></span><span class="line"><span class="cl">单曲 https://y.qq.com/n/yqq/song/000jDQWP4JiB3y.html
+</span></span><span class="line"><span class="cl">专辑 https://y.qq.com/n/yqq/album/003rytri2FHG3V.html
+</span></span><span class="line"><span class="cl">歌手 https://y.qq.com/n/yqq/singer/003Nz2So3XXYek.html
+</span></span><span class="line"><span class="cl">歌单 https://y.qq.com/n/yqq/playlist/1144188779.html
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">虾米音乐 http://www.xiami.com or http://h.xiami.com
+</span></span><span class="line"><span class="cl">单曲 http://www.xiami.com/song/bf08DNT3035f
+</span></span><span class="line"><span class="cl">专辑 http://www.xiami.com/album/ddOZW6a10eb
+</span></span><span class="line"><span class="cl">歌手 http://www.xiami.com/artist/be6yda0f8
+</span></span><span class="line"><span class="cl">歌单 http://www.xiami.com/collect/254478782
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">酷狗音乐 http://www.kugou.com
+</span></span><span class="line"><span class="cl">单曲 http://www.kugou.com/song/#hash=09E8DE70A24C97B92A29F6A19F3528A2
+</span></span><span class="line"><span class="cl">专辑 http://www.kugou.com/yy/album/single/1645030.html
+</span></span><span class="line"><span class="cl">歌手 http://www.kugou.com/yy/singer/home/3520.html
+</span></span><span class="line"><span class="cl">歌单 http://www.kugou.com/yy/special/single/119859.html
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">百度音乐 http://music.baidu.com/
+</span></span><span class="line"><span class="cl">单曲 http://music.baidu.com/song/268275324
+</span></span><span class="line"><span class="cl">专辑 http://music.baidu.com/album/268275533
+</span></span><span class="line"><span class="cl">歌手 http://music.baidu.com/artist/1219
+</span></span><span class="line"><span class="cl">歌单 http://music.baidu.com/songlist/364201689
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>本地mp3地址播放：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">//单首歌曲
+</span></span><span class="line"><span class="cl">[hplayer]
+</span></span><span class="line"><span class="cl">[Music title=&#34;歌曲名&#34; author=&#34;歌手&#34; url=&#34;http://&#34; pic=&#34;图片文件URL&#34; lrc=&#34;歌词文件URL&#34; type=&#34;mini&#34;/]
+</span></span><span class="line"><span class="cl">[/hplayer]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">//多首歌曲
+</span></span><span class="line"><span class="cl">[hplayer]
+</span></span><span class="line"><span class="cl">[Music title=&#34;歌曲名&#34; author=&#34;歌手&#34; url=&#34;http://&#34; pic=&#34;图片文件URL&#34; lrc=&#34;歌词文件URL&#34; type=&#34;mini&#34;/]
+</span></span><span class="line"><span class="cl">[Music title=&#34;歌曲名&#34; author=&#34;歌手&#34; url=&#34;http://&#34; pic=&#34;图片文件URL&#34; lrc=&#34;歌词文件URL&#34; type=&#34;mini&#34;/]
+</span></span><span class="line"><span class="cl">[/hplayer]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>其中lrc 字段可以不填，表示没有歌词,type 可选择为 normal、mini 两种</p>
+<hr>
+<ul>
+<li>视频
+点击编辑器的插入视频图标可以插入视频，支持本地的视频地址的播放和解析第三方平台的视频
+时光机的视频插入按钮也是同样的操作</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[vplayer url=&#34;http://xxx.com/xxx.mp4&#34; pic=&#34;http://xxx.com/xxx.png&#34;]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>url：视频地址
+pic：视频背景图片</p>
+<hr>
+<ul>
+<li>按钮</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[button color=&#34;danger&#34; icon=&#34;fontello fontello-gratipay&#34; url=&#34;http:\/\/wpa.qq.com\/msgrd?v=3&amp;uin=535425690&amp;site=qq&amp;menu=yes&#34;]点击QQ咨询购买（√推荐）[/button]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[button color=&#34;success&#34; icon=&#34;glyphicon glyphicon-send&#34; url=&#34;mailto:ihewro@163.com&#34;]ihewro#163.com[/button]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[button color=&#34;success&#34; icon=&#34;music&#34; url=&#34;mailto:ihewro@163.com&#34;]音乐歌单[/button]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[button color=&#34;success&#34; icon=&#34;🍜&#34; url=&#34;mailto:ihewro@163.com&#34;]菜谱[/button]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>备注：</p>
+<p>内容可替换如下：
+矩形文字按钮
+椭圆形文字按钮
+矩形图标文字按钮
+例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[button]矩形按钮文字[/button]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[button color=&#34;succees&#34;]矩形按钮文字[/button]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[button type=&#34;round&#34; color=&#34;success&#34;]椭圆形按钮文字[/button]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[button color=&#34;success&#34; icon=&#34;glyphicon glyphicon-eur&#34;]图标按钮文字[/button]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>type：选填，不填默认为矩形按钮。可选值：
+round：椭圆形按钮
+color： 选填，不填默认为success（绿色），可选值：
+light：白色
+info：蓝色
+dark：深色
+success：绿色
+black：黑色
+warning：黄色
+primary：紫色
+danger：红色
+icon：选填，不填默认为文字按钮
+url:选填，填写点击的链接。举例：如果你的链接是http://www.baidu.com，请手动将/前面加一个反斜杆\，即http://www.baidu.com</p>
+<hr>
+<ul>
+<li>链接卡片</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[link]
+</span></span><span class="line"><span class="cl">[item name=&#34;百度一些&#34; link=&#34;http://baidu.com&#34; desc=&#34;百度一下你就知道&#34; /]
+</span></span><span class="line"><span class="cl">[item name=&#34;网站名称&#34; link=&#34;http://example.com&#34; desc=&#34;一些链接描述&#34; /]
+</span></span><span class="line"><span class="cl">[item name=&#34;网站名称&#34; link=&#34;http://example.com&#34; desc=&#34;一些链接描述&#34; pic=&#34;图片地址&#34; /]
+</span></span><span class="line"><span class="cl">[/link]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<ul>
+<li>文章卡片
+点击编辑器的调用文章的按钮可以调用其他文章并显示。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[post cid=&#34;XXX&#34; /]
+</span></span><span class="line"><span class="cl">[post cid=&#34;XXX&#34; cover=&#34;http:\/\/localhost\/build\/usr\/themes\/handsome\/usr\/img\/sj\/6.jpg&#34;/]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>cid：必填，是文章的唯一编号，在后台的编辑文章的地址可以看到，比如http://localhost/build/admin/write-post.php?cid=23,值为23
+cover：可选项，调用文章显示的封面，如果不填则默认显示随机缩略图。
+size：可选项，可填写值large 、small，默认为large。small表示只显示文章标题，不显示其他额外信息。</p>
+<hr>
+<ul>
+<li>外链卡片</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[post url=&#34;XXX&#34; title=&#34;XXX&#34; intro=&#34;XXX&#34; cover=&#34;XXXX&#34; /]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>title：必填，外链的名称/标题
+url：必填，外链的地址（请填写绝对地址，就是浏览器地址栏什么样的就填什么样的）
+intro：（可选）外链网站的简介/介绍
+cover：（选填）外链网站的介绍图片地址</p>
+<hr>
+<ul>
+<li>相册与图集
+相册与图集的区别是：</li>
+</ul>
+<p>相册样式是固定一行N个，N会根据屏幕尺寸调整
+图集会自动将图集内部的所有图片显示在一行中（如果图片太多，需要分成多个图集），并且大小会自动调整
+相册</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[album]
+</span></span><span class="line"><span class="cl">[普通的图片插入，支持markdown语法和html语法，混合也可以]
+</span></span><span class="line"><span class="cl">[/album]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>图集：增加type=&ldquo;photos&rdquo; 则album下的图片排成一行，并根据图片的长高比自动排列</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[album type=&#34;photos&#34;]
+</span></span><span class="line"><span class="cl">[普通的图片插入，支持markdown语法和html语法，混合也可以]
+</span></span><span class="line"><span class="cl">[/album]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<ul>
+<li>回复可见</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[hide]需要隐藏的内容[/hide]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<ul>
+<li>登陆可见</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[login]需要加密的内容[/login]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<ul>
+<li>高亮提示文本</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[scode type=&#34;share&#34;]这是灰色的短代码框，常用来引用资料什么的[/scode]
+</span></span><span class="line"><span class="cl">[scode type=&#34;yellow&#34;]这是黄色的短代码框，常用来做提示，引起读者注意。[/scode]
+</span></span><span class="line"><span class="cl">[scode type=&#34;red&#34;]这是红色的短代码框，用于严重警告什么的。[/scode]
+</span></span><span class="line"><span class="cl">[scode type=&#34;lblue&#34;]这是浅蓝色的短代码框，用于显示一些信息。[/scode]
+</span></span><span class="line"><span class="cl">[scode type=&#34;green&#34;]这是绿色的短代码框，显示一些推荐信息。[/scode]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>高亮提示文本有三种样式，默认的样式如上，可以通过&quot;size&quot; 属性来修改:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[scode type=&#34;red&#34; size=&#34;simple&#34;]该样式不包含左侧的图标，为简单样式[/scode]
+</span></span><span class="line"><span class="cl">[scode type=&#34;red&#34; size=&#34;small&#34;]该样式为文字背景，不包含图标和过多的边距[/scode]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<ul>
+<li>收缩框
+示例代码：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[collapse title=&#34;标题&#34; status=&#34;false&#34;]一些文字内容[/collapse]
+</span></span><span class="line"><span class="cl">[collapse title=&#34;标题&#34;]一些文字内容[/collapse]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>其中status为false 表示默认不显示文字内容，为true表示默认显示内容。
+不写status 属性，默认是展开内容的。</p>
+<hr>
+<ul>
+<li>标签卡
+示例代码：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[tabs]
+</span></span><span class="line"><span class="cl">[tab name=&#34;标签页 1&#34; active=&#34;true&#34;]内容 1[/tab]
+</span></span><span class="line"><span class="cl">[tab name=&#34;标签页 2&#34;]内容 2[/tab]
+</span></span><span class="line"><span class="cl">[/tabs]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>每个tab 都必须包括name属性，只能有一个tab 添加active属性，表示默认显示该tab的内容。</p>
+<p>此外tab支持更多css的属性，比如颜色，字体粗细等：
+[tab name=&ldquo;标签页 2&rdquo; color:&quot;#000&quot; font-weight=&ldquo;bold&rdquo;]高级内容文本示例[/tab]</p>
+<hr>
+<ul>
+<li>标签tag
+示例代码：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[tag]默认白色文字[/tag]
+</span></span><span class="line"><span class="cl">[tag type=&#34;primary&#34;]紫色文字[/tag]
+</span></span><span class="line"><span class="cl">[tag type=&#34;info&#34;]蓝色文字[/tag]
+</span></span><span class="line"><span class="cl">[tag type=&#34;warning&#34;]黄色文字[/tag]
+</span></span><span class="line"><span class="cl">[tag type=&#34;danger&#34;]红色文字[/tag]
+</span></span><span class="line"><span class="cl">[tag type=&#34;success&#34;]绿色文字[/tag]
+</span></span><span class="line"><span class="cl">[tag type=&#34;dark&#34;]黑色文字[/tag]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<ul>
+<li>文章中插入多栏</li>
+</ul>
+<p>size属性可以填写百分比或者固定的宽度值（单位是px）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">//一个简单的例子
+</span></span><span class="line"><span class="cl">[colum]
+</span></span><span class="line"><span class="cl">[block size=&#34;20%&#34;]百分比宽度[/block]
+</span></span><span class="line"><span class="cl">[block size=&#34;200px&#34;]固定宽度[/block]
+</span></span><span class="line"><span class="cl">[block]标题3[/block]
+</span></span><span class="line"><span class="cl">[/clumn]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">// 一个复杂一点的例子，block内部可以使用其他的短代码带来更丰富的排版
+</span></span><span class="line"><span class="cl">[column]
+</span></span><span class="line"><span class="cl">[block size=&#34;20%&#34;]
+</span></span><span class="line"><span class="cl">[scode type=&#34;red&#34; size=&#34;small&#34;]标题1[/scode]
+</span></span><span class="line"><span class="cl">[scode type=&#34;share&#34; size=&#34;small&#34;]标题1
+</span></span><span class="line"><span class="cl">标题1的内容
+</span></span><span class="line"><span class="cl">[/scode]
+</span></span><span class="line"><span class="cl">[/block]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[block size=&#34;200px&#34;]
+</span></span><span class="line"><span class="cl">[scode type=&#34;red&#34; size=&#34;small&#34;]标题2[/scode]
+</span></span><span class="line"><span class="cl">[/block]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[block]
+</span></span><span class="line"><span class="cl">[scode type=&#34;red&#34; size=&#34;small&#34;]标题3[/scode]
+</span></span><span class="line"><span class="cl">[/block]
+</span></span><span class="line"><span class="cl">[/column]
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/acfun-gift-count.html.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">关于AcFun礼物统计网页的说明</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/anti-360albumviewer.html.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">如何避免大数字自动安装大数字看图(360AlbumViewer)</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/traccar.html.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">搭建自己的轨迹记录程序 Traccar</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/tinystatus.html.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用tinystatus构建一个轻量化的状态监测站</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/umami.html.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用vercel&#43;neon方案搭建无需服务器的umami统计服务</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        --waline-font-size: var(--article-font-size);
+    }
+    .waline-container .wl-count {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://unpkg.com/@waline/emojis@1.0.1/weibo"],"lang":"zh-CN","locale":{"admin":"博主","placeholder":"欢迎评论"},"pageview":false,"requiredMeta":["name","email"],"serverURL":"https://artalk.tama.guru"});
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2022 - 
+        
+        2025 tamakyi
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.8382466cdcb1c0571ef261e5654d7d81331fcbd60eaefd6a14e7253cae165eb6.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

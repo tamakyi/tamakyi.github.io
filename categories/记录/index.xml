@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>记录 on 狼的公告板 ver.Hugo</title>
+        <link>http://localhost:1313/categories/%E8%AE%B0%E5%BD%95.html</link>
+        <description>Recent content in 记录 on 狼的公告板 ver.Hugo</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>tamakyi</copyright>
+        <lastBuildDate>Wed, 07 May 2025 00:26:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>[好软推荐] 盖世游戏-意外好用的windows游戏模拟器</title>
+        <link>http://localhost:1313/post/gamehub.html.html</link>
+        <pubDate>Wed, 07 May 2025 00:26:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/post/gamehub.html.html</guid>
+        <description>&lt;h4 id=&#34;前言&#34;&gt;前言
+&lt;/h4&gt;&lt;p&gt;放以前啊，如果要在手机上玩galgame，基本都要等krkr ons Artemis这类能够移植到多平台的引起。再后来出现了exgear、winlator等一系列模拟器，通过wine环境模拟windows运行的必要组件实现galgame的运行，但这类软件总是有一些问题，最常见的就是缺少运行库、没有中文字体等，需要自己手动打补丁，因此也有很多网友制作了“整合包”，比如[post cid=&amp;ldquo;345&amp;rdquo; /]这里提供的7.1汉化整合包，能够满足部分游戏的运行要求。但是wine哪怕不同版本，不同系统也经常有一台手机能跑另一台又跑不了的情况，而这个盖世游戏能够提供不少环境组合，貌似是目前的最优解。&lt;/p&gt;
+&lt;h4 id=&#34;软件介绍&#34;&gt;软件介绍
+&lt;/h4&gt;&lt;p&gt;提起盖世大家应该多少听说过小鸡模拟器这东西，后面还做了手柄啥的，我手里的g3s从大一买到现在都还能用,个人对这个牌子还挺有好感的。
+那什么是盖世游戏？&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;盖世游戏是一款多功能游戏平台，支持PC模拟器、云游戏和游戏串流。它允许用户使用手柄或触摸操作进行游戏，满足各种游戏需求。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;是的，除了模拟之外这玩意还能弄串流，最新版本甚至还能登录steam玩上面的游戏，但我没试过，&lt;del&gt;也不想试&lt;/del&gt;。
+软件官网：&lt;a class=&#34;link&#34; href=&#34;https://gamehub.xiaoji.com/zh-cn&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://gamehub.xiaoji.com/zh-cn&lt;/a&gt;
+目前是免费的，不知道啥时候会收费。&lt;/p&gt;
+&lt;h4 id=&#34;软件使用&#34;&gt;软件使用
+&lt;/h4&gt;&lt;p&gt;安装完就是我们熟悉的注册登录环节了。。。没错，这玩意要注册才能用，但也就只需要手机号验证而已，目前不知道有什么必要，但是国产软件嘛。。。
+&lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b0317d.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;主界面&#34;
+	
+	
+&gt;
+主界面不算花里胡哨，基本上都是些串流的游戏，感兴趣可以自己试，我就主要说兼容层等的安装。点击左上角头像的位置（那个流汗黄豆），找到游戏库，然后到PC游戏这个地方，有个运行时，这里可以选择兼容层、转译器、GPU驱动、DXVK、VKD3D等内容的安装。
+&lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b98007.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;运行时维护&#34;
+	
+	
+&gt;&lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724bce214.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;兼容层&#34;
+	
+	
+&gt;
+以兼容层举例，截至2025年5月6日能够支持wine9.5-10以及proton x64和arm64，这就是重点的地方了，我们跑游戏如果闪退或者碰到奇奇怪怪的地方，可以直接在这里切换兼容层、GPU驱动等内容，相比winlator要到处找包好多了，毕竟手机推galgame真的是需要多次尝试。
+接下来我就拿saga的花之天使的夏日恋歌举例，把所有文件移动到手机上后，在游戏库的PC游戏这里有个加号，直接选中游戏的运行文件，即&lt;code&gt;SiglusEngineCHS.exe&lt;/code&gt;，之后会在PC游戏这里生成一个快捷方式，运气好的话直接点击立即游戏就能跑起来了。
+&lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724bdfc98.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;花之天使的夏日恋歌&#34;
+	
+	
+&gt;&lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b4db06.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;游戏运行主界面&#34;
+	
+	
+&gt;
+有时候碰到闪退，或是花屏等问题，这就需要手动调整运行参数，具体就是点击立即游戏旁边的小齿轮，找到游戏设置。
+&lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c18507.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;兼容性设置&#34;
+	
+	
+&gt;&lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c18daf.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;组件设置1&#34;
+	
+	
+&gt;&lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b202f3.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;组件设置2&#34;
+	
+	
+&gt;
+需要动的基本就是兼容性设置和组件设置这两个位置，其中兼容性设置选择就是上面我们配置运行时维护安装的兼容层等配置的组合。比如说wine9.5+box64_0.32.1跑不动，就切换到proton兼容层试试，还不行？那试试换个GPU驱动。而如果进入游戏的时候提示缺少xxx组件（比如说dx组件），那就要到组件依赖这里，通过安装新组件的方式手动给当前兼容层环境打组件补丁。（注意组件依赖貌似服务器在国外，部分组件下载极度缓慢，建议尝试多个网络或者干脆挂个梯子）在多次尝试之后，游戏基本都能跑起来。
+经过尝试，我使用OnePlus13+ColorOS15，在8e CPU+24G运存下目前玩的几款游戏都能完美运行：
+&lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c49f99.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;花天使&#34;
+	
+	
+&gt;
+&lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c66488.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;战国兰斯&#34;
+	
+	
+&gt;
+&lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724e4fc72.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;你的眼眸命中我心头&#34;
+	
+	
+&gt;
+之前还玩过几个忘记了，现在想起来写文章就把最近玩的放上来。&lt;/p&gt;
+&lt;h4 id=&#34;总结&#34;&gt;总结
+&lt;/h4&gt;&lt;p&gt;总的来说，盖世游戏能够提供多种兼容层组合方便切换，这是我选择它最主要的原因，而且它提供的组件依赖也比较完善，说到底就是把原来复杂的操作给简单化、图形化了，能一步到位何乐而不为？
+个人评价优缺点：
+优点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;界面相对友好，白痴化操作&lt;/li&gt;
+&lt;li&gt;提供多种兼容层和组件依赖，一步安装&lt;/li&gt;
+&lt;li&gt;提供官方的虚拟键盘，也可以映射到实体手柄上&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;缺点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;需要注册才能使用（关键也没什么需要注册才能用的地方），有精神洁癖估计受不了&lt;/li&gt;
+&lt;li&gt;按国内软件的尿性保不齐啥时候就需要开始收费了&lt;/li&gt;
+&lt;li&gt;烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>[软件推荐]Next-terminal堡垒机</title>
+        <link>http://localhost:1313/post/next-terminal.html.html</link>
+        <pubDate>Mon, 14 Apr 2025 20:49:20 +0000</pubDate>
+        
+        <guid>http://localhost:1313/post/next-terminal.html.html</guid>
+        <description>&lt;p&gt;说说一直在用的这个堡垒机软件，官网是：&lt;a class=&#34;link&#34; href=&#34;https://docs.next-terminal.typesafe.cn/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://docs.next-terminal.typesafe.cn/&lt;/a&gt;，提供了开源和付费两个版本，开源版本完全够用，但是在此基础上有更高需求的可以考虑专业版，之前我都是白嫖，但今天我看了下单用户专业版永久限时只要177，马上就买了。
+先上点图：
+&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2025/04/14/67fd024ba4c24.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;主界面&#34;
+	
+	
+&gt;
+&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2025/04/14/67fd027c2a792.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;资产管理&#34;
+	
+	
+&gt;
+界面很简洁很直观，支持OTP，安全性是有保证的。&lt;/p&gt;
+&lt;h4 id=&#34;安装和使用&#34;&gt;安装和使用
+&lt;/h4&gt;&lt;p&gt;我是从1.x版本升级上来的，官方文档表示两者并不完全兼容，因此我使用2.x版本的时候直接选择重新搭建了。
+官方推荐使用的方式是Docker允许，分为PostgreSQL + Next Terminal和Mysql + Next Terminal以及原生安装三种模式，使用docker最大的好处就是一步到位，不用做很多事，但是因为我自身的原因不得不选择原生安装的方式。
+原生安装直接参照官方的文档：&lt;a class=&#34;link&#34; href=&#34;https://docs.next-terminal.typesafe.cn/install/native-install.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://docs.next-terminal.typesafe.cn/install/native-install.html&lt;/a&gt;
+需要注意的是安装 Next Terminal这里执行:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tar -zxvf next-terminal.tar.gz -C /usr/local/next-terminal
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;后，需要到&lt;code&gt;/usr/local/next-terminal&lt;/code&gt;内修改配置文件，主要是&lt;code&gt;数据库&lt;/code&gt;和&lt;code&gt;guacd&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;database:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  enabled: &lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  type: sqlite &lt;span class=&#34;c1&#34;&gt;# 可选 mysql,sqlite,postgres 选择对应的数据库类型之后，请填写对应的数据库配置&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  sqlite:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    path: ./data/nt.db
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#  postgres:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#    hostname: localhost&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#    port: 5432&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#    username: next-terminal&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#    password: next-terminal&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#    database: next-terminal&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#  mysql:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#    hostname: localhost&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#    port: 3306&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#    username: terminal-new&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#    password: terminal-new&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#    database: terminal-new&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  guacd:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    drive: &lt;span class=&#34;s2&#34;&gt;&amp;#34;/usr/local/next-terminal/data/drive&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    hosts:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      - hostname: 127.0.0.1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        port: &lt;span class=&#34;m&#34;&gt;4822&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        weight: &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;主要就是根据数据库的类型修改type，然后把对应的注释删掉，填写信息就行了，&lt;code&gt;guacd&lt;/code&gt;这里需要把&lt;code&gt;hostname&lt;/code&gt;修改一下，原来的内容是&lt;code&gt;guacd&lt;/code&gt;，手动改成&lt;code&gt;127.0.0.1&lt;/code&gt;，不然后面RDP跑不起来。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>通过自购礼品卡在日服applestore充值使用（也适用于美服）</title>
+        <link>http://localhost:1313/post/apple_jp_giftcard.html.html</link>
+        <pubDate>Tue, 06 Dec 2022 00:23:34 +0000</pubDate>
+        
+        <guid>http://localhost:1313/post/apple_jp_giftcard.html.html</guid>
+        <description>&lt;p&gt;请注意充值时拥有日本IP！请注意充值时拥有日本IP！请注意充值时拥有日本IP！&lt;/p&gt;
+&lt;p&gt;通常情况下，在日服需要充值金额要通过以下几种方案：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;JCB 信用卡（不适用美服）：需要申请一张JCB国际信用卡，基本上各大银行都会有提供，此方案好就好在可以直接绑定到账户进行消费而不需要通过礼品卡渠道。&lt;/li&gt;
+&lt;li&gt;购买礼品卡：一般情况下很多人会选择到淘宝或者其他平台购买礼品卡，虽然方便，但是一个重要的问题是如果卖家使用黑卡买的礼品卡，那么你的账号可能也会受牵连。所以如果你恰好有一张外币卡（Visa或者MasterCard都行，各大银行都可以），就可以自己到日服apple store购买礼品卡，安全性大大提高。&lt;/li&gt;
+&lt;li&gt;我在日本有熟人。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!--more--&gt;
+&lt;p&gt;以下对自有外币卡购买礼品卡进行介绍：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;进入[官网][1]，一定要进对，如果不小心买了用于购买硬件和外设的卡，那你就只能想办法电话到日本联系退款了。
+先点击&lt;code&gt;購入&lt;/code&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;![2022-12-05T16:03:05.png][2]
+之后第一个默认选择email接收，第二个是卡面，随便选，第三项是充值金额，最后一项是&lt;code&gt;その他の金額&lt;/code&gt;可以输入整数的其他金额。
+![2022-12-05T16:04:46.png][3]
+再后来是填写收寄方信息：&lt;code&gt;受取人の名前&lt;/code&gt;即收方名字，&lt;code&gt;受取人のメールアドレス&lt;/code&gt;即收方邮件地址（之后礼品卡号会发到这个邮箱），同理差出人名字和邮箱也需要填写。（名字可以随意写，但是最好真实些）&lt;code&gt;あなたからのメッセージを追加しますか？&lt;/code&gt;追加其他信息这里没必要填。最后点击&lt;code&gt;バッグに追加&lt;/code&gt;。
+![2022-12-05T16:07:29.png][4]![2022-12-05T16:12:03.png][5]
+之后会进入确认界面，需要确认金额以及&lt;code&gt;宛先:``差出人:&lt;/code&gt;信息是否正确，正确点击&lt;code&gt;注文手続きへ&lt;/code&gt;进入下一步。
+![2022-12-05T16:14:16.png][6]
+如果之前有登录了apple id，会跳过这一步，如果没登陆，直接点击右侧的&lt;code&gt;続行してApple IDを後で作成します。&lt;/code&gt;进入下一步![2022-12-05T16:16:48.png][7]&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;填写付款信息。选择&lt;code&gt;一般的な支払い方法&lt;/code&gt;下的&lt;code&gt;クレジットカードまたはデビットカード&lt;/code&gt;然后按照下图填写信息。
+![2022-12-05T16:21:11.png][8]
+注意，信息不能太离谱，实在不会写的去网上找生成器。&lt;code&gt;携帯電話番号はありません。&lt;/code&gt;一定要勾选，然后在上面填写一个日本的座机号，之后点击&lt;code&gt;注文の確認&lt;/code&gt;，扣款短信就会发到手机上了。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;!--more--&gt;
+&lt;p&gt;接下来的部分下次充值再写。
+[1]: &lt;a class=&#34;link&#34; href=&#34;https://www.apple.com/jp/shop/gift-cards&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.apple.com/jp/shop/gift-cards&lt;/a&gt;
+[2]: &lt;a class=&#34;link&#34; href=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2022/12/06/638e163682a9f.png&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2022/12/06/638e163682a9f.png&lt;/a&gt;
+[3]: &lt;a class=&#34;link&#34; href=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2022/12/06/638e169c0e420.png&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2022/12/06/638e169c0e420.png&lt;/a&gt;
+[4]: &lt;a class=&#34;link&#34; href=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2022/12/06/638e173ee025f.png&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2022/12/06/638e173ee025f.png&lt;/a&gt;
+[5]: &lt;a class=&#34;link&#34; href=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2022/12/06/638e18501b7ab.png&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2022/12/06/638e18501b7ab.png&lt;/a&gt;
+[6]: &lt;a class=&#34;link&#34; href=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2022/12/06/638e18d5f4072.png&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2022/12/06/638e18d5f4072.png&lt;/a&gt;
+[7]: &lt;a class=&#34;link&#34; href=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2022/12/06/638e196dcaa02.png&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2022/12/06/638e196dcaa02.png&lt;/a&gt;
+[8]: &lt;a class=&#34;link&#34; href=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2022/12/06/638e1a7472944.png&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2022/12/06/638e1a7472944.png&lt;/a&gt;&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
+</rss>
