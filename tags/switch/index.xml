@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Sun, 27 Nov 2022 01:15:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/switch/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 27 Nov 2022 01:15:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/switch/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Switch15.0.1大气层系统升级的记录（整合包）-更新到17.0.1</title>
         <link>https://example.com/record/switch_Atmosphere.html</link>
-        <pubDate>Sun, 27 Nov 2022 01:15:00 +0000</pubDate>
+        <pubDate>Sun, 27 Nov 2022 01:15:00 +0800</pubDate>
         
         <guid>https://example.com/record/switch_Atmosphere.html</guid>
         <description>&lt;p&gt;目前系统是已经硬破的状态，且能正常运行，但是版本已经有点老了（Atmosphere版本14），导致目前有部分新的游戏无法运行，因此在此记录Switch升级大气层系统的相关步骤。&lt;/p&gt;

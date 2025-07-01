@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Sat, 12 Aug 2023 16:26:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/arpl/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 12 Aug 2023 16:26:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/arpl/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>一种很新的群晖安装方法</title>
         <link>https://example.com/record/new_dsm_install.html</link>
-        <pubDate>Sat, 12 Aug 2023 16:26:00 +0000</pubDate>
+        <pubDate>Sat, 12 Aug 2023 16:26:00 +0800</pubDate>
         
         <guid>https://example.com/record/new_dsm_install.html</guid>
         <description>&lt;p&gt;这个方法需要一个叫做&amp;quot;arpl&amp;quot;的固件（链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/fbelavenuto/arpl/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;

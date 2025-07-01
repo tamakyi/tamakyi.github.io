@@ -6,11 +6,11 @@
 
 <link rel='canonical' href='https://example.com/record/EC200A-CN.html'>
 
-<link rel="stylesheet" href="/scss/style.min.6a6b3f9159829e2ab92859ca6f195fce9a66f7e31fb62518aaeea99361e6dc9e.css"><meta property='og:title' content="4G开发板EC200A的初次使用记录">
+<link rel="stylesheet" href="/scss/style.min.f8d3e3667c9c0bc7a054407fadeb01e15a691c2db55c8c66227df16b0d32131e.css"><meta property='og:title' content="4G开发板EC200A的初次使用记录">
 <meta property='og:description' content="本来是想买个随身WIFI，以便家里突然断网/断电的时候能够用手头上多余的一张SIM卡开个应急热点，但是去淘宝搜了一圈，成品随身WIFI要么说经常断网，要么就是无法使用自己的卡，要么就是能插自己的卡，但是只能插物联网卡或是插一张之后就不能插别的卡了（卡和机器绑定了），可玩性极差。然后想想家里还有一坨树莓派，用充电宝供电，能不能在这个基础上整些模块。 于是，在搜索了相关材料之后，选择了移远的EC200A-CN。 大概就长这样，一个USB口，四个串口，一个SIM卡槽，一个天线接口，没了。 在WIN下直接插上会直接当作USB网卡使用，但是任务管理器下面的AT Interface和Diag Interface会有感叹号，这意味着无法进行AT指令交互，也就只能当作一块无线网卡使用。只需要把这个驱动打上就正常了。 先不管WIN下使用AT怎样怎样，买这块板子的初衷就是给树莓派用的，然后我就把板子拔下来插树莓派上了。 先说下环境，因为我要用到pikvm，所以使用的系统是魔改的archlinuxarm，内核版本5.15.68-3-rpi-ARCH。 插上去之后，灯开始闪，但是执行 ifconfig 之后： 你妈的，我USB0呢？ 吓得我赶紧看看是不是给我搞坏了或者根本没识别。 ::acfun:02:: 还好还好，东西还在。 ::acfun:03:: 那么这是怎么个回事呢？我看店铺上明明写着linux免驱啊！于是在问一通客服之后 给了我个tgz包。 ::acfun:01:: 不问不给是吧。解压之后内容如下： 因为我的内核版本是5.15.68，离得比较近的是5.15.11，进入这个目录，执行 make 和 make install 后会生成option.ko``qcserial.ko和usb_wwan.ko三个文件，执行\n">
 <meta property='og:url' content='https://example.com/record/EC200A-CN.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-04-19T23:06:55&#43;00:00'/><meta property='article:modified_time' content='2023-04-19T23:06:55&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-04-19T23:06:55&#43;08:00'/><meta property='article:modified_time' content='2023-04-19T23:06:55&#43;08:00'/>
 <meta name="twitter:title" content="4G开发板EC200A的初次使用记录">
 <meta name="twitter:description" content="本来是想买个随身WIFI，以便家里突然断网/断电的时候能够用手头上多余的一张SIM卡开个应急热点，但是去淘宝搜了一圈，成品随身WIFI要么说经常断网，要么就是无法使用自己的卡，要么就是能插自己的卡，但是只能插物联网卡或是插一张之后就不能插别的卡了（卡和机器绑定了），可玩性极差。然后想想家里还有一坨树莓派，用充电宝供电，能不能在这个基础上整些模块。 于是，在搜索了相关材料之后，选择了移远的EC200A-CN。 大概就长这样，一个USB口，四个串口，一个SIM卡槽，一个天线接口，没了。 在WIN下直接插上会直接当作USB网卡使用，但是任务管理器下面的AT Interface和Diag Interface会有感叹号，这意味着无法进行AT指令交互，也就只能当作一块无线网卡使用。只需要把这个驱动打上就正常了。 先不管WIN下使用AT怎样怎样，买这块板子的初衷就是给树莓派用的，然后我就把板子拔下来插树莓派上了。 先说下环境，因为我要用到pikvm，所以使用的系统是魔改的archlinuxarm，内核版本5.15.68-3-rpi-ARCH。 插上去之后，灯开始闪，但是执行 ifconfig 之后： 你妈的，我USB0呢？ 吓得我赶紧看看是不是给我搞坏了或者根本没识别。 ::acfun:02:: 还好还好，东西还在。 ::acfun:03:: 那么这是怎么个回事呢？我看店铺上明明写着linux免驱啊！于是在问一通客服之后 给了我个tgz包。 ::acfun:01:: 不问不给是吧。解压之后内容如下： 因为我的内核版本是5.15.68，离得比较近的是5.15.11，进入这个目录，执行 make 和 make install 后会生成option.ko``qcserial.ko和usb_wwan.ko三个文件，执行\n">
     </head>
@@ -172,7 +172,7 @@
 
 
                 
-                <span>Archives</span>
+                <span>存档</span>
             </a>
         </li>
         
@@ -191,13 +191,13 @@
 
 
                 
-                <span>Search</span>
+                <span>搜索</span>
             </a>
         </li>
         
         
         <li >
-            <a href='/links.html' >
+            <a href='/%E9%93%BE%E6%8E%A5.html' >
                 
                 
                 
@@ -210,7 +210,7 @@
 
 
                 
-                <span>Links</span>
+                <span>链接</span>
             </a>
         </li>
         
@@ -241,24 +241,30 @@
                 
 
                 
-                    <li id="dark-mode-toggle">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="8" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
+                     <li id="dark-mode-toggle">
+                        <!--
+tags: [night, dark mode]
+category: Weather
+version: "1.21"
+unicode: "ece7"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="32"
+  height="32"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#000000"
+  stroke-width="1"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+  <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2" />
+  <path d="M19 11h2m-1 -1v2" />
 </svg>
 
-
-
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="16" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
-</svg>
-
-
-
-                        <span>暗色模式</span>
+                    暗色模式
                     </li>
                 
             </ol>
@@ -640,7 +646,7 @@
     }
 </style><script>
     
-    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://unpkg.com/@waline/emojis@1.0.1/weibo"],"lang":"zh-CN","locale":{"admin":"博主","placeholder":"欢迎评论"},"pageview":false,"requiredMeta":["name","email"],"serverURL":"https://artalk.tama.guru"});
+    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://unpkg.com/@waline/emojis@1.0.1/weibo","https://gcore.jsdelivr.net/gh/tamakyi/emoji-collection@main/acfun-color/60x60"],"imageUploader":false,"lang":"zh-CN","locale":{"admin":"博主","email":"邮箱","name":"昵称","placeholder":"欢迎评论","reaction0":"哇哦","reaction1":"prpr","reaction2":"流汗","reaction3":"生气","reaction4":"流鼻血","reaction5":"あべ"},"login":"disable","meta":["name","email"],"pageview":true,"reaction":["https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGQ3OTRhYzRjMTBkZmZhZDVmZTA1EIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChQwOGEyOTlhYzRjMTBmOWFkZjAwYRCIzNcv.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGRhOTVhYzRjMTBkNmViYTVlNTA2EIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGU1OTJhYzRjMTBmMzk3ZmVmNTAyEIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGNkODdhYzRjMTBjYmEwOTFjNjAxEIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChQwODliOGVhYzRjMTBmOGM0ZWY1ZRCIzNcv.gif"],"requiredMeta":["name","email"],"search":false,"serverURL":"https://artalk.tama.guru"});
 </script>
 
     
@@ -655,6 +661,12 @@
     </section>
     
     <section class="powerby">
+        
+        <section class="running-time">
+        本博客已稳定运行
+        <span id="runningdays" class="running-days"></span>
+        </section>
+
         使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
@@ -757,6 +769,29 @@
         document.head.appendChild(customFont);
     }());
 </script>
+<script src="https://npm.elemecdn.com/nprogress@0.2.0/nprogress.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://npm.elemecdn.com/nprogress@0.2.0/nprogress.css" crossorigin="anonymous" />
+<script>
+    NProgress.start();
+    document.addEventListener("readystatechange", () => {
+        if (document.readyState === "interactive") NProgress.inc(0.8);
+        if (document.readyState === "complete") NProgress.done();
+    });
+</script>
 
+
+<script>
+    let s1 = '2022-5-18'; 
+    s1 = new Date(s1.replace(/-/g, "/"));
+    let s2 = new Date();
+    let timeDifference = s2.getTime() - s1.getTime();
+
+    let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+
+    let result = days + "天" + hours + "小时" + minutes + "分钟";
+    document.getElementById('runningdays').innerHTML = result;
+</script>
     </body>
 </html>

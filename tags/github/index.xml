@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Sat, 17 Feb 2024 21:46:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/github/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 17 Feb 2024 21:46:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/github/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>[插件推荐]github项目屏蔽插件</title>
         <link>https://example.com/software/PurifyGithubSearchPage.html</link>
-        <pubDate>Sat, 17 Feb 2024 21:46:00 +0000</pubDate>
+        <pubDate>Sat, 17 Feb 2024 21:46:00 +0800</pubDate>
         
         <guid>https://example.com/software/PurifyGithubSearchPage.html</guid>
         <description>&lt;p&gt;有时候在github上搜索，总会搜出一些不是很友好的东西（至于是什么自己随便搜一下就知道了），这些人通常会在readme里面添加一些常用的关键词，然后经常性的更新，让项目看起来“很热门”。但其实那是什么东西懂的都懂。

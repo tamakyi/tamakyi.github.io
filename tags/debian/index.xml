@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Wed, 24 Jan 2024 12:01:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/debian/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 24 Jan 2024 12:01:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/debian/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>在debian安装配置redroid并安装shamrock的记录</title>
         <link>https://example.com/record/redroid.html</link>
-        <pubDate>Wed, 24 Jan 2024 12:01:00 +0000</pubDate>
+        <pubDate>Wed, 24 Jan 2024 12:01:00 +0800</pubDate>
         
         <guid>https://example.com/record/redroid.html</guid>
         <description>&lt;h3 id=&#34;前言&#34;&gt;前言
@@ -647,7 +647,7 @@
         <item>
         <title>解决Debian11安装慢问题的一些歪门邪道</title>
         <link>https://example.com/record/debian_install_slow.html</link>
-        <pubDate>Wed, 08 Mar 2023 16:02:24 +0000</pubDate>
+        <pubDate>Wed, 08 Mar 2023 16:02:24 +0800</pubDate>
         
         <guid>https://example.com/record/debian_install_slow.html</guid>
         <description>&lt;p&gt;前几天安装Debian的时候，在&lt;code&gt;Select and install software&lt;/code&gt;过程总是报错后终止安装进程，强制进入下一步安装引导会提示没有安装grub引导器可能会导致无法启动，查了一些资料后都在说是&lt;code&gt;debian-security&lt;/code&gt;这个源在国外，直接连接速度极慢（体现为这一步下载4个文件需要几个小时，而且极大可能会突然连接不上然后安装失败）。

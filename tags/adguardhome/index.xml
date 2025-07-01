@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Sat, 13 Apr 2024 23:37:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/adguardhome/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 13 Apr 2024 23:37:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/adguardhome/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>在局域网内安装去广告插件的几种方法(pihole和adguardhome)</title>
         <link>https://example.com/record/ad-plugin.html</link>
-        <pubDate>Sat, 13 Apr 2024 23:37:00 +0000</pubDate>
+        <pubDate>Sat, 13 Apr 2024 23:37:00 +0800</pubDate>
         
         <guid>https://example.com/record/ad-plugin.html</guid>
         <description>&lt;p&gt;这东西我主要是放在家里给老人用的，最开始是他们手机碰上七七八八的问题找我解决，然后点开一个个浏览器和应用，卧槽，这能用的下去？横幅的横幅，弹窗的弹窗，真的看不下去，正好家里整了一个24小时开机的J1900双网口软路由，于是想了想在上面安装个插件算了，怎样都比原来好。&lt;/p&gt;

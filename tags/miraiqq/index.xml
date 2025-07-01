@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Fri, 05 May 2023 23:35:47 +0000</lastBuildDate><atom:link href="https://example.com/tags/miraiqq/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 05 May 2023 23:35:47 +0800</lastBuildDate><atom:link href="https://example.com/tags/miraiqq/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>解决AcFunLive的mirai机器人无法使用的问题</title>
         <link>https://example.com/record/acfunlive-mirai.html</link>
-        <pubDate>Fri, 05 May 2023 23:35:47 +0000</pubDate>
+        <pubDate>Fri, 05 May 2023 23:35:47 +0800</pubDate>
         
         <guid>https://example.com/record/acfunlive-mirai.html</guid>
         <description>&lt;p&gt;*注意，mirai无法启动仅针对在windows下使用时出现，linux并无此问题。&lt;/p&gt;
@@ -96,7 +96,7 @@
         <item>
         <title>在异地服务器使用go-miraiqq教程</title>
         <link>https://example.com/record/miraiqq-remote.html</link>
-        <pubDate>Wed, 06 Jul 2022 09:11:45 +0000</pubDate>
+        <pubDate>Wed, 06 Jul 2022 09:11:45 +0800</pubDate>
         
         <guid>https://example.com/record/miraiqq-remote.html</guid>
         <description>&lt;p&gt;在异地直接扫码登录miraiqq会有“异常，建议在同一WIFI环境下使用”的提示，如果服务器在本地还好，但是买的服务器在外地就很难这样去处理了。

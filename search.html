@@ -2,16 +2,16 @@
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="">
-<title>Search</title>
+<title>搜索</title>
 
 <link rel='canonical' href='https://example.com/search.html'>
 
-<link rel="stylesheet" href="/scss/style.min.6a6b3f9159829e2ab92859ca6f195fce9a66f7e31fb62518aaeea99361e6dc9e.css"><meta property='og:title' content="Search">
+<link rel="stylesheet" href="/scss/style.min.f8d3e3667c9c0bc7a054407fadeb01e15a691c2db55c8c66227df16b0d32131e.css"><meta property='og:title' content="搜索">
 <meta property='og:description' content="">
 <meta property='og:url' content='https://example.com/search.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
 <meta property='og:type' content='article'><meta property='article:section' content='Page' />
-<meta name="twitter:title" content="Search">
+<meta name="twitter:title" content="搜索">
 <meta name="twitter:description" content=""><link rel="alternate" type="application/json" href="https://example.com/search.json"><link rel="preload" href="/search.json" as="fetch" crossorigin="anonymous">
     </head>
     <body class="template-search">
@@ -170,7 +170,7 @@
 
 
                 
-                <span>Archives</span>
+                <span>存档</span>
             </a>
         </li>
         
@@ -189,13 +189,13 @@
 
 
                 
-                <span>Search</span>
+                <span>搜索</span>
             </a>
         </li>
         
         
         <li >
-            <a href='/links.html' >
+            <a href='/%E9%93%BE%E6%8E%A5.html' >
                 
                 
                 
@@ -208,7 +208,7 @@
 
 
                 
-                <span>Links</span>
+                <span>链接</span>
             </a>
         </li>
         
@@ -239,24 +239,30 @@
                 
 
                 
-                    <li id="dark-mode-toggle">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="8" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
+                     <li id="dark-mode-toggle">
+                        <!--
+tags: [night, dark mode]
+category: Weather
+version: "1.21"
+unicode: "ece7"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="32"
+  height="32"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#000000"
+  stroke-width="1"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+  <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2" />
+  <path d="M19 11h2m-1 -1v2" />
 </svg>
 
-
-
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="16" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
-</svg>
-
-
-
-                        <span>暗色模式</span>
+                    暗色模式
                     </li>
                 
             </ol>
@@ -302,6 +308,12 @@
     </section>
     
     <section class="powerby">
+        
+        <section class="running-time">
+        本博客已稳定运行
+        <span id="runningdays" class="running-days"></span>
+        </section>
+
         使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
@@ -326,6 +338,29 @@
         document.head.appendChild(customFont);
     }());
 </script>
+<script src="https://npm.elemecdn.com/nprogress@0.2.0/nprogress.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://npm.elemecdn.com/nprogress@0.2.0/nprogress.css" crossorigin="anonymous" />
+<script>
+    NProgress.start();
+    document.addEventListener("readystatechange", () => {
+        if (document.readyState === "interactive") NProgress.inc(0.8);
+        if (document.readyState === "complete") NProgress.done();
+    });
+</script>
 
+
+<script>
+    let s1 = '2022-5-18'; 
+    s1 = new Date(s1.replace(/-/g, "/"));
+    let s2 = new Date();
+    let timeDifference = s2.getTime() - s1.getTime();
+
+    let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+
+    let result = days + "天" + hours + "小时" + minutes + "分钟";
+    document.getElementById('runningdays').innerHTML = result;
+</script>
     </body>
 </html>

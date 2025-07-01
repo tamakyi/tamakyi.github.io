@@ -7,7 +7,7 @@
 
 <link rel='canonical' href='https://example.com/en/'>
 
-<link rel="stylesheet" href="/scss/style.min.6a6b3f9159829e2ab92859ca6f195fce9a66f7e31fb62518aaeea99361e6dc9e.css"><meta property='og:title' content="tamakyi's blog ver.hugo">
+<link rel="stylesheet" href="/scss/style.min.f8d3e3667c9c0bc7a054407fadeb01e15a691c2db55c8c66227df16b0d32131e.css"><meta property='og:title' content="tamakyi's blog ver.hugo">
 <meta property='og:description' content="Example description">
 <meta property='og:url' content='https://example.com/en/'>
 <meta property='og:site_name' content='tamakyi&#39;s blog ver.hugo'>
@@ -143,24 +143,30 @@
                 
 
                 
-                    <li id="dark-mode-toggle">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="8" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
+                     <li id="dark-mode-toggle">
+                        <!--
+tags: [night, dark mode]
+category: Weather
+version: "1.21"
+unicode: "ece7"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="32"
+  height="32"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#000000"
+  stroke-width="1"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+  <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2" />
+  <path d="M19 11h2m-1 -1v2" />
 </svg>
 
-
-
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="16" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
-</svg>
-
-
-
-                        <span>Dark Mode</span>
+                    Dark Mode
                     </li>
                 
             </ol>
@@ -230,6 +236,17 @@
     
     
 
+    
+    <div class="welcome">
+      <p style="font-size: 2rem; text-align: center; font-weight: bold">
+        <span class="shake">👋</span>
+        <span class="jump-text1" > 欢</span>
+        <span class="jump-text2"> 迎 </span>
+        <span class="jump-text3" style="color:#000000">访</span><span class="jump-text4" style="color:#000000">问</span><span class="jump-text5" style="color:#e99312">狼</span><span class="jump-text6" style="color:#e99312">的</span><span class="jump-text7" style="color:#e99312">公</span><span class="jump-text8" style="color:#e99312">告</span><span class="jump-text9" style="color:#e99312">板</span>
+      </p>
+    </div>
+    
+
     <section class="article-list">
         
     </section>
@@ -243,6 +260,12 @@
     </section>
     
     <section class="powerby">
+        
+        <section class="running-time">
+        本博客已稳定运行
+        <span id="runningdays" class="running-days"></span>
+        </section>
+
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
         Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>
@@ -266,6 +289,29 @@
         document.head.appendChild(customFont);
     }());
 </script>
+<script src="https://npm.elemecdn.com/nprogress@0.2.0/nprogress.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://npm.elemecdn.com/nprogress@0.2.0/nprogress.css" crossorigin="anonymous" />
+<script>
+    NProgress.start();
+    document.addEventListener("readystatechange", () => {
+        if (document.readyState === "interactive") NProgress.inc(0.8);
+        if (document.readyState === "complete") NProgress.done();
+    });
+</script>
 
+
+<script>
+    let s1 = '2022-5-18'; 
+    s1 = new Date(s1.replace(/-/g, "/"));
+    let s2 = new Date();
+    let timeDifference = s2.getTime() - s1.getTime();
+
+    let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+
+    let result = days + "天" + hours + "小时" + minutes + "分钟";
+    document.getElementById('runningdays').innerHTML = result;
+</script>
     </body>
 </html>

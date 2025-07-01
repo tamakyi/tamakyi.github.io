@@ -6,11 +6,11 @@
 
 <link rel='canonical' href='https://example.com/record/new_dsm_install.html'>
 
-<link rel="stylesheet" href="/scss/style.min.6a6b3f9159829e2ab92859ca6f195fce9a66f7e31fb62518aaeea99361e6dc9e.css"><meta property='og:title' content="一种很新的群晖安装方法">
+<link rel="stylesheet" href="/scss/style.min.f8d3e3667c9c0bc7a054407fadeb01e15a691c2db55c8c66227df16b0d32131e.css"><meta property='og:title' content="一种很新的群晖安装方法">
 <meta property='og:description' content="这个方法需要一个叫做&quot;arpl&quot;的固件（链接：https://github.com/fbelavenuto/arpl/releases），其特点是引导式安装，不需要手工提取grup.cfg修改相关文件，相对较为简单。 ###1.下载和安装 去上面的网站下载对应版本的zip包，解压并使用Win32DiskImager之类的工具写入U盘。 一般下载最新版即可，我是在物理机安装因此选择第一个。 写完之后把U盘安装到需要安装群晖的主板上并在BIOS中设置好UEFI启动，因各主板步骤不一致此处不赘述。 ###2.进入和初步配置arpl 开启群晖主板电源等待1分钟之后，在路由器界面找到主板网卡IP,浏览器输入http://ip:7681即可进入arpl界面。 进去之后先选择x Cmdline menu，然后进入c Define a custom MAC，此步骤用于修改mac1的数据，如果需要洗白建议先做这一步，修改MAC后需要重新进入路由器界面找到主板网卡IP，因为IP会重新分配。 ###3.配置arpl ####首先是m Choose a model 即选择安装的群晖型号，此处我以DS918+为例。 ####第二步,n Choose a Build Number 即选择安装的版本，当前我要安装的是7.1.1，即版本号42962. ####第三步，s Choose a serial number 即输入序列号，进去之后会有两个选项，一个是a Generate a random serial number，即随机生成一个SN，如果玩黑的直接选这个即可。如果有SN码则选择第二个m Enter a serial number，输入后回车会提示Invalid serial, continue?，不理，确认即可。 ####第四步，Addone 即插件安装，默认会安装misc和acpid这两个插件，其他可以手动选择，好像对我都没用，所以就保留默认了。 ####第五步，x Cmdline menu 这个界面可以对一些详细的配置进行修改，比如有两个网口，想设置第二个网口的mac，则可以在a Add/edit a cmdline item中输入mac2并回车，然后输入MAC2的地址即可，其他例如U盘的PID和VID也可以通过这个方式修改。其他选项如字面意思理解，此处不赘述。（更正：不需要设置PID和VID，见https://github.com/fbelavenuto/arpl/blob/main/README-Zh.md） ####第六步，i Synoinfo menu 展示和修改群晖的相关信息，一般不用修改。 ####第七步，v Advanced menu 高级菜单，内容包含切换LKM版本、模块、手动编辑配置文件、尝试恢复DSM启动盘以及展示SATA端口和设备，一般只用看看最后一项检查SATA是否安装正常即可。 我的主板有两个SATA控制器，一共四个端口，因为我只安装一块硬盘，所以Port 1是亮的。 ####第八步，Build the loader 即编译启动器，它会自动下载所需文件并进行编译，直到提示Ready会自动退出。 ####第九步，b Boot the loader 此处即可开始启动了。此步骤会受U盘读写速度影响，（如果U盘带灯能看到狂闪）选择之后会卡一段时间直到显示Booting...，需要等待。如果有接显示器，此时会看到关机了，需要手动启动。 ###4.安装固件 浏览器登陆https://find.synology.com会查找到刚才安装的群晖。不知道为什么，群晖助手一直都显示不到，只有通过浏览器查找才可以。 ">
 <meta property='og:url' content='https://example.com/record/new_dsm_install.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='群晖' /><meta property='article:tag' content='arpl' /><meta property='article:published_time' content='2023-08-12T16:26:00&#43;00:00'/><meta property='article:modified_time' content='2023-08-12T16:26:00&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='群晖' /><meta property='article:tag' content='arpl' /><meta property='article:published_time' content='2023-08-12T16:26:00&#43;08:00'/><meta property='article:modified_time' content='2023-08-12T16:26:00&#43;08:00'/>
 <meta name="twitter:title" content="一种很新的群晖安装方法">
 <meta name="twitter:description" content="这个方法需要一个叫做&quot;arpl&quot;的固件（链接：https://github.com/fbelavenuto/arpl/releases），其特点是引导式安装，不需要手工提取grup.cfg修改相关文件，相对较为简单。 ###1.下载和安装 去上面的网站下载对应版本的zip包，解压并使用Win32DiskImager之类的工具写入U盘。 一般下载最新版即可，我是在物理机安装因此选择第一个。 写完之后把U盘安装到需要安装群晖的主板上并在BIOS中设置好UEFI启动，因各主板步骤不一致此处不赘述。 ###2.进入和初步配置arpl 开启群晖主板电源等待1分钟之后，在路由器界面找到主板网卡IP,浏览器输入http://ip:7681即可进入arpl界面。 进去之后先选择x Cmdline menu，然后进入c Define a custom MAC，此步骤用于修改mac1的数据，如果需要洗白建议先做这一步，修改MAC后需要重新进入路由器界面找到主板网卡IP，因为IP会重新分配。 ###3.配置arpl ####首先是m Choose a model 即选择安装的群晖型号，此处我以DS918+为例。 ####第二步,n Choose a Build Number 即选择安装的版本，当前我要安装的是7.1.1，即版本号42962. ####第三步，s Choose a serial number 即输入序列号，进去之后会有两个选项，一个是a Generate a random serial number，即随机生成一个SN，如果玩黑的直接选这个即可。如果有SN码则选择第二个m Enter a serial number，输入后回车会提示Invalid serial, continue?，不理，确认即可。 ####第四步，Addone 即插件安装，默认会安装misc和acpid这两个插件，其他可以手动选择，好像对我都没用，所以就保留默认了。 ####第五步，x Cmdline menu 这个界面可以对一些详细的配置进行修改，比如有两个网口，想设置第二个网口的mac，则可以在a Add/edit a cmdline item中输入mac2并回车，然后输入MAC2的地址即可，其他例如U盘的PID和VID也可以通过这个方式修改。其他选项如字面意思理解，此处不赘述。（更正：不需要设置PID和VID，见https://github.com/fbelavenuto/arpl/blob/main/README-Zh.md） ####第六步，i Synoinfo menu 展示和修改群晖的相关信息，一般不用修改。 ####第七步，v Advanced menu 高级菜单，内容包含切换LKM版本、模块、手动编辑配置文件、尝试恢复DSM启动盘以及展示SATA端口和设备，一般只用看看最后一项检查SATA是否安装正常即可。 我的主板有两个SATA控制器，一共四个端口，因为我只安装一块硬盘，所以Port 1是亮的。 ####第八步，Build the loader 即编译启动器，它会自动下载所需文件并进行编译，直到提示Ready会自动退出。 ####第九步，b Boot the loader 此处即可开始启动了。此步骤会受U盘读写速度影响，（如果U盘带灯能看到狂闪）选择之后会卡一段时间直到显示Booting...，需要等待。如果有接显示器，此时会看到关机了，需要手动启动。 ###4.安装固件 浏览器登陆https://find.synology.com会查找到刚才安装的群晖。不知道为什么，群晖助手一直都显示不到，只有通过浏览器查找才可以。 ">
     </head>
@@ -172,7 +172,7 @@
 
 
                 
-                <span>Archives</span>
+                <span>存档</span>
             </a>
         </li>
         
@@ -191,13 +191,13 @@
 
 
                 
-                <span>Search</span>
+                <span>搜索</span>
             </a>
         </li>
         
         
         <li >
-            <a href='/links.html' >
+            <a href='/%E9%93%BE%E6%8E%A5.html' >
                 
                 
                 
@@ -210,7 +210,7 @@
 
 
                 
-                <span>Links</span>
+                <span>链接</span>
             </a>
         </li>
         
@@ -241,24 +241,30 @@
                 
 
                 
-                    <li id="dark-mode-toggle">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="8" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
+                     <li id="dark-mode-toggle">
+                        <!--
+tags: [night, dark mode]
+category: Weather
+version: "1.21"
+unicode: "ece7"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="32"
+  height="32"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#000000"
+  stroke-width="1"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+  <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2" />
+  <path d="M19 11h2m-1 -1v2" />
 </svg>
 
-
-
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="16" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
-</svg>
-
-
-
-                        <span>暗色模式</span>
+                    暗色模式
                     </li>
                 
             </ol>
@@ -684,7 +690,7 @@
     }
 </style><script>
     
-    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://unpkg.com/@waline/emojis@1.0.1/weibo"],"lang":"zh-CN","locale":{"admin":"博主","placeholder":"欢迎评论"},"pageview":false,"requiredMeta":["name","email"],"serverURL":"https://artalk.tama.guru"});
+    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://unpkg.com/@waline/emojis@1.0.1/weibo","https://gcore.jsdelivr.net/gh/tamakyi/emoji-collection@main/acfun-color/60x60"],"imageUploader":false,"lang":"zh-CN","locale":{"admin":"博主","email":"邮箱","name":"昵称","placeholder":"欢迎评论","reaction0":"哇哦","reaction1":"prpr","reaction2":"流汗","reaction3":"生气","reaction4":"流鼻血","reaction5":"あべ"},"login":"disable","meta":["name","email"],"pageview":true,"reaction":["https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGQ3OTRhYzRjMTBkZmZhZDVmZTA1EIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChQwOGEyOTlhYzRjMTBmOWFkZjAwYRCIzNcv.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGRhOTVhYzRjMTBkNmViYTVlNTA2EIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGU1OTJhYzRjMTBmMzk3ZmVmNTAyEIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGNkODdhYzRjMTBjYmEwOTFjNjAxEIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChQwODliOGVhYzRjMTBmOGM0ZWY1ZRCIzNcv.gif"],"requiredMeta":["name","email"],"search":false,"serverURL":"https://artalk.tama.guru"});
 </script>
 
     
@@ -699,6 +705,12 @@
     </section>
     
     <section class="powerby">
+        
+        <section class="running-time">
+        本博客已稳定运行
+        <span id="runningdays" class="running-days"></span>
+        </section>
+
         使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
@@ -801,6 +813,29 @@
         document.head.appendChild(customFont);
     }());
 </script>
+<script src="https://npm.elemecdn.com/nprogress@0.2.0/nprogress.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://npm.elemecdn.com/nprogress@0.2.0/nprogress.css" crossorigin="anonymous" />
+<script>
+    NProgress.start();
+    document.addEventListener("readystatechange", () => {
+        if (document.readyState === "interactive") NProgress.inc(0.8);
+        if (document.readyState === "complete") NProgress.done();
+    });
+</script>
 
+
+<script>
+    let s1 = '2022-5-18'; 
+    s1 = new Date(s1.replace(/-/g, "/"));
+    let s2 = new Date();
+    let timeDifference = s2.getTime() - s1.getTime();
+
+    let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+
+    let result = days + "天" + hours + "小时" + minutes + "分钟";
+    document.getElementById('runningdays').innerHTML = result;
+</script>
     </body>
 </html>

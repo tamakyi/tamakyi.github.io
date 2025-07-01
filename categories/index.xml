@@ -7,10 +7,26 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Wed, 07 May 2025 00:26:00 +0000</lastBuildDate><atom:link href="https://example.com/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 01 Jul 2025 21:46:00 +0800</lastBuildDate><atom:link href="https://example.com/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>记录</title>
+        <link>https://example.com/categories/%E8%AE%B0%E5%BD%95.html</link>
+        <pubDate>Tue, 01 Jul 2025 21:46:00 +0800</pubDate>
+        
+        <guid>https://example.com/categories/%E8%AE%B0%E5%BD%95.html</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>杂谈</title>
+        <link>https://example.com/categories/%E6%9D%82%E8%B0%88.html</link>
+        <pubDate>Tue, 01 Jul 2025 21:46:00 +0800</pubDate>
+        
+        <guid>https://example.com/categories/%E6%9D%82%E8%B0%88.html</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Record</title>
         <link>https://example.com/categories/record.html</link>
-        <pubDate>Wed, 07 May 2025 00:26:00 +0000</pubDate>
+        <pubDate>Wed, 07 May 2025 00:26:00 +0800</pubDate>
         
         <guid>https://example.com/categories/record.html</guid>
         <description></description>
@@ -18,7 +34,7 @@
         <item>
         <title>Script</title>
         <link>https://example.com/categories/script.html</link>
-        <pubDate>Fri, 07 Feb 2025 12:15:09 +0000</pubDate>
+        <pubDate>Fri, 07 Feb 2025 12:15:09 +0800</pubDate>
         
         <guid>https://example.com/categories/script.html</guid>
         <description></description>
@@ -26,7 +42,7 @@
         <item>
         <title>Software</title>
         <link>https://example.com/categories/software.html</link>
-        <pubDate>Wed, 11 Sep 2024 21:51:00 +0000</pubDate>
+        <pubDate>Wed, 11 Sep 2024 21:51:00 +0800</pubDate>
         
         <guid>https://example.com/categories/software.html</guid>
         <description></description>
@@ -34,7 +50,7 @@
         <item>
         <title>Default</title>
         <link>https://example.com/categories/default.html</link>
-        <pubDate>Tue, 20 Aug 2024 02:36:00 +0000</pubDate>
+        <pubDate>Tue, 20 Aug 2024 02:36:00 +0800</pubDate>
         
         <guid>https://example.com/categories/default.html</guid>
         <description></description>
@@ -42,7 +58,7 @@
         <item>
         <title>Amateur-Radio</title>
         <link>https://example.com/categories/amateur-radio.html</link>
-        <pubDate>Sat, 15 Jun 2024 12:03:00 +0000</pubDate>
+        <pubDate>Sat, 15 Jun 2024 12:03:00 +0800</pubDate>
         
         <guid>https://example.com/categories/amateur-radio.html</guid>
         <description></description>
@@ -50,7 +66,7 @@
         <item>
         <title>Reproduced</title>
         <link>https://example.com/categories/reproduced.html</link>
-        <pubDate>Sat, 23 Mar 2024 21:25:00 +0000</pubDate>
+        <pubDate>Sat, 23 Mar 2024 21:25:00 +0800</pubDate>
         
         <guid>https://example.com/categories/reproduced.html</guid>
         <description></description>
@@ -58,7 +74,7 @@
         <item>
         <title>Agkey</title>
         <link>https://example.com/categories/agkey.html</link>
-        <pubDate>Thu, 03 Aug 2023 01:43:00 +0000</pubDate>
+        <pubDate>Thu, 03 Aug 2023 01:43:00 +0800</pubDate>
         
         <guid>https://example.com/categories/agkey.html</guid>
         <description></description>
@@ -66,7 +82,7 @@
         <item>
         <title>Videoshare</title>
         <link>https://example.com/categories/videoshare.html</link>
-        <pubDate>Wed, 14 Sep 2022 23:34:00 +0000</pubDate>
+        <pubDate>Wed, 14 Sep 2022 23:34:00 +0800</pubDate>
         
         <guid>https://example.com/categories/videoshare.html</guid>
         <description></description>
@@ -74,7 +90,7 @@
         <item>
         <title>Wmdht</title>
         <link>https://example.com/categories/wmdht.html</link>
-        <pubDate>Thu, 04 Aug 2022 01:34:00 +0000</pubDate>
+        <pubDate>Thu, 04 Aug 2022 01:34:00 +0800</pubDate>
         
         <guid>https://example.com/categories/wmdht.html</guid>
         <description></description>
@@ -82,7 +98,7 @@
         <item>
         <title>Science</title>
         <link>https://example.com/categories/science.html</link>
-        <pubDate>Wed, 27 Jul 2022 12:52:00 +0000</pubDate>
+        <pubDate>Wed, 27 Jul 2022 12:52:00 +0800</pubDate>
         
         <guid>https://example.com/categories/science.html</guid>
         <description></description>
@@ -90,7 +106,7 @@
         <item>
         <title>Aerospace</title>
         <link>https://example.com/categories/aerospace.html</link>
-        <pubDate>Fri, 22 Jul 2022 21:30:00 +0000</pubDate>
+        <pubDate>Fri, 22 Jul 2022 21:30:00 +0800</pubDate>
         
         <guid>https://example.com/categories/aerospace.html</guid>
         <description></description>
@@ -98,7 +114,7 @@
         <item>
         <title>Method</title>
         <link>https://example.com/categories/method.html</link>
-        <pubDate>Sun, 03 Jul 2022 23:28:00 +0000</pubDate>
+        <pubDate>Sun, 03 Jul 2022 23:28:00 +0800</pubDate>
         
         <guid>https://example.com/categories/method.html</guid>
         <description></description>
@@ -106,42 +122,10 @@
         <item>
         <title>Test</title>
         <link>https://example.com/categories/test.html</link>
-        <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://example.com/categories/test.html</guid>
         <description>&lt;img src="https://example.com/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
-        </item>
-        <item>
-        <title>测试</title>
-        <link>https://example.com/categories/%E6%B5%8B%E8%AF%95.html</link>
-        <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
-        
-        <guid>https://example.com/categories/%E6%B5%8B%E8%AF%95.html</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Syntax</title>
-        <link>https://example.com/categories/syntax.html</link>
-        <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://example.com/categories/syntax.html</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Themes</title>
-        <link>https://example.com/categories/themes.html</link>
-        <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://example.com/categories/themes.html</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Test With Whitespaces</title>
-        <link>https://example.com/categories/test-with-whitespaces.html</link>
-        <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://example.com/categories/test-with-whitespaces.html</guid>
-        <description></description>
         </item>
         
     </channel>

@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Tue, 03 Dec 2024 23:03:56 +0000</lastBuildDate><atom:link href="https://example.com/tags/%E5%87%BA%E5%A2%83%E6%98%93/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 03 Dec 2024 23:03:56 +0800</lastBuildDate><atom:link href="https://example.com/tags/%E5%87%BA%E5%A2%83%E6%98%93/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>鸿蒙Next居然兼容安卓了？</title>
         <link>https://example.com/record/android-on-harmony.html</link>
-        <pubDate>Tue, 03 Dec 2024 23:03:56 +0000</pubDate>
+        <pubDate>Tue, 03 Dec 2024 23:03:56 +0800</pubDate>
         
         <guid>https://example.com/record/android-on-harmony.html</guid>
         <description>&lt;p&gt;昨天，有消息称Next的应用商店上架了出境易，用过华子的都知道这玩意可以用过某些&lt;del&gt;不可告人&lt;/del&gt;的方式来实现对某些国外应用的安装和使用，所以这次上架就有意思了,因为这上面的几乎所有应用目前基本上不会为Next做适配，那就说明它会通过某种方法来兼容安卓应用来实现运行如上应用的能力。&lt;/p&gt;

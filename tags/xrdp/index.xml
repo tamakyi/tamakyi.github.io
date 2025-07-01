@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Mon, 05 Feb 2024 23:58:41 +0000</lastBuildDate><atom:link href="https://example.com/tags/xrdp/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 05 Feb 2024 23:58:41 +0800</lastBuildDate><atom:link href="https://example.com/tags/xrdp/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>在archlinux正确的使用xrdp以及碰到的问题</title>
         <link>https://example.com/record/archlinux_xrdp.html</link>
-        <pubDate>Mon, 05 Feb 2024 23:58:41 +0000</pubDate>
+        <pubDate>Mon, 05 Feb 2024 23:58:41 +0800</pubDate>
         
         <guid>https://example.com/record/archlinux_xrdp.html</guid>
         <description>&lt;p&gt;为什么不用vnc？一是需要另外装个软件，不方便，而且配置麻烦，总是能碰到七七八八的问题，而用xrdp基本上用巨硬自带的软件就能实现远程连接。&lt;/p&gt;

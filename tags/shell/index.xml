@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Fri, 07 Feb 2025 12:15:09 +0000</lastBuildDate><atom:link href="https://example.com/tags/shell/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 07 Feb 2025 12:15:09 +0800</lastBuildDate><atom:link href="https://example.com/tags/shell/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>梅林固件实现断网自动重启</title>
         <link>https://example.com/script/merlin-autoreboot.html</link>
-        <pubDate>Fri, 07 Feb 2025 12:15:09 +0000</pubDate>
+        <pubDate>Fri, 07 Feb 2025 12:15:09 +0800</pubDate>
         
         <guid>https://example.com/script/merlin-autoreboot.html</guid>
         <description>&lt;p&gt;本脚本主要针对梅林固件部分版本偶发的断网问题，实现自动重启以尝试解决该问题。&lt;/p&gt;

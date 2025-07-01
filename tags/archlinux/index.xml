@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Mon, 05 Feb 2024 23:58:41 +0000</lastBuildDate><atom:link href="https://example.com/tags/archlinux/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 05 Feb 2024 23:58:41 +0800</lastBuildDate><atom:link href="https://example.com/tags/archlinux/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>在archlinux正确的使用xrdp以及碰到的问题</title>
         <link>https://example.com/record/archlinux_xrdp.html</link>
-        <pubDate>Mon, 05 Feb 2024 23:58:41 +0000</pubDate>
+        <pubDate>Mon, 05 Feb 2024 23:58:41 +0800</pubDate>
         
         <guid>https://example.com/record/archlinux_xrdp.html</guid>
         <description>&lt;p&gt;为什么不用vnc？一是需要另外装个软件，不方便，而且配置麻烦，总是能碰到七七八八的问题，而用xrdp基本上用巨硬自带的软件就能实现远程连接。&lt;/p&gt;
@@ -175,7 +175,7 @@ i3w / dwm:&lt;/p&gt;
         <item>
         <title>Archlinux下安装并配置lnmp环境</title>
         <link>https://example.com/record/archlinux_lnmp.html</link>
-        <pubDate>Thu, 30 Nov 2023 11:07:00 +0000</pubDate>
+        <pubDate>Thu, 30 Nov 2023 11:07:00 +0800</pubDate>
         
         <guid>https://example.com/record/archlinux_lnmp.html</guid>
         <description>&lt;p&gt;最近把编译用的主机换个发行版，最开始用的是debian，结果现在桌面环境进不去了（而且是一引导完成就所有输入、输入都没反应，但是ssh能登陆，很奇怪），懒得去查原因就选择换个环境。本来用的almalinux，无奈真的不喜欢gnome，自己装了kde之后ibus无论怎样都打不出中文，最后还是上了arch。
@@ -747,7 +747,7 @@ i3w / dwm:&lt;/p&gt;
         <item>
         <title>【转载】一个简单的archlinux安装教程（亲测能用）</title>
         <link>https://example.com/record/archlinux_install_guide.html</link>
-        <pubDate>Wed, 16 Aug 2023 22:35:00 +0000</pubDate>
+        <pubDate>Wed, 16 Aug 2023 22:35:00 +0800</pubDate>
         
         <guid>https://example.com/record/archlinux_install_guide.html</guid>
         <description>&lt;p&gt;来自：&lt;a class=&#34;link&#34; href=&#34;https://www.mivm.cn/archlinux-installation-guide-simple&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -1249,7 +1249,7 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
         <item>
         <title>捣鼓SteamDeck的那些事</title>
         <link>https://example.com/record/steamdeck.html</link>
-        <pubDate>Thu, 02 Feb 2023 09:47:00 +0000</pubDate>
+        <pubDate>Thu, 02 Feb 2023 09:47:00 +0800</pubDate>
         
         <guid>https://example.com/record/steamdeck.html</guid>
         <description>&lt;p&gt;I have a d○ck.

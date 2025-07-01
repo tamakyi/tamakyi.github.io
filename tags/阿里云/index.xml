@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Mon, 20 May 2024 21:04:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/%E9%98%BF%E9%87%8C%E4%BA%91/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 20 May 2024 21:04:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/%E9%98%BF%E9%87%8C%E4%BA%91/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>使用acme.sh申请通配ssl证书</title>
         <link>https://example.com/record/acme-sh_zerossl.html</link>
-        <pubDate>Mon, 20 May 2024 21:04:00 +0000</pubDate>
+        <pubDate>Mon, 20 May 2024 21:04:00 +0800</pubDate>
         
         <guid>https://example.com/record/acme-sh_zerossl.html</guid>
         <description>&lt;p&gt;从今年3-4月起，国内主流的域名平台都开始把原来一年期的免费证书调整成三个月（参见：&lt;a class=&#34;link&#34; href=&#34;https://help.aliyun.com/zh/ssl-certificate/user-guide/upgrade-a-free-certificate-upgrade-a-free-certificate&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -105,7 +105,7 @@ A：它只支持Let&amp;rsquo;s encrypt证书。&lt;/p&gt;</description>
         <item>
         <title>阿里云服务器的买后优化记录</title>
         <link>https://example.com/record/aliyun_server.html</link>
-        <pubDate>Sun, 16 Oct 2022 00:15:00 +0000</pubDate>
+        <pubDate>Sun, 16 Oct 2022 00:15:00 +0800</pubDate>
         
         <guid>https://example.com/record/aliyun_server.html</guid>
         <description>&lt;p&gt;腾讯云香港服务器蹲了半年都蹲不出台正常点的，中低端经常售罄，至少都要2C2T+4G起步，一个月就要六七十，这谁受得了？？？月初打开阿里云一看，哟嚯，2C（其实是1C2T）+2G一个月才30，试用下访问速度基本上接近国内服务器，这我直呼受不了，赶紧把之前那破腾讯云上的数据迁移咯。使用体验基本复合我的预期，但是2G跑个debian在加几个网站基本就没用想别的了，内存这块有优化的必要。&lt;/p&gt;

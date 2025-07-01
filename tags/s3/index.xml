@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Sat, 13 Jan 2024 22:53:02 +0000</lastBuildDate><atom:link href="https://example.com/tags/s3/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 13 Jan 2024 22:53:02 +0800</lastBuildDate><atom:link href="https://example.com/tags/s3/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>使用S3 Browser管理Cloudflare R2存储桶</title>
         <link>https://example.com/record/s3browser_r2_manager.html</link>
-        <pubDate>Sat, 13 Jan 2024 22:53:02 +0000</pubDate>
+        <pubDate>Sat, 13 Jan 2024 22:53:02 +0800</pubDate>
         
         <guid>https://example.com/record/s3browser_r2_manager.html</guid>
         <description>&lt;p&gt;本来我是要把导航页所有的文件搬到Github上并&lt;strong&gt;试图&lt;/strong&gt;通过jsdelivr加速访问，但是我发现国内移动网络根本无法直连jsdelivr&amp;hellip;在多次反馈网页无法打开之后，最后还是退一步选择迁移到R2上了。但是R2的网页端管理真的是做得一团糟，上传经常半路失败不说，一次还只能上传100个文件，更恶心的是文件夹无法删除，对于我来说是体验真的不好了。&lt;/p&gt;

@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 30 Nov 2023 11:07:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/mysql/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 30 Nov 2023 11:07:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/mysql/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Archlinux下安装并配置lnmp环境</title>
         <link>https://example.com/record/archlinux_lnmp.html</link>
-        <pubDate>Thu, 30 Nov 2023 11:07:00 +0000</pubDate>
+        <pubDate>Thu, 30 Nov 2023 11:07:00 +0800</pubDate>
         
         <guid>https://example.com/record/archlinux_lnmp.html</guid>
         <description>&lt;p&gt;最近把编译用的主机换个发行版，最开始用的是debian，结果现在桌面环境进不去了（而且是一引导完成就所有输入、输入都没反应，但是ssh能登陆，很奇怪），懒得去查原因就选择换个环境。本来用的almalinux，无奈真的不喜欢gnome，自己装了kde之后ibus无论怎样都打不出中文，最后还是上了arch。
@@ -582,7 +582,7 @@
         <item>
         <title>阿里云服务器的买后优化记录</title>
         <link>https://example.com/record/aliyun_server.html</link>
-        <pubDate>Sun, 16 Oct 2022 00:15:00 +0000</pubDate>
+        <pubDate>Sun, 16 Oct 2022 00:15:00 +0800</pubDate>
         
         <guid>https://example.com/record/aliyun_server.html</guid>
         <description>&lt;p&gt;腾讯云香港服务器蹲了半年都蹲不出台正常点的，中低端经常售罄，至少都要2C2T+4G起步，一个月就要六七十，这谁受得了？？？月初打开阿里云一看，哟嚯，2C（其实是1C2T）+2G一个月才30，试用下访问速度基本上接近国内服务器，这我直呼受不了，赶紧把之前那破腾讯云上的数据迁移咯。使用体验基本复合我的预期，但是2G跑个debian在加几个网站基本就没用想别的了，内存这块有优化的必要。&lt;/p&gt;

@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Wed, 11 Sep 2024 21:51:00 +0000</lastBuildDate><atom:link href="https://example.com/categories/software/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 11 Sep 2024 21:51:00 +0800</lastBuildDate><atom:link href="https://example.com/categories/software/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>[软件推荐]Windows下grep命令的替代品</title>
         <link>https://example.com/software/grep-on-windows.html</link>
-        <pubDate>Wed, 11 Sep 2024 21:51:00 +0000</pubDate>
+        <pubDate>Wed, 11 Sep 2024 21:51:00 +0800</pubDate>
         
         <guid>https://example.com/software/grep-on-windows.html</guid>
         <description>&lt;p&gt;grep 命令全名 &lt;strong&gt;global regular expression print&lt;/strong&gt;（全局正则表达式打印），可以搜索一个或多个（输入）文件，以查找与「给定模式」相匹配的行，并将每个匹配行写入标准输出，这在Linux下是一个非常常用的命令。无论是筛选文件还是命令输出，基本上都是一个grep搞定。&lt;/p&gt;
@@ -264,7 +264,7 @@
         <item>
         <title>[好软推荐]多端指定应用代理软件</title>
         <link>https://example.com/software/Proxifier.html</link>
-        <pubDate>Sun, 07 Jul 2024 15:49:04 +0000</pubDate>
+        <pubDate>Sun, 07 Jul 2024 15:49:04 +0800</pubDate>
         
         <guid>https://example.com/software/Proxifier.html</guid>
         <description>&lt;p&gt;最近雀魂日服开了客户端，试着下下来玩了玩，数据能下载，但是登录的时候总是登不上，（我在路由器已经设置了规则转发，咕噜咕噜登录是正常的。）那看样子就是客户端这边搞的鬼，需要手动配置代理才能访问。解决方法也很多，一是直接全局代理，但是这样会影响到其他正常软件的使用；二是找出访问出现问题的链接添加到规则列表里，这样虽然能解决但是每碰到一个应用就要去查它的路由，不是很方便；第三就是找其他第三方应用来配置指定应用代理，也就是本次主要说的方法。
@@ -357,7 +357,7 @@ P427L-9Y552-5433E-8DSR3-58Z68（MAC版）
         <item>
         <title>[好软推荐]不是很正经的手游加速器：和家亲</title>
         <link>https://example.com/software/hejiaqin.html</link>
-        <pubDate>Sun, 28 Apr 2024 15:26:57 +0000</pubDate>
+        <pubDate>Sun, 28 Apr 2024 15:26:57 +0800</pubDate>
         
         <guid>https://example.com/software/hejiaqin.html</guid>
         <description>&lt;h3 id=&#34;前言&#34;&gt;前言
@@ -408,7 +408,7 @@ A：看样子只有手机端加速是免费的，PC有办法绑定但是需要�
         <item>
         <title>[插件推荐]github项目屏蔽插件</title>
         <link>https://example.com/software/PurifyGithubSearchPage.html</link>
-        <pubDate>Sat, 17 Feb 2024 21:46:00 +0000</pubDate>
+        <pubDate>Sat, 17 Feb 2024 21:46:00 +0800</pubDate>
         
         <guid>https://example.com/software/PurifyGithubSearchPage.html</guid>
         <description>&lt;p&gt;有时候在github上搜索，总会搜出一些不是很友好的东西（至于是什么自己随便搜一下就知道了），这些人通常会在readme里面添加一些常用的关键词，然后经常性的更新，让项目看起来“很热门”。但其实那是什么东西懂的都懂。
@@ -454,7 +454,7 @@ A：看样子只有手机端加速是免费的，PC有办法绑定但是需要�
         <item>
         <title>[软件推荐]搭建简易代理服务器</title>
         <link>https://example.com/software/3proxy.html</link>
-        <pubDate>Mon, 27 Nov 2023 11:10:00 +0000</pubDate>
+        <pubDate>Mon, 27 Nov 2023 11:10:00 +0800</pubDate>
         
         <guid>https://example.com/software/3proxy.html</guid>
         <description>&lt;p&gt;我在远端有一台服务器，因为某些原因需要用这台服务器作为流量出口，当然可以通过搭建某些软件配置成V*N访问，但是那不是我想要的（因为远端的服务器配置太低了）。除了传统的ss类软件，我找到了3proxy这个小东西。&lt;/p&gt;
@@ -618,7 +618,7 @@ A：看样子只有手机端加速是免费的，PC有办法绑定但是需要�
         <item>
         <title>[好软推荐]Winlator 在安卓上运行exe程序的更好方案</title>
         <link>https://example.com/software/Winlator.html</link>
-        <pubDate>Sun, 12 Nov 2023 13:51:00 +0000</pubDate>
+        <pubDate>Sun, 12 Nov 2023 13:51:00 +0800</pubDate>
         
         <guid>https://example.com/software/Winlator.html</guid>
         <description>&lt;p&gt;20250507注：建议直接用盖世游戏，相对更友好，详见↓

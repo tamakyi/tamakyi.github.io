@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Tue, 20 Aug 2024 02:36:00 +0000</lastBuildDate><atom:link href="https://example.com/categories/default/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 20 Aug 2024 02:36:00 +0800</lastBuildDate><atom:link href="https://example.com/categories/default/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>r2的安全性配置（主要是缓存）</title>
         <link>https://example.com/post/r2_waf_rules.html.html</link>
-        <pubDate>Tue, 20 Aug 2024 02:36:00 +0000</pubDate>
+        <pubDate>Tue, 20 Aug 2024 02:36:00 +0800</pubDate>
         
         <guid>https://example.com/post/r2_waf_rules.html.html</guid>
         <description>&lt;p&gt;因为本站使用的R2资源比较少，整个桶不过50M，一个月下来B类访问量也不足4W，之前基本上没考虑过什么盗刷的问题，昨天在文章下面有用户提到他的资源访问量比较大，一天下来就有我的数量级了，这种情况下一不小心可能就有机会给Cloudflare打钱。之前本站大部分资源都是仍在OSS上的，从上个月开始访问速度就非常不正常，试着把东西都扔到R2上整体访问速度居然还提升了&amp;hellip;阿里云的防盗刷配置还是比较简单的，R2就没那么直观，可以从以下几个方面入手：&lt;/p&gt;
@@ -83,7 +83,7 @@
         <item>
         <title>简评A380（显卡 不是飞机）</title>
         <link>https://example.com/default/a380-evaluation.html</link>
-        <pubDate>Thu, 21 Mar 2024 23:32:00 +0000</pubDate>
+        <pubDate>Thu, 21 Mar 2024 23:32:00 +0800</pubDate>
         
         <guid>https://example.com/default/a380-evaluation.html</guid>
         <description>&lt;p&gt;NAS换成2U服务器之后机箱空间剩了好多，本来想旧物利用，把&lt;del&gt;从哥布林手里抢回来的失明女骑士&lt;/del&gt;P106接上去玩点AI作图，或者是把百来块整的DG1接上做转码卡。结果根本装不进去&amp;hellip;而且DG1的兼容性问题很奇怪，只有第一次装驱动的时候会出现，后面就再也没出现过了&amp;hellip;
@@ -171,7 +171,7 @@ PCI® Express4.0 支持 1 x
         <item>
         <title>更换了tama.host的模板，现在更像个导航页了</title>
         <link>https://example.com/default/tama-host-remake.html</link>
-        <pubDate>Sat, 28 Oct 2023 01:03:08 +0000</pubDate>
+        <pubDate>Sat, 28 Oct 2023 01:03:08 +0800</pubDate>
         
         <guid>https://example.com/default/tama-host-remake.html</guid>
         <description>&lt;p&gt;导航站的地址不变，依旧是&lt;a class=&#34;link&#34; href=&#34;https://tama.host/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -199,7 +199,7 @@ PCI® Express4.0 支持 1 x
         <item>
         <title>AMD直播推流真的就是一坨答辩！</title>
         <link>https://example.com/default/adm_stream.html</link>
-        <pubDate>Sun, 07 May 2023 16:57:09 +0000</pubDate>
+        <pubDate>Sun, 07 May 2023 16:57:09 +0800</pubDate>
         
         <guid>https://example.com/default/adm_stream.html</guid>
         <description>&lt;p&gt;AMD在编解码这一块就是一坨大便！
@@ -430,7 +430,7 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
         <item>
         <title>在debian11安装并使用wifite</title>
         <link>https://example.com/default/wifite_in_debian11.html</link>
-        <pubDate>Sat, 02 Jul 2022 20:24:31 +0000</pubDate>
+        <pubDate>Sat, 02 Jul 2022 20:24:31 +0800</pubDate>
         
         <guid>https://example.com/default/wifite_in_debian11.html</guid>
         <description>&lt;p&gt;在debian11直接apt install -y wifite 并运行会提示：

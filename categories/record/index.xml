@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Wed, 07 May 2025 00:26:00 +0000</lastBuildDate><atom:link href="https://example.com/categories/record/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 07 May 2025 00:26:00 +0800</lastBuildDate><atom:link href="https://example.com/categories/record/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>[好软推荐] 盖世游戏-意外好用的windows游戏模拟器</title>
         <link>https://example.com/record/gamehub.html</link>
-        <pubDate>Wed, 07 May 2025 00:26:00 +0000</pubDate>
+        <pubDate>Wed, 07 May 2025 00:26:00 +0800</pubDate>
         
         <guid>https://example.com/record/gamehub.html</guid>
         <description>&lt;h4 id=&#34;前言&#34;&gt;前言
@@ -159,7 +159,7 @@
         <item>
         <title>关于AcFun礼物统计网页的说明</title>
         <link>https://example.com/record/acfun-gift-count.html</link>
-        <pubDate>Sun, 04 May 2025 04:11:00 +0000</pubDate>
+        <pubDate>Sun, 04 May 2025 04:11:00 +0800</pubDate>
         
         <guid>https://example.com/record/acfun-gift-count.html</guid>
         <description>&lt;p&gt;服务地址：&lt;a class=&#34;link&#34; href=&#34;http://acfun.tama.guru/acfun-tools/acfun-gift.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -302,7 +302,7 @@
         <item>
         <title>如何避免大数字自动安装大数字看图(360AlbumViewer)</title>
         <link>https://example.com/record/anti-360albumviewer.html</link>
-        <pubDate>Fri, 25 Apr 2025 14:52:00 +0000</pubDate>
+        <pubDate>Fri, 25 Apr 2025 14:52:00 +0800</pubDate>
         
         <guid>https://example.com/record/anti-360albumviewer.html</guid>
         <description>&lt;p&gt;单位电脑上强制要使用大数字，自从某数字推出了极速版，相比起原版的臃肿倒是简洁了不少，把一些选项关掉后还真就老老实实干活基本上没出现过什么问题。但是从上个月开始，右键菜单就多了个&amp;quot;360看图&amp;quot;的选项，可真是恶心人。而且这玩意不会出现在开始菜单里面，需要到控制面板里面找出来卸载掉，问题是卸载了下次不知道啥时候就会突然冒出来（至今我也没找到到底是点了什么地方导致的），只能先按照对付其他流氓软件的方法处理了。&lt;/p&gt;
@@ -348,7 +348,7 @@
         <item>
         <title>搭建自己的轨迹记录程序 Traccar</title>
         <link>https://example.com/record/traccar.html</link>
-        <pubDate>Sun, 20 Apr 2025 05:57:00 +0000</pubDate>
+        <pubDate>Sun, 20 Apr 2025 05:57:00 +0800</pubDate>
         
         <guid>https://example.com/record/traccar.html</guid>
         <description>&lt;p&gt;今天外出玩耍的时候突发奇想我能不能每天记录一下自己每天的生活轨迹，百度了下已经有很多成熟的应用了，但是这种比较私密的数据要发送到别人的服务器上说实话我是不太想的，然后去github上找了下，发现了好几个方案，都尝试了一遍，主要是&lt;a class=&#34;link&#34; href=&#34;https://github.com/cctyl/TrackRecord&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -508,7 +508,7 @@
         <item>
         <title>[软件推荐]Next-terminal堡垒机</title>
         <link>https://example.com/record/next-terminal.html</link>
-        <pubDate>Mon, 14 Apr 2025 20:49:20 +0000</pubDate>
+        <pubDate>Mon, 14 Apr 2025 20:49:20 +0800</pubDate>
         
         <guid>https://example.com/record/next-terminal.html</guid>
         <description>&lt;p&gt;说说一直在用的这个堡垒机软件，官网是：&lt;a class=&#34;link&#34; href=&#34;https://docs.next-terminal.typesafe.cn/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -610,7 +610,7 @@
         <item>
         <title>使用tinystatus构建一个轻量化的状态监测站</title>
         <link>https://example.com/record/tinystatus.html</link>
-        <pubDate>Sat, 29 Mar 2025 12:26:33 +0000</pubDate>
+        <pubDate>Sat, 29 Mar 2025 12:26:33 +0800</pubDate>
         
         <guid>https://example.com/record/tinystatus.html</guid>
         <description>&lt;p&gt;本站之前基本上都是使用site-status+UptimeRobot这样的监控方案，算是常用且成熟的一种方式了，界面也美观，但问题是，它太大了，几个js+css轻松干到500k。放在本地占用带宽是个问题，放在oss上如果被无聊的人拿来做坏事也不是很好玩，于是还是要从源头解决，换用一个更小的方案，即目前的tinystatus方案。&lt;/p&gt;
@@ -969,7 +969,7 @@
         <item>
         <title>使用vercel&#43;neon方案搭建无需服务器的umami统计服务</title>
         <link>https://example.com/record/umami.html</link>
-        <pubDate>Wed, 26 Mar 2025 12:23:06 +0000</pubDate>
+        <pubDate>Wed, 26 Mar 2025 12:23:06 +0800</pubDate>
         
         <guid>https://example.com/record/umami.html</guid>
         <description>&lt;h5 id=&#34;为什么要用umami&#34;&gt;为什么要用umami
@@ -1069,7 +1069,7 @@
         <item>
         <title>使用fruity-pikvm实现在64位raspios上运行pikvm</title>
         <link>https://example.com/record/fruity-pikvm.html</link>
-        <pubDate>Sat, 08 Feb 2025 11:35:42 +0000</pubDate>
+        <pubDate>Sat, 08 Feb 2025 11:35:42 +0800</pubDate>
         
         <guid>https://example.com/record/fruity-pikvm.html</guid>
         <description>&lt;p&gt;我这个树莓派4买了好多年，基本上是吃灰的状态。因为自从我买了一套pikvm外设装上去之后，基本上就只能跑pikvm的那个魔改archlinux，我就是感觉各种别扭。一方面32位的arm系统并不能发挥PI4的性能，很多软件（包括一些容器）最低也需要aarch；另一方面，pikvm软件源在国内的访问速度简直就是一坨**，就算是挂了梯子都不一定能连的上，更不用说更新软件了。&lt;/p&gt;
@@ -1568,7 +1568,7 @@
         <item>
         <title>狼的日记本 上线了</title>
         <link>https://example.com/record/dairy.html</link>
-        <pubDate>Mon, 30 Dec 2024 22:29:00 +0000</pubDate>
+        <pubDate>Mon, 30 Dec 2024 22:29:00 +0800</pubDate>
         
         <guid>https://example.com/record/dairy.html</guid>
         <description>&lt;p&gt;&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/12/30/6772ae9f88f02.png&#34;
@@ -1777,7 +1777,7 @@
         <item>
         <title>鸿蒙Next居然兼容安卓了？</title>
         <link>https://example.com/record/android-on-harmony.html</link>
-        <pubDate>Tue, 03 Dec 2024 23:03:56 +0000</pubDate>
+        <pubDate>Tue, 03 Dec 2024 23:03:56 +0800</pubDate>
         
         <guid>https://example.com/record/android-on-harmony.html</guid>
         <description>&lt;p&gt;昨天，有消息称Next的应用商店上架了出境易，用过华子的都知道这玩意可以用过某些&lt;del&gt;不可告人&lt;/del&gt;的方式来实现对某些国外应用的安装和使用，所以这次上架就有意思了,因为这上面的几乎所有应用目前基本上不会为Next做适配，那就说明它会通过某种方法来兼容安卓应用来实现运行如上应用的能力。&lt;/p&gt;
@@ -1877,7 +1877,7 @@
         <item>
         <title>3D打印初体验 - 拓竹P1SC</title>
         <link>https://example.com/record/p1sc.html</link>
-        <pubDate>Mon, 28 Oct 2024 17:53:30 +0000</pubDate>
+        <pubDate>Mon, 28 Oct 2024 17:53:30 +0800</pubDate>
         
         <guid>https://example.com/record/p1sc.html</guid>
         <description>&lt;h4 id=&#34;前言&#34;&gt;前言
@@ -1956,7 +1956,7 @@
         <item>
         <title>本站即将迁移至tma.moe</title>
         <link>https://example.com/record/tma-moe.html</link>
-        <pubDate>Sat, 01 Jun 2024 01:58:00 +0000</pubDate>
+        <pubDate>Sat, 01 Jun 2024 01:58:00 +0800</pubDate>
         
         <guid>https://example.com/record/tma-moe.html</guid>
         <description>&lt;p&gt;在了解到目前使用的两个域名到期后续费的金额后，我决定停止tama.guru和i-tama.website的续费并于近期切换到tma.moe，作出这一决定是出于原则性考虑（大雾）。后续本站域名将更改为https://blog.tma.moe，一段时间内将对旧域名做跳转。&lt;/p&gt;
@@ -2016,7 +2016,7 @@
         <item>
         <title>使用Cloudflare的SaaS实现自选IP</title>
         <link>https://example.com/record/Cloudflare_SaaS.html</link>
-        <pubDate>Fri, 31 May 2024 23:59:00 +0000</pubDate>
+        <pubDate>Fri, 31 May 2024 23:59:00 +0800</pubDate>
         
         <guid>https://example.com/record/Cloudflare_SaaS.html</guid>
         <description>&lt;p&gt;前几天闲的没事查一下目前几个域名的续费价格，发现动不动都是几百一年&amp;hellip;如果现有的优惠到期之后我多半是不会再继续用了，趁此机会我购入了一个新的域名，够短，也挺有个性&amp;ndash;&amp;gt;&lt;a class=&#34;link&#34; href=&#34;http://tma.moe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -2080,7 +2080,7 @@
         <item>
         <title>使用acme.sh申请通配ssl证书</title>
         <link>https://example.com/record/acme-sh_zerossl.html</link>
-        <pubDate>Mon, 20 May 2024 21:04:00 +0000</pubDate>
+        <pubDate>Mon, 20 May 2024 21:04:00 +0800</pubDate>
         
         <guid>https://example.com/record/acme-sh_zerossl.html</guid>
         <description>&lt;p&gt;从今年3-4月起，国内主流的域名平台都开始把原来一年期的免费证书调整成三个月（参见：&lt;a class=&#34;link&#34; href=&#34;https://help.aliyun.com/zh/ssl-certificate/user-guide/upgrade-a-free-certificate-upgrade-a-free-certificate&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -2175,7 +2175,7 @@ A：它只支持Let&amp;rsquo;s encrypt证书。&lt;/p&gt;</description>
         <item>
         <title>一些系统及应用的去广告和隐私选项推荐(持续更新)</title>
         <link>https://example.com/record/app-anti-ad.html</link>
-        <pubDate>Sun, 28 Apr 2024 11:26:00 +0000</pubDate>
+        <pubDate>Sun, 28 Apr 2024 11:26:00 +0800</pubDate>
         
         <guid>https://example.com/record/app-anti-ad.html</guid>
         <description>&lt;p&gt;有些app的广告实在是太多了，而且关掉的地方都隐藏的很深以至于我需要专门拿个文章记录一下，后续每找一种方法都会在这里更新，并根据不同的软件类型进行分类，以便快速查找。
@@ -2232,7 +2232,7 @@ A：它只支持Let&amp;rsquo;s encrypt证书。&lt;/p&gt;</description>
         <item>
         <title>在docker里运行火狐浏览器</title>
         <link>https://example.com/record/firefox-on-docker.html</link>
-        <pubDate>Fri, 26 Apr 2024 15:53:00 +0000</pubDate>
+        <pubDate>Fri, 26 Apr 2024 15:53:00 +0800</pubDate>
         
         <guid>https://example.com/record/firefox-on-docker.html</guid>
         <description>&lt;p&gt;有时候我会需要在远程计算机上使用浏览器进行一些操作，但是存在一些问题。一是远程计算机本身空间容量/配置较低，预装的是core系统，因为使用个浏览器去安装整个桌面环境有点浪费了，也不利于系统稳定；二是软件可能会破坏原有的依赖，轻则软件报错，重则无法启动，这个就很难绷了。
@@ -2309,7 +2309,7 @@ firewall-cmd --reload
         <item>
         <title>在局域网内安装去广告插件的几种方法(pihole和adguardhome)</title>
         <link>https://example.com/record/ad-plugin.html</link>
-        <pubDate>Sat, 13 Apr 2024 23:37:00 +0000</pubDate>
+        <pubDate>Sat, 13 Apr 2024 23:37:00 +0800</pubDate>
         
         <guid>https://example.com/record/ad-plugin.html</guid>
         <description>&lt;p&gt;这东西我主要是放在家里给老人用的，最开始是他们手机碰上七七八八的问题找我解决，然后点开一个个浏览器和应用，卧槽，这能用的下去？横幅的横幅，弹窗的弹窗，真的看不下去，正好家里整了一个24小时开机的J1900双网口软路由，于是想了想在上面安装个插件算了，怎样都比原来好。&lt;/p&gt;
@@ -2475,7 +2475,7 @@ Bootstrap DNS 服务器则修改为：&lt;/p&gt;
         <item>
         <title>记录一次在鸿蒙4.0安装GMS套件的过程</title>
         <link>https://example.com/record/homo4-0-gms.html</link>
-        <pubDate>Fri, 12 Apr 2024 00:06:00 +0000</pubDate>
+        <pubDate>Fri, 12 Apr 2024 00:06:00 +0800</pubDate>
         
         <guid>https://example.com/record/homo4-0-gms.html</guid>
         <description>&lt;p&gt;换了华子之后，平时我需要用到的那些G系软件基本上都是通过Gspace这类的软件去实现的，但是有一些特殊的软件就无法使用了&amp;hellip;比如litchi这个第三方无人机飞控软件，如果使用gspace去安装，手机在连接遥控器的时候就不会跳转到litchi，图像也没有，结果就是我没提前发现这个问题，某次飞行前东西都准备好了，然后我也崩溃了&amp;hellip;&lt;/p&gt;
@@ -2649,7 +2649,7 @@ Time Connected:00:01
         <item>
         <title>在静态网站上使用waline评论系统</title>
         <link>https://example.com/record/waline-on-html.html</link>
-        <pubDate>Sun, 10 Mar 2024 01:24:00 +0000</pubDate>
+        <pubDate>Sun, 10 Mar 2024 01:24:00 +0800</pubDate>
         
         <guid>https://example.com/record/waline-on-html.html</guid>
         <description>&lt;h4 id=&#34;waline是什么&#34;&gt;Waline是什么
@@ -3425,7 +3425,7 @@ Time Connected:00:01
         <item>
         <title>在archlinux正确的使用xrdp以及碰到的问题</title>
         <link>https://example.com/record/archlinux_xrdp.html</link>
-        <pubDate>Mon, 05 Feb 2024 23:58:41 +0000</pubDate>
+        <pubDate>Mon, 05 Feb 2024 23:58:41 +0800</pubDate>
         
         <guid>https://example.com/record/archlinux_xrdp.html</guid>
         <description>&lt;p&gt;为什么不用vnc？一是需要另外装个软件，不方便，而且配置麻烦，总是能碰到七七八八的问题，而用xrdp基本上用巨硬自带的软件就能实现远程连接。&lt;/p&gt;
@@ -3590,7 +3590,7 @@ i3w / dwm:&lt;/p&gt;
         <item>
         <title>记录windows各类错误及尝试进行解决的流程</title>
         <link>https://example.com/record/windows-error-fix.html</link>
-        <pubDate>Wed, 31 Jan 2024 09:51:00 +0000</pubDate>
+        <pubDate>Wed, 31 Jan 2024 09:51:00 +0800</pubDate>
         
         <guid>https://example.com/record/windows-error-fix.html</guid>
         <description>&lt;p&gt;在基本上尝试了各类Windows系统我得出一个结论，那就是没有完美的Windows系统，除了Win7、Win10 LTSC、Win Server 2022这几个屁事比较少之外，其他总能碰到奇奇怪怪的事情，在此做个文章记录发生过的问题以及记录一些尝试解决处理过程中碰到的事情，免得后面又忘了又翻一遍材料。&lt;/p&gt;
@@ -3644,7 +3644,7 @@ i3w / dwm:&lt;/p&gt;
         <item>
         <title>在debian安装配置redroid并安装shamrock的记录</title>
         <link>https://example.com/record/redroid.html</link>
-        <pubDate>Wed, 24 Jan 2024 12:01:00 +0000</pubDate>
+        <pubDate>Wed, 24 Jan 2024 12:01:00 +0800</pubDate>
         
         <guid>https://example.com/record/redroid.html</guid>
         <description>&lt;h3 id=&#34;前言&#34;&gt;前言
@@ -4281,7 +4281,7 @@ i3w / dwm:&lt;/p&gt;
         <item>
         <title>使用S3 Browser管理Cloudflare R2存储桶</title>
         <link>https://example.com/record/s3browser_r2_manager.html</link>
-        <pubDate>Sat, 13 Jan 2024 22:53:02 +0000</pubDate>
+        <pubDate>Sat, 13 Jan 2024 22:53:02 +0800</pubDate>
         
         <guid>https://example.com/record/s3browser_r2_manager.html</guid>
         <description>&lt;p&gt;本来我是要把导航页所有的文件搬到Github上并&lt;strong&gt;试图&lt;/strong&gt;通过jsdelivr加速访问，但是我发现国内移动网络根本无法直连jsdelivr&amp;hellip;在多次反馈网页无法打开之后，最后还是退一步选择迁移到R2上了。但是R2的网页端管理真的是做得一团糟，上传经常半路失败不说，一次还只能上传100个文件，更恶心的是文件夹无法删除，对于我来说是体验真的不好了。&lt;/p&gt;
@@ -4327,7 +4327,7 @@ i3w / dwm:&lt;/p&gt;
         <item>
         <title>在兰空图床配置并使用Cloudflare R2 存储桶</title>
         <link>https://example.com/record/r2_on_lskypro.html</link>
-        <pubDate>Mon, 08 Jan 2024 16:00:00 +0000</pubDate>
+        <pubDate>Mon, 08 Jan 2024 16:00:00 +0800</pubDate>
         
         <guid>https://example.com/record/r2_on_lskypro.html</guid>
         <description>&lt;h3 id=&#34;什么是r2为什么用r2&#34;&gt;什么是R2，为什么用R2
@@ -4486,7 +4486,7 @@ i3w / dwm:&lt;/p&gt;
         <item>
         <title>P106能在server系统上运行吗</title>
         <link>https://example.com/record/p106-on-winserver.html</link>
-        <pubDate>Mon, 01 Jan 2024 21:10:00 +0000</pubDate>
+        <pubDate>Mon, 01 Jan 2024 21:10:00 +0800</pubDate>
         
         <guid>https://example.com/record/p106-on-winserver.html</guid>
         <description>&lt;p&gt;结论是：能。&lt;/p&gt;
@@ -4520,7 +4520,7 @@ i3w / dwm:&lt;/p&gt;
         <item>
         <title>丂渐云性能测试</title>
         <link>https://example.com/record/idc-rbt.html</link>
-        <pubDate>Mon, 01 Jan 2024 13:28:44 +0000</pubDate>
+        <pubDate>Mon, 01 Jan 2024 13:28:44 +0800</pubDate>
         
         <guid>https://example.com/record/idc-rbt.html</guid>
         <description>&lt;p&gt;站内UP弄的丂渐云，今天看到有台CN2，8C8G一年才370不到，马上下单试了下.&lt;/p&gt;
@@ -4595,7 +4595,7 @@ i3w / dwm:&lt;/p&gt;
         <item>
         <title>给SSH添加邮件登录提醒</title>
         <link>https://example.com/record/ssh_login_mail.html</link>
-        <pubDate>Tue, 26 Dec 2023 22:09:04 +0000</pubDate>
+        <pubDate>Tue, 26 Dec 2023 22:09:04 +0800</pubDate>
         
         <guid>https://example.com/record/ssh_login_mail.html</guid>
         <description>&lt;p&gt;影响SSH登录安全性的因素不外乎：禁用密码登录、密钥强度、修改默认端口、仅指定IP登录，但是如果每次登录的时候能够及时的发一封邮件提醒，可以更好的管控服务器登录状态，也能更安心些。&lt;/p&gt;
@@ -4895,7 +4895,7 @@ i3w / dwm:&lt;/p&gt;
         <item>
         <title>Archlinux下安装并配置lnmp环境</title>
         <link>https://example.com/record/archlinux_lnmp.html</link>
-        <pubDate>Thu, 30 Nov 2023 11:07:00 +0000</pubDate>
+        <pubDate>Thu, 30 Nov 2023 11:07:00 +0800</pubDate>
         
         <guid>https://example.com/record/archlinux_lnmp.html</guid>
         <description>&lt;p&gt;最近把编译用的主机换个发行版，最开始用的是debian，结果现在桌面环境进不去了（而且是一引导完成就所有输入、输入都没反应，但是ssh能登陆，很奇怪），懒得去查原因就选择换个环境。本来用的almalinux，无奈真的不喜欢gnome，自己装了kde之后ibus无论怎样都打不出中文，最后还是上了arch。
@@ -5467,7 +5467,7 @@ i3w / dwm:&lt;/p&gt;
         <item>
         <title>使用ruleproject搭建自己的typecho程序客户端</title>
         <link>https://example.com/record/ruleproject.html</link>
-        <pubDate>Fri, 17 Nov 2023 23:12:00 +0000</pubDate>
+        <pubDate>Fri, 17 Nov 2023 23:12:00 +0800</pubDate>
         
         <guid>https://example.com/record/ruleproject.html</guid>
         <description>&lt;p&gt;卧槽牛皮，这东西牛啊！通过这个教程已经成功弄出了安卓端apk并正常使用！
@@ -5981,7 +5981,7 @@ Github:&lt;a class=&#34;link&#34; href=&#34;https://github.com/buxia97/RuleApi&#
         <item>
         <title>一个新的kindle越狱方案（适用于5.16.2.1.1以下）</title>
         <link>https://example.com/record/LanguageBreak.html</link>
-        <pubDate>Mon, 30 Oct 2023 11:56:00 +0000</pubDate>
+        <pubDate>Mon, 30 Oct 2023 11:56:00 +0800</pubDate>
         
         <guid>https://example.com/record/LanguageBreak.html</guid>
         <description>&lt;p&gt;10月29日，Github用户&lt;a class=&#34;link&#34; href=&#34;https://github.com/notmarek&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -6084,7 +6084,7 @@ KPW2（5.12.2.2）
         <item>
         <title>使用github部署多个静态网站</title>
         <link>https://example.com/record/github_muti_pages.html</link>
-        <pubDate>Wed, 25 Oct 2023 23:16:29 +0000</pubDate>
+        <pubDate>Wed, 25 Oct 2023 23:16:29 +0800</pubDate>
         
         <guid>https://example.com/record/github_muti_pages.html</guid>
         <description>&lt;p&gt;因为有时候需要部署一些静态网站，但是自己的服务器上网站实在太乱了，部署在github便是我最好的选择。
@@ -6195,7 +6195,7 @@ KPW2（5.12.2.2）
         <item>
         <title>在debian下安装headscale的记录</title>
         <link>https://example.com/record/headscale.html</link>
-        <pubDate>Thu, 14 Sep 2023 00:36:00 +0000</pubDate>
+        <pubDate>Thu, 14 Sep 2023 00:36:00 +0800</pubDate>
         
         <guid>https://example.com/record/headscale.html</guid>
         <description>&lt;h5 id=&#34;什么是headscale&#34;&gt;什么是headscale
@@ -6705,7 +6705,7 @@ KPW2（5.12.2.2）
         <item>
         <title>Debian12下通过docker安装homeassistant-hacs</title>
         <link>https://example.com/record/homeassistant-hacs-debian12.html</link>
-        <pubDate>Fri, 25 Aug 2023 11:58:39 +0000</pubDate>
+        <pubDate>Fri, 25 Aug 2023 11:58:39 +0800</pubDate>
         
         <guid>https://example.com/record/homeassistant-hacs-debian12.html</guid>
         <description>&lt;p&gt;HACS即&lt;code&gt;Home Assistant Community Store&lt;/code&gt;，整合了很多homeassistant的第三方集成，比如说米家的相关设备，如果使用官方自带的集成，一般只能识别出几个传感器，而且无法控制，如果想要把米家的设备完全接入就需要安装HACS下面的Xiaomi Miot Auto这个集成，安装之后效果如图所示，基本上能实现HASS管理全部米家设备的想法。
@@ -6815,7 +6815,7 @@ KPW2（5.12.2.2）
         <item>
         <title>zsh下miniconda的正确安装方法及换源方法</title>
         <link>https://example.com/record/miniconda.html</link>
-        <pubDate>Fri, 25 Aug 2023 01:04:56 +0000</pubDate>
+        <pubDate>Fri, 25 Aug 2023 01:04:56 +0800</pubDate>
         
         <guid>https://example.com/record/miniconda.html</guid>
         <description>&lt;p&gt;Anaconda 是一个用于科学计算的 Python 发行版，支持 Linux, Mac, Windows, 包含了众多流行的科学计算、数据分析的 Python 包。Miniconda 是一个 Anaconda 的轻量级替代，默认只包含了 python 和 conda，但是可以通过 pip 和 conda 来安装所需要的包。通常情况下安装Miniconda构建虚拟环境是很方便的，但是安装过程中会碰到一些奇怪的问题导致使用时一直报错，这里记录一下一个成功的安装方法。&lt;/p&gt;
@@ -6946,7 +6946,7 @@ KPW2（5.12.2.2）
         <item>
         <title>通过Cloudflare零信任(cloudflare zero trush)给内网服务器做穿透并搭建webssh的小记</title>
         <link>https://example.com/record/cloudflare_webssh_zerotrush.html</link>
-        <pubDate>Fri, 18 Aug 2023 14:23:00 +0000</pubDate>
+        <pubDate>Fri, 18 Aug 2023 14:23:00 +0800</pubDate>
         
         <guid>https://example.com/record/cloudflare_webssh_zerotrush.html</guid>
         <description>&lt;p&gt;通过cloudflare zero trush可以非常快速且方便的搭建内网穿透，而且速度一般情况下可以接受，最重要的是成本很低，你只需要：&lt;/p&gt;
@@ -7113,7 +7113,7 @@ ssh是无法直接访问的，但是cloudflare提供了application套件，配�
         <item>
         <title>【转载】一个简单的archlinux安装教程（亲测能用）</title>
         <link>https://example.com/record/archlinux_install_guide.html</link>
-        <pubDate>Wed, 16 Aug 2023 22:35:00 +0000</pubDate>
+        <pubDate>Wed, 16 Aug 2023 22:35:00 +0800</pubDate>
         
         <guid>https://example.com/record/archlinux_install_guide.html</guid>
         <description>&lt;p&gt;来自：&lt;a class=&#34;link&#34; href=&#34;https://www.mivm.cn/archlinux-installation-guide-simple&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -7615,7 +7615,7 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
         <item>
         <title>[nonebot插件]修仙2.0框架的帮助合辑</title>
         <link>https://example.com/record/xiuxian2-0.html</link>
-        <pubDate>Tue, 15 Aug 2023 00:28:41 +0000</pubDate>
+        <pubDate>Tue, 15 Aug 2023 00:28:41 +0800</pubDate>
         
         <guid>https://example.com/record/xiuxian2-0.html</guid>
         <description>&lt;p&gt;这玩意的内容是真的多&amp;hellip;光是帮助就好长，看都看不过来，这里做个汇总。&lt;/p&gt;
@@ -7740,7 +7740,7 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
         <item>
         <title>一种很新的群晖安装方法</title>
         <link>https://example.com/record/new_dsm_install.html</link>
-        <pubDate>Sat, 12 Aug 2023 16:26:00 +0000</pubDate>
+        <pubDate>Sat, 12 Aug 2023 16:26:00 +0800</pubDate>
         
         <guid>https://example.com/record/new_dsm_install.html</guid>
         <description>&lt;p&gt;这个方法需要一个叫做&amp;quot;arpl&amp;quot;的固件（链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/fbelavenuto/arpl/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -7965,7 +7965,7 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
         <item>
         <title>记录在raspbian上折腾pikvm的失败过程</title>
         <link>https://example.com/record/pikvm_with_raspbian.html</link>
-        <pubDate>Thu, 10 Aug 2023 18:02:00 +0000</pubDate>
+        <pubDate>Thu, 10 Aug 2023 18:02:00 +0800</pubDate>
         
         <guid>https://example.com/record/pikvm_with_raspbian.html</guid>
         <description>&lt;p&gt;###前言
@@ -9355,7 +9355,7 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
         <item>
         <title>记一次KPW3拆机降级</title>
         <link>https://example.com/record/264.html</link>
-        <pubDate>Sun, 23 Jul 2023 22:40:00 +0000</pubDate>
+        <pubDate>Sun, 23 Jul 2023 22:40:00 +0800</pubDate>
         
         <guid>https://example.com/record/264.html</guid>
         <description>&lt;blockquote&gt;
@@ -9522,7 +9522,7 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
         <item>
         <title>Vultr免费服务器体验</title>
         <link>https://example.com/record/vultr-free-instance.html</link>
-        <pubDate>Sun, 16 Jul 2023 01:35:27 +0000</pubDate>
+        <pubDate>Sun, 16 Jul 2023 01:35:27 +0800</pubDate>
         
         <guid>https://example.com/record/vultr-free-instance.html</guid>
         <description>&lt;p&gt;今年年初的时候Vultr推出了免费服务器计划，只要满足以下条件就能申请一台服务器：&lt;/p&gt;
@@ -9724,7 +9724,7 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
         <item>
         <title>搭了个基于NekoBox的提问箱！</title>
         <link>https://example.com/record/tamabox.html</link>
-        <pubDate>Sat, 03 Jun 2023 14:36:00 +0000</pubDate>
+        <pubDate>Sat, 03 Jun 2023 14:36:00 +0800</pubDate>
         
         <guid>https://example.com/record/tamabox.html</guid>
         <description>&lt;p&gt;之前接触过NekoBox这个匿名提问箱，非常小巧，界面简洁不花哨，非常有好感。但是因为一些不方便说明的原因，作者把原站关闭了（&lt;strong&gt;更正，作者已经重新开放原站了&lt;/strong&gt;），实在可惜。好在他有把源码放到github（引路：https://github.com/NekoWheel/NekoBox)，虽然基本上相当于没有教程，而且使用过程中有好多报错。经过搭建之后半天摸索，现在功能基本上都正常了。
@@ -9802,7 +9802,7 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
         <item>
         <title>在技嘉B550M上成功点亮并使用（但不完美）DG1教程</title>
         <link>https://example.com/record/dg1_with_b550m.html</link>
-        <pubDate>Wed, 10 May 2023 23:24:00 +0000</pubDate>
+        <pubDate>Wed, 10 May 2023 23:24:00 +0800</pubDate>
         
         <guid>https://example.com/record/dg1_with_b550m.html</guid>
         <description>&lt;p&gt;先上结果：
@@ -9902,7 +9902,7 @@ PS5:在微星H510M爆破弹上开启UEFI resizebar above 4g和安全启动，关
         <item>
         <title>记一次VBios的升级和resizebar的开启</title>
         <link>https://example.com/record/3060ti_vbiosupdate_sizebar.html</link>
-        <pubDate>Sun, 07 May 2023 23:28:00 +0000</pubDate>
+        <pubDate>Sun, 07 May 2023 23:28:00 +0800</pubDate>
         
         <guid>https://example.com/record/3060ti_vbiosupdate_sizebar.html</guid>
         <description>&lt;p&gt;首先科普一下resize bar是什么：&lt;/p&gt;
@@ -10067,7 +10067,7 @@ PS5:在微星H510M爆破弹上开启UEFI resizebar above 4g和安全启动，关
         <item>
         <title>解决AcFunLive的mirai机器人无法使用的问题</title>
         <link>https://example.com/record/acfunlive-mirai.html</link>
-        <pubDate>Fri, 05 May 2023 23:35:47 +0000</pubDate>
+        <pubDate>Fri, 05 May 2023 23:35:47 +0800</pubDate>
         
         <guid>https://example.com/record/acfunlive-mirai.html</guid>
         <description>&lt;p&gt;*注意，mirai无法启动仅针对在windows下使用时出现，linux并无此问题。&lt;/p&gt;
@@ -10153,7 +10153,7 @@ PS5:在微星H510M爆破弹上开启UEFI resizebar above 4g和安全启动，关
         <item>
         <title>4G开发板EC200A的初次使用记录</title>
         <link>https://example.com/record/EC200A-CN.html</link>
-        <pubDate>Wed, 19 Apr 2023 23:06:55 +0000</pubDate>
+        <pubDate>Wed, 19 Apr 2023 23:06:55 +0800</pubDate>
         
         <guid>https://example.com/record/EC200A-CN.html</guid>
         <description>&lt;p&gt;本来是想买个随身WIFI，以便家里突然断网/断电的时候能够用手头上多余的一张SIM卡开个应急热点，但是去淘宝搜了一圈，成品随身WIFI要么说经常断网，要么就是无法使用自己的卡，要么就是能插自己的卡，但是只能插物联网卡或是插一张之后就不能插别的卡了（卡和机器绑定了），可玩性极差。然后想想家里还有一坨树莓派，用充电宝供电，能不能在这个基础上整些模块。
@@ -10342,7 +10342,7 @@ PS5:在微星H510M爆破弹上开启UEFI resizebar above 4g和安全启动，关
         <item>
         <title>PVE安装后续优化</title>
         <link>https://example.com/record/pve_install.html</link>
-        <pubDate>Sun, 12 Mar 2023 01:43:00 +0000</pubDate>
+        <pubDate>Sun, 12 Mar 2023 01:43:00 +0800</pubDate>
         
         <guid>https://example.com/record/pve_install.html</guid>
         <description>&lt;p&gt;安装PVE并不复杂，相关操作网上一抓一大把此处不再赘述。
@@ -10744,7 +10744,7 @@ DNS设置使用默认即可。然后确认信息无误点击完成，等待&lt;c
         <item>
         <title>解决Debian11安装慢问题的一些歪门邪道</title>
         <link>https://example.com/record/debian_install_slow.html</link>
-        <pubDate>Wed, 08 Mar 2023 16:02:24 +0000</pubDate>
+        <pubDate>Wed, 08 Mar 2023 16:02:24 +0800</pubDate>
         
         <guid>https://example.com/record/debian_install_slow.html</guid>
         <description>&lt;p&gt;前几天安装Debian的时候，在&lt;code&gt;Select and install software&lt;/code&gt;过程总是报错后终止安装进程，强制进入下一步安装引导会提示没有安装grub引导器可能会导致无法启动，查了一些资料后都在说是&lt;code&gt;debian-security&lt;/code&gt;这个源在国外，直接连接速度极慢（体现为这一步下载4个文件需要几个小时，而且极大可能会突然连接不上然后安装失败）。
@@ -10771,7 +10771,7 @@ DNS设置使用默认即可。然后确认信息无误点击完成，等待&lt;c
         <item>
         <title>目前能访问OpenGPT的方法</title>
         <link>https://example.com/record/accessofopengpt.html</link>
-        <pubDate>Sat, 11 Feb 2023 18:29:00 +0000</pubDate>
+        <pubDate>Sat, 11 Feb 2023 18:29:00 +0800</pubDate>
         
         <guid>https://example.com/record/accessofopengpt.html</guid>
         <description>&lt;p&gt;目前访问&lt;a class=&#34;link&#34; href=&#34;https://chat.openai.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -10866,7 +10866,7 @@ DNS设置使用默认即可。然后确认信息无误点击完成，等待&lt;c
         <item>
         <title>捣鼓SteamDeck的那些事</title>
         <link>https://example.com/record/steamdeck.html</link>
-        <pubDate>Thu, 02 Feb 2023 09:47:00 +0000</pubDate>
+        <pubDate>Thu, 02 Feb 2023 09:47:00 +0800</pubDate>
         
         <guid>https://example.com/record/steamdeck.html</guid>
         <description>&lt;p&gt;I have a d○ck.
@@ -10964,7 +10964,7 @@ Steam桌面商店使用的是flathub源，默认使用的是&lt;code&gt;https://
         <item>
         <title>WIN11连接老版本系统（WIN7-WIN10）打印机提示0X000000709的解决方法</title>
         <link>https://example.com/record/0X000000709.html</link>
-        <pubDate>Mon, 09 Jan 2023 15:24:10 +0000</pubDate>
+        <pubDate>Mon, 09 Jan 2023 15:24:10 +0800</pubDate>
         
         <guid>https://example.com/record/0X000000709.html</guid>
         <description>&lt;p&gt;去年年末我们单位新采购了几台电脑，毫无意外的全部都是预装WIN11(22H2)，本来还美滋滋，一到连接打印机的时候就开始不对劲了，无论怎么连接都连接不上，叫技术人员上来给出几个解决方案：一、把打印机连接到这台新电脑（这样其他电脑就连接不上了）；二、把系统降下WIN10；三、让别人帮打印。
@@ -11001,7 +11001,7 @@ Steam桌面商店使用的是flathub源，默认使用的是&lt;code&gt;https://
         <item>
         <title>安装最新版nodejs的正确方法</title>
         <link>https://example.com/record/iwannanewnodejs.html</link>
-        <pubDate>Sat, 31 Dec 2022 21:13:00 +0000</pubDate>
+        <pubDate>Sat, 31 Dec 2022 21:13:00 +0800</pubDate>
         
         <guid>https://example.com/record/iwannanewnodejs.html</guid>
         <description>&lt;p&gt;::acfun:02:: 安装这个nodejs真的要命！首先是官方库里面的版本过老，如果通过添加源的方式更新一方面是更新速度极慢，另一方面则是可能会碰到“由于没有公钥，无法验证下列签名”这个怪问题，查了好多文章都无法解决。&lt;/p&gt;
@@ -11035,7 +11035,7 @@ v19.3.0
         <item>
         <title>通过自购礼品卡在日服applestore充值使用（也适用于美服）</title>
         <link>https://example.com/record/apple_jp_giftcard.html</link>
-        <pubDate>Tue, 06 Dec 2022 00:23:34 +0000</pubDate>
+        <pubDate>Tue, 06 Dec 2022 00:23:34 +0800</pubDate>
         
         <guid>https://example.com/record/apple_jp_giftcard.html</guid>
         <description>&lt;p&gt;请注意充值时拥有日本IP！请注意充值时拥有日本IP！请注意充值时拥有日本IP！&lt;/p&gt;
@@ -11086,7 +11086,7 @@ v19.3.0
         <item>
         <title>Switch15.0.1大气层系统升级的记录（整合包）-更新到17.0.1</title>
         <link>https://example.com/record/switch_Atmosphere.html</link>
-        <pubDate>Sun, 27 Nov 2022 01:15:00 +0000</pubDate>
+        <pubDate>Sun, 27 Nov 2022 01:15:00 +0800</pubDate>
         
         <guid>https://example.com/record/switch_Atmosphere.html</guid>
         <description>&lt;p&gt;目前系统是已经硬破的状态，且能正常运行，但是版本已经有点老了（Atmosphere版本14），导致目前有部分新的游戏无法运行，因此在此记录Switch升级大气层系统的相关步骤。&lt;/p&gt;
@@ -11213,7 +11213,7 @@ v19.3.0
         <item>
         <title>Win11安装优化那些事</title>
         <link>https://example.com/record/win11_new_setup.html</link>
-        <pubDate>Sun, 06 Nov 2022 23:08:00 +0000</pubDate>
+        <pubDate>Sun, 06 Nov 2022 23:08:00 +0800</pubDate>
         
         <guid>https://example.com/record/win11_new_setup.html</guid>
         <description>&lt;p&gt;坚持了大半年的WIN10今天终于因为不明原因无法启动了（开机无限转圈圈，进入修复模式修复失败无解），于是干脆就把系统换成Win11。自从上次直接从10升11出现一堆bug之后，&lt;del&gt;以及我对阿三一直以来抱有的一种不信任感&lt;/del&gt;让我这半年基本没摸过11，这次就全新安装，给它个面子，看看它能不能给我个面子。&lt;/p&gt;
@@ -11276,7 +11276,7 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         <item>
         <title>关于“狼圈子”的使用说明</title>
         <link>https://example.com/record/wolf_circle.html</link>
-        <pubDate>Sat, 22 Oct 2022 16:00:00 +0000</pubDate>
+        <pubDate>Sat, 22 Oct 2022 16:00:00 +0800</pubDate>
         
         <guid>https://example.com/record/wolf_circle.html</guid>
         <description>&lt;p&gt;首先，欢迎使用狼圈子。&lt;/p&gt;
@@ -11406,7 +11406,7 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         <item>
         <title>stable-diffusion使用过程中的一些记录</title>
         <link>https://example.com/record/stable-diffusion-webui.html</link>
-        <pubDate>Wed, 19 Oct 2022 23:44:38 +0000</pubDate>
+        <pubDate>Wed, 19 Oct 2022 23:44:38 +0800</pubDate>
         
         <guid>https://example.com/record/stable-diffusion-webui.html</guid>
         <description>&lt;p&gt;原文已丢失，以下部分为重写。
@@ -11452,7 +11452,7 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         <item>
         <title>阿里云服务器的买后优化记录</title>
         <link>https://example.com/record/aliyun_server.html</link>
-        <pubDate>Sun, 16 Oct 2022 00:15:00 +0000</pubDate>
+        <pubDate>Sun, 16 Oct 2022 00:15:00 +0800</pubDate>
         
         <guid>https://example.com/record/aliyun_server.html</guid>
         <description>&lt;p&gt;腾讯云香港服务器蹲了半年都蹲不出台正常点的，中低端经常售罄，至少都要2C2T+4G起步，一个月就要六七十，这谁受得了？？？月初打开阿里云一看，哟嚯，2C（其实是1C2T）+2G一个月才30，试用下访问速度基本上接近国内服务器，这我直呼受不了，赶紧把之前那破腾讯云上的数据迁移咯。使用体验基本复合我的预期，但是2G跑个debian在加几个网站基本就没用想别的了，内存这块有优化的必要。&lt;/p&gt;
@@ -11505,7 +11505,7 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         <item>
         <title>MIUI刷机那些破事（持续更新）</title>
         <link>https://example.com/record/miuiflashing.html</link>
-        <pubDate>Wed, 05 Oct 2022 17:23:00 +0000</pubDate>
+        <pubDate>Wed, 05 Oct 2022 17:23:00 +0800</pubDate>
         
         <guid>https://example.com/record/miuiflashing.html</guid>
         <description>&lt;p&gt;[scode type=&amp;ldquo;red&amp;rdquo;]&amp;ldquo;this MIUI version can’t be installed on this device&amp;rdquo;[/scode]
@@ -11538,7 +11538,7 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         <item>
         <title>关于MIUI升级到开发版的方法</title>
         <link>https://example.com/record/miuidev.html</link>
-        <pubDate>Tue, 04 Oct 2022 19:47:00 +0000</pubDate>
+        <pubDate>Tue, 04 Oct 2022 19:47:00 +0800</pubDate>
         
         <guid>https://example.com/record/miuidev.html</guid>
         <description>&lt;p&gt;不知道从哪个版本的miui开始，开发版的miui便不能直接从稳定版通过简单的卡刷进行转换，需要在官方论坛申请“公测”或者“内测”权限之后才能进行安装，而申请资格需要在官方论坛达到4级以上的等级并且要完成所谓的“答题”，如果等级不够或者“答题”分数不及格均无法获得权限，就算通过其他方法搞到了卡刷包，在刷写的时候也会被提示“该账号非内测权限”然后就停住了。
@@ -11555,7 +11555,7 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         <item>
         <title>新版raspbian远程登录方法</title>
         <link>https://example.com/record/raspbian11login.html</link>
-        <pubDate>Mon, 19 Sep 2022 13:32:04 +0000</pubDate>
+        <pubDate>Mon, 19 Sep 2022 13:32:04 +0800</pubDate>
         
         <guid>https://example.com/record/raspbian11login.html</guid>
         <description>&lt;p&gt;新版的raspbian中已经取消了默认的&lt;code&gt;pi+raspbian&lt;/code&gt;登录方式，这意味着如果使用无屏幕登录方式将无法直接登录。
@@ -11568,7 +11568,7 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         <item>
         <title>centos7在保留python2.7的前提下安装python3.x的方法</title>
         <link>https://example.com/record/centos7_python3-x.html</link>
-        <pubDate>Sat, 17 Sep 2022 01:46:10 +0000</pubDate>
+        <pubDate>Sat, 17 Sep 2022 01:46:10 +0800</pubDate>
         
         <guid>https://example.com/record/centos7_python3-x.html</guid>
         <description>&lt;p&gt;不会有人2022年了还在用centos7吧。。。
@@ -11584,7 +11584,7 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         <item>
         <title>适用于handsome主题的自适应视频挂载</title>
         <link>https://example.com/record/handsome-framevideo.html</link>
-        <pubDate>Sun, 24 Jul 2022 01:59:00 +0000</pubDate>
+        <pubDate>Sun, 24 Jul 2022 01:59:00 +0800</pubDate>
         
         <guid>https://example.com/record/handsome-framevideo.html</guid>
         <description>&lt;p&gt;原文请访问：[button type=&amp;ldquo;round&amp;rdquo; color=&amp;ldquo;success&amp;rdquo; url=&amp;ldquo;https://www.raycns.com/archives/774.html&amp;rdquo;]此处[/button]&lt;/p&gt;
@@ -11706,7 +11706,7 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         <item>
         <title>handsome主题博客信息添加全站字数、在线人数、访客总数和网站加载耗时</title>
         <link>https://example.com/record/sidebarmodify.html</link>
-        <pubDate>Sat, 23 Jul 2022 17:18:00 +0000</pubDate>
+        <pubDate>Sat, 23 Jul 2022 17:18:00 +0800</pubDate>
         
         <guid>https://example.com/record/sidebarmodify.html</guid>
         <description>&lt;p&gt;转载自：&lt;a class=&#34;link&#34; href=&#34;https://www.cloudsd.com/archives/25.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -11914,7 +11914,7 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         <item>
         <title>使用OBS自动添加字幕识别已经转自动语音</title>
         <link>https://example.com/record/obs-subtitles-audio.html</link>
-        <pubDate>Sun, 17 Jul 2022 12:38:00 +0000</pubDate>
+        <pubDate>Sun, 17 Jul 2022 12:38:00 +0800</pubDate>
         
         <guid>https://example.com/record/obs-subtitles-audio.html</guid>
         <description>&lt;p&gt;请直接参考作者文档：&lt;a class=&#34;link&#34; href=&#34;https://github.com/summershrimp/obs-auto-subtitle/blob/master/README-zh.md&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -11927,7 +11927,7 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         <item>
         <title>handsome主题短代码</title>
         <link>https://example.com/record/hs-shortcode.html</link>
-        <pubDate>Tue, 12 Jul 2022 01:15:00 +0000</pubDate>
+        <pubDate>Tue, 12 Jul 2022 01:15:00 +0800</pubDate>
         
         <guid>https://example.com/record/hs-shortcode.html</guid>
         <description>&lt;p&gt;来源：&lt;a class=&#34;link&#34; href=&#34;https://auth.ihewro.com/user/docs#/preference/shortCode&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -12449,7 +12449,7 @@ cover：（选填）外链网站的介绍图片地址&lt;/p&gt;
         <item>
         <title>OneCirclePro插件和handsome静态资源切换到国内服务器</title>
         <link>https://example.com/record/OneCirclePro-jscss.html</link>
-        <pubDate>Mon, 11 Jul 2022 22:52:00 +0000</pubDate>
+        <pubDate>Mon, 11 Jul 2022 22:52:00 +0800</pubDate>
         
         <guid>https://example.com/record/OneCirclePro-jscss.html</guid>
         <description>&lt;p&gt;体验了几天这个主题，发现资源加载是真的离谱，动不动10s+：&lt;/p&gt;
@@ -12512,7 +12512,7 @@ cover：（选填）外链网站的介绍图片地址&lt;/p&gt;
         <item>
         <title>使用lskypro作为typecho图床</title>
         <link>https://example.com/record/lskypro.html</link>
-        <pubDate>Mon, 11 Jul 2022 20:46:00 +0000</pubDate>
+        <pubDate>Mon, 11 Jul 2022 20:46:00 +0800</pubDate>
         
         <guid>https://example.com/record/lskypro.html</guid>
         <description>&lt;p&gt;如果你的服务器在国外导致部分内容加载缓慢，同时因为CDN需要准备七七八八的(cloudflare除外，但是体验一样不好)，又信不过国内一众免费图床（稳定性和安全性问题），那么可以试着使用lskypro在国内服务器自建图床。&lt;/p&gt;
@@ -12633,7 +12633,7 @@ cover：（选填）外链网站的介绍图片地址&lt;/p&gt;
         <item>
         <title>handsome美化记录</title>
         <link>https://example.com/record/handsome-modify.html</link>
-        <pubDate>Sun, 10 Jul 2022 20:20:00 +0000</pubDate>
+        <pubDate>Sun, 10 Jul 2022 20:20:00 +0800</pubDate>
         
         <guid>https://example.com/record/handsome-modify.html</guid>
         <description>&lt;p&gt;&lt;code&gt;[scode type=&amp;quot;yellow&amp;quot;]此处备份handsome主题一些自定义的教程：[/scode]&lt;/code&gt;&lt;/p&gt;
@@ -12751,7 +12751,7 @@ cover：（选填）外链网站的介绍图片地址&lt;/p&gt;
         <item>
         <title>唯一指定漫画阅读软件tachiyomi</title>
         <link>https://example.com/record/tachiyomi.html</link>
-        <pubDate>Sat, 09 Jul 2022 13:40:00 +0000</pubDate>
+        <pubDate>Sat, 09 Jul 2022 13:40:00 +0800</pubDate>
         
         <guid>https://example.com/record/tachiyomi.html</guid>
         <description>&lt;p&gt;项目地址：[tachiyomi](&lt;a class=&#34;link&#34; href=&#34;https://github.com/tachiyomiorg/tachiyomi&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -12770,7 +12770,7 @@ cover：（选填）外链网站的介绍图片地址&lt;/p&gt;
         <item>
         <title>添加acfun直播的颜文字（仅针对handsome主题）</title>
         <link>https://example.com/record/aclive-emotion.html</link>
-        <pubDate>Thu, 07 Jul 2022 00:59:00 +0000</pubDate>
+        <pubDate>Thu, 07 Jul 2022 00:59:00 +0800</pubDate>
         
         <guid>https://example.com/record/aclive-emotion.html</guid>
         <description>&lt;p&gt;很简单，直接把对应文件替换掉就好。
@@ -12792,7 +12792,7 @@ cover：（选填）外链网站的介绍图片地址&lt;/p&gt;
         <item>
         <title>在异地服务器使用go-miraiqq教程</title>
         <link>https://example.com/record/miraiqq-remote.html</link>
-        <pubDate>Wed, 06 Jul 2022 09:11:45 +0000</pubDate>
+        <pubDate>Wed, 06 Jul 2022 09:11:45 +0800</pubDate>
         
         <guid>https://example.com/record/miraiqq-remote.html</guid>
         <description>&lt;p&gt;在异地直接扫码登录miraiqq会有“异常，建议在同一WIFI环境下使用”的提示，如果服务器在本地还好，但是买的服务器在外地就很难这样去处理了。
@@ -12812,7 +12812,7 @@ PS： linux大同小异。&lt;/li&gt;
         <item>
         <title>阿巴阿巴阿巴</title>
         <link>https://example.com/record/wmdht_001.html</link>
-        <pubDate>Tue, 05 Jul 2022 23:08:02 +0000</pubDate>
+        <pubDate>Tue, 05 Jul 2022 23:08:02 +0800</pubDate>
         
         <guid>https://example.com/record/wmdht_001.html</guid>
         <description>&lt;p&gt;感谢万能小狼，我的账号密码终于回来了。（第一天就忘掉自己设置的密码，我是笨蛋&lt;/p&gt;
@@ -12821,7 +12821,7 @@ PS： linux大同小异。&lt;/li&gt;
         <item>
         <title>一些链接的备份</title>
         <link>https://example.com/record/somelinks.html</link>
-        <pubDate>Tue, 05 Jul 2022 02:00:00 +0000</pubDate>
+        <pubDate>Tue, 05 Jul 2022 02:00:00 +0800</pubDate>
         
         <guid>https://example.com/record/somelinks.html</guid>
         <description>&lt;p&gt;慢慢完善&lt;/p&gt;
@@ -12850,7 +12850,7 @@ PS： linux大同小异。&lt;/li&gt;
         <item>
         <title>关注人/圈子功能处于寄的状态</title>
         <link>https://example.com/record/follow-crash.html</link>
-        <pubDate>Sun, 03 Jul 2022 19:09:46 +0000</pubDate>
+        <pubDate>Sun, 03 Jul 2022 19:09:46 +0800</pubDate>
         
         <guid>https://example.com/record/follow-crash.html</guid>
         <description>&lt;p&gt;因为使用这个主题的时候是整个dev分支clone过来的，难免有一些bug（也确实看到作者刚在十几天前修了一些东西）
@@ -12923,7 +12923,7 @@ PS： linux大同小异。&lt;/li&gt;
         <item>
         <title>做一下ddbot的记录</title>
         <link>https://example.com/record/ddbot-live.html</link>
-        <pubDate>Sun, 03 Jul 2022 16:43:00 +0000</pubDate>
+        <pubDate>Sun, 03 Jul 2022 16:43:00 +0800</pubDate>
         
         <guid>https://example.com/record/ddbot-live.html</guid>
         <description>&lt;h2 id=&#34;避免服务器寄了群友d谁都忘了以下做个记录&#34;&gt;避免服务器寄了群友d谁都忘了，以下做个记录

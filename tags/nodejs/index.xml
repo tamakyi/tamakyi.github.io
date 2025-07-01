@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Sat, 31 Dec 2022 21:13:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/nodejs/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 31 Dec 2022 21:13:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/nodejs/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>安装最新版nodejs的正确方法</title>
         <link>https://example.com/record/iwannanewnodejs.html</link>
-        <pubDate>Sat, 31 Dec 2022 21:13:00 +0000</pubDate>
+        <pubDate>Sat, 31 Dec 2022 21:13:00 +0800</pubDate>
         
         <guid>https://example.com/record/iwannanewnodejs.html</guid>
         <description>&lt;p&gt;::acfun:02:: 安装这个nodejs真的要命！首先是官方库里面的版本过老，如果通过添加源的方式更新一方面是更新速度极慢，另一方面则是可能会碰到“由于没有公钥，无法验证下列签名”这个怪问题，查了好多文章都无法解决。&lt;/p&gt;

@@ -7,10 +7,23 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Wed, 07 May 2025 00:26:00 +0000</lastBuildDate><atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 01 Jul 2025 21:46:00 +0800</lastBuildDate><atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>再见了 TypeCho</title>
+        <link>https://example.com/new-record/typecho.html</link>
+        <pubDate>Tue, 01 Jul 2025 21:46:00 +0800</pubDate>
+        
+        <guid>https://example.com/new-record/typecho.html</guid>
+        <description>&lt;img src="https://r2.337845818.best/tamabox/2025/07/02/686410ca3aae0.png" alt="Featured image of post 再见了 TypeCho" /&gt;&lt;p&gt;在经历过wordpress、zblog等一系列重型动态博客后，我切换到typecho并持续使用了很长一段时间。
+typecho很好，它很轻量，超棒的插件和主题到处都是，我甚至入正了handsome主题。
+但是，typecho更新实在太慢，属于是没有重大BUG几年不见更新一次那种，在我升级到php8.x之后经常冒出莫名其妙的错误，再加上驱动typecho需要nginx+php+mysql环境，对我的小鸡来说负担太重了，而且网站的访问量并不大，没必要占用这么大服务器资源，如果只是为了时不时写点东西，那还不如用静态博客好了。
+hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝试一下hugo。
+总而言之，文章基本都迁移过来了，剩下的评论再看看怎么导入waline，就基本完成了迁移工作。
+也许以后不会再见，还是谢谢你两年的陪伴。&lt;/p&gt;</description>
+        </item>
+        <item>
         <title>[好软推荐] 盖世游戏-意外好用的windows游戏模拟器</title>
         <link>https://example.com/record/gamehub.html</link>
-        <pubDate>Wed, 07 May 2025 00:26:00 +0000</pubDate>
+        <pubDate>Wed, 07 May 2025 00:26:00 +0800</pubDate>
         
         <guid>https://example.com/record/gamehub.html</guid>
         <description>&lt;h4 id=&#34;前言&#34;&gt;前言
@@ -159,7 +172,7 @@
         <item>
         <title>关于AcFun礼物统计网页的说明</title>
         <link>https://example.com/record/acfun-gift-count.html</link>
-        <pubDate>Sun, 04 May 2025 04:11:00 +0000</pubDate>
+        <pubDate>Sun, 04 May 2025 04:11:00 +0800</pubDate>
         
         <guid>https://example.com/record/acfun-gift-count.html</guid>
         <description>&lt;p&gt;服务地址：&lt;a class=&#34;link&#34; href=&#34;http://acfun.tama.guru/acfun-tools/acfun-gift.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -302,7 +315,7 @@
         <item>
         <title>如何避免大数字自动安装大数字看图(360AlbumViewer)</title>
         <link>https://example.com/record/anti-360albumviewer.html</link>
-        <pubDate>Fri, 25 Apr 2025 14:52:00 +0000</pubDate>
+        <pubDate>Fri, 25 Apr 2025 14:52:00 +0800</pubDate>
         
         <guid>https://example.com/record/anti-360albumviewer.html</guid>
         <description>&lt;p&gt;单位电脑上强制要使用大数字，自从某数字推出了极速版，相比起原版的臃肿倒是简洁了不少，把一些选项关掉后还真就老老实实干活基本上没出现过什么问题。但是从上个月开始，右键菜单就多了个&amp;quot;360看图&amp;quot;的选项，可真是恶心人。而且这玩意不会出现在开始菜单里面，需要到控制面板里面找出来卸载掉，问题是卸载了下次不知道啥时候就会突然冒出来（至今我也没找到到底是点了什么地方导致的），只能先按照对付其他流氓软件的方法处理了。&lt;/p&gt;
@@ -348,7 +361,7 @@
         <item>
         <title>搭建自己的轨迹记录程序 Traccar</title>
         <link>https://example.com/record/traccar.html</link>
-        <pubDate>Sun, 20 Apr 2025 05:57:00 +0000</pubDate>
+        <pubDate>Sun, 20 Apr 2025 05:57:00 +0800</pubDate>
         
         <guid>https://example.com/record/traccar.html</guid>
         <description>&lt;p&gt;今天外出玩耍的时候突发奇想我能不能每天记录一下自己每天的生活轨迹，百度了下已经有很多成熟的应用了，但是这种比较私密的数据要发送到别人的服务器上说实话我是不太想的，然后去github上找了下，发现了好几个方案，都尝试了一遍，主要是&lt;a class=&#34;link&#34; href=&#34;https://github.com/cctyl/TrackRecord&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -508,7 +521,7 @@
         <item>
         <title>[软件推荐]Next-terminal堡垒机</title>
         <link>https://example.com/record/next-terminal.html</link>
-        <pubDate>Mon, 14 Apr 2025 20:49:20 +0000</pubDate>
+        <pubDate>Mon, 14 Apr 2025 20:49:20 +0800</pubDate>
         
         <guid>https://example.com/record/next-terminal.html</guid>
         <description>&lt;p&gt;说说一直在用的这个堡垒机软件，官网是：&lt;a class=&#34;link&#34; href=&#34;https://docs.next-terminal.typesafe.cn/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -610,7 +623,7 @@
         <item>
         <title>使用tinystatus构建一个轻量化的状态监测站</title>
         <link>https://example.com/record/tinystatus.html</link>
-        <pubDate>Sat, 29 Mar 2025 12:26:33 +0000</pubDate>
+        <pubDate>Sat, 29 Mar 2025 12:26:33 +0800</pubDate>
         
         <guid>https://example.com/record/tinystatus.html</guid>
         <description>&lt;p&gt;本站之前基本上都是使用site-status+UptimeRobot这样的监控方案，算是常用且成熟的一种方式了，界面也美观，但问题是，它太大了，几个js+css轻松干到500k。放在本地占用带宽是个问题，放在oss上如果被无聊的人拿来做坏事也不是很好玩，于是还是要从源头解决，换用一个更小的方案，即目前的tinystatus方案。&lt;/p&gt;
@@ -969,7 +982,7 @@
         <item>
         <title>使用vercel&#43;neon方案搭建无需服务器的umami统计服务</title>
         <link>https://example.com/record/umami.html</link>
-        <pubDate>Wed, 26 Mar 2025 12:23:06 +0000</pubDate>
+        <pubDate>Wed, 26 Mar 2025 12:23:06 +0800</pubDate>
         
         <guid>https://example.com/record/umami.html</guid>
         <description>&lt;h5 id=&#34;为什么要用umami&#34;&gt;为什么要用umami
@@ -1069,7 +1082,7 @@
         <item>
         <title>使用fruity-pikvm实现在64位raspios上运行pikvm</title>
         <link>https://example.com/record/fruity-pikvm.html</link>
-        <pubDate>Sat, 08 Feb 2025 11:35:42 +0000</pubDate>
+        <pubDate>Sat, 08 Feb 2025 11:35:42 +0800</pubDate>
         
         <guid>https://example.com/record/fruity-pikvm.html</guid>
         <description>&lt;p&gt;我这个树莓派4买了好多年，基本上是吃灰的状态。因为自从我买了一套pikvm外设装上去之后，基本上就只能跑pikvm的那个魔改archlinux，我就是感觉各种别扭。一方面32位的arm系统并不能发挥PI4的性能，很多软件（包括一些容器）最低也需要aarch；另一方面，pikvm软件源在国内的访问速度简直就是一坨**，就算是挂了梯子都不一定能连的上，更不用说更新软件了。&lt;/p&gt;
@@ -1568,7 +1581,7 @@
         <item>
         <title>梅林固件实现断网自动重启</title>
         <link>https://example.com/script/merlin-autoreboot.html</link>
-        <pubDate>Fri, 07 Feb 2025 12:15:09 +0000</pubDate>
+        <pubDate>Fri, 07 Feb 2025 12:15:09 +0800</pubDate>
         
         <guid>https://example.com/script/merlin-autoreboot.html</guid>
         <description>&lt;p&gt;本脚本主要针对梅林固件部分版本偶发的断网问题，实现自动重启以尝试解决该问题。&lt;/p&gt;
@@ -1634,7 +1647,7 @@
         <item>
         <title>狼的日记本 上线了</title>
         <link>https://example.com/record/dairy.html</link>
-        <pubDate>Mon, 30 Dec 2024 22:29:00 +0000</pubDate>
+        <pubDate>Mon, 30 Dec 2024 22:29:00 +0800</pubDate>
         
         <guid>https://example.com/record/dairy.html</guid>
         <description>&lt;p&gt;&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/12/30/6772ae9f88f02.png&#34;
@@ -1843,7 +1856,7 @@
         <item>
         <title>鸿蒙Next居然兼容安卓了？</title>
         <link>https://example.com/record/android-on-harmony.html</link>
-        <pubDate>Tue, 03 Dec 2024 23:03:56 +0000</pubDate>
+        <pubDate>Tue, 03 Dec 2024 23:03:56 +0800</pubDate>
         
         <guid>https://example.com/record/android-on-harmony.html</guid>
         <description>&lt;p&gt;昨天，有消息称Next的应用商店上架了出境易，用过华子的都知道这玩意可以用过某些&lt;del&gt;不可告人&lt;/del&gt;的方式来实现对某些国外应用的安装和使用，所以这次上架就有意思了,因为这上面的几乎所有应用目前基本上不会为Next做适配，那就说明它会通过某种方法来兼容安卓应用来实现运行如上应用的能力。&lt;/p&gt;
@@ -1943,7 +1956,7 @@
         <item>
         <title>3D打印初体验 - 拓竹P1SC</title>
         <link>https://example.com/record/p1sc.html</link>
-        <pubDate>Mon, 28 Oct 2024 17:53:30 +0000</pubDate>
+        <pubDate>Mon, 28 Oct 2024 17:53:30 +0800</pubDate>
         
         <guid>https://example.com/record/p1sc.html</guid>
         <description>&lt;h4 id=&#34;前言&#34;&gt;前言
@@ -2022,7 +2035,7 @@
         <item>
         <title>[软件推荐]Windows下grep命令的替代品</title>
         <link>https://example.com/software/grep-on-windows.html</link>
-        <pubDate>Wed, 11 Sep 2024 21:51:00 +0000</pubDate>
+        <pubDate>Wed, 11 Sep 2024 21:51:00 +0800</pubDate>
         
         <guid>https://example.com/software/grep-on-windows.html</guid>
         <description>&lt;p&gt;grep 命令全名 &lt;strong&gt;global regular expression print&lt;/strong&gt;（全局正则表达式打印），可以搜索一个或多个（输入）文件，以查找与「给定模式」相匹配的行，并将每个匹配行写入标准输出，这在Linux下是一个非常常用的命令。无论是筛选文件还是命令输出，基本上都是一个grep搞定。&lt;/p&gt;
@@ -2276,7 +2289,7 @@
         <item>
         <title>r2的安全性配置（主要是缓存）</title>
         <link>https://example.com/post/r2_waf_rules.html.html</link>
-        <pubDate>Tue, 20 Aug 2024 02:36:00 +0000</pubDate>
+        <pubDate>Tue, 20 Aug 2024 02:36:00 +0800</pubDate>
         
         <guid>https://example.com/post/r2_waf_rules.html.html</guid>
         <description>&lt;p&gt;因为本站使用的R2资源比较少，整个桶不过50M，一个月下来B类访问量也不足4W，之前基本上没考虑过什么盗刷的问题，昨天在文章下面有用户提到他的资源访问量比较大，一天下来就有我的数量级了，这种情况下一不小心可能就有机会给Cloudflare打钱。之前本站大部分资源都是仍在OSS上的，从上个月开始访问速度就非常不正常，试着把东西都扔到R2上整体访问速度居然还提升了&amp;hellip;阿里云的防盗刷配置还是比较简单的，R2就没那么直观，可以从以下几个方面入手：&lt;/p&gt;
@@ -2349,7 +2362,7 @@
         <item>
         <title>[好软推荐]多端指定应用代理软件</title>
         <link>https://example.com/software/Proxifier.html</link>
-        <pubDate>Sun, 07 Jul 2024 15:49:04 +0000</pubDate>
+        <pubDate>Sun, 07 Jul 2024 15:49:04 +0800</pubDate>
         
         <guid>https://example.com/software/Proxifier.html</guid>
         <description>&lt;p&gt;最近雀魂日服开了客户端，试着下下来玩了玩，数据能下载，但是登录的时候总是登不上，（我在路由器已经设置了规则转发，咕噜咕噜登录是正常的。）那看样子就是客户端这边搞的鬼，需要手动配置代理才能访问。解决方法也很多，一是直接全局代理，但是这样会影响到其他正常软件的使用；二是找出访问出现问题的链接添加到规则列表里，这样虽然能解决但是每碰到一个应用就要去查它的路由，不是很方便；第三就是找其他第三方应用来配置指定应用代理，也就是本次主要说的方法。
@@ -2442,7 +2455,7 @@ P427L-9Y552-5433E-8DSR3-58Z68（MAC版）
         <item>
         <title>记一次A证操作证考取和执照申领的过程</title>
         <link>https://example.com/amateur-radio/ham-licence.html</link>
-        <pubDate>Sat, 15 Jun 2024 12:03:00 +0000</pubDate>
+        <pubDate>Sat, 15 Jun 2024 12:03:00 +0800</pubDate>
         
         <guid>https://example.com/amateur-radio/ham-licence.html</guid>
         <description>&lt;p&gt;老早就计划考个证了，设备提前买了小半年，期间一直都在守听，PTT一直没能按下去。今年年中碰上市内组织考试，顺利通过。在此分享以下考试和领证过程。&lt;/p&gt;
@@ -2513,7 +2526,7 @@ A2.都是随机的题目，只要多刷题就没啥问题的。&lt;/p&gt;
         <item>
         <title>本站即将迁移至tma.moe</title>
         <link>https://example.com/record/tma-moe.html</link>
-        <pubDate>Sat, 01 Jun 2024 01:58:00 +0000</pubDate>
+        <pubDate>Sat, 01 Jun 2024 01:58:00 +0800</pubDate>
         
         <guid>https://example.com/record/tma-moe.html</guid>
         <description>&lt;p&gt;在了解到目前使用的两个域名到期后续费的金额后，我决定停止tama.guru和i-tama.website的续费并于近期切换到tma.moe，作出这一决定是出于原则性考虑（大雾）。后续本站域名将更改为https://blog.tma.moe，一段时间内将对旧域名做跳转。&lt;/p&gt;
@@ -2573,7 +2586,7 @@ A2.都是随机的题目，只要多刷题就没啥问题的。&lt;/p&gt;
         <item>
         <title>使用Cloudflare的SaaS实现自选IP</title>
         <link>https://example.com/record/Cloudflare_SaaS.html</link>
-        <pubDate>Fri, 31 May 2024 23:59:00 +0000</pubDate>
+        <pubDate>Fri, 31 May 2024 23:59:00 +0800</pubDate>
         
         <guid>https://example.com/record/Cloudflare_SaaS.html</guid>
         <description>&lt;p&gt;前几天闲的没事查一下目前几个域名的续费价格，发现动不动都是几百一年&amp;hellip;如果现有的优惠到期之后我多半是不会再继续用了，趁此机会我购入了一个新的域名，够短，也挺有个性&amp;ndash;&amp;gt;&lt;a class=&#34;link&#34; href=&#34;http://tma.moe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -2637,7 +2650,7 @@ A2.都是随机的题目，只要多刷题就没啥问题的。&lt;/p&gt;
         <item>
         <title>使用acme.sh申请通配ssl证书</title>
         <link>https://example.com/record/acme-sh_zerossl.html</link>
-        <pubDate>Mon, 20 May 2024 21:04:00 +0000</pubDate>
+        <pubDate>Mon, 20 May 2024 21:04:00 +0800</pubDate>
         
         <guid>https://example.com/record/acme-sh_zerossl.html</guid>
         <description>&lt;p&gt;从今年3-4月起，国内主流的域名平台都开始把原来一年期的免费证书调整成三个月（参见：&lt;a class=&#34;link&#34; href=&#34;https://help.aliyun.com/zh/ssl-certificate/user-guide/upgrade-a-free-certificate-upgrade-a-free-certificate&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -2732,7 +2745,7 @@ A：它只支持Let&amp;rsquo;s encrypt证书。&lt;/p&gt;</description>
         <item>
         <title>[好软推荐]不是很正经的手游加速器：和家亲</title>
         <link>https://example.com/software/hejiaqin.html</link>
-        <pubDate>Sun, 28 Apr 2024 15:26:57 +0000</pubDate>
+        <pubDate>Sun, 28 Apr 2024 15:26:57 +0800</pubDate>
         
         <guid>https://example.com/software/hejiaqin.html</guid>
         <description>&lt;h3 id=&#34;前言&#34;&gt;前言
@@ -2783,7 +2796,7 @@ A：看样子只有手机端加速是免费的，PC有办法绑定但是需要�
         <item>
         <title>一些系统及应用的去广告和隐私选项推荐(持续更新)</title>
         <link>https://example.com/record/app-anti-ad.html</link>
-        <pubDate>Sun, 28 Apr 2024 11:26:00 +0000</pubDate>
+        <pubDate>Sun, 28 Apr 2024 11:26:00 +0800</pubDate>
         
         <guid>https://example.com/record/app-anti-ad.html</guid>
         <description>&lt;p&gt;有些app的广告实在是太多了，而且关掉的地方都隐藏的很深以至于我需要专门拿个文章记录一下，后续每找一种方法都会在这里更新，并根据不同的软件类型进行分类，以便快速查找。
@@ -2840,7 +2853,7 @@ A：看样子只有手机端加速是免费的，PC有办法绑定但是需要�
         <item>
         <title>在docker里运行火狐浏览器</title>
         <link>https://example.com/record/firefox-on-docker.html</link>
-        <pubDate>Fri, 26 Apr 2024 15:53:00 +0000</pubDate>
+        <pubDate>Fri, 26 Apr 2024 15:53:00 +0800</pubDate>
         
         <guid>https://example.com/record/firefox-on-docker.html</guid>
         <description>&lt;p&gt;有时候我会需要在远程计算机上使用浏览器进行一些操作，但是存在一些问题。一是远程计算机本身空间容量/配置较低，预装的是core系统，因为使用个浏览器去安装整个桌面环境有点浪费了，也不利于系统稳定；二是软件可能会破坏原有的依赖，轻则软件报错，重则无法启动，这个就很难绷了。
@@ -2917,7 +2930,7 @@ firewall-cmd --reload
         <item>
         <title>在局域网内安装去广告插件的几种方法(pihole和adguardhome)</title>
         <link>https://example.com/record/ad-plugin.html</link>
-        <pubDate>Sat, 13 Apr 2024 23:37:00 +0000</pubDate>
+        <pubDate>Sat, 13 Apr 2024 23:37:00 +0800</pubDate>
         
         <guid>https://example.com/record/ad-plugin.html</guid>
         <description>&lt;p&gt;这东西我主要是放在家里给老人用的，最开始是他们手机碰上七七八八的问题找我解决，然后点开一个个浏览器和应用，卧槽，这能用的下去？横幅的横幅，弹窗的弹窗，真的看不下去，正好家里整了一个24小时开机的J1900双网口软路由，于是想了想在上面安装个插件算了，怎样都比原来好。&lt;/p&gt;
@@ -3083,7 +3096,7 @@ Bootstrap DNS 服务器则修改为：&lt;/p&gt;
         <item>
         <title>记录一次在鸿蒙4.0安装GMS套件的过程</title>
         <link>https://example.com/record/homo4-0-gms.html</link>
-        <pubDate>Fri, 12 Apr 2024 00:06:00 +0000</pubDate>
+        <pubDate>Fri, 12 Apr 2024 00:06:00 +0800</pubDate>
         
         <guid>https://example.com/record/homo4-0-gms.html</guid>
         <description>&lt;p&gt;换了华子之后，平时我需要用到的那些G系软件基本上都是通过Gspace这类的软件去实现的，但是有一些特殊的软件就无法使用了&amp;hellip;比如litchi这个第三方无人机飞控软件，如果使用gspace去安装，手机在连接遥控器的时候就不会跳转到litchi，图像也没有，结果就是我没提前发现这个问题，某次飞行前东西都准备好了，然后我也崩溃了&amp;hellip;&lt;/p&gt;
@@ -3257,7 +3270,7 @@ Time Connected:00:01
         <item>
         <title>业余无线电（HAM）A类操作证考试教程(转载记录用）</title>
         <link>https://example.com/reproduced/ham-a.html</link>
-        <pubDate>Sat, 23 Mar 2024 21:25:00 +0000</pubDate>
+        <pubDate>Sat, 23 Mar 2024 21:25:00 +0800</pubDate>
         
         <guid>https://example.com/reproduced/ham-a.html</guid>
         <description>&lt;p&gt;最近想考个Ham证，转载一下作为材料记录。能不能过靠你了！&lt;/p&gt;
@@ -4364,7 +4377,7 @@ $$波长 = \frac{300}{频率}$$&lt;p&gt;如果你收到了一个从上千公里�
         <item>
         <title>简评A380（显卡 不是飞机）</title>
         <link>https://example.com/default/a380-evaluation.html</link>
-        <pubDate>Thu, 21 Mar 2024 23:32:00 +0000</pubDate>
+        <pubDate>Thu, 21 Mar 2024 23:32:00 +0800</pubDate>
         
         <guid>https://example.com/default/a380-evaluation.html</guid>
         <description>&lt;p&gt;NAS换成2U服务器之后机箱空间剩了好多，本来想旧物利用，把&lt;del&gt;从哥布林手里抢回来的失明女骑士&lt;/del&gt;P106接上去玩点AI作图，或者是把百来块整的DG1接上做转码卡。结果根本装不进去&amp;hellip;而且DG1的兼容性问题很奇怪，只有第一次装驱动的时候会出现，后面就再也没出现过了&amp;hellip;
@@ -4452,7 +4465,7 @@ PCI® Express4.0 支持 1 x
         <item>
         <title>在静态网站上使用waline评论系统</title>
         <link>https://example.com/record/waline-on-html.html</link>
-        <pubDate>Sun, 10 Mar 2024 01:24:00 +0000</pubDate>
+        <pubDate>Sun, 10 Mar 2024 01:24:00 +0800</pubDate>
         
         <guid>https://example.com/record/waline-on-html.html</guid>
         <description>&lt;h4 id=&#34;waline是什么&#34;&gt;Waline是什么
@@ -5228,7 +5241,7 @@ PCI® Express4.0 支持 1 x
         <item>
         <title>[插件推荐]github项目屏蔽插件</title>
         <link>https://example.com/software/PurifyGithubSearchPage.html</link>
-        <pubDate>Sat, 17 Feb 2024 21:46:00 +0000</pubDate>
+        <pubDate>Sat, 17 Feb 2024 21:46:00 +0800</pubDate>
         
         <guid>https://example.com/software/PurifyGithubSearchPage.html</guid>
         <description>&lt;p&gt;有时候在github上搜索，总会搜出一些不是很友好的东西（至于是什么自己随便搜一下就知道了），这些人通常会在readme里面添加一些常用的关键词，然后经常性的更新，让项目看起来“很热门”。但其实那是什么东西懂的都懂。
@@ -5274,7 +5287,7 @@ PCI® Express4.0 支持 1 x
         <item>
         <title>在archlinux正确的使用xrdp以及碰到的问题</title>
         <link>https://example.com/record/archlinux_xrdp.html</link>
-        <pubDate>Mon, 05 Feb 2024 23:58:41 +0000</pubDate>
+        <pubDate>Mon, 05 Feb 2024 23:58:41 +0800</pubDate>
         
         <guid>https://example.com/record/archlinux_xrdp.html</guid>
         <description>&lt;p&gt;为什么不用vnc？一是需要另外装个软件，不方便，而且配置麻烦，总是能碰到七七八八的问题，而用xrdp基本上用巨硬自带的软件就能实现远程连接。&lt;/p&gt;
@@ -5439,7 +5452,7 @@ i3w / dwm:&lt;/p&gt;
         <item>
         <title>记录windows各类错误及尝试进行解决的流程</title>
         <link>https://example.com/record/windows-error-fix.html</link>
-        <pubDate>Wed, 31 Jan 2024 09:51:00 +0000</pubDate>
+        <pubDate>Wed, 31 Jan 2024 09:51:00 +0800</pubDate>
         
         <guid>https://example.com/record/windows-error-fix.html</guid>
         <description>&lt;p&gt;在基本上尝试了各类Windows系统我得出一个结论，那就是没有完美的Windows系统，除了Win7、Win10 LTSC、Win Server 2022这几个屁事比较少之外，其他总能碰到奇奇怪怪的事情，在此做个文章记录发生过的问题以及记录一些尝试解决处理过程中碰到的事情，免得后面又忘了又翻一遍材料。&lt;/p&gt;
@@ -5493,7 +5506,7 @@ i3w / dwm:&lt;/p&gt;
         <item>
         <title>在debian安装配置redroid并安装shamrock的记录</title>
         <link>https://example.com/record/redroid.html</link>
-        <pubDate>Wed, 24 Jan 2024 12:01:00 +0000</pubDate>
+        <pubDate>Wed, 24 Jan 2024 12:01:00 +0800</pubDate>
         
         <guid>https://example.com/record/redroid.html</guid>
         <description>&lt;h3 id=&#34;前言&#34;&gt;前言
@@ -6130,7 +6143,7 @@ i3w / dwm:&lt;/p&gt;
         <item>
         <title>使用S3 Browser管理Cloudflare R2存储桶</title>
         <link>https://example.com/record/s3browser_r2_manager.html</link>
-        <pubDate>Sat, 13 Jan 2024 22:53:02 +0000</pubDate>
+        <pubDate>Sat, 13 Jan 2024 22:53:02 +0800</pubDate>
         
         <guid>https://example.com/record/s3browser_r2_manager.html</guid>
         <description>&lt;p&gt;本来我是要把导航页所有的文件搬到Github上并&lt;strong&gt;试图&lt;/strong&gt;通过jsdelivr加速访问，但是我发现国内移动网络根本无法直连jsdelivr&amp;hellip;在多次反馈网页无法打开之后，最后还是退一步选择迁移到R2上了。但是R2的网页端管理真的是做得一团糟，上传经常半路失败不说，一次还只能上传100个文件，更恶心的是文件夹无法删除，对于我来说是体验真的不好了。&lt;/p&gt;
@@ -6176,7 +6189,7 @@ i3w / dwm:&lt;/p&gt;
         <item>
         <title>在兰空图床配置并使用Cloudflare R2 存储桶</title>
         <link>https://example.com/record/r2_on_lskypro.html</link>
-        <pubDate>Mon, 08 Jan 2024 16:00:00 +0000</pubDate>
+        <pubDate>Mon, 08 Jan 2024 16:00:00 +0800</pubDate>
         
         <guid>https://example.com/record/r2_on_lskypro.html</guid>
         <description>&lt;h3 id=&#34;什么是r2为什么用r2&#34;&gt;什么是R2，为什么用R2
@@ -6335,7 +6348,7 @@ i3w / dwm:&lt;/p&gt;
         <item>
         <title>P106能在server系统上运行吗</title>
         <link>https://example.com/record/p106-on-winserver.html</link>
-        <pubDate>Mon, 01 Jan 2024 21:10:00 +0000</pubDate>
+        <pubDate>Mon, 01 Jan 2024 21:10:00 +0800</pubDate>
         
         <guid>https://example.com/record/p106-on-winserver.html</guid>
         <description>&lt;p&gt;结论是：能。&lt;/p&gt;
@@ -6369,7 +6382,7 @@ i3w / dwm:&lt;/p&gt;
         <item>
         <title>丂渐云性能测试</title>
         <link>https://example.com/record/idc-rbt.html</link>
-        <pubDate>Mon, 01 Jan 2024 13:28:44 +0000</pubDate>
+        <pubDate>Mon, 01 Jan 2024 13:28:44 +0800</pubDate>
         
         <guid>https://example.com/record/idc-rbt.html</guid>
         <description>&lt;p&gt;站内UP弄的丂渐云，今天看到有台CN2，8C8G一年才370不到，马上下单试了下.&lt;/p&gt;
@@ -6444,7 +6457,7 @@ i3w / dwm:&lt;/p&gt;
         <item>
         <title>给SSH添加邮件登录提醒</title>
         <link>https://example.com/record/ssh_login_mail.html</link>
-        <pubDate>Tue, 26 Dec 2023 22:09:04 +0000</pubDate>
+        <pubDate>Tue, 26 Dec 2023 22:09:04 +0800</pubDate>
         
         <guid>https://example.com/record/ssh_login_mail.html</guid>
         <description>&lt;p&gt;影响SSH登录安全性的因素不外乎：禁用密码登录、密钥强度、修改默认端口、仅指定IP登录，但是如果每次登录的时候能够及时的发一封邮件提醒，可以更好的管控服务器登录状态，也能更安心些。&lt;/p&gt;
@@ -6744,7 +6757,7 @@ i3w / dwm:&lt;/p&gt;
         <item>
         <title>Archlinux下安装并配置lnmp环境</title>
         <link>https://example.com/record/archlinux_lnmp.html</link>
-        <pubDate>Thu, 30 Nov 2023 11:07:00 +0000</pubDate>
+        <pubDate>Thu, 30 Nov 2023 11:07:00 +0800</pubDate>
         
         <guid>https://example.com/record/archlinux_lnmp.html</guid>
         <description>&lt;p&gt;最近把编译用的主机换个发行版，最开始用的是debian，结果现在桌面环境进不去了（而且是一引导完成就所有输入、输入都没反应，但是ssh能登陆，很奇怪），懒得去查原因就选择换个环境。本来用的almalinux，无奈真的不喜欢gnome，自己装了kde之后ibus无论怎样都打不出中文，最后还是上了arch。
@@ -7316,7 +7329,7 @@ i3w / dwm:&lt;/p&gt;
         <item>
         <title>[软件推荐]搭建简易代理服务器</title>
         <link>https://example.com/software/3proxy.html</link>
-        <pubDate>Mon, 27 Nov 2023 11:10:00 +0000</pubDate>
+        <pubDate>Mon, 27 Nov 2023 11:10:00 +0800</pubDate>
         
         <guid>https://example.com/software/3proxy.html</guid>
         <description>&lt;p&gt;我在远端有一台服务器，因为某些原因需要用这台服务器作为流量出口，当然可以通过搭建某些软件配置成V*N访问，但是那不是我想要的（因为远端的服务器配置太低了）。除了传统的ss类软件，我找到了3proxy这个小东西。&lt;/p&gt;
@@ -7480,7 +7493,7 @@ i3w / dwm:&lt;/p&gt;
         <item>
         <title>使用ruleproject搭建自己的typecho程序客户端</title>
         <link>https://example.com/record/ruleproject.html</link>
-        <pubDate>Fri, 17 Nov 2023 23:12:00 +0000</pubDate>
+        <pubDate>Fri, 17 Nov 2023 23:12:00 +0800</pubDate>
         
         <guid>https://example.com/record/ruleproject.html</guid>
         <description>&lt;p&gt;卧槽牛皮，这东西牛啊！通过这个教程已经成功弄出了安卓端apk并正常使用！
@@ -7994,7 +8007,7 @@ Github:&lt;a class=&#34;link&#34; href=&#34;https://github.com/buxia97/RuleApi&#
         <item>
         <title>[好软推荐]Winlator 在安卓上运行exe程序的更好方案</title>
         <link>https://example.com/software/Winlator.html</link>
-        <pubDate>Sun, 12 Nov 2023 13:51:00 +0000</pubDate>
+        <pubDate>Sun, 12 Nov 2023 13:51:00 +0800</pubDate>
         
         <guid>https://example.com/software/Winlator.html</guid>
         <description>&lt;p&gt;20250507注：建议直接用盖世游戏，相对更友好，详见↓
@@ -8128,7 +8141,7 @@ Github:&lt;a class=&#34;link&#34; href=&#34;https://github.com/buxia97/RuleApi&#
         <item>
         <title>一个新的kindle越狱方案（适用于5.16.2.1.1以下）</title>
         <link>https://example.com/record/LanguageBreak.html</link>
-        <pubDate>Mon, 30 Oct 2023 11:56:00 +0000</pubDate>
+        <pubDate>Mon, 30 Oct 2023 11:56:00 +0800</pubDate>
         
         <guid>https://example.com/record/LanguageBreak.html</guid>
         <description>&lt;p&gt;10月29日，Github用户&lt;a class=&#34;link&#34; href=&#34;https://github.com/notmarek&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -8231,7 +8244,7 @@ KPW2（5.12.2.2）
         <item>
         <title>更换了tama.host的模板，现在更像个导航页了</title>
         <link>https://example.com/default/tama-host-remake.html</link>
-        <pubDate>Sat, 28 Oct 2023 01:03:08 +0000</pubDate>
+        <pubDate>Sat, 28 Oct 2023 01:03:08 +0800</pubDate>
         
         <guid>https://example.com/default/tama-host-remake.html</guid>
         <description>&lt;p&gt;导航站的地址不变，依旧是&lt;a class=&#34;link&#34; href=&#34;https://tama.host/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -8259,7 +8272,7 @@ KPW2（5.12.2.2）
         <item>
         <title>使用github部署多个静态网站</title>
         <link>https://example.com/record/github_muti_pages.html</link>
-        <pubDate>Wed, 25 Oct 2023 23:16:29 +0000</pubDate>
+        <pubDate>Wed, 25 Oct 2023 23:16:29 +0800</pubDate>
         
         <guid>https://example.com/record/github_muti_pages.html</guid>
         <description>&lt;p&gt;因为有时候需要部署一些静态网站，但是自己的服务器上网站实在太乱了，部署在github便是我最好的选择。
@@ -8370,7 +8383,7 @@ KPW2（5.12.2.2）
         <item>
         <title>在debian下安装headscale的记录</title>
         <link>https://example.com/record/headscale.html</link>
-        <pubDate>Thu, 14 Sep 2023 00:36:00 +0000</pubDate>
+        <pubDate>Thu, 14 Sep 2023 00:36:00 +0800</pubDate>
         
         <guid>https://example.com/record/headscale.html</guid>
         <description>&lt;h5 id=&#34;什么是headscale&#34;&gt;什么是headscale
@@ -8880,7 +8893,7 @@ KPW2（5.12.2.2）
         <item>
         <title>Debian12下通过docker安装homeassistant-hacs</title>
         <link>https://example.com/record/homeassistant-hacs-debian12.html</link>
-        <pubDate>Fri, 25 Aug 2023 11:58:39 +0000</pubDate>
+        <pubDate>Fri, 25 Aug 2023 11:58:39 +0800</pubDate>
         
         <guid>https://example.com/record/homeassistant-hacs-debian12.html</guid>
         <description>&lt;p&gt;HACS即&lt;code&gt;Home Assistant Community Store&lt;/code&gt;，整合了很多homeassistant的第三方集成，比如说米家的相关设备，如果使用官方自带的集成，一般只能识别出几个传感器，而且无法控制，如果想要把米家的设备完全接入就需要安装HACS下面的Xiaomi Miot Auto这个集成，安装之后效果如图所示，基本上能实现HASS管理全部米家设备的想法。
@@ -8990,7 +9003,7 @@ KPW2（5.12.2.2）
         <item>
         <title>zsh下miniconda的正确安装方法及换源方法</title>
         <link>https://example.com/record/miniconda.html</link>
-        <pubDate>Fri, 25 Aug 2023 01:04:56 +0000</pubDate>
+        <pubDate>Fri, 25 Aug 2023 01:04:56 +0800</pubDate>
         
         <guid>https://example.com/record/miniconda.html</guid>
         <description>&lt;p&gt;Anaconda 是一个用于科学计算的 Python 发行版，支持 Linux, Mac, Windows, 包含了众多流行的科学计算、数据分析的 Python 包。Miniconda 是一个 Anaconda 的轻量级替代，默认只包含了 python 和 conda，但是可以通过 pip 和 conda 来安装所需要的包。通常情况下安装Miniconda构建虚拟环境是很方便的，但是安装过程中会碰到一些奇怪的问题导致使用时一直报错，这里记录一下一个成功的安装方法。&lt;/p&gt;
@@ -9121,7 +9134,7 @@ KPW2（5.12.2.2）
         <item>
         <title>通过Cloudflare零信任(cloudflare zero trush)给内网服务器做穿透并搭建webssh的小记</title>
         <link>https://example.com/record/cloudflare_webssh_zerotrush.html</link>
-        <pubDate>Fri, 18 Aug 2023 14:23:00 +0000</pubDate>
+        <pubDate>Fri, 18 Aug 2023 14:23:00 +0800</pubDate>
         
         <guid>https://example.com/record/cloudflare_webssh_zerotrush.html</guid>
         <description>&lt;p&gt;通过cloudflare zero trush可以非常快速且方便的搭建内网穿透，而且速度一般情况下可以接受，最重要的是成本很低，你只需要：&lt;/p&gt;
@@ -9288,7 +9301,7 @@ ssh是无法直接访问的，但是cloudflare提供了application套件，配�
         <item>
         <title>【转载】一个简单的archlinux安装教程（亲测能用）</title>
         <link>https://example.com/record/archlinux_install_guide.html</link>
-        <pubDate>Wed, 16 Aug 2023 22:35:00 +0000</pubDate>
+        <pubDate>Wed, 16 Aug 2023 22:35:00 +0800</pubDate>
         
         <guid>https://example.com/record/archlinux_install_guide.html</guid>
         <description>&lt;p&gt;来自：&lt;a class=&#34;link&#34; href=&#34;https://www.mivm.cn/archlinux-installation-guide-simple&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -9790,7 +9803,7 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
         <item>
         <title>[nonebot插件]修仙2.0框架的帮助合辑</title>
         <link>https://example.com/record/xiuxian2-0.html</link>
-        <pubDate>Tue, 15 Aug 2023 00:28:41 +0000</pubDate>
+        <pubDate>Tue, 15 Aug 2023 00:28:41 +0800</pubDate>
         
         <guid>https://example.com/record/xiuxian2-0.html</guid>
         <description>&lt;p&gt;这玩意的内容是真的多&amp;hellip;光是帮助就好长，看都看不过来，这里做个汇总。&lt;/p&gt;
@@ -9915,7 +9928,7 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
         <item>
         <title>一种很新的群晖安装方法</title>
         <link>https://example.com/record/new_dsm_install.html</link>
-        <pubDate>Sat, 12 Aug 2023 16:26:00 +0000</pubDate>
+        <pubDate>Sat, 12 Aug 2023 16:26:00 +0800</pubDate>
         
         <guid>https://example.com/record/new_dsm_install.html</guid>
         <description>&lt;p&gt;这个方法需要一个叫做&amp;quot;arpl&amp;quot;的固件（链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/fbelavenuto/arpl/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -10140,7 +10153,7 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
         <item>
         <title>记录在raspbian上折腾pikvm的失败过程</title>
         <link>https://example.com/record/pikvm_with_raspbian.html</link>
-        <pubDate>Thu, 10 Aug 2023 18:02:00 +0000</pubDate>
+        <pubDate>Thu, 10 Aug 2023 18:02:00 +0800</pubDate>
         
         <guid>https://example.com/record/pikvm_with_raspbian.html</guid>
         <description>&lt;p&gt;###前言
@@ -11530,7 +11543,7 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
         <item>
         <title>记“杜苏芮”给京津冀带来的一点小小的台风震撼</title>
         <link>https://example.com/agkey/DOKSURI_JJJ.html</link>
-        <pubDate>Thu, 03 Aug 2023 01:43:00 +0000</pubDate>
+        <pubDate>Thu, 03 Aug 2023 01:43:00 +0800</pubDate>
         
         <guid>https://example.com/agkey/DOKSURI_JJJ.html</guid>
         <description>&lt;p&gt;2023年7月28日9时55分，2305号台风“杜苏芮”在福建省晋江市沿海登陆，登陆时最大风力15级（强台风级），为1949年以来登陆福建第二强台风。在给福建、浙江等地带来强降水之后，7月29日上午，“杜苏芮”在安徽省安庆市宿松县境内减弱为热带低压，中央气象台于29日11时对其停止编号。然而，其剩余环流对京津冀地区带来的影响才刚刚开始。&lt;/p&gt;
@@ -11566,7 +11579,7 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
         <item>
         <title>记一次KPW3拆机降级</title>
         <link>https://example.com/record/264.html</link>
-        <pubDate>Sun, 23 Jul 2023 22:40:00 +0000</pubDate>
+        <pubDate>Sun, 23 Jul 2023 22:40:00 +0800</pubDate>
         
         <guid>https://example.com/record/264.html</guid>
         <description>&lt;blockquote&gt;
@@ -11733,7 +11746,7 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
         <item>
         <title>Vultr免费服务器体验</title>
         <link>https://example.com/record/vultr-free-instance.html</link>
-        <pubDate>Sun, 16 Jul 2023 01:35:27 +0000</pubDate>
+        <pubDate>Sun, 16 Jul 2023 01:35:27 +0800</pubDate>
         
         <guid>https://example.com/record/vultr-free-instance.html</guid>
         <description>&lt;p&gt;今年年初的时候Vultr推出了免费服务器计划，只要满足以下条件就能申请一台服务器：&lt;/p&gt;
@@ -11935,7 +11948,7 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
         <item>
         <title>搭了个基于NekoBox的提问箱！</title>
         <link>https://example.com/record/tamabox.html</link>
-        <pubDate>Sat, 03 Jun 2023 14:36:00 +0000</pubDate>
+        <pubDate>Sat, 03 Jun 2023 14:36:00 +0800</pubDate>
         
         <guid>https://example.com/record/tamabox.html</guid>
         <description>&lt;p&gt;之前接触过NekoBox这个匿名提问箱，非常小巧，界面简洁不花哨，非常有好感。但是因为一些不方便说明的原因，作者把原站关闭了（&lt;strong&gt;更正，作者已经重新开放原站了&lt;/strong&gt;），实在可惜。好在他有把源码放到github（引路：https://github.com/NekoWheel/NekoBox)，虽然基本上相当于没有教程，而且使用过程中有好多报错。经过搭建之后半天摸索，现在功能基本上都正常了。
@@ -12013,7 +12026,7 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
         <item>
         <title>在技嘉B550M上成功点亮并使用（但不完美）DG1教程</title>
         <link>https://example.com/record/dg1_with_b550m.html</link>
-        <pubDate>Wed, 10 May 2023 23:24:00 +0000</pubDate>
+        <pubDate>Wed, 10 May 2023 23:24:00 +0800</pubDate>
         
         <guid>https://example.com/record/dg1_with_b550m.html</guid>
         <description>&lt;p&gt;先上结果：
@@ -12113,7 +12126,7 @@ PS5:在微星H510M爆破弹上开启UEFI resizebar above 4g和安全启动，关
         <item>
         <title>记一次VBios的升级和resizebar的开启</title>
         <link>https://example.com/record/3060ti_vbiosupdate_sizebar.html</link>
-        <pubDate>Sun, 07 May 2023 23:28:00 +0000</pubDate>
+        <pubDate>Sun, 07 May 2023 23:28:00 +0800</pubDate>
         
         <guid>https://example.com/record/3060ti_vbiosupdate_sizebar.html</guid>
         <description>&lt;p&gt;首先科普一下resize bar是什么：&lt;/p&gt;
@@ -12278,7 +12291,7 @@ PS5:在微星H510M爆破弹上开启UEFI resizebar above 4g和安全启动，关
         <item>
         <title>AMD直播推流真的就是一坨答辩！</title>
         <link>https://example.com/default/adm_stream.html</link>
-        <pubDate>Sun, 07 May 2023 16:57:09 +0000</pubDate>
+        <pubDate>Sun, 07 May 2023 16:57:09 +0800</pubDate>
         
         <guid>https://example.com/default/adm_stream.html</guid>
         <description>&lt;p&gt;AMD在编解码这一块就是一坨大便！
@@ -12509,7 +12522,7 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
         <item>
         <title>解决AcFunLive的mirai机器人无法使用的问题</title>
         <link>https://example.com/record/acfunlive-mirai.html</link>
-        <pubDate>Fri, 05 May 2023 23:35:47 +0000</pubDate>
+        <pubDate>Fri, 05 May 2023 23:35:47 +0800</pubDate>
         
         <guid>https://example.com/record/acfunlive-mirai.html</guid>
         <description>&lt;p&gt;*注意，mirai无法启动仅针对在windows下使用时出现，linux并无此问题。&lt;/p&gt;
@@ -12595,7 +12608,7 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
         <item>
         <title>4G开发板EC200A的初次使用记录</title>
         <link>https://example.com/record/EC200A-CN.html</link>
-        <pubDate>Wed, 19 Apr 2023 23:06:55 +0000</pubDate>
+        <pubDate>Wed, 19 Apr 2023 23:06:55 +0800</pubDate>
         
         <guid>https://example.com/record/EC200A-CN.html</guid>
         <description>&lt;p&gt;本来是想买个随身WIFI，以便家里突然断网/断电的时候能够用手头上多余的一张SIM卡开个应急热点，但是去淘宝搜了一圈，成品随身WIFI要么说经常断网，要么就是无法使用自己的卡，要么就是能插自己的卡，但是只能插物联网卡或是插一张之后就不能插别的卡了（卡和机器绑定了），可玩性极差。然后想想家里还有一坨树莓派，用充电宝供电，能不能在这个基础上整些模块。
@@ -12784,7 +12797,7 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
         <item>
         <title>PVE安装后续优化</title>
         <link>https://example.com/record/pve_install.html</link>
-        <pubDate>Sun, 12 Mar 2023 01:43:00 +0000</pubDate>
+        <pubDate>Sun, 12 Mar 2023 01:43:00 +0800</pubDate>
         
         <guid>https://example.com/record/pve_install.html</guid>
         <description>&lt;p&gt;安装PVE并不复杂，相关操作网上一抓一大把此处不再赘述。
@@ -13186,7 +13199,7 @@ DNS设置使用默认即可。然后确认信息无误点击完成，等待&lt;c
         <item>
         <title>解决Debian11安装慢问题的一些歪门邪道</title>
         <link>https://example.com/record/debian_install_slow.html</link>
-        <pubDate>Wed, 08 Mar 2023 16:02:24 +0000</pubDate>
+        <pubDate>Wed, 08 Mar 2023 16:02:24 +0800</pubDate>
         
         <guid>https://example.com/record/debian_install_slow.html</guid>
         <description>&lt;p&gt;前几天安装Debian的时候，在&lt;code&gt;Select and install software&lt;/code&gt;过程总是报错后终止安装进程，强制进入下一步安装引导会提示没有安装grub引导器可能会导致无法启动，查了一些资料后都在说是&lt;code&gt;debian-security&lt;/code&gt;这个源在国外，直接连接速度极慢（体现为这一步下载4个文件需要几个小时，而且极大可能会突然连接不上然后安装失败）。
@@ -13213,7 +13226,7 @@ DNS设置使用默认即可。然后确认信息无误点击完成，等待&lt;c
         <item>
         <title>目前能访问OpenGPT的方法</title>
         <link>https://example.com/record/accessofopengpt.html</link>
-        <pubDate>Sat, 11 Feb 2023 18:29:00 +0000</pubDate>
+        <pubDate>Sat, 11 Feb 2023 18:29:00 +0800</pubDate>
         
         <guid>https://example.com/record/accessofopengpt.html</guid>
         <description>&lt;p&gt;目前访问&lt;a class=&#34;link&#34; href=&#34;https://chat.openai.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -13308,7 +13321,7 @@ DNS设置使用默认即可。然后确认信息无误点击完成，等待&lt;c
         <item>
         <title>捣鼓SteamDeck的那些事</title>
         <link>https://example.com/record/steamdeck.html</link>
-        <pubDate>Thu, 02 Feb 2023 09:47:00 +0000</pubDate>
+        <pubDate>Thu, 02 Feb 2023 09:47:00 +0800</pubDate>
         
         <guid>https://example.com/record/steamdeck.html</guid>
         <description>&lt;p&gt;I have a d○ck.
@@ -13406,7 +13419,7 @@ Steam桌面商店使用的是flathub源，默认使用的是&lt;code&gt;https://
         <item>
         <title>WIN11连接老版本系统（WIN7-WIN10）打印机提示0X000000709的解决方法</title>
         <link>https://example.com/record/0X000000709.html</link>
-        <pubDate>Mon, 09 Jan 2023 15:24:10 +0000</pubDate>
+        <pubDate>Mon, 09 Jan 2023 15:24:10 +0800</pubDate>
         
         <guid>https://example.com/record/0X000000709.html</guid>
         <description>&lt;p&gt;去年年末我们单位新采购了几台电脑，毫无意外的全部都是预装WIN11(22H2)，本来还美滋滋，一到连接打印机的时候就开始不对劲了，无论怎么连接都连接不上，叫技术人员上来给出几个解决方案：一、把打印机连接到这台新电脑（这样其他电脑就连接不上了）；二、把系统降下WIN10；三、让别人帮打印。
@@ -13443,7 +13456,7 @@ Steam桌面商店使用的是flathub源，默认使用的是&lt;code&gt;https://
         <item>
         <title>安装最新版nodejs的正确方法</title>
         <link>https://example.com/record/iwannanewnodejs.html</link>
-        <pubDate>Sat, 31 Dec 2022 21:13:00 +0000</pubDate>
+        <pubDate>Sat, 31 Dec 2022 21:13:00 +0800</pubDate>
         
         <guid>https://example.com/record/iwannanewnodejs.html</guid>
         <description>&lt;p&gt;::acfun:02:: 安装这个nodejs真的要命！首先是官方库里面的版本过老，如果通过添加源的方式更新一方面是更新速度极慢，另一方面则是可能会碰到“由于没有公钥，无法验证下列签名”这个怪问题，查了好多文章都无法解决。&lt;/p&gt;
@@ -13477,7 +13490,7 @@ v19.3.0
         <item>
         <title>通过自购礼品卡在日服applestore充值使用（也适用于美服）</title>
         <link>https://example.com/record/apple_jp_giftcard.html</link>
-        <pubDate>Tue, 06 Dec 2022 00:23:34 +0000</pubDate>
+        <pubDate>Tue, 06 Dec 2022 00:23:34 +0800</pubDate>
         
         <guid>https://example.com/record/apple_jp_giftcard.html</guid>
         <description>&lt;p&gt;请注意充值时拥有日本IP！请注意充值时拥有日本IP！请注意充值时拥有日本IP！&lt;/p&gt;
@@ -13528,7 +13541,7 @@ v19.3.0
         <item>
         <title>Switch15.0.1大气层系统升级的记录（整合包）-更新到17.0.1</title>
         <link>https://example.com/record/switch_Atmosphere.html</link>
-        <pubDate>Sun, 27 Nov 2022 01:15:00 +0000</pubDate>
+        <pubDate>Sun, 27 Nov 2022 01:15:00 +0800</pubDate>
         
         <guid>https://example.com/record/switch_Atmosphere.html</guid>
         <description>&lt;p&gt;目前系统是已经硬破的状态，且能正常运行，但是版本已经有点老了（Atmosphere版本14），导致目前有部分新的游戏无法运行，因此在此记录Switch升级大气层系统的相关步骤。&lt;/p&gt;
@@ -13655,7 +13668,7 @@ v19.3.0
         <item>
         <title>Win11安装优化那些事</title>
         <link>https://example.com/record/win11_new_setup.html</link>
-        <pubDate>Sun, 06 Nov 2022 23:08:00 +0000</pubDate>
+        <pubDate>Sun, 06 Nov 2022 23:08:00 +0800</pubDate>
         
         <guid>https://example.com/record/win11_new_setup.html</guid>
         <description>&lt;p&gt;坚持了大半年的WIN10今天终于因为不明原因无法启动了（开机无限转圈圈，进入修复模式修复失败无解），于是干脆就把系统换成Win11。自从上次直接从10升11出现一堆bug之后，&lt;del&gt;以及我对阿三一直以来抱有的一种不信任感&lt;/del&gt;让我这半年基本没摸过11，这次就全新安装，给它个面子，看看它能不能给我个面子。&lt;/p&gt;
@@ -13718,7 +13731,7 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         <item>
         <title>关于“狼圈子”的使用说明</title>
         <link>https://example.com/record/wolf_circle.html</link>
-        <pubDate>Sat, 22 Oct 2022 16:00:00 +0000</pubDate>
+        <pubDate>Sat, 22 Oct 2022 16:00:00 +0800</pubDate>
         
         <guid>https://example.com/record/wolf_circle.html</guid>
         <description>&lt;p&gt;首先，欢迎使用狼圈子。&lt;/p&gt;
@@ -13848,7 +13861,7 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         <item>
         <title>stable-diffusion使用过程中的一些记录</title>
         <link>https://example.com/record/stable-diffusion-webui.html</link>
-        <pubDate>Wed, 19 Oct 2022 23:44:38 +0000</pubDate>
+        <pubDate>Wed, 19 Oct 2022 23:44:38 +0800</pubDate>
         
         <guid>https://example.com/record/stable-diffusion-webui.html</guid>
         <description>&lt;p&gt;原文已丢失，以下部分为重写。
@@ -13894,7 +13907,7 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         <item>
         <title>阿里云服务器的买后优化记录</title>
         <link>https://example.com/record/aliyun_server.html</link>
-        <pubDate>Sun, 16 Oct 2022 00:15:00 +0000</pubDate>
+        <pubDate>Sun, 16 Oct 2022 00:15:00 +0800</pubDate>
         
         <guid>https://example.com/record/aliyun_server.html</guid>
         <description>&lt;p&gt;腾讯云香港服务器蹲了半年都蹲不出台正常点的，中低端经常售罄，至少都要2C2T+4G起步，一个月就要六七十，这谁受得了？？？月初打开阿里云一看，哟嚯，2C（其实是1C2T）+2G一个月才30，试用下访问速度基本上接近国内服务器，这我直呼受不了，赶紧把之前那破腾讯云上的数据迁移咯。使用体验基本复合我的预期，但是2G跑个debian在加几个网站基本就没用想别的了，内存这块有优化的必要。&lt;/p&gt;
@@ -13947,7 +13960,7 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         <item>
         <title>MIUI刷机那些破事（持续更新）</title>
         <link>https://example.com/record/miuiflashing.html</link>
-        <pubDate>Wed, 05 Oct 2022 17:23:00 +0000</pubDate>
+        <pubDate>Wed, 05 Oct 2022 17:23:00 +0800</pubDate>
         
         <guid>https://example.com/record/miuiflashing.html</guid>
         <description>&lt;p&gt;[scode type=&amp;ldquo;red&amp;rdquo;]&amp;ldquo;this MIUI version can’t be installed on this device&amp;rdquo;[/scode]
@@ -13980,7 +13993,7 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         <item>
         <title>关于MIUI升级到开发版的方法</title>
         <link>https://example.com/record/miuidev.html</link>
-        <pubDate>Tue, 04 Oct 2022 19:47:00 +0000</pubDate>
+        <pubDate>Tue, 04 Oct 2022 19:47:00 +0800</pubDate>
         
         <guid>https://example.com/record/miuidev.html</guid>
         <description>&lt;p&gt;不知道从哪个版本的miui开始，开发版的miui便不能直接从稳定版通过简单的卡刷进行转换，需要在官方论坛申请“公测”或者“内测”权限之后才能进行安装，而申请资格需要在官方论坛达到4级以上的等级并且要完成所谓的“答题”，如果等级不够或者“答题”分数不及格均无法获得权限，就算通过其他方法搞到了卡刷包，在刷写的时候也会被提示“该账号非内测权限”然后就停住了。
@@ -13997,7 +14010,7 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         <item>
         <title>新版raspbian远程登录方法</title>
         <link>https://example.com/record/raspbian11login.html</link>
-        <pubDate>Mon, 19 Sep 2022 13:32:04 +0000</pubDate>
+        <pubDate>Mon, 19 Sep 2022 13:32:04 +0800</pubDate>
         
         <guid>https://example.com/record/raspbian11login.html</guid>
         <description>&lt;p&gt;新版的raspbian中已经取消了默认的&lt;code&gt;pi+raspbian&lt;/code&gt;登录方式，这意味着如果使用无屏幕登录方式将无法直接登录。
@@ -14010,7 +14023,7 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         <item>
         <title>centos7在保留python2.7的前提下安装python3.x的方法</title>
         <link>https://example.com/record/centos7_python3-x.html</link>
-        <pubDate>Sat, 17 Sep 2022 01:46:10 +0000</pubDate>
+        <pubDate>Sat, 17 Sep 2022 01:46:10 +0800</pubDate>
         
         <guid>https://example.com/record/centos7_python3-x.html</guid>
         <description>&lt;p&gt;不会有人2022年了还在用centos7吧。。。
@@ -14026,7 +14039,7 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         <item>
         <title>[金曲鉴赏]丁真：I Got Smoke</title>
         <link>https://example.com/videoshare/igotsmoke.html</link>
-        <pubDate>Wed, 14 Sep 2022 23:34:00 +0000</pubDate>
+        <pubDate>Wed, 14 Sep 2022 23:34:00 +0800</pubDate>
         
         <guid>https://example.com/videoshare/igotsmoke.html</guid>
         <description>&lt;p&gt;真的超神了
@@ -14036,7 +14049,7 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         <item>
         <title>关于今日台湾问题的一点个人看法</title>
         <link>https://example.com/wmdht/tw20220803.html</link>
-        <pubDate>Thu, 04 Aug 2022 01:34:00 +0000</pubDate>
+        <pubDate>Thu, 04 Aug 2022 01:34:00 +0800</pubDate>
         
         <guid>https://example.com/wmdht/tw20220803.html</guid>
         <description>&lt;p&gt;和大多数人一样，过去的一晚我同样怀着沉郁的心情，久久难以入眠。看到佩洛西降落在台北松山机场之后，我决心写一篇文章，分析一下台海局势，以下是正文。（本文写于8月3日）
@@ -14059,7 +14072,7 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         <item>
         <title>不吐不快，谈谈气象雷达图上的“怪圈”</title>
         <link>https://example.com/science/doppler.html</link>
-        <pubDate>Wed, 27 Jul 2022 12:52:00 +0000</pubDate>
+        <pubDate>Wed, 27 Jul 2022 12:52:00 +0800</pubDate>
         
         <guid>https://example.com/science/doppler.html</guid>
         <description>&lt;p&gt;文前声明：作者非相关专业人士，部分内容仅代表本人猜测，杠就是你对。&lt;/p&gt;
@@ -14136,7 +14149,7 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         <item>
         <title>适用于handsome主题的自适应视频挂载</title>
         <link>https://example.com/record/handsome-framevideo.html</link>
-        <pubDate>Sun, 24 Jul 2022 01:59:00 +0000</pubDate>
+        <pubDate>Sun, 24 Jul 2022 01:59:00 +0800</pubDate>
         
         <guid>https://example.com/record/handsome-framevideo.html</guid>
         <description>&lt;p&gt;原文请访问：[button type=&amp;ldquo;round&amp;rdquo; color=&amp;ldquo;success&amp;rdquo; url=&amp;ldquo;https://www.raycns.com/archives/774.html&amp;rdquo;]此处[/button]&lt;/p&gt;
@@ -14258,7 +14271,7 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         <item>
         <title>handsome主题博客信息添加全站字数、在线人数、访客总数和网站加载耗时</title>
         <link>https://example.com/record/sidebarmodify.html</link>
-        <pubDate>Sat, 23 Jul 2022 17:18:00 +0000</pubDate>
+        <pubDate>Sat, 23 Jul 2022 17:18:00 +0800</pubDate>
         
         <guid>https://example.com/record/sidebarmodify.html</guid>
         <description>&lt;p&gt;转载自：&lt;a class=&#34;link&#34; href=&#34;https://www.cloudsd.com/archives/25.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -14466,7 +14479,7 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         <item>
         <title>关于航天系列文章的前言（开新坑）</title>
         <link>https://example.com/aerospace/space_00.html</link>
-        <pubDate>Fri, 22 Jul 2022 21:30:00 +0000</pubDate>
+        <pubDate>Fri, 22 Jul 2022 21:30:00 +0800</pubDate>
         
         <guid>https://example.com/aerospace/space_00.html</guid>
         <description>&lt;p&gt;&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2022/10/15/634a5d761841f.jpg&#34;
@@ -14487,7 +14500,7 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         <item>
         <title>使用OBS自动添加字幕识别已经转自动语音</title>
         <link>https://example.com/record/obs-subtitles-audio.html</link>
-        <pubDate>Sun, 17 Jul 2022 12:38:00 +0000</pubDate>
+        <pubDate>Sun, 17 Jul 2022 12:38:00 +0800</pubDate>
         
         <guid>https://example.com/record/obs-subtitles-audio.html</guid>
         <description>&lt;p&gt;请直接参考作者文档：&lt;a class=&#34;link&#34; href=&#34;https://github.com/summershrimp/obs-auto-subtitle/blob/master/README-zh.md&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -14500,7 +14513,7 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         <item>
         <title>handsome主题短代码</title>
         <link>https://example.com/record/hs-shortcode.html</link>
-        <pubDate>Tue, 12 Jul 2022 01:15:00 +0000</pubDate>
+        <pubDate>Tue, 12 Jul 2022 01:15:00 +0800</pubDate>
         
         <guid>https://example.com/record/hs-shortcode.html</guid>
         <description>&lt;p&gt;来源：&lt;a class=&#34;link&#34; href=&#34;https://auth.ihewro.com/user/docs#/preference/shortCode&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -15022,7 +15035,7 @@ cover：（选填）外链网站的介绍图片地址&lt;/p&gt;
         <item>
         <title>OneCirclePro插件和handsome静态资源切换到国内服务器</title>
         <link>https://example.com/record/OneCirclePro-jscss.html</link>
-        <pubDate>Mon, 11 Jul 2022 22:52:00 +0000</pubDate>
+        <pubDate>Mon, 11 Jul 2022 22:52:00 +0800</pubDate>
         
         <guid>https://example.com/record/OneCirclePro-jscss.html</guid>
         <description>&lt;p&gt;体验了几天这个主题，发现资源加载是真的离谱，动不动10s+：&lt;/p&gt;
@@ -15085,7 +15098,7 @@ cover：（选填）外链网站的介绍图片地址&lt;/p&gt;
         <item>
         <title>使用lskypro作为typecho图床</title>
         <link>https://example.com/record/lskypro.html</link>
-        <pubDate>Mon, 11 Jul 2022 20:46:00 +0000</pubDate>
+        <pubDate>Mon, 11 Jul 2022 20:46:00 +0800</pubDate>
         
         <guid>https://example.com/record/lskypro.html</guid>
         <description>&lt;p&gt;如果你的服务器在国外导致部分内容加载缓慢，同时因为CDN需要准备七七八八的(cloudflare除外，但是体验一样不好)，又信不过国内一众免费图床（稳定性和安全性问题），那么可以试着使用lskypro在国内服务器自建图床。&lt;/p&gt;
@@ -15206,7 +15219,7 @@ cover：（选填）外链网站的介绍图片地址&lt;/p&gt;
         <item>
         <title>handsome美化记录</title>
         <link>https://example.com/record/handsome-modify.html</link>
-        <pubDate>Sun, 10 Jul 2022 20:20:00 +0000</pubDate>
+        <pubDate>Sun, 10 Jul 2022 20:20:00 +0800</pubDate>
         
         <guid>https://example.com/record/handsome-modify.html</guid>
         <description>&lt;p&gt;&lt;code&gt;[scode type=&amp;quot;yellow&amp;quot;]此处备份handsome主题一些自定义的教程：[/scode]&lt;/code&gt;&lt;/p&gt;
@@ -15324,7 +15337,7 @@ cover：（选填）外链网站的介绍图片地址&lt;/p&gt;
         <item>
         <title>唯一指定漫画阅读软件tachiyomi</title>
         <link>https://example.com/record/tachiyomi.html</link>
-        <pubDate>Sat, 09 Jul 2022 13:40:00 +0000</pubDate>
+        <pubDate>Sat, 09 Jul 2022 13:40:00 +0800</pubDate>
         
         <guid>https://example.com/record/tachiyomi.html</guid>
         <description>&lt;p&gt;项目地址：[tachiyomi](&lt;a class=&#34;link&#34; href=&#34;https://github.com/tachiyomiorg/tachiyomi&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -15343,7 +15356,7 @@ cover：（选填）外链网站的介绍图片地址&lt;/p&gt;
         <item>
         <title>添加acfun直播的颜文字（仅针对handsome主题）</title>
         <link>https://example.com/record/aclive-emotion.html</link>
-        <pubDate>Thu, 07 Jul 2022 00:59:00 +0000</pubDate>
+        <pubDate>Thu, 07 Jul 2022 00:59:00 +0800</pubDate>
         
         <guid>https://example.com/record/aclive-emotion.html</guid>
         <description>&lt;p&gt;很简单，直接把对应文件替换掉就好。
@@ -15365,7 +15378,7 @@ cover：（选填）外链网站的介绍图片地址&lt;/p&gt;
         <item>
         <title>在异地服务器使用go-miraiqq教程</title>
         <link>https://example.com/record/miraiqq-remote.html</link>
-        <pubDate>Wed, 06 Jul 2022 09:11:45 +0000</pubDate>
+        <pubDate>Wed, 06 Jul 2022 09:11:45 +0800</pubDate>
         
         <guid>https://example.com/record/miraiqq-remote.html</guid>
         <description>&lt;p&gt;在异地直接扫码登录miraiqq会有“异常，建议在同一WIFI环境下使用”的提示，如果服务器在本地还好，但是买的服务器在外地就很难这样去处理了。
@@ -15385,7 +15398,7 @@ PS： linux大同小异。&lt;/li&gt;
         <item>
         <title>阿巴阿巴阿巴</title>
         <link>https://example.com/record/wmdht_001.html</link>
-        <pubDate>Tue, 05 Jul 2022 23:08:02 +0000</pubDate>
+        <pubDate>Tue, 05 Jul 2022 23:08:02 +0800</pubDate>
         
         <guid>https://example.com/record/wmdht_001.html</guid>
         <description>&lt;p&gt;感谢万能小狼，我的账号密码终于回来了。（第一天就忘掉自己设置的密码，我是笨蛋&lt;/p&gt;
@@ -15394,7 +15407,7 @@ PS： linux大同小异。&lt;/li&gt;
         <item>
         <title>一些链接的备份</title>
         <link>https://example.com/record/somelinks.html</link>
-        <pubDate>Tue, 05 Jul 2022 02:00:00 +0000</pubDate>
+        <pubDate>Tue, 05 Jul 2022 02:00:00 +0800</pubDate>
         
         <guid>https://example.com/record/somelinks.html</guid>
         <description>&lt;p&gt;慢慢完善&lt;/p&gt;
@@ -15423,7 +15436,7 @@ PS： linux大同小异。&lt;/li&gt;
         <item>
         <title>格林花园的魔女-攻略-20220703</title>
         <link>https://example.com/method/witch_in_gleamgarden.html</link>
-        <pubDate>Sun, 03 Jul 2022 23:28:00 +0000</pubDate>
+        <pubDate>Sun, 03 Jul 2022 23:28:00 +0800</pubDate>
         
         <guid>https://example.com/method/witch_in_gleamgarden.html</guid>
         <description>&lt;p&gt;&lt;img src=&#34;https://blog.tama.guru/usr/uploads/2022/07/1590256436.png&#34;
@@ -15539,7 +15552,7 @@ PS： linux大同小异。&lt;/li&gt;
         <item>
         <title>关注人/圈子功能处于寄的状态</title>
         <link>https://example.com/record/follow-crash.html</link>
-        <pubDate>Sun, 03 Jul 2022 19:09:46 +0000</pubDate>
+        <pubDate>Sun, 03 Jul 2022 19:09:46 +0800</pubDate>
         
         <guid>https://example.com/record/follow-crash.html</guid>
         <description>&lt;p&gt;因为使用这个主题的时候是整个dev分支clone过来的，难免有一些bug（也确实看到作者刚在十几天前修了一些东西）
@@ -15612,7 +15625,7 @@ PS： linux大同小异。&lt;/li&gt;
         <item>
         <title>做一下ddbot的记录</title>
         <link>https://example.com/record/ddbot-live.html</link>
-        <pubDate>Sun, 03 Jul 2022 16:43:00 +0000</pubDate>
+        <pubDate>Sun, 03 Jul 2022 16:43:00 +0800</pubDate>
         
         <guid>https://example.com/record/ddbot-live.html</guid>
         <description>&lt;h2 id=&#34;避免服务器寄了群友d谁都忘了以下做个记录&#34;&gt;避免服务器寄了群友d谁都忘了，以下做个记录
@@ -15704,7 +15717,7 @@ PS： linux大同小异。&lt;/li&gt;
         <item>
         <title>记录一下15周年的录播</title>
         <link>https://example.com/videoshare/23.html</link>
-        <pubDate>Sun, 03 Jul 2022 01:13:00 +0000</pubDate>
+        <pubDate>Sun, 03 Jul 2022 01:13:00 +0800</pubDate>
         
         <guid>https://example.com/videoshare/23.html</guid>
         <description>&lt;p&gt;记录一下15周年的录播&lt;/p&gt;
@@ -15823,7 +15836,7 @@ PS： linux大同小异。&lt;/li&gt;
         <item>
         <title>在debian11安装并使用wifite</title>
         <link>https://example.com/default/wifite_in_debian11.html</link>
-        <pubDate>Sat, 02 Jul 2022 20:24:31 +0000</pubDate>
+        <pubDate>Sat, 02 Jul 2022 20:24:31 +0800</pubDate>
         
         <guid>https://example.com/default/wifite_in_debian11.html</guid>
         <description>&lt;p&gt;在debian11直接apt install -y wifite 并运行会提示：
@@ -15867,483 +15880,6 @@ tar zxvf hashcat-6.2.5.7z
 cd hashcat-6.2.5
 make &amp;amp;&amp;amp; make install&lt;/p&gt;
 </description>
-        </item>
-        <item>
-        <title>Chinese Test</title>
-        <link>https://example.com/post/test-chinese.html.html</link>
-        <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
-        
-        <guid>https://example.com/post/test-chinese.html.html</guid>
-        <description>&lt;img src="https://example.com/post/test-chinese.html/helena-hertz-wWZzXlDpMog-unsplash.jpg" alt="Featured image of post Chinese Test" /&gt;&lt;h2 id=&#34;正文测试&#34;&gt;正文测试
-&lt;/h2&gt;&lt;p&gt;而这些并不是完全重要，更加重要的问题是， 带着这些问题，我们来审视一下学生会退会。 既然如何， 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 我们不得不面对一个非常尴尬的事实，那就是， 可是，即使是这样，学生会退会的出现仍然代表了一定的意义。 学生会退会，发生了会如何，不发生又会如何。 经过上述讨论， 生活中，若学生会退会出现了，我们就不得不考虑它出现了的事实。 学生会退会，到底应该如何实现。 这样看来， 在这种困难的抉择下，本人思来想去，寝食难安。 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 就我个人来说，学生会退会对我的意义，不能不说非常重大。 莎士比亚曾经提到过，人的一生是短的，但如果卑劣地过这一生，就太长了。这似乎解答了我的疑惑。 莫扎特说过一句富有哲理的话，谁和我一样用功，谁就会和我一样成功。这启发了我， 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 学生会退会，到底应该如何实现。 一般来说， 从这个角度来看， 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 在这种困难的抉择下，本人思来想去，寝食难安。 了解清楚学生会退会到底是一种怎么样的存在，是解决一切问题的关键。 一般来说， 生活中，若学生会退会出现了，我们就不得不考虑它出现了的事实。 问题的关键究竟为何？ 而这些并不是完全重要，更加重要的问题是。&lt;/p&gt;
-&lt;p&gt;奥斯特洛夫斯基曾经说过，共同的事业，共同的斗争，可以使人们产生忍受一切的力量。　带着这句话，我们还要更加慎重的审视这个问题： 一般来讲，我们都必须务必慎重的考虑考虑。 既然如此， 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 带着这些问题，我们来审视一下学生会退会。 我认为， 我认为， 在这种困难的抉择下，本人思来想去，寝食难安。 问题的关键究竟为何？ 每个人都不得不面对这些问题。 在面对这种问题时， 要想清楚，学生会退会，到底是一种怎么样的存在。 我认为， 既然如此， 每个人都不得不面对这些问题。 在面对这种问题时， 那么， 我认为， 学生会退会因何而发生。&lt;/p&gt;
-&lt;h2 id=&#34;引用&#34;&gt;引用
-&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;思念是最暖的忧伤像一双翅膀&lt;br&gt;
-让我停不了飞不远在过往游荡&lt;br&gt;
-不告而别的你 就算为了我着想&lt;br&gt;
-这么沉痛的呵护 我怎么能翱翔&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/watch?v=3aypp_YlBzI&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;最暖的憂傷 - 田馥甄&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h2 id=&#34;图片&#34;&gt;图片
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://example.com/post/test-chinese.html/florian-klauer-nptLmg6jqDo-unsplash.jpg&#34;
-	width=&#34;667&#34;
-	height=&#34;1000&#34;
-	srcset=&#34;https://example.com/post/test-chinese.html/florian-klauer-nptLmg6jqDo-unsplash_hu_e98fca2b4272416e.jpg 480w, https://example.com/post/test-chinese.html/florian-klauer-nptLmg6jqDo-unsplash_hu_e3d37c9ded115b12.jpg 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Photo by Florian Klauer on Unsplash&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;66&#34;
-		data-flex-basis=&#34;160px&#34;
-	
-&gt;  &lt;img src=&#34;https://example.com/post/test-chinese.html/luca-bravo-alS7ewQ41M8-unsplash.jpg&#34;
-	width=&#34;1000&#34;
-	height=&#34;667&#34;
-	srcset=&#34;https://example.com/post/test-chinese.html/luca-bravo-alS7ewQ41M8-unsplash_hu_e13c58d5189f892c.jpg 480w, https://example.com/post/test-chinese.html/luca-bravo-alS7ewQ41M8-unsplash_hu_8fc948b7ee525251.jpg 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Photo by Luca Bravo on Unsplash&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;149&#34;
-		data-flex-basis=&#34;359px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://example.com/post/test-chinese.html/helena-hertz-wWZzXlDpMog-unsplash.jpg&#34;
-	width=&#34;1000&#34;
-	height=&#34;750&#34;
-	srcset=&#34;https://example.com/post/test-chinese.html/helena-hertz-wWZzXlDpMog-unsplash_hu_503c0ebcc5245e10.jpg 480w, https://example.com/post/test-chinese.html/helena-hertz-wWZzXlDpMog-unsplash_hu_48c98de55fb3c999.jpg 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Photo by Helena Hertz on Unsplash&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;133&#34;
-		data-flex-basis=&#34;320px&#34;
-	
-&gt;  &lt;img src=&#34;https://example.com/post/test-chinese.html/hudai-gayiran-3Od_VKcDEAA-unsplash.jpg&#34;
-	width=&#34;667&#34;
-	height=&#34;1000&#34;
-	srcset=&#34;https://example.com/post/test-chinese.html/hudai-gayiran-3Od_VKcDEAA-unsplash_hu_f81a3588c5c4a663.jpg 480w, https://example.com/post/test-chinese.html/hudai-gayiran-3Od_VKcDEAA-unsplash_hu_1c52ba2a4ad7b9a0.jpg 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Photo by Hudai Gayiran on Unsplash&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;66&#34;
-		data-flex-basis=&#34;160px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;![&lt;span class=&#34;nt&#34;&gt;Photo by Florian Klauer on Unsplash&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;florian-klauer-nptLmg6jqDo-unsplash.jpg&lt;/span&gt;)  ![&lt;span class=&#34;nt&#34;&gt;Photo by Luca Bravo on Unsplash&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;luca-bravo-alS7ewQ41M8-unsplash.jpg&lt;/span&gt;) 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;![&lt;span class=&#34;nt&#34;&gt;Photo by Helena Hertz on Unsplash&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;helena-hertz-wWZzXlDpMog-unsplash.jpg&lt;/span&gt;)  ![&lt;span class=&#34;nt&#34;&gt;Photo by Hudai Gayiran on Unsplash&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;hudai-gayiran-3Od_VKcDEAA-unsplash.jpg&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;相册语法来自 &lt;a class=&#34;link&#34; href=&#34;https://typlog.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Typlog&lt;/a&gt;&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>Markdown Syntax Guide</title>
-        <link>https://example.com/post/markdown-syntax-guide.html.html</link>
-        <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://example.com/post/markdown-syntax-guide.html.html</guid>
-        <description>&lt;img src="https://example.com/post/markdown-syntax-guide.html/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Markdown Syntax Guide" /&gt;&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;
-&lt;h2 id=&#34;headings&#34;&gt;Headings
-&lt;/h2&gt;&lt;p&gt;The following HTML &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;—&lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; elements represent six levels of section headings. &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; is the highest section level while &lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; is the lowest.&lt;/p&gt;
-&lt;h1 id=&#34;h1&#34;&gt;H1
-&lt;/h1&gt;&lt;h2 id=&#34;h2&#34;&gt;H2
-&lt;/h2&gt;&lt;h3 id=&#34;h3&#34;&gt;H3
-&lt;/h3&gt;&lt;h4 id=&#34;h4&#34;&gt;H4
-&lt;/h4&gt;&lt;h5 id=&#34;h5&#34;&gt;H5
-&lt;/h5&gt;&lt;h6 id=&#34;h6&#34;&gt;H6
-&lt;/h6&gt;&lt;h2 id=&#34;paragraph&#34;&gt;Paragraph
-&lt;/h2&gt;&lt;p&gt;Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.&lt;/p&gt;
-&lt;p&gt;Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.&lt;/p&gt;
-&lt;h2 id=&#34;blockquotes&#34;&gt;Blockquotes
-&lt;/h2&gt;&lt;p&gt;The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a &lt;code&gt;footer&lt;/code&gt; or &lt;code&gt;cite&lt;/code&gt; element, and optionally with in-line changes such as annotations and abbreviations.&lt;/p&gt;
-&lt;h4 id=&#34;blockquote-without-attribution&#34;&gt;Blockquote without attribution
-&lt;/h4&gt;&lt;blockquote&gt;
-&lt;p&gt;Tiam, ad mint andaepu dandae nostion secatur sequo quae.
-&lt;strong&gt;Note&lt;/strong&gt; that you can use &lt;em&gt;Markdown syntax&lt;/em&gt; within a blockquote.&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h4 id=&#34;blockquote-with-attribution&#34;&gt;Blockquote with attribution
-&lt;/h4&gt;&lt;blockquote&gt;
-&lt;p&gt;Don&amp;rsquo;t communicate by sharing memory, share memory by communicating.&lt;br&gt;
-— &lt;cite&gt;Rob Pike&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/cite&gt;&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h2 id=&#34;tables&#34;&gt;Tables
-&lt;/h2&gt;&lt;p&gt;Tables aren&amp;rsquo;t part of the core Markdown spec, but Hugo supports supports them out-of-the-box.&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Name&lt;/th&gt;
-          &lt;th&gt;Age&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Bob&lt;/td&gt;
-          &lt;td&gt;27&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Alice&lt;/td&gt;
-          &lt;td&gt;23&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h4 id=&#34;inline-markdown-within-tables&#34;&gt;Inline Markdown within tables
-&lt;/h4&gt;&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Italics&lt;/th&gt;
-          &lt;th&gt;Bold&lt;/th&gt;
-          &lt;th&gt;Code&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;em&gt;italics&lt;/em&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;bold&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;code&gt;code&lt;/code&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;A&lt;/th&gt;
-          &lt;th&gt;B&lt;/th&gt;
-          &lt;th&gt;C&lt;/th&gt;
-          &lt;th&gt;D&lt;/th&gt;
-          &lt;th&gt;E&lt;/th&gt;
-          &lt;th&gt;F&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/td&gt;
-          &lt;td&gt;Phasellus ultricies, sapien non euismod aliquam, dui ligula tincidunt odio, at accumsan nulla sapien eget ex.&lt;/td&gt;
-          &lt;td&gt;Proin eleifend dictum ipsum, non euismod ipsum pulvinar et. Vivamus sollicitudin, quam in pulvinar aliquam, metus elit pretium purus&lt;/td&gt;
-          &lt;td&gt;Proin sit amet velit nec enim imperdiet vehicula.&lt;/td&gt;
-          &lt;td&gt;Ut bibendum vestibulum quam, eu egestas turpis gravida nec&lt;/td&gt;
-          &lt;td&gt;Sed scelerisque nec turpis vel viverra. Vivamus vitae pretium sapien&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;code-blocks&#34;&gt;Code Blocks
-&lt;/h2&gt;&lt;h4 id=&#34;code-block-with-backticks&#34;&gt;Code block with backticks
-&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;html&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;lang&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;en&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;head&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;meta&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;charset&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;utf-8&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;Example HTML5 Document&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;head&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;body&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;Test&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;body&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;html&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;code-block-indented-with-four-spaces&#34;&gt;Code block indented with four spaces
-&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;!doctype html&amp;gt;
-&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
-&amp;lt;head&amp;gt;
-  &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
-  &amp;lt;title&amp;gt;Example HTML5 Document&amp;lt;/title&amp;gt;
-&amp;lt;/head&amp;gt;
-&amp;lt;body&amp;gt;
-  &amp;lt;p&amp;gt;Test&amp;lt;/p&amp;gt;
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;code-block-with-hugos-internal-highlight-shortcode&#34;&gt;Code block with Hugo&amp;rsquo;s internal highlight shortcode
-&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;html&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;lang&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;en&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;head&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;meta&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;charset&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;utf-8&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;Example HTML5 Document&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;head&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;body&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;Test&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;body&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;html&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;h4 id=&#34;diff-code-block&#34;&gt;Diff code block
-&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[dependencies.bevy]
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git = &amp;#34;https://github.com/bevyengine/bevy&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rev = &amp;#34;11f52b8c72fc3a568e8bb4a4cd1f3eb025ac2e13&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gd&#34;&gt;- features = [&amp;#34;dynamic&amp;#34;]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gd&#34;&gt;&lt;/span&gt;&lt;span class=&#34;gi&#34;&gt;+ features = [&amp;#34;jpeg&amp;#34;, &amp;#34;dynamic&amp;#34;]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;list-types&#34;&gt;List Types
-&lt;/h2&gt;&lt;h4 id=&#34;ordered-list&#34;&gt;Ordered List
-&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;First item&lt;/li&gt;
-&lt;li&gt;Second item&lt;/li&gt;
-&lt;li&gt;Third item&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&#34;unordered-list&#34;&gt;Unordered List
-&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;List item&lt;/li&gt;
-&lt;li&gt;Another item&lt;/li&gt;
-&lt;li&gt;And another item&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;nested-list&#34;&gt;Nested list
-&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;Fruit
-&lt;ul&gt;
-&lt;li&gt;Apple&lt;/li&gt;
-&lt;li&gt;Orange&lt;/li&gt;
-&lt;li&gt;Banana&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Dairy
-&lt;ul&gt;
-&lt;li&gt;Milk&lt;/li&gt;
-&lt;li&gt;Cheese&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;other-elements--abbr-sub-sup-kbd-mark&#34;&gt;Other Elements — abbr, sub, sup, kbd, mark
-&lt;/h2&gt;&lt;p&gt;&lt;abbr title=&#34;Graphics Interchange Format&#34;&gt;GIF&lt;/abbr&gt; is a bitmap image format.&lt;/p&gt;
-&lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O&lt;/p&gt;
-&lt;p&gt;X&lt;sup&gt;n&lt;/sup&gt; + Y&lt;sup&gt;n&lt;/sup&gt; = Z&lt;sup&gt;n&lt;/sup&gt;&lt;/p&gt;
-&lt;p&gt;Press &lt;kbd&gt;CTRL&lt;/kbd&gt; + &lt;kbd&gt;ALT&lt;/kbd&gt; + &lt;kbd&gt;Delete&lt;/kbd&gt; to end the session.&lt;/p&gt;
-&lt;p&gt;Most &lt;mark&gt;salamanders&lt;/mark&gt; are nocturnal, and hunt for insects, worms, and other small creatures.&lt;/p&gt;
-&lt;h2 id=&#34;hyperlinked-image&#34;&gt;Hyperlinked image
-&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://google.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;&lt;img src=&#34;https://www.google.com/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Google&#34;
-	
-	
-&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;
-&lt;p&gt;The above quote is excerpted from Rob Pike&amp;rsquo;s &lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/watch?v=PAAkCSZUG1c&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;talk&lt;/a&gt; during Gopherfest, November 18, 2015.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;</description>
-        </item>
-        <item>
-        <title>Rich Content</title>
-        <link>https://example.com/post/rich-content.html.html</link>
-        <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://example.com/post/rich-content.html.html</guid>
-        <description>&lt;p&gt;Hugo ships with several &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Built-in Shortcodes&lt;/a&gt; for rich content, along with a &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/about/hugo-and-gdpr/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Privacy Config&lt;/a&gt; and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;acfun--shortcode&#34;&gt;AcFun  Shortcode
-&lt;/h2&gt;
-
-
-    &lt;p&gt;当前视频ac号：ac337845818&lt;/p&gt;
-
-
-&lt;div class=&#34;video-wrapper&#34;&gt;
-    &lt;iframe class=&#34;iframe_video&#34; src=&#34;https://www.acfun.cn/player/ac337845818&#34; id=&#34;ACPlayer-re&#34; scrolling=&#34;no&#34; border=&#34;0&#34; frameborder=&#34;no&#34; framespacing=&#34;0&#34; allowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&#34;bilibilibi-shortcode&#34;&gt;bilibilibi Shortcode
-&lt;/h2&gt;
-
-
-
-
-
-    
-
-
-&lt;div class=&#34;video-wrapper&#34;&gt;
-    &lt;iframe src=&#34;https://player.bilibili.com/player.html?as_wide=1&amp;amp;high_quality=1&amp;amp;page=1&amp;aid=498363026&#34;
-            scrolling=&#34;no&#34;
-            frameborder=&#34;no&#34;
-            framespacing=&#34;0&#34;
-            allowfullscreen=&#34;true&#34;
-    &gt;
-    &lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&#34;gitlab-snippets-shortcode&#34;&gt;Gitlab Snippets Shortcode
-&lt;/h2&gt;&lt;script
-    type=&#34;application/javascript&#34;
-    src=&#34;https://gitlab.com/-/snippets/2349278.js&#34;
-&gt;&lt;/script&gt;
-&lt;h2 id=&#34;quote-shortcode&#34;&gt;Quote Shortcode
-&lt;/h2&gt;&lt;p&gt;Stack adds a &lt;code&gt;quote&lt;/code&gt; shortcode.  For example:&lt;/p&gt;
-&lt;blockquote&gt;
-    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;&lt;span class=&#34;cite&#34;&gt;&lt;span&gt;― &lt;/span&gt;&lt;span&gt;A famous person, &lt;/span&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Book&#34;&gt;&lt;cite&gt;The book they wrote&lt;/cite&gt;&lt;/a&gt;&lt;/span&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;&lt;span class=&#34;cite&#34;&gt;&lt;span&gt;― &lt;/span&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Book&#34;&gt;&lt;cite&gt;Anonymous book&lt;/cite&gt;&lt;/a&gt;&lt;/span&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;&lt;span class=&#34;cite&#34;&gt;&lt;span&gt;― &lt;/span&gt;&lt;cite&gt;Some book&lt;/cite&gt;&lt;/span&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;&lt;span class=&#34;cite&#34;&gt;&lt;span&gt;― &lt;/span&gt;&lt;span&gt;Somebody&lt;/span&gt;&lt;cite&gt;&lt;/cite&gt;&lt;/span&gt;&lt;/blockquote&gt;</description>
-        </item>
-        <item>
-        <title>Placeholder Text</title>
-        <link>https://example.com/post/placeholder-text.html.html</link>
-        <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://example.com/post/placeholder-text.html.html</guid>
-        <description>&lt;img src="https://example.com/post/placeholder-text.html/matt-le-SJSpo9hQf7s-unsplash.jpg" alt="Featured image of post Placeholder Text" /&gt;&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;
-&lt;p&gt;Redit teque digerit hominumque toris verebor lumina non cervice subde tollit usus habet Arctonque, furores quas nec ferunt. Quoque montibus nunc caluere tempus inhospita parcite confusaque translucet patri vestro qui optatis lumine cognoscere flos nubis! Fronde ipsamque patulos Dryopen deorum.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Exierant elisi ambit vivere dedere&lt;/li&gt;
-&lt;li&gt;Duce pollice&lt;/li&gt;
-&lt;li&gt;Eris modo&lt;/li&gt;
-&lt;li&gt;Spargitque ferrea quos palude&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Rursus nulli murmur; hastile inridet ut ab gravi sententia! Nomine potitus silentia flumen, sustinet placuit petis in dilapsa erat sunt. Atria tractus malis.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Comas hunc haec pietate fetum procerum dixit&lt;/li&gt;
-&lt;li&gt;Post torum vates letum Tiresia&lt;/li&gt;
-&lt;li&gt;Flumen querellas&lt;/li&gt;
-&lt;li&gt;Arcanaque montibus omnes&lt;/li&gt;
-&lt;li&gt;Quidem et&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&#34;vagus-elidunt&#34;&gt;Vagus elidunt
-&lt;/h1&gt;&lt;p&gt;&lt;svg class=&#34;canon&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; overflow=&#34;visible&#34; viewBox=&#34;0 0 496 373&#34; height=&#34;373&#34; width=&#34;496&#34;&gt;&lt;g fill=&#34;none&#34;&gt;&lt;path stroke=&#34;#000&#34; stroke-width=&#34;.75&#34; d=&#34;M.599 372.348L495.263 1.206M.312.633l494.95 370.853M.312 372.633L247.643.92M248.502.92l246.76 370.566M330.828 123.869V1.134M330.396 1.134L165.104 124.515&#34;&gt;&lt;/path&gt;&lt;path stroke=&#34;#ED1C24&#34; stroke-width=&#34;.75&#34; d=&#34;M275.73 41.616h166.224v249.05H275.73zM54.478 41.616h166.225v249.052H54.478z&#34;&gt;&lt;/path&gt;&lt;path stroke=&#34;#000&#34; stroke-width=&#34;.75&#34; d=&#34;M.479.375h495v372h-495zM247.979.875v372&#34;&gt;&lt;/path&gt;&lt;ellipse cx=&#34;498.729&#34; cy=&#34;177.625&#34; rx=&#34;.75&#34; ry=&#34;1.25&#34;&gt;&lt;/ellipse&gt;&lt;ellipse cx=&#34;247.229&#34; cy=&#34;377.375&#34; rx=&#34;.75&#34; ry=&#34;1.25&#34;&gt;&lt;/ellipse&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://en.wikipedia.org/wiki/Canons_of_page_construction#Van_de_Graaf_canon&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;The Van de Graaf Canon&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;mane-refeci-capiebant-unda-mulcebat&#34;&gt;Mane refeci capiebant unda mulcebat
-&lt;/h2&gt;&lt;p&gt;Victa caducifer, malo vulnere contra dicere aurato, ludit regale, voca! Retorsit colit est profanae esse virescere furit nec; iaculi matertera et visa est, viribus. Divesque creatis, tecta novat collumque vulnus est, parvas. &lt;strong&gt;Faces illo pepulere&lt;/strong&gt; tempus adest. Tendit flamma, ab opes virum sustinet, sidus sequendo urbis.&lt;/p&gt;
-&lt;p&gt;Iubar proles corpore raptos vero auctor imperium; sed et huic: manus caeli Lelegas tu lux. Verbis obstitit intus oblectamina fixis linguisque ausus sperare Echionides cornuaque tenent clausit possit. Omnia putatur. Praeteritae refert ausus; ferebant e primus lora nutat, vici quae mea ipse. Et iter nil spectatae vulnus haerentia iuste et exercebat, sui et.&lt;/p&gt;
-&lt;p&gt;Eurytus Hector, materna ipsumque ut Politen, nec, nate, ignari, vernum cohaesit sequitur. Vel &lt;strong&gt;mitis temploque&lt;/strong&gt; vocatus, inque alis, &lt;em&gt;oculos nomen&lt;/em&gt; non silvis corpore coniunx ne displicet illa. Crescunt non unus, vidit visa quantum inmiti flumina mortis facto sic: undique a alios vincula sunt iactata abdita! Suspenderat ego fuit tendit: luna, ante urbem Propoetides &lt;strong&gt;parte&lt;/strong&gt;.&lt;/p&gt;</description>
-        </item>
-        <item>
-        <title>Math Typesetting</title>
-        <link>https://example.com/post/math-typesetting.html.html</link>
-        <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://example.com/post/math-typesetting.html.html</guid>
-        <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p&gt;
-&lt;p&gt;In this example we will be using &lt;a class=&#34;link&#34; href=&#34;https://katex.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;KaTeX&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Create a partial under &lt;code&gt;/layouts/partials/math.html&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Within this partial reference the &lt;a class=&#34;link&#34; href=&#34;https://katex.org/docs/autorender.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Auto-render Extension&lt;/a&gt; or host these scripts locally.&lt;/li&gt;
-&lt;li&gt;Include the partial in your templates like so:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;{{&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; or .Params.math .Site.Params.math &lt;span class=&#34;o&#34;&gt;}}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;{{&lt;/span&gt; partial &lt;span class=&#34;s2&#34;&gt;&amp;#34;math.html&amp;#34;&lt;/span&gt; . &lt;span class=&#34;o&#34;&gt;}}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;{{&lt;/span&gt; end &lt;span class=&#34;o&#34;&gt;}}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;To enable KaTeX globally set the parameter &lt;code&gt;math&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; in a project&amp;rsquo;s configuration&lt;/li&gt;
-&lt;li&gt;To enable KaTeX on a per page basis include the parameter &lt;code&gt;math: true&lt;/code&gt; in content files&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Use the online reference of &lt;a class=&#34;link&#34; href=&#34;https://katex.org/docs/supported.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Supported TeX Functions&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;examples&#34;&gt;Examples
-&lt;/h3&gt;&lt;p&gt;Inline math: $\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…$&lt;/p&gt;
-&lt;p&gt;Block math:
-&lt;/p&gt;
-$$
- \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } } 
-$$</description>
-        </item>
-        <item>
-        <title>Emoji Support</title>
-        <link>https://example.com/post/emoji-support.html.html</link>
-        <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://example.com/post/emoji-support.html.html</guid>
-        <description>&lt;img src="https://example.com/post/emoji-support.html/the-creative-exchange-d2zvqp3fpro-unsplash.jpg" alt="Featured image of post Emoji Support" /&gt;&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;
-&lt;p&gt;The &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/functions/emojify/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;&lt;code&gt;emojify&lt;/code&gt;&lt;/a&gt; function can be called directly in templates or &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/templates/shortcode-templates/#inline-shortcodes&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Inline Shortcodes&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;To enable emoji globally, set &lt;code&gt;enableEmoji&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; in your site&amp;rsquo;s &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/getting-started/configuration/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;configuration&lt;/a&gt; and then you can type emoji shorthand codes directly in content files; e.g.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;🙈&lt;/span&gt; &lt;code&gt;:see_no_evil:&lt;/code&gt;&lt;/span&gt;  &lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;🙉&lt;/span&gt; &lt;code&gt;:hear_no_evil:&lt;/code&gt;&lt;/span&gt;  &lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;🙊&lt;/span&gt; &lt;code&gt;:speak_no_evil:&lt;/code&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;br&gt;
-&lt;p&gt;The &lt;a class=&#34;link&#34; href=&#34;http://www.emoji-cheat-sheet.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Emoji cheat sheet&lt;/a&gt; is a useful reference for emoji shorthand codes.&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;N.B.&lt;/strong&gt; The above steps enable Unicode Standard emoji characters and sequences in Hugo, however the rendering of these glyphs depends on the browser and the platform. To style the emoji you can either use a third party emoji font or a font stack; e.g.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;.emoji {
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  font-family: Apple Color Emoji, Segoe UI Emoji, NotoColorEmoji, Segoe UI Symbol, Android Emoji, EmojiSymbols;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
         </item>
         
     </channel>

@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Fri, 25 Apr 2025 14:52:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/360%E7%9C%8B%E5%9B%BE/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 25 Apr 2025 14:52:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/360%E7%9C%8B%E5%9B%BE/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>如何避免大数字自动安装大数字看图(360AlbumViewer)</title>
         <link>https://example.com/record/anti-360albumviewer.html</link>
-        <pubDate>Fri, 25 Apr 2025 14:52:00 +0000</pubDate>
+        <pubDate>Fri, 25 Apr 2025 14:52:00 +0800</pubDate>
         
         <guid>https://example.com/record/anti-360albumviewer.html</guid>
         <description>&lt;p&gt;单位电脑上强制要使用大数字，自从某数字推出了极速版，相比起原版的臃肿倒是简洁了不少，把一些选项关掉后还真就老老实实干活基本上没出现过什么问题。但是从上个月开始，右键菜单就多了个&amp;quot;360看图&amp;quot;的选项，可真是恶心人。而且这玩意不会出现在开始菜单里面，需要到控制面板里面找出来卸载掉，问题是卸载了下次不知道啥时候就会突然冒出来（至今我也没找到到底是点了什么地方导致的），只能先按照对付其他流氓软件的方法处理了。&lt;/p&gt;

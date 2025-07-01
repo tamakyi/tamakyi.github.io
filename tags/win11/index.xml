@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Sun, 06 Nov 2022 23:08:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/win11/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 06 Nov 2022 23:08:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/win11/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Win11安装优化那些事</title>
         <link>https://example.com/record/win11_new_setup.html</link>
-        <pubDate>Sun, 06 Nov 2022 23:08:00 +0000</pubDate>
+        <pubDate>Sun, 06 Nov 2022 23:08:00 +0800</pubDate>
         
         <guid>https://example.com/record/win11_new_setup.html</guid>
         <description>&lt;p&gt;坚持了大半年的WIN10今天终于因为不明原因无法启动了（开机无限转圈圈，进入修复模式修复失败无解），于是干脆就把系统换成Win11。自从上次直接从10升11出现一堆bug之后，&lt;del&gt;以及我对阿三一直以来抱有的一种不信任感&lt;/del&gt;让我这半年基本没摸过11，这次就全新安装，给它个面子，看看它能不能给我个面子。&lt;/p&gt;

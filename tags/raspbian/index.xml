@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 10 Aug 2023 18:02:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/raspbian/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 10 Aug 2023 18:02:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/raspbian/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>记录在raspbian上折腾pikvm的失败过程</title>
         <link>https://example.com/record/pikvm_with_raspbian.html</link>
-        <pubDate>Thu, 10 Aug 2023 18:02:00 +0000</pubDate>
+        <pubDate>Thu, 10 Aug 2023 18:02:00 +0800</pubDate>
         
         <guid>https://example.com/record/pikvm_with_raspbian.html</guid>
         <description>&lt;p&gt;###前言

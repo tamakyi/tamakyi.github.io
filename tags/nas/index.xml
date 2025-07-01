@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Sun, 12 Mar 2023 01:43:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/nas/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 12 Mar 2023 01:43:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/nas/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>PVE安装后续优化</title>
         <link>https://example.com/record/pve_install.html</link>
-        <pubDate>Sun, 12 Mar 2023 01:43:00 +0000</pubDate>
+        <pubDate>Sun, 12 Mar 2023 01:43:00 +0800</pubDate>
         
         <guid>https://example.com/record/pve_install.html</guid>
         <description>&lt;p&gt;安装PVE并不复杂，相关操作网上一抓一大把此处不再赘述。
