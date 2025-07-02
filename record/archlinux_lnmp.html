@@ -10,7 +10,7 @@
 <meta property='og:description' content="最近把编译用的主机换个发行版，最开始用的是debian，结果现在桌面环境进不去了（而且是一引导完成就所有输入、输入都没反应，但是ssh能登陆，很奇怪），懒得去查原因就选择换个环境。本来用的almalinux，无奈真的不喜欢gnome，自己装了kde之后ibus无论怎样都打不出中文，最后还是上了arch。 无论是宝塔还是lnmp.org都没有对arch系进行适配，网上也有很多一步步排错安装的教程，但是看着一步步的报错再去核查原因着实难受，最后还是选择自己装最基础的nginx+php+mysql。\n">
 <meta property='og:url' content='https://blog.tama.guru/record/archlinux_lnmp.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='mysql' /><meta property='article:tag' content='archlinux' /><meta property='article:tag' content='nginx' /><meta property='article:tag' content='php' /><meta property='article:tag' content='lnmp' /><meta property='article:published_time' content='2023-11-30T11:07:00&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T05:20:08&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='mysql' /><meta property='article:tag' content='archlinux' /><meta property='article:tag' content='nginx' /><meta property='article:tag' content='php' /><meta property='article:tag' content='lnmp' /><meta property='article:published_time' content='2023-11-30T11:07:00&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T12:11:48&#43;00:00'/>
 <meta name="twitter:title" content="Archlinux下安装并配置lnmp环境">
 <meta name="twitter:description" content="最近把编译用的主机换个发行版，最开始用的是debian，结果现在桌面环境进不去了（而且是一引导完成就所有输入、输入都没反应，但是ssh能登陆，很奇怪），懒得去查原因就选择换个环境。本来用的almalinux，无奈真的不喜欢gnome，自己装了kde之后ibus无论怎样都打不出中文，最后还是上了arch。 无论是宝塔还是lnmp.org都没有对arch系进行适配，网上也有很多一步步排错安装的教程，但是看着一步步的报错再去核查原因着实难受，最后还是选择自己装最基础的nginx+php+mysql。\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
@@ -152,26 +152,26 @@
 
 
                 
-                <span>主页</span>
+                <span>Home | 主页</span>
             </a>
         </li>
         
         
         <li >
-            <a href='/%E5%85%B3%E4%BA%8E.html' >
+            <a href='/search.html' >
                 
                 
                 
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="7" r="4" />
-  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
 </svg>
 
 
 
                 
-                <span>关于</span>
+                <span>Search | 搜索</span>
             </a>
         </li>
         
@@ -191,45 +191,7 @@
 
 
                 
-                <span>存档</span>
-            </a>
-        </li>
-        
-        
-        <li >
-            <a href='/search.html' >
-                
-                
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="10" cy="10" r="7" />
-  <line x1="21" y1="21" x2="15" y2="15" />
-</svg>
-
-
-
-                
-                <span>搜索</span>
-            </a>
-        </li>
-        
-        
-        <li >
-            <a href='/%E9%93%BE%E6%8E%A5.html' >
-                
-                
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
-  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
-</svg>
-
-
-
-                
-                <span>链接</span>
+                <span>Archives | 档案</span>
             </a>
         </li>
         
@@ -263,7 +225,7 @@ unicode: "ed8a"
 </svg>
 
                 
-                <span>导航页</span>
+                <span>Navi | 导航页</span>
             </a>
         </li>
         
@@ -294,7 +256,7 @@ unicode: "ec9d"
 </svg>
 
                 
-                <span>提问箱</span>
+                <span>Box | 提问箱</span>
             </a>
         </li>
         
@@ -325,7 +287,7 @@ version: "1.112"
 </svg>
 
                 
-                <span>共享盘</span>
+                <span>Share | 共享盘</span>
             </a>
         </li>
         
@@ -361,7 +323,45 @@ version: "1.94"
 </svg>
 
                 
-                <span>监控板</span>
+                <span>Status | 监控板</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links-%E9%93%BE%E6%8E%A5.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links | 链接</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about-%E5%85%B3%E4%BA%8E.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About | 关于</span>
             </a>
         </li>
         
@@ -1143,7 +1143,7 @@ unicode: "ece7"
 
 
         <span>
-            最后更新于 2025年07月02日 05:20
+            最后更新于 2025年07月02日 12:11
         </span>
     </section></footer>
 

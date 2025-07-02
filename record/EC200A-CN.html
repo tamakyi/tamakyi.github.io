@@ -10,7 +10,7 @@
 <meta property='og:description' content="本来是想买个随身WIFI，以便家里突然断网/断电的时候能够用手头上多余的一张SIM卡开个应急热点，但是去淘宝搜了一圈，成品随身WIFI要么说经常断网，要么就是无法使用自己的卡，要么就是能插自己的卡，但是只能插物联网卡或是插一张之后就不能插别的卡了（卡和机器绑定了），可玩性极差。然后想想家里还有一坨树莓派，用充电宝供电，能不能在这个基础上整些模块。 于是，在搜索了相关材料之后，选择了移远的EC200A-CN。 大概就长这样，一个USB口，四个串口，一个SIM卡槽，一个天线接口，没了。 在WIN下直接插上会直接当作USB网卡使用，但是任务管理器下面的AT Interface和Diag Interface会有感叹号，这意味着无法进行AT指令交互，也就只能当作一块无线网卡使用。只需要把这个驱动打上就正常了。 先不管WIN下使用AT怎样怎样，买这块板子的初衷就是给树莓派用的，然后我就把板子拔下来插树莓派上了。 先说下环境，因为我要用到pikvm，所以使用的系统是魔改的archlinuxarm，内核版本5.15.68-3-rpi-ARCH。 插上去之后，灯开始闪，但是执行 ifconfig 之后： 你妈的，我USB0呢？ 吓得我赶紧看看是不是给我搞坏了或者根本没识别。 ::acfun:02:: 还好还好，东西还在。 ::acfun:03:: 那么这是怎么个回事呢？我看店铺上明明写着linux免驱啊！于是在问一通客服之后 给了我个tgz包。 ::acfun:01:: 不问不给是吧。解压之后内容如下： 因为我的内核版本是5.15.68，离得比较近的是5.15.11，进入这个目录，执行 make 和 make install 后会生成option.ko``qcserial.ko和usb_wwan.ko三个文件，执行\n">
 <meta property='og:url' content='https://blog.tama.guru/record/EC200A-CN.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-04-19T23:06:55&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T05:20:08&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-04-19T23:06:55&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T12:11:48&#43;00:00'/>
 <meta name="twitter:title" content="4G开发板EC200A的初次使用记录">
 <meta name="twitter:description" content="本来是想买个随身WIFI，以便家里突然断网/断电的时候能够用手头上多余的一张SIM卡开个应急热点，但是去淘宝搜了一圈，成品随身WIFI要么说经常断网，要么就是无法使用自己的卡，要么就是能插自己的卡，但是只能插物联网卡或是插一张之后就不能插别的卡了（卡和机器绑定了），可玩性极差。然后想想家里还有一坨树莓派，用充电宝供电，能不能在这个基础上整些模块。 于是，在搜索了相关材料之后，选择了移远的EC200A-CN。 大概就长这样，一个USB口，四个串口，一个SIM卡槽，一个天线接口，没了。 在WIN下直接插上会直接当作USB网卡使用，但是任务管理器下面的AT Interface和Diag Interface会有感叹号，这意味着无法进行AT指令交互，也就只能当作一块无线网卡使用。只需要把这个驱动打上就正常了。 先不管WIN下使用AT怎样怎样，买这块板子的初衷就是给树莓派用的，然后我就把板子拔下来插树莓派上了。 先说下环境，因为我要用到pikvm，所以使用的系统是魔改的archlinuxarm，内核版本5.15.68-3-rpi-ARCH。 插上去之后，灯开始闪，但是执行 ifconfig 之后： 你妈的，我USB0呢？ 吓得我赶紧看看是不是给我搞坏了或者根本没识别。 ::acfun:02:: 还好还好，东西还在。 ::acfun:03:: 那么这是怎么个回事呢？我看店铺上明明写着linux免驱啊！于是在问一通客服之后 给了我个tgz包。 ::acfun:01:: 不问不给是吧。解压之后内容如下： 因为我的内核版本是5.15.68，离得比较近的是5.15.11，进入这个目录，执行 make 和 make install 后会生成option.ko``qcserial.ko和usb_wwan.ko三个文件，执行\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
@@ -152,26 +152,26 @@
 
 
                 
-                <span>主页</span>
+                <span>Home | 主页</span>
             </a>
         </li>
         
         
         <li >
-            <a href='/%E5%85%B3%E4%BA%8E.html' >
+            <a href='/search.html' >
                 
                 
                 
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="7" r="4" />
-  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
 </svg>
 
 
 
                 
-                <span>关于</span>
+                <span>Search | 搜索</span>
             </a>
         </li>
         
@@ -191,45 +191,7 @@
 
 
                 
-                <span>存档</span>
-            </a>
-        </li>
-        
-        
-        <li >
-            <a href='/search.html' >
-                
-                
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="10" cy="10" r="7" />
-  <line x1="21" y1="21" x2="15" y2="15" />
-</svg>
-
-
-
-                
-                <span>搜索</span>
-            </a>
-        </li>
-        
-        
-        <li >
-            <a href='/%E9%93%BE%E6%8E%A5.html' >
-                
-                
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
-  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
-</svg>
-
-
-
-                
-                <span>链接</span>
+                <span>Archives | 档案</span>
             </a>
         </li>
         
@@ -263,7 +225,7 @@ unicode: "ed8a"
 </svg>
 
                 
-                <span>导航页</span>
+                <span>Navi | 导航页</span>
             </a>
         </li>
         
@@ -294,7 +256,7 @@ unicode: "ec9d"
 </svg>
 
                 
-                <span>提问箱</span>
+                <span>Box | 提问箱</span>
             </a>
         </li>
         
@@ -325,7 +287,7 @@ version: "1.112"
 </svg>
 
                 
-                <span>共享盘</span>
+                <span>Share | 共享盘</span>
             </a>
         </li>
         
@@ -361,7 +323,45 @@ version: "1.94"
 </svg>
 
                 
-                <span>监控板</span>
+                <span>Status | 监控板</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links-%E9%93%BE%E6%8E%A5.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links | 链接</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about-%E5%85%B3%E4%BA%8E.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About | 关于</span>
             </a>
         </li>
         
@@ -704,7 +704,7 @@ unicode: "ece7"
 
 
         <span>
-            最后更新于 2025年07月02日 05:20
+            最后更新于 2025年07月02日 12:11
         </span>
     </section></footer>
 

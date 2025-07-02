@@ -7,8 +7,8 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Wed, 02 Jul 2025 01:47:15 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/page/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>存档</title>
+        <lastBuildDate>Wed, 02 Jul 2025 20:11:29 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Archives | 档案</title>
         <link>https://blog.tama.guru/archives.html</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0800</pubDate>
         
@@ -16,20 +16,20 @@
         <description></description>
         </item>
         <item>
-        <title>关于</title>
-        <link>https://blog.tama.guru/%E5%85%B3%E4%BA%8E.html</link>
+        <title>About | 关于</title>
+        <link>https://blog.tama.guru/about-%E5%85%B3%E4%BA%8E.html</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.tama.guru/%E5%85%B3%E4%BA%8E.html</guid>
+        <guid>https://blog.tama.guru/about-%E5%85%B3%E4%BA%8E.html</guid>
         <description>&lt;p&gt;This is a test page for i18n support.&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>链接</title>
-        <link>https://blog.tama.guru/%E9%93%BE%E6%8E%A5.html</link>
+        <title>Links | 链接</title>
+        <link>https://blog.tama.guru/links-%E9%93%BE%E6%8E%A5.html</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.tama.guru/%E9%93%BE%E6%8E%A5.html</guid>
+        <guid>https://blog.tama.guru/links-%E9%93%BE%E6%8E%A5.html</guid>
         <description>&lt;p&gt;To use this feature, add &lt;code&gt;links&lt;/code&gt; section to frontmatter.&lt;/p&gt;
 &lt;p&gt;This page&amp;rsquo;s frontmatter:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -60,7 +60,7 @@
 </description>
         </item>
         <item>
-        <title>搜索</title>
+        <title>Search | 搜索</title>
         <link>https://blog.tama.guru/search.html</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
