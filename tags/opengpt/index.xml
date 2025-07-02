@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Opengpt on 狼的公告板 ver.Hugo</title>
-        <link>https://example.com/tags/opengpt.html</link>
+        <link>https://blog.tama.guru/tags/opengpt.html</link>
         <description>Recent content in Opengpt on 狼的公告板 ver.Hugo</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Sat, 11 Feb 2023 18:29:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/opengpt/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 11 Feb 2023 18:29:00 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/tags/opengpt/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>目前能访问OpenGPT的方法</title>
-        <link>https://example.com/record/accessofopengpt.html</link>
+        <link>https://blog.tama.guru/record/accessofopengpt.html</link>
         <pubDate>Sat, 11 Feb 2023 18:29:00 +0800</pubDate>
         
-        <guid>https://example.com/record/accessofopengpt.html</guid>
+        <guid>https://blog.tama.guru/record/accessofopengpt.html</guid>
         <description>&lt;p&gt;目前访问&lt;a class=&#34;link&#34; href=&#34;https://chat.openai.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;ChatGPT主页&lt;/a&gt;多半会得到以下几种结果：
 ####·OpenAI‘s services are not available in your country·####

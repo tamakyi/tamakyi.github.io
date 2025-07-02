@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Java on 狼的公告板 ver.Hugo</title>
-        <link>https://example.com/tags/java.html</link>
+        <link>https://blog.tama.guru/tags/java.html</link>
         <description>Recent content in Java on 狼的公告板 ver.Hugo</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Sun, 20 Apr 2025 05:57:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/java/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 20 Apr 2025 05:57:00 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/tags/java/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>搭建自己的轨迹记录程序 Traccar</title>
-        <link>https://example.com/record/traccar.html</link>
+        <link>https://blog.tama.guru/record/traccar.html</link>
         <pubDate>Sun, 20 Apr 2025 05:57:00 +0800</pubDate>
         
-        <guid>https://example.com/record/traccar.html</guid>
+        <guid>https://blog.tama.guru/record/traccar.html</guid>
         <description>&lt;p&gt;今天外出玩耍的时候突发奇想我能不能每天记录一下自己每天的生活轨迹，百度了下已经有很多成熟的应用了，但是这种比较私密的数据要发送到别人的服务器上说实话我是不太想的，然后去github上找了下，发现了好几个方案，都尝试了一遍，主要是&lt;a class=&#34;link&#34; href=&#34;https://github.com/cctyl/TrackRecord&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/cctyl/TrackRecord&lt;/a&gt;，搭完发现太简陋了，不适合我，其他几个更是已经几年没更新了，最后尝试了下traccar，感觉算是比较成熟的方案，也符合我的需求。&lt;/p&gt;
 &lt;h4 id=&#34;正常安装&#34;&gt;正常安装
@@ -169,10 +169,10 @@
         </item>
         <item>
         <title>使用ruleproject搭建自己的typecho程序客户端</title>
-        <link>https://example.com/record/ruleproject.html</link>
+        <link>https://blog.tama.guru/record/ruleproject.html</link>
         <pubDate>Fri, 17 Nov 2023 23:12:00 +0800</pubDate>
         
-        <guid>https://example.com/record/ruleproject.html</guid>
+        <guid>https://blog.tama.guru/record/ruleproject.html</guid>
         <description>&lt;p&gt;卧槽牛皮，这东西牛啊！通过这个教程已经成功弄出了安卓端apk并正常使用！
 本站安卓客户端：&lt;a class=&#34;link&#34; href=&#34;https://share.tama.guru/d/App/Android/latest_release.apk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://share.tama.guru/d/App/Android/latest_release.apk&lt;/a&gt;

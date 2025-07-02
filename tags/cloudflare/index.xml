@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Cloudflare on 狼的公告板 ver.Hugo</title>
-        <link>https://example.com/tags/cloudflare.html</link>
+        <link>https://blog.tama.guru/tags/cloudflare.html</link>
         <description>Recent content in Cloudflare on 狼的公告板 ver.Hugo</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Fri, 31 May 2024 23:59:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/cloudflare/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 31 May 2024 23:59:00 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/tags/cloudflare/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>使用Cloudflare的SaaS实现自选IP</title>
-        <link>https://example.com/record/Cloudflare_SaaS.html</link>
+        <link>https://blog.tama.guru/record/Cloudflare_SaaS.html</link>
         <pubDate>Fri, 31 May 2024 23:59:00 +0800</pubDate>
         
-        <guid>https://example.com/record/Cloudflare_SaaS.html</guid>
+        <guid>https://blog.tama.guru/record/Cloudflare_SaaS.html</guid>
         <description>&lt;p&gt;前几天闲的没事查一下目前几个域名的续费价格，发现动不动都是几百一年&amp;hellip;如果现有的优惠到期之后我多半是不会再继续用了，趁此机会我购入了一个新的域名，够短，也挺有个性&amp;ndash;&amp;gt;&lt;a class=&#34;link&#34; href=&#34;http://tma.moe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;tma.moe&lt;/a&gt;&amp;lt;&amp;ndash; 不要无端联想某视频番号。因为迁移需要一定时间，目前我打算套个CF用。但是很早之前partner就已经用不了了&amp;hellip;(虽然我还有个域名能用，但是那玩意到期之后也很贵）&lt;/p&gt;
 &lt;p&gt;目前网上的方法基本上是使用SaaS这个功能来实现的，通过这个方式套在一些对国内有特殊优化的网站来借用它们的服务进行解析。我尝试了下确实能用，但目前还找不到一个好的域名能套，目前国内还是一片红&amp;hellip;&lt;/p&gt;
@@ -73,10 +73,10 @@
         </item>
         <item>
         <title>使用S3 Browser管理Cloudflare R2存储桶</title>
-        <link>https://example.com/record/s3browser_r2_manager.html</link>
+        <link>https://blog.tama.guru/record/s3browser_r2_manager.html</link>
         <pubDate>Sat, 13 Jan 2024 22:53:02 +0800</pubDate>
         
-        <guid>https://example.com/record/s3browser_r2_manager.html</guid>
+        <guid>https://blog.tama.guru/record/s3browser_r2_manager.html</guid>
         <description>&lt;p&gt;本来我是要把导航页所有的文件搬到Github上并&lt;strong&gt;试图&lt;/strong&gt;通过jsdelivr加速访问，但是我发现国内移动网络根本无法直连jsdelivr&amp;hellip;在多次反馈网页无法打开之后，最后还是退一步选择迁移到R2上了。但是R2的网页端管理真的是做得一团糟，上传经常半路失败不说，一次还只能上传100个文件，更恶心的是文件夹无法删除，对于我来说是体验真的不好了。&lt;/p&gt;
 &lt;p&gt;既然兼容AWS S3，那就用S3的方法去管理他。
 需要用到&lt;a class=&#34;link&#34; href=&#34;https://s3browser.com/download.aspx&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -119,10 +119,10 @@
         </item>
         <item>
         <title>在兰空图床配置并使用Cloudflare R2 存储桶</title>
-        <link>https://example.com/record/r2_on_lskypro.html</link>
+        <link>https://blog.tama.guru/record/r2_on_lskypro.html</link>
         <pubDate>Mon, 08 Jan 2024 16:00:00 +0800</pubDate>
         
-        <guid>https://example.com/record/r2_on_lskypro.html</guid>
+        <guid>https://blog.tama.guru/record/r2_on_lskypro.html</guid>
         <description>&lt;h3 id=&#34;什么是r2为什么用r2&#34;&gt;什么是R2，为什么用R2
 &lt;/h3&gt;&lt;p&gt;R2是由Cloudflare推出的对象存储，接口兼容AWS S3且有免费套餐，套餐内容如下：&lt;/p&gt;
 &lt;table&gt;
@@ -278,10 +278,10 @@
         </item>
         <item>
         <title>通过Cloudflare零信任(cloudflare zero trush)给内网服务器做穿透并搭建webssh的小记</title>
-        <link>https://example.com/record/cloudflare_webssh_zerotrush.html</link>
+        <link>https://blog.tama.guru/record/cloudflare_webssh_zerotrush.html</link>
         <pubDate>Fri, 18 Aug 2023 14:23:00 +0800</pubDate>
         
-        <guid>https://example.com/record/cloudflare_webssh_zerotrush.html</guid>
+        <guid>https://blog.tama.guru/record/cloudflare_webssh_zerotrush.html</guid>
         <description>&lt;p&gt;通过cloudflare zero trush可以非常快速且方便的搭建内网穿透，而且速度一般情况下可以接受，最重要的是成本很低，你只需要：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;一个cloudflare账号&lt;/li&gt;

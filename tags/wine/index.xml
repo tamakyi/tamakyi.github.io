@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Wine on 狼的公告板 ver.Hugo</title>
-        <link>https://example.com/tags/wine.html</link>
+        <link>https://blog.tama.guru/tags/wine.html</link>
         <description>Recent content in Wine on 狼的公告板 ver.Hugo</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Wed, 07 May 2025 00:26:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/wine/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 07 May 2025 00:26:00 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/tags/wine/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>[好软推荐] 盖世游戏-意外好用的windows游戏模拟器</title>
-        <link>https://example.com/record/gamehub.html</link>
+        <link>https://blog.tama.guru/record/gamehub.html</link>
         <pubDate>Wed, 07 May 2025 00:26:00 +0800</pubDate>
         
-        <guid>https://example.com/record/gamehub.html</guid>
+        <guid>https://blog.tama.guru/record/gamehub.html</guid>
         <description>&lt;h4 id=&#34;前言&#34;&gt;前言
 &lt;/h4&gt;&lt;p&gt;放以前啊，如果要在手机上玩galgame，基本都要等krkr ons Artemis这类能够移植到多平台的引起。再后来出现了exgear、winlator等一系列模拟器，通过wine环境模拟windows运行的必要组件实现galgame的运行，但这类软件总是有一些问题，最常见的就是缺少运行库、没有中文字体等，需要自己手动打补丁，因此也有很多网友制作了“整合包”，比如[post cid=&amp;ldquo;345&amp;rdquo; /]这里提供的7.1汉化整合包，能够满足部分游戏的运行要求。但是wine哪怕不同版本，不同系统也经常有一台手机能跑另一台又跑不了的情况，而这个盖世游戏能够提供不少环境组合，貌似是目前的最优解。&lt;/p&gt;
 &lt;h4 id=&#34;软件介绍&#34;&gt;软件介绍
@@ -158,10 +158,10 @@
         </item>
         <item>
         <title>[好软推荐]Winlator 在安卓上运行exe程序的更好方案</title>
-        <link>https://example.com/software/Winlator.html</link>
+        <link>https://blog.tama.guru/software/Winlator.html</link>
         <pubDate>Sun, 12 Nov 2023 13:51:00 +0800</pubDate>
         
-        <guid>https://example.com/software/Winlator.html</guid>
+        <guid>https://blog.tama.guru/software/Winlator.html</guid>
         <description>&lt;p&gt;20250507注：建议直接用盖世游戏，相对更友好，详见↓
 [post cid=&amp;ldquo;513&amp;rdquo; /]&lt;/p&gt;
 &lt;p&gt;从安卓4.x时代开始我便开始想着能不能在手机上运行一些电脑上的游戏，比如红色警戒还有某些Galgame，但是受制于当时的硬件机能，exgear这类的软件运行起来效果并不好，最直观的体现就是卡顿，或者就是直接跑不起来。网上流传的exgear版本非常多，就算放到现在实际体验下来也经常碰到这样那样的毛病。在体验了几天Winlator之后，感觉相对于exgear更稳定一些，偶尔有闪退（我用的鸿蒙4.0，不知道有没有这方面的关系），但还是挺不错的，出门在外想推点小游戏也不用带笨重的掌机了。&lt;/p&gt;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Lskypro on 狼的公告板 ver.Hugo</title>
-        <link>https://example.com/tags/lskypro.html</link>
+        <link>https://blog.tama.guru/tags/lskypro.html</link>
         <description>Recent content in Lskypro on 狼的公告板 ver.Hugo</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Mon, 08 Jan 2024 16:00:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/lskypro/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 08 Jan 2024 16:00:00 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/tags/lskypro/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>在兰空图床配置并使用Cloudflare R2 存储桶</title>
-        <link>https://example.com/record/r2_on_lskypro.html</link>
+        <link>https://blog.tama.guru/record/r2_on_lskypro.html</link>
         <pubDate>Mon, 08 Jan 2024 16:00:00 +0800</pubDate>
         
-        <guid>https://example.com/record/r2_on_lskypro.html</guid>
+        <guid>https://blog.tama.guru/record/r2_on_lskypro.html</guid>
         <description>&lt;h3 id=&#34;什么是r2为什么用r2&#34;&gt;什么是R2，为什么用R2
 &lt;/h3&gt;&lt;p&gt;R2是由Cloudflare推出的对象存储，接口兼容AWS S3且有免费套餐，套餐内容如下：&lt;/p&gt;
 &lt;table&gt;
@@ -168,10 +168,10 @@
         </item>
         <item>
         <title>使用lskypro作为typecho图床</title>
-        <link>https://example.com/record/lskypro.html</link>
+        <link>https://blog.tama.guru/record/lskypro.html</link>
         <pubDate>Mon, 11 Jul 2022 20:46:00 +0800</pubDate>
         
-        <guid>https://example.com/record/lskypro.html</guid>
+        <guid>https://blog.tama.guru/record/lskypro.html</guid>
         <description>&lt;p&gt;如果你的服务器在国外导致部分内容加载缓慢，同时因为CDN需要准备七七八八的(cloudflare除外，但是体验一样不好)，又信不过国内一众免费图床（稳定性和安全性问题），那么可以试着使用lskypro在国内服务器自建图床。&lt;/p&gt;
 &lt;p&gt;官网地址：&lt;a class=&#34;link&#34; href=&#34;https://docs.lsky.pro/docs/v2/#%E4%BB%8B%E7%BB%8D&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Lsky Pro V 2.x | Lsky Pro&lt;/a&gt;&lt;/p&gt;

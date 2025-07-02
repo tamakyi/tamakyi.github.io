@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Software on 狼的公告板 ver.Hugo</title>
-        <link>https://example.com/categories/software.html</link>
+        <link>https://blog.tama.guru/categories/software.html</link>
         <description>Recent content in Software on 狼的公告板 ver.Hugo</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Wed, 11 Sep 2024 21:51:00 +0800</lastBuildDate><atom:link href="https://example.com/categories/software/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 11 Sep 2024 21:51:00 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/categories/software/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>[软件推荐]Windows下grep命令的替代品</title>
-        <link>https://example.com/software/grep-on-windows.html</link>
+        <link>https://blog.tama.guru/software/grep-on-windows.html</link>
         <pubDate>Wed, 11 Sep 2024 21:51:00 +0800</pubDate>
         
-        <guid>https://example.com/software/grep-on-windows.html</guid>
+        <guid>https://blog.tama.guru/software/grep-on-windows.html</guid>
         <description>&lt;p&gt;grep 命令全名 &lt;strong&gt;global regular expression print&lt;/strong&gt;（全局正则表达式打印），可以搜索一个或多个（输入）文件，以查找与「给定模式」相匹配的行，并将每个匹配行写入标准输出，这在Linux下是一个非常常用的命令。无论是筛选文件还是命令输出，基本上都是一个grep搞定。&lt;/p&gt;
 &lt;p&gt;但是Windows下就没有这么好用的东西（至少自带程序里面没有），只能通过装第三方软件实现，以下推荐几个我在使用的替代品：&lt;/p&gt;
 &lt;h4 id=&#34;gnu-grep&#34;&gt;GNU Grep
@@ -263,10 +263,10 @@
         </item>
         <item>
         <title>[好软推荐]多端指定应用代理软件</title>
-        <link>https://example.com/software/Proxifier.html</link>
+        <link>https://blog.tama.guru/software/Proxifier.html</link>
         <pubDate>Sun, 07 Jul 2024 15:49:04 +0800</pubDate>
         
-        <guid>https://example.com/software/Proxifier.html</guid>
+        <guid>https://blog.tama.guru/software/Proxifier.html</guid>
         <description>&lt;p&gt;最近雀魂日服开了客户端，试着下下来玩了玩，数据能下载，但是登录的时候总是登不上，（我在路由器已经设置了规则转发，咕噜咕噜登录是正常的。）那看样子就是客户端这边搞的鬼，需要手动配置代理才能访问。解决方法也很多，一是直接全局代理，但是这样会影响到其他正常软件的使用；二是找出访问出现问题的链接添加到规则列表里，这样虽然能解决但是每碰到一个应用就要去查它的路由，不是很方便；第三就是找其他第三方应用来配置指定应用代理，也就是本次主要说的方法。
 软件官网：&lt;a class=&#34;link&#34; href=&#34;https://www.proxifier.com/download/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;www.proxifier.com&lt;/a&gt;
@@ -356,10 +356,10 @@ P427L-9Y552-5433E-8DSR3-58Z68（MAC版）
         </item>
         <item>
         <title>[好软推荐]不是很正经的手游加速器：和家亲</title>
-        <link>https://example.com/software/hejiaqin.html</link>
+        <link>https://blog.tama.guru/software/hejiaqin.html</link>
         <pubDate>Sun, 28 Apr 2024 15:26:57 +0800</pubDate>
         
-        <guid>https://example.com/software/hejiaqin.html</guid>
+        <guid>https://blog.tama.guru/software/hejiaqin.html</guid>
         <description>&lt;h3 id=&#34;前言&#34;&gt;前言
 &lt;/h3&gt;&lt;p&gt;发现这个软件的契机也是意外，之前装移动宽带的时候送了个摄像头，型号是中国移动V8A，这玩意必须要用和家亲这个APP绑定，摄像头素质是不错，夜拍清晰，声音洪亮，还有免费的7天事件上传，但是这玩意有一个大问题就是运维人员默认绑定到我所在的小区并共享，我就说吗惹法克？这玩意我扔家里用的难道在家里穿个裤衩子也要被全小区直播？好在关掉很容易，设置里点一下就关掉了，仔细一想很多人都是送了之后直接装上没管，甚至是都不知道这个APP的存在，有点细思极恐&amp;hellip;&lt;/p&gt;
 &lt;p&gt;这APP应该是想打造成和米家那类一样的智能家庭中枢，但是背靠移动，国企作风，无论是审美还是功能都给你塞得满满的，着实臃肿&amp;hellip;
@@ -407,10 +407,10 @@ A：看样子只有手机端加速是免费的，PC有办法绑定但是需要�
         </item>
         <item>
         <title>[插件推荐]github项目屏蔽插件</title>
-        <link>https://example.com/software/PurifyGithubSearchPage.html</link>
+        <link>https://blog.tama.guru/software/PurifyGithubSearchPage.html</link>
         <pubDate>Sat, 17 Feb 2024 21:46:00 +0800</pubDate>
         
-        <guid>https://example.com/software/PurifyGithubSearchPage.html</guid>
+        <guid>https://blog.tama.guru/software/PurifyGithubSearchPage.html</guid>
         <description>&lt;p&gt;有时候在github上搜索，总会搜出一些不是很友好的东西（至于是什么自己随便搜一下就知道了），这些人通常会在readme里面添加一些常用的关键词，然后经常性的更新，让项目看起来“很热门”。但其实那是什么东西懂的都懂。
 &lt;strong&gt;你们不玩zz会死我不管，别污染别人眼睛。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;可以使用以下这个项目&lt;a class=&#34;link&#34; href=&#34;https://github.com/wilson7yz/PurifyGithubSearchPage&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -453,10 +453,10 @@ A：看样子只有手机端加速是免费的，PC有办法绑定但是需要�
         </item>
         <item>
         <title>[软件推荐]搭建简易代理服务器</title>
-        <link>https://example.com/software/3proxy.html</link>
+        <link>https://blog.tama.guru/software/3proxy.html</link>
         <pubDate>Mon, 27 Nov 2023 11:10:00 +0800</pubDate>
         
-        <guid>https://example.com/software/3proxy.html</guid>
+        <guid>https://blog.tama.guru/software/3proxy.html</guid>
         <description>&lt;p&gt;我在远端有一台服务器，因为某些原因需要用这台服务器作为流量出口，当然可以通过搭建某些软件配置成V*N访问，但是那不是我想要的（因为远端的服务器配置太低了）。除了传统的ss类软件，我找到了3proxy这个小东西。&lt;/p&gt;
 &lt;p&gt;软件是支持Windows和linux的，我在本地搭建了个debian虚拟机，根据我的配置安装软件：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -617,10 +617,10 @@ A：看样子只有手机端加速是免费的，PC有办法绑定但是需要�
         </item>
         <item>
         <title>[好软推荐]Winlator 在安卓上运行exe程序的更好方案</title>
-        <link>https://example.com/software/Winlator.html</link>
+        <link>https://blog.tama.guru/software/Winlator.html</link>
         <pubDate>Sun, 12 Nov 2023 13:51:00 +0800</pubDate>
         
-        <guid>https://example.com/software/Winlator.html</guid>
+        <guid>https://blog.tama.guru/software/Winlator.html</guid>
         <description>&lt;p&gt;20250507注：建议直接用盖世游戏，相对更友好，详见↓
 [post cid=&amp;ldquo;513&amp;rdquo; /]&lt;/p&gt;
 &lt;p&gt;从安卓4.x时代开始我便开始想着能不能在手机上运行一些电脑上的游戏，比如红色警戒还有某些Galgame，但是受制于当时的硬件机能，exgear这类的软件运行起来效果并不好，最直观的体现就是卡顿，或者就是直接跑不起来。网上流传的exgear版本非常多，就算放到现在实际体验下来也经常碰到这样那样的毛病。在体验了几天Winlator之后，感觉相对于exgear更稳定一些，偶尔有闪退（我用的鸿蒙4.0，不知道有没有这方面的关系），但还是挺不错的，出门在外想推点小游戏也不用带笨重的掌机了。&lt;/p&gt;

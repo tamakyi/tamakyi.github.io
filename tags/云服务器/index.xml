@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>云服务器 on 狼的公告板 ver.Hugo</title>
-        <link>https://example.com/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8.html</link>
+        <link>https://blog.tama.guru/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8.html</link>
         <description>Recent content in 云服务器 on 狼的公告板 ver.Hugo</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Mon, 01 Jan 2024 13:28:44 +0800</lastBuildDate><atom:link href="https://example.com/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 01 Jan 2024 13:28:44 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>丂渐云性能测试</title>
-        <link>https://example.com/record/idc-rbt.html</link>
+        <link>https://blog.tama.guru/record/idc-rbt.html</link>
         <pubDate>Mon, 01 Jan 2024 13:28:44 +0800</pubDate>
         
-        <guid>https://example.com/record/idc-rbt.html</guid>
+        <guid>https://blog.tama.guru/record/idc-rbt.html</guid>
         <description>&lt;p&gt;站内UP弄的丂渐云，今天看到有台CN2，8C8G一年才370不到，马上下单试了下.&lt;/p&gt;
 &lt;p&gt;测试脚本：
 测试结果：&lt;/p&gt;
@@ -84,10 +84,10 @@
         </item>
         <item>
         <title>Vultr免费服务器体验</title>
-        <link>https://example.com/record/vultr-free-instance.html</link>
+        <link>https://blog.tama.guru/record/vultr-free-instance.html</link>
         <pubDate>Sun, 16 Jul 2023 01:35:27 +0800</pubDate>
         
-        <guid>https://example.com/record/vultr-free-instance.html</guid>
+        <guid>https://blog.tama.guru/record/vultr-free-instance.html</guid>
         <description>&lt;p&gt;今年年初的时候Vultr推出了免费服务器计划，只要满足以下条件就能申请一台服务器：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;绑定了信用卡&lt;/li&gt;

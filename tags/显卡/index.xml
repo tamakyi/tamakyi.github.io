@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>显卡 on 狼的公告板 ver.Hugo</title>
-        <link>https://example.com/tags/%E6%98%BE%E5%8D%A1.html</link>
+        <link>https://blog.tama.guru/tags/%E6%98%BE%E5%8D%A1.html</link>
         <description>Recent content in 显卡 on 狼的公告板 ver.Hugo</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 21 Mar 2024 23:32:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/%E6%98%BE%E5%8D%A1/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 21 Mar 2024 23:32:00 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E6%98%BE%E5%8D%A1/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>简评A380（显卡 不是飞机）</title>
-        <link>https://example.com/default/a380-evaluation.html</link>
+        <link>https://blog.tama.guru/default/a380-evaluation.html</link>
         <pubDate>Thu, 21 Mar 2024 23:32:00 +0800</pubDate>
         
-        <guid>https://example.com/default/a380-evaluation.html</guid>
+        <guid>https://blog.tama.guru/default/a380-evaluation.html</guid>
         <description>&lt;p&gt;NAS换成2U服务器之后机箱空间剩了好多，本来想旧物利用，把&lt;del&gt;从哥布林手里抢回来的失明女骑士&lt;/del&gt;P106接上去玩点AI作图，或者是把百来块整的DG1接上做转码卡。结果根本装不进去&amp;hellip;而且DG1的兼容性问题很奇怪，只有第一次装驱动的时候会出现，后面就再也没出现过了&amp;hellip;
 考虑到现在硬盘的价格和后续有转码的需求，于是去某鱼上搞了一张蓝戟半高A380（或者叫DG2）。&lt;/p&gt;
 &lt;p&gt;[scode type=&amp;ldquo;yellow&amp;rdquo;]请注意，在蓝戟官网并没有半高这个版本。[/scode]

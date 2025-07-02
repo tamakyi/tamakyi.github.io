@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>MIUI on 狼的公告板 ver.Hugo</title>
-        <link>https://example.com/tags/miui.html</link>
+        <link>https://blog.tama.guru/tags/miui.html</link>
         <description>Recent content in MIUI on 狼的公告板 ver.Hugo</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Wed, 05 Oct 2022 17:23:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/miui/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 05 Oct 2022 17:23:00 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/tags/miui/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>MIUI刷机那些破事（持续更新）</title>
-        <link>https://example.com/record/miuiflashing.html</link>
+        <link>https://blog.tama.guru/record/miuiflashing.html</link>
         <pubDate>Wed, 05 Oct 2022 17:23:00 +0800</pubDate>
         
-        <guid>https://example.com/record/miuiflashing.html</guid>
+        <guid>https://blog.tama.guru/record/miuiflashing.html</guid>
         <description>&lt;p&gt;[scode type=&amp;ldquo;red&amp;rdquo;]&amp;ldquo;this MIUI version can’t be installed on this device&amp;rdquo;[/scode]
 这个报错是MIUI12+版本在跨区刷包的时候出现的，电脑上使用MiFlasher进行跨区线刷时，&lt;code&gt;务必保证选择了“全部删除/保留用户数据”，而非“全部删除并lock”&lt;/code&gt;&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2022/10/15/634a5ac38399f.png&#34;
 	
@@ -42,10 +42,10 @@
         </item>
         <item>
         <title>关于MIUI升级到开发版的方法</title>
-        <link>https://example.com/record/miuidev.html</link>
+        <link>https://blog.tama.guru/record/miuidev.html</link>
         <pubDate>Tue, 04 Oct 2022 19:47:00 +0800</pubDate>
         
-        <guid>https://example.com/record/miuidev.html</guid>
+        <guid>https://blog.tama.guru/record/miuidev.html</guid>
         <description>&lt;p&gt;不知道从哪个版本的miui开始，开发版的miui便不能直接从稳定版通过简单的卡刷进行转换，需要在官方论坛申请“公测”或者“内测”权限之后才能进行安装，而申请资格需要在官方论坛达到4级以上的等级并且要完成所谓的“答题”，如果等级不够或者“答题”分数不及格均无法获得权限，就算通过其他方法搞到了卡刷包，在刷写的时候也会被提示“该账号非内测权限”然后就停住了。
 在这种背景之下，出现了几种方法来强行升级到开发版：
 1、买账号：去某些平台上购买有升级权限的账号或者是找人代答题，这种方法我没试过，不知道是否能达到店方生成的“后续稳定升级”，而且，本来是花费一些心思能申请到的账号需要花钱去购买，也算是助长了这种风气吧，个人非常不推荐。

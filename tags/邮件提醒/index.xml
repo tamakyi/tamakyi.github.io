@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>邮件提醒 on 狼的公告板 ver.Hugo</title>
-        <link>https://example.com/tags/%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92.html</link>
+        <link>https://blog.tama.guru/tags/%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92.html</link>
         <description>Recent content in 邮件提醒 on 狼的公告板 ver.Hugo</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Tue, 26 Dec 2023 22:09:04 +0800</lastBuildDate><atom:link href="https://example.com/tags/%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 26 Dec 2023 22:09:04 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>给SSH添加邮件登录提醒</title>
-        <link>https://example.com/record/ssh_login_mail.html</link>
+        <link>https://blog.tama.guru/record/ssh_login_mail.html</link>
         <pubDate>Tue, 26 Dec 2023 22:09:04 +0800</pubDate>
         
-        <guid>https://example.com/record/ssh_login_mail.html</guid>
+        <guid>https://blog.tama.guru/record/ssh_login_mail.html</guid>
         <description>&lt;p&gt;影响SSH登录安全性的因素不外乎：禁用密码登录、密钥强度、修改默认端口、仅指定IP登录，但是如果每次登录的时候能够及时的发一封邮件提醒，可以更好的管控服务器登录状态，也能更安心些。&lt;/p&gt;
 &lt;p&gt;需要用到&lt;code&gt;msmtp&lt;/code&gt;和&lt;code&gt;mutt&lt;/code&gt;两个软件。&lt;/p&gt;
 &lt;h4 id=&#34;安装所需软件&#34;&gt;安装所需软件：

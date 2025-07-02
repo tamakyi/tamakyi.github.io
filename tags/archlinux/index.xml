@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Archlinux on 狼的公告板 ver.Hugo</title>
-        <link>https://example.com/tags/archlinux.html</link>
+        <link>https://blog.tama.guru/tags/archlinux.html</link>
         <description>Recent content in Archlinux on 狼的公告板 ver.Hugo</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Mon, 05 Feb 2024 23:58:41 +0800</lastBuildDate><atom:link href="https://example.com/tags/archlinux/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 05 Feb 2024 23:58:41 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/tags/archlinux/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>在archlinux正确的使用xrdp以及碰到的问题</title>
-        <link>https://example.com/record/archlinux_xrdp.html</link>
+        <link>https://blog.tama.guru/record/archlinux_xrdp.html</link>
         <pubDate>Mon, 05 Feb 2024 23:58:41 +0800</pubDate>
         
-        <guid>https://example.com/record/archlinux_xrdp.html</guid>
+        <guid>https://blog.tama.guru/record/archlinux_xrdp.html</guid>
         <description>&lt;p&gt;为什么不用vnc？一是需要另外装个软件，不方便，而且配置麻烦，总是能碰到七七八八的问题，而用xrdp基本上用巨硬自带的软件就能实现远程连接。&lt;/p&gt;
 &lt;h4 id=&#34;安装并配置xrdp&#34;&gt;安装并配置xrdp
 &lt;/h4&gt;&lt;p&gt;&lt;strong&gt;注：我是kde桌面环境&lt;/strong&gt;&lt;/p&gt;
@@ -174,10 +174,10 @@ i3w / dwm:&lt;/p&gt;
         </item>
         <item>
         <title>Archlinux下安装并配置lnmp环境</title>
-        <link>https://example.com/record/archlinux_lnmp.html</link>
+        <link>https://blog.tama.guru/record/archlinux_lnmp.html</link>
         <pubDate>Thu, 30 Nov 2023 11:07:00 +0800</pubDate>
         
-        <guid>https://example.com/record/archlinux_lnmp.html</guid>
+        <guid>https://blog.tama.guru/record/archlinux_lnmp.html</guid>
         <description>&lt;p&gt;最近把编译用的主机换个发行版，最开始用的是debian，结果现在桌面环境进不去了（而且是一引导完成就所有输入、输入都没反应，但是ssh能登陆，很奇怪），懒得去查原因就选择换个环境。本来用的almalinux，无奈真的不喜欢gnome，自己装了kde之后ibus无论怎样都打不出中文，最后还是上了arch。
 无论是宝塔还是lnmp.org都没有对arch系进行适配，网上也有很多一步步排错安装的教程，但是看着一步步的报错再去核查原因着实难受，最后还是选择自己装最基础的nginx+php+mysql。&lt;/p&gt;
 &lt;h4 id=&#34;安装nginx&#34;&gt;安装nginx
@@ -746,10 +746,10 @@ i3w / dwm:&lt;/p&gt;
         </item>
         <item>
         <title>【转载】一个简单的archlinux安装教程（亲测能用）</title>
-        <link>https://example.com/record/archlinux_install_guide.html</link>
+        <link>https://blog.tama.guru/record/archlinux_install_guide.html</link>
         <pubDate>Wed, 16 Aug 2023 22:35:00 +0800</pubDate>
         
-        <guid>https://example.com/record/archlinux_install_guide.html</guid>
+        <guid>https://blog.tama.guru/record/archlinux_install_guide.html</guid>
         <description>&lt;p&gt;来自：&lt;a class=&#34;link&#34; href=&#34;https://www.mivm.cn/archlinux-installation-guide-simple&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://www.mivm.cn/archlinux-installation-guide-simple&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
@@ -1248,10 +1248,10 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
         </item>
         <item>
         <title>捣鼓SteamDeck的那些事</title>
-        <link>https://example.com/record/steamdeck.html</link>
+        <link>https://blog.tama.guru/record/steamdeck.html</link>
         <pubDate>Thu, 02 Feb 2023 09:47:00 +0800</pubDate>
         
-        <guid>https://example.com/record/steamdeck.html</guid>
+        <guid>https://blog.tama.guru/record/steamdeck.html</guid>
         <description>&lt;p&gt;I have a d○ck.
 不得不说，这东西挺有意思的，amd定制的zen2架构CPU及性能相当于1050的显卡能够应付大部分场景使用以及轻度游戏，还能轻松安装SteamOS+WIN10/11组合，玩一些原系统上因为各种原因玩不了的游戏，如果空间不够，还能自己买一个2230的M2换上去。但是在使用过程中这玩意其实坑挺多的，想要快乐玩耍掌握一些linux基础知识以及“合适的网络”是必不可少的。下面是我在使用过程中碰到的一些问题以及解决办法。
 ####·首次开机联网后一直提示正在安装，然后卡在还剩1秒或者弹窗报错·####

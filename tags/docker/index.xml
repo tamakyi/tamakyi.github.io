@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Docker on 狼的公告板 ver.Hugo</title>
-        <link>https://example.com/tags/docker.html</link>
+        <link>https://blog.tama.guru/tags/docker.html</link>
         <description>Recent content in Docker on 狼的公告板 ver.Hugo</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Fri, 26 Apr 2024 15:53:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/docker/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 26 Apr 2024 15:53:00 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/tags/docker/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>在docker里运行火狐浏览器</title>
-        <link>https://example.com/record/firefox-on-docker.html</link>
+        <link>https://blog.tama.guru/record/firefox-on-docker.html</link>
         <pubDate>Fri, 26 Apr 2024 15:53:00 +0800</pubDate>
         
-        <guid>https://example.com/record/firefox-on-docker.html</guid>
+        <guid>https://blog.tama.guru/record/firefox-on-docker.html</guid>
         <description>&lt;p&gt;有时候我会需要在远程计算机上使用浏览器进行一些操作，但是存在一些问题。一是远程计算机本身空间容量/配置较低，预装的是core系统，因为使用个浏览器去安装整个桌面环境有点浪费了，也不利于系统稳定；二是软件可能会破坏原有的依赖，轻则软件报错，重则无法启动，这个就很难绷了。
 好在docker能实现把远程的浏览器套到本地浏览器运行，看样子是一个webvnc，但是只能打开浏览器。项目是&lt;code&gt;https://github.com/jlesage/firefox&lt;/code&gt;，方法也很简单，直接执行：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;docker run -d \
@@ -86,10 +86,10 @@ firewall-cmd --reload
         </item>
         <item>
         <title>在debian安装配置redroid并安装shamrock的记录</title>
-        <link>https://example.com/record/redroid.html</link>
+        <link>https://blog.tama.guru/record/redroid.html</link>
         <pubDate>Wed, 24 Jan 2024 12:01:00 +0800</pubDate>
         
-        <guid>https://example.com/record/redroid.html</guid>
+        <guid>https://blog.tama.guru/record/redroid.html</guid>
         <description>&lt;h3 id=&#34;前言&#34;&gt;前言
 &lt;/h3&gt;&lt;p&gt;由于某讯对第三方QQ机器人的大力追杀，原有的机器人框架（miraiqq和go-cqhttp）等基本上都无法使用了，登录会直接代码45封号。在此之后发展出shamrock等项目，此类项目的特点是需要虚拟机或实机进行操作，意味着至少需要一个桌面环境或者一台闲置手机，开销相比之前1c512m都能跑的时候高太多。在网上冲浪的时候发现了可以将安卓的Dalvik/ART移植到Linux桌面环境，借此运行安卓APK程序，因此需要用到redroid这个软件。&lt;/p&gt;
 &lt;p&gt;redroid即Remote anDroid，是一个架设云手机的方案，可以透过docker在linux系统上跑安卓系统容器。相比于虚拟机方案，其优势在于：&lt;/p&gt;
@@ -723,10 +723,10 @@ firewall-cmd --reload
         </item>
         <item>
         <title>Debian12下通过docker安装homeassistant-hacs</title>
-        <link>https://example.com/record/homeassistant-hacs-debian12.html</link>
+        <link>https://blog.tama.guru/record/homeassistant-hacs-debian12.html</link>
         <pubDate>Fri, 25 Aug 2023 11:58:39 +0800</pubDate>
         
-        <guid>https://example.com/record/homeassistant-hacs-debian12.html</guid>
+        <guid>https://blog.tama.guru/record/homeassistant-hacs-debian12.html</guid>
         <description>&lt;p&gt;HACS即&lt;code&gt;Home Assistant Community Store&lt;/code&gt;，整合了很多homeassistant的第三方集成，比如说米家的相关设备，如果使用官方自带的集成，一般只能识别出几个传感器，而且无法控制，如果想要把米家的设备完全接入就需要安装HACS下面的Xiaomi Miot Auto这个集成，安装之后效果如图所示，基本上能实现HASS管理全部米家设备的想法。
 &lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/08/25/64e820b842fb5.png&#34;
 	

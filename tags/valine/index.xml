@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Valine on 狼的公告板 ver.Hugo</title>
-        <link>https://example.com/tags/valine.html</link>
+        <link>https://blog.tama.guru/tags/valine.html</link>
         <description>Recent content in Valine on 狼的公告板 ver.Hugo</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Sun, 10 Mar 2024 01:24:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/valine/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 10 Mar 2024 01:24:00 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/tags/valine/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>在静态网站上使用waline评论系统</title>
-        <link>https://example.com/record/waline-on-html.html</link>
+        <link>https://blog.tama.guru/record/waline-on-html.html</link>
         <pubDate>Sun, 10 Mar 2024 01:24:00 +0800</pubDate>
         
-        <guid>https://example.com/record/waline-on-html.html</guid>
+        <guid>https://blog.tama.guru/record/waline-on-html.html</guid>
         <description>&lt;h4 id=&#34;waline是什么&#34;&gt;Waline是什么
 &lt;/h4&gt;&lt;blockquote&gt;
 &lt;p&gt;一款从 Valine 衍生的带后端评论系统。可以将 Waline 等价成 With backend Valine.&lt;/p&gt;&lt;/blockquote&gt;

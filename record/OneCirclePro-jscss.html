@@ -4,15 +4,17 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="体验了几天这个主题，发现资源加载是真的离谱，动不动10s+：\n于是就想着把部分静态资源扔国内来了。\n直接把包内themeCore\\themes\\default\\statics打包上传到国内服务器搭建的网站目录下，最好和其他资源间隔开来，比如https://hostname/cdn/OneCircle/，然后修改themeCore/themes/default/apps/main/content.phtml和themeCore/themes/default/apps/cpanel/content_nosidebar.phtml把{%config theme_url%}替换成https://hostname/cdn/OneCircle/，再刷新即可。\n">
 <title>OneCirclePro插件和handsome静态资源切换到国内服务器</title>
 
-<link rel='canonical' href='https://example.com/record/OneCirclePro-jscss.html'>
+<link rel='canonical' href='https://blog.tama.guru/record/OneCirclePro-jscss.html'>
 
 <link rel="stylesheet" href="/scss/style.min.f8d3e3667c9c0bc7a054407fadeb01e15a691c2db55c8c66227df16b0d32131e.css"><meta property='og:title' content="OneCirclePro插件和handsome静态资源切换到国内服务器">
 <meta property='og:description' content="体验了几天这个主题，发现资源加载是真的离谱，动不动10s+：\n于是就想着把部分静态资源扔国内来了。\n直接把包内themeCore\\themes\\default\\statics打包上传到国内服务器搭建的网站目录下，最好和其他资源间隔开来，比如https://hostname/cdn/OneCircle/，然后修改themeCore/themes/default/apps/main/content.phtml和themeCore/themes/default/apps/cpanel/content_nosidebar.phtml把{%config theme_url%}替换成https://hostname/cdn/OneCircle/，再刷新即可。\n">
-<meta property='og:url' content='https://example.com/record/OneCirclePro-jscss.html'>
+<meta property='og:url' content='https://blog.tama.guru/record/OneCirclePro-jscss.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='OneCirclePro' /><meta property='article:tag' content='静态资源' /><meta property='article:published_time' content='2022-07-11T22:52:00&#43;08:00'/><meta property='article:modified_time' content='2022-07-11T22:52:00&#43;08:00'/>
 <meta name="twitter:title" content="OneCirclePro插件和handsome静态资源切换到国内服务器">
 <meta name="twitter:description" content="体验了几天这个主题，发现资源加载是真的离谱，动不动10s+：\n于是就想着把部分静态资源扔国内来了。\n直接把包内themeCore\\themes\\default\\statics打包上传到国内服务器搭建的网站目录下，最好和其他资源间隔开来，比如https://hostname/cdn/OneCircle/，然后修改themeCore/themes/default/apps/main/content.phtml和themeCore/themes/default/apps/cpanel/content_nosidebar.phtml把{%config theme_url%}替换成https://hostname/cdn/OneCircle/，再刷新即可。\n">
+    <link rel="shortcut icon" href="/static/favicon.ico" />
+
     </head>
     <body class="
     article-page
@@ -231,9 +233,9 @@
 
                             <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
                                 
-                                    <option value="https://example.com/en/" >English</option>
+                                    <option value="https://blog.tama.guru/en/" >English</option>
                                 
-                                    <option value="https://example.com/" selected>中文</option>
+                                    <option value="https://blog.tama.guru/" selected>中文</option>
                                 
                             </select>
                         </li>

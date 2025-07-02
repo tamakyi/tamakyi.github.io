@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Mysql on 狼的公告板 ver.Hugo</title>
-        <link>https://example.com/tags/mysql.html</link>
+        <link>https://blog.tama.guru/tags/mysql.html</link>
         <description>Recent content in Mysql on 狼的公告板 ver.Hugo</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 30 Nov 2023 11:07:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/mysql/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 30 Nov 2023 11:07:00 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/tags/mysql/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Archlinux下安装并配置lnmp环境</title>
-        <link>https://example.com/record/archlinux_lnmp.html</link>
+        <link>https://blog.tama.guru/record/archlinux_lnmp.html</link>
         <pubDate>Thu, 30 Nov 2023 11:07:00 +0800</pubDate>
         
-        <guid>https://example.com/record/archlinux_lnmp.html</guid>
+        <guid>https://blog.tama.guru/record/archlinux_lnmp.html</guid>
         <description>&lt;p&gt;最近把编译用的主机换个发行版，最开始用的是debian，结果现在桌面环境进不去了（而且是一引导完成就所有输入、输入都没反应，但是ssh能登陆，很奇怪），懒得去查原因就选择换个环境。本来用的almalinux，无奈真的不喜欢gnome，自己装了kde之后ibus无论怎样都打不出中文，最后还是上了arch。
 无论是宝塔还是lnmp.org都没有对arch系进行适配，网上也有很多一步步排错安装的教程，但是看着一步步的报错再去核查原因着实难受，最后还是选择自己装最基础的nginx+php+mysql。&lt;/p&gt;
 &lt;h4 id=&#34;安装nginx&#34;&gt;安装nginx
@@ -581,10 +581,10 @@
         </item>
         <item>
         <title>阿里云服务器的买后优化记录</title>
-        <link>https://example.com/record/aliyun_server.html</link>
+        <link>https://blog.tama.guru/record/aliyun_server.html</link>
         <pubDate>Sun, 16 Oct 2022 00:15:00 +0800</pubDate>
         
-        <guid>https://example.com/record/aliyun_server.html</guid>
+        <guid>https://blog.tama.guru/record/aliyun_server.html</guid>
         <description>&lt;p&gt;腾讯云香港服务器蹲了半年都蹲不出台正常点的，中低端经常售罄，至少都要2C2T+4G起步，一个月就要六七十，这谁受得了？？？月初打开阿里云一看，哟嚯，2C（其实是1C2T）+2G一个月才30，试用下访问速度基本上接近国内服务器，这我直呼受不了，赶紧把之前那破腾讯云上的数据迁移咯。使用体验基本复合我的预期，但是2G跑个debian在加几个网站基本就没用想别的了，内存这块有优化的必要。&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;[scode type=&amp;ldquo;lblue&amp;rdquo;]No.1 mysql[/scode]&lt;/p&gt;

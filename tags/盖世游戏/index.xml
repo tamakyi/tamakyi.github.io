@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>盖世游戏 on 狼的公告板 ver.Hugo</title>
-        <link>https://example.com/tags/%E7%9B%96%E4%B8%96%E6%B8%B8%E6%88%8F.html</link>
+        <link>https://blog.tama.guru/tags/%E7%9B%96%E4%B8%96%E6%B8%B8%E6%88%8F.html</link>
         <description>Recent content in 盖世游戏 on 狼的公告板 ver.Hugo</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Wed, 07 May 2025 00:26:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/%E7%9B%96%E4%B8%96%E6%B8%B8%E6%88%8F/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 07 May 2025 00:26:00 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E7%9B%96%E4%B8%96%E6%B8%B8%E6%88%8F/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>[好软推荐] 盖世游戏-意外好用的windows游戏模拟器</title>
-        <link>https://example.com/record/gamehub.html</link>
+        <link>https://blog.tama.guru/record/gamehub.html</link>
         <pubDate>Wed, 07 May 2025 00:26:00 +0800</pubDate>
         
-        <guid>https://example.com/record/gamehub.html</guid>
+        <guid>https://blog.tama.guru/record/gamehub.html</guid>
         <description>&lt;h4 id=&#34;前言&#34;&gt;前言
 &lt;/h4&gt;&lt;p&gt;放以前啊，如果要在手机上玩galgame，基本都要等krkr ons Artemis这类能够移植到多平台的引起。再后来出现了exgear、winlator等一系列模拟器，通过wine环境模拟windows运行的必要组件实现galgame的运行，但这类软件总是有一些问题，最常见的就是缺少运行库、没有中文字体等，需要自己手动打补丁，因此也有很多网友制作了“整合包”，比如[post cid=&amp;ldquo;345&amp;rdquo; /]这里提供的7.1汉化整合包，能够满足部分游戏的运行要求。但是wine哪怕不同版本，不同系统也经常有一台手机能跑另一台又跑不了的情况，而这个盖世游戏能够提供不少环境组合，貌似是目前的最优解。&lt;/p&gt;
 &lt;h4 id=&#34;软件介绍&#34;&gt;软件介绍

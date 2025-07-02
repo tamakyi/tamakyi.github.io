@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Windows on 狼的公告板 ver.Hugo</title>
-        <link>https://example.com/tags/windows.html</link>
+        <link>https://blog.tama.guru/tags/windows.html</link>
         <description>Recent content in Windows on 狼的公告板 ver.Hugo</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Wed, 11 Sep 2024 21:51:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/windows/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 11 Sep 2024 21:51:00 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/tags/windows/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>[软件推荐]Windows下grep命令的替代品</title>
-        <link>https://example.com/software/grep-on-windows.html</link>
+        <link>https://blog.tama.guru/software/grep-on-windows.html</link>
         <pubDate>Wed, 11 Sep 2024 21:51:00 +0800</pubDate>
         
-        <guid>https://example.com/software/grep-on-windows.html</guid>
+        <guid>https://blog.tama.guru/software/grep-on-windows.html</guid>
         <description>&lt;p&gt;grep 命令全名 &lt;strong&gt;global regular expression print&lt;/strong&gt;（全局正则表达式打印），可以搜索一个或多个（输入）文件，以查找与「给定模式」相匹配的行，并将每个匹配行写入标准输出，这在Linux下是一个非常常用的命令。无论是筛选文件还是命令输出，基本上都是一个grep搞定。&lt;/p&gt;
 &lt;p&gt;但是Windows下就没有这么好用的东西（至少自带程序里面没有），只能通过装第三方软件实现，以下推荐几个我在使用的替代品：&lt;/p&gt;
 &lt;h4 id=&#34;gnu-grep&#34;&gt;GNU Grep
@@ -263,10 +263,10 @@
         </item>
         <item>
         <title>记录windows各类错误及尝试进行解决的流程</title>
-        <link>https://example.com/record/windows-error-fix.html</link>
+        <link>https://blog.tama.guru/record/windows-error-fix.html</link>
         <pubDate>Wed, 31 Jan 2024 09:51:00 +0800</pubDate>
         
-        <guid>https://example.com/record/windows-error-fix.html</guid>
+        <guid>https://blog.tama.guru/record/windows-error-fix.html</guid>
         <description>&lt;p&gt;在基本上尝试了各类Windows系统我得出一个结论，那就是没有完美的Windows系统，除了Win7、Win10 LTSC、Win Server 2022这几个屁事比较少之外，其他总能碰到奇奇怪怪的事情，在此做个文章记录发生过的问题以及记录一些尝试解决处理过程中碰到的事情，免得后面又忘了又翻一遍材料。&lt;/p&gt;
 &lt;h3 id=&#34;系统更新类&#34;&gt;系统更新类
 &lt;/h3&gt;&lt;h4 id=&#34;0x80070643---0x8024200b&#34;&gt;0x80070643 - 0x8024200B

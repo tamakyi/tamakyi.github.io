@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Zero Trush on 狼的公告板 ver.Hugo</title>
-        <link>https://example.com/tags/zero-trush.html</link>
+        <link>https://blog.tama.guru/tags/zero-trush.html</link>
         <description>Recent content in Zero Trush on 狼的公告板 ver.Hugo</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Fri, 18 Aug 2023 14:23:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/zero-trush/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 18 Aug 2023 14:23:00 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/tags/zero-trush/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>通过Cloudflare零信任(cloudflare zero trush)给内网服务器做穿透并搭建webssh的小记</title>
-        <link>https://example.com/record/cloudflare_webssh_zerotrush.html</link>
+        <link>https://blog.tama.guru/record/cloudflare_webssh_zerotrush.html</link>
         <pubDate>Fri, 18 Aug 2023 14:23:00 +0800</pubDate>
         
-        <guid>https://example.com/record/cloudflare_webssh_zerotrush.html</guid>
+        <guid>https://blog.tama.guru/record/cloudflare_webssh_zerotrush.html</guid>
         <description>&lt;p&gt;通过cloudflare zero trush可以非常快速且方便的搭建内网穿透，而且速度一般情况下可以接受，最重要的是成本很低，你只需要：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;一个cloudflare账号&lt;/li&gt;

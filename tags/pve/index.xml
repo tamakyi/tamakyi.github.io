@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>PVE on 狼的公告板 ver.Hugo</title>
-        <link>https://example.com/tags/pve.html</link>
+        <link>https://blog.tama.guru/tags/pve.html</link>
         <description>Recent content in PVE on 狼的公告板 ver.Hugo</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Sun, 12 Mar 2023 01:43:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/pve/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 12 Mar 2023 01:43:00 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/tags/pve/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>PVE安装后续优化</title>
-        <link>https://example.com/record/pve_install.html</link>
+        <link>https://blog.tama.guru/record/pve_install.html</link>
         <pubDate>Sun, 12 Mar 2023 01:43:00 +0800</pubDate>
         
-        <guid>https://example.com/record/pve_install.html</guid>
+        <guid>https://blog.tama.guru/record/pve_install.html</guid>
         <description>&lt;p&gt;安装PVE并不复杂，相关操作网上一抓一大把此处不再赘述。
 此处主要记录一些安装后碰上的问题以及对应的解决方案。
 #####&lt;center&gt;开启硬件直通&lt;/center&gt;#####

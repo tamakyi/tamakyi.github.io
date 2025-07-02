@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Headscale on 狼的公告板 ver.Hugo</title>
-        <link>https://example.com/tags/headscale.html</link>
+        <link>https://blog.tama.guru/tags/headscale.html</link>
         <description>Recent content in Headscale on 狼的公告板 ver.Hugo</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Sep 2023 00:36:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/headscale/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 14 Sep 2023 00:36:00 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/tags/headscale/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>在debian下安装headscale的记录</title>
-        <link>https://example.com/record/headscale.html</link>
+        <link>https://blog.tama.guru/record/headscale.html</link>
         <pubDate>Thu, 14 Sep 2023 00:36:00 +0800</pubDate>
         
-        <guid>https://example.com/record/headscale.html</guid>
+        <guid>https://blog.tama.guru/record/headscale.html</guid>
         <description>&lt;h5 id=&#34;什么是headscale&#34;&gt;什么是headscale
 &lt;/h5&gt;&lt;p&gt;&lt;code&gt;An open source, self-hosted implementation of the Tailscale control server&lt;/code&gt;
 要说headscale肯定就要先说tailscale，这是一项VPN服务，可让您拥有的设备和应用程序在世界任何地方安全，轻松地访问。它支持使用开源 WireGuard 协议进行加密的点对点连接，这意味着只有专用网络上的设备才能相互通信。

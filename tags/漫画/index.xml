@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>漫画 on 狼的公告板 ver.Hugo</title>
-        <link>https://example.com/tags/%E6%BC%AB%E7%94%BB.html</link>
+        <link>https://blog.tama.guru/tags/%E6%BC%AB%E7%94%BB.html</link>
         <description>Recent content in 漫画 on 狼的公告板 ver.Hugo</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Sat, 09 Jul 2022 13:40:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/%E6%BC%AB%E7%94%BB/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 09 Jul 2022 13:40:00 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E6%BC%AB%E7%94%BB/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>唯一指定漫画阅读软件tachiyomi</title>
-        <link>https://example.com/record/tachiyomi.html</link>
+        <link>https://blog.tama.guru/record/tachiyomi.html</link>
         <pubDate>Sat, 09 Jul 2022 13:40:00 +0800</pubDate>
         
-        <guid>https://example.com/record/tachiyomi.html</guid>
+        <guid>https://blog.tama.guru/record/tachiyomi.html</guid>
         <description>&lt;p&gt;项目地址：[tachiyomi](&lt;a class=&#34;link&#34; href=&#34;https://github.com/tachiyomiorg/tachiyomi&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;tachiyomiorg/tachiyomi: Free and open source manga reader for Android. (github.com)&lt;/a&gt;)&lt;/p&gt;
 &lt;p&gt;介绍：tachiyomi是一个开源的支持安卓6.0+的漫画阅读器，支持在线阅读漫画源内容，插件更新速度快，界面美观，更新中文/英文/日文插件（包括NSFW）&lt;/p&gt;
