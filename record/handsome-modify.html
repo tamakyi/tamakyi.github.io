@@ -14,7 +14,24 @@
 <meta name="twitter:title" content="handsome美化记录">
 <meta name="twitter:description" content="[scode type=&quot;yellow&quot;]此处备份handsome主题一些自定义的教程：[/scode]\n彩色标签云：在开发者设置-自定义 JavaScript填写： 1 2 3 4 5 6 let tags = document.querySelectorAll(&#34;#tag_cloud-2 a&#34;); let colorArr = [&#34;#428BCA&#34;, &#34;#AEDCAE&#34;, &#34;#ECA9A7&#34;, &#34;#DA99FF&#34;, &#34;#FFB380&#34;, &#34;#D9B999&#34;]; tags.forEach(tag =&gt; { tagsColor = colorArr[Math.floor(Math.random() * colorArr.length)]; tag.style.backgroundColor = tagsColor; }); 如果使用PJAX需要同步填写到PJAX回调函数。\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
+<style>
+    :root {
+     
+    --sys-font-family: "HarmonyOS_Sans_SC_Medium", Georgia, -apple-system, 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
+    --code-font-family: "JetBrainsMono Regular", Menlo, Monaco, Consolas, "Courier New";
+    --article-font-family: "HarmonyOS_Sans_SC_Medium", var(--base-font-family);
+  }
+</style>
 
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://gcore.jsdelivr.net/gh/tamakyi/cdn/statics/fonts/font.css";
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+         document.head.appendChild(customFont);
+}());
+</script>
     </head>
     <body class="
     article-page

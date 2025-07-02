@@ -14,7 +14,24 @@
 <meta name="twitter:title" content="在docker里运行火狐浏览器">
 <meta name="twitter:description" content="有时候我会需要在远程计算机上使用浏览器进行一些操作，但是存在一些问题。一是远程计算机本身空间容量/配置较低，预装的是core系统，因为使用个浏览器去安装整个桌面环境有点浪费了，也不利于系统稳定；二是软件可能会破坏原有的依赖，轻则软件报错，重则无法启动，这个就很难绷了。 好在docker能实现把远程的浏览器套到本地浏览器运行，看样子是一个webvnc，但是只能打开浏览器。项目是https://github.com/jlesage/firefox，方法也很简单，直接执行：\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
+<style>
+    :root {
+     
+    --sys-font-family: "HarmonyOS_Sans_SC_Medium", Georgia, -apple-system, 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
+    --code-font-family: "JetBrainsMono Regular", Menlo, Monaco, Consolas, "Courier New";
+    --article-font-family: "HarmonyOS_Sans_SC_Medium", var(--base-font-family);
+  }
+</style>
 
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://gcore.jsdelivr.net/gh/tamakyi/cdn/statics/fonts/font.css";
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+         document.head.appendChild(customFont);
+}());
+</script>
     </head>
     <body class="
     article-page

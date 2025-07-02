@@ -14,7 +14,24 @@
 <meta name="twitter:title" content="更换了tama.host的模板，现在更像个导航页了">
 <meta name="twitter:description" content="导航站的地址不变，依旧是https://tama.host/，只不过原来的版本就只有一个搜索框（其实右侧可以打开导航列表，但是不明显），而且当时脑子一抽用了黄黑做网站logo，我在外面打开自己的网站都脸红！ 而新的导航页基于webstack-go项目，界面简洁干净，且可以选择后台添加内容（纯静态版本就需要手动修改html，上班时间我是打开一个小小的窗口一点点的改，里面天量的div一不小心就错删）。 现在我所做的修改包括：\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
+<style>
+    :root {
+     
+    --sys-font-family: "HarmonyOS_Sans_SC_Medium", Georgia, -apple-system, 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
+    --code-font-family: "JetBrainsMono Regular", Menlo, Monaco, Consolas, "Courier New";
+    --article-font-family: "HarmonyOS_Sans_SC_Medium", var(--base-font-family);
+  }
+</style>
 
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://gcore.jsdelivr.net/gh/tamakyi/cdn/statics/fonts/font.css";
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+         document.head.appendChild(customFont);
+}());
+</script>
     </head>
     <body class="
     article-page

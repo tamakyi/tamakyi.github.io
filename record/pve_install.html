@@ -14,7 +14,24 @@
 <meta name="twitter:title" content="PVE安装后续优化">
 <meta name="twitter:description" content="安装PVE并不复杂，相关操作网上一抓一大把此处不再赘述。 此处主要记录一些安装后碰上的问题以及对应的解决方案。 #####开启硬件直通##### 1.首先确保CPU带有虚拟化能力。对于AMD平台，在BIOS的高级&gt;CPU设置查看是否有能开启SVM Mode。确认能打开后，到高级&gt;AMD CBS&gt;NBIO Common Options&gt;NB Configuration下把IOMMU打开。 2.进入系统控制台，修改grub启动时添加硬件直通功能。 打开/etc/default/grub 将\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
+<style>
+    :root {
+     
+    --sys-font-family: "HarmonyOS_Sans_SC_Medium", Georgia, -apple-system, 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
+    --code-font-family: "JetBrainsMono Regular", Menlo, Monaco, Consolas, "Courier New";
+    --article-font-family: "HarmonyOS_Sans_SC_Medium", var(--base-font-family);
+  }
+</style>
 
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://gcore.jsdelivr.net/gh/tamakyi/cdn/statics/fonts/font.css";
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+         document.head.appendChild(customFont);
+}());
+</script>
     </head>
     <body class="
     article-page

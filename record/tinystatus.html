@@ -14,7 +14,24 @@
 <meta name="twitter:title" content="使用tinystatus构建一个轻量化的状态监测站">
 <meta name="twitter:description" content="本站之前基本上都是使用site-status+UptimeRobot这样的监控方案，算是常用且成熟的一种方式了，界面也美观，但问题是，它太大了，几个js+css轻松干到500k。放在本地占用带宽是个问题，放在oss上如果被无聊的人拿来做坏事也不是很好玩，于是还是要从源头解决，换用一个更小的方案，即目前的tinystatus方案。\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
+<style>
+    :root {
+     
+    --sys-font-family: "HarmonyOS_Sans_SC_Medium", Georgia, -apple-system, 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
+    --code-font-family: "JetBrainsMono Regular", Menlo, Monaco, Consolas, "Courier New";
+    --article-font-family: "HarmonyOS_Sans_SC_Medium", var(--base-font-family);
+  }
+</style>
 
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://gcore.jsdelivr.net/gh/tamakyi/cdn/statics/fonts/font.css";
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+         document.head.appendChild(customFont);
+}());
+</script>
     </head>
     <body class="
     article-page

@@ -14,7 +14,24 @@
 <meta name="twitter:title" content="添加acfun直播的颜文字（仅针对handsome主题）">
 <meta name="twitter:description" content="很简单，直接把对应文件替换掉就好。 后续会把ac娘也接入。 [hide]https://blog.tama.guru/usr/themes/handsome/usr/OwO.json[/hide]\nPS:AC娘图标包也已经实装 只需要把[hide]https://cdn.aixifan.com/dotnet/20130418/project/emot/package2.0/acfun_emoji.zip[/hide]下载到服务器解压并将压缩包下图片集文件夹移动到usr/themes/handsome/assets/img/emotion改名为acfun再用上面的文件替换即可。\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
+<style>
+    :root {
+     
+    --sys-font-family: "HarmonyOS_Sans_SC_Medium", Georgia, -apple-system, 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
+    --code-font-family: "JetBrainsMono Regular", Menlo, Monaco, Consolas, "Courier New";
+    --article-font-family: "HarmonyOS_Sans_SC_Medium", var(--base-font-family);
+  }
+</style>
 
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://gcore.jsdelivr.net/gh/tamakyi/cdn/statics/fonts/font.css";
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+         document.head.appendChild(customFont);
+}());
+</script>
     </head>
     <body class="
     article-page

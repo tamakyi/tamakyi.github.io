@@ -14,7 +14,24 @@
 <meta name="twitter:title" content="OneCirclePro插件和handsome静态资源切换到国内服务器">
 <meta name="twitter:description" content="体验了几天这个主题，发现资源加载是真的离谱，动不动10s+：\n于是就想着把部分静态资源扔国内来了。\n直接把包内themeCore\\themes\\default\\statics打包上传到国内服务器搭建的网站目录下，最好和其他资源间隔开来，比如https://hostname/cdn/OneCircle/，然后修改themeCore/themes/default/apps/main/content.phtml和themeCore/themes/default/apps/cpanel/content_nosidebar.phtml把{%config theme_url%}替换成https://hostname/cdn/OneCircle/，再刷新即可。\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
+<style>
+    :root {
+     
+    --sys-font-family: "HarmonyOS_Sans_SC_Medium", Georgia, -apple-system, 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
+    --code-font-family: "JetBrainsMono Regular", Menlo, Monaco, Consolas, "Courier New";
+    --article-font-family: "HarmonyOS_Sans_SC_Medium", var(--base-font-family);
+  }
+</style>
 
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://gcore.jsdelivr.net/gh/tamakyi/cdn/statics/fonts/font.css";
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+         document.head.appendChild(customFont);
+}());
+</script>
     </head>
     <body class="
     article-page

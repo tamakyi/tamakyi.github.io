@@ -14,7 +14,24 @@
 <meta name="twitter:title" content="在异地服务器使用go-miraiqq教程">
 <meta name="twitter:description" content="在异地直接扫码登录miraiqq会有“异常，建议在同一WIFI环境下使用”的提示，如果服务器在本地还好，但是买的服务器在外地就很难这样去处理了。 解决的方式也很简单，因为go-cqhttp是通过检查运行目录下的 device.json和 session.token来验证数据的，因此只要在本地环境搭建好go-cqhttp环境并登陆，然后用本地生成的两个文件传输到远程服务器下替换掉原有文件就好了。\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
+<style>
+    :root {
+     
+    --sys-font-family: "HarmonyOS_Sans_SC_Medium", Georgia, -apple-system, 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
+    --code-font-family: "JetBrainsMono Regular", Menlo, Monaco, Consolas, "Courier New";
+    --article-font-family: "HarmonyOS_Sans_SC_Medium", var(--base-font-family);
+  }
+</style>
 
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://gcore.jsdelivr.net/gh/tamakyi/cdn/statics/fonts/font.css";
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+         document.head.appendChild(customFont);
+}());
+</script>
     </head>
     <body class="
     article-page

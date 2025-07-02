@@ -14,7 +14,24 @@
 <meta name="twitter:title" content="WIN11连接老版本系统（WIN7-WIN10）打印机提示0X000000709的解决方法">
 <meta name="twitter:description" content="去年年末我们单位新采购了几台电脑，毫无意外的全部都是预装WIN11(22H2)，本来还美滋滋，一到连接打印机的时候就开始不对劲了，无论怎么连接都连接不上，叫技术人员上来给出几个解决方案：一、把打印机连接到这台新电脑（这样其他电脑就连接不上了）；二、把系统降下WIN10；三、让别人帮打印。 结果我在网上找了几个方法，最终生效的有且只有一个。 方法一：最多的方法是修改C:\\Windows\\System32\\win32spl.dll文件，网上有很多版本，也有做成脚本的，根据系统的型号覆盖后重启。以失败告终，依旧报错0X000000709。 方法二：修改注册表。即把以下内容保存成reg文件，导入注册表后重启。\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
+<style>
+    :root {
+     
+    --sys-font-family: "HarmonyOS_Sans_SC_Medium", Georgia, -apple-system, 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
+    --code-font-family: "JetBrainsMono Regular", Menlo, Monaco, Consolas, "Courier New";
+    --article-font-family: "HarmonyOS_Sans_SC_Medium", var(--base-font-family);
+  }
+</style>
 
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://gcore.jsdelivr.net/gh/tamakyi/cdn/statics/fonts/font.css";
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+         document.head.appendChild(customFont);
+}());
+</script>
     </head>
     <body class="
     article-page

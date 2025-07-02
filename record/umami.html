@@ -14,7 +14,24 @@
 <meta name="twitter:title" content="使用vercel+neon方案搭建无需服务器的umami统计服务">
 <meta name="twitter:description" content="为什么要用umami 在此之前，本站及相关网站服务需要用到统计的地方，都用的是自建的matomo，这是个非常强大的网页统计服务，强大到有些臃肿，这次大搬家我就在想，我真的有必要耗费有限的服务器资源来实现到头来可能一次都用不到的功能吗？答案当然是不，经过一番对比，最终我决定换用ackee或者umami。这两个统计工具都支持无服务器部署，但我还是选择了umami。以下是umami和matomo的一些区别：\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
+<style>
+    :root {
+     
+    --sys-font-family: "HarmonyOS_Sans_SC_Medium", Georgia, -apple-system, 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
+    --code-font-family: "JetBrainsMono Regular", Menlo, Monaco, Consolas, "Courier New";
+    --article-font-family: "HarmonyOS_Sans_SC_Medium", var(--base-font-family);
+  }
+</style>
 
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://gcore.jsdelivr.net/gh/tamakyi/cdn/statics/fonts/font.css";
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+         document.head.appendChild(customFont);
+}());
+</script>
     </head>
     <body class="
     article-page

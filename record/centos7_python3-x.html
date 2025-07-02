@@ -14,7 +14,24 @@
 <meta name="twitter:title" content="centos7在保留python2.7的前提下安装python3.x的方法">
 <meta name="twitter:description" content="不会有人2022年了还在用centos7吧。。。 由于centos7默认安装的是python2.7且系统内组件高度依赖python2.7，如果直接卸载换成3.X会导致许多系统软件无法运行(yum就是一个很好的例子），因此想法如下： ·编译安装3.X版本 ·把原来的python软链接指向3.x，并创建pip3的软链接 ·把相关软件的头手动进行修改 例如/usr/libexec/urlgrabber-ext-down中原来的#!/usr/bin/python应手动指定为#!/usr/bin/python2.7，/usr/bin/yum同理。 参考：https://www.cnblogs.com/jizhong/p/15157828.html\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
+<style>
+    :root {
+     
+    --sys-font-family: "HarmonyOS_Sans_SC_Medium", Georgia, -apple-system, 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
+    --code-font-family: "JetBrainsMono Regular", Menlo, Monaco, Consolas, "Courier New";
+    --article-font-family: "HarmonyOS_Sans_SC_Medium", var(--base-font-family);
+  }
+</style>
 
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://gcore.jsdelivr.net/gh/tamakyi/cdn/statics/fonts/font.css";
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+         document.head.appendChild(customFont);
+}());
+</script>
     </head>
     <body class="
     article-page

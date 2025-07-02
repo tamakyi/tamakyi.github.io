@@ -14,7 +14,24 @@
 <meta name="twitter:title" content="记一次VBios的升级和resizebar的开启">
 <meta name="twitter:description" content="首先科普一下resize bar是什么：\n可调整大小的 BAR 是一种可选的 PCI Express 接口技术。当您在游戏中的世界中移动时，GPU 内存 （VRAM） 会通过许多小型 CPU 不断传输纹理、着色器和几何体到 GPU 的传输。随着现代游戏资产规模的不断增长，这导致了大量的转移。使用可调整大小的 BAR，可以根据需要请求资产并完整发送，因此 CPU 可以有效地访问整个帧缓冲区。如果发出多个请求，传输可以同时进行，而不是排队。（来自Nvidia官网)\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
+<style>
+    :root {
+     
+    --sys-font-family: "HarmonyOS_Sans_SC_Medium", Georgia, -apple-system, 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
+    --code-font-family: "JetBrainsMono Regular", Menlo, Monaco, Consolas, "Courier New";
+    --article-font-family: "HarmonyOS_Sans_SC_Medium", var(--base-font-family);
+  }
+</style>
 
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://gcore.jsdelivr.net/gh/tamakyi/cdn/statics/fonts/font.css";
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+         document.head.appendChild(customFont);
+}());
+</script>
     </head>
     <body class="
     article-page

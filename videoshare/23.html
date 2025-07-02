@@ -14,7 +14,24 @@
 <meta name="twitter:title" content="记录一下15周年的录播">
 <meta name="twitter:description" content="记录一下15周年的录播\n实现步骤：\n在自定义css中添加如下内容： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 /*视频挂载*/ .iframe_video { position: relative; width: 100%; } @media only screen and (max-width: 767px) { .iframe_video { height: 15em; } } @media only screen and (min-width: 768px) and (max-width: 991px) { .iframe_video { height: 20em; } } @media only screen and (min-width: 992px) and (max-width: 1199px) { .iframe_video { height: 30em; } } @media only screen and (min-width: 1200px) { .iframe_video { height: 40em; } } .iframe_cross { position: relative; width: 100%; height: 0; padding-bottom: 75% } .iframe_cross iframe { position: absolute; width: 100%; height: 100%; left: 0; top: 0 } 插入代码（直接在编辑器中）： 1 &lt;iframe style=&#34;min-width: 720px;min-height: 480px&#34; src=&#34;https://www.acfun.cn/player/ac35443632&#34; id=&#34;ACPlayer-re&#34; scrolling=&#34;no&#34; border=&#34;0&#34; frameborder=&#34;no&#34; framespacing=&#34;0&#34; allowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt; ">
     <link rel="shortcut icon" href="/static/favicon.ico" />
+<style>
+    :root {
+     
+    --sys-font-family: "HarmonyOS_Sans_SC_Medium", Georgia, -apple-system, 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
+    --code-font-family: "JetBrainsMono Regular", Menlo, Monaco, Consolas, "Courier New";
+    --article-font-family: "HarmonyOS_Sans_SC_Medium", var(--base-font-family);
+  }
+</style>
 
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://gcore.jsdelivr.net/gh/tamakyi/cdn/statics/fonts/font.css";
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+         document.head.appendChild(customFont);
+}());
+</script>
     </head>
     <body class="
     article-page
