@@ -10,7 +10,7 @@
 <meta property='og:description' content="AMD在编解码这一块就是一坨大便！ 最近把平台从Intel转到AMD，现在家里的两台机器已经是清一色的红厂CPU了。\n主电脑 CPU: 5700X 显卡： 3060ti 备胎机 CPU: 2200G 显卡： 核显Vega8 自己打打游戏都还好，但是在换上新CPU的第一次直播我就发现，我这端开始提示`编码过载`，然后别人看直播都是一卡一卡的。这就很奇怪，明明配置比之前高了不少，而且设置也没改过，怎么会这样呢？水土不服？无论是奥德赛、欧卡，甚至是Muse Dash这种不是很依赖3D性能的游戏都很卡。 ![这是当前的OBS配置，没有改动过][1] 我自己玩起来是一点卡顿都没有的，那么有问题的很可能就是CPU。10400换了5700X之后，最重要的一个地方是核显没了，是不是这个原因呢？经过一番搜索，比如这里：[OBS编码详解][2] ![下面的评论][3] [一个带核显的CPU好 还是配了同样性能的独显好？][4] ![下面的评论][5] AMD有这么拉吗？我平台都换了，总不能再换回去吧... 我试想了几个解决方案： 通过内网用二胎机用VEGA8做推流编码工作。 主要是看到这篇文章：https://zhuanlan.zhihu.com/p/49187146 游戏机只负责玩游戏，由于游戏机通过显卡连了根线到采集卡，所以他把采集卡当做一块显示器，采集卡便采集这块“显示器”的视频数据，并因为装在直播主机上，使得该数据可以被直播机（OBS）捕获（直播主机把采集卡当做一个视频输入源，就像直播机外接了一个摄像头一样）。这样一来，游戏机借由另一台电脑来直播，自身无需承担任何直播相关的性能压力。\n">
 <meta property='og:url' content='https://blog.tama.guru/default/adm_stream.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-05-07T16:57:09&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T04:23:58&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-05-07T16:57:09&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T05:20:08&#43;00:00'/>
 <meta name="twitter:title" content="AMD直播推流真的就是一坨答辩！">
 <meta name="twitter:description" content="AMD在编解码这一块就是一坨大便！ 最近把平台从Intel转到AMD，现在家里的两台机器已经是清一色的红厂CPU了。\n主电脑 CPU: 5700X 显卡： 3060ti 备胎机 CPU: 2200G 显卡： 核显Vega8 自己打打游戏都还好，但是在换上新CPU的第一次直播我就发现，我这端开始提示`编码过载`，然后别人看直播都是一卡一卡的。这就很奇怪，明明配置比之前高了不少，而且设置也没改过，怎么会这样呢？水土不服？无论是奥德赛、欧卡，甚至是Muse Dash这种不是很依赖3D性能的游戏都很卡。 ![这是当前的OBS配置，没有改动过][1] 我自己玩起来是一点卡顿都没有的，那么有问题的很可能就是CPU。10400换了5700X之后，最重要的一个地方是核显没了，是不是这个原因呢？经过一番搜索，比如这里：[OBS编码详解][2] ![下面的评论][3] [一个带核显的CPU好 还是配了同样性能的独显好？][4] ![下面的评论][5] AMD有这么拉吗？我平台都换了，总不能再换回去吧... 我试想了几个解决方案： 通过内网用二胎机用VEGA8做推流编码工作。 主要是看到这篇文章：https://zhuanlan.zhihu.com/p/49187146 游戏机只负责玩游戏，由于游戏机通过显卡连了根线到采集卡，所以他把采集卡当做一块显示器，采集卡便采集这块“显示器”的视频数据，并因为装在直播主机上，使得该数据可以被直播机（OBS）捕获（直播主机把采集卡当做一个视频输入源，就像直播机外接了一个摄像头一样）。这样一来，游戏机借由另一台电脑来直播，自身无需承担任何直播相关的性能压力。\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
@@ -746,7 +746,7 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
 
 
         <span>
-            最后更新于 2025年07月02日 04:23
+            最后更新于 2025年07月02日 05:20
         </span>
     </section></footer>
 
