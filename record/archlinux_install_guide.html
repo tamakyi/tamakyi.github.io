@@ -6,32 +6,15 @@
 
 <link rel='canonical' href='https://blog.tama.guru/record/archlinux_install_guide.html'>
 
-<link rel="stylesheet" href="/scss/style.min.f8d3e3667c9c0bc7a054407fadeb01e15a691c2db55c8c66227df16b0d32131e.css"><meta property='og:title' content="【转载】一个简单的archlinux安装教程（亲测能用）">
+<link rel="stylesheet" href="/scss/style.min.77d805b213b689a0386f7fc900575972cfb1f444536a88757fc1e9df17e8ebd8.css"><meta property='og:title' content="【转载】一个简单的archlinux安装教程（亲测能用）">
 <meta property='og:description' content="来自：https://www.mivm.cn/archlinux-installation-guide-simple\n###硬盘分区 如果你需要 Linux + Windows 双系统，建议使用两个物理硬盘安装，以下分区方式不适用于单硬盘双系统。如果你想要单硬盘双系统，可以加入 QQ 群向我询问。\n">
 <meta property='og:url' content='https://blog.tama.guru/record/archlinux_install_guide.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='archlinux' /><meta property='article:published_time' content='2023-08-16T22:35:00&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T12:11:48&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='archlinux' /><meta property='article:published_time' content='2023-08-16T22:35:00&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T17:17:59&#43;00:00'/>
 <meta name="twitter:title" content="【转载】一个简单的archlinux安装教程（亲测能用）">
 <meta name="twitter:description" content="来自：https://www.mivm.cn/archlinux-installation-guide-simple\n###硬盘分区 如果你需要 Linux + Windows 双系统，建议使用两个物理硬盘安装，以下分区方式不适用于单硬盘双系统。如果你想要单硬盘双系统，可以加入 QQ 群向我询问。\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
-<style>
-    :root {
-     
-    --sys-font-family: "HarmonyOS_Sans_SC_Medium", Georgia, -apple-system, 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
-    --code-font-family: "JetBrainsMono Regular", Menlo, Monaco, Consolas, "Courier New";
-    --article-font-family: "HarmonyOS_Sans_SC_Medium", var(--base-font-family);
-  }
-</style>
 
-<script>
-    (function () {
-        const customFont = document.createElement('link');
-        customFont.href = "https://gcore.jsdelivr.net/gh/tamakyi/cdn/statics/fonts/font.css";
-        customFont.type = "text/css";
-        customFont.rel = "stylesheet";
-         document.head.appendChild(customFont);
-}());
-</script>
     </head>
     <body class="
     article-page
@@ -521,7 +504,7 @@ unicode: "ece7"
 
 
                 <time class="article-time--reading">
-                    阅读时长: 24 分钟
+                    阅读时长: 23 分钟
                 </time>
             </div>
         
@@ -551,22 +534,7 @@ unicode: "ece7"
 <p>创建大小为 260M 的 ESP 分区 （UEFI 引导必要分区）：<code>sgdisk -n=0:0:+260M -t=0:ef00 ${diskPath}</code></p>
 <p>使用剩余空间创建系统分区：<code>sgdisk -N=0 ${diskPath}</code></p>
 <p>显示分区信息：<code>fdisk -l ${diskPath}</code>，对比你的分区信息是否与下列信息相似，重点是分区类型 (Type)。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Disk ${diskPath}: *** GiB, *** bytes, *** sectors
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Disk ${diskPath}: *** GiB, *** bytes, *** sectors
 </span></span><span class="line"><span class="cl">Disk model: ***
 </span></span><span class="line"><span class="cl">Units: sectors of 1 * *** = *** bytes
 </span></span><span class="line"><span class="cl">Sector size (logical/physical): *** bytes / *** bytes
@@ -577,9 +545,7 @@ unicode: "ece7"
 </span></span><span class="line"><span class="cl">Device         Start    End    Sectors    Size    Type
 </span></span><span class="line"><span class="cl">${diskPath}1   ***      ***    ***        260M    EFI System
 </span></span><span class="line"><span class="cl">${diskPath}2   ***      ***    ***        ***G    Linux filesystem
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>PS：给 ESP 分区分配 260M 空间是为了兼容不同硬盘，不同的 UEFI 固件，以及存放系统内核和 initramfs。对于某些早期或者有缺陷的 UEFI 实现，可能至少需要分配 512M。</p>
+</span></span></code></pre></div><p>PS：给 ESP 分区分配 260M 空间是为了兼容不同硬盘，不同的 UEFI 固件，以及存放系统内核和 initramfs。对于某些早期或者有缺陷的 UEFI 实现，可能至少需要分配 512M。</p>
 <p>某些教程的分区步骤会创建一个额外的 SWAP（交换空间）分区，这里并不推荐创建，具体原因参考下面的【设置交换空间】章节</p>
 <p>如果你的硬盘空间较大，或者想把系统和数据分别存放在不同的分区，想要多个分区也可以。</p>
 <p>格式化并挂载分区
@@ -595,19 +561,10 @@ unicode: "ece7"
 <p>创建 ESP 分区挂载路径：<code>mkdir /mnt/boot</code></p>
 <p>挂载 ESP 分区：<code>mount -o umask=0077 ${part1Path} /mnt/boot</code>，把${part1Path}替换为第一个分区路径，示例：<code>mount -o umask=0077 /dev/sda1 /mnt/boot</code></p>
 <p>检查分区是否挂载成功：df，如果输出包含类似以下行，则代表挂载成功。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Filesystem    Size    Used    Avail    Use%    Mounted on
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Filesystem    Size    Used    Avail    Use%    Mounted on
 </span></span><span class="line"><span class="cl">${part2Path}  ***     ***     ***      ***%    /mnt
 </span></span><span class="line"><span class="cl">${part1Path}  ***     ***     ***      ***%    /mnt/boot
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>###设置中国镜像源（推荐）
+</span></span></code></pre></div><p>###设置中国镜像源（推荐）
 安装环境默认启用了所有的软件镜像源，为了使安装更顺利，建议只使用位于中国的镜像，如果你不在中国或者对自己的网络有信心可以忽略此操作。</p>
 <p>下载中国镜像列表：<code>curl -L -o /etc/pacman.d/mirrorlist &quot;https://archlinux.org/mirrorlist/?country=CN&quot;</code></p>
 <p>执行<code>nano /etc/pacman.d/mirrorlist</code>编辑镜像列表文件，删除<code>#Server = </code>前面的<code>#</code>以启用镜像，不需要全部启用，一般 3 个就够了。某些镜像同时支持 HTTP 和 HTTPS 协议，只需要删除 HTTPS 协议行的#。</p>
@@ -642,34 +599,15 @@ base: ArchLinux 运行所需的基础软件包集合</p>
 ####设置系统主机名：
 <code>echo ${hostname} &gt; /etc/hostname</code></p>
 <p>执行nano /etc/hosts编辑 hosts 文件并添加以下行：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">127.0.0.1 localhost
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">127.0.0.1 localhost
 </span></span><span class="line"><span class="cl">127.0.0.1 ${hostname}
 </span></span><span class="line"><span class="cl">::1 ip6-localhost ip6-loopback
 </span></span><span class="line"><span class="cl">::1 ${hostname}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>执行<code>nano /etc/locale.gen</code>编辑本地化配置文件，删除以下行前面的#，可以使用Page Up和Page Down健来快速翻页上下滚动。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">#en_US.UTF-8 UTF-8
+</span></span></code></pre></div><p>执行<code>nano /etc/locale.gen</code>编辑本地化配置文件，删除以下行前面的#，可以使用Page Up和Page Down健来快速翻页上下滚动。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">#en_US.UTF-8 UTF-8
 </span></span><span class="line"><span class="cl">#zh_CN.UTF-8 UTF-8
 </span></span><span class="line"><span class="cl">#zh_TW.UTF-8 UTF-8
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>如果你需要其他本地化，删除其他行前的#，行末尾务必是 UTF-8。最后保存退出，执行<code>locale-gen</code>生成本地化环境。</p>
+</span></span></code></pre></div><p>如果你需要其他本地化，删除其他行前的#，行末尾务必是 UTF-8。最后保存退出，执行<code>locale-gen</code>生成本地化环境。</p>
 <p>设置默认本地化环境：<code>echo LANG=en_US.UTF-8 &gt; /etc/locale.conf</code>，为了确保兼容性，默认本地化环境最好是英语。</p>
 <p>执行<code>SUDO_EDITOR=nano visudo</code>编辑 sudo 配置文件，删除<code># %wheel ALL=(ALL) ALL</code>行前面的<code>#</code>以便让 wheel 用户组可以使用sudo获取 root 权限。</p>
 <p>务必将下列命令中的${username}替换为你的用户名（例如：pikachu）。用户名建议使用小写字母组成（不能包含大写字母、不能以数字开头），最多 32 个字符，你可以使用下面的输入框验证用户名是否符合规则。</p>
@@ -707,32 +645,16 @@ sudo 是临时获取 root 权限的工具，如果需要 root 权限执行某个
 <p>启用每周自动清理不需要的 Pacman 软件包缓存（可选，建议启用）：<code>sudo systemctl enable paccache.timer</code></p>
 <p>如果你使用的硬盘支持 TRIM 特性（大多数固态硬盘都支持），建议启用定时执行 TRIM：<code>sudo systemctl enable fstrim.timer</code></p>
 <p>如果你需要使用 Wine、Steam 或其他的 32 位程序，执行<code>sudo nano /etc/pacman.conf</code>编辑 Pacman 配置文件，删除以下行前面的#以启用 32 位系统库支持。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">#[multilib] 
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">#[multilib] 
 </span></span><span class="line"><span class="cl">#Include = /etc/pacman.d/mirrorlist
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>保存后执行sudo pacman -Sy更新软件数据库</p>
+</span></span></code></pre></div><p>保存后执行sudo pacman -Sy更新软件数据库</p>
 <p>添加 ArchLinuxCN 存储库（推荐）：
 Arch Linux 中文社区仓库是由 Arch Linux 中文社区驱动的非官方软件仓库，包含许多官方仓库未提供的额外的软件包，以及已有软件的 git 版本等变种。一部分软件包的打包脚本来源于 AUR，但也有许多包与 AUR 不一样。（关于 AUR 的介绍请见下面的章节）</p>
 <p>ArchLinuxCN 依靠镜像加速可以在国内提供比 AUR 更好的体验，而且还省去了部分软件的编译过程。如果你的网络环境导致无法顺利从 AUR 安装某些软件包，推荐添加。</p>
 <p>执行<code>sudo nano /etc/pacman.conf</code>编辑 Pacman 配置文件，在底部添加以下行。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[archlinuxcn]
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[archlinuxcn]
 </span></span><span class="line"><span class="cl">Server = https://opentuna.cn/archlinuxcn/$arch
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>保存后执行<code>sudo pacman -Sy archlinuxcn-keyring</code>更新软件数据库并安装 ArchLinuxCN GPG 密钥，如果安装命令出现<code>error: archlinuxcn-keyring: Signature from &quot;Jiachen YANG (Arch Linux Packager Signing Key) &quot; is marginal trust</code>这样的错误，执行命令<code>sudo pacman-key --lsign-key &quot;farseerfc@archlinux.org&quot;</code>修复，然后再重新执行安装命令。</p>
+</span></span></code></pre></div><p>保存后执行<code>sudo pacman -Sy archlinuxcn-keyring</code>更新软件数据库并安装 ArchLinuxCN GPG 密钥，如果安装命令出现<code>error: archlinuxcn-keyring: Signature from &quot;Jiachen YANG (Arch Linux Packager Signing Key) &quot; is marginal trust</code>这样的错误，执行命令<code>sudo pacman-key --lsign-key &quot;farseerfc@archlinux.org&quot;</code>修复，然后再重新执行安装命令。</p>
 <p>安装防火墙支持（可选）：
 如果你需要在非信任的网络下使用设备，推荐使用防火墙增强你的设备网络安全性，如果你只在你信任的网络下使用设备，那么可以不安装。</p>
 <p>防火墙有很多选择，ArchLinux 的基础包默认已经包含了 iptables 实用工具，用于配置 Linux 内核实现的防火墙，不过由于它并不易用，我推荐最好是使用易用的 iptables 前端。</p>
@@ -827,17 +749,9 @@ plasma 是个软件包组，里面可能会有一些用不上的软件包。</p>
 如果要让 SDDM 的本地化环境为非英文，可以执行以下更改。</p>
 <p>PS：本地化环境除了影响语言显示，还有时间格式。</p>
 <p>执行<code>sudo SYSTEMD_EDITOR=nano systemctl edit sddm</code>编辑 SDDM 服务单元，在文件第 3 行添加：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[Service]
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[Service]
 </span></span><span class="line"><span class="cl">Environment=LANG=zh_CN.UTF-8
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>如果是其他语言用户，可以把zh_CN替换为你需要的本地化。</p>
+</span></span></code></pre></div><p>如果是其他语言用户，可以把zh_CN替换为你需要的本地化。</p>
 <p>执行<code>sudo systemctl enable sddm</code>启用 SDDM</p>
 <p>执行sudo reboot重启系统，重启后应该会看到如下图所示的界面，输入密码登陆桌面环境。</p>
 <p>如果没有看到如下图所示的界面，可能是显卡驱动的安装有问题。</p>
@@ -869,21 +783,11 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
 <p>PPS：2021年3月15日起 Chromium 不再支持与 Google API 相关的功能，包括 Google 账户登陆和同步等。如果你需要使用这些功能，最佳方法是安装 Google Chrome，还有一种方法可以使 Chromium 恢复这些功能支持，你可以前往 ArchWiki 了解或加入 QQ 群向我询问。</p>
 <p>更多 KDE 家族应用：apps.kde.org</p>
 <p>执行nano ~/.bash_profile配置输入法环境变量，添加以下行：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="k">export</span> <span class="n">GTK_IM_MODULE</span><span class="o">=</span><span class="n">fcitx</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="k">export</span> <span class="n">GTK_IM_MODULE</span><span class="o">=</span><span class="n">fcitx</span>
 </span></span><span class="line"><span class="cl"><span class="k">export</span> <span class="n">QT_IM_MODULE</span><span class="o">=</span><span class="n">fcitx</span>
 </span></span><span class="line"><span class="cl"><span class="k">export</span> <span class="n">XMODIFIERS</span><span class="o">=</span><span class="err">@</span><span class="n">im</span><span class="o">=</span><span class="n">fcitx</span>
 </span></span><span class="line"><span class="cl"><span class="k">export</span> <span class="n">SDL_IM_MODULE</span><span class="o">=</span><span class="n">fcitx</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>PS：输入法需要重启系统或重新登录才会生效</p>
+</span></span></code></pre></div><p>PS：输入法需要重启系统或重新登录才会生效</p>
 <p>输入法默认激活快捷键：Ctrl + 空格</p>
 <p>输入法的设置可以在 「系统设置」→「区域设置」→「输入法」修改，你可以点击「添加输入法」来添加拼音或其他输入法。</p>
 <p>Plasma 设置优化
@@ -926,47 +830,14 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
 <p>你也可以通过安装os-prober使 GRUB 自动检测已安装的其他系统，并将其添加到 GRUB 启动菜单。安装完成后，添加GRUB_DISABLE_OS_PROBER=false到/etc/default/grub，重新生成 GRUB 配置文件：grub-mkconfig -o /boot/grub/grub.cfg。如果你又安装了其他系统，则需要再次重新生成 GRUB 配置文件。</p>
 <p>关于 os-prober 更多用法以及注意事项：https://wiki.archlinux.org/title/GRUB#Detecting_other_operating_systems</p>
 <h4 id="安装xrdp需要yay或paru">安装Xrdp（需要yay或paru)
-</h4><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">yay -S xrdp
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">yay -S xrdp
 </span></span><span class="line"><span class="cl">yay -S xorgxrdp-glamor #针对amd和intel集显的调用
 </span></span><span class="line"><span class="cl">pacman -S xorg-xinit
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>修改<code>/etc/X11/Xwrapper.config</code>添加如下内容：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">allowed_users=anybody
+</span></span></code></pre></div><p>修改<code>/etc/X11/Xwrapper.config</code>添加如下内容：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">allowed_users=anybody
 </span></span><span class="line"><span class="cl">needs_root_rights=no
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>再接下来，复制xinit配置文件到用户根目录：<code>cp /etc/X11/xinit/xinitrc ~/.xinitrc</code> ，并修改最后几行为：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="c1">#twm &amp;</span>
+</span></span></code></pre></div><p>再接下来，复制xinit配置文件到用户根目录：<code>cp /etc/X11/xinit/xinitrc ~/.xinitrc</code> ，并修改最后几行为：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="c1">#twm &amp;</span>
 </span></span><span class="line"><span class="cl"><span class="c1">#xclock -geometry 50x50-1+1 &amp;</span>
 </span></span><span class="line"><span class="cl"><span class="c1">#xterm -geometry 80x50+494+51 &amp;</span>
 </span></span><span class="line"><span class="cl"><span class="c1">#xterm -geometry 80x20+494-0 &amp;</span>
@@ -978,35 +849,12 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
 </span></span><span class="line"><span class="cl"><span class="c1"># kde-plasma桌面</span>
 </span></span><span class="line"><span class="cl"><span class="k">export</span> <span class="n">DESKTOP_SESSION</span><span class="o">=</span><span class="n">plasma</span>
 </span></span><span class="line"><span class="cl"><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">plasma</span><span class="o">-</span><span class="n">dbus</span><span class="o">-</span><span class="n">run</span><span class="o">-</span><span class="n">session</span><span class="o">-</span><span class="k">if</span><span class="o">-</span><span class="n">needed</span> <span class="n">startplasma</span><span class="o">-</span><span class="n">x11</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>启用相关服务并重启系统：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo systemctl enable xrdp.service
+</span></span></code></pre></div><p>启用相关服务并重启系统：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo systemctl enable xrdp.service
 </span></span><span class="line"><span class="cl">sudo systemctl enable xrdp-sesman.service
 </span></span><span class="line"><span class="cl">sudo reboot
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>如果xrdp无法弹出授权框，可以修改<code>/etc/polkit-1/rules.d/49-nopasswd_global.rules</code>为：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/* Allow members of the wheel group to execute any actions
+</span></span></code></pre></div><p>如果xrdp无法弹出授权框，可以修改<code>/etc/polkit-1/rules.d/49-nopasswd_global.rules</code>为：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/* Allow members of the wheel group to execute any actions
 </span></span><span class="line"><span class="cl"> * without password authentication, similar to &#34;sudo NOPASSWD:&#34;
 </span></span><span class="line"><span class="cl"> */
 </span></span><span class="line"><span class="cl">polkit.addRule(function(action, subject) {
@@ -1014,9 +862,7 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
 </span></span><span class="line"><span class="cl">        return polkit.Result.YES;
 </span></span><span class="line"><span class="cl">    }
 </span></span><span class="line"><span class="cl">});
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>来允许所有请求。</p>
+</span></span></code></pre></div><p>来允许所有请求。</p>
 <h4 id="建议阅读">建议阅读
 </h4><p>建议阅读以下 Wiki 以便更好的使用 ArchLinux：</p>
 <p>应用程序列表：https://wiki.archlinux.org/title/List_of_applications，你可以在这里按照用途类型找到可用软件。</p>
@@ -1032,6 +878,36 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
 <p>中国大陆用户的推荐解决方案：https://wiki.archlinux.org/title/General_recommendations#中国大陆用户的推荐解决方案</p>
 
 </section>
+
+
+    <div class="article-details" style="padding-top: 15px;padding-bottom: 0px;">
+        <footer class="article-time">
+            <div>
+                <!--
+category: System
+tags: [view, watch]
+version: "1.0"
+unicode: "ea9a"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="20"
+  height="20"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#000000"
+  stroke-width="0.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+  <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
+</svg>
+
+                <span title="阅读次数" style="display: inline;font-size: 1.4rem;">阅读次数: <span class="waline-pageview-count" data-path="/record/archlinux_install_guide.html" /></span>
+            </div>
+        </footer>
+    </div>
 
 
     <footer class="article-footer">
@@ -1065,7 +941,7 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
 
 
         <span>
-            最后更新于 2025年07月02日 12:11
+            最后更新于 2025年07月02日 17:17
         </span>
     </section></footer>
 

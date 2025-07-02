@@ -6,32 +6,15 @@
 
 <link rel='canonical' href='https://blog.tama.guru/record/steamdeck.html'>
 
-<link rel="stylesheet" href="/scss/style.min.f8d3e3667c9c0bc7a054407fadeb01e15a691c2db55c8c66227df16b0d32131e.css"><meta property='og:title' content="捣鼓SteamDeck的那些事">
+<link rel="stylesheet" href="/scss/style.min.77d805b213b689a0386f7fc900575972cfb1f444536a88757fc1e9df17e8ebd8.css"><meta property='og:title' content="捣鼓SteamDeck的那些事">
 <meta property='og:description' content="I have a d○ck. 不得不说，这东西挺有意思的，amd定制的zen2架构CPU及性能相当于1050的显卡能够应付大部分场景使用以及轻度游戏，还能轻松安装SteamOS+WIN10/11组合，玩一些原系统上因为各种原因玩不了的游戏，如果空间不够，还能自己买一个2230的M2换上去。但是在使用过程中这玩意其实坑挺多的，想要快乐玩耍掌握一些linux基础知识以及“合适的网络”是必不可少的。下面是我在使用过程中碰到的一些问题以及解决办法。 ####·首次开机联网后一直提示正在安装，然后卡在还剩1秒或者弹窗报错·#### 基本上是国内专属问题了，归根结底就是网络原因和&quot;steam.cloud&quot;连接有问题导致更新无法进行，而更新又是必须的就导致了这个死循环。 有网友说我有科技，直接开科技不就行了？如果是在路由的话这必须要设置全局代理，因为SteamDeck的WIFI连接界面不能手动设置代理。用手机开热点或许也是一个好办法，但是实测我的流量根本没走，可能是我的姿势不对吧。 还有网友说在安装界面直接长按电源键硬重启，多几次就能跳过，我试了四五次也不行。其中一次关机重启后进入到一个有LOGO+进度条及网速的界面，也在提示install update，但是更新完自动重启之后还是问题依旧。 目前我唯一测试通过的方法就是手机挂UU加速器（亲测雷神无效）加速steam（仅加速商店是免费的），然后开热点，SteamDeck这边开机的时候要设置为英文+UTC-8时区（即默认设置）再连接热点更新，大概率等待半小时就能通过了，手机这边如果开了流量监控，就会发现流量基本1.5m/s这个速度走（峰值4-5m/s），如果没动的话，建议重启加速器或是点击SteamDeck上的Back返回上一步重新开始，直到流量正常出去。大概也就花费1-2G。（下图是我更新了两次）\n">
 <meta property='og:url' content='https://blog.tama.guru/record/steamdeck.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='SteamDeck' /><meta property='article:tag' content='archlinux' /><meta property='article:tag' content='双系统' /><meta property='article:published_time' content='2023-02-02T09:47:00&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T12:11:48&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='SteamDeck' /><meta property='article:tag' content='archlinux' /><meta property='article:tag' content='双系统' /><meta property='article:published_time' content='2023-02-02T09:47:00&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T17:17:59&#43;00:00'/>
 <meta name="twitter:title" content="捣鼓SteamDeck的那些事">
 <meta name="twitter:description" content="I have a d○ck. 不得不说，这东西挺有意思的，amd定制的zen2架构CPU及性能相当于1050的显卡能够应付大部分场景使用以及轻度游戏，还能轻松安装SteamOS+WIN10/11组合，玩一些原系统上因为各种原因玩不了的游戏，如果空间不够，还能自己买一个2230的M2换上去。但是在使用过程中这玩意其实坑挺多的，想要快乐玩耍掌握一些linux基础知识以及“合适的网络”是必不可少的。下面是我在使用过程中碰到的一些问题以及解决办法。 ####·首次开机联网后一直提示正在安装，然后卡在还剩1秒或者弹窗报错·#### 基本上是国内专属问题了，归根结底就是网络原因和&quot;steam.cloud&quot;连接有问题导致更新无法进行，而更新又是必须的就导致了这个死循环。 有网友说我有科技，直接开科技不就行了？如果是在路由的话这必须要设置全局代理，因为SteamDeck的WIFI连接界面不能手动设置代理。用手机开热点或许也是一个好办法，但是实测我的流量根本没走，可能是我的姿势不对吧。 还有网友说在安装界面直接长按电源键硬重启，多几次就能跳过，我试了四五次也不行。其中一次关机重启后进入到一个有LOGO+进度条及网速的界面，也在提示install update，但是更新完自动重启之后还是问题依旧。 目前我唯一测试通过的方法就是手机挂UU加速器（亲测雷神无效）加速steam（仅加速商店是免费的），然后开热点，SteamDeck这边开机的时候要设置为英文+UTC-8时区（即默认设置）再连接热点更新，大概率等待半小时就能通过了，手机这边如果开了流量监控，就会发现流量基本1.5m/s这个速度走（峰值4-5m/s），如果没动的话，建议重启加速器或是点击SteamDeck上的Back返回上一步重新开始，直到流量正常出去。大概也就花费1-2G。（下图是我更新了两次）\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
-<style>
-    :root {
-     
-    --sys-font-family: "HarmonyOS_Sans_SC_Medium", Georgia, -apple-system, 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
-    --code-font-family: "JetBrainsMono Regular", Menlo, Monaco, Consolas, "Courier New";
-    --article-font-family: "HarmonyOS_Sans_SC_Medium", var(--base-font-family);
-  }
-</style>
 
-<script>
-    (function () {
-        const customFont = document.createElement('link');
-        customFont.href = "https://gcore.jsdelivr.net/gh/tamakyi/cdn/statics/fonts/font.css";
-        customFont.type = "text/css";
-        customFont.rel = "stylesheet";
-         document.head.appendChild(customFont);
-}());
-</script>
     </head>
     <body class="
     article-page
@@ -525,20 +508,7 @@ unicode: "ece7"
 （3）选择最大的分区将其resize，在最后部分调整出一块200G的空间，然后新增两个NTFS分区，一个用于装系统（80G），一个用于与SteamOS共享数据及给WIN装游戏。（根据实际情况自行调整）调整完后关机。
 （4）按步骤2进入启动项选择，这次选择WIN镜像，后续步骤不再赘述，安装步骤和一般装系统完全一致。
 （5）等安装完成后重启进入启动项选择，进入SteamOS并进入桌面模式，在右下角菜单找到系统&gt;终端，</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">passwd</span>  <span class="c1">#修改默认密码</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">passwd</span>  <span class="c1">#修改默认密码</span>
 </span></span><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">passwd</span>  <span class="c1">#修改root密码</span>
 </span></span><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">steamos</span><span class="o">-</span><span class="n">readonly</span> <span class="n">disable</span>  <span class="c1">#关闭系统只读</span>
 </span></span><span class="line"><span class="cl"><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">jlobue10</span><span class="o">/</span><span class="n">SteamDeck_rEFInd</span>
@@ -547,9 +517,7 @@ unicode: "ece7"
 </span></span><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">mkdir</span> <span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">Downloads</span>
 </span></span><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">refind_install_no_pacman</span><span class="o">.</span><span class="n">sh</span>
 </span></span><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">sh</span> <span class="n">refind_install_no_pacman</span><span class="o">.</span><span class="n">sh</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>至此引导脚本安装完成，重启之后就能看到StemaOS和WIN的两个LOGO了，五秒内不选择默认从SteamOS启动。之所以选择<code>refind_install_no_pacman.sh</code>是因为SteamOS默认情况下要开启pacman非常麻烦，而且后续升级的话pacman安装的相关软件都会丢失仅保留配置。</p>
+</span></span></code></pre></div><p>至此引导脚本安装完成，重启之后就能看到StemaOS和WIN的两个LOGO了，五秒内不选择默认从SteamOS启动。之所以选择<code>refind_install_no_pacman.sh</code>是因为SteamOS默认情况下要开启pacman非常麻烦，而且后续升级的话pacman安装的相关软件都会丢失仅保留配置。</p>
 <p>####·我想玩学习版游戏·####
 自测了几个proton版本以及proton next还有heroics game launcher，还是有很多游戏没办法正常启动，建议直接上WIN系统。</p>
 <p>####·WIN系统设备管理器里面安装了Steam官方的驱动之后还是有几个感叹号·####
@@ -560,17 +528,9 @@ unicode: "ece7"
 去设置看看下载服务器是否本地位置，不然就开加速器（例如我进系统他自己给我调整到日本札幌，换回国内重启后速度就上来了）。</p>
 <p>####·桌面模式的discovery商店访问速度慢·####
 Steam桌面商店使用的是flathub源，默认使用的是<code>https://glathub.org/repo</code>，在国内访问较慢，建议换到上海交大源：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo steamos-readonly disable
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo steamos-readonly disable
 </span></span><span class="line"><span class="cl">sudo flatpak remote-modify flathub --url=https://mirror.sjtu.edu.cn/flathub
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>然后进商店里面更新一下就好了。</p>
+</span></span></code></pre></div><p>然后进商店里面更新一下就好了。</p>
 <p>####·我账号很多想用家庭共享，但是好像不起作用·####
 因为家庭共享是基于设备的，只在电脑上开通在deck上市无法启用的。这种情况下只能先登陆需要共享的账号，下载个游戏，然后登陆另外一个账号，这里会显示成“借用”状态，点击申请授权即可。</p>
 <p>####·怎么进BIOS/启动菜单·####
@@ -586,6 +546,36 @@ Steam桌面商店使用的是flathub源，默认使用的是<code>https://glathu
 <p>（未完待续）</p>
 
 </section>
+
+
+    <div class="article-details" style="padding-top: 15px;padding-bottom: 0px;">
+        <footer class="article-time">
+            <div>
+                <!--
+category: System
+tags: [view, watch]
+version: "1.0"
+unicode: "ea9a"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="20"
+  height="20"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#000000"
+  stroke-width="0.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+  <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
+</svg>
+
+                <span title="阅读次数" style="display: inline;font-size: 1.4rem;">阅读次数: <span class="waline-pageview-count" data-path="/record/steamdeck.html" /></span>
+            </div>
+        </footer>
+    </div>
 
 
     <footer class="article-footer">
@@ -623,7 +613,7 @@ Steam桌面商店使用的是flathub源，默认使用的是<code>https://glathu
 
 
         <span>
-            最后更新于 2025年07月02日 12:11
+            最后更新于 2025年07月02日 17:17
         </span>
     </section></footer>
 

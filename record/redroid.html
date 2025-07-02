@@ -6,32 +6,15 @@
 
 <link rel='canonical' href='https://blog.tama.guru/record/redroid.html'>
 
-<link rel="stylesheet" href="/scss/style.min.f8d3e3667c9c0bc7a054407fadeb01e15a691c2db55c8c66227df16b0d32131e.css"><meta property='og:title' content="在debian安装配置redroid并安装shamrock的记录">
+<link rel="stylesheet" href="/scss/style.min.77d805b213b689a0386f7fc900575972cfb1f444536a88757fc1e9df17e8ebd8.css"><meta property='og:title' content="在debian安装配置redroid并安装shamrock的记录">
 <meta property='og:description' content="前言 由于某讯对第三方QQ机器人的大力追杀，原有的机器人框架（miraiqq和go-cqhttp）等基本上都无法使用了，登录会直接代码45封号。在此之后发展出shamrock等项目，此类项目的特点是需要虚拟机或实机进行操作，意味着至少需要一个桌面环境或者一台闲置手机，开销相比之前1c512m都能跑的时候高太多。在网上冲浪的时候发现了可以将安卓的Dalvik/ART移植到Linux桌面环境，借此运行安卓APK程序，因此需要用到redroid这个软件。\n">
 <meta property='og:url' content='https://blog.tama.guru/record/redroid.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='debian' /><meta property='article:tag' content='docker' /><meta property='article:tag' content='redroid' /><meta property='article:tag' content='android' /><meta property='article:tag' content='ashmem-linux' /><meta property='article:tag' content='binder_linux' /><meta property='article:tag' content='shamrock' /><meta property='article:tag' content='qq' /><meta property='article:published_time' content='2024-01-24T12:01:00&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T12:11:48&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='debian' /><meta property='article:tag' content='docker' /><meta property='article:tag' content='redroid' /><meta property='article:tag' content='android' /><meta property='article:tag' content='ashmem-linux' /><meta property='article:tag' content='binder_linux' /><meta property='article:tag' content='shamrock' /><meta property='article:tag' content='qq' /><meta property='article:published_time' content='2024-01-24T12:01:00&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T17:17:59&#43;00:00'/>
 <meta name="twitter:title" content="在debian安装配置redroid并安装shamrock的记录">
 <meta name="twitter:description" content="前言 由于某讯对第三方QQ机器人的大力追杀，原有的机器人框架（miraiqq和go-cqhttp）等基本上都无法使用了，登录会直接代码45封号。在此之后发展出shamrock等项目，此类项目的特点是需要虚拟机或实机进行操作，意味着至少需要一个桌面环境或者一台闲置手机，开销相比之前1c512m都能跑的时候高太多。在网上冲浪的时候发现了可以将安卓的Dalvik/ART移植到Linux桌面环境，借此运行安卓APK程序，因此需要用到redroid这个软件。\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
-<style>
-    :root {
-     
-    --sys-font-family: "HarmonyOS_Sans_SC_Medium", Georgia, -apple-system, 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
-    --code-font-family: "JetBrainsMono Regular", Menlo, Monaco, Consolas, "Courier New";
-    --article-font-family: "HarmonyOS_Sans_SC_Medium", var(--base-font-family);
-  }
-</style>
 
-<script>
-    (function () {
-        const customFont = document.createElement('link');
-        customFont.href = "https://gcore.jsdelivr.net/gh/tamakyi/cdn/statics/fonts/font.css";
-        customFont.type = "text/css";
-        customFont.rel = "stylesheet";
-         document.head.appendChild(customFont);
-}());
-</script>
     </head>
     <body class="
     article-page
@@ -553,104 +536,33 @@ unicode: "ece7"
 </ul>
 <h3 id="给内核添加相关模块">给内核添加相关模块
 </h3><p>首先需要查询系统内核是否支持<code>binder</code>和<code>ashmem</code>两个功能，此功能为使用redroid必须的。查询可以通过执行：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">lsmod <span class="p">|</span> grep -e ashmem_linux -e binder_linux
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>进行查询，如果有输出可以略过此步骤。如果没有任何输出则表示内核没有配置好这两个模块，需要重新编译内核。对于Ubuntu系统，官方提供了<a class="link" href="https://github.com/remote-android/redroit-doc"  target="_blank" rel="noopener"
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">lsmod <span class="p">|</span> grep -e ashmem_linux -e binder_linux
+</span></span></code></pre></div><p>进行查询，如果有输出可以略过此步骤。如果没有任何输出则表示内核没有配置好这两个模块，需要重新编译内核。对于Ubuntu系统，官方提供了<a class="link" href="https://github.com/remote-android/redroit-doc"  target="_blank" rel="noopener"
     >比较简单的流程</a>，对于其他系统则需要手工维护。</p>
 <p>首先去下载当前使用内核版本的源码：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">apt install linux-source-<span class="k">$(</span>uname-r<span class="k">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>下载完的源码位于<code>/usr/src</code>，格式是<code>.xz</code>，进去之后解压源码包并进入解压的文件夹，然后执行</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">make menuconfig
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>在弹出界面的勾选：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Device Drivers--Android--Android Drivers--Binder Ipc Driver。 <span class="c1">#binder</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">apt install linux-source-<span class="k">$(</span>uname-r<span class="k">)</span>
+</span></span></code></pre></div><p>下载完的源码位于<code>/usr/src</code>，格式是<code>.xz</code>，进去之后解压源码包并进入解压的文件夹，然后执行</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">make menuconfig
+</span></span></code></pre></div><p>在弹出界面的勾选：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Device Drivers--Android--Android Drivers--Binder Ipc Driver。 <span class="c1">#binder</span>
 </span></span><span class="line"><span class="cl">Device Drivers--Android--Android Drivers--Binder filesystem。 <span class="c1">#binder</span>
 </span></span><span class="line"><span class="cl">Device Drivers--Android--Staging Drivers--Android--Enable the Anonumous Shared Memory Subsystem <span class="c1">#ashmem</span>
 </span></span><span class="line"><span class="cl">General Setup--CPU/Task <span class="nb">time</span> and stats accounting--Pressure stall infomation tracking
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>后按<code>save</code>保存。</p>
+</span></span></code></pre></div><p>后按<code>save</code>保存。</p>
 <p>或者进去之后直接选择<code>exit</code>并选择<code>save config</code>。目录下会生成一个<code>.config</code>的文件，编辑该文件在最后添加以下内容:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">CONFIG_ASHMEM</span><span class="o">=</span>y
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">CONFIG_ASHMEM</span><span class="o">=</span>y
 </span></span><span class="line"><span class="cl"><span class="nv">CONFIG_ANDROID</span><span class="o">=</span>y
 </span></span><span class="line"><span class="cl"><span class="nv">CONFIG_ANDROID_BINDER_IPC</span><span class="o">=</span>y
 </span></span><span class="line"><span class="cl"><span class="nv">CONFIG_ANDROID_BINDERFS</span><span class="o">=</span>y
 </span></span><span class="line"><span class="cl"><span class="nv">CONFIG_ANDROID_BINDER_DEVICES</span><span class="o">=</span><span class="s2">&#34;binder,hwbinder,vndbinder,binderfs&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="nv">CONFIG_ANDROID_BINDER_IPC_SELFTEST</span><span class="o">=</span>y
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>保存后执行<code>make</code> ，建议不要加j让他慢慢编译，经尝试这样会导致报错。</p>
+</span></span></code></pre></div><p>保存后执行<code>make</code> ，建议不要加j让他慢慢编译，经尝试这样会导致报错。</p>
 <p><strong>注意</strong>：可能会报错：<code>CONFIG_DEBUG_INFO_BTF</code></p>
 <p>这种情况就去<code>.config</code>文件里面添加以下内容：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">CONFIG_DEBUG_INFO_DWARF5</span><span class="o">=</span>n
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">CONFIG_DEBUG_INFO_DWARF5</span><span class="o">=</span>n
 </span></span><span class="line"><span class="cl"><span class="nv">CONFIG_DEBUG_INFO_BTF</span><span class="o">=</span>n <span class="c1">#原值为y</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>跑完后在目录下执行<code>modules_install</code>和<code>make install</code>，执行完成后检查内核是否安装到grub了：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="p">(</span><span class="n">base</span><span class="p">)</span> <span class="n">root</span><span class="err">@</span><span class="n">DevBot</span><span class="p">:</span><span class="o">/</span><span class="n">boot</span><span class="c1"># cat /boot/grub/grub.cfg | grep menuentry</span>
+</span></span></code></pre></div><p>跑完后在目录下执行<code>modules_install</code>和<code>make install</code>，执行完成后检查内核是否安装到grub了：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="p">(</span><span class="n">base</span><span class="p">)</span> <span class="n">root</span><span class="err">@</span><span class="n">DevBot</span><span class="p">:</span><span class="o">/</span><span class="n">boot</span><span class="c1"># cat /boot/grub/grub.cfg | grep menuentry</span>
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">[</span> <span class="n">x</span><span class="s2">&#34;${feature_menuentry_id}&#34;</span> <span class="o">=</span> <span class="n">xy</span> <span class="p">];</span> <span class="n">then</span>
 </span></span><span class="line"><span class="cl">  <span class="n">menuentry_id_option</span><span class="o">=</span><span class="s2">&#34;--id&#34;</span>
 </span></span><span class="line"><span class="cl">  <span class="n">menuentry_id_option</span><span class="o">=</span><span class="s2">&#34;&#34;</span>
@@ -666,120 +578,45 @@ unicode: "ece7"
 </span></span><span class="line"><span class="cl">        <span class="n">menuentry</span> <span class="s1">&#39;Debian GNU/Linux, with Linux 6.1.0-15-amd64&#39;</span> <span class="o">--</span><span class="k">class</span> <span class="n">debian</span> <span class="o">--</span><span class="k">class</span> <span class="n">gnu</span><span class="o">-</span><span class="n">linux</span> <span class="o">--</span><span class="k">class</span> <span class="n">gnu</span> <span class="o">--</span><span class="k">class</span> <span class="n">os</span> <span class="o">$</span><span class="n">menuentry_id_option</span> <span class="s1">&#39;gnulinux-6.1.0-15-amd64-advanced-9aba24c5-ec53-4108-b461-4bcc67d1d0dc&#39;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">menuentry</span> <span class="s1">&#39;Debian GNU/Linux, with Linux 6.1.0-15-amd64 (recovery mode)&#39;</span> <span class="o">--</span><span class="k">class</span> <span class="n">debian</span> <span class="o">--</span><span class="k">class</span> <span class="n">gnu</span><span class="o">-</span><span class="n">linux</span> <span class="o">--</span><span class="k">class</span> <span class="n">gnu</span> <span class="o">--</span><span class="k">class</span> <span class="n">os</span> <span class="o">$</span><span class="n">menuentry_id_option</span> <span class="s1">&#39;gnulinux-6.1.0-15-amd64-recovery-9aba24c5-ec53-4108-b461-4bcc67d1d0dc&#39;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="n">menuentry</span> <span class="s1">&#39;UEFI Firmware Settings&#39;</span> <span class="o">$</span><span class="n">menuentry_id_option</span> <span class="s1">&#39;uefi-firmware&#39;</span> <span class="p">{</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>可以看到<code>Debian GNU/Linux, with Linux 6.5.10android</code>已经配置进去了。</p>
+</span></span></code></pre></div><p>可以看到<code>Debian GNU/Linux, with Linux 6.5.10android</code>已经配置进去了。</p>
 <p>然后我们需要修改内核启动顺序：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">#nano /etc/default/grub
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">#nano /etc/default/grub
 </span></span><span class="line"><span class="cl">GRUB_DEFAULT=&#34;1 &gt;0&#34;
 </span></span><span class="line"><span class="cl">GRUB_TIMEOUT=5
 </span></span><span class="line"><span class="cl">GRUB_DISTRIBUTOR=`lsb_release -i -s 2&gt; /dev/null || echo Debian`
 </span></span><span class="line"><span class="cl">GRUB_CMDLINE_LINUX_DEFAULT=&#34;quiet splash&#34;
 </span></span><span class="line"><span class="cl">GRUB_CMDLINE_LINUX=&#34;&#34;
 </span></span><span class="line"><span class="cl">GRUB_DISABLE_OS_PROBER=false
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>GRUB_DEFAULT为按menuentry顺序排序设置默认启动项，第一项为0，我这里对应的是<code>Debian GNU/Linux</code>，<code>Debian GNU/Linux, with Linux 6.5.10android</code>是子菜单<code>Advanced options for Debian GNU/Linux</code>下的第一项，所以这里应该设置为1 &gt;0.注意&quot;1&quot;和&quot;&gt;&ldquo;之间有一个空格。</p>
+</span></span></code></pre></div><p>GRUB_DEFAULT为按menuentry顺序排序设置默认启动项，第一项为0，我这里对应的是<code>Debian GNU/Linux</code>，<code>Debian GNU/Linux, with Linux 6.5.10android</code>是子菜单<code>Advanced options for Debian GNU/Linux</code>下的第一项，所以这里应该设置为1 &gt;0.注意&quot;1&quot;和&quot;&gt;&ldquo;之间有一个空格。</p>
 <p>然后更新保存grub：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">update-grub
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>查看是否配置正确：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cat /proc/cmdline
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>重启。然后直接一个<code>uname -a</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">(</span>base<span class="o">)</span> tamakyi@DevBot:~$ uname -a
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">update-grub
+</span></span></code></pre></div><p>查看是否配置正确：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cat /proc/cmdline
+</span></span></code></pre></div><p>重启。然后直接一个<code>uname -a</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">(</span>base<span class="o">)</span> tamakyi@DevBot:~$ uname -a
 </span></span><span class="line"><span class="cl">Linux AkarinDevBot 6.5.10android <span class="c1">#2 SMP PREEMPT_DYNAMIC Wed Jan 24 00:43:00 HKT 2024 x86_64 GNU/Linux</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>如果还是不行（提示缺少ashmem）的话，去克隆这个仓库并执行安装加载：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git clone https://github.com/choff/anbox-modules
+</span></span></code></pre></div><p>如果还是不行（提示缺少ashmem）的话，去克隆这个仓库并执行安装加载：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git clone https://github.com/choff/anbox-modules
 </span></span><span class="line"><span class="cl"><span class="nb">cd</span> anbox-modules
 </span></span><span class="line"><span class="cl">sh ./INSTALL.sh
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>再检查是否启用完成：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">(</span>base<span class="o">)</span> tamakyi@DevBot:~$ grep binder /proc/filesystems 
+</span></span></code></pre></div><p>再检查是否启用完成：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">(</span>base<span class="o">)</span> tamakyi@DevBot:~$ grep binder /proc/filesystems 
 </span></span><span class="line"><span class="cl">nodev   binder
 </span></span><span class="line"><span class="cl"><span class="o">(</span>base<span class="o">)</span> tamakyi@DevBot:~$ grep ashmem /proc/misc 
 </span></span><span class="line"><span class="cl"><span class="m">124</span> ashmem
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>有输出就表示正常启用模块了。如果如果还是用不了，那可能是你需要手动挂载binderfs：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkdir /dev/binderfs
+</span></span></code></pre></div><p>有输出就表示正常启用模块了。如果如果还是用不了，那可能是你需要手动挂载binderfs：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkdir /dev/binderfs
 </span></span><span class="line"><span class="cl">mount -t binder none /dev/binderfs/
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>然后重启再验证，至此redroid的内核依赖模块安装完成。</p>
+</span></span></code></pre></div><p>然后重启再验证，至此redroid的内核依赖模块安装完成。</p>
 <hr>
 <h3 id="安装redroid">安装redroid
 </h3><p>安装过docker的直接运行:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">(</span>base<span class="o">)</span> root@DevBot:~# docker run -itd --rm --privileged <span class="se">\
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">(</span>base<span class="o">)</span> root@DevBot:~# docker run -itd --rm --privileged <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>    --pull always <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>    -v ~/data:/data <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>    -p 35555:5555 <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>    redroid/redroid:13.0.0-latest
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>其中官方支持的版本如下：（截止20240124）</p>
+</span></span></code></pre></div><p>其中官方支持的版本如下：（截止20240124）</p>
 <ul>
 <li>Android 14 (redroid/redroid:14.0.0-latest)</li>
 <li>Android 14 64bit only (redroid/redroid:14.0.0_64only-latest)</li>
@@ -795,63 +632,16 @@ unicode: "ece7"
 <p>版本并不是越高越好，越高占用内存越多，且限制更多，此处我选择安卓10，跑个shamrock足矣。
 <strong>经测试在安卓10内部打开设置会导致宿主机死机，并且重启后docker容器会消失，慎用</strong></p>
 <p>检查是否正常使用：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># docker ps</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># docker ps</span>
 </span></span><span class="line"><span class="cl">CONTAINER ID   IMAGE                           COMMAND                   CREATED         STATUS         PORTS                                         NAMES
 </span></span><span class="line"><span class="cl">d51457fc4561   redroid/redroid:10.0.0-latest   <span class="s2">&#34;/init androidboot.h…&#34;</span>   <span class="m">3</span> minutes ago   Up <span class="m">3</span> minutes   0.0.0.0:35555-&gt;5555/tcp, :::35555-&gt;5555/tcp   sweet_vaughan
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>下载adb套件：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">wget https://dl.google.com/android/repository/platform-tools_r34.0.5-linux.zip <span class="c1">#不一定是这个版本，具体以官网为准</span>
+</span></span></code></pre></div><p>下载adb套件：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">wget https://dl.google.com/android/repository/platform-tools_r34.0.5-linux.zip <span class="c1">#不一定是这个版本，具体以官网为准</span>
 </span></span><span class="line"><span class="cl">unzip platform-tools_r34.0.5-linux.zip
 </span></span><span class="line"><span class="cl">cp platform-tools_r34.0.5-linux/adb /usr/bin
 </span></span><span class="line"><span class="cl">chmod +x /usr/bin/adb
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>连接进redroid：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">(</span>base<span class="o">)</span> root@DevBot:~/platform-tools# adb connect localhost:35555 <span class="c1">#前面把docker的5555端口映射到宿主的35555端口</span>
+</span></span></code></pre></div><p>连接进redroid：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">(</span>base<span class="o">)</span> root@DevBot:~/platform-tools# adb connect localhost:35555 <span class="c1">#前面把docker的5555端口映射到宿主的35555端口</span>
 </span></span><span class="line"><span class="cl">connected to localhost:35555 
 </span></span><span class="line"><span class="cl"><span class="o">(</span>base<span class="o">)</span> root@DevBot:~/platform-tools# adb devices
 </span></span><span class="line"><span class="cl">List of devices attached
@@ -875,102 +665,8 @@ unicode: "ece7"
 </span></span><span class="line"><span class="cl">redroid_x86_64:/ $ uname -a
 </span></span><span class="line"><span class="cl">Linux localhost 6.5.10android <span class="c1">#2 SMP PREEMPT_DYNAMIC Wed Jan 24 00:43:00 HKT 2024 x86_64</span>
 </span></span><span class="line"><span class="cl">redroid_x86_64:/ $ 
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>查询下<code>build.prop</code>：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span><span class="lnt">61
-</span><span class="lnt">62
-</span><span class="lnt">63
-</span><span class="lnt">64
-</span><span class="lnt">65
-</span><span class="lnt">66
-</span><span class="lnt">67
-</span><span class="lnt">68
-</span><span class="lnt">69
-</span><span class="lnt">70
-</span><span class="lnt">71
-</span><span class="lnt">72
-</span><span class="lnt">73
-</span><span class="lnt">74
-</span><span class="lnt">75
-</span><span class="lnt">76
-</span><span class="lnt">77
-</span><span class="lnt">78
-</span><span class="lnt">79
-</span><span class="lnt">80
-</span><span class="lnt">81
-</span><span class="lnt">82
-</span><span class="lnt">83
-</span><span class="lnt">84
-</span><span class="lnt">85
-</span><span class="lnt">86
-</span><span class="lnt">87
-</span><span class="lnt">88
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">1<span class="p">|</span>redroid_x86_64:/ $ su
+</span></span></code></pre></div><p>查询下<code>build.prop</code>：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">1<span class="p">|</span>redroid_x86_64:/ $ su
 </span></span><span class="line"><span class="cl">1<span class="p">|</span>redroid_x86_64:/ <span class="c1"># cat /system/build.prop                     </span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># begin common build properties</span>
@@ -1058,9 +754,7 @@ unicode: "ece7"
 </span></span><span class="line"><span class="cl">persist.debug.dalvik.vm.core_platform_api_policy<span class="o">=</span>just-warn
 </span></span><span class="line"><span class="cl">dalvik.vm.lockprof.threshold<span class="o">=</span><span class="m">500</span>
 </span></span><span class="line"><span class="cl">net.bt.name<span class="o">=</span>Android
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>说明已经正常安装redroid并使用了。</p>
+</span></span></code></pre></div><p>说明已经正常安装redroid并使用了。</p>
 <hr>
 <h3 id="配置安装shamrock">配置安装shamrock
 </h3><p>首先要把相关的东西准备好（此步骤我在windows远程操作了）：
@@ -1071,19 +765,7 @@ unicode: "ece7"
 <code>https://github.com/RikkaApps/Shizuku/releases/download/v13.5.3/shizuku-v13.5.3.r1036.fff3f87-release.apk</code>
 以及Shamrock安装包，因为使用的是Action版本，需要登陆Github下载，此处不放链接
 ，解压<code>scrcpy-win64-v2.3.1.zip</code>并把QQ、LSPatch、shizuku、Shamrock放在同一目录，打开powershell，执行：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">./adb.exe connect 100.64.0.16:35555 <span class="c1">#100.64.0.16为我的debian宿主机远程访问IP。</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">./adb.exe connect 100.64.0.16:35555 <span class="c1">#100.64.0.16为我的debian宿主机远程访问IP。</span>
 </span></span><span class="line"><span class="cl">./adb.exe devices
 </span></span><span class="line"><span class="cl">List of devices attached
 </span></span><span class="line"><span class="cl">100.64.0.16:35555     device
@@ -1091,27 +773,11 @@ unicode: "ece7"
 </span></span><span class="line"><span class="cl">./adb install LSPatch.apk
 </span></span><span class="line"><span class="cl">./adb install shizuku-v13.5.3.r1040.1fc3a2d-release.apk
 </span></span><span class="line"><span class="cl">./adb install Shamrock-v1.0.7.r260.64b7b00-all.apk
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>然后使用scrcpy：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">scrcpy
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>会进到安卓界面，先打开shizuku，会提示要启用，我们回退到adb窗口，执行：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">./adb shell sh /storage/emulated/0/Android/data/moe.shizuku.privileged.api/start.sh
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>然后shizuku提示<code>shizuku is running</code>。然后把<code>Authorized 0 applications</code>点开，勾选LSPatch，再打开LSPatch，到Manager&ndash;Apps点击加号，选择New Patch-Select apk(s) from storage 找到QQ安装包，点击start patch
+</span></span></code></pre></div><p>然后使用scrcpy：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">scrcpy
+</span></span></code></pre></div><p>会进到安卓界面，先打开shizuku，会提示要启用，我们回退到adb窗口，执行：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">./adb shell sh /storage/emulated/0/Android/data/moe.shizuku.privileged.api/start.sh
+</span></span></code></pre></div><p>然后shizuku提示<code>shizuku is running</code>。然后把<code>Authorized 0 applications</code>点开，勾选LSPatch，再打开LSPatch，到Manager&ndash;Apps点击加号，选择New Patch-Select apk(s) from storage 找到QQ安装包，点击start patch
 <img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/01/24/65b0d331552e6.png"
 	
 	
@@ -1166,6 +832,36 @@ unicode: "ece7"
 </section>
 
 
+    <div class="article-details" style="padding-top: 15px;padding-bottom: 0px;">
+        <footer class="article-time">
+            <div>
+                <!--
+category: System
+tags: [view, watch]
+version: "1.0"
+unicode: "ea9a"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="20"
+  height="20"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#000000"
+  stroke-width="0.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+  <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
+</svg>
+
+                <span title="阅读次数" style="display: inline;font-size: 1.4rem;">阅读次数: <span class="waline-pageview-count" data-path="/record/redroid.html" /></span>
+            </div>
+        </footer>
+    </div>
+
+
     <footer class="article-footer">
     
     <section class="article-tags">
@@ -1211,7 +907,7 @@ unicode: "ece7"
 
 
         <span>
-            最后更新于 2025年07月02日 12:11
+            最后更新于 2025年07月02日 17:17
         </span>
     </section></footer>
 

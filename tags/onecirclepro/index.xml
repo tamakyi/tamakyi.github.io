@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Wed, 02 Jul 2025 12:11:48 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/onecirclepro/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 02 Jul 2025 17:17:59 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/onecirclepro/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>OneCirclePro插件和handsome静态资源切换到国内服务器</title>
         <link>https://blog.tama.guru/record/OneCirclePro-jscss.html</link>
         <pubDate>Mon, 11 Jul 2022 22:52:00 +0800</pubDate>
@@ -28,40 +28,16 @@
 &lt;p&gt;直接把包内&lt;code&gt;themeCore\themes\default\statics&lt;/code&gt;打包上传到国内服务器搭建的网站目录下，最好和其他资源间隔开来，比如&lt;code&gt;https://hostname/cdn/OneCircle/&lt;/code&gt;，然后修改&lt;code&gt;themeCore/themes/default/apps/main/content.phtml&lt;/code&gt;和&lt;code&gt;themeCore/themes/default/apps/cpanel/content_nosidebar.phtml&lt;/code&gt;把&lt;code&gt;{%config theme_url%}&lt;/code&gt;替换成&lt;code&gt;https://hostname/cdn/OneCircle/&lt;/code&gt;，再刷新即可。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;[scode type=&amp;quot;yellow&amp;quot;]注意！部分资源位于&lt;/code&gt;themeCore\themes\default\apps\cpanel\statics&lt;code&gt;下，此部分资源和上面的不一样，也需要提取到国内服务器上并进行替换。（说的就是你！&lt;/code&gt;themeCore/themes/default/apps/cpanel/content_nosidebar.phtml&lt;code&gt; 你mua的！）[/scode]&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;对于部分资源会得到&lt;code&gt;has been blocked by CORS policy: No &#39;Access-Control-Allow-Origin&#39;&lt;/code&gt;的跨域警告，是因为&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://hostname/cdn/OneCircle/statics/scss/master.styles.min.css?v={%config version%}&amp;#34;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;这里的&lt;code&gt;master.styles.min.js&lt;/code&gt;会请求几个woff文件，初步解决方案是只把这里修改回去，即：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;{%config theme_url%}/statics/scss/master.styles.min.css?v={%config version%}&amp;#34;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;后面有好方法再说。。。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://hostname/cdn/OneCircle/statics/scss/master.styles.min.css?v={%config version%}&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里的&lt;code&gt;master.styles.min.js&lt;/code&gt;会请求几个woff文件，初步解决方案是只把这里修改回去，即：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;{%config theme_url%}/statics/scss/master.styles.min.css?v={%config version%}&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;后面有好方法再说。。。&lt;/p&gt;
 &lt;p&gt;PS:解决方案：如果使用宝塔面板，在目标服务器（国内服务器）要关闭&lt;code&gt;防跨站攻击(open_basedir)&lt;/code&gt;功能，并在配置文件的location添加以下两句即可：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    location / {
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    location / {
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        add_header Access-Control-Allow-Origin *;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        add_header Access-Control-Allow-Methods &amp;#39;GET, POST, OPTIONS&amp;#39;;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      }
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;hr&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;p&gt;handsome主题内置了自定义cdn加速的功能，在主题设置的&lt;code&gt;速度优化-主题本地静态资源自定义cdn加速&lt;/code&gt;下，填写加速地址：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ul&gt;

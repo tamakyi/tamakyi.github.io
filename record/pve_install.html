@@ -6,32 +6,15 @@
 
 <link rel='canonical' href='https://blog.tama.guru/record/pve_install.html'>
 
-<link rel="stylesheet" href="/scss/style.min.f8d3e3667c9c0bc7a054407fadeb01e15a691c2db55c8c66227df16b0d32131e.css"><meta property='og:title' content="PVE安装后续优化">
+<link rel="stylesheet" href="/scss/style.min.77d805b213b689a0386f7fc900575972cfb1f444536a88757fc1e9df17e8ebd8.css"><meta property='og:title' content="PVE安装后续优化">
 <meta property='og:description' content="安装PVE并不复杂，相关操作网上一抓一大把此处不再赘述。 此处主要记录一些安装后碰上的问题以及对应的解决方案。 #####开启硬件直通##### 1.首先确保CPU带有虚拟化能力。对于AMD平台，在BIOS的高级&gt;CPU设置查看是否有能开启SVM Mode。确认能打开后，到高级&gt;AMD CBS&gt;NBIO Common Options&gt;NB Configuration下把IOMMU打开。 2.进入系统控制台，修改grub启动时添加硬件直通功能。 打开/etc/default/grub 将\n">
 <meta property='og:url' content='https://blog.tama.guru/record/pve_install.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='linux' /><meta property='article:tag' content='PVE' /><meta property='article:tag' content='nas' /><meta property='article:published_time' content='2023-03-12T01:43:00&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T12:11:48&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='linux' /><meta property='article:tag' content='PVE' /><meta property='article:tag' content='nas' /><meta property='article:published_time' content='2023-03-12T01:43:00&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T17:17:59&#43;00:00'/>
 <meta name="twitter:title" content="PVE安装后续优化">
 <meta name="twitter:description" content="安装PVE并不复杂，相关操作网上一抓一大把此处不再赘述。 此处主要记录一些安装后碰上的问题以及对应的解决方案。 #####开启硬件直通##### 1.首先确保CPU带有虚拟化能力。对于AMD平台，在BIOS的高级&gt;CPU设置查看是否有能开启SVM Mode。确认能打开后，到高级&gt;AMD CBS&gt;NBIO Common Options&gt;NB Configuration下把IOMMU打开。 2.进入系统控制台，修改grub启动时添加硬件直通功能。 打开/etc/default/grub 将\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
-<style>
-    :root {
-     
-    --sys-font-family: "HarmonyOS_Sans_SC_Medium", Georgia, -apple-system, 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
-    --code-font-family: "JetBrainsMono Regular", Menlo, Monaco, Consolas, "Courier New";
-    --article-font-family: "HarmonyOS_Sans_SC_Medium", var(--base-font-family);
-  }
-</style>
 
-<script>
-    (function () {
-        const customFont = document.createElement('link');
-        customFont.href = "https://gcore.jsdelivr.net/gh/tamakyi/cdn/statics/fonts/font.css";
-        customFont.type = "text/css";
-        customFont.rel = "stylesheet";
-         document.head.appendChild(customFont);
-}());
-</script>
     </head>
     <body class="
     article-page
@@ -519,76 +502,23 @@ unicode: "ece7"
 2.进入系统控制台，修改grub启动时添加硬件直通功能。
 打开<code>/etc/default/grub</code>
 将</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">GRUB_CMDLINE_LINUX_DEFAULT=&#34;quiet&#34;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>进行修改。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">GRUB_CMDLINE_LINUX_DEFAULT=&#34;quiet&#34;
+</span></span></code></pre></div><p>进行修改。</p>
 <p>对于AMD平台修改为</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">GRUB_CMDLINE_LINUX_DEFAULT=&#34;quiet amd_iommu=on  iommu=pt video=efifb:off,vesafb:off&#34;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>对于Intel平台修改为</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">GRUB_CMDLINE_LINUX_DEFAULT=&#34;quiet intel_iommu=on iommu=pt video=efifb:off,vesafb:off&#34; 
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>修改完成后执行：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">update-grub
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>并添加以下模块到内核中：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">echo vfio &gt;&gt; /etc/modules
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">GRUB_CMDLINE_LINUX_DEFAULT=&#34;quiet amd_iommu=on  iommu=pt video=efifb:off,vesafb:off&#34;
+</span></span></code></pre></div><p>对于Intel平台修改为</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">GRUB_CMDLINE_LINUX_DEFAULT=&#34;quiet intel_iommu=on iommu=pt video=efifb:off,vesafb:off&#34; 
+</span></span></code></pre></div><p>修改完成后执行：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">update-grub
+</span></span></code></pre></div><p>并添加以下模块到内核中：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">echo vfio &gt;&gt; /etc/modules
 </span></span><span class="line"><span class="cl">echo vfio_iommu_type1 &gt;&gt; /etc/modules
 </span></span><span class="line"><span class="cl">echo vfio_pci &gt;&gt; /etc/modules
 </span></span><span class="line"><span class="cl">echo vfio_virqfd &gt;&gt; /etc/modules
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>添加完成后重启。
+</span></span></code></pre></div><p>添加完成后重启。
 #####<center>替换源</center>#####
 执行以下命令：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="c1">#先把企业源换掉</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="c1">#先把企业源换掉</span>
 </span></span><span class="line"><span class="cl"><span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">pve</span><span class="o">-</span><span class="n">install</span><span class="o">-</span><span class="n">repo</span><span class="o">.</span><span class="n">list</span> 
 </span></span><span class="line"><span class="cl"><span class="n">echo</span> <span class="s2">&#34;#deb https://enterprise.proxmox.com/debian/pve Bookworm pve-enterprise&#34;</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">pve</span><span class="o">-</span><span class="n">enterprise</span><span class="o">.</span><span class="n">list</span>
 </span></span><span class="line"><span class="cl"><span class="c1">#替换其他软件源</span>
@@ -599,28 +529,12 @@ unicode: "ece7"
 </span></span><span class="line"><span class="cl"><span class="n">sed</span> <span class="o">-</span><span class="n">i</span><span class="o">.</span><span class="n">bak</span> <span class="s2">&#34;s#ftp.debian.org/debian#mirrors.aliyun.com/debian#g&#34;</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span> 
 </span></span><span class="line"><span class="cl"><span class="n">sed</span> <span class="o">-</span><span class="n">i</span> <span class="s2">&#34;s#security.debian.org#mirrors.aliyun.com/debian-security#g&#34;</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span> 
 </span></span><span class="line"><span class="cl"><span class="n">echo</span> <span class="s2">&#34;deb http://download.proxmox.com/debian/pve bookworm pve-no-subscription&#34;</span> <span class="o">&gt;&gt;</span>  <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span> 
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>最后执行更新</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">apt update
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>#####<center>关闭订阅提示</center>#####
+</span></span></code></pre></div><p>最后执行更新</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">apt update
+</span></span></code></pre></div><p>#####<center>关闭订阅提示</center>#####
 修改文件：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">javascript</span><span class="o">/</span><span class="n">proxmox</span><span class="o">-</span><span class="n">widget</span><span class="o">-</span><span class="n">toolkit</span><span class="o">/</span><span class="n">proxmoxlib</span><span class="o">.</span><span class="n">js</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>搜索 <code>data.status.toLowerCase</code>，并将框中内容删除：
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">javascript</span><span class="o">/</span><span class="n">proxmox</span><span class="o">-</span><span class="n">widget</span><span class="o">-</span><span class="n">toolkit</span><span class="o">/</span><span class="n">proxmoxlib</span><span class="o">.</span><span class="n">js</span>
+</span></span></code></pre></div><p>搜索 <code>data.status.toLowerCase</code>，并将框中内容删除：
 <img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/03/12/640cbd6c8417c.png"
 	
 	
@@ -655,29 +569,14 @@ unicode: "ece7"
 如需要挂载的设备为：
 <code>/dev/sdc4  83888128 468862094 384973967 183.6G Linux filesystem</code>
 接下来通过<code>blkid``查询设备UUID及分区类型 如查询结果为： </code>/dev/sdc4: UUID=&ldquo;b958d02b-9f99-4e48-bacf-xxxxxxxx&rdquo; BLOCK_SIZE=&ldquo;512&rdquo; TYPE=&ldquo;xfs&rdquo; PARTUUID=&ldquo;beabe66d-07c2-2d4b-9836-xxxxxxx&rdquo;<code> 如果需要挂载的是硬盘，接下来需要的是UUID，如果需要的是分区，则需要PARTUUID，另一个参数`type=&quot;xfs&quot;`表明了文件系统类型 修改</code>/etc/fstab```添加以下内容</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">UUID=&#34;b958d02b-9f99-4e48-bacf-xxxxxxxx&#34; /mnt/rootfs2 xfs defaults 0 0
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>第二个参数是需要挂载的目录位置。最后执行
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">UUID=&#34;b958d02b-9f99-4e48-bacf-xxxxxxxx&#34; /mnt/rootfs2 xfs defaults 0 0
+</span></span></code></pre></div><p>第二个参数是需要挂载的目录位置。最后执行
 <code>mount -a</code>即可。
 #####<center>使用lxc安装docker</center>#####
 1、首先进行换源操作</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">cp</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">perl5</span><span class="o">/</span><span class="n">PVE</span><span class="o">/</span><span class="n">APLInfo</span><span class="o">.</span><span class="n">pm</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">perl5</span><span class="o">/</span><span class="n">PVE</span><span class="o">/</span><span class="n">APLInfo</span><span class="o">.</span><span class="n">pm_back</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">cp</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">perl5</span><span class="o">/</span><span class="n">PVE</span><span class="o">/</span><span class="n">APLInfo</span><span class="o">.</span><span class="n">pm</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">perl5</span><span class="o">/</span><span class="n">PVE</span><span class="o">/</span><span class="n">APLInfo</span><span class="o">.</span><span class="n">pm_back</span>
 </span></span><span class="line"><span class="cl"><span class="n">sed</span> <span class="o">-</span><span class="n">i</span> <span class="s1">&#39;s|http://download.proxmox.com|https://mirrors.tuna.tsinghua.edu.cn/proxmox|g&#39;</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">perl5</span><span class="o">/</span><span class="n">PVE</span><span class="o">/</span><span class="n">APLInfo</span><span class="o">.</span><span class="n">pm</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>更换完成后重启pve。
+</span></span></code></pre></div><p>更换完成后重启pve。
 2、接下来进入PVE网页端，按如下操作安装debian软件包。（选择的目录应有CT镜像功能）<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/03/12/640d92828b077.png"
 	
 	
@@ -778,27 +677,14 @@ DNS设置使用默认即可。然后确认信息无误点击完成，等待<code
 接下来进入终端，修改配置文件，如我的lxc容器id是<code>100</code>，则修改
 <code>/etc/pve/lxc/100.conf</code>
 在文件末尾添加以下内容：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">lxc.apparmor.profile: unconfined  
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">lxc.apparmor.profile: unconfined  
 </span></span><span class="line"><span class="cl">lxc.cgroup.devices.allow: a  
 </span></span><span class="line"><span class="cl">lxc.cap.drop:
 </span></span><span class="line"><span class="cl">#以上三行是必备的，以下两行是用来开启容器tun转发的，不是必须的
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">lxc.cgroup2.devices.allow: c 10:200 rwm  
 </span></span><span class="line"><span class="cl">lxc.mount.entry: /dev/net/tun dev/net/tun none bind,create=file
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>修改后整个文件应该看起来像：
+</span></span></code></pre></div><p>修改后整个文件应该看起来像：
 <img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/03/12/640d960b5a827.png"
 	
 	
@@ -811,20 +697,7 @@ DNS设置使用默认即可。然后确认信息无误点击完成，等待<code
 >
 接下来点击Docker界面的启动，等待启动完成。
 4、进入Docker的控制台，修改软件源：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">修改 /etc/apt/sources.list替换成以下内容：
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">修改 /etc/apt/sources.list替换成以下内容：
 </span></span><span class="line"><span class="cl">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free
 </span></span><span class="line"><span class="cl"># deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free
 </span></span><span class="line"><span class="cl">
@@ -833,22 +706,12 @@ DNS设置使用默认即可。然后确认信息无误点击完成，等待<code
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-backports main contrib non-free
 </span></span><span class="line"><span class="cl"># deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-backports main contrib non-free
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>执行<code>apt update</code>更新。
+</span></span></code></pre></div><p>执行<code>apt update</code>更新。
 5、
 执行以下命令：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">apt</span> <span class="n">install</span> <span class="n">docker</span><span class="o">.</span><span class="n">io</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">apt</span> <span class="n">install</span> <span class="n">docker</span><span class="o">.</span><span class="n">io</span>
 </span></span><span class="line"><span class="cl"><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="o">--</span><span class="n">restart</span><span class="o">=</span><span class="n">always</span> <span class="o">--</span><span class="n">name</span><span class="o">=</span><span class="s2">&#34;portainer&#34;</span> <span class="o">-</span><span class="n">p</span> <span class="mi">9000</span><span class="p">:</span><span class="mi">9000</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">docker</span><span class="o">.</span><span class="n">sock</span><span class="p">:</span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">docker</span><span class="o">.</span><span class="n">sock</span> <span class="o">-</span><span class="n">v</span> <span class="n">portainer_data</span><span class="p">:</span><span class="o">/</span><span class="n">data</span> <span class="mi">6053537</span><span class="o">/</span><span class="n">portainer</span><span class="o">-</span><span class="n">ce</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>进入容器IP:9000即可看到Docker控制界面。
+</span></span></code></pre></div><p>进入容器IP:9000即可看到Docker控制界面。
 #####<center>开机提示ACPI BIOS Error(bug)&hellip;</center>#####
 在引导界面按e，并在linux行的最后添加<code>acpi_backlight=vendor</code>
 这种情况一般是修改显卡直通之后出现的，而在网上查了一圈，好像也只有华擎主板有这个问题&hellip;<a class="link" href="https://post.smzdm.com/p/akko88w8/"  target="_blank" rel="noopener"
@@ -867,29 +730,44 @@ DNS设置使用默认即可。然后确认信息无误点击完成，等待<code
 #####<center>PVE8.0创建LXC容器之后无法进入ssh</center>#####
 更新到8.0之后发现怎么创建容器都进不去SSH，具体是：控制台一片空白；XSHELL连接提示拒绝访问；宿主机使用<code>ssh root@192.168.xx.xx</code>提示<code>Permission denied, please try again.</code>（密码是正确的）
 这种情况下可以先进入宿主机的ssh，执行:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">VMID       Status     Lock         Name                
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">VMID       Status     Lock         Name                
 </span></span><span class="line"><span class="cl">101        running                 docker12            
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>当前我运行的lxc容器ID是101，因此执行：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">root@docker12:/etc/ssh#
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>这样就能进来了。
+</span></span></code></pre></div><p>当前我运行的lxc容器ID是101，因此执行：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">root@docker12:/etc/ssh#
+</span></span></code></pre></div><p>这样就能进来了。
 再编辑下<code>/etc/ssh/sshd_config</code>，把<code>PermitRootLogin</code>改成<code>yes</code>，再重启下sshd服务，这次能正常登陆了。</p>
 
 </section>
+
+
+    <div class="article-details" style="padding-top: 15px;padding-bottom: 0px;">
+        <footer class="article-time">
+            <div>
+                <!--
+category: System
+tags: [view, watch]
+version: "1.0"
+unicode: "ea9a"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="20"
+  height="20"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#000000"
+  stroke-width="0.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+  <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
+</svg>
+
+                <span title="阅读次数" style="display: inline;font-size: 1.4rem;">阅读次数: <span class="waline-pageview-count" data-path="/record/pve_install.html" /></span>
+            </div>
+        </footer>
+    </div>
 
 
     <footer class="article-footer">
@@ -927,7 +805,7 @@ DNS设置使用默认即可。然后确认信息无误点击完成，等待<code
 
 
         <span>
-            最后更新于 2025年07月02日 12:11
+            最后更新于 2025年07月02日 17:17
         </span>
     </section></footer>
 

@@ -6,32 +6,15 @@
 
 <link rel='canonical' href='https://blog.tama.guru/record/s3browser_r2_manager.html'>
 
-<link rel="stylesheet" href="/scss/style.min.f8d3e3667c9c0bc7a054407fadeb01e15a691c2db55c8c66227df16b0d32131e.css"><meta property='og:title' content="使用S3 Browser管理Cloudflare R2存储桶">
+<link rel="stylesheet" href="/scss/style.min.77d805b213b689a0386f7fc900575972cfb1f444536a88757fc1e9df17e8ebd8.css"><meta property='og:title' content="使用S3 Browser管理Cloudflare R2存储桶">
 <meta property='og:description' content="本来我是要把导航页所有的文件搬到Github上并试图通过jsdelivr加速访问，但是我发现国内移动网络根本无法直连jsdelivr&hellip;在多次反馈网页无法打开之后，最后还是退一步选择迁移到R2上了。但是R2的网页端管理真的是做得一团糟，上传经常半路失败不说，一次还只能上传100个文件，更恶心的是文件夹无法删除，对于我来说是体验真的不好了。\n">
 <meta property='og:url' content='https://blog.tama.guru/record/s3browser_r2_manager.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='cloudflare' /><meta property='article:tag' content='R2' /><meta property='article:tag' content='S3' /><meta property='article:published_time' content='2024-01-13T22:53:02&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T12:11:48&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='cloudflare' /><meta property='article:tag' content='R2' /><meta property='article:tag' content='S3' /><meta property='article:published_time' content='2024-01-13T22:53:02&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T17:17:59&#43;00:00'/>
 <meta name="twitter:title" content="使用S3 Browser管理Cloudflare R2存储桶">
 <meta name="twitter:description" content="本来我是要把导航页所有的文件搬到Github上并试图通过jsdelivr加速访问，但是我发现国内移动网络根本无法直连jsdelivr&hellip;在多次反馈网页无法打开之后，最后还是退一步选择迁移到R2上了。但是R2的网页端管理真的是做得一团糟，上传经常半路失败不说，一次还只能上传100个文件，更恶心的是文件夹无法删除，对于我来说是体验真的不好了。\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
-<style>
-    :root {
-     
-    --sys-font-family: "HarmonyOS_Sans_SC_Medium", Georgia, -apple-system, 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
-    --code-font-family: "JetBrainsMono Regular", Menlo, Monaco, Consolas, "Courier New";
-    --article-font-family: "HarmonyOS_Sans_SC_Medium", var(--base-font-family);
-  }
-</style>
 
-<script>
-    (function () {
-        const customFont = document.createElement('link');
-        customFont.href = "https://gcore.jsdelivr.net/gh/tamakyi/cdn/statics/fonts/font.css";
-        customFont.type = "text/css";
-        customFont.rel = "stylesheet";
-         document.head.appendChild(customFont);
-}());
-</script>
     </head>
     <body class="
     article-page
@@ -500,24 +483,10 @@ unicode: "ece7"
     >S3Browser</a>这个软件，只有英文，但是不妨碍使用。
 安装完成之后选择<code>Add new account</code>。
 <code>Display Name</code>任意填写即可，<code>Account type</code>选择<code>S3 Compatible Storage</code>，即兼容S3存储。<code>REST Endpotin</code>对应的是<code>S3 API</code>的值，但是不能整个填写进去。比如网页端显示的<code>S3 API</code>为：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://xxxxxxxxxxxxxxxxxxx.r2.cloudflarestorage.com/tamabox
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>那这里要填写的是</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">xxxxxxxxxxxxxxxxxxx.r2.cloudflarestorage.com
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><code>AK</code>和<code>SK</code>是创建桶的时候提供的，如果忘记了就没救了，重新弄个桶吧。
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://xxxxxxxxxxxxxxxxxxx.r2.cloudflarestorage.com/tamabox
+</span></span></code></pre></div><p>那这里要填写的是</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">xxxxxxxxxxxxxxxxxxx.r2.cloudflarestorage.com
+</span></span></code></pre></div><p><code>AK</code>和<code>SK</code>是创建桶的时候提供的，如果忘记了就没救了，重新弄个桶吧。
 <code>Encrypt Access Keys with a password</code>和<code>Use secure transfer(SSL/TSL)</code>选项保留默认即可。
 <img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/01/13/65a2a0bdc8b8c.png"
 	
@@ -534,6 +503,36 @@ unicode: "ece7"
 <code>Addressing model</code>选择<code>Virtual hosted style</code>.
 其他选项保留初始值不用动，点close再save changes<code>即可。 ![add account info 2][3] 这时候应该是能连接进R2内部了，就当作一个文件管理器操作就行了。 ![setting complete][4] &lt;br/&gt; 如果只用来做图床的话可以用</code>Pic-Go`这个软件，操作方法也类似。</p>
 </section>
+
+
+    <div class="article-details" style="padding-top: 15px;padding-bottom: 0px;">
+        <footer class="article-time">
+            <div>
+                <!--
+category: System
+tags: [view, watch]
+version: "1.0"
+unicode: "ea9a"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="20"
+  height="20"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#000000"
+  stroke-width="0.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+  <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
+</svg>
+
+                <span title="阅读次数" style="display: inline;font-size: 1.4rem;">阅读次数: <span class="waline-pageview-count" data-path="/record/s3browser_r2_manager.html" /></span>
+            </div>
+        </footer>
+    </div>
 
 
     <footer class="article-footer">
@@ -571,7 +570,7 @@ unicode: "ece7"
 
 
         <span>
-            最后更新于 2025年07月02日 12:11
+            最后更新于 2025年07月02日 17:17
         </span>
     </section></footer>
 

@@ -6,32 +6,15 @@
 
 <link rel='canonical' href='https://blog.tama.guru/record/archlinux_lnmp.html'>
 
-<link rel="stylesheet" href="/scss/style.min.f8d3e3667c9c0bc7a054407fadeb01e15a691c2db55c8c66227df16b0d32131e.css"><meta property='og:title' content="Archlinux下安装并配置lnmp环境">
+<link rel="stylesheet" href="/scss/style.min.77d805b213b689a0386f7fc900575972cfb1f444536a88757fc1e9df17e8ebd8.css"><meta property='og:title' content="Archlinux下安装并配置lnmp环境">
 <meta property='og:description' content="最近把编译用的主机换个发行版，最开始用的是debian，结果现在桌面环境进不去了（而且是一引导完成就所有输入、输入都没反应，但是ssh能登陆，很奇怪），懒得去查原因就选择换个环境。本来用的almalinux，无奈真的不喜欢gnome，自己装了kde之后ibus无论怎样都打不出中文，最后还是上了arch。 无论是宝塔还是lnmp.org都没有对arch系进行适配，网上也有很多一步步排错安装的教程，但是看着一步步的报错再去核查原因着实难受，最后还是选择自己装最基础的nginx+php+mysql。\n">
 <meta property='og:url' content='https://blog.tama.guru/record/archlinux_lnmp.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='mysql' /><meta property='article:tag' content='archlinux' /><meta property='article:tag' content='nginx' /><meta property='article:tag' content='php' /><meta property='article:tag' content='lnmp' /><meta property='article:published_time' content='2023-11-30T11:07:00&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T12:11:48&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='mysql' /><meta property='article:tag' content='archlinux' /><meta property='article:tag' content='nginx' /><meta property='article:tag' content='php' /><meta property='article:tag' content='lnmp' /><meta property='article:published_time' content='2023-11-30T11:07:00&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T17:17:59&#43;00:00'/>
 <meta name="twitter:title" content="Archlinux下安装并配置lnmp环境">
 <meta name="twitter:description" content="最近把编译用的主机换个发行版，最开始用的是debian，结果现在桌面环境进不去了（而且是一引导完成就所有输入、输入都没反应，但是ssh能登陆，很奇怪），懒得去查原因就选择换个环境。本来用的almalinux，无奈真的不喜欢gnome，自己装了kde之后ibus无论怎样都打不出中文，最后还是上了arch。 无论是宝塔还是lnmp.org都没有对arch系进行适配，网上也有很多一步步排错安装的教程，但是看着一步步的报错再去核查原因着实难受，最后还是选择自己装最基础的nginx+php+mysql。\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
-<style>
-    :root {
-     
-    --sys-font-family: "HarmonyOS_Sans_SC_Medium", Georgia, -apple-system, 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
-    --code-font-family: "JetBrainsMono Regular", Menlo, Monaco, Consolas, "Courier New";
-    --article-font-family: "HarmonyOS_Sans_SC_Medium", var(--base-font-family);
-  }
-</style>
 
-<script>
-    (function () {
-        const customFont = document.createElement('link');
-        customFont.href = "https://gcore.jsdelivr.net/gh/tamakyi/cdn/statics/fonts/font.css";
-        customFont.type = "text/css";
-        customFont.rel = "stylesheet";
-         document.head.appendChild(customFont);
-}());
-</script>
     </head>
     <body class="
     article-page
@@ -521,7 +504,7 @@ unicode: "ece7"
 
 
                 <time class="article-time--reading">
-                    阅读时长: 5 分钟
+                    阅读时长: 4 分钟
                 </time>
             </div>
         
@@ -540,52 +523,19 @@ unicode: "ece7"
 无论是宝塔还是lnmp.org都没有对arch系进行适配，网上也有很多一步步排错安装的教程，但是看着一步步的报错再去核查原因着实难受，最后还是选择自己装最基础的nginx+php+mysql。</p>
 <h4 id="安装nginx">安装nginx
 </h4><p>archlinux软件包里面有nginx和nginx-mainline（当前最新是1.25.3)两个版本，nginx版本较老且两个版本之间有冲突，故安装nginx-mainline。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">pacman -S nginx-mainline
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>安装完成后执行<code>systemctl status nginx</code>可能会提示</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">11月 30 10:04:16 bot nginx[17674]: 2023/11/30 10:04:16 [warn] 17674#17674: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>需要修改<code>/etc/nginx/nginx.conf</code>，并在http块下添加<code>types_hash_max_size 4096;</code>，例如：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">http {
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">pacman -S nginx-mainline
+</span></span></code></pre></div><p>安装完成后执行<code>systemctl status nginx</code>可能会提示</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">11月 30 10:04:16 bot nginx[17674]: 2023/11/30 10:04:16 [warn] 17674#17674: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+</span></span></code></pre></div><p>需要修改<code>/etc/nginx/nginx.conf</code>，并在http块下添加<code>types_hash_max_size 4096;</code>，例如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">http {
 </span></span><span class="line"><span class="cl">...
 </span></span><span class="line"><span class="cl">    types_hash_max_size 4096;
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    #gzip  on;
 </span></span><span class="line"><span class="cl">...
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>然后重启nginx：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">systemctl retstart nginx
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>就不会报错了，访问也没问题。
+</span></span></code></pre></div><p>然后重启nginx：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">systemctl retstart nginx
+</span></span></code></pre></div><p>就不会报错了，访问也没问题。
 <img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/30/6567f220cd216.png"
 	
 	
@@ -598,92 +548,35 @@ unicode: "ece7"
 ></p>
 <h4 id="安装php">安装php
 </h4><p>执行</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">pacman -S php-fpm
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>安装最新的php模块，当前最新版本是8.2.13-1。安装php-fpm会自动把php一并安装好。
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">pacman -S php-fpm
+</span></span></code></pre></div><p>安装最新的php模块，当前最新版本是8.2.13-1。安装php-fpm会自动把php一并安装好。
 然后把php-fpm和nginx对接，修改<code>/etc/nginx/nginx.conf</code>：
 把：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">        #location ~ \.php$ {
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">        #location ~ \.php$ {
 </span></span><span class="line"><span class="cl">        #    root           html;
 </span></span><span class="line"><span class="cl">        #    fastcgi_pass   127.0.0.1:9000;
 </span></span><span class="line"><span class="cl">        #    fastcgi_index  index.php;
 </span></span><span class="line"><span class="cl">        #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
 </span></span><span class="line"><span class="cl">        #    include        fastcgi_params;
 </span></span><span class="line"><span class="cl">        #}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>修改为：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">        location ~ \.php$ {
+</span></span></code></pre></div><p>修改为：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">        location ~ \.php$ {
 </span></span><span class="line"><span class="cl">            root           /usr/share/nginx/html;
 </span></span><span class="line"><span class="cl">            fastcgi_pass   unix:/run/php-fpm/php-fpm.sock;
 </span></span><span class="line"><span class="cl">            fastcgi_index  index.php;
 </span></span><span class="line"><span class="cl">            fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;;
 </span></span><span class="line"><span class="cl">            include        fastcgi_params;
 </span></span><span class="line"><span class="cl">        }
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>然后测试配置文件是否正常：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">nginx -t
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>并将相应服务启动/重启：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">systemctl</span> <span class="n">enable</span> <span class="n">php</span><span class="o">-</span><span class="n">fpm</span>
+</span></span></code></pre></div><p>然后测试配置文件是否正常：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">nginx -t
+</span></span></code></pre></div><p>并将相应服务启动/重启：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">systemctl</span> <span class="n">enable</span> <span class="n">php</span><span class="o">-</span><span class="n">fpm</span>
 </span></span><span class="line"><span class="cl"><span class="n">systemctl</span> <span class="n">start</span> <span class="n">php</span><span class="o">-</span><span class="n">fpm</span>
 </span></span><span class="line"><span class="cl"><span class="n">systemctl</span> <span class="n">restart</span> <span class="n">nginx</span>  <span class="c1">#或nginx -s reload</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>然后到网站root目录<code>/usr/share/nginx/html</code>下放一个探针:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd /usr/share/nginx/html
+</span></span></code></pre></div><p>然后到网站root目录<code>/usr/share/nginx/html</code>下放一个探针:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd /usr/share/nginx/html
 </span></span><span class="line"><span class="cl">wget https://raw.githubusercontent.com/582033/monitor/master/monitor.php
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>然后访问ip/monitor.php：
+</span></span></code></pre></div><p>然后访问ip/monitor.php：
 <img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/30/6567f6f37060a.png"
 	
 	
@@ -698,153 +591,28 @@ unicode: "ece7"
 <h4 id="安装mysql">安装mysql
 </h4><p>先启动php下mysql的相关拓展：
 修改<code>/etc/php/php.ini </code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">;extension=mysqli
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">;extension=mysqli
 </span></span><span class="line"><span class="cl">;extension=odbc
 </span></span><span class="line"><span class="cl">;zend_extension=opcache
 </span></span><span class="line"><span class="cl">;extension=pdo_dblib
 </span></span><span class="line"><span class="cl">;extension=pdo_mysql
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>修改成</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">extension=mysqli
+</span></span></code></pre></div><p>修改成</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">extension=mysqli
 </span></span><span class="line"><span class="cl">;extension=odbc
 </span></span><span class="line"><span class="cl">;zend_extension=opcache
 </span></span><span class="line"><span class="cl">;extension=pdo_dblib
 </span></span><span class="line"><span class="cl">extension=pdo_mysql
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>安装mariadb：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">pacman -S mariadb
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>初始化mysqldb的数据目录：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">mysql_install_db</span> <span class="o">--</span><span class="n">user</span><span class="o">=</span><span class="n">mysql</span> <span class="o">--</span><span class="n">basedir</span><span class="o">=/</span><span class="n">usr</span> <span class="o">--</span><span class="n">datadir</span><span class="o">=/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">mysql</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>启动mysql服务：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">systemctl enable mysqld
+</span></span></code></pre></div><p>安装mariadb：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">pacman -S mariadb
+</span></span></code></pre></div><p>初始化mysqldb的数据目录：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">mysql_install_db</span> <span class="o">--</span><span class="n">user</span><span class="o">=</span><span class="n">mysql</span> <span class="o">--</span><span class="n">basedir</span><span class="o">=/</span><span class="n">usr</span> <span class="o">--</span><span class="n">datadir</span><span class="o">=/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">mysql</span>
+</span></span></code></pre></div><p>启动mysql服务：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">systemctl enable mysqld
 </span></span><span class="line"><span class="cl">systemctl start mysqld
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>运行安全脚本配置：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mysql_secure_installation
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>各项内容根据实际修改：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span><span class="lnt">61
-</span><span class="lnt">62
-</span><span class="lnt">63
-</span><span class="lnt">64
-</span><span class="lnt">65
-</span><span class="lnt">66
-</span><span class="lnt">67
-</span><span class="lnt">68
-</span><span class="lnt">69
-</span><span class="lnt">70
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">mysql_secure_installation</span><span class="p">:</span> <span class="n">Deprecated</span> <span class="n">program</span> <span class="n">name</span><span class="o">.</span> <span class="n">It</span> <span class="n">will</span> <span class="n">be</span> <span class="n">removed</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">future</span> <span class="n">release</span><span class="p">,</span> <span class="n">use</span> <span class="s1">&#39;mariadb-secure-installation&#39;</span> <span class="n">instead</span>
+</span></span></code></pre></div><p>运行安全脚本配置：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mysql_secure_installation
+</span></span></code></pre></div><p>各项内容根据实际修改：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">mysql_secure_installation</span><span class="p">:</span> <span class="n">Deprecated</span> <span class="n">program</span> <span class="n">name</span><span class="o">.</span> <span class="n">It</span> <span class="n">will</span> <span class="n">be</span> <span class="n">removed</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">future</span> <span class="n">release</span><span class="p">,</span> <span class="n">use</span> <span class="s1">&#39;mariadb-secure-installation&#39;</span> <span class="n">instead</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">NOTE</span><span class="p">:</span> <span class="n">RUNNING</span> <span class="n">ALL</span> <span class="n">PARTS</span> <span class="n">OF</span> <span class="n">THIS</span> <span class="n">SCRIPT</span> <span class="n">IS</span> <span class="n">RECOMMENDED</span> <span class="n">FOR</span> <span class="n">ALL</span> <span class="n">MariaDB</span>
 </span></span><span class="line"><span class="cl">      <span class="n">SERVERS</span> <span class="n">IN</span> <span class="n">PRODUCTION</span> <span class="n">USE</span><span class="o">!</span>  <span class="n">PLEASE</span> <span class="n">READ</span> <span class="n">EACH</span> <span class="n">STEP</span> <span class="n">CAREFULLY</span><span class="o">!</span>
@@ -914,27 +682,8 @@ unicode: "ece7"
 </span></span><span class="line"><span class="cl"><span class="n">installation</span> <span class="n">should</span> <span class="n">now</span> <span class="n">be</span> <span class="n">secure</span><span class="o">.</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">Thanks</span> <span class="k">for</span> <span class="n">using</span> <span class="n">MariaDB</span><span class="o">!</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>输入新的root密码测试登陆mysql：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># mysql -u root -p
+</span></span></code></pre></div><p>输入新的root密码测试登陆mysql：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># mysql -u root -p
 </span></span><span class="line"><span class="cl">mysql: Deprecated program name. It will be removed in a future release, use &#39;/usr/bin/mariadb&#39; instead
 </span></span><span class="line"><span class="cl">Enter password: 
 </span></span><span class="line"><span class="cl">Welcome to the MariaDB monitor.  Commands end with ; or \g.
@@ -947,102 +696,33 @@ unicode: "ece7"
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">MariaDB [(none)]&gt; quit;
 </span></span><span class="line"><span class="cl">Bye
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>确认一切正常，最后重启所有相关服务：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">systemctl restart mysqld
+</span></span></code></pre></div><p>确认一切正常，最后重启所有相关服务：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">systemctl restart mysqld
 </span></span><span class="line"><span class="cl">systemctl restart php-fpm
 </span></span><span class="line"><span class="cl">systemctl restart nginx
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>至此所有步骤均完成。</p>
+</span></span></code></pre></div><p>至此所有步骤均完成。</p>
 <h4 id="优化配置可选">优化配置（可选）
 </h4><p>1、对于<code>/etc/nginx/nginx.conf</code>:
 在http块下新增：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">client_max_body_size 10m;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>2、对于<code>/etc/php/php.ini</code>：
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">client_max_body_size 10m;
+</span></span></code></pre></div><p>2、对于<code>/etc/php/php.ini</code>：
 修改</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">upload_max_filesize</span> <span class="o">=</span> <span class="mi">2</span><span class="n">M</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>成</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">upload_max_filesize</span> <span class="o">=</span> <span class="mi">20</span><span class="n">M</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>3、安装phpmyadmin：
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">upload_max_filesize</span> <span class="o">=</span> <span class="mi">2</span><span class="n">M</span>
+</span></span></code></pre></div><p>成</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">upload_max_filesize</span> <span class="o">=</span> <span class="mi">20</span><span class="n">M</span>
+</span></span></code></pre></div><p>3、安装phpmyadmin：
 去phpmyadmin官网下载最新版安装包，目前是5.2.1：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd /usr/share/nginx/hmtl
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd /usr/share/nginx/hmtl
 </span></span><span class="line"><span class="cl">wget https://files.phpmyadmin.net/phpMyAdmin/5.2.1/phpMyAdmin-5.2.1-all-languages.zip
 </span></span><span class="line"><span class="cl">unzip phpMyAdmin-5.2.1-all-languages.zip
 </span></span><span class="line"><span class="cl">mv phpMyAdmin-5.2.1-all-languages phpmyadmin
 </span></span><span class="line"><span class="cl">cd phpmyadmin
 </span></span><span class="line"><span class="cl">cp config.sample.inc.php config.inc.php
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>然后修改配置文件<code>config.inc.php</code>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$cfg[&#39;blowfish_secret&#39;] = &#39;任意字符串&#39;;
+</span></span></code></pre></div><p>然后修改配置文件<code>config.inc.php</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$cfg[&#39;blowfish_secret&#39;] = &#39;任意字符串&#39;;
 </span></span><span class="line"><span class="cl">$cfg[&#39;Servers&#39;][$i][&#39;host&#39;] = &#39;127.0.0.1&#39;;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>修改nginx的配置<code>/usr/nginx/nginx.conf</code>，添加以下内容：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">        location /phpmyadmin {
+</span></span></code></pre></div><p>修改nginx的配置<code>/usr/nginx/nginx.conf</code>，添加以下内容：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">        location /phpmyadmin {
 </span></span><span class="line"><span class="cl">           alias /usr/share/nginx/html/phpmyadmin;
 </span></span><span class="line"><span class="cl">           index index.php;
 </span></span><span class="line"><span class="cl">         }
@@ -1055,53 +735,50 @@ unicode: "ece7"
 </span></span><span class="line"><span class="cl">           fastcgi_index index.php;
 </span></span><span class="line"><span class="cl">           fastcgi_param SCRIPT_FILENAME /usr/share/nginx/html/phpmyadmin/$valid_fastcgi_script_name;
 </span></span><span class="line"><span class="cl">          }
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>然后重启nginx和php</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">systemctl restart nginx
+</span></span></code></pre></div><p>然后重启nginx和php</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">systemctl restart nginx
 </span></span><span class="line"><span class="cl">systemctl restart php-fpm
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>可能会提示”缺少 mysqli 扩展“，请检查拓展的位置是否配置正确了。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># find / -name mysqli*
+</span></span></code></pre></div><p>可能会提示”缺少 mysqli 扩展“，请检查拓展的位置是否配置正确了。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># find / -name mysqli*
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">/usr/lib/php/modules/mysqli.so
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>可以看到拓展实际上位于<code>/usr/lib/php/modules/</code>这个位置下，那就把<code>/etc/php/php.ini</code>中的</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">extension=mysqli
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>修改成</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">extension=/usr/lib/php/modules/mysqli.so
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>重启php-fpm服务即可正常运行。</p>
+</span></span></code></pre></div><p>可以看到拓展实际上位于<code>/usr/lib/php/modules/</code>这个位置下，那就把<code>/etc/php/php.ini</code>中的</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">extension=mysqli
+</span></span></code></pre></div><p>修改成</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">extension=/usr/lib/php/modules/mysqli.so
+</span></span></code></pre></div><p>重启php-fpm服务即可正常运行。</p>
 
 </section>
+
+
+    <div class="article-details" style="padding-top: 15px;padding-bottom: 0px;">
+        <footer class="article-time">
+            <div>
+                <!--
+category: System
+tags: [view, watch]
+version: "1.0"
+unicode: "ea9a"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="20"
+  height="20"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#000000"
+  stroke-width="0.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+  <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
+</svg>
+
+                <span title="阅读次数" style="display: inline;font-size: 1.4rem;">阅读次数: <span class="waline-pageview-count" data-path="/record/archlinux_lnmp.html" /></span>
+            </div>
+        </footer>
+    </div>
 
 
     <footer class="article-footer">
@@ -1143,7 +820,7 @@ unicode: "ece7"
 
 
         <span>
-            最后更新于 2025年07月02日 12:11
+            最后更新于 2025年07月02日 17:17
         </span>
     </section></footer>
 

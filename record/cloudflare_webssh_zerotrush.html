@@ -6,32 +6,15 @@
 
 <link rel='canonical' href='https://blog.tama.guru/record/cloudflare_webssh_zerotrush.html'>
 
-<link rel="stylesheet" href="/scss/style.min.f8d3e3667c9c0bc7a054407fadeb01e15a691c2db55c8c66227df16b0d32131e.css"><meta property='og:title' content="通过Cloudflare零信任(cloudflare zero trush)给内网服务器做穿透并搭建webssh的小记">
+<link rel="stylesheet" href="/scss/style.min.77d805b213b689a0386f7fc900575972cfb1f444536a88757fc1e9df17e8ebd8.css"><meta property='og:title' content="通过Cloudflare零信任(cloudflare zero trush)给内网服务器做穿透并搭建webssh的小记">
 <meta property='og:description' content="通过cloudflare zero trush可以非常快速且方便的搭建内网穿透，而且速度一般情况下可以接受，最重要的是成本很低，你只需要：\n一个cloudflare账号 一个托管到cloudflare的域名 以上内容百度到处都是，不再赘述，以下仅记录搭建webssh的过程。\n">
 <meta property='og:url' content='https://blog.tama.guru/record/cloudflare_webssh_zerotrush.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='cloudflare' /><meta property='article:tag' content='zero trush' /><meta property='article:tag' content='webssh' /><meta property='article:published_time' content='2023-08-18T14:23:00&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T12:11:48&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='cloudflare' /><meta property='article:tag' content='zero trush' /><meta property='article:tag' content='webssh' /><meta property='article:published_time' content='2023-08-18T14:23:00&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T17:17:59&#43;00:00'/>
 <meta name="twitter:title" content="通过Cloudflare零信任(cloudflare zero trush)给内网服务器做穿透并搭建webssh的小记">
 <meta name="twitter:description" content="通过cloudflare zero trush可以非常快速且方便的搭建内网穿透，而且速度一般情况下可以接受，最重要的是成本很低，你只需要：\n一个cloudflare账号 一个托管到cloudflare的域名 以上内容百度到处都是，不再赘述，以下仅记录搭建webssh的过程。\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
-<style>
-    :root {
-     
-    --sys-font-family: "HarmonyOS_Sans_SC_Medium", Georgia, -apple-system, 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
-    --code-font-family: "JetBrainsMono Regular", Menlo, Monaco, Consolas, "Courier New";
-    --article-font-family: "HarmonyOS_Sans_SC_Medium", var(--base-font-family);
-  }
-</style>
 
-<script>
-    (function () {
-        const customFont = document.createElement('link');
-        customFont.href = "https://gcore.jsdelivr.net/gh/tamakyi/cdn/statics/fonts/font.css";
-        customFont.type = "text/css";
-        customFont.rel = "stylesheet";
-         document.head.appendChild(customFont);
-}());
-</script>
     </head>
     <body class="
     article-page
@@ -503,19 +486,7 @@ unicode: "ece7"
 <hr>
 <p>####1、安装并配置tunnel
 需要在ssh服务器上执行如下命令：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">#安装cloudflared，我用的arch，其他平台自己替换。
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">#安装cloudflared，我用的arch，其他平台自己替换。
 </span></span><span class="line"><span class="cl">sudo pacman -S cloudflared
 </span></span><span class="line"><span class="cl">#这一步执行后会得到一个链接，复制到浏览器打开，然后选择一个托管到cloudflare的域名，确认之后会将对应的pem证书推到你服务器的.cloudflare目录下。
 </span></span><span class="line"><span class="cl">cloudflared tunnel login
@@ -523,32 +494,10 @@ unicode: "ece7"
 </span></span><span class="line"><span class="cl">cloudflared tunnel create $tunnel-name
 </span></span><span class="line"><span class="cl">#查看tunnel列表
 </span></span><span class="line"><span class="cl">cloudflared tunnel list
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>此时在输出的列表中找到刚才创建的tunnel名为$tunnel-name对应的ID，一般格式为<code>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</code>。
+</span></span></code></pre></div><p>此时在输出的列表中找到刚才创建的tunnel名为$tunnel-name对应的ID，一般格式为<code>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</code>。
 ####2.创建配置文件。
 进入用户目录下的<code>.cloudflared</code>文件夹，创建名为<code>config.yam</code>的文件，内容如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tunnel: <span class="nv">$ID</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tunnel: <span class="nv">$ID</span>
 </span></span><span class="line"><span class="cl">credentials-file: /home/<span class="nv">$username</span>/.cloudflared/<span class="nv">$ID</span>.json
 </span></span><span class="line"><span class="cl">ingress:
 </span></span><span class="line"><span class="cl">  <span class="c1"># ssh</span>
@@ -564,53 +513,23 @@ unicode: "ece7"
 </span></span><span class="line"><span class="cl">    service: http://localhost:9898
 </span></span><span class="line"><span class="cl">  <span class="c1"># 如果都没有匹配，则返回404，这句不能少</span>
 </span></span><span class="line"><span class="cl">  - service: http_status:404
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>其中$ID替换为上面的ID，$username为你服务器本地用户名，<code>hostname</code>字段对应外网访问的网址，<code>service</code>字段对应内网网址，如果是带端口的在后面增加即可。
+</span></span></code></pre></div><p>其中$ID替换为上面的ID，$username为你服务器本地用户名，<code>hostname</code>字段对应外网访问的网址，<code>service</code>字段对应内网网址，如果是带端口的在后面增加即可。
 ####3.写一个脚本，自动更新DNS以及运行tunnel
 <code>vim ~/tunnel-sh.sh</code>
 内容如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># update cloudflare DNS record
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># update cloudflare DNS record
 </span></span><span class="line"><span class="cl">/usr/bin/cloudflared tunnel route dns $tunnel-name ssh.example.com
 </span></span><span class="line"><span class="cl">/usr/bin/cloudflared tunnel route dns $tunnel-name vnc.example.com
 </span></span><span class="line"><span class="cl">/usr/bin/cloudflared tunnel route dns $tunnel-name file.example.com
 </span></span><span class="line"><span class="cl">/usr/bin/cloudflared tunnel route dns $tunnel-name speed-test.example.com
 </span></span><span class="line"><span class="cl"># run tunnel
 </span></span><span class="line"><span class="cl">/usr/bin/cloudflared tunnel run $tunnel-name
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>注意把$tunnel-name和网址换成自己的。
+</span></span></code></pre></div><p>注意把$tunnel-name和网址换成自己的。
 ####4.开机自启
 新建一个service，
 <code>sudo vim /etc/systemd/system/cloudflared-tunnel.service</code>
 内容如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>Unit<span class="o">]</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>Unit<span class="o">]</span>
 </span></span><span class="line"><span class="cl"><span class="nv">Description</span><span class="o">=</span>cloudflared tunnel
 </span></span><span class="line"><span class="cl"><span class="nv">Wants</span><span class="o">=</span>network-online.target
 </span></span><span class="line"><span class="cl"><span class="nv">After</span><span class="o">=</span>network-online.target
@@ -621,21 +540,11 @@ unicode: "ece7"
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">[</span>Install<span class="o">]</span>
 </span></span><span class="line"><span class="cl"><span class="nv">WantedBy</span><span class="o">=</span>default.target
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>注意把$username换成自己的。
+</span></span></code></pre></div><p>注意把$username换成自己的。
 ####5.启动&amp;开机自启</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo systemctl start cloudflared-tunnel.service
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo systemctl start cloudflared-tunnel.service
 </span></span><span class="line"><span class="cl">sudo systemctl enable cloudflared-tunnel.service
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>####6.配置application
+</span></span></code></pre></div><p>####6.配置application
 ssh是无法直接访问的，但是cloudflare提供了application套件，配置位于cloudflare的zerotrush下的access目录。
 进去之后选择<code>add an application</code>，类型选<code>self hosted</code>
 <code>Application Configuration</code>配置如下：
@@ -655,6 +564,36 @@ ssh是无法直接访问的，但是cloudflare提供了application套件，配�
 在<code>Additional settings</code>下的<code>Browser rendering</code>切换为SSH，最后点击<code>add application</code>即可web访问到ssh了。</p>
 
 </section>
+
+
+    <div class="article-details" style="padding-top: 15px;padding-bottom: 0px;">
+        <footer class="article-time">
+            <div>
+                <!--
+category: System
+tags: [view, watch]
+version: "1.0"
+unicode: "ea9a"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="20"
+  height="20"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#000000"
+  stroke-width="0.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+  <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
+</svg>
+
+                <span title="阅读次数" style="display: inline;font-size: 1.4rem;">阅读次数: <span class="waline-pageview-count" data-path="/record/cloudflare_webssh_zerotrush.html" /></span>
+            </div>
+        </footer>
+    </div>
 
 
     <footer class="article-footer">
@@ -692,7 +631,7 @@ ssh是无法直接访问的，但是cloudflare提供了application套件，配�
 
 
         <span>
-            最后更新于 2025年07月02日 12:11
+            最后更新于 2025年07月02日 17:17
         </span>
     </section></footer>
 

@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Wed, 02 Jul 2025 12:11:48 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/novelai/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 02 Jul 2025 17:17:59 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/novelai/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>stable-diffusion使用过程中的一些记录</title>
         <link>https://blog.tama.guru/record/stable-diffusion-webui.html</link>
         <pubDate>Wed, 19 Oct 2022 23:44:38 +0800</pubDate>
@@ -17,20 +17,7 @@
 正文部分忘得差不多了，此处就记录一下使用过程中的问题吧。&lt;/p&gt;
 &lt;p&gt;[scode type=&amp;ldquo;lblue&amp;rdquo;]No.1 我想在本地搭建服务并分享出去[/scode]
 修改目录下的&lt;code&gt;webui.py&lt;/code&gt;文件，将101行&lt;code&gt;app,local_url,share_url = demo.launch(&lt;/code&gt;的代码块修改为：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        app,local_url,share_url = demo.launch(
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        app,local_url,share_url = demo.launch(
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            share=True,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            server_name=&amp;#34;你的本地IP，比如192.168.10.121&amp;#34; if cmd_opts.listen else None,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            server_port=cmd_opts.port,
@@ -39,9 +26,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            inbrowser=cmd_opts.autolaunch,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            prevent_thread_lock=True
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        )
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;修改完成后保存运行&lt;code&gt;webui-user.bat&lt;/code&gt;即可。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;修改完成后保存运行&lt;code&gt;webui-user.bat&lt;/code&gt;即可。
 需要注意的是开启分享需要全程连接谷歌，因为需要调用到谷歌的gradio服务。
 [scode type=&amp;ldquo;lblue&amp;rdquo;]No.2 我想在本地搭建服务但是我的运存有点小[/scode]
 按照官方的说法，只需要修改&lt;code&gt;webui-user.bat&lt;/code&gt;文件，将&lt;code&gt;set COMMANDLINE_ARGS=&lt;/code&gt;添加参数&lt;code&gt;--medvram&lt;/code&gt;即可，即显示为：

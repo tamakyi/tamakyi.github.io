@@ -6,32 +6,15 @@
 
 <link rel='canonical' href='https://blog.tama.guru/record/ruleproject.html'>
 
-<link rel="stylesheet" href="/scss/style.min.f8d3e3667c9c0bc7a054407fadeb01e15a691c2db55c8c66227df16b0d32131e.css"><meta property='og:title' content="使用ruleproject搭建自己的typecho程序客户端">
+<link rel="stylesheet" href="/scss/style.min.77d805b213b689a0386f7fc900575972cfb1f444536a88757fc1e9df17e8ebd8.css"><meta property='og:title' content="使用ruleproject搭建自己的typecho程序客户端">
 <meta property='og:description' content="卧槽牛皮，这东西牛啊！通过这个教程已经成功弄出了安卓端apk并正常使用！ 本站安卓客户端：https://share.tama.guru/d/App/Android/latest_release.apk 本站自签证iOS端：https://share.tama.guru/d/App/iOS/%E7%8B%BC%E7%9A%84%E5%85%AC%E5%91%8A%E6%9D%BF.mobileconfig\n介绍 RuleApi，基于typecho正式版数据库，使用JAVA语言Springboot框架，整合redis缓存数据库，COS、OSS对象存储，是目前typecho程序功能最全，接口最完善，用户体验最好，且性能最佳的API程序。集成了用户模块（登陆，注册，邮箱验证，用户查询，用户修改），文章模块，评论模块，分类模块，和上传模块（三合一上传方式，OSS，COS，本地上传均可），在安装完成后，可以进一步扩展typecho网站的功能，并实现更强大的性能，更全面的应用范围。\n">
 <meta property='og:url' content='https://blog.tama.guru/record/ruleproject.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='typecho' /><meta property='article:tag' content='ruleproject' /><meta property='article:tag' content='typecho客户端' /><meta property='article:tag' content='html5' /><meta property='article:tag' content='java' /><meta property='article:tag' content='宣传图' /><meta property='article:published_time' content='2023-11-17T23:12:00&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T12:11:48&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='typecho' /><meta property='article:tag' content='ruleproject' /><meta property='article:tag' content='typecho客户端' /><meta property='article:tag' content='html5' /><meta property='article:tag' content='java' /><meta property='article:tag' content='宣传图' /><meta property='article:published_time' content='2023-11-17T23:12:00&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T17:17:59&#43;00:00'/>
 <meta name="twitter:title" content="使用ruleproject搭建自己的typecho程序客户端">
 <meta name="twitter:description" content="卧槽牛皮，这东西牛啊！通过这个教程已经成功弄出了安卓端apk并正常使用！ 本站安卓客户端：https://share.tama.guru/d/App/Android/latest_release.apk 本站自签证iOS端：https://share.tama.guru/d/App/iOS/%E7%8B%BC%E7%9A%84%E5%85%AC%E5%91%8A%E6%9D%BF.mobileconfig\n介绍 RuleApi，基于typecho正式版数据库，使用JAVA语言Springboot框架，整合redis缓存数据库，COS、OSS对象存储，是目前typecho程序功能最全，接口最完善，用户体验最好，且性能最佳的API程序。集成了用户模块（登陆，注册，邮箱验证，用户查询，用户修改），文章模块，评论模块，分类模块，和上传模块（三合一上传方式，OSS，COS，本地上传均可），在安装完成后，可以进一步扩展typecho网站的功能，并实现更强大的性能，更全面的应用范围。\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
-<style>
-    :root {
-     
-    --sys-font-family: "HarmonyOS_Sans_SC_Medium", Georgia, -apple-system, 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
-    --code-font-family: "JetBrainsMono Regular", Menlo, Monaco, Consolas, "Courier New";
-    --article-font-family: "HarmonyOS_Sans_SC_Medium", var(--base-font-family);
-  }
-</style>
 
-<script>
-    (function () {
-        const customFont = document.createElement('link');
-        customFont.href = "https://gcore.jsdelivr.net/gh/tamakyi/cdn/statics/fonts/font.css";
-        customFont.type = "text/css";
-        customFont.rel = "stylesheet";
-         document.head.appendChild(customFont);
-}());
-</script>
     </head>
     <body class="
     article-page
@@ -541,7 +524,7 @@ unicode: "ece7"
 
 
                 <time class="article-time--reading">
-                    阅读时长: 10 分钟
+                    阅读时长: 9 分钟
                 </time>
             </div>
         
@@ -592,84 +575,27 @@ unicode: "ece7"
 <h4 id="安装依赖环境">安装依赖环境
 </h4><p>首先是JAVA，官方建议安装8u311版本，可以去网上找，也可以使用我下载下来的<a class="link" href="https://share.tama.guru/%E8%BF%9C%E7%A8%8B%E4%B8%8B%E8%BD%BD%EF%BC%88%E4%BB%93%E5%BA%93%EF%BC%89/ruleproject/java"  target="_blank" rel="noopener"
     >文件</a>。下载之后解压到<code>/opt</code>并命名为<code>jdk1.8</code>，整个路径看起来应该像：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># ls /opt/jdk1.8/ bin  COPYRIGHT	include  javafx-src.zip  jmc.txt  jre  legal  lib  LICENSE man  README.html  release src.zip	THIRDPARTYLICENSEREADME-JAVAFX.txt  THIRDPARTYLICENSEREADME.txt
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>然后配置环境，修改<code>/etc/profile</code>，添加下面的语句到最后：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="k">export</span> <span class="n">JAVA_HOME</span><span class="o">=/</span><span class="n">opt</span><span class="o">/</span><span class="n">jdk1</span><span class="o">.</span><span class="mi">8</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># ls /opt/jdk1.8/ bin  COPYRIGHT	include  javafx-src.zip  jmc.txt  jre  legal  lib  LICENSE man  README.html  release src.zip	THIRDPARTYLICENSEREADME-JAVAFX.txt  THIRDPARTYLICENSEREADME.txt
+</span></span></code></pre></div><p>然后配置环境，修改<code>/etc/profile</code>，添加下面的语句到最后：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="k">export</span> <span class="n">JAVA_HOME</span><span class="o">=/</span><span class="n">opt</span><span class="o">/</span><span class="n">jdk1</span><span class="o">.</span><span class="mi">8</span>
 </span></span><span class="line"><span class="cl"><span class="k">export</span> <span class="n">CLASSPATH</span><span class="o">=.</span><span class="p">:</span><span class="o">$</span><span class="p">{</span><span class="n">JAVA_HOME</span><span class="p">}</span><span class="o">/</span><span class="n">jre</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">rt</span><span class="o">.</span><span class="n">jar</span><span class="p">:</span><span class="o">$</span><span class="p">{</span><span class="n">JAVA_HOME</span><span class="p">}</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">dt</span><span class="o">.</span><span class="n">jar</span><span class="p">:</span><span class="o">$</span><span class="p">{</span><span class="n">JAVA_HOME</span><span class="p">}</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">tools</span><span class="o">.</span><span class="n">jar</span>
 </span></span><span class="line"><span class="cl"><span class="k">export</span> <span class="n">PATH</span><span class="o">=$</span><span class="n">PATH</span><span class="p">:</span><span class="o">$</span><span class="p">{</span><span class="n">JAVA_HOME</span><span class="p">}</span><span class="o">/</span><span class="n">bin</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>并执行<code>source /etc/profile</code>使其生效。
+</span></span></code></pre></div><p>并执行<code>source /etc/profile</code>使其生效。
 其他还需要安装Redis、Mysql和Nginx，如果安装过宝塔的直接在面板上安装，基本上没有版本限制所以此处不写过程了。
 最后还需要安装<code>screen</code>用于维持ruleapi后台运行。</p>
 <h4 id="下载所需文件">下载所需文件
 </h4><p>在<code>/opt</code>新建一个文件夹，比如<code>ruleapi</code>，把以下文件都下载下来。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">	wget -c http://shell.ruletree.club/RuleApi.jar
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">	wget -c http://shell.ruletree.club/RuleApi.jar
 </span></span><span class="line"><span class="cl">	wget -c http://shell.ruletree.club/application.properties
 </span></span><span class="line"><span class="cl">	wget -c http://shell.ruletree.club/apiResult.php
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>整个路径看起来应该像：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">#ls /opt/ruleapi
+</span></span></code></pre></div><p>整个路径看起来应该像：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">#ls /opt/ruleapi
 </span></span><span class="line"><span class="cl">apiResult.php  application.properties RuleApi.jar
 </span></span><span class="line"><span class="cl">然后需要把`apiResult.php`复制到typecho的根目录。
 </span></span><span class="line"><span class="cl">相关文件也已经上传云盘:[https://share.tama.guru/%E8%BF%9C%E7%A8%8B%E4%B8%8B%E8%BD%BD%EF%BC%88%E4%BB%93%E5%BA%93%EF%BC%89/ruleproject][7]
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="修改ruleapi配置">修改ruleapi配置
+</span></span></code></pre></div><h4 id="修改ruleapi配置">修改ruleapi配置
 </h4><p>修改<code>application.properties</code>，主要修改以下几项：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">server</span><span class="o">.</span><span class="n">port</span><span class="o">=</span><span class="mi">8080</span>   <span class="c1">#ruleapi运行的端口，如果8080被占用了就手动改。</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">server</span><span class="o">.</span><span class="n">port</span><span class="o">=</span><span class="mi">8080</span>   <span class="c1">#ruleapi运行的端口，如果8080被占用了就手动改。</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">spring</span><span class="o">.</span><span class="n">datasource</span><span class="o">.</span><span class="n">url</span><span class="o">=</span><span class="n">jdbc</span><span class="p">:</span><span class="n">mysql</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">3306</span><span class="o">/&lt;</span><span class="n">typecho数据库名</span><span class="o">&gt;</span><span class="err">?</span><span class="n">characterEncoding</span><span class="o">=</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>
 </span></span><span class="line"><span class="cl"><span class="n">spring</span><span class="o">.</span><span class="n">datasource</span><span class="o">.</span><span class="n">username</span><span class="o">=&lt;</span><span class="n">typecho数据库用户名</span><span class="o">&gt;</span>
@@ -687,45 +613,8 @@ unicode: "ece7"
 </span></span><span class="line"><span class="cl"><span class="n">spring</span><span class="o">.</span><span class="n">mail</span><span class="o">.</span><span class="n">default</span><span class="o">-</span><span class="n">encoding</span><span class="o">=</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span> <span class="o">&lt;</span><span class="err">编码格式</span><span class="o">&gt;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">webinfo</span><span class="o">.</span><span class="n">key</span><span class="o">=&lt;</span><span class="err">登录网页控制台的</span><span class="n">key</span><span class="o">&gt;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="运行程序并保持在后台运行">运行程序并保持在后台运行
-</h4><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">#screen -S ruleapi
+</span></span></code></pre></div><h4 id="运行程序并保持在后台运行">运行程序并保持在后台运行
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">#screen -S ruleapi
 </span></span><span class="line"><span class="cl">#java -jar RuleApi.jar
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  .   ____          _            __ _ _
@@ -756,34 +645,10 @@ unicode: "ece7"
 </span></span><span class="line"><span class="cl">2023-11-17 18:42:14  INFO 966545 --- [nio-yourport-exec-1] o.s.web.servlet.DispatcherServlet        525 : Initializing Servlet &#39;dispatcherServlet&#39;
 </span></span><span class="line"><span class="cl">2023-11-17 18:42:14  INFO 966545 --- [nio-yourport-exec-1] o.s.web.servlet.DispatcherServlet        547 : Completed initialization in 8 ms
 </span></span><span class="line"><span class="cl">2023-11-17 18:42:15  INFO 966545 --- [nio-yourport-exec-8] io.lettuce.core.EpollProvider            68 : Starting without optional epoll library
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>如果有上述提示则表示程序正常启动了，可以按<code>Ctrl+A D</code>保持后台运行。</p>
+</span></span></code></pre></div><p>如果有上述提示则表示程序正常启动了，可以按<code>Ctrl+A D</code>保持后台运行。</p>
 <h4 id="配置二级域名">配置二级域名
 </h4><p>因为使用IP+端口访问并不安全，需要配置一个二级域名用以访问。比如二级域名为https://rule.tama.host，生成并解析后需要添加伪静态规则：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">location ^~ /images/ {
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">location ^~ /images/ {
 </span></span><span class="line"><span class="cl">        alias /opt/ruleapi/static/;
 </span></span><span class="line"><span class="cl">        try_files $uri $uri/ =404;
 </span></span><span class="line"><span class="cl">    }
@@ -801,9 +666,7 @@ unicode: "ece7"
 </span></span><span class="line"><span class="cl">    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 </span></span><span class="line"><span class="cl">    proxy_set_header REMOTE-HOST $remote_addr;
 </span></span><span class="line"><span class="cl">}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>注意修改端口。之后访问https://rule.tama.host可以进入可视化管理页面。
+</span></span></code></pre></div><p>注意修改端口。之后访问https://rule.tama.host可以进入可视化管理页面。
 <img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/17/65577208c1bb8.png"
 	
 	
@@ -895,25 +758,13 @@ Github:<a class="link" href="https://github.com/buxia97/RuleApi"  target="_blank
 ></p>
 <h4 id="修改配置项目">修改配置项目
 </h4><p>首先是<code>utils\api.js</code>，这里主要填写对接到ruleapi的数据，主要修改以下内容：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="k">var</span> <span class="n">API_URL</span> <span class="o">=</span> <span class="s1">&#39;&lt;ruleapi网址&gt;&#39;</span><span class="p">;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="k">var</span> <span class="n">API_URL</span> <span class="o">=</span> <span class="s1">&#39;&lt;ruleapi网址&gt;&#39;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="k">var</span> <span class="n">appKey</span> <span class="o">=</span> <span class="s2">&#34;&lt;应用key&gt;&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="o">//</span><span class="n">web网站地址</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">var</span> <span class="n">GroupUrl</span> <span class="o">=</span> <span class="s1">&#39;&lt;qq群链接&gt;&#39;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="k">var</span> <span class="n">GithubUrl</span> <span class="o">=</span> <span class="s1">&#39;&lt;gayhub链接&gt;&#39;</span><span class="p">;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>其他可以根据注释修改。
+</span></span></code></pre></div><p>其他可以根据注释修改。
 然后修改<code>manifest.json</code>，这里是图形界面的，可以根据提示直接修改，需要注意：
 1.uni-app需要重新获取，这里会提示登录dcloud账号。
 2.应用版本号和应用版本名称应高于前一次配置的值，首次配置可以写1。
@@ -998,37 +849,7 @@ Github:<a class="link" href="https://github.com/buxia97/RuleApi"  target="_blank
 	
 	
 ></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[HBuilder] 23:02:08.640 项目 &#39;RuleApp-master&#39; 开始编译...
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[HBuilder] 23:02:08.640 项目 &#39;RuleApp-master&#39; 开始编译...
 </span></span><span class="line"><span class="cl">[HBuilder] 23:02:10.336 3.96
 </span></span><span class="line"><span class="cl">[HBuilder] 23:02:10.336 正在编译中...
 </span></span><span class="line"><span class="cl">[HBuilder] 23:02:10.337 ​已开启 uni统计1.0 版本​
@@ -1054,9 +875,7 @@ Github:<a class="link" href="https://github.com/buxia97/RuleApi"  target="_blank
 </span></span><span class="line"><span class="cl">23:05:27.519 
 </span></span><span class="line"><span class="cl">[HBuilder] 23:05:27.519 项目 RuleApp-master [__UNI__xxxxxxx]的打包状态：
 </span></span><span class="line"><span class="cl">[HBuilder] 23:05:27.519 时间: 2023-11-17 23:02:50    类型: Android云端证书    打包成功    安装包位置：xxxxxxxxxxxxxxxxxxxx/apk/__UNI__xxxxx__20231117230250.apk
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>打包好的文件根据提示可以找到。</p>
+</span></span></code></pre></div><p>打包好的文件根据提示可以找到。</p>
 <h3 id="注意事项">注意事项
 </h3><h4 id="阿里云oss防盗链">阿里云OSS防盗链
 </h4><p>需要在防盗链白名单中添加&quot;-&quot;，否则app端资源无法显示。</p>
@@ -1064,6 +883,36 @@ Github:<a class="link" href="https://github.com/buxia97/RuleApi"  target="_blank
 </h4><p>资源位于<code>RuleApp-master\unpackage\dist\dev\app-plus\static\app-plus\owo</code>、<code>RuleApp-master\static\app-plus\owo</code>以及<code>C:\Users\Tamakyi Gekka\Downloads\RuleApp-master\RuleApp-master\static\h5\owo</code>下。需要修改<code>OwO.js</code>并根据路径添加对应资源。</p>
 
 </section>
+
+
+    <div class="article-details" style="padding-top: 15px;padding-bottom: 0px;">
+        <footer class="article-time">
+            <div>
+                <!--
+category: System
+tags: [view, watch]
+version: "1.0"
+unicode: "ea9a"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="20"
+  height="20"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#000000"
+  stroke-width="0.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+  <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
+</svg>
+
+                <span title="阅读次数" style="display: inline;font-size: 1.4rem;">阅读次数: <span class="waline-pageview-count" data-path="/record/ruleproject.html" /></span>
+            </div>
+        </footer>
+    </div>
 
 
     <footer class="article-footer">
@@ -1107,7 +956,7 @@ Github:<a class="link" href="https://github.com/buxia97/RuleApi"  target="_blank
 
 
         <span>
-            最后更新于 2025年07月02日 12:11
+            最后更新于 2025年07月02日 17:17
         </span>
     </section></footer>
 

@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Wed, 02 Jul 2025 12:11:48 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/lskypro/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 02 Jul 2025 17:17:59 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/lskypro/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>在兰空图床配置并使用Cloudflare R2 存储桶</title>
         <link>https://blog.tama.guru/record/r2_on_lskypro.html</link>
         <pubDate>Mon, 08 Jan 2024 16:00:00 +0800</pubDate>
@@ -204,19 +204,10 @@
 &lt;p&gt;软件下载地址：&lt;a class=&#34;link&#34; href=&#34;https://github.com/lsky-org/lsky-pro/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/lsky-org/lsky-pro/releases&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;部署到服务器上之后，设置好伪静态：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;location / {
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;location / {
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  try_files $uri $uri/ /index.php?$query_string;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;运行目录选择&lt;code&gt;/public&lt;/code&gt;。&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;运行目录选择&lt;code&gt;/public&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;可能因为权限问题导致目录访问不了等问题，因此要在lskypro的目录运行：&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;chown -R www:www *&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;chmod -R 755 *&lt;/code&gt;&lt;/p&gt;

@@ -6,32 +6,15 @@
 
 <link rel='canonical' href='https://blog.tama.guru/record/stable-diffusion-webui.html'>
 
-<link rel="stylesheet" href="/scss/style.min.f8d3e3667c9c0bc7a054407fadeb01e15a691c2db55c8c66227df16b0d32131e.css"><meta property='og:title' content="stable-diffusion使用过程中的一些记录">
+<link rel="stylesheet" href="/scss/style.min.77d805b213b689a0386f7fc900575972cfb1f444536a88757fc1e9df17e8ebd8.css"><meta property='og:title' content="stable-diffusion使用过程中的一些记录">
 <meta property='og:description' content="原文已丢失，以下部分为重写。 正文部分忘得差不多了，此处就记录一下使用过程中的问题吧。\n">
 <meta property='og:url' content='https://blog.tama.guru/record/stable-diffusion-webui.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='stable-diffusion' /><meta property='article:tag' content='novelai' /><meta property='article:published_time' content='2022-10-19T23:44:38&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T12:11:48&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='stable-diffusion' /><meta property='article:tag' content='novelai' /><meta property='article:published_time' content='2022-10-19T23:44:38&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T17:17:59&#43;00:00'/>
 <meta name="twitter:title" content="stable-diffusion使用过程中的一些记录">
 <meta name="twitter:description" content="原文已丢失，以下部分为重写。 正文部分忘得差不多了，此处就记录一下使用过程中的问题吧。\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
-<style>
-    :root {
-     
-    --sys-font-family: "HarmonyOS_Sans_SC_Medium", Georgia, -apple-system, 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
-    --code-font-family: "JetBrainsMono Regular", Menlo, Monaco, Consolas, "Courier New";
-    --article-font-family: "HarmonyOS_Sans_SC_Medium", var(--base-font-family);
-  }
-</style>
 
-<script>
-    (function () {
-        const customFont = document.createElement('link');
-        customFont.href = "https://gcore.jsdelivr.net/gh/tamakyi/cdn/statics/fonts/font.css";
-        customFont.type = "text/css";
-        customFont.rel = "stylesheet";
-         document.head.appendChild(customFont);
-}());
-</script>
     </head>
     <body class="
     article-page
@@ -498,20 +481,7 @@ unicode: "ece7"
 正文部分忘得差不多了，此处就记录一下使用过程中的问题吧。</p>
 <p>[scode type=&ldquo;lblue&rdquo;]No.1 我想在本地搭建服务并分享出去[/scode]
 修改目录下的<code>webui.py</code>文件，将101行<code>app,local_url,share_url = demo.launch(</code>的代码块修改为：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">        app,local_url,share_url = demo.launch(
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">        app,local_url,share_url = demo.launch(
 </span></span><span class="line"><span class="cl">            share=True,
 </span></span><span class="line"><span class="cl">            server_name=&#34;你的本地IP，比如192.168.10.121&#34; if cmd_opts.listen else None,
 </span></span><span class="line"><span class="cl">            server_port=cmd_opts.port,
@@ -520,9 +490,7 @@ unicode: "ece7"
 </span></span><span class="line"><span class="cl">            inbrowser=cmd_opts.autolaunch,
 </span></span><span class="line"><span class="cl">            prevent_thread_lock=True
 </span></span><span class="line"><span class="cl">        )
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>修改完成后保存运行<code>webui-user.bat</code>即可。
+</span></span></code></pre></div><p>修改完成后保存运行<code>webui-user.bat</code>即可。
 需要注意的是开启分享需要全程连接谷歌，因为需要调用到谷歌的gradio服务。
 [scode type=&ldquo;lblue&rdquo;]No.2 我想在本地搭建服务但是我的运存有点小[/scode]
 按照官方的说法，只需要修改<code>webui-user.bat</code>文件，将<code>set COMMANDLINE_ARGS=</code>添加参数<code>--medvram</code>即可，即显示为：
@@ -534,6 +502,36 @@ unicode: "ece7"
 其三：你可能需要添加一些低质量关键词过滤，以下为参考：
 <code>lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet</code></p>
 </section>
+
+
+    <div class="article-details" style="padding-top: 15px;padding-bottom: 0px;">
+        <footer class="article-time">
+            <div>
+                <!--
+category: System
+tags: [view, watch]
+version: "1.0"
+unicode: "ea9a"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="20"
+  height="20"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#000000"
+  stroke-width="0.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+  <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
+</svg>
+
+                <span title="阅读次数" style="display: inline;font-size: 1.4rem;">阅读次数: <span class="waline-pageview-count" data-path="/record/stable-diffusion-webui.html" /></span>
+            </div>
+        </footer>
+    </div>
 
 
     <footer class="article-footer">
@@ -569,7 +567,7 @@ unicode: "ece7"
 
 
         <span>
-            最后更新于 2025年07月02日 12:11
+            最后更新于 2025年07月02日 17:17
         </span>
     </section></footer>
 

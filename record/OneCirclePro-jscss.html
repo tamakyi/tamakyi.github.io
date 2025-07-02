@@ -6,32 +6,15 @@
 
 <link rel='canonical' href='https://blog.tama.guru/record/OneCirclePro-jscss.html'>
 
-<link rel="stylesheet" href="/scss/style.min.f8d3e3667c9c0bc7a054407fadeb01e15a691c2db55c8c66227df16b0d32131e.css"><meta property='og:title' content="OneCirclePro插件和handsome静态资源切换到国内服务器">
+<link rel="stylesheet" href="/scss/style.min.77d805b213b689a0386f7fc900575972cfb1f444536a88757fc1e9df17e8ebd8.css"><meta property='og:title' content="OneCirclePro插件和handsome静态资源切换到国内服务器">
 <meta property='og:description' content="体验了几天这个主题，发现资源加载是真的离谱，动不动10s+：\n于是就想着把部分静态资源扔国内来了。\n直接把包内themeCore\\themes\\default\\statics打包上传到国内服务器搭建的网站目录下，最好和其他资源间隔开来，比如https://hostname/cdn/OneCircle/，然后修改themeCore/themes/default/apps/main/content.phtml和themeCore/themes/default/apps/cpanel/content_nosidebar.phtml把{%config theme_url%}替换成https://hostname/cdn/OneCircle/，再刷新即可。\n">
 <meta property='og:url' content='https://blog.tama.guru/record/OneCirclePro-jscss.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='OneCirclePro' /><meta property='article:tag' content='静态资源' /><meta property='article:published_time' content='2022-07-11T22:52:00&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T12:11:48&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='OneCirclePro' /><meta property='article:tag' content='静态资源' /><meta property='article:published_time' content='2022-07-11T22:52:00&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T17:17:59&#43;00:00'/>
 <meta name="twitter:title" content="OneCirclePro插件和handsome静态资源切换到国内服务器">
 <meta name="twitter:description" content="体验了几天这个主题，发现资源加载是真的离谱，动不动10s+：\n于是就想着把部分静态资源扔国内来了。\n直接把包内themeCore\\themes\\default\\statics打包上传到国内服务器搭建的网站目录下，最好和其他资源间隔开来，比如https://hostname/cdn/OneCircle/，然后修改themeCore/themes/default/apps/main/content.phtml和themeCore/themes/default/apps/cpanel/content_nosidebar.phtml把{%config theme_url%}替换成https://hostname/cdn/OneCircle/，再刷新即可。\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
-<style>
-    :root {
-     
-    --sys-font-family: "HarmonyOS_Sans_SC_Medium", Georgia, -apple-system, 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
-    --code-font-family: "JetBrainsMono Regular", Menlo, Monaco, Consolas, "Courier New";
-    --article-font-family: "HarmonyOS_Sans_SC_Medium", var(--base-font-family);
-  }
-</style>
 
-<script>
-    (function () {
-        const customFont = document.createElement('link');
-        customFont.href = "https://gcore.jsdelivr.net/gh/tamakyi/cdn/statics/fonts/font.css";
-        customFont.type = "text/css";
-        customFont.rel = "stylesheet";
-         document.head.appendChild(customFont);
-}());
-</script>
     </head>
     <body class="
     article-page
@@ -509,40 +492,16 @@ unicode: "ece7"
 <p>直接把包内<code>themeCore\themes\default\statics</code>打包上传到国内服务器搭建的网站目录下，最好和其他资源间隔开来，比如<code>https://hostname/cdn/OneCircle/</code>，然后修改<code>themeCore/themes/default/apps/main/content.phtml</code>和<code>themeCore/themes/default/apps/cpanel/content_nosidebar.phtml</code>把<code>{%config theme_url%}</code>替换成<code>https://hostname/cdn/OneCircle/</code>，再刷新即可。</p>
 <p><code>[scode type=&quot;yellow&quot;]注意！部分资源位于</code>themeCore\themes\default\apps\cpanel\statics<code>下，此部分资源和上面的不一样，也需要提取到国内服务器上并进行替换。（说的就是你！</code>themeCore/themes/default/apps/cpanel/content_nosidebar.phtml<code> 你mua的！）[/scode]</code></p>
 <p>对于部分资源会得到<code>has been blocked by CORS policy: No 'Access-Control-Allow-Origin'</code>的跨域警告，是因为</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;link rel=&#34;stylesheet&#34; href=&#34;https://hostname/cdn/OneCircle/statics/scss/master.styles.min.css?v={%config version%}&#34;&gt;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>这里的<code>master.styles.min.js</code>会请求几个woff文件，初步解决方案是只把这里修改回去，即：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;link rel=&#34;stylesheet&#34; href=&#34;{%config theme_url%}/statics/scss/master.styles.min.css?v={%config version%}&#34;&gt;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>后面有好方法再说。。。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;link rel=&#34;stylesheet&#34; href=&#34;https://hostname/cdn/OneCircle/statics/scss/master.styles.min.css?v={%config version%}&#34;&gt;
+</span></span></code></pre></div><p>这里的<code>master.styles.min.js</code>会请求几个woff文件，初步解决方案是只把这里修改回去，即：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;link rel=&#34;stylesheet&#34; href=&#34;{%config theme_url%}/statics/scss/master.styles.min.css?v={%config version%}&#34;&gt;
+</span></span></code></pre></div><p>后面有好方法再说。。。</p>
 <p>PS:解决方案：如果使用宝塔面板，在目标服务器（国内服务器）要关闭<code>防跨站攻击(open_basedir)</code>功能，并在配置文件的location添加以下两句即可：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">    location / {
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">    location / {
 </span></span><span class="line"><span class="cl">        add_header Access-Control-Allow-Origin *;
 </span></span><span class="line"><span class="cl">        add_header Access-Control-Allow-Methods &#39;GET, POST, OPTIONS&#39;;
 </span></span><span class="line"><span class="cl">      }
-</span></span></code></pre></td></tr></table>
-</div>
-</div><hr>
+</span></span></code></pre></div><hr>
 <p>handsome主题内置了自定义cdn加速的功能，在主题设置的<code>速度优化-主题本地静态资源自定义cdn加速</code>下，填写加速地址：</p>
 <blockquote>
 <ul>
@@ -551,6 +510,36 @@ unicode: "ece7"
 </ul></blockquote>
 
 </section>
+
+
+    <div class="article-details" style="padding-top: 15px;padding-bottom: 0px;">
+        <footer class="article-time">
+            <div>
+                <!--
+category: System
+tags: [view, watch]
+version: "1.0"
+unicode: "ea9a"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="20"
+  height="20"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#000000"
+  stroke-width="0.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+  <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
+</svg>
+
+                <span title="阅读次数" style="display: inline;font-size: 1.4rem;">阅读次数: <span class="waline-pageview-count" data-path="/record/OneCirclePro-jscss.html" /></span>
+            </div>
+        </footer>
+    </div>
 
 
     <footer class="article-footer">
@@ -586,7 +575,7 @@ unicode: "ece7"
 
 
         <span>
-            最后更新于 2025年07月02日 12:11
+            最后更新于 2025年07月02日 17:17
         </span>
     </section></footer>
 

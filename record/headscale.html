@@ -6,32 +6,15 @@
 
 <link rel='canonical' href='https://blog.tama.guru/record/headscale.html'>
 
-<link rel="stylesheet" href="/scss/style.min.f8d3e3667c9c0bc7a054407fadeb01e15a691c2db55c8c66227df16b0d32131e.css"><meta property='og:title' content="在debian下安装headscale的记录">
+<link rel="stylesheet" href="/scss/style.min.77d805b213b689a0386f7fc900575972cfb1f444536a88757fc1e9df17e8ebd8.css"><meta property='og:title' content="在debian下安装headscale的记录">
 <meta property='og:description' content="什么是headscale An open source, self-hosted implementation of the Tailscale control server 要说headscale肯定就要先说tailscale，这是一项VPN服务，可让您拥有的设备和应用程序在世界任何地方安全，轻松地访问。它支持使用开源 WireGuard 协议进行加密的点对点连接，这意味着只有专用网络上的设备才能相互通信。 也就意味着，在任意设备上安装tailscale之后，即可组建一个VPN网络，非常方便的达到内网穿透以及达成一些不可告人的目的。\n">
 <meta property='og:url' content='https://blog.tama.guru/record/headscale.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='headscale' /><meta property='article:published_time' content='2023-09-14T00:36:00&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T12:11:48&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='headscale' /><meta property='article:published_time' content='2023-09-14T00:36:00&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T17:17:59&#43;00:00'/>
 <meta name="twitter:title" content="在debian下安装headscale的记录">
 <meta name="twitter:description" content="什么是headscale An open source, self-hosted implementation of the Tailscale control server 要说headscale肯定就要先说tailscale，这是一项VPN服务，可让您拥有的设备和应用程序在世界任何地方安全，轻松地访问。它支持使用开源 WireGuard 协议进行加密的点对点连接，这意味着只有专用网络上的设备才能相互通信。 也就意味着，在任意设备上安装tailscale之后，即可组建一个VPN网络，非常方便的达到内网穿透以及达成一些不可告人的目的。\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
-<style>
-    :root {
-     
-    --sys-font-family: "HarmonyOS_Sans_SC_Medium", Georgia, -apple-system, 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
-    --code-font-family: "JetBrainsMono Regular", Menlo, Monaco, Consolas, "Courier New";
-    --article-font-family: "HarmonyOS_Sans_SC_Medium", var(--base-font-family);
-  }
-</style>
 
-<script>
-    (function () {
-        const customFont = document.createElement('link');
-        customFont.href = "https://gcore.jsdelivr.net/gh/tamakyi/cdn/statics/fonts/font.css";
-        customFont.type = "text/css";
-        customFont.rel = "stylesheet";
-         document.head.appendChild(customFont);
-}());
-</script>
     </head>
     <body class="
     article-page
@@ -539,36 +522,7 @@ unicode: "ece7"
 也就意味着，在任意设备上安装tailscale之后，即可组建一个VPN网络，非常方便的达到内网穿透以及达成一些不可告人的目的。</p>
 <h5 id="为什么要安装headscale">为什么要安装headscale
 </h5><p>tailscale是闭源的商业软件，客户端有上限（虽然一般人也用不到它的上限），而且服务器是定死的，国内连接的时候偶尔会有很大的延迟（基本都是200+，但是如果部署在国外就好一些，比如下面是我在南亚的服务器：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Bangalore: 17.85 ms
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Bangalore: 17.85 ms
 </span></span><span class="line"><span class="cl">Singapore: 61.31 ms
 </span></span><span class="line"><span class="cl">Dubai: 77.91 ms
 </span></span><span class="line"><span class="cl">Hong Kong: 98.53 ms
@@ -593,9 +547,7 @@ unicode: "ece7"
 </span></span><span class="line"><span class="cl">Honolulu: 292.43 ms
 </span></span><span class="line"><span class="cl">Johannesburg: 294.61 ms
 </span></span><span class="line"><span class="cl">São Paulo: 295.29 ms
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>而headscale则是tailscale的开源解决方案，这意味着所有的流量都只通过你的服务器，功能也任由你选择。
+</span></span></code></pre></div><p>而headscale则是tailscale的开源解决方案，这意味着所有的流量都只通过你的服务器，功能也任由你选择。
 但是headscale有一点不好，它没有图形界面，这意味着需要全程在终端进行操作。</p>
 <hr>
 <p>#####如何安装
@@ -611,39 +563,12 @@ unicode: "ece7"
 创建空的 SQLite 数据库文件：
 <code>touch /var/lib/headscale/db.sqlite</code>
 创建配置目录并下载配置文件：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mkdir -p /etc/headscale &amp;&amp; cd /etc/headscale
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mkdir -p /etc/headscale &amp;&amp; cd /etc/headscale
 </span></span><span class="line"><span class="cl">wget https://github.com/juanfont/headscale/raw/main/config-example.yaml -O /etc/headscale/config.yaml
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>然后修改配置文件</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">nano /etc/headscale/config.yaml
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>主要修改几个地方：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">server_url: http://SERVERIP #SERVERIP改为公网IP地址 注意，此处直接修改为http://SERVERIP:PORT1便不会出现404问题
+</span></span></code></pre></div><p>然后修改配置文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">nano /etc/headscale/config.yaml
+</span></span></code></pre></div><p>主要修改几个地方：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">server_url: http://SERVERIP #SERVERIP改为公网IP地址 注意，此处直接修改为http://SERVERIP:PORT1便不会出现404问题
 </span></span><span class="line"><span class="cl">listen_addr: 0.0.0.0:PORT1 #PORT1默认8080，可改为连接的端口，之后连接会通过0.0.0.0:PORT1`进行，如果安装了防火墙记得放行端口
 </span></span><span class="line"><span class="cl">metrics_listen_addr: 0.0.0.0:PORT2 #PORT2默认9090，可改为连接的端口，之后连接会通过0.0.0.0:PORT2`进行，如果安装了防火墙记得放行端口
 </span></span><span class="line"><span class="cl">grpc_listen_addr: 0.0.0.0:50443
@@ -651,47 +576,10 @@ unicode: "ece7"
 </span></span><span class="line"><span class="cl">ip_prefixes:
 </span></span><span class="line"><span class="cl">  - fd7a:115c:a1e0::/48 #自定义IPV6网段，如果用不到可以屏蔽此行
 </span></span><span class="line"><span class="cl">  - 10.64.0.0/16 #自定义IPV4网段
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>创建systemd守护程序</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">nano /etc/systemd/system/headscale.service
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>修改内容为：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="p">[</span><span class="n">Unit</span><span class="p">]</span>
+</span></span></code></pre></div><p>创建systemd守护程序</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">nano /etc/systemd/system/headscale.service
+</span></span></code></pre></div><p>修改内容为：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="p">[</span><span class="n">Unit</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="n">Description</span><span class="o">=</span><span class="n">headscale</span> <span class="n">controller</span>
 </span></span><span class="line"><span class="cl"><span class="n">After</span><span class="o">=</span><span class="n">syslog</span><span class="o">.</span><span class="n">target</span>
 </span></span><span class="line"><span class="cl"><span class="n">After</span><span class="o">=</span><span class="n">network</span><span class="o">.</span><span class="n">target</span>
@@ -715,96 +603,29 @@ unicode: "ece7"
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">Install</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="n">WantedBy</span><span class="o">=</span><span class="n">multi</span><span class="o">-</span><span class="n">user</span><span class="o">.</span><span class="n">target</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>创建 headscale 用户：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">useradd headscale -d /home/headscale -m
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>修改 /var/lib/headscale 目录的所有者：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">chown</span> <span class="o">-</span><span class="n">R</span> <span class="n">headscale</span><span class="p">:</span><span class="n">headscale</span> <span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">headscale</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Reload SystemD 以加载新的配置文件：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">systemctl</span> <span class="n">daemon</span><span class="o">-</span><span class="n">reload</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>启动 Headscale 服务并设置开机自启：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">systemctl enable --now headscale
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>tailscale 中有一个概念叫 tailnet，你可以理解成租户，租户与租户之间是相互隔离的，具体看参考 Tailscale 的官方文档：What is a tailnet。Headscale 也有类似的实现叫 namespace，即命名空间。我们需要先创建一个 namespace，以便后续客户端接入，例如：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">headscale namespaces create default #此处命名空间为default
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>到此服务端部分基本配置完毕。
+</span></span></code></pre></div><p>创建 headscale 用户：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">useradd headscale -d /home/headscale -m
+</span></span></code></pre></div><p>修改 /var/lib/headscale 目录的所有者：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">chown</span> <span class="o">-</span><span class="n">R</span> <span class="n">headscale</span><span class="p">:</span><span class="n">headscale</span> <span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">headscale</span>
+</span></span></code></pre></div><p>Reload SystemD 以加载新的配置文件：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">systemctl</span> <span class="n">daemon</span><span class="o">-</span><span class="n">reload</span>
+</span></span></code></pre></div><p>启动 Headscale 服务并设置开机自启：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">systemctl enable --now headscale
+</span></span></code></pre></div><p>tailscale 中有一个概念叫 tailnet，你可以理解成租户，租户与租户之间是相互隔离的，具体看参考 Tailscale 的官方文档：What is a tailnet。Headscale 也有类似的实现叫 namespace，即命名空间。我们需要先创建一个 namespace，以便后续客户端接入，例如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">headscale namespaces create default #此处命名空间为default
+</span></span></code></pre></div><p>到此服务端部分基本配置完毕。
 ######2.接入headscale
 对于已经安装了tailscale的linux系统，可以直接执行</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">tailscale up --login-server=http://SERVERIP:PORT1 --accept-routes=true --accept-dns=false
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>如果之前已经接入过tailscale，需要执行：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">tailscale up --login-server=http://SERVERIP:PORT1 --accept-routes=true --accept-dns=false --force-reauth
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Windows操作其实也类似，按官网说法我们需要修改注册表，但其实我们只要进入软件的安装目录并右键启动Powershell，执行如下命令:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">.\tailscale.exe up --accept-dns=false --accept-routes --login-server=http://SERVERIP:PORT1 --unattended
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>之后会提示：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">To authenticate, visit:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">tailscale up --login-server=http://SERVERIP:PORT1 --accept-routes=true --accept-dns=false
+</span></span></code></pre></div><p>如果之前已经接入过tailscale，需要执行：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">tailscale up --login-server=http://SERVERIP:PORT1 --accept-routes=true --accept-dns=false --force-reauth
+</span></span></code></pre></div><p>Windows操作其实也类似，按官网说法我们需要修改注册表，但其实我们只要进入软件的安装目录并右键启动Powershell，执行如下命令:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">.\tailscale.exe up --accept-dns=false --accept-routes --login-server=http://SERVERIP:PORT1 --unattended
+</span></span></code></pre></div><p>之后会提示：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">To authenticate, visit:
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	http://SERVERIP:PORT1/register/nodekey:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/09/14/6501e2bfd7452.png"
+</span></span></code></pre></div><p><img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/09/14/6501e2bfd7452.png"
 	
 	
 	
@@ -815,63 +636,20 @@ unicode: "ece7"
 	
 >
 把其中的</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">headscale nodes register --user USERNAME --key nodekey:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>复制到服务器终端中，并修改<code>USERNAME</code>为命名空间，比如上面我们设置的是<code>default</code>。
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">headscale nodes register --user USERNAME --key nodekey:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+</span></span></code></pre></div><p>复制到服务器终端中，并修改<code>USERNAME</code>为命名空间，比如上面我们设置的是<code>default</code>。
 执行之后服务器提示：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Machine xxx registered
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>客户端提示：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Success.
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>在服务器执行
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Machine xxx registered
+</span></span></code></pre></div><p>客户端提示：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Success.
+</span></span></code></pre></div><p>在服务器执行
 <code>headscale nodes list</code>
 可以看到客户端分配到的IP地址为<code>100.64.0.1</code>：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ID | Hostname  | Name      | MachineKey | NodeKey | User    | IP addresses | Ephemeral | Last seen           | Expiration          | Online | Expired
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ID | Hostname  | Name      | MachineKey | NodeKey | User    | IP addresses | Ephemeral | Last seen           | Expiration          | Online | Expired
 </span></span><span class="line"><span class="cl">1  | xxx | xxx | [xxx]    | [xxx] | default | 100.64.0.1, | false     | 2023-09-13 15:47:03 | 0001-01-01 00:00:00 | online | no
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>相同的方法再添加第二个服务器，分配到ip:<code>100.64.0.2</code>
+</span></span></code></pre></div><p>相同的方法再添加第二个服务器，分配到ip:<code>100.64.0.2</code>
 用进行互PING已经通了：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># ping 100.64.0.2
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># ping 100.64.0.2
 </span></span><span class="line"><span class="cl">PING 100.64.0.2 (100.64.0.2) 56(84) bytes of data.
 </span></span><span class="line"><span class="cl">64 bytes from 100.64.0.2: icmp_seq=1 ttl=64 time=0.041 ms
 </span></span><span class="line"><span class="cl">64 bytes from 100.64.0.2: icmp_seq=2 ttl=64 time=0.042 ms
@@ -881,9 +659,7 @@ unicode: "ece7"
 </span></span><span class="line"><span class="cl">--- 100.64.0.2 ping statistics ---
 </span></span><span class="line"><span class="cl">4 packets transmitted, 4 received, 0% packet loss, time 3057ms
 </span></span><span class="line"><span class="cl">rtt min/avg/max/mdev = 0.041/0.043/0.046/0.002 ms
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>延迟很低，很好。
+</span></span></code></pre></div><p>延迟很低，很好。
 ######3.支持了哪些平台？
 截至9月14日，基本已经实现了全平台支持，详情见<a class="link" href="https://github.com/juanfont/headscale"  target="_blank" rel="noopener"
     >https://github.com/juanfont/headscale</a>。
@@ -956,87 +732,62 @@ unicode: "ece7"
 需求:假设本地里面有一台设备,headscale ip为<code>10.64.0.5</code>，内网ip为<code>192.168.50.79</code>，但是我不想内网每台设备都接入headscale，希望通过<code>10.64.0.5</code>来打通局域网。
 客户端（10.64.0.5）配置:
 1.开启ipv4和ipv6转发</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">echo &#39;net.ipv4.ip_forward = 1&#39; | tee /etc/sysctl.d/ipforwarding.conf
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">echo &#39;net.ipv4.ip_forward = 1&#39; | tee /etc/sysctl.d/ipforwarding.conf
 </span></span><span class="line"><span class="cl">echo &#39;net.ipv6.conf.all.forwarding = 1&#39; | tee -a /etc/sysctl.d/ipforwarding.conf
 </span></span><span class="line"><span class="cl">sysctl -p /etc/sysctl.d/ipforwarding.conf
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>2.修改tailscale启动配置</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">tailscale up --login-server=http://SERVERIP:PORT1 --accept-routes=true --accept-dns=false --advertise-routes=192.168.50.0/24
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>其中<code>http://SERVERIP:PORT1</code>为上面的headscale服务器地址和ip，<code>192.168.50.0/24</code>是客户端的内网网段。
+</span></span></code></pre></div><p>2.修改tailscale启动配置</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">tailscale up --login-server=http://SERVERIP:PORT1 --accept-routes=true --accept-dns=false --advertise-routes=192.168.50.0/24
+</span></span></code></pre></div><p>其中<code>http://SERVERIP:PORT1</code>为上面的headscale服务器地址和ip，<code>192.168.50.0/24</code>是客户端的内网网段。
 服务端（headscale服务器）
 查看10.64.0.5的id</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># headscale nodes list                         ID | Hostname             | Name                | MachineKey | NodeKey | User     | IP addresses                  | Ephemeral | Last seen           | Expiration          | Online  | Expired
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># headscale nodes list                         ID | Hostname             | Name                | MachineKey | NodeKey | User     | IP addresses                  | Ephemeral | Last seen           | Expiration          | Online  | Expired
 </span></span><span class="line"><span class="cl">5  | akarinbot            | akarinbot           | [WEJPM]    | [ETS1a] | tamaroot | 100.64.0.5, fd7a:115c:a1e0::1 | false     | 2023-09-14 03:58:37 | 0001-01-01 00:00:00 | online  | no
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>可以看到此处id为5。接下来查看该服务下的路由:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">headscale routes list -i 5
+</span></span></code></pre></div><p>可以看到此处id为5。接下来查看该服务下的路由:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">headscale routes list -i 5
 </span></span><span class="line"><span class="cl"># headscale routes list -i 1
 </span></span><span class="line"><span class="cl">ID | Machine   | Prefix          | Advertised | Enabled | Primary
 </span></span><span class="line"><span class="cl">7  | akarinbot | 192.168.50.0/24 | true       | false    | true
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>这里路由id为7，且Enabled状态为false。接下来开启这个路由</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># headscale routes enable  -r 7
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>此时Enabled状态为true。
+</span></span></code></pre></div><p>这里路由id为7，且Enabled状态为false。接下来开启这个路由</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># headscale routes enable  -r 7
+</span></span></code></pre></div><p>此时Enabled状态为true。
 现在在任意客户端访问192.168.50.0/24网段的ip都能联通了。
 #####5.其他事项
 如果deb包下载很慢，可以用其他软件下载:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://pkgs.tailscale.com/stable/tailscale_{版本号}_{架构}.deb
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>例如：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://pkgs.tailscale.com/stable/tailscale_1.56.1_amd64.deb
-</span></span></code></pre></td></tr></table>
-</div>
-</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://pkgs.tailscale.com/stable/tailscale_{版本号}_{架构}.deb
+</span></span></code></pre></div><p>例如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://pkgs.tailscale.com/stable/tailscale_1.56.1_amd64.deb
+</span></span></code></pre></div>
 </section>
+
+
+    <div class="article-details" style="padding-top: 15px;padding-bottom: 0px;">
+        <footer class="article-time">
+            <div>
+                <!--
+category: System
+tags: [view, watch]
+version: "1.0"
+unicode: "ea9a"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="20"
+  height="20"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#000000"
+  stroke-width="0.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+  <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
+</svg>
+
+                <span title="阅读次数" style="display: inline;font-size: 1.4rem;">阅读次数: <span class="waline-pageview-count" data-path="/record/headscale.html" /></span>
+            </div>
+        </footer>
+    </div>
 
 
     <footer class="article-footer">
@@ -1070,7 +821,7 @@ unicode: "ece7"
 
 
         <span>
-            最后更新于 2025年07月02日 12:11
+            最后更新于 2025年07月02日 17:17
         </span>
     </section></footer>
 

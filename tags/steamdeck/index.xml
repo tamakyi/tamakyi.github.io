@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Wed, 02 Jul 2025 12:11:48 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/steamdeck/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 02 Jul 2025 17:17:59 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/steamdeck/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>捣鼓SteamDeck的那些事</title>
         <link>https://blog.tama.guru/record/steamdeck.html</link>
         <pubDate>Thu, 02 Feb 2023 09:47:00 +0800</pubDate>
@@ -44,20 +44,7 @@
 （3）选择最大的分区将其resize，在最后部分调整出一块200G的空间，然后新增两个NTFS分区，一个用于装系统（80G），一个用于与SteamOS共享数据及给WIN装游戏。（根据实际情况自行调整）调整完后关机。
 （4）按步骤2进入启动项选择，这次选择WIN镜像，后续步骤不再赘述，安装步骤和一般装系统完全一致。
 （5）等安装完成后重启进入启动项选择，进入SteamOS并进入桌面模式，在右下角菜单找到系统&amp;gt;终端，&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;passwd&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;#修改默认密码&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;passwd&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;#修改默认密码&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;passwd&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;#修改root密码&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;steamos&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;readonly&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;disable&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;#关闭系统只读&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;git&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;clone&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;https&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;github&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;com&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;jlobue10&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SteamDeck_rEFInd&lt;/span&gt;
@@ -66,9 +53,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;mkdir&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;root&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Downloads&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;chmod&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;refind_install_no_pacman&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sh&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sh&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;refind_install_no_pacman&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sh&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;至此引导脚本安装完成，重启之后就能看到StemaOS和WIN的两个LOGO了，五秒内不选择默认从SteamOS启动。之所以选择&lt;code&gt;refind_install_no_pacman.sh&lt;/code&gt;是因为SteamOS默认情况下要开启pacman非常麻烦，而且后续升级的话pacman安装的相关软件都会丢失仅保留配置。&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;至此引导脚本安装完成，重启之后就能看到StemaOS和WIN的两个LOGO了，五秒内不选择默认从SteamOS启动。之所以选择&lt;code&gt;refind_install_no_pacman.sh&lt;/code&gt;是因为SteamOS默认情况下要开启pacman非常麻烦，而且后续升级的话pacman安装的相关软件都会丢失仅保留配置。&lt;/p&gt;
 &lt;p&gt;####·我想玩学习版游戏·####
 自测了几个proton版本以及proton next还有heroics game launcher，还是有很多游戏没办法正常启动，建议直接上WIN系统。&lt;/p&gt;
 &lt;p&gt;####·WIN系统设备管理器里面安装了Steam官方的驱动之后还是有几个感叹号·####
@@ -79,17 +64,9 @@
 去设置看看下载服务器是否本地位置，不然就开加速器（例如我进系统他自己给我调整到日本札幌，换回国内重启后速度就上来了）。&lt;/p&gt;
 &lt;p&gt;####·桌面模式的discovery商店访问速度慢·####
 Steam桌面商店使用的是flathub源，默认使用的是&lt;code&gt;https://glathub.org/repo&lt;/code&gt;，在国内访问较慢，建议换到上海交大源：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo steamos-readonly disable
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo steamos-readonly disable
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo flatpak remote-modify flathub --url=https://mirror.sjtu.edu.cn/flathub
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;然后进商店里面更新一下就好了。&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后进商店里面更新一下就好了。&lt;/p&gt;
 &lt;p&gt;####·我账号很多想用家庭共享，但是好像不起作用·####
 因为家庭共享是基于设备的，只在电脑上开通在deck上市无法启用的。这种情况下只能先登陆需要共享的账号，下载个游戏，然后登陆另外一个账号，这里会显示成“借用”状态，点击申请授权即可。&lt;/p&gt;
 &lt;p&gt;####·怎么进BIOS/启动菜单·####
