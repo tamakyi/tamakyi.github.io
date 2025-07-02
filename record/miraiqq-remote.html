@@ -10,7 +10,7 @@
 <meta property='og:description' content="在异地直接扫码登录miraiqq会有“异常，建议在同一WIFI环境下使用”的提示，如果服务器在本地还好，但是买的服务器在外地就很难这样去处理了。 解决的方式也很简单，因为go-cqhttp是通过检查运行目录下的 device.json和 session.token来验证数据的，因此只要在本地环境搭建好go-cqhttp环境并登陆，然后用本地生成的两个文件传输到远程服务器下替换掉原有文件就好了。\n">
 <meta property='og:url' content='https://blog.tama.guru/record/miraiqq-remote.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='go-cqhttp' /><meta property='article:tag' content='miraiqq' /><meta property='article:published_time' content='2022-07-06T09:11:45&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T17:17:59&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='go-cqhttp' /><meta property='article:tag' content='miraiqq' /><meta property='article:published_time' content='2022-07-06T09:11:45&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T17:23:01&#43;00:00'/>
 <meta name="twitter:title" content="在异地服务器使用go-miraiqq教程">
 <meta name="twitter:description" content="在异地直接扫码登录miraiqq会有“异常，建议在同一WIFI环境下使用”的提示，如果服务器在本地还好，但是买的服务器在外地就很难这样去处理了。 解决的方式也很简单，因为go-cqhttp是通过检查运行目录下的 device.json和 session.token来验证数据的，因此只要在本地环境搭建好go-cqhttp环境并登陆，然后用本地生成的两个文件传输到远程服务器下替换掉原有文件就好了。\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
@@ -474,25 +474,7 @@ unicode: "ece7"
 
 </header>
 
-    <section class="article-content">
     
-    
-    <p>在异地直接扫码登录miraiqq会有“异常，建议在同一WIFI环境下使用”的提示，如果服务器在本地还好，但是买的服务器在外地就很难这样去处理了。
-解决的方式也很简单，因为go-cqhttp是通过检查运行目录下的 <code>device.json</code>和 <code>session.token</code>来验证数据的，因此只要在本地环境搭建好go-cqhttp环境并登陆，然后用本地生成的两个文件传输到远程服务器下替换掉原有文件就好了。</p>
-<hr>
-<p>具体步骤：</p>
-<ol>
-<li>本地搭建go-cqhttp（本地的服务器类型可以与异地不一致，因为最终生成的 <code>device.json</code>和 <code>session.token</code>内容是一样的）
-到 <code>https://github.com/Mrs4s/go-cqhttp/releases</code>下载本地系统对应版本的文件，例如使用windows的可以下载 <code>https://github.com/Mrs4s/go-cqhttp/releases/download/v1.0.0-rc3/go-cqhttp_windows_amd64.exe</code>，下载到本地双击运行；使用debian系的可以 <code>wget https://github.com/Mrs4s/go-cqhttp/releases/download/v1.0.0-rc3/go-cqhttp_1.0.0-rc3_linux_amd64.deb</code> 然后 <code>dpkg -i go-cqhttp_1.0.0-rc3_linux_amd64.deb</code>，即可使用go-cqhttp命令在当前目录下运行。</li>
-<li>使用windows版本会提示请勿通过双击运行本程序，确认即可，后续会生成 <code>go-cqhttp.bat</code>，双击运行 <code>go-cqhttp.bat</code>按要求选择通信方式，一般选择 <code>0:HTTP通信</code>即可，待提示 <code>默认配置文件已生成，请修改 config.yml 后重新启动!</code>后可关闭窗口。</li>
-<li>之后修改 <code>config.yml</code>，此处只需要填报QQ账号、密码 其他不要动。</li>
-<li>修改好之后再运行 <code>go-cqhttp.bat</code>一般会提示两个步骤：一是要滑动验证，直接复制生成的网址到浏览器并按要求处理即可；二是选择使用手机接收验证码。处理完两个步骤后提示正常运行即可关闭窗口，然后把目录下的 <code>device.json</code>和 <code>session.token</code>传输到服务器的miraiqq目录再运行对应程序即可（注意服务器的config文件中QQ账号、密码要和本地一致）。
-PS： linux大同小异。</li>
-</ol>
-
-</section>
-
-
     <div class="article-details" style="padding-top: 15px;padding-bottom: 0px;">
         <footer class="article-time">
             <div>
@@ -522,6 +504,24 @@ unicode: "ea9a"
         </footer>
     </div>
 
+
+<section class="article-content">
+    
+    
+    <p>在异地直接扫码登录miraiqq会有“异常，建议在同一WIFI环境下使用”的提示，如果服务器在本地还好，但是买的服务器在外地就很难这样去处理了。
+解决的方式也很简单，因为go-cqhttp是通过检查运行目录下的 <code>device.json</code>和 <code>session.token</code>来验证数据的，因此只要在本地环境搭建好go-cqhttp环境并登陆，然后用本地生成的两个文件传输到远程服务器下替换掉原有文件就好了。</p>
+<hr>
+<p>具体步骤：</p>
+<ol>
+<li>本地搭建go-cqhttp（本地的服务器类型可以与异地不一致，因为最终生成的 <code>device.json</code>和 <code>session.token</code>内容是一样的）
+到 <code>https://github.com/Mrs4s/go-cqhttp/releases</code>下载本地系统对应版本的文件，例如使用windows的可以下载 <code>https://github.com/Mrs4s/go-cqhttp/releases/download/v1.0.0-rc3/go-cqhttp_windows_amd64.exe</code>，下载到本地双击运行；使用debian系的可以 <code>wget https://github.com/Mrs4s/go-cqhttp/releases/download/v1.0.0-rc3/go-cqhttp_1.0.0-rc3_linux_amd64.deb</code> 然后 <code>dpkg -i go-cqhttp_1.0.0-rc3_linux_amd64.deb</code>，即可使用go-cqhttp命令在当前目录下运行。</li>
+<li>使用windows版本会提示请勿通过双击运行本程序，确认即可，后续会生成 <code>go-cqhttp.bat</code>，双击运行 <code>go-cqhttp.bat</code>按要求选择通信方式，一般选择 <code>0:HTTP通信</code>即可，待提示 <code>默认配置文件已生成，请修改 config.yml 后重新启动!</code>后可关闭窗口。</li>
+<li>之后修改 <code>config.yml</code>，此处只需要填报QQ账号、密码 其他不要动。</li>
+<li>修改好之后再运行 <code>go-cqhttp.bat</code>一般会提示两个步骤：一是要滑动验证，直接复制生成的网址到浏览器并按要求处理即可；二是选择使用手机接收验证码。处理完两个步骤后提示正常运行即可关闭窗口，然后把目录下的 <code>device.json</code>和 <code>session.token</code>传输到服务器的miraiqq目录再运行对应程序即可（注意服务器的config文件中QQ账号、密码要和本地一致）。
+PS： linux大同小异。</li>
+</ol>
+
+</section>
 
     <footer class="article-footer">
     
@@ -556,7 +556,7 @@ unicode: "ea9a"
 
 
         <span>
-            最后更新于 2025年07月02日 17:17
+            最后更新于 2025年07月02日 17:23
         </span>
     </section></footer>
 

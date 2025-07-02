@@ -10,7 +10,7 @@
 <meta property='og:description' content="原文已丢失，以下部分为重写。 正文部分忘得差不多了，此处就记录一下使用过程中的问题吧。\n">
 <meta property='og:url' content='https://blog.tama.guru/record/stable-diffusion-webui.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='stable-diffusion' /><meta property='article:tag' content='novelai' /><meta property='article:published_time' content='2022-10-19T23:44:38&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T17:17:59&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='stable-diffusion' /><meta property='article:tag' content='novelai' /><meta property='article:published_time' content='2022-10-19T23:44:38&#43;08:00'/><meta property='article:modified_time' content='2025-07-02T17:23:01&#43;00:00'/>
 <meta name="twitter:title" content="stable-diffusion使用过程中的一些记录">
 <meta name="twitter:description" content="原文已丢失，以下部分为重写。 正文部分忘得差不多了，此处就记录一下使用过程中的问题吧。\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
@@ -474,36 +474,7 @@ unicode: "ece7"
 
 </header>
 
-    <section class="article-content">
     
-    
-    <p>原文已丢失，以下部分为重写。
-正文部分忘得差不多了，此处就记录一下使用过程中的问题吧。</p>
-<p>[scode type=&ldquo;lblue&rdquo;]No.1 我想在本地搭建服务并分享出去[/scode]
-修改目录下的<code>webui.py</code>文件，将101行<code>app,local_url,share_url = demo.launch(</code>的代码块修改为：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">        app,local_url,share_url = demo.launch(
-</span></span><span class="line"><span class="cl">            share=True,
-</span></span><span class="line"><span class="cl">            server_name=&#34;你的本地IP，比如192.168.10.121&#34; if cmd_opts.listen else None,
-</span></span><span class="line"><span class="cl">            server_port=cmd_opts.port,
-</span></span><span class="line"><span class="cl">            debug=cmd_opts.gradio_debug,
-</span></span><span class="line"><span class="cl">            auth=[tuple(cred.split(&#39;:&#39;)) for cred in cmd_opts.gradio_auth.strip(&#39;&#34;&#39;).split(&#39;,&#39;)] if cmd_opts.gradio_auth else None,
-</span></span><span class="line"><span class="cl">            inbrowser=cmd_opts.autolaunch,
-</span></span><span class="line"><span class="cl">            prevent_thread_lock=True
-</span></span><span class="line"><span class="cl">        )
-</span></span></code></pre></div><p>修改完成后保存运行<code>webui-user.bat</code>即可。
-需要注意的是开启分享需要全程连接谷歌，因为需要调用到谷歌的gradio服务。
-[scode type=&ldquo;lblue&rdquo;]No.2 我想在本地搭建服务但是我的运存有点小[/scode]
-按照官方的说法，只需要修改<code>webui-user.bat</code>文件，将<code>set COMMANDLINE_ARGS=</code>添加参数<code>--medvram</code>即可，即显示为：
-<code>set COMMANDLINE_ARGS=--medvram</code>
-修改完成后保存运行<code>webui-user.bat</code>即可。
-[scode type=&ldquo;lblue&rdquo;]No.3 我生成的结果好丑！[/scode]
-我猜你是想画二次元涩图。其一：程序的wiki上留下的模型比较&hellip;正常？所以首先你需要替换掉模型。目前因为一些原因novelai的ckpt模型已泄露，可以将下载到的模型重命名为<code>model.ckpt</code>并替换到<code>models\Stable-diffusion</code>目录再重新启动程序即可。
-其二：你需要到网页端把NSFW过滤给关掉了。
-其三：你可能需要添加一些低质量关键词过滤，以下为参考：
-<code>lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet</code></p>
-</section>
-
-
     <div class="article-details" style="padding-top: 15px;padding-bottom: 0px;">
         <footer class="article-time">
             <div>
@@ -533,6 +504,35 @@ unicode: "ea9a"
         </footer>
     </div>
 
+
+<section class="article-content">
+    
+    
+    <p>原文已丢失，以下部分为重写。
+正文部分忘得差不多了，此处就记录一下使用过程中的问题吧。</p>
+<p>[scode type=&ldquo;lblue&rdquo;]No.1 我想在本地搭建服务并分享出去[/scode]
+修改目录下的<code>webui.py</code>文件，将101行<code>app,local_url,share_url = demo.launch(</code>的代码块修改为：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">        app,local_url,share_url = demo.launch(
+</span></span><span class="line"><span class="cl">            share=True,
+</span></span><span class="line"><span class="cl">            server_name=&#34;你的本地IP，比如192.168.10.121&#34; if cmd_opts.listen else None,
+</span></span><span class="line"><span class="cl">            server_port=cmd_opts.port,
+</span></span><span class="line"><span class="cl">            debug=cmd_opts.gradio_debug,
+</span></span><span class="line"><span class="cl">            auth=[tuple(cred.split(&#39;:&#39;)) for cred in cmd_opts.gradio_auth.strip(&#39;&#34;&#39;).split(&#39;,&#39;)] if cmd_opts.gradio_auth else None,
+</span></span><span class="line"><span class="cl">            inbrowser=cmd_opts.autolaunch,
+</span></span><span class="line"><span class="cl">            prevent_thread_lock=True
+</span></span><span class="line"><span class="cl">        )
+</span></span></code></pre></div><p>修改完成后保存运行<code>webui-user.bat</code>即可。
+需要注意的是开启分享需要全程连接谷歌，因为需要调用到谷歌的gradio服务。
+[scode type=&ldquo;lblue&rdquo;]No.2 我想在本地搭建服务但是我的运存有点小[/scode]
+按照官方的说法，只需要修改<code>webui-user.bat</code>文件，将<code>set COMMANDLINE_ARGS=</code>添加参数<code>--medvram</code>即可，即显示为：
+<code>set COMMANDLINE_ARGS=--medvram</code>
+修改完成后保存运行<code>webui-user.bat</code>即可。
+[scode type=&ldquo;lblue&rdquo;]No.3 我生成的结果好丑！[/scode]
+我猜你是想画二次元涩图。其一：程序的wiki上留下的模型比较&hellip;正常？所以首先你需要替换掉模型。目前因为一些原因novelai的ckpt模型已泄露，可以将下载到的模型重命名为<code>model.ckpt</code>并替换到<code>models\Stable-diffusion</code>目录再重新启动程序即可。
+其二：你需要到网页端把NSFW过滤给关掉了。
+其三：你可能需要添加一些低质量关键词过滤，以下为参考：
+<code>lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet</code></p>
+</section>
 
     <footer class="article-footer">
     
@@ -567,7 +567,7 @@ unicode: "ea9a"
 
 
         <span>
-            最后更新于 2025年07月02日 17:17
+            最后更新于 2025年07月02日 17:23
         </span>
     </section></footer>
 
