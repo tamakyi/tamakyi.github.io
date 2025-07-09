@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>狼的公告板 ver.Hugo</title>
-        <link>https://blog.tama.guru/</link>
+        <link>https://blog.tama.guru/index.html</link>
         <description>Recent content on 狼的公告板 ver.Hugo</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>

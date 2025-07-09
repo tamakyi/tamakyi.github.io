@@ -2,40 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blog.tama.guru/en/categories.html</loc>
+    <loc>https://blog.tama.guru/en/categories/index.html</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.tama.guru/categories.html"
+                href="https://blog.tama.guru/categories/index.html"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.tama.guru/en/categories.html"
+                href="https://blog.tama.guru/en/categories/index.html"
                 />
   </url><url>
-    <loc>https://blog.tama.guru/en/tags.html</loc>
+    <loc>https://blog.tama.guru/en/tags/index.html</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.tama.guru/tags.html"
+                href="https://blog.tama.guru/tags/index.html"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.tama.guru/en/tags.html"
+                href="https://blog.tama.guru/en/tags/index.html"
                 />
   </url><url>
-    <loc>https://blog.tama.guru/en/</loc>
+    <loc>https://blog.tama.guru/en/index.html</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.tama.guru/"
+                href="https://blog.tama.guru/index.html"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.tama.guru/en/"
+                href="https://blog.tama.guru/en/index.html"
                 />
   </url>
 </urlset>
