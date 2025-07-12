@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Fri, 11 Jul 2025 02:03:09 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/docker/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 12 Jul 2025 02:03:54 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/docker/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>在docker里运行火狐浏览器</title>
         <link>https://blog.tama.guru/record/firefox-on-docker.html</link>
         <pubDate>Fri, 26 Apr 2024 15:53:00 +0800</pubDate>
