@@ -7,7 +7,65 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Fri, 18 Jul 2025 02:06:20 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/cloudflare/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 18 Jul 2025 09:07:50 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/cloudflare/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>[好软推荐] Cloudpaste-开源在线文本/文件分享平台</title>
+        <link>https://blog.tama.guru/record/cloudpaste.html</link>
+        <pubDate>Fri, 18 Jul 2025 10:21:11 +0800</pubDate>
+        
+        <guid>https://blog.tama.guru/record/cloudpaste.html</guid>
+        <description>&lt;p&gt;之前看到有人推荐了&lt;a class=&#34;link&#34; href=&#34;https://github.com/ling-drag0n/CloudPaste&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;cloudpaste&lt;/a&gt;这个项目，主要作用是能够提供简单的文本及文件分享服务，前后端部分使用GitHub Action+Cloudflare Worker，存储桶部分使用Cloudflare R2等免费服务，即可实现免费使用。除了在国内因为众所周知的原因Worker域名无法访问，需要自行配置域名。&lt;/p&gt;
+&lt;p&gt;前后端配置基本可以直接参照项目内文档：&lt;/p&gt;
+&lt;h5 id=&#34;github-仓库fork和后端配置&#34;&gt;GitHub 仓库fork和后端配置
+&lt;/h5&gt;&lt;p&gt;受限要将仓库fork下来，然后为fork的仓库添加变量，具体路径为仓库的&lt;code&gt;Settings-Secrets and variables-Actions-New repository secrets&lt;/code&gt;。添加的secrets为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CLOUDFLARE_API_TOKEN&lt;/li&gt;
+&lt;li&gt;CLOUDFLARE_ACCOUNT_ID&lt;/li&gt;
+&lt;li&gt;ENCRYPTION_SECRET&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;前面两个参数在后面获取到，后面的ENCRYPTION_SECRET可以选填，如果没有会自动生成。&lt;/p&gt;
+&lt;h5 id=&#34;cloudflare-token配置&#34;&gt;CloudFlare TOKEN配置
+&lt;/h5&gt;&lt;p&gt;登录CloudFlare后访问&lt;a class=&#34;link&#34; href=&#34;https://dash.cloudflare.com/profile/api-tokens&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;API令牌管理&lt;/a&gt;界面，创建一个新的API令牌，模版选择&amp;quot;Cloudflare Workers&amp;quot;，并编辑内容添加D1数据库编辑权限，记录下TOKEN，即为后面要用到的&lt;code&gt;CLOUDFLARE_API_TOKEN&lt;/code&gt;。
+&lt;code&gt;CLOUDFLARE_ACCOUNT_ID&lt;/code&gt;位于Cloudflare主界面的右侧。&lt;/p&gt;
+&lt;h5 id=&#34;开通d1和r2并配置pages&#34;&gt;开通D1和R2，并配置Pages
+&lt;/h5&gt;&lt;p&gt;D1位于左侧的存储和数据库下，的D1 SQL数据库；R2位于左侧的R2对象存储。两者都是需要点进去开通即可，其他不需要动。
+D1和R2都有免费额度，可以大胆使用。&lt;/p&gt;
+&lt;h5 id=&#34;github-配置actions前端自动部署&#34;&gt;GitHub 配置Actions前端自动部署
+&lt;/h5&gt;&lt;p&gt;返回到GitHub仓库页，找到Actions，运行&lt;code&gt;deploy-front-cloudflare.yml&lt;/code&gt;这个工作流，初次运行会进行D1数据库和Pages的创建。&lt;/p&gt;
+&lt;h5 id=&#34;配置cloudflare-workers&#34;&gt;配置CloudFlare Workers
+&lt;/h5&gt;&lt;p&gt;Pages现在已经移动到&lt;code&gt;计算（Workers）&lt;/code&gt;下，找到&lt;code&gt;Workers和Pages&lt;/code&gt;，此时应该会看到刚才工作流创建的Pages，我的前端名称是&lt;code&gt;cloudpaste-frontend&lt;/code&gt;，后端为&lt;code&gt;cloudpaste-backend&lt;/code&gt;。
+先配置&lt;code&gt;cloudpaste-backend&lt;/code&gt;，在项目内的&lt;code&gt;设置-变量和机密&lt;/code&gt;，添加一个文本类型的变量，变量名是&lt;code&gt;ENCRYPTION_SECRET&lt;/code&gt;，值即之前我们自己填的或者自动生成的。然后要配置&lt;code&gt;域和路由&lt;/code&gt;，添加一个自定义域，这里最好设置一个自己的域名（例如https://backend.tama.guru），因为默认分配的workers.dev这个域名无法直接访问，使用部分功能时会受限。
+然后到配置&lt;code&gt;cloudpaste-frontend&lt;/code&gt;这边，也是进到&lt;code&gt;设置&lt;/code&gt;，找到&lt;code&gt;变量和机密&lt;/code&gt;，添加一个文本类型的变量，变量名是&lt;code&gt;VITE_BACKEND_URL&lt;/code&gt;，对应的值是刚才在&lt;code&gt;cloudpaste-backend&lt;/code&gt;中的&lt;code&gt;workers.dev&lt;/code&gt;域名或自定义的域名，注意填写末尾不带&amp;quot;/&amp;quot;。同样的，还需要在&lt;code&gt;cloudpaste-frontend&lt;/code&gt;的自定义域配置一个自己的域名（例如https://frontend.tama.guru），并配置好解析。&lt;/p&gt;
+&lt;h5 id=&#34;重新运行前端工作流&#34;&gt;重新运行前端工作流
+&lt;/h5&gt;&lt;p&gt;返回到GitHub仓库页，找到Actions，再次运行&lt;code&gt;deploy-front-cloudflare.yml&lt;/code&gt;这个工作流。运行完成之后之前的配置才回生效，此时可以通过https://frontend.tama.guru访问前端，而对应的后端则是https://backend.tama.guru。&lt;/p&gt;
+&lt;h5 id=&#34;完成初步配置工作&#34;&gt;完成初步配置工作
+&lt;/h5&gt;&lt;p&gt;访问前端地址登录后台，默认的管理员信息是：&lt;strong&gt;用户名: admin, 密码: admin123&lt;/strong&gt;，登录后请马上修改。&lt;/p&gt;
+&lt;h5 id=&#34;挂载s3存储&#34;&gt;挂载S3存储
+&lt;/h5&gt;&lt;p&gt;完成以上工作后仅能实现文本分享和编辑的功能，如果需要实现文件分享还需要配置S3存储，目前建议使用的包括R2、B2、七牛云三个，三个都有免费额度，且经过一段时间的试用相关功能都是正常的。&lt;/p&gt;
+&lt;h6 id=&#34;挂载r2存储桶&#34;&gt;挂载R2存储桶
+&lt;/h6&gt;&lt;p&gt;打开CloudFlare R2对象存储页面，新建一个存储桶，比如我命名为&lt;code&gt;cloudpaste-r2&lt;/code&gt;，并添加一个API令牌。令牌权限为读和写，制定存储桶为&lt;code&gt;cloudpaste-r2&lt;/code&gt;，其他不用动，保存并记录API令牌，然后点进&lt;code&gt;cloudpaste-r2&lt;/code&gt;存储桶，在设置下找到&lt;code&gt;CORS策略&lt;/code&gt;，点击编辑，内容为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;#34;AllowedOrigins&amp;#34;: [&amp;#34;http://localhost:3000&amp;#34;, &amp;#34;https://根据自己的前端域名来替代，比如我的https://frontend.tama.guru&amp;#34;],
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;#34;AllowedMethods&amp;#34;: [&amp;#34;GET&amp;#34;, &amp;#34;PUT&amp;#34;, &amp;#34;POST&amp;#34;, &amp;#34;DELETE&amp;#34;, &amp;#34;HEAD&amp;#34;],
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;#34;AllowedHeaders&amp;#34;: [&amp;#34;*&amp;#34;],
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;#34;ExposeHeaders&amp;#34;: [&amp;#34;ETag&amp;#34;],
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;#34;MaxAgeSeconds&amp;#34;: 3600
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后回到前端页面的后台，在S3存储配置下添加一个新配置，&lt;code&gt;配置名称&lt;/code&gt;任意，为了区分我起名和r2存储桶一样的名字&lt;code&gt;cloudpaste-r2&lt;/code&gt;，&lt;code&gt;提供商&lt;/code&gt;为&lt;code&gt;Cloudflare R2&lt;/code&gt;，&lt;code&gt;存储桶名称&lt;/code&gt;即&lt;code&gt;cloudpaste-r2&lt;/code&gt;，&lt;code&gt;存储容量&lt;/code&gt;最好就保留10G，好像就免费10G？&lt;code&gt;端点URL&lt;/code&gt;按要求的格式填写&lt;code&gt;https://&amp;lt;accountid&amp;gt;.r2.cloudflarestorage.com&lt;/code&gt;，&lt;code&gt;accountid&lt;/code&gt;在cloudflare页面下可以找到，也就是前面所说的&lt;code&gt;CLOUDFLARE_ACCOUNT_ID&lt;/code&gt;。&lt;code&gt;区域&lt;/code&gt;根据建桶时所选的位置，我选的亚太，这里就填apac，默认填auto也可以。&lt;code&gt;访问密钥 ID&lt;/code&gt;和&lt;code&gt;秘密访问密钥&lt;/code&gt;即上面申请到的&lt;code&gt;API令牌信息&lt;/code&gt;，其他可以保持默认不变，保存即可。此时点击&lt;code&gt;测试连接&lt;/code&gt;，应该会提示：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;配置完全可用
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;✓ 读权限正常 ✓ 写权限正常 ✓ CORS 配置正确 ✓ 前端上传模拟成功
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果没有配置CORS，这里会提示CORS配置不正确，上传文件时也会报错。&lt;/p&gt;
+&lt;p&gt;最后到&lt;code&gt;挂载管理&lt;/code&gt;处，选择&lt;code&gt;新建挂载点&lt;/code&gt;，&lt;code&gt;挂载点名称&lt;/code&gt;也是任意的，为保持一致我使用&lt;code&gt;cloudpaste-r2&lt;/code&gt;，&lt;code&gt;存储类型&lt;/code&gt;为S3存储，&lt;code&gt;S3存储配置&lt;/code&gt;选择刚才创建的&lt;code&gt;cloudpaste-r2(Cloudflare R2)&lt;/code&gt;，&lt;code&gt;挂载路径&lt;/code&gt;我填写的是&lt;code&gt;/r2&lt;/code&gt;，根据个人情况填写即可，最后&lt;code&gt;勾选启用状态&lt;/code&gt;，选择创建即可。 此时在文件上传页面和挂载浏览页面都可以看到这个&lt;code&gt;r2&lt;/code&gt;挂载点了，可以尝试上传文件，如果提示大小超限需要到后台的&lt;code&gt;系统设置&lt;/code&gt;中调整&lt;code&gt;最大上传文件大小&lt;/code&gt;，并更新设置，该选项默认为100MB。&lt;/p&gt;
+&lt;h6 id=&#34;挂载七牛云对象存储kodo&#34;&gt;挂载七牛云对象存储kodo
+&lt;/h6&gt;&lt;p&gt;我以七牛云作为兼容S3标准的代表，在七牛云的对象存储中选择空间管理-新建空间，存储空间名称和R2中存储桶名称意义一致，我填写的是&lt;code&gt;cloudpaste-qiniu&lt;/code&gt;，存储区域选择国外任意地点（选择国内需要实名），我选择北美-洛杉矶，访问控制选择为私有。还需要配置CORS规则，点进&lt;code&gt;cloudpaste-qiniu&lt;/code&gt;这个桶的&lt;code&gt;空间设置&lt;/code&gt;，&lt;code&gt;跨域设置&lt;/code&gt;内&lt;code&gt;新增规则&lt;/code&gt;，&lt;code&gt;来源&lt;/code&gt;填写我们的&lt;code&gt;前端域名https://frontend.tama.guru&lt;/code&gt;，&lt;code&gt;允许 Methods&lt;/code&gt;我全勾选了，然后保存。
+七牛云并没有针对存储桶有单独的API密钥，需要到&lt;code&gt;个人中心&lt;/code&gt;中的&lt;code&gt;密钥管理&lt;/code&gt;，打开&lt;code&gt;密钥访问权限&lt;/code&gt;，并新增一组AccessKey/SecretKey，保存好这组AK和SK。
+回到网站后台，操作和前面一样，只不过提供商类型要选择其他S3兼容服务，端点URL为：&lt;code&gt;http://存储空间名称.s3.存储区域名称.qiniucs.com&lt;/code&gt;，根据上述配置我这里对应的是&lt;code&gt;http://cloudpaste-qiniu.s3.us-north-1.qiniucs.com&lt;/code&gt;，访问密钥即前面的AK，秘密访问密钥即SK，保存即可，其他参照R2的添加步骤即可。
+需要注意的是，七牛云的免费套餐只支持http。&lt;/p&gt;</description>
+        </item>
+        <item>
         <title>使用Cloudflare的SaaS实现自选IP</title>
         <link>https://blog.tama.guru/record/Cloudflare_SaaS.html</link>
         <pubDate>Fri, 31 May 2024 23:59:00 +0800</pubDate>

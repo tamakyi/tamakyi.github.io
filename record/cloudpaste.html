@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="之前看到有人推荐了cloudpaste这个项目，主要作用是能够提供简单的文本及文件分享服务，前后端部分使用GitHub Action+Cloudflare Worker，存储桶部分使用Cloudflare R2等免费服务，即可实现免费使用。除了在国内因为众所周知的原因Worker域名无法访问，需要自行配置域名。\n">
+<title>[好软推荐] Cloudpaste-开源在线文本/文件分享平台</title>
+
+<link rel='canonical' href='https://blog.tama.guru/record/cloudpaste.html'>
+
+<link rel="stylesheet" href="/scss/style.min.672ab4e51c9b70c9ecf59b198a742ea0088310f81623d2e615c73085383997a8.css"><meta property='og:title' content="[好软推荐] Cloudpaste-开源在线文本/文件分享平台">
+<meta property='og:description' content="之前看到有人推荐了cloudpaste这个项目，主要作用是能够提供简单的文本及文件分享服务，前后端部分使用GitHub Action+Cloudflare Worker，存储桶部分使用Cloudflare R2等免费服务，即可实现免费使用。除了在国内因为众所周知的原因Worker域名无法访问，需要自行配置域名。\n">
+<meta property='og:url' content='https://blog.tama.guru/record/cloudpaste.html'>
+<meta property='og:site_name' content='狼的公告板 ver.Hugo'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='cloudpaste' /><meta property='article:tag' content='文件分享' /><meta property='article:tag' content='cloudflare' /><meta property='article:tag' content='github' /><meta property='article:tag' content='文本分享' /><meta property='article:tag' content='开源软件' /><meta property='article:published_time' content='2025-07-18T10:21:11&#43;08:00'/><meta property='article:modified_time' content='2025-07-18T17:07:32&#43;08:00'/>
+<meta name="twitter:title" content="[好软推荐] Cloudpaste-开源在线文本/文件分享平台">
+<meta name="twitter:description" content="之前看到有人推荐了cloudpaste这个项目，主要作用是能够提供简单的文本及文件分享服务，前后端部分使用GitHub Action+Cloudflare Worker，存储桶部分使用Cloudflare R2等免费服务，即可实现免费使用。除了在国内因为众所周知的原因Worker域名无法访问，需要自行配置域名。\n">
+    <link rel="shortcut icon" href="/static/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_d6a5c15246229c7b.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">狼的公告板 ver.Hugo</a></h1>
+            <h2 class="site-description">念念不忘，必有回响</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/tamakyi'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/index.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home | 主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search | 搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives | 档案</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='https://tama.guru/' target="_blank">
+                
+                
+                
+                    <!--
+tags: [light, sea, tower, beacon, flash, ship, guide, lightship, leading, watchtower, signal]
+category: Buildings
+version: "1.34"
+unicode: "ed8a"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="32"
+  height="32"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#000000"
+  stroke-width="1"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 3l2 3l2 15h-8l2 -15z" />
+  <path d="M8 9l8 0" />
+  <path d="M3 11l2 -2l-2 -2" />
+  <path d="M21 11l-2 -2l2 -2" />
+</svg>
+
+                
+                <span>Navi | 导航页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='https://box.tama.guru/' target="_blank">
+                
+                
+                
+                    <!--
+tags: [sign, symbol, ask, sentence, word, letters, "?"]
+version: "1.16"
+unicode: "ec9d"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="32"
+  height="32"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#000000"
+  stroke-width="1"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M8 8a3.5 3 0 0 1 3.5 -3h1a3.5 3 0 0 1 3.5 3a3 3 0 0 1 -2 3a3 4 0 0 0 -2 4" />
+  <path d="M12 19l0 .01" />
+</svg>
+
+                
+                <span>Box | 提问箱</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='https://share.tama.guru/' target="_blank">
+                
+                
+                
+                    <!--
+tags: [virtual, disk, microsoft, cloud]
+category: Brand
+unicode: "f5d7"
+version: "1.112"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="32"
+  height="32"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#000000"
+  stroke-width="1"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M18.456 10.45a6.45 6.45 0 0 0 -12 -2.151a4.857 4.857 0 0 0 -4.44 5.241a4.856 4.856 0 0 0 5.236 4.444h10.751a3.771 3.771 0 0 0 3.99 -3.54a3.772 3.772 0 0 0 -3.538 -3.992z" />
+</svg>
+
+                
+                <span>Share | 共享盘</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='https://status.tama.guru/' target="_blank">
+                
+                
+                
+                    <!--
+tags: [relation, above, below, status, society, important]
+category: Design
+unicode: "f3fa"
+version: "1.94"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="32"
+  height="32"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#000000"
+  stroke-width="1"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 5m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+  <path d="M5 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+  <path d="M17.585 17.587a2 2 0 0 0 2.813 2.843" />
+  <path d="M6.5 17.5l5.5 -4.5l5.5 4.5" />
+  <path d="M12 7v1m0 4v1" />
+  <path d="M3 3l18 18" />
+</svg>
+
+                
+                <span>Status | 监控板</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links-%E9%93%BE%E6%8E%A5.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links | 链接</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about-%E5%85%B3%E4%BA%8E.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About | 关于</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://blog.tama.guru/en/index.html" >English</option>
+                                
+                                    <option value="https://blog.tama.guru/index.html" selected>中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                     <li id="dark-mode-toggle">
+                        <!--
+tags: [night, dark mode]
+category: Weather
+version: "1.21"
+unicode: "ece7"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="32"
+  height="32"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#000000"
+  stroke-width="1"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+  <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2" />
+  <path d="M19 11h2m-1 -1v2" />
+</svg>
+
+                    暗色模式
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li>
+          <ol>
+            <li></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E8%AE%B0%E5%BD%95.html" >
+                记录
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/record/cloudpaste.html">[好软推荐] Cloudpaste-开源在线文本/文件分享平台</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2025年07月18日</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 6 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    
+    <div class="article-details" style="padding-top: 15px;padding-bottom: 0px;">
+        <footer class="article-time">
+            <div>
+                <!--
+category: System
+tags: [view, watch]
+version: "1.0"
+unicode: "ea9a"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="20"
+  height="20"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#000000"
+  stroke-width="0.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+  <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
+</svg>
+
+                <span title="阅读次数" style="display: inline;font-size: 1.4rem;">阅读次数: <span class="waline-pageview-count" data-path="/record/cloudpaste.html" /></span>
+            </div>
+        </footer>
+    </div>
+
+
+<section class="article-content">
+    
+    
+    <p>之前看到有人推荐了<a class="link" href="https://github.com/ling-drag0n/CloudPaste"  target="_blank" rel="noopener"
+    >cloudpaste</a>这个项目，主要作用是能够提供简单的文本及文件分享服务，前后端部分使用GitHub Action+Cloudflare Worker，存储桶部分使用Cloudflare R2等免费服务，即可实现免费使用。除了在国内因为众所周知的原因Worker域名无法访问，需要自行配置域名。</p>
+<p>前后端配置基本可以直接参照项目内文档：</p>
+<h5 id="github-仓库fork和后端配置">GitHub 仓库fork和后端配置
+</h5><p>受限要将仓库fork下来，然后为fork的仓库添加变量，具体路径为仓库的<code>Settings-Secrets and variables-Actions-New repository secrets</code>。添加的secrets为：</p>
+<ul>
+<li>CLOUDFLARE_API_TOKEN</li>
+<li>CLOUDFLARE_ACCOUNT_ID</li>
+<li>ENCRYPTION_SECRET</li>
+</ul>
+<p>前面两个参数在后面获取到，后面的ENCRYPTION_SECRET可以选填，如果没有会自动生成。</p>
+<h5 id="cloudflare-token配置">CloudFlare TOKEN配置
+</h5><p>登录CloudFlare后访问<a class="link" href="https://dash.cloudflare.com/profile/api-tokens"  target="_blank" rel="noopener"
+    >API令牌管理</a>界面，创建一个新的API令牌，模版选择&quot;Cloudflare Workers&quot;，并编辑内容添加D1数据库编辑权限，记录下TOKEN，即为后面要用到的<code>CLOUDFLARE_API_TOKEN</code>。
+<code>CLOUDFLARE_ACCOUNT_ID</code>位于Cloudflare主界面的右侧。</p>
+<h5 id="开通d1和r2并配置pages">开通D1和R2，并配置Pages
+</h5><p>D1位于左侧的存储和数据库下，的D1 SQL数据库；R2位于左侧的R2对象存储。两者都是需要点进去开通即可，其他不需要动。
+D1和R2都有免费额度，可以大胆使用。</p>
+<h5 id="github-配置actions前端自动部署">GitHub 配置Actions前端自动部署
+</h5><p>返回到GitHub仓库页，找到Actions，运行<code>deploy-front-cloudflare.yml</code>这个工作流，初次运行会进行D1数据库和Pages的创建。</p>
+<h5 id="配置cloudflare-workers">配置CloudFlare Workers
+</h5><p>Pages现在已经移动到<code>计算（Workers）</code>下，找到<code>Workers和Pages</code>，此时应该会看到刚才工作流创建的Pages，我的前端名称是<code>cloudpaste-frontend</code>，后端为<code>cloudpaste-backend</code>。
+先配置<code>cloudpaste-backend</code>，在项目内的<code>设置-变量和机密</code>，添加一个文本类型的变量，变量名是<code>ENCRYPTION_SECRET</code>，值即之前我们自己填的或者自动生成的。然后要配置<code>域和路由</code>，添加一个自定义域，这里最好设置一个自己的域名（例如https://backend.tama.guru），因为默认分配的workers.dev这个域名无法直接访问，使用部分功能时会受限。
+然后到配置<code>cloudpaste-frontend</code>这边，也是进到<code>设置</code>，找到<code>变量和机密</code>，添加一个文本类型的变量，变量名是<code>VITE_BACKEND_URL</code>，对应的值是刚才在<code>cloudpaste-backend</code>中的<code>workers.dev</code>域名或自定义的域名，注意填写末尾不带&quot;/&quot;。同样的，还需要在<code>cloudpaste-frontend</code>的自定义域配置一个自己的域名（例如https://frontend.tama.guru），并配置好解析。</p>
+<h5 id="重新运行前端工作流">重新运行前端工作流
+</h5><p>返回到GitHub仓库页，找到Actions，再次运行<code>deploy-front-cloudflare.yml</code>这个工作流。运行完成之后之前的配置才回生效，此时可以通过https://frontend.tama.guru访问前端，而对应的后端则是https://backend.tama.guru。</p>
+<h5 id="完成初步配置工作">完成初步配置工作
+</h5><p>访问前端地址登录后台，默认的管理员信息是：<strong>用户名: admin, 密码: admin123</strong>，登录后请马上修改。</p>
+<h5 id="挂载s3存储">挂载S3存储
+</h5><p>完成以上工作后仅能实现文本分享和编辑的功能，如果需要实现文件分享还需要配置S3存储，目前建议使用的包括R2、B2、七牛云三个，三个都有免费额度，且经过一段时间的试用相关功能都是正常的。</p>
+<h6 id="挂载r2存储桶">挂载R2存储桶
+</h6><p>打开CloudFlare R2对象存储页面，新建一个存储桶，比如我命名为<code>cloudpaste-r2</code>，并添加一个API令牌。令牌权限为读和写，制定存储桶为<code>cloudpaste-r2</code>，其他不用动，保存并记录API令牌，然后点进<code>cloudpaste-r2</code>存储桶，在设置下找到<code>CORS策略</code>，点击编辑，内容为：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[
+</span></span><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">&#34;AllowedOrigins&#34;: [&#34;http://localhost:3000&#34;, &#34;https://根据自己的前端域名来替代，比如我的https://frontend.tama.guru&#34;],
+</span></span><span class="line"><span class="cl">&#34;AllowedMethods&#34;: [&#34;GET&#34;, &#34;PUT&#34;, &#34;POST&#34;, &#34;DELETE&#34;, &#34;HEAD&#34;],
+</span></span><span class="line"><span class="cl">&#34;AllowedHeaders&#34;: [&#34;*&#34;],
+</span></span><span class="line"><span class="cl">&#34;ExposeHeaders&#34;: [&#34;ETag&#34;],
+</span></span><span class="line"><span class="cl">&#34;MaxAgeSeconds&#34;: 3600
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">]
+</span></span></code></pre></div><p>然后回到前端页面的后台，在S3存储配置下添加一个新配置，<code>配置名称</code>任意，为了区分我起名和r2存储桶一样的名字<code>cloudpaste-r2</code>，<code>提供商</code>为<code>Cloudflare R2</code>，<code>存储桶名称</code>即<code>cloudpaste-r2</code>，<code>存储容量</code>最好就保留10G，好像就免费10G？<code>端点URL</code>按要求的格式填写<code>https://&lt;accountid&gt;.r2.cloudflarestorage.com</code>，<code>accountid</code>在cloudflare页面下可以找到，也就是前面所说的<code>CLOUDFLARE_ACCOUNT_ID</code>。<code>区域</code>根据建桶时所选的位置，我选的亚太，这里就填apac，默认填auto也可以。<code>访问密钥 ID</code>和<code>秘密访问密钥</code>即上面申请到的<code>API令牌信息</code>，其他可以保持默认不变，保存即可。此时点击<code>测试连接</code>，应该会提示：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">配置完全可用
+</span></span><span class="line"><span class="cl">✓ 读权限正常 ✓ 写权限正常 ✓ CORS 配置正确 ✓ 前端上传模拟成功
+</span></span></code></pre></div><p>如果没有配置CORS，这里会提示CORS配置不正确，上传文件时也会报错。</p>
+<p>最后到<code>挂载管理</code>处，选择<code>新建挂载点</code>，<code>挂载点名称</code>也是任意的，为保持一致我使用<code>cloudpaste-r2</code>，<code>存储类型</code>为S3存储，<code>S3存储配置</code>选择刚才创建的<code>cloudpaste-r2(Cloudflare R2)</code>，<code>挂载路径</code>我填写的是<code>/r2</code>，根据个人情况填写即可，最后<code>勾选启用状态</code>，选择创建即可。 此时在文件上传页面和挂载浏览页面都可以看到这个<code>r2</code>挂载点了，可以尝试上传文件，如果提示大小超限需要到后台的<code>系统设置</code>中调整<code>最大上传文件大小</code>，并更新设置，该选项默认为100MB。</p>
+<h6 id="挂载七牛云对象存储kodo">挂载七牛云对象存储kodo
+</h6><p>我以七牛云作为兼容S3标准的代表，在七牛云的对象存储中选择空间管理-新建空间，存储空间名称和R2中存储桶名称意义一致，我填写的是<code>cloudpaste-qiniu</code>，存储区域选择国外任意地点（选择国内需要实名），我选择北美-洛杉矶，访问控制选择为私有。还需要配置CORS规则，点进<code>cloudpaste-qiniu</code>这个桶的<code>空间设置</code>，<code>跨域设置</code>内<code>新增规则</code>，<code>来源</code>填写我们的<code>前端域名https://frontend.tama.guru</code>，<code>允许 Methods</code>我全勾选了，然后保存。
+七牛云并没有针对存储桶有单独的API密钥，需要到<code>个人中心</code>中的<code>密钥管理</code>，打开<code>密钥访问权限</code>，并新增一组AccessKey/SecretKey，保存好这组AK和SK。
+回到网站后台，操作和前面一样，只不过提供商类型要选择其他S3兼容服务，端点URL为：<code>http://存储空间名称.s3.存储区域名称.qiniucs.com</code>，根据上述配置我这里对应的是<code>http://cloudpaste-qiniu.s3.us-north-1.qiniucs.com</code>，访问密钥即前面的AK，秘密访问密钥即SK，保存即可，其他参照R2的添加步骤即可。
+需要注意的是，七牛云的免费套餐只支持http。</p>
+</section>
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/cloudpaste.html">Cloudpaste</a>
+        
+            <a href="/tags/%E6%96%87%E4%BB%B6%E5%88%86%E4%BA%AB.html">文件分享</a>
+        
+            <a href="/tags/cloudflare.html">Cloudflare</a>
+        
+            <a href="/tags/github.html">Github</a>
+        
+            <a href="/tags/%E6%96%87%E6%9C%AC%E5%88%86%E4%BA%AB.html">文本分享</a>
+        
+            <a href="/tags/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6.html">开源软件</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 2025年07月18日 17:07
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/record/ham-rank-b.html">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://picsum.photos/800/600.webp?random=fa503680" loading="lazy" data-key="" data-hash="https://picsum.photos/800/600.webp?random=fa503680"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">成功考取业余无线电B证</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/new-record/typecho.html">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://r2.337845818.best/tamabox/2025/07/02/686410ca3aae0.png" loading="lazy" data-key="" data-hash="https://r2.337845818.best/tamabox/2025/07/02/686410ca3aae0.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">再见了 TypeCho</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        --waline-font-size: var(--article-font-size);
+    }
+    .waline-container .wl-count {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://unpkg.com/@waline/emojis@1.0.1/weibo","https://gcore.jsdelivr.net/gh/tamakyi/emoji-collection@main/acfun-classic/60x60"],"imageUploader":false,"lang":"zh-CN","locale":{"admin":"博主","mail":"邮箱","nick":"昵称","placeholder":"欢迎评论，评论会先由博主进行审核再显示。","reaction0":"哇哦","reaction1":"prpr","reaction2":"流汗","reaction3":"生气","reaction4":"流鼻血","reaction5":"あべ"},"login":"disable","meta":["nick","mail"],"nocopyright":true,"option":{"turnstilekey":"0x4AAAAAABjG4XXGgZ6ZVpKM"},"pageSize":6,"pageview":true,"reaction":["https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGQ3OTRhYzRjMTBkZmZhZDVmZTA1EIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChQwOGEyOTlhYzRjMTBmOWFkZjAwYRCIzNcv.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGRhOTVhYzRjMTBkNmViYTVlNTA2EIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGU1OTJhYzRjMTBmMzk3ZmVmNTAyEIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGNkODdhYzRjMTBjYmEwOTFjNjAxEIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChQwODliOGVhYzRjMTBmOGM0ZWY1ZRCIzNcv.gif"],"requiredMeta":["nick","mail"],"search":false,"serverURL":"https://artalk.tama.guru"});
+</script>
+
+    
+
+    <script defer src="https://mami.tama.guru/tamami.js" data-website-id="b7b72f5c-977d-4d23-8ec8-be46d93bd8d5"></script>
+<script>
+    (function(u, c) {
+      var d = document, t = 'script', o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function(e) { c(e); }); }
+      s.parentNode.insertBefore(o, s);
+    })('https://cdnjs.snrat.com/ajax/libs/pangu/4.0.7/pangu.min.js', function() {
+      pangu.spacingPage();
+    });
+</script>
+<footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2022 - 
+        
+        2025 tamakyi
+    </section>
+    
+    <section class="powerby">
+        
+        <section class="running-time">
+        本博客已稳定运行
+        <span id="runningdays" class="running-days"></span>
+        </section>
+
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdnjs.snrat.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdnjs.snrat.com/ajax/libs/photoswipe/4.1.3/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdnjs.snrat.com/ajax/libs/photoswipe/4.1.3/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdnjs.snrat.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdnjs.snrat.com/ajax/libs/node-vibrant/3.1.6/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<script src="https://npm.elemecdn.com/nprogress@0.2.0/nprogress.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://npm.elemecdn.com/nprogress@0.2.0/nprogress.css" crossorigin="anonymous" />
+<script>
+    NProgress.start();
+    document.addEventListener("readystatechange", () => {
+        if (document.readyState === "interactive") NProgress.inc(0.8);
+        if (document.readyState === "complete") NProgress.done();
+    });
+</script>
+
+
+<script>
+    let s1 = '2022-5-18'; 
+    s1 = new Date(s1.replace(/-/g, "/"));
+    let s2 = new Date();
+    let timeDifference = s2.getTime() - s1.getTime();
+
+    let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+
+    let result = days + "天" + hours + "小时" + minutes + "分钟";
+    document.getElementById('runningdays').innerHTML = result;
+</script>
+    </body>
+</html>
