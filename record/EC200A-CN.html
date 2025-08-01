@@ -10,7 +10,7 @@
 <meta property='og:description' content="本来是想买个随身WIFI，以便家里突然断网/断电的时候能够用手头上多余的一张SIM卡开个应急热点，但是去淘宝搜了一圈，成品随身WIFI要么说经常断网，要么就是无法使用自己的卡，要么就是能插自己的卡，但是只能插物联网卡或是插一张之后就不能插别的卡了（卡和机器绑定了），可玩性极差。然后想想家里还有一坨树莓派，用充电宝供电，能不能在这个基础上整些模块。 于是，在搜索了相关材料之后，选择了移远的EC200A-CN。 大概就长这样，一个USB口，四个串口，一个SIM卡槽，一个天线接口，没了。 在WIN下直接插上会直接当作USB网卡使用，但是任务管理器下面的AT Interface和Diag Interface会有感叹号，这意味着无法进行AT指令交互，也就只能当作一块无线网卡使用。只需要把这个驱动打上就正常了。 先不管WIN下使用AT怎样怎样，买这块板子的初衷就是给树莓派用的，然后我就把板子拔下来插树莓派上了。 先说下环境，因为我要用到pikvm，所以使用的系统是魔改的archlinuxarm，内核版本5.15.68-3-rpi-ARCH。 插上去之后，灯开始闪，但是执行 ifconfig 之后： 你妈的，我USB0呢？ 吓得我赶紧看看是不是给我搞坏了或者根本没识别。 ::acfun:02:: 还好还好，东西还在。 ::acfun:03:: 那么这是怎么个回事呢？我看店铺上明明写着linux免驱啊！于是在问一通客服之后 给了我个tgz包。 ::acfun:01:: 不问不给是吧。解压之后内容如下： 因为我的内核版本是5.15.68，离得比较近的是5.15.11，进入这个目录，执行 make 和 make install 后会生成option.ko``qcserial.ko和usb_wwan.ko三个文件，执行\n">
 <meta property='og:url' content='https://blog.tama.guru/record/EC200A-CN.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-04-19T23:06:55&#43;08:00'/><meta property='article:modified_time' content='2025-08-01T15:46:52&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-04-19T23:06:55&#43;08:00'/><meta property='article:modified_time' content='2025-08-01T15:49:26&#43;00:00'/>
 <meta name="twitter:title" content="4G开发板EC200A的初次使用记录">
 <meta name="twitter:description" content="本来是想买个随身WIFI，以便家里突然断网/断电的时候能够用手头上多余的一张SIM卡开个应急热点，但是去淘宝搜了一圈，成品随身WIFI要么说经常断网，要么就是无法使用自己的卡，要么就是能插自己的卡，但是只能插物联网卡或是插一张之后就不能插别的卡了（卡和机器绑定了），可玩性极差。然后想想家里还有一坨树莓派，用充电宝供电，能不能在这个基础上整些模块。 于是，在搜索了相关材料之后，选择了移远的EC200A-CN。 大概就长这样，一个USB口，四个串口，一个SIM卡槽，一个天线接口，没了。 在WIN下直接插上会直接当作USB网卡使用，但是任务管理器下面的AT Interface和Diag Interface会有感叹号，这意味着无法进行AT指令交互，也就只能当作一块无线网卡使用。只需要把这个驱动打上就正常了。 先不管WIN下使用AT怎样怎样，买这块板子的初衷就是给树莓派用的，然后我就把板子拔下来插树莓派上了。 先说下环境，因为我要用到pikvm，所以使用的系统是魔改的archlinuxarm，内核版本5.15.68-3-rpi-ARCH。 插上去之后，灯开始闪，但是执行 ifconfig 之后： 你妈的，我USB0呢？ 吓得我赶紧看看是不是给我搞坏了或者根本没识别。 ::acfun:02:: 还好还好，东西还在。 ::acfun:03:: 那么这是怎么个回事呢？我看店铺上明明写着linux免驱啊！于是在问一通客服之后 给了我个tgz包。 ::acfun:01:: 不问不给是吧。解压之后内容如下： 因为我的内核版本是5.15.68，离得比较近的是5.15.11，进入这个目录，执行 make 和 make install 后会生成option.ko``qcserial.ko和usb_wwan.ko三个文件，执行\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
@@ -676,7 +676,7 @@ unicode: "ea9a"
 
 
         <span>
-            最后更新于 2025年08月01日 15:46
+            最后更新于 2025年08月01日 15:49
         </span>
     </section></footer>
 
@@ -787,7 +787,7 @@ unicode: "ea9a"
     }
 </style><script>
     
-    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://unpkg.com/@waline/emojis@1.0.1/weibo","https://gcore.jsdelivr.net/gh/tamakyi/emoji-collection@main/acfun-classic/60x60"],"imageUploader":false,"lang":"zh-CN","locale":{"admin":"博主","mail":"邮箱","nick":"昵称","placeholder":"欢迎评论，评论会先由博主进行审核再显示。","reaction0":"哇哦","reaction1":"prpr","reaction2":"流汗","reaction3":"生气","reaction4":"流鼻血","reaction5":"あべ"},"login":"disable","meta":["nick","mail"],"nocopyright":true,"option":{"turnstilekey":"0x4AAAAAABjG4XXGgZ6ZVpKM"},"pageSize":6,"pageview":true,"reaction":["https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGQ3OTRhYzRjMTBkZmZhZDVmZTA1EIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChQwOGEyOTlhYzRjMTBmOWFkZjAwYRCIzNcv.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGRhOTVhYzRjMTBkNmViYTVlNTA2EIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGU1OTJhYzRjMTBmMzk3ZmVmNTAyEIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGNkODdhYzRjMTBjYmEwOTFjNjAxEIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChQwODliOGVhYzRjMTBmOGM0ZWY1ZRCIzNcv.gif"],"requiredMeta":["nick","mail"],"search":false,"serverURL":"https://waline.tama.guru"});
+    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://unpkg.com/@waline/emojis@1.0.1/weibo","https://gcore.jsdelivr.net/gh/tamakyi/emoji-collection@main/acfun-classic/60x60"],"imageUploader":false,"lang":"zh-CN","locale":{"admin":"博主","mail":"邮箱","nick":"昵称","placeholder":"欢迎评论，评论会先由博主进行审核再显示。","reaction0":"哇哦","reaction1":"prpr","reaction2":"流汗","reaction3":"生气","reaction4":"流鼻血","reaction5":"あべ"},"login":"disable","meta":["nick","mail"],"nocopyright":true,"pageSize":6,"pageview":true,"reaction":["https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGQ3OTRhYzRjMTBkZmZhZDVmZTA1EIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChQwOGEyOTlhYzRjMTBmOWFkZjAwYRCIzNcv.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGRhOTVhYzRjMTBkNmViYTVlNTA2EIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGU1OTJhYzRjMTBmMzk3ZmVmNTAyEIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGNkODdhYzRjMTBjYmEwOTFjNjAxEIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChQwODliOGVhYzRjMTBmOGM0ZWY1ZRCIzNcv.gif"],"requiredMeta":["nick","mail"],"search":false,"serverURL":"https://waline.tama.guru"});
 </script>
 
     
