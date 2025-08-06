@@ -7,13 +7,13 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Fri, 01 Aug 2025 22:50:09 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E6%96%87%E4%BB%B6%E5%88%86%E4%BA%AB/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 06 Aug 2025 10:52:22 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E6%96%87%E4%BB%B6%E5%88%86%E4%BA%AB/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>[好软推荐] Cloudpaste-开源在线文本/文件分享平台</title>
         <link>https://blog.tama.guru/record/cloudpaste.html</link>
         <pubDate>Fri, 18 Jul 2025 10:21:11 +0800</pubDate>
         
         <guid>https://blog.tama.guru/record/cloudpaste.html</guid>
-        <description>&lt;img src="https://r2.337845818.best/tamabox/2025/07/02/686410ca3aae0.png" alt="Featured image of post [好软推荐] Cloudpaste-开源在线文本/文件分享平台" /&gt;&lt;p&gt;之前看到有人推荐了&lt;a class=&#34;link&#34; href=&#34;https://github.com/ling-drag0n/CloudPaste&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post [好软推荐] Cloudpaste-开源在线文本/文件分享平台" /&gt;&lt;p&gt;之前看到有人推荐了&lt;a class=&#34;link&#34; href=&#34;https://github.com/ling-drag0n/CloudPaste&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;cloudpaste&lt;/a&gt;这个项目，主要作用是能够提供简单的文本及文件分享服务，前后端部分使用GitHub Action+Cloudflare Worker，存储桶部分使用Cloudflare R2等免费服务，即可实现免费使用。除了在国内因为众所周知的原因Worker域名无法访问，需要自行配置域名。&lt;/p&gt;
 &lt;p&gt;前后端配置基本可以直接参照项目内文档：&lt;/p&gt;
 &lt;h5 id=&#34;github-仓库fork和后端配置&#34;&gt;GitHub 仓库fork和后端配置

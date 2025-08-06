@@ -12,7 +12,7 @@
         <pubDate>Thu, 24 Jul 2025 18:57:11 +0800</pubDate>
         
         <guid>https://blog.tama.guru/travel/guangxi/guilin.html</guid>
-        <description>&lt;img src="https://r2.337845818.best/tamabox/2025/07/02/686410ca3aae0.png" alt="Featured image of post 两天的CityWalk：浅游桂C" /&gt;&lt;p&gt;作为全国乃至世界闻名的旅游城市，桂林也算是非常有名气的，提到桂林或多或少都能得到一句“桂林山水甲天下”的回复，走在路上随处可见的都是外地口音，时不时还会冒出几个外国人，说明桂林的旅游热还是在的。&lt;br&gt;
+        <description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 两天的CityWalk：浅游桂C" /&gt;&lt;p&gt;作为全国乃至世界闻名的旅游城市，桂林也算是非常有名气的，提到桂林或多或少都能得到一句“桂林山水甲天下”的回复，走在路上随处可见的都是外地口音，时不时还会冒出几个外国人，说明桂林的旅游热还是在的。&lt;br&gt;
 以下是我的出行流水账。&lt;/p&gt;
 &lt;h4 id=&#34;启程和到站&#34;&gt;启程和到站
 &lt;/h4&gt;&lt;p&gt;启程算有点抽象的，因为我这没有直达列车，到桂林需要到其他地市中转。为了能让过去玩的时间最大化，我挑选的是最早的一个方案，三点走，八点到，去的时候基本没得睡（我上车的时候正是熟睡的时候，车厢内呼噜声此起披伏。我快要睡着的时候已经是四点多了，结果他妈的居然提前差不多一个小时到站！列车员过来叫我起床的时候人都傻了！最后不得不出站到处转悠，为了提神还买了人生中第一杯星巴克，不得不说这玩意贵是真的贵，给的料也是真的足。）&lt;br&gt;
@@ -328,7 +328,7 @@
         <pubDate>Fri, 18 Jul 2025 10:21:11 +0800</pubDate>
         
         <guid>https://blog.tama.guru/record/cloudpaste.html</guid>
-        <description>&lt;img src="https://r2.337845818.best/tamabox/2025/07/02/686410ca3aae0.png" alt="Featured image of post [好软推荐] Cloudpaste-开源在线文本/文件分享平台" /&gt;&lt;p&gt;之前看到有人推荐了&lt;a class=&#34;link&#34; href=&#34;https://github.com/ling-drag0n/CloudPaste&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post [好软推荐] Cloudpaste-开源在线文本/文件分享平台" /&gt;&lt;p&gt;之前看到有人推荐了&lt;a class=&#34;link&#34; href=&#34;https://github.com/ling-drag0n/CloudPaste&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;cloudpaste&lt;/a&gt;这个项目，主要作用是能够提供简单的文本及文件分享服务，前后端部分使用GitHub Action+Cloudflare Worker，存储桶部分使用Cloudflare R2等免费服务，即可实现免费使用。除了在国内因为众所周知的原因Worker域名无法访问，需要自行配置域名。&lt;/p&gt;
 &lt;p&gt;前后端配置基本可以直接参照项目内文档：&lt;/p&gt;
 &lt;h5 id=&#34;github-仓库fork和后端配置&#34;&gt;GitHub 仓库fork和后端配置
@@ -386,7 +386,7 @@ D1和R2都有免费额度，可以大胆使用。&lt;/p&gt;
         <pubDate>Wed, 02 Jul 2025 16:08:54 +0800</pubDate>
         
         <guid>https://blog.tama.guru/record/ham-rank-b.html</guid>
-        <description>&lt;img src="https://r2.337845818.best/tamabox/2025/07/02/686410ca3aae0.png" alt="Featured image of post 成功考取业余无线电B证" /&gt;&lt;p&gt;去年6月的时候看到市里有这个考试，当时也经常刷到网上经常有人晒无线电通联的相关消息，觉得超酷的，买了个欧迅UV9DP，并在考试后一个月成功拿到执照。小地方也不愧是小地方，在后来这段时间里我经常拿不是很合法的设备全频段扫描，基本上除了业务波段之外就都是杂音，还买了拉伸天线、八木天线，一年到头也没碰到过人（就算有也只有偷听铁路联控和FM广播的时候），后来调查了下市里是没有中继台的，周围又都是山，要么跑到山顶上，不然通讯范围基本被限制很死。还印了点QSL卡片，看这样子怕是这辈子都发不出去。&lt;br&gt;&lt;/p&gt;
+        <description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 成功考取业余无线电B证" /&gt;&lt;p&gt;去年6月的时候看到市里有这个考试，当时也经常刷到网上经常有人晒无线电通联的相关消息，觉得超酷的，买了个欧迅UV9DP，并在考试后一个月成功拿到执照。小地方也不愧是小地方，在后来这段时间里我经常拿不是很合法的设备全频段扫描，基本上除了业务波段之外就都是杂音，还买了拉伸天线、八木天线，一年到头也没碰到过人（就算有也只有偷听铁路联控和FM广播的时候），后来调查了下市里是没有中继台的，周围又都是山，要么跑到山顶上，不然通讯范围基本被限制很死。还印了点QSL卡片，看这样子怕是这辈子都发不出去。&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;正好过一年，闲得没事的时候刷到二季度考试开始报名，而且智谱APP下线了在线考试功能，有人推测是要换题库了，而且往后会更难，赶紧进行一个报名。&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;B类的题目其实相当一部分在A类都见过，变化的地方主要是Q码简称变多了，并新增了一些物理学计算和电路判断的题目，我主要是靠前花几天时间用电脑刷题、看看大纲、总结规律，这次也顺利考过了。&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;接下来可以考虑整点大功率设备搞点远距离通联，毕竟小小手台功率摆在那里，希望今年能在某个时候CQ到活人吧。&lt;/p&gt;
@@ -398,7 +398,7 @@ D1和R2都有免费额度，可以大胆使用。&lt;/p&gt;
         <pubDate>Tue, 01 Jul 2025 21:46:00 +0800</pubDate>
         
         <guid>https://blog.tama.guru/new-record/typecho.html</guid>
-        <description>&lt;img src="https://r2.337845818.best/tamabox/2025/07/02/686410ca3aae0.png" alt="Featured image of post 再见了 TypeCho" /&gt;&lt;p&gt;在经历过wordpress、zblog等一系列重型动态博客后，我切换到typecho并持续使用了很长一段时间。
+        <description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 再见了 TypeCho" /&gt;&lt;p&gt;在经历过wordpress、zblog等一系列重型动态博客后，我切换到typecho并持续使用了很长一段时间。
 typecho很好，它很轻量，超棒的插件和主题到处都是，我甚至入正了handsome主题。&lt;br&gt;
 但是，typecho更新实在太慢，属于是没有重大BUG几年不见更新一次那种，在我升级到php8.x之后经常冒出莫名其妙的错误，再加上驱动typecho需要nginx+php+mysql环境，对我的小鸡来说负担太重了，而且网站的访问量并不大，没必要占用这么大服务器资源，如果只是为了时不时写点东西，那还不如用静态博客好了。&lt;br&gt;
 hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝试一下hugo。&lt;br&gt;
