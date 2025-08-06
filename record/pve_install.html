@@ -10,7 +10,7 @@
 <meta property='og:description' content="安装PVE并不复杂，相关操作网上一抓一大把此处不再赘述。 此处主要记录一些安装后碰上的问题以及对应的解决方案。 #####开启硬件直通##### 1.首先确保CPU带有虚拟化能力。对于AMD平台，在BIOS的高级&gt;CPU设置查看是否有能开启SVM Mode。确认能打开后，到高级&gt;AMD CBS&gt;NBIO Common Options&gt;NB Configuration下把IOMMU打开。 2.进入系统控制台，修改grub启动时添加硬件直通功能。 打开/etc/default/grub 将\n">
 <meta property='og:url' content='https://blog.tama.guru/record/pve_install.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='linux' /><meta property='article:tag' content='PVE' /><meta property='article:tag' content='nas' /><meta property='article:published_time' content='2023-03-12T01:43:00&#43;08:00'/><meta property='article:modified_time' content='2025-08-06T02:40:28&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='linux' /><meta property='article:tag' content='PVE' /><meta property='article:tag' content='nas' /><meta property='article:published_time' content='2023-03-12T01:43:00&#43;08:00'/><meta property='article:modified_time' content='2025-08-06T02:45:07&#43;00:00'/>
 <meta name="twitter:title" content="PVE安装后续优化">
 <meta name="twitter:description" content="安装PVE并不复杂，相关操作网上一抓一大把此处不再赘述。 此处主要记录一些安装后碰上的问题以及对应的解决方案。 #####开启硬件直通##### 1.首先确保CPU带有虚拟化能力。对于AMD平台，在BIOS的高级&gt;CPU设置查看是否有能开启SVM Mode。确认能打开后，到高级&gt;AMD CBS&gt;NBIO Common Options&gt;NB Configuration下把IOMMU打开。 2.进入系统控制台，修改grub启动时添加硬件直通功能。 打开/etc/default/grub 将\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
@@ -805,7 +805,7 @@ DNS设置使用默认即可。然后确认信息无误点击完成，等待<code
 
 
         <span>
-            最后更新于 2025年08月06日 02:40
+            最后更新于 2025年08月06日 02:45
         </span>
     </section></footer>
 
@@ -916,7 +916,7 @@ DNS设置使用默认即可。然后确认信息无误点击完成，等待<code
     }
 </style><script>
     
-    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://unpkg.com/@waline/emojis@1.0.1/weibo","https://gcore.jsdelivr.net/gh/tamakyi/emoji-collection@main/acfun-classic/60x60"],"imageUploader":false,"lang":"zh-CN","locale":{"admin":"博主","mail":"邮箱","nick":"昵称","placeholder":"欢迎评论，评论会先由博主进行审核再显示。","reaction0":"哇哦","reaction1":"prpr","reaction2":"流汗","reaction3":"生气","reaction4":"流鼻血","reaction5":"あべ"},"login":"disable","meta":["nick","mail"],"nocopyright":true,"pageSize":6,"pageview":true,"reaction":["https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGQ3OTRhYzRjMTBkZmZhZDVmZTA1EIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChQwOGEyOTlhYzRjMTBmOWFkZjAwYRCIzNcv.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGRhOTVhYzRjMTBkNmViYTVlNTA2EIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGU1OTJhYzRjMTBmMzk3ZmVmNTAyEIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGNkODdhYzRjMTBjYmEwOTFjNjAxEIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChQwODliOGVhYzRjMTBmOGM0ZWY1ZRCIzNcv.gif"],"requiredMeta":["nick","mail"],"search":false,"serverURL":"https://waline.tama.guru"});
+    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://unpkg.com/@waline/emojis@1.0.1/weibo","https://gcore.jsdelivr.net/gh/tamakyi/emoji-collection@main/acfun-classic/60x60"],"imageUploader":false,"lang":"zh-CN","locale":{"admin":"博主","mail":"邮箱","nick":"昵称","placeholder":"欢迎评论，评论会先由博主进行审核再显示。","reaction0":"哇哦","reaction1":"prpr","reaction2":"流汗","reaction3":"生气","reaction4":"流鼻血","reaction5":"あべ"},"login":"disable","meta":["nick","mail"],"nocopyright":true,"pageSize":6,"pageview":true,"reaction":["https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGQ3OTRhYzRjMTBkZmZhZDVmZTA1EIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChQwOGEyOTlhYzRjMTBmOWFkZjAwYRCIzNcv.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGRhOTVhYzRjMTBkNmViYTVlNTA2EIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGU1OTJhYzRjMTBmMzk3ZmVmNTAyEIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGNkODdhYzRjMTBjYmEwOTFjNjAxEIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChQwODliOGVhYzRjMTBmOGM0ZWY1ZRCIzNcv.gif"],"requiredMeta":["nick","mail"],"search":false,"serverURL":"https://artalk.tama.guru"});
 </script>
 
     
