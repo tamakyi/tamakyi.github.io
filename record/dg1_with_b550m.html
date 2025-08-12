@@ -10,7 +10,7 @@
 <meta property='og:description' content="先上结果： 所以网上关于这张卡无法在AMD的平台上跑这个说法基本上宣告破产了。 但是在我B550M这个平台上安装上这卡并不容易，不仅是兼容性层面，还有物理层面问题（我的主卡3060ti实在是太大，直接把两个PCIe口占据了。。。而直接用PCIe延长线也是因为底座过高而无法安装。 接下来说说装这张卡碰到的坑。 大前提肯定是把ResizeBAR打开了，详情看之前的文章：[post cid=&ldquo;239&rdquo; /] 首先我是插在A320M+2200G平台上的（这是NAS机，之前我想把这做推流机），插上去之后显示无输出，但是PiKVM能看到硬盘灯在闪烁，判断系统是正常运行了，于是从远程桌面进去发现能正常，安装驱动之后能够正确识别型号（设备管理器中有一个PCI设备一直显示无驱动且找不到驱动），发现NDI推流延迟较高，故放弃，转战主机。 主机上主显卡是3060TI，这玩意非常的大，大到把主板底部的大多数接口都盖住了。 ">
 <meta property='og:url' content='https://blog.tama.guru/record/dg1_with_b550m.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='b550m' /><meta property='article:tag' content='dg1' /><meta property='article:published_time' content='2023-05-10T23:24:00&#43;08:00'/><meta property='article:modified_time' content='2025-08-11T03:53:20&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='b550m' /><meta property='article:tag' content='dg1' /><meta property='article:published_time' content='2023-05-10T23:24:00&#43;08:00'/><meta property='article:modified_time' content='2025-08-12T01:56:48&#43;00:00'/>
 <meta name="twitter:title" content="在技嘉B550M上成功点亮并使用（但不完美）DG1教程">
 <meta name="twitter:description" content="先上结果： 所以网上关于这张卡无法在AMD的平台上跑这个说法基本上宣告破产了。 但是在我B550M这个平台上安装上这卡并不容易，不仅是兼容性层面，还有物理层面问题（我的主卡3060ti实在是太大，直接把两个PCIe口占据了。。。而直接用PCIe延长线也是因为底座过高而无法安装。 接下来说说装这张卡碰到的坑。 大前提肯定是把ResizeBAR打开了，详情看之前的文章：[post cid=&ldquo;239&rdquo; /] 首先我是插在A320M+2200G平台上的（这是NAS机，之前我想把这做推流机），插上去之后显示无输出，但是PiKVM能看到硬盘灯在闪烁，判断系统是正常运行了，于是从远程桌面进去发现能正常，安装驱动之后能够正确识别型号（设备管理器中有一个PCI设备一直显示无驱动且找不到驱动），发现NDI推流延迟较高，故放弃，转战主机。 主机上主显卡是3060TI，这玩意非常的大，大到把主板底部的大多数接口都盖住了。 ">
     <link rel="shortcut icon" href="/static/favicon.ico" />
@@ -636,7 +636,7 @@ PS5:在微星H510M爆破弹上开启UEFI resizebar above 4g和安全启动，关
 
 
         <span>
-            最后更新于 2025年08月11日 03:53
+            最后更新于 2025年08月12日 01:56
         </span>
     </section></footer>
 
