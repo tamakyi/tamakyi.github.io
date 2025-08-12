@@ -10,7 +10,7 @@
 <meta property='og:description' content="I have a d○ck. 不得不说，这东西挺有意思的，amd定制的zen2架构CPU及性能相当于1050的显卡能够应付大部分场景使用以及轻度游戏，还能轻松安装SteamOS+WIN10/11组合，玩一些原系统上因为各种原因玩不了的游戏，如果空间不够，还能自己买一个2230的M2换上去。但是在使用过程中这玩意其实坑挺多的，想要快乐玩耍掌握一些linux基础知识以及“合适的网络”是必不可少的。下面是我在使用过程中碰到的一些问题以及解决办法。 ####·首次开机联网后一直提示正在安装，然后卡在还剩1秒或者弹窗报错·#### 基本上是国内专属问题了，归根结底就是网络原因和&quot;steam.cloud&quot;连接有问题导致更新无法进行，而更新又是必须的就导致了这个死循环。 有网友说我有科技，直接开科技不就行了？如果是在路由的话这必须要设置全局代理，因为SteamDeck的WIFI连接界面不能手动设置代理。用手机开热点或许也是一个好办法，但是实测我的流量根本没走，可能是我的姿势不对吧。 还有网友说在安装界面直接长按电源键硬重启，多几次就能跳过，我试了四五次也不行。其中一次关机重启后进入到一个有LOGO+进度条及网速的界面，也在提示install update，但是更新完自动重启之后还是问题依旧。 目前我唯一测试通过的方法就是手机挂UU加速器（亲测雷神无效）加速steam（仅加速商店是免费的），然后开热点，SteamDeck这边开机的时候要设置为英文+UTC-8时区（即默认设置）再连接热点更新，大概率等待半小时就能通过了，手机这边如果开了流量监控，就会发现流量基本1.5m/s这个速度走（峰值4-5m/s），如果没动的话，建议重启加速器或是点击SteamDeck上的Back返回上一步重新开始，直到流量正常出去。大概也就花费1-2G。（下图是我更新了两次）\n">
 <meta property='og:url' content='https://blog.tama.guru/record/steamdeck.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='SteamDeck' /><meta property='article:tag' content='archlinux' /><meta property='article:tag' content='双系统' /><meta property='article:published_time' content='2023-02-02T09:47:00&#43;08:00'/><meta property='article:modified_time' content='2025-08-12T01:56:48&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='SteamDeck' /><meta property='article:tag' content='archlinux' /><meta property='article:tag' content='双系统' /><meta property='article:published_time' content='2023-02-02T09:47:00&#43;08:00'/><meta property='article:modified_time' content='2025-08-12T02:51:24&#43;00:00'/>
 <meta name="twitter:title" content="捣鼓SteamDeck的那些事">
 <meta name="twitter:description" content="I have a d○ck. 不得不说，这东西挺有意思的，amd定制的zen2架构CPU及性能相当于1050的显卡能够应付大部分场景使用以及轻度游戏，还能轻松安装SteamOS+WIN10/11组合，玩一些原系统上因为各种原因玩不了的游戏，如果空间不够，还能自己买一个2230的M2换上去。但是在使用过程中这玩意其实坑挺多的，想要快乐玩耍掌握一些linux基础知识以及“合适的网络”是必不可少的。下面是我在使用过程中碰到的一些问题以及解决办法。 ####·首次开机联网后一直提示正在安装，然后卡在还剩1秒或者弹窗报错·#### 基本上是国内专属问题了，归根结底就是网络原因和&quot;steam.cloud&quot;连接有问题导致更新无法进行，而更新又是必须的就导致了这个死循环。 有网友说我有科技，直接开科技不就行了？如果是在路由的话这必须要设置全局代理，因为SteamDeck的WIFI连接界面不能手动设置代理。用手机开热点或许也是一个好办法，但是实测我的流量根本没走，可能是我的姿势不对吧。 还有网友说在安装界面直接长按电源键硬重启，多几次就能跳过，我试了四五次也不行。其中一次关机重启后进入到一个有LOGO+进度条及网速的界面，也在提示install update，但是更新完自动重启之后还是问题依旧。 目前我唯一测试通过的方法就是手机挂UU加速器（亲测雷神无效）加速steam（仅加速商店是免费的），然后开热点，SteamDeck这边开机的时候要设置为英文+UTC-8时区（即默认设置）再连接热点更新，大概率等待半小时就能通过了，手机这边如果开了流量监控，就会发现流量基本1.5m/s这个速度走（峰值4-5m/s），如果没动的话，建议重启加速器或是点击SteamDeck上的Back返回上一步重新开始，直到流量正常出去。大概也就花费1-2G。（下图是我更新了两次）\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
@@ -141,6 +141,105 @@
         
         
         <li >
+            <a href='https://box.tama.guru/' target="_blank">
+                
+                
+                
+                    <!--
+tags: [sign, symbol, ask, sentence, word, letters, "?"]
+version: "1.16"
+unicode: "ec9d"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="32"
+  height="32"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#000000"
+  stroke-width="1"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M8 8a3.5 3 0 0 1 3.5 -3h1a3.5 3 0 0 1 3.5 3a3 3 0 0 1 -2 3a3 4 0 0 0 -2 4" />
+  <path d="M12 19l0 .01" />
+</svg>
+
+                
+                <span>Box | 提问箱</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/server-%E8%87%AA%E5%BB%BA%E6%9C%8D%E5%8A%A1.html' >
+                
+                
+                
+                    <!--
+category: Devices
+tags: [storage, hosting, www]
+version: "1.0"
+unicode: "eb1f"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M3 4m0 3a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3z" />
+  <path d="M3 12m0 3a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3z" />
+  <path d="M7 8l0 .01" />
+  <path d="M7 16l0 .01" />
+</svg>
+
+                
+                <span>Server | 自建服务</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/travel-%E6%97%85%E8%A1%8C%E8%AE%B0%E5%BD%95.html' >
+                
+                
+                
+                    <!--
+category: E-commerce
+tags: [education, school, learning, adventure, travel]
+version: "1.43"
+unicode: "ef47"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 18v-6a6 6 0 0 1 6 -6h2a6 6 0 0 1 6 6v6a3 3 0 0 1 -3 3h-8a3 3 0 0 1 -3 -3z" />
+  <path d="M10 6v-1a2 2 0 1 1 4 0v1" />
+  <path d="M9 21v-4a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v4" />
+  <path d="M11 10h2" />
+</svg>
+
+                
+                <span>travel | 旅行记录</span>
+            </a>
+        </li>
+        
+        
+        <li >
             <a href='/search.html' >
                 
                 
@@ -180,133 +279,20 @@
         
         
         <li >
-            <a href='https://tama.guru/' target="_blank">
+            <a href='/about-%E5%85%B3%E4%BA%8E.html' >
                 
                 
                 
-                    <!--
-tags: [light, sea, tower, beacon, flash, ship, guide, lightship, leading, watchtower, signal]
-category: Buildings
-version: "1.34"
-unicode: "ed8a"
--->
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="32"
-  height="32"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="#000000"
-  stroke-width="1"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M12 3l2 3l2 15h-8l2 -15z" />
-  <path d="M8 9l8 0" />
-  <path d="M3 11l2 -2l-2 -2" />
-  <path d="M21 11l-2 -2l2 -2" />
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
 </svg>
 
-                
-                <span>Navi | 导航页</span>
-            </a>
-        </li>
-        
-        
-        <li >
-            <a href='https://box.tama.guru/' target="_blank">
-                
-                
-                
-                    <!--
-tags: [sign, symbol, ask, sentence, word, letters, "?"]
-version: "1.16"
-unicode: "ec9d"
--->
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="32"
-  height="32"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="#000000"
-  stroke-width="1"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M8 8a3.5 3 0 0 1 3.5 -3h1a3.5 3 0 0 1 3.5 3a3 3 0 0 1 -2 3a3 4 0 0 0 -2 4" />
-  <path d="M12 19l0 .01" />
-</svg>
+
 
                 
-                <span>Box | 提问箱</span>
-            </a>
-        </li>
-        
-        
-        <li >
-            <a href='https://share.tama.guru/' target="_blank">
-                
-                
-                
-                    <!--
-tags: [virtual, disk, microsoft, cloud]
-category: Brand
-unicode: "f5d7"
-version: "1.112"
--->
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="32"
-  height="32"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="#000000"
-  stroke-width="1"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M18.456 10.45a6.45 6.45 0 0 0 -12 -2.151a4.857 4.857 0 0 0 -4.44 5.241a4.856 4.856 0 0 0 5.236 4.444h10.751a3.771 3.771 0 0 0 3.99 -3.54a3.772 3.772 0 0 0 -3.538 -3.992z" />
-</svg>
-
-                
-                <span>Share | 共享盘</span>
-            </a>
-        </li>
-        
-        
-        <li >
-            <a href='https://status.tama.guru/' target="_blank">
-                
-                
-                
-                    <!--
-tags: [relation, above, below, status, society, important]
-category: Design
-unicode: "f3fa"
-version: "1.94"
--->
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="32"
-  height="32"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="#000000"
-  stroke-width="1"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M12 5m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-  <path d="M5 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-  <path d="M17.585 17.587a2 2 0 0 0 2.813 2.843" />
-  <path d="M6.5 17.5l5.5 -4.5l5.5 4.5" />
-  <path d="M12 7v1m0 4v1" />
-  <path d="M3 3l18 18" />
-</svg>
-
-                
-                <span>Status | 监控板</span>
+                <span>About | 关于</span>
             </a>
         </li>
         
@@ -326,25 +312,6 @@ version: "1.94"
 
                 
                 <span>Links | 链接</span>
-            </a>
-        </li>
-        
-        
-        <li >
-            <a href='/about-%E5%85%B3%E4%BA%8E.html' >
-                
-                
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="7" r="4" />
-  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-</svg>
-
-
-
-                
-                <span>About | 关于</span>
             </a>
         </li>
         
@@ -613,7 +580,7 @@ Steam桌面商店使用的是flathub源，默认使用的是<code>https://glathu
 
 
         <span>
-            最后更新于 2025年08月12日 01:56
+            最后更新于 2025年08月12日 02:51
         </span>
     </section></footer>
 

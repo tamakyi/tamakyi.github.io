@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Wed, 02 Jul 2025 20:11:29 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 12 Aug 2025 10:42:19 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Archives | 档案</title>
         <link>https://blog.tama.guru/archives.html</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0800</pubDate>
@@ -51,6 +51,58 @@
         
         <guid>https://blog.tama.guru/search.html</guid>
         <description></description>
+        </item>
+        <item>
+        <title>Server | 自建服务</title>
+        <link>https://blog.tama.guru/server-%E8%87%AA%E5%BB%BA%E6%9C%8D%E5%8A%A1.html</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.tama.guru/server-%E8%87%AA%E5%BB%BA%E6%9C%8D%E5%8A%A1.html</guid>
+        <description>&lt;p&gt;因Stack主题无二级菜单显示，为简化菜单显示，大多数自建服务移至此处。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>travel | 旅行记录</title>
+        <link>https://blog.tama.guru/travel-%E6%97%85%E8%A1%8C%E8%AE%B0%E5%BD%95.html</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.tama.guru/travel-%E6%97%85%E8%A1%8C%E8%AE%B0%E5%BD%95.html</guid>
+        <description>&lt;p&gt;关于我出去玩的那些流水账就不放进时间线里污染大家眼睛了，整合在这为的是自己留个念想。按省份进行分类汇总？虽然大概率没机会出省就是了。&lt;/p&gt;
+&lt;center&gt;&lt;b&gt;广西&lt;/b&gt;&lt;/center&gt;
+&lt;style&gt;
+  td, th {
+    display: flex;
+    justify-content: center; /* 水平 */
+    align-items: center;     /* 垂直 */
+    height: 100px;
+  }
+&lt;/style&gt;
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://blog.tama.guru/travel/guangxi/nanning.html&#34;&gt;南宁&lt;/a&gt;&lt;/td&gt;
+        &lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://blog.tama.guru/travel/guangxi/liuzhou.html&#34;&gt;柳州&lt;/a&gt;&lt;/td&gt;
+        &lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://blog.tama.guru/travel/guangxi/guilin.html&#34;&gt;桂林&lt;/a&gt;&lt;/td&gt;
+        &lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://blog.tama.guru/travel/guangxi/beihai.html&#34;&gt;北海&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://blog.tama.guru/travel/guangxi/yulin.html&#34;&gt;玉林&lt;/a&gt;&lt;/td&gt;
+        &lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://blog.tama.guru/travel/guangxi/wuzhou.html&#34;&gt;梧州&lt;/a&gt;&lt;/td&gt;
+        &lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://blog.tama.guru/travel/guangxi/qinzou.html&#34;&gt;钦州&lt;/a&gt;&lt;/td&gt;
+        &lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://blog.tama.guru/travel/guangxi/baise.html&#34;&gt;百色&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://blog.tama.guru/travel/guangxi/hezhou.html&#34;&gt;贺州&lt;/a&gt;&lt;/td&gt;
+        &lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://blog.tama.guru/travel/guangxi/guigang.html&#34;&gt;贵港&lt;/a&gt;&lt;/td&gt;
+        &lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://blog.tama.guru/travel/guangxi/hechi.html&#34;&gt;河池&lt;/a&gt;&lt;/td&gt;
+        &lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://blog.tama.guru/travel/guangxi/fangchenggang.html&#34;&gt;防城港&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://blog.tama.guru/travel/guangxi/laibin.html&#34;&gt;来宾&lt;/a&gt;&lt;/td&gt;
+        &lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://blog.tama.guru/travel/guangxi/chongzuo.html&#34;&gt;崇左&lt;/a&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</description>
         </item>
         
     </channel>
