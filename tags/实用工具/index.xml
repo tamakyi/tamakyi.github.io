@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Wed, 13 Aug 2025 01:59:05 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 13 Aug 2025 04:01:03 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>[软件推荐]Windows下grep命令的替代品</title>
         <link>https://blog.tama.guru/software/grep-on-windows.html</link>
         <pubDate>Wed, 11 Sep 2024 21:51:00 +0800</pubDate>
@@ -118,7 +118,7 @@
 &lt;p&gt;这是一个GUI化的grep，能够实现使用文本、正则表达式、XPath等查询搜索文本文件、Word 和 Excel 文档、PDF 和存档。dnGrep 包括搜索和替换、整个文件预览、文件资源管理器中的右键单击搜索等等。&lt;/p&gt;
 &lt;p&gt;使用方法：到&lt;a class=&#34;link&#34; href=&#34;https://github.com/dnGrep/dnGrep/releases/latest&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Github项目页面&lt;/a&gt;下载对应版本的安装包安装即可，项目自带中文，安装完成后可以到设置里面配置。使用方法也很简单，无非就是选择查找范围，选择搜索方式和搜索条件，搜索结果会高亮展现：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/09/11/66e1a05b4dd4f.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/09/11/66e1a05b4dd4f.png&#34;
 	
 	
 	
@@ -143,7 +143,7 @@
     &gt;Git - Downloads (git-scm.com)&lt;/a&gt;&lt;/p&gt;
 &lt;h5 id=&#34;使用方法-1&#34;&gt;使用方法
 &lt;/h5&gt;&lt;p&gt;下载安装对应版本即可，也提供了便携版(PortableGit)，解压即用。安装之后右键菜单会多出一个&lt;code&gt;git bash&lt;/code&gt;，在指定目录下点开会进入一个bash终端，在这里就直接能执行grep了。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/09/11/66e1a0404ca95.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/09/11/66e1a0404ca95.png&#34;
 	
 	
 	

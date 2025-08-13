@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Wed, 13 Aug 2025 01:59:05 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/binder_linux/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 13 Aug 2025 04:01:03 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/binder_linux/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>在debian安装配置redroid并安装shamrock的记录</title>
         <link>https://blog.tama.guru/record/redroid.html</link>
         <pubDate>Wed, 24 Jan 2024 12:01:00 +0800</pubDate>
@@ -275,7 +275,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;会进到安卓界面，先打开shizuku，会提示要启用，我们回退到adb窗口，执行：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./adb shell sh /storage/emulated/0/Android/data/moe.shizuku.privileged.api/start.sh
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后shizuku提示&lt;code&gt;shizuku is running&lt;/code&gt;。然后把&lt;code&gt;Authorized 0 applications&lt;/code&gt;点开，勾选LSPatch，再打开LSPatch，到Manager&amp;ndash;Apps点击加号，选择New Patch-Select apk(s) from storage 找到QQ安装包，点击start patch
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/01/24/65b0d331552e6.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d331552e6.png&#34;
 	
 	
 	
@@ -285,7 +285,7 @@
 	
 	
 &gt;
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/01/24/65b0d3ce0b407.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d3ce0b407.png&#34;
 	
 	
 	
@@ -295,7 +295,7 @@
 	
 	
 &gt;
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/01/24/65b0d3edd100b.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d3edd100b.png&#34;
 	
 	
 	
@@ -306,7 +306,7 @@
 	
 &gt;
 等待打补丁完成，然后点击Install。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/01/24/65b0d43075df2.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d43075df2.png&#34;
 	
 	
 	

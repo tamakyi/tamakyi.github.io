@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Wed, 13 Aug 2025 01:59:05 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E9%B8%BF%E8%92%994/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 13 Aug 2025 04:01:03 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E9%B8%BF%E8%92%994/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>记录一次在鸿蒙4.0安装GMS套件的过程</title>
         <link>https://blog.tama.guru/record/homo4-0-gms.html</link>
         <pubDate>Fri, 12 Apr 2024 00:06:00 +0800</pubDate>
@@ -22,7 +22,7 @@
 稳定的网络环境（指能连接外面的世界）。
 下载好文中所需的文件。
 安装好adb套件并事前做好认证。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/04/11/6617f95f42316.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/11/6617f95f42316.png&#34;
 	
 	
 	
@@ -39,7 +39,7 @@
 &amp;ldquo;设置-应用和服务-应用分身&amp;rdquo;:关闭应用分身
 &lt;strong&gt;以上功能我均没有使用，因此跳过了。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;解压压缩包,将Backup文件夹复制到手机存储空间里的/Huawei 的目录里,压缩包里目录里的软件对应接下来的步骤,按步骤安装!
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/04/11/6617faf43512f.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/11/6617faf43512f.png&#34;
 	
 	
 	
@@ -92,7 +92,7 @@ SharedLibrary
 &lt;strong&gt;符合预期&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id=&#34;8-安装play服务&#34;&gt;8. 安装Play服务
 &lt;/h4&gt;&lt;p&gt;安装Play服务,安装完之后,十秒左右状态栏便会报错(&amp;ldquo;此设备未获得Play保护机制认证&amp;rdquo;),不用管.（&lt;strong&gt;如果不弹窗，请检查网络是否正常，这个很重要！&lt;/strong&gt;）
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/04/12/661809d6e3525.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/12/661809d6e3525.png&#34;
 	
 	
 	
@@ -127,7 +127,7 @@ SharedLibrary
 5.1ADB终端内输入命令：adb shell pm disable-user &amp;ndash;user 0 com.google.android.gsf  &lt;strong&gt;注意！不要回车执行操作！只是粘贴上去好准备。&lt;/strong&gt;
 5.2手机安装第八步的 8.play商店 。
 5.3安装完打开后,会提示&amp;quot;我们正在为您更新Google Play&amp;rdquo;,当跳出可以前往google商店的选项后，直接前往商店，取消更新。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/04/12/66180a07754c1.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/12/66180a07754c1.png&#34;
 	
 	
 	
@@ -143,7 +143,7 @@ SharedLibrary
     &gt;https://play.google.com/store/apps/details?id=com.google.android.gms&lt;/a&gt; 到 Edge 打开。
 5.5.2下方提示 外部应用打开，打开paly商店开应用详情页。
 5.5.3点击更新，要注意下载的进度条，当进度条超过50%以后，立马用 搞机工具箱 禁用。忽略提示信息，继续卸载。（注意：如果下载卡在等待中，建议去应用管理把Google Play服务和Play Store后台进程都杀掉，然后换用其它梯子，重新回到5.5.1，又或者直接把梯子关了等一段时间再打开，然后重新下载即可。）
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/04/12/66180a36b8cbb.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/12/66180a36b8cbb.png&#34;
 	
 	
 	
@@ -153,7 +153,7 @@ SharedLibrary
 	
 	
 &gt;
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/04/12/66180a71cf920.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/12/66180a71cf920.png&#34;
 	
 	
 	

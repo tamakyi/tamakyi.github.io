@@ -10,7 +10,7 @@
 <meta property='og:description' content="前言 由于某讯对第三方QQ机器人的大力追杀，原有的机器人框架（miraiqq和go-cqhttp）等基本上都无法使用了，登录会直接代码45封号。在此之后发展出shamrock等项目，此类项目的特点是需要虚拟机或实机进行操作，意味着至少需要一个桌面环境或者一台闲置手机，开销相比之前1c512m都能跑的时候高太多。在网上冲浪的时候发现了可以将安卓的Dalvik/ART移植到Linux桌面环境，借此运行安卓APK程序，因此需要用到redroid这个软件。\n">
 <meta property='og:url' content='https://blog.tama.guru/record/redroid.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='debian' /><meta property='article:tag' content='docker' /><meta property='article:tag' content='redroid' /><meta property='article:tag' content='android' /><meta property='article:tag' content='ashmem-linux' /><meta property='article:tag' content='binder_linux' /><meta property='article:tag' content='shamrock' /><meta property='article:tag' content='qq' /><meta property='article:published_time' content='2024-01-24T12:01:00&#43;08:00'/><meta property='article:modified_time' content='2025-08-13T01:59:05&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='debian' /><meta property='article:tag' content='docker' /><meta property='article:tag' content='redroid' /><meta property='article:tag' content='android' /><meta property='article:tag' content='ashmem-linux' /><meta property='article:tag' content='binder_linux' /><meta property='article:tag' content='shamrock' /><meta property='article:tag' content='qq' /><meta property='article:published_time' content='2024-01-24T12:01:00&#43;08:00'/><meta property='article:modified_time' content='2025-08-13T04:01:03&#43;00:00'/>
 <meta name="twitter:title" content="在debian安装配置redroid并安装shamrock的记录">
 <meta name="twitter:description" content="前言 由于某讯对第三方QQ机器人的大力追杀，原有的机器人框架（miraiqq和go-cqhttp）等基本上都无法使用了，登录会直接代码45封号。在此之后发展出shamrock等项目，此类项目的特点是需要虚拟机或实机进行操作，意味着至少需要一个桌面环境或者一台闲置手机，开销相比之前1c512m都能跑的时候高太多。在网上冲浪的时候发现了可以将安卓的Dalvik/ART移植到Linux桌面环境，借此运行安卓APK程序，因此需要用到redroid这个软件。\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
@@ -776,7 +776,7 @@ unicode: "ea9a"
 </span></span></code></pre></div><p>会进到安卓界面，先打开shizuku，会提示要启用，我们回退到adb窗口，执行：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">./adb shell sh /storage/emulated/0/Android/data/moe.shizuku.privileged.api/start.sh
 </span></span></code></pre></div><p>然后shizuku提示<code>shizuku is running</code>。然后把<code>Authorized 0 applications</code>点开，勾选LSPatch，再打开LSPatch，到Manager&ndash;Apps点击加号，选择New Patch-Select apk(s) from storage 找到QQ安装包，点击start patch
-<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/01/24/65b0d331552e6.png"
+<img src="https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d331552e6.png"
 	
 	
 	
@@ -786,7 +786,7 @@ unicode: "ea9a"
 	
 	
 >
-<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/01/24/65b0d3ce0b407.png"
+<img src="https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d3ce0b407.png"
 	
 	
 	
@@ -796,7 +796,7 @@ unicode: "ea9a"
 	
 	
 >
-<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/01/24/65b0d3edd100b.png"
+<img src="https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d3edd100b.png"
 	
 	
 	
@@ -807,7 +807,7 @@ unicode: "ea9a"
 	
 >
 等待打补丁完成，然后点击Install。
-<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/01/24/65b0d43075df2.png"
+<img src="https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d43075df2.png"
 	
 	
 	
@@ -874,7 +874,7 @@ unicode: "ea9a"
 
 
         <span>
-            最后更新于 2025年08月13日 01:59
+            最后更新于 2025年08月13日 04:01
         </span>
     </section></footer>
 

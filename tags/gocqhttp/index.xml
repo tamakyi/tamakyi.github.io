@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Wed, 13 Aug 2025 01:59:05 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/gocqhttp/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 13 Aug 2025 04:01:03 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/gocqhttp/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>解决AcFunLive的mirai机器人无法使用的问题</title>
         <link>https://blog.tama.guru/record/acfunlive-mirai.html</link>
         <pubDate>Fri, 05 May 2023 23:35:47 +0800</pubDate>
@@ -24,7 +24,7 @@
 &lt;li&gt;下载并配置go-cqhttp
 到官网下载当前环境配置版本的go-cqhttp，此处我是windows，直接下载&lt;a class=&#34;link&#34; href=&#34;https://github.com/Mrs4s/go-cqhttp/releases/download/v1.0.1/go-cqhttp_windows_amd64.exe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;windows_x64&lt;/a&gt;版本。下载后双击运行exe，提示无法直接运行，之后生成一个bat文件，双击&lt;code&gt;go-cqhttp.bat&lt;/code&gt;文件运行，然后输入1回车，提示&lt;code&gt;默认配置文件已生成，请修改 config.yml 后重新启动!&lt;/code&gt;后关闭窗口。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/05/05/64551e91cd25b.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/05/64551e91cd25b.png&#34;
 	
 	
 	
@@ -35,7 +35,7 @@
 	
 &gt;
 修改&lt;code&gt;config.yml&lt;/code&gt;，主要是修改uin这一项，其他不用管（因为之后使用的是watch协议登录，所以不需要填密码），修改后保存文件。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/05/05/64551f1085317.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/05/64551f1085317.png&#34;
 	
 	
 	
@@ -46,7 +46,7 @@
 	
 &gt;
 再次双击&lt;code&gt;go-cqhttp.bat&lt;/code&gt;文件运行，在提示&lt;code&gt;Bot将在5秒后登录并开始信息处理, 按 Ctrl+C 取消.&lt;/code&gt;后按Ctrl+C中断程序运行。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/05/05/64551fac3c9af.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/05/64551fac3c9af.png&#34;
 	
 	
 	
@@ -57,7 +57,7 @@
 	
 &gt;
 然后目录下会生成一个&lt;code&gt;device.json&lt;/code&gt;文件，打开并将&lt;code&gt;&amp;quot;protocol&amp;quot;:6&lt;/code&gt;的值修改成&lt;code&gt;2&lt;/code&gt;，保存。然后再次双击&lt;code&gt;go-cqhttp.bat&lt;/code&gt;文件运行，一段时间后他会提示你扫码登录，使用登录了同一个账号的手机扫码会提示是一个手表设备，确认登录。等出现如下内容时可以关闭程序。并看到目录下生成了&lt;code&gt;sesssion.token&lt;/code&gt;这个文件。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/05/05/645520dc60a55.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/05/645520dc60a55.png&#34;
 	
 	
 	
@@ -69,7 +69,7 @@
 &gt;&lt;/li&gt;
 &lt;li&gt;修改acfunlive配置
 把gocqhttp目录下的&lt;code&gt;sesssion.token&lt;/code&gt;和&lt;code&gt;device.json&lt;/code&gt;复制到acfunlive目录（保险起见可以全部复制过去），然后将其重命名为&lt;code&gt;qqsesssion.token&lt;/code&gt;和&lt;code&gt;qqdevice.json&lt;/code&gt;，此时目录结构如下所示。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/05/05/6455217dd9f5c.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/05/6455217dd9f5c.png&#34;
 	
 	
 	
@@ -80,7 +80,7 @@
 	
 &gt;
 此时在powershell下执行&lt;code&gt;.\acfunlive.exe -mirai&lt;/code&gt;或者正常启动到&lt;code&gt;http://localhost:51880/startmirai&lt;/code&gt;再打开&lt;code&gt;http://localhost:51880/log&lt;/code&gt;可以看到已经登录成功了。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/05/05/64552211c7de8.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/05/64552211c7de8.png&#34;
 	
 	
 	

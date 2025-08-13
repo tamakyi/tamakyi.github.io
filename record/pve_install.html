@@ -10,7 +10,7 @@
 <meta property='og:description' content="安装PVE并不复杂，相关操作网上一抓一大把此处不再赘述。 此处主要记录一些安装后碰上的问题以及对应的解决方案。 #####开启硬件直通##### 1.首先确保CPU带有虚拟化能力。对于AMD平台，在BIOS的高级&gt;CPU设置查看是否有能开启SVM Mode。确认能打开后，到高级&gt;AMD CBS&gt;NBIO Common Options&gt;NB Configuration下把IOMMU打开。 2.进入系统控制台，修改grub启动时添加硬件直通功能。 打开/etc/default/grub 将\n">
 <meta property='og:url' content='https://blog.tama.guru/record/pve_install.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='linux' /><meta property='article:tag' content='PVE' /><meta property='article:tag' content='nas' /><meta property='article:published_time' content='2023-03-12T01:43:00&#43;08:00'/><meta property='article:modified_time' content='2025-08-13T01:59:05&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='linux' /><meta property='article:tag' content='PVE' /><meta property='article:tag' content='nas' /><meta property='article:published_time' content='2023-03-12T01:43:00&#43;08:00'/><meta property='article:modified_time' content='2025-08-13T04:01:03&#43;00:00'/>
 <meta name="twitter:title" content="PVE安装后续优化">
 <meta name="twitter:description" content="安装PVE并不复杂，相关操作网上一抓一大把此处不再赘述。 此处主要记录一些安装后碰上的问题以及对应的解决方案。 #####开启硬件直通##### 1.首先确保CPU带有虚拟化能力。对于AMD平台，在BIOS的高级&gt;CPU设置查看是否有能开启SVM Mode。确认能打开后，到高级&gt;AMD CBS&gt;NBIO Common Options&gt;NB Configuration下把IOMMU打开。 2.进入系统控制台，修改grub启动时添加硬件直通功能。 打开/etc/default/grub 将\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
@@ -478,7 +478,7 @@ unicode: "ea9a"
     <p>安装PVE并不复杂，相关操作网上一抓一大把此处不再赘述。
 此处主要记录一些安装后碰上的问题以及对应的解决方案。
 #####<center>开启硬件直通</center>#####
-1.首先确保CPU带有虚拟化能力。对于AMD平台，在<code>BIOS的高级&gt;CPU设置</code>查看是否有能开启<code>SVM Mode</code>。<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/03/12/640cb997ec1de.png"
+1.首先确保CPU带有虚拟化能力。对于AMD平台，在<code>BIOS的高级&gt;CPU设置</code>查看是否有能开启<code>SVM Mode</code>。<img src="https://r2.337845818.best/oss-to-r2/2023/03/12/640cb997ec1de.png"
 	
 	
 	
@@ -487,7 +487,7 @@ unicode: "ea9a"
 		alt="2023-03-11T17:25:44.png"
 	
 	
->确认能打开后，到<code>高级&gt;AMD CBS&gt;NBIO Common Options&gt;NB Configuration</code>下把<code>IOMMU</code>打开。<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/03/12/640cba128c724.png"
+>确认能打开后，到<code>高级&gt;AMD CBS&gt;NBIO Common Options&gt;NB Configuration</code>下把<code>IOMMU</code>打开。<img src="https://r2.337845818.best/oss-to-r2/2023/03/12/640cba128c724.png"
 	
 	
 	
@@ -533,7 +533,7 @@ unicode: "ea9a"
 修改文件：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">javascript</span><span class="o">/</span><span class="n">proxmox</span><span class="o">-</span><span class="n">widget</span><span class="o">-</span><span class="n">toolkit</span><span class="o">/</span><span class="n">proxmoxlib</span><span class="o">.</span><span class="n">js</span>
 </span></span></code></pre></div><p>搜索 <code>data.status.toLowerCase</code>，并将框中内容删除：
-<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/03/12/640cbd6c8417c.png"
+<img src="https://r2.337845818.best/oss-to-r2/2023/03/12/640cbd6c8417c.png"
 	
 	
 	
@@ -544,7 +544,7 @@ unicode: "ea9a"
 	
 >
 再次搜索 <code>data.status.toLowerCase</code>，并将框中内容删除：
-<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/03/12/640cbda27355a.png"
+<img src="https://r2.337845818.best/oss-to-r2/2023/03/12/640cbda27355a.png"
 	
 	
 	
@@ -575,7 +575,7 @@ unicode: "ea9a"
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">cp</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">perl5</span><span class="o">/</span><span class="n">PVE</span><span class="o">/</span><span class="n">APLInfo</span><span class="o">.</span><span class="n">pm</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">perl5</span><span class="o">/</span><span class="n">PVE</span><span class="o">/</span><span class="n">APLInfo</span><span class="o">.</span><span class="n">pm_back</span>
 </span></span><span class="line"><span class="cl"><span class="n">sed</span> <span class="o">-</span><span class="n">i</span> <span class="s1">&#39;s|http://download.proxmox.com|https://mirrors.tuna.tsinghua.edu.cn/proxmox|g&#39;</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">perl5</span><span class="o">/</span><span class="n">PVE</span><span class="o">/</span><span class="n">APLInfo</span><span class="o">.</span><span class="n">pm</span>
 </span></span></code></pre></div><p>更换完成后重启pve。
-2、接下来进入PVE网页端，按如下操作安装debian软件包。（选择的目录应有CT镜像功能）<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/03/12/640d92828b077.png"
+2、接下来进入PVE网页端，按如下操作安装debian软件包。（选择的目录应有CT镜像功能）<img src="https://r2.337845818.best/oss-to-r2/2023/03/12/640d92828b077.png"
 	
 	
 	
@@ -585,7 +585,7 @@ unicode: "ea9a"
 	
 	
 >之后等待窗口提示<code>TASK OK</code>。
-3、点击右上角的<code>创建CT</code>，配置常规选项：特别要记住<code>CT ID</code>，并把<code>无特权的容器</code>的勾取消掉。<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/03/12/640d93a5acf5c.png"
+3、点击右上角的<code>创建CT</code>，配置常规选项：特别要记住<code>CT ID</code>，并把<code>无特权的容器</code>的勾取消掉。<img src="https://r2.337845818.best/oss-to-r2/2023/03/12/640d93a5acf5c.png"
 	
 	
 	
@@ -596,7 +596,7 @@ unicode: "ea9a"
 	
 >
 模板刚才下载的目录位置以及模板。
-<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/03/12/640d93cd17138.png"
+<img src="https://r2.337845818.best/oss-to-r2/2023/03/12/640d93cd17138.png"
 	
 	
 	
@@ -607,7 +607,7 @@ unicode: "ea9a"
 	
 >
 磁盘空间根据实际情况给，建议20G以上。
-<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/03/12/640d93f8bccc7.png"
+<img src="https://r2.337845818.best/oss-to-r2/2023/03/12/640d93f8bccc7.png"
 	
 	
 	
@@ -618,7 +618,7 @@ unicode: "ea9a"
 	
 >
 核心数分配根据机器的实际情况配置。
-<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/03/12/640d9413db27b.png"
+<img src="https://r2.337845818.best/oss-to-r2/2023/03/12/640d9413db27b.png"
 	
 	
 	
@@ -629,7 +629,7 @@ unicode: "ea9a"
 	
 >
 内存设置考虑到后期我需要运行的Docker内容较多，我设置为1024，如果配置较低或者使用负载较小可以设置512，Swap同理。
-<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/03/12/640d9459ae6d2.png"
+<img src="https://r2.337845818.best/oss-to-r2/2023/03/12/640d9459ae6d2.png"
 	
 	
 	
@@ -640,7 +640,7 @@ unicode: "ea9a"
 	
 >
 网络选项根据自己内网路由情况进行编辑，不建议使用DHCP，因为我经常找不到IP。
-<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/03/12/640d94b3dfa2c.png"
+<img src="https://r2.337845818.best/oss-to-r2/2023/03/12/640d94b3dfa2c.png"
 	
 	
 	
@@ -651,7 +651,7 @@ unicode: "ea9a"
 	
 >
 DNS设置使用默认即可。然后确认信息无误点击完成，等待<code>TASK OK</code>。
-<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/03/12/640d94e514dbc.png"
+<img src="https://r2.337845818.best/oss-to-r2/2023/03/12/640d94e514dbc.png"
 	
 	
 	
@@ -662,7 +662,7 @@ DNS设置使用默认即可。然后确认信息无误点击完成，等待<code
 	
 >
 然后进入Docker的容器选项设置，把功能中以下内容勾选。
-<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/03/12/640d953d9bdd1.png"
+<img src="https://r2.337845818.best/oss-to-r2/2023/03/12/640d953d9bdd1.png"
 	
 	
 	
@@ -683,7 +683,7 @@ DNS设置使用默认即可。然后确认信息无误点击完成，等待<code
 </span></span><span class="line"><span class="cl">lxc.cgroup2.devices.allow: c 10:200 rwm  
 </span></span><span class="line"><span class="cl">lxc.mount.entry: /dev/net/tun dev/net/tun none bind,create=file
 </span></span></code></pre></div><p>修改后整个文件应该看起来像：
-<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/03/12/640d960b5a827.png"
+<img src="https://r2.337845818.best/oss-to-r2/2023/03/12/640d960b5a827.png"
 	
 	
 	
@@ -772,7 +772,7 @@ DNS设置使用默认即可。然后确认信息无误点击完成，等待<code
 
 
         <span>
-            最后更新于 2025年08月13日 01:59
+            最后更新于 2025年08月13日 04:01
         </span>
     </section></footer>
 

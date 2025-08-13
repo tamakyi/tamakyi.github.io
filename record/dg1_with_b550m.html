@@ -10,7 +10,7 @@
 <meta property='og:description' content="先上结果： 所以网上关于这张卡无法在AMD的平台上跑这个说法基本上宣告破产了。 但是在我B550M这个平台上安装上这卡并不容易，不仅是兼容性层面，还有物理层面问题（我的主卡3060ti实在是太大，直接把两个PCIe口占据了。。。而直接用PCIe延长线也是因为底座过高而无法安装。 接下来说说装这张卡碰到的坑。 大前提肯定是把ResizeBAR打开了，详情看之前的文章：[post cid=&ldquo;239&rdquo; /] 首先我是插在A320M+2200G平台上的（这是NAS机，之前我想把这做推流机），插上去之后显示无输出，但是PiKVM能看到硬盘灯在闪烁，判断系统是正常运行了，于是从远程桌面进去发现能正常，安装驱动之后能够正确识别型号（设备管理器中有一个PCI设备一直显示无驱动且找不到驱动），发现NDI推流延迟较高，故放弃，转战主机。 主机上主显卡是3060TI，这玩意非常的大，大到把主板底部的大多数接口都盖住了。 ">
 <meta property='og:url' content='https://blog.tama.guru/record/dg1_with_b550m.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='b550m' /><meta property='article:tag' content='dg1' /><meta property='article:published_time' content='2023-05-10T23:24:00&#43;08:00'/><meta property='article:modified_time' content='2025-08-13T01:59:05&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='b550m' /><meta property='article:tag' content='dg1' /><meta property='article:published_time' content='2023-05-10T23:24:00&#43;08:00'/><meta property='article:modified_time' content='2025-08-13T04:01:03&#43;00:00'/>
 <meta name="twitter:title" content="在技嘉B550M上成功点亮并使用（但不完美）DG1教程">
 <meta name="twitter:description" content="先上结果： 所以网上关于这张卡无法在AMD的平台上跑这个说法基本上宣告破产了。 但是在我B550M这个平台上安装上这卡并不容易，不仅是兼容性层面，还有物理层面问题（我的主卡3060ti实在是太大，直接把两个PCIe口占据了。。。而直接用PCIe延长线也是因为底座过高而无法安装。 接下来说说装这张卡碰到的坑。 大前提肯定是把ResizeBAR打开了，详情看之前的文章：[post cid=&ldquo;239&rdquo; /] 首先我是插在A320M+2200G平台上的（这是NAS机，之前我想把这做推流机），插上去之后显示无输出，但是PiKVM能看到硬盘灯在闪烁，判断系统是正常运行了，于是从远程桌面进去发现能正常，安装驱动之后能够正确识别型号（设备管理器中有一个PCI设备一直显示无驱动且找不到驱动），发现NDI推流延迟较高，故放弃，转战主机。 主机上主显卡是3060TI，这玩意非常的大，大到把主板底部的大多数接口都盖住了。 ">
     <link rel="shortcut icon" href="/static/favicon.ico" />
@@ -476,7 +476,7 @@ unicode: "ea9a"
     
     
     <p>先上结果：
-<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/05/10/645bafc914fe4.png"
+<img src="https://r2.337845818.best/oss-to-r2/2023/05/10/645bafc914fe4.png"
 	
 	
 	
@@ -492,7 +492,7 @@ unicode: "ea9a"
 大前提肯定是把ResizeBAR打开了，详情看之前的文章：[post cid=&ldquo;239&rdquo; /]
 首先我是插在A320M+2200G平台上的（这是NAS机，之前我想把这做推流机），插上去之后显示无输出，但是PiKVM能看到硬盘灯在闪烁，判断系统是正常运行了，于是从远程桌面进去发现能正常，安装驱动之后能够正确识别型号（设备管理器中有一个PCI设备一直显示无驱动且找不到驱动），发现NDI推流延迟较高，故放弃，转战主机。
 主机上主显卡是3060TI，这玩意非常的大，大到把主板底部的大多数接口都盖住了。
-<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/05/10/645bb1d9637ac.png"
+<img src="https://r2.337845818.best/oss-to-r2/2023/05/10/645bb1d9637ac.png"
 	
 	
 	
@@ -509,7 +509,7 @@ unicode: "ea9a"
 <li>接下来我用3060TI接上延长线连接PCIe4.0接口，DG1直插PCIe3.0接口，显示器能反应，能进BIOS，但是进入系统的启动过程中会提示无法启动，无论切换到Win10 LTSC2021 Server2022 Win11均无法正常启动，这里就是我最疑惑的地方了。</li>
 <li>最后我改变了想法，把3060TI接上延长线连接PCIe3.0接口，DG1直插PCIe4.0接口，却发现是能正常进入系统了！我的两台显示器分别插在两张卡上，进入系统之后只有插在3060TI上的卡的显示器是亮的，插在DG1的显示器黑屏。安装Xe驱动后，双屏正常工作了。</li>
 </ol>
-<p><img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/05/10/645bb463d2912.png"
+<p><img src="https://r2.337845818.best/oss-to-r2/2023/05/10/645bb463d2912.png"
 	
 	
 	
@@ -520,7 +520,7 @@ unicode: "ea9a"
 	
 >
 但是这样对性能的损耗有些大，3060TI在PCIe3.0上无法发挥其最大效用，而DG1占着PCIe4.0接口，但它最多也只能跑到4.0 x8
-<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/05/10/645bb523b9976.png"
+<img src="https://r2.337845818.best/oss-to-r2/2023/05/10/645bb523b9976.png"
 	
 	
 	
@@ -530,7 +530,7 @@ unicode: "ea9a"
 	
 	
 >
-<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/05/10/645bb5a7f26ea.png"
+<img src="https://r2.337845818.best/oss-to-r2/2023/05/10/645bb5a7f26ea.png"
 	
 	
 	
@@ -542,7 +542,7 @@ unicode: "ea9a"
 >
 而且我发现这样接上之后，鼠标的拖动会偶尔发生卡顿，这个情况现在也是无解。
 接下来我想再买一根PCIe4.0的延长线，看看这样插能不能把性能跑满，后续再继续测试视频和直播的编解码能力。
-<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/05/10/645bbb5982d69.png"
+<img src="https://r2.337845818.best/oss-to-r2/2023/05/10/645bbb5982d69.png"
 	
 	
 	
@@ -552,7 +552,7 @@ unicode: "ea9a"
 	
 	
 >
-<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/05/10/645bbb49660ed.png"
+<img src="https://r2.337845818.best/oss-to-r2/2023/05/10/645bbb49660ed.png"
 	
 	
 	
@@ -603,7 +603,7 @@ PS5:在微星H510M爆破弹上开启UEFI resizebar above 4g和安全启动，关
 
 
         <span>
-            最后更新于 2025年08月13日 01:59
+            最后更新于 2025年08月13日 04:01
         </span>
     </section></footer>
 

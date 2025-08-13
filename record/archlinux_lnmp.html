@@ -10,7 +10,7 @@
 <meta property='og:description' content="最近把编译用的主机换个发行版，最开始用的是debian，结果现在桌面环境进不去了（而且是一引导完成就所有输入、输入都没反应，但是ssh能登陆，很奇怪），懒得去查原因就选择换个环境。本来用的almalinux，无奈真的不喜欢gnome，自己装了kde之后ibus无论怎样都打不出中文，最后还是上了arch。 无论是宝塔还是lnmp.org都没有对arch系进行适配，网上也有很多一步步排错安装的教程，但是看着一步步的报错再去核查原因着实难受，最后还是选择自己装最基础的nginx+php+mysql。\n">
 <meta property='og:url' content='https://blog.tama.guru/record/archlinux_lnmp.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='mysql' /><meta property='article:tag' content='archlinux' /><meta property='article:tag' content='nginx' /><meta property='article:tag' content='php' /><meta property='article:tag' content='lnmp' /><meta property='article:published_time' content='2023-11-30T11:07:00&#43;08:00'/><meta property='article:modified_time' content='2025-08-13T01:59:05&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='mysql' /><meta property='article:tag' content='archlinux' /><meta property='article:tag' content='nginx' /><meta property='article:tag' content='php' /><meta property='article:tag' content='lnmp' /><meta property='article:published_time' content='2023-11-30T11:07:00&#43;08:00'/><meta property='article:modified_time' content='2025-08-13T04:01:03&#43;00:00'/>
 <meta name="twitter:title" content="Archlinux下安装并配置lnmp环境">
 <meta name="twitter:description" content="最近把编译用的主机换个发行版，最开始用的是debian，结果现在桌面环境进不去了（而且是一引导完成就所有输入、输入都没反应，但是ssh能登陆，很奇怪），懒得去查原因就选择换个环境。本来用的almalinux，无奈真的不喜欢gnome，自己装了kde之后ibus无论怎样都打不出中文，最后还是上了arch。 无论是宝塔还是lnmp.org都没有对arch系进行适配，网上也有很多一步步排错安装的教程，但是看着一步步的报错再去核查原因着实难受，最后还是选择自己装最基础的nginx+php+mysql。\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
@@ -534,7 +534,7 @@ unicode: "ea9a"
 </span></span></code></pre></div><p>然后重启nginx：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">systemctl retstart nginx
 </span></span></code></pre></div><p>就不会报错了，访问也没问题。
-<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/30/6567f220cd216.png"
+<img src="https://r2.337845818.best/oss-to-r2/2023/11/30/6567f220cd216.png"
 	
 	
 	
@@ -575,7 +575,7 @@ unicode: "ea9a"
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd /usr/share/nginx/html
 </span></span><span class="line"><span class="cl">wget https://raw.githubusercontent.com/582033/monitor/master/monitor.php
 </span></span></code></pre></div><p>然后访问ip/monitor.php：
-<img src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/30/6567f6f37060a.png"
+<img src="https://r2.337845818.best/oss-to-r2/2023/11/30/6567f6f37060a.png"
 	
 	
 	
@@ -787,7 +787,7 @@ unicode: "ea9a"
 
 
         <span>
-            最后更新于 2025年08月13日 01:59
+            最后更新于 2025年08月13日 04:01
         </span>
     </section></footer>
 

@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Wed, 13 Aug 2025 01:59:05 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/arpl/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 13 Aug 2025 04:01:03 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/arpl/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>一种很新的群晖安装方法</title>
         <link>https://blog.tama.guru/record/new_dsm_install.html</link>
         <pubDate>Sat, 12 Aug 2023 16:26:00 +0800</pubDate>
@@ -17,7 +17,7 @@
     &gt;https://github.com/fbelavenuto/arpl/releases&lt;/a&gt;），其特点是引导式安装，不需要手工提取&lt;code&gt;grup.cfg&lt;/code&gt;修改相关文件，相对较为简单。
 ###1.下载和安装
 去上面的网站下载对应版本的zip包，解压并使用Win32DiskImager之类的工具写入U盘。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/08/12/64d732efe98f4.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d732efe98f4.png&#34;
 	
 	
 	
@@ -31,7 +31,7 @@
 写完之后把U盘安装到需要安装群晖的主板上并在BIOS中设置好UEFI启动，因各主板步骤不一致此处不赘述。
 ###2.进入和初步配置arpl
 开启群晖主板电源等待1分钟之后，在路由器界面找到主板网卡IP,浏览器输入&lt;code&gt;http://ip:7681&lt;/code&gt;即可进入arpl界面。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/08/12/64d733a862a8d.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d733a862a8d.png&#34;
 	
 	
 	
@@ -40,7 +40,7 @@
 		alt=&#34;IP&#34;
 	
 	
-&gt;&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/08/12/64d733df70ec6.png&#34;
+&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d733df70ec6.png&#34;
 	
 	
 	
@@ -51,7 +51,7 @@
 	
 &gt;
 进去之后先选择&lt;code&gt;x Cmdline menu&lt;/code&gt;，然后进入&lt;code&gt;c Define a custom MAC&lt;/code&gt;，此步骤用于修改mac1的数据，如果需要洗白建议先做这一步，修改MAC后需要重新进入路由器界面找到主板网卡IP，因为IP会重新分配。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/08/12/64d7346458918.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d7346458918.png&#34;
 	
 	
 	
@@ -64,7 +64,7 @@
 ###3.配置arpl
 ####首先是&lt;code&gt;m Choose a model&lt;/code&gt;
 即选择安装的群晖型号，此处我以DS918+为例。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/08/12/64d734f031a5b.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d734f031a5b.png&#34;
 	
 	
 	
@@ -76,7 +76,7 @@
 &gt;
 ####第二步,&lt;code&gt;n Choose a Build Number&lt;/code&gt;
 即选择安装的版本，当前我要安装的是7.1.1，即版本号42962.
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/08/12/64d735383187c.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d735383187c.png&#34;
 	
 	
 	
@@ -88,7 +88,7 @@
 &gt;
 ####第三步，&lt;code&gt;s Choose a serial number&lt;/code&gt;
 即输入序列号，进去之后会有两个选项，一个是&lt;code&gt;a Generate a random serial number&lt;/code&gt;，即随机生成一个SN，如果玩黑的直接选这个即可。如果有SN码则选择第二个&lt;code&gt;m Enter a serial number&lt;/code&gt;，输入后回车会提示&lt;code&gt;Invalid serial, continue?&lt;/code&gt;，不理，确认即可。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/08/12/64d735fb61ff8.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d735fb61ff8.png&#34;
 	
 	
 	
@@ -100,7 +100,7 @@
 &gt;
 ####第四步，&lt;code&gt;Addone&lt;/code&gt;
 即插件安装，默认会安装&lt;code&gt;misc&lt;/code&gt;和&lt;code&gt;acpid&lt;/code&gt;这两个插件，其他可以手动选择，好像对我都没用，所以就保留默认了。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/08/12/64d7365373041.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d7365373041.png&#34;
 	
 	
 	
@@ -113,7 +113,7 @@
 ####第五步，&lt;code&gt;x Cmdline menu&lt;/code&gt;
 这个界面可以对一些详细的配置进行修改，比如有两个网口，想设置第二个网口的mac，则可以在&lt;code&gt;a Add/edit a cmdline item&lt;/code&gt;中输入&lt;code&gt;mac2&lt;/code&gt;并回车，然后输入MAC2的地址即可，其他例如U盘的PID和VID也可以通过这个方式修改。其他选项如字面意思理解，此处不赘述。（更正：不需要设置PID和VID，见&lt;a class=&#34;link&#34; href=&#34;https://github.com/fbelavenuto/arpl/blob/main/README-Zh.md&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/fbelavenuto/arpl/blob/main/README-Zh.md&lt;/a&gt;）
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/08/12/64d736c8d7f49.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d736c8d7f49.png&#34;
 	
 	
 	
@@ -123,7 +123,7 @@
 	
 	
 &gt;
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/08/12/64d737ff28aa9.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d737ff28aa9.png&#34;
 	
 	
 	
@@ -135,7 +135,7 @@
 &gt;
 ####第六步，&lt;code&gt;i Synoinfo menu&lt;/code&gt;
 展示和修改群晖的相关信息，一般不用修改。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/08/12/64d73782ec5b5.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d73782ec5b5.png&#34;
 	
 	
 	
@@ -147,7 +147,7 @@
 &gt;
 ####第七步，&lt;code&gt;v Advanced menu&lt;/code&gt;
 高级菜单，内容包含&lt;code&gt;切换LKM版本&lt;/code&gt;、&lt;code&gt;模块&lt;/code&gt;、&lt;code&gt;手动编辑配置文件&lt;/code&gt;、&lt;code&gt;尝试恢复DSM启动盘&lt;/code&gt;以及&lt;code&gt;展示SATA端口和设备&lt;/code&gt;，一般只用看看最后一项检查SATA是否安装正常即可。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/08/12/64d738622c42c.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d738622c42c.png&#34;
 	
 	
 	
@@ -158,7 +158,7 @@
 	
 &gt;
 我的主板有两个SATA控制器，一共四个端口，因为我只安装一块硬盘，所以&lt;code&gt;Port 1&lt;/code&gt;是亮的。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/08/12/64d7392c59480.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d7392c59480.png&#34;
 	
 	
 	
@@ -170,7 +170,7 @@
 &gt;
 ####第八步，&lt;code&gt;Build the loader&lt;/code&gt;
 即编译启动器，它会自动下载所需文件并进行编译，直到提示&lt;code&gt;Ready&lt;/code&gt;会自动退出。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/08/12/64d739dd66108.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d739dd66108.png&#34;
 	
 	
 	
@@ -182,7 +182,7 @@
 &gt;
 ####第九步，&lt;code&gt;b Boot the loader&lt;/code&gt;
 此处即可开始启动了。此步骤会受U盘读写速度影响，（如果U盘带灯能看到狂闪）选择之后会卡一段时间直到显示&lt;code&gt;Booting...&lt;/code&gt;，需要等待。如果有接显示器，此时会看到关机了，需要手动启动。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/08/12/64d73a4103d18.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d73a4103d18.png&#34;
 	
 	
 	
@@ -194,7 +194,7 @@
 &gt;
 ###4.安装固件
 浏览器登陆https://find.synology.com会查找到刚才安装的群晖。不知道为什么，群晖助手一直都显示不到，只有通过浏览器查找才可以。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/08/12/64d73fb7a7d36.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d73fb7a7d36.png&#34;
 	
 	
 	
@@ -204,7 +204,7 @@
 	
 	
 &gt;
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/08/12/64d73ffacb153.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d73ffacb153.png&#34;
 	
 	
 	
@@ -214,7 +214,7 @@
 	
 	
 &gt;
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/08/12/64d74024b8445.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d74024b8445.png&#34;
 	
 	
 	

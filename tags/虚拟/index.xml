@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Wed, 13 Aug 2025 01:59:05 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E8%99%9A%E6%8B%9F/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 13 Aug 2025 04:01:03 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E8%99%9A%E6%8B%9F/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>[好软推荐]Winlator 在安卓上运行exe程序的更好方案</title>
         <link>https://blog.tama.guru/software/Winlator.html</link>
         <pubDate>Sun, 12 Nov 2023 13:51:00 +0800</pubDate>
@@ -38,7 +38,7 @@
 5.显卡驱动分为LLVMpipe(Software) Turnip+Zink和VirGL三种，按网上的说法Vrigl版兼容性更好，Turnip+Zink版速度快（但是turnip只支持部分高通gpu6的手机），LLVMpipe使用软件编解码，貌似占用资源更高，新手机建议用Vrigl减少兼容性问题。
 6.Box版本保留默认即可。
 7.处理器核心开关根据自己的手机选择，麒麟9000s默认只开CPU4-7，我保留这个配置使用无异常。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/12/65505f763eeec.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/65505f763eeec.png&#34;
 	
 	
 	
@@ -49,7 +49,7 @@
 	
 &gt;
 8.WINE注册表项和DX组件基本上只需要保留默认。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/12/6550648240862.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/6550648240862.png&#34;
 	
 	
 	
@@ -59,7 +59,7 @@
 	
 	
 &gt;
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/12/655064bc36369.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655064bc36369.png&#34;
 	
 	
 	
@@ -70,7 +70,7 @@
 	
 &gt;
 9.环境变量这里如果游戏乱码可以设置LC_all这一项，也可以在容器内设置，其他保留默认即可。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/12/655064dc4f24e.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655064dc4f24e.png&#34;
 	
 	
 	
@@ -81,7 +81,7 @@
 	
 &gt;
 10.盘符默认把存储器下的Download文件夹（即下载默认目录）设置成D:，建议新建个文件夹来专门放置游戏并配置盘符。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/12/655065379f824.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655065379f824.png&#34;
 	
 	
 	
@@ -92,7 +92,7 @@
 	
 &gt;
 11.高级设置也只需要保持默认即可。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/12/655065916c6c0.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655065916c6c0.png&#34;
 	
 	
 	
@@ -108,7 +108,7 @@
 &lt;li&gt;建议配置完成后安装&lt;a class=&#34;link&#34; href=&#34;https://share.tama.guru/AliDisk/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/Winlator/setup.exe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;常见运行库包&lt;/a&gt;以及&lt;a class=&#34;link&#34; href=&#34;https://share.tama.guru/d/AliDisk/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/Winlator/Chs%20Fonts%28zh_CN%29.exe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;中文字体补丁&lt;/a&gt;，安装运行库需要10分钟左右时间，安装中文字体补丁时可能会提示需要安装Wine Geckc，按要求点击安装即可，如果WiFi下载慢建议用流量下载。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/12/655066d472356.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655066d472356.png&#34;
 	
 	
 	
@@ -120,7 +120,7 @@
 &gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;使用截图&#34;&gt;使用截图
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/12/655067b1d3705.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655067b1d3705.png&#34;
 	
 	
 	
@@ -130,7 +130,7 @@
 	
 	
 &gt;
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/12/655067bee434d.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655067bee434d.png&#34;
 	
 	
 	

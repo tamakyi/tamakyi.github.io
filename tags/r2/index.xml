@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Wed, 13 Aug 2025 01:59:05 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/r2/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 13 Aug 2025 04:01:03 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/r2/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>r2的安全性配置（主要是缓存）</title>
         <link>https://blog.tama.guru/post/r2_waf_rules.html.html</link>
         <pubDate>Tue, 20 Aug 2024 02:36:00 +0800</pubDate>
@@ -17,7 +17,7 @@
 &lt;h4 id=&#34;缓存&#34;&gt;缓存
 &lt;/h4&gt;&lt;p&gt;对于资源的缓存配置好可以避免直接访问到桶里的数据，我看了下能配置的入口有两个：
 一是在存储桶内的设置项配置&lt;code&gt;CORS策略&lt;/code&gt;，主要是添加&lt;code&gt;&amp;quot;MaxAgeSeconds&amp;quot;: 43200&lt;/code&gt;这一项，在官方文档里的解释是：指定允许浏览器缓存 CORS 预检响应的时间（以秒为单位），最大值是43200，此举可能有一定帮助但不是很确定。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/08/20/66c38c20c94af.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c38c20c94af.png&#34;
 	
 	
 	
@@ -28,7 +28,7 @@
 	
 &gt;
 二是利用Cloudflare的页面规则功能，为R2域名添加缓存设置项：
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/08/20/66c38d1e83739.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c38d1e83739.png&#34;
 	
 	
 	
@@ -39,7 +39,7 @@
 	
 &gt;
 因为我的资源都放在&lt;code&gt;r2.****.***&lt;/code&gt;下，所以我配置的域名是&lt;code&gt;r2.****.***/*&lt;/code&gt;，缓存基本都拉到最大值，经过测试开启后确实也是从本地读取资源了。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/08/20/66c38dad3b00a.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c38dad3b00a.png&#34;
 	
 	
 	
@@ -52,7 +52,7 @@
 另外缓存配置下也有个Cache Rules，不知道和上面有没有冲突，我是一并配置了。&lt;/p&gt;
 &lt;h4 id=&#34;防盗链可选&#34;&gt;防盗链（可选）
 &lt;/h4&gt;&lt;p&gt;防盗链一般使用的是安全性下的WAF-自定义功能，配置的规则方式为：字段：&lt;code&gt;引用方 不包含 允许的域名1&lt;/code&gt; Or &lt;code&gt;引用方 不包含 允许的域名2&lt;/code&gt;&amp;hellip; And &lt;code&gt;主机名 包含 r2地址&lt;/code&gt; 时采取 &lt;code&gt;阻止&lt;/code&gt; 的措施，比如我图中的配置：
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/08/20/66c38f9d3e332.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c38f9d3e332.png&#34;
 	
 	
 	
@@ -63,7 +63,7 @@
 	
 &gt;
 这样就是当不包含blog.tama.guru或tama.host的引用方去访问我的r2域名时，进行阻止，此时直接访问桶内资源已经是提示被ban了。这里的https://可以不要。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/08/20/66c3900eaa9ce.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c3900eaa9ce.png&#34;
 	
 	
 	
@@ -97,7 +97,7 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xxxxxxxxxxxxxxxxxxx.r2.cloudflarestorage.com
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;AK&lt;/code&gt;和&lt;code&gt;SK&lt;/code&gt;是创建桶的时候提供的，如果忘记了就没救了，重新弄个桶吧。
 &lt;code&gt;Encrypt Access Keys with a password&lt;/code&gt;和&lt;code&gt;Use secure transfer(SSL/TSL)&lt;/code&gt;选项保留默认即可。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/01/13/65a2a0bdc8b8c.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/13/65a2a0bdc8b8c.png&#34;
 	
 	
 	

@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Wed, 13 Aug 2025 01:59:05 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E5%B1%8F%E8%94%BD/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 13 Aug 2025 04:01:03 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E5%B1%8F%E8%94%BD/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>[插件推荐]github项目屏蔽插件</title>
         <link>https://blog.tama.guru/software/PurifyGithubSearchPage.html</link>
         <pubDate>Sat, 17 Feb 2024 21:46:00 +0800</pubDate>
@@ -24,7 +24,7 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dinnerNames&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;xxx&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;效果图：
 使用前：
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/02/17/65d0b99ac2876.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/02/17/65d0b99ac2876.png&#34;
 	
 	
 	
@@ -35,7 +35,7 @@
 	
 &gt;
 使用后：
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2024/02/17/65d0bc62d9eb2.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/02/17/65d0bc62d9eb2.png&#34;
 	
 	
 	

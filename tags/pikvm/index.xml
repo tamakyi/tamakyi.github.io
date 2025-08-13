@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Wed, 13 Aug 2025 01:59:05 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/pikvm/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 13 Aug 2025 04:01:03 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/pikvm/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>使用fruity-pikvm实现在64位raspios上运行pikvm</title>
         <link>https://blog.tama.guru/record/fruity-pikvm.html</link>
         <pubDate>Sat, 08 Feb 2025 11:35:42 +0800</pubDate>
@@ -242,7 +242,7 @@ PiKVM was born as a pet project, and the founder likes Arch the most.
 However, we plan to provide an alternative OS image based on Raspbian in the future - now it is quite stable.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;大概意思就是pikvm起步早，当时raspbian还没成型，且raspbian的库中不能满足pikvm的依赖。&lt;strong&gt;但是官方正在计划做基于raspbian的固件&lt;/strong&gt;，简而言之就是现在没有。
 但对我来说，arch系的系统确实难用（&lt;strong&gt;我是debian的狗&lt;/strong&gt;），另一方面我个人觉得，32位系统并不能发挥4B的全部实力。于是今天在逛pikvm的github的时候发现了这么一个issus：&lt;a class=&#34;link&#34; href=&#34;https://github.com/pikvm/pikvm/issues/374&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Running pikvm on top of another OS&lt;/a&gt;下有个评论：&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/08/10/64d4a19558178.png&#34;
+    &gt;Running pikvm on top of another OS&lt;/a&gt;下有个评论：&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/10/64d4a19558178.png&#34;
 	
 	
 	
@@ -255,7 +255,7 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 &lt;a class=&#34;link&#34; href=&#34;https://kvmnerds.com/RPiKVM/How_to_Install_PiKVM_onRaspbian_32-bit_OS.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;第一个PDF&lt;/a&gt;介绍了用树莓派官方镜像刷写工具写入32位的raspios并安装pikvm的过程，为什么一定要32位？我不明白。因此决定刷个64位的系统按他的步骤试试看。
 ###刷个RaspiOS
-系统方面我选择的是基于debian 11于20230503更新的当前最新系统。 &lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/08/10/64d4a2b421570.png&#34;
+系统方面我选择的是基于debian 11于20230503更新的当前最新系统。 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/10/64d4a2b421570.png&#34;
 	
 	
 	
@@ -804,7 +804,7 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;If it doesn&amp;#39;&lt;/span&gt;t work, &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt; reboot one last time.
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Please make sure kvmd services are running after reboot.
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Raspbian pikvm installer script completed on Thu &lt;span class=&#34;m&#34;&gt;10&lt;/span&gt; Aug 17:18:18 CST &lt;span class=&#34;m&#34;&gt;2023&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;好像是受上面的配置影响，字面上理解是OTG这部分出问题了，但是不管了，先进&lt;code&gt;https://tama&lt;/code&gt;看看 ： &lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/08/10/64d4ac937ca7b.png&#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;好像是受上面的配置影响，字面上理解是OTG这部分出问题了，但是不管了，先进&lt;code&gt;https://tama&lt;/code&gt;看看 ： &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/10/64d4ac937ca7b.png&#34;
 	
 	
 	
@@ -857,7 +857,7 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 &lt;code&gt;# 5.6   05/24/23 - added override entry to fix the Invalid value &#39;&#39; for key &#39;kvmd/server/unix&#39;: None argument error&lt;/code&gt;
 (|||ﾟДﾟ)?server报错是没有，但是还有个streamer报错啊？
 我上discord翻了下，发现有人也报过这个错误：
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/08/10/64d4b8cc9513b.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/10/64d4b8cc9513b.png&#34;
 	
 	
 	

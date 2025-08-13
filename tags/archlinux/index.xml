@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Wed, 13 Aug 2025 01:59:05 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/archlinux/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 13 Aug 2025 04:01:03 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/archlinux/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>在archlinux正确的使用xrdp以及碰到的问题</title>
         <link>https://blog.tama.guru/record/archlinux_xrdp.html</link>
         <pubDate>Mon, 05 Feb 2024 23:58:41 +0800</pubDate>
@@ -98,7 +98,7 @@ i3w / dwm:&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后重启nginx：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl retstart nginx
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;就不会报错了，访问也没问题。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/30/6567f220cd216.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/30/6567f220cd216.png&#34;
 	
 	
 	
@@ -139,7 +139,7 @@ i3w / dwm:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cd /usr/share/nginx/html
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://raw.githubusercontent.com/582033/monitor/master/monitor.php
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后访问ip/monitor.php：
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/30/6567f6f37060a.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/30/6567f6f37060a.png&#34;
 	
 	
 	
@@ -688,7 +688,7 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
 基本上是国内专属问题了，归根结底就是网络原因和&amp;quot;steam.cloud&amp;quot;连接有问题导致更新无法进行，而更新又是必须的就导致了这个死循环。
 有网友说我有科技，直接开科技不就行了？如果是在路由的话这必须要设置全局代理，因为SteamDeck的WIFI连接界面不能手动设置代理。用手机开热点或许也是一个好办法，但是实测我的流量根本没走，可能是我的姿势不对吧。
 还有网友说在安装界面直接长按电源键硬重启，多几次就能跳过，我试了四五次也不行。其中一次关机重启后进入到一个有LOGO+进度条及网速的界面，也在提示install update，但是更新完自动重启之后还是问题依旧。
-目前我唯一测试通过的方法就是手机挂UU加速器（亲测雷神无效）加速steam（仅加速商店是免费的），然后开热点，SteamDeck这边开机的时候要设置为英文+UTC-8时区（即默认设置）再连接热点更新，大概率等待半小时就能通过了，手机这边如果开了流量监控，就会发现流量基本1.5m/s这个速度走（峰值4-5m/s），如果没动的话，建议重启加速器或是点击SteamDeck上的Back返回上一步重新开始，直到流量正常出去。大概也就花费1-2G。（下图是我更新了两次）&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/02/02/63db0743c8f68.png&#34;
+目前我唯一测试通过的方法就是手机挂UU加速器（亲测雷神无效）加速steam（仅加速商店是免费的），然后开热点，SteamDeck这边开机的时候要设置为英文+UTC-8时区（即默认设置）再连接热点更新，大概率等待半小时就能通过了，手机这边如果开了流量监控，就会发现流量基本1.5m/s这个速度走（峰值4-5m/s），如果没动的话，建议重启加速器或是点击SteamDeck上的Back返回上一步重新开始，直到流量正常出去。大概也就花费1-2G。（下图是我更新了两次）&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/02/02/63db0743c8f68.png&#34;
 	
 	
 	

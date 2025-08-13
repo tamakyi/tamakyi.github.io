@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Wed, 13 Aug 2025 01:59:05 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/categories/science/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 13 Aug 2025 04:01:03 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/categories/science/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>不吐不快，谈谈气象雷达图上的“怪圈”</title>
         <link>https://blog.tama.guru/science/doppler.html</link>
         <pubDate>Wed, 27 Jul 2022 12:52:00 +0800</pubDate>
@@ -16,7 +16,7 @@
         <description>&lt;p&gt;文前声明：作者非相关专业人士，部分内容仅代表本人猜测，杠就是你对。&lt;/p&gt;
 &lt;p&gt;7月25日到26日，华北、华中、华东地区迎来了新一轮大规模降雨，前后波及十余省份，历时三十余小时。&lt;/p&gt;
 &lt;p&gt;近两天总能在某音上刷到有关一张气象雷达图的视频，文案经常被配上什么“道家斗法破阵”，评论区也大都是“道长出山了”“一个坚定的唯物主义者陷入了沉思”“科学两个字卡在喉咙里”这种画风。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2022/10/15/634a5c889b873.jpg&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c889b873.jpg&#34;
 	
 	
 	
@@ -27,7 +27,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;首先，气象多普勒雷达的探测区域本来就是一个以雷达为圆心的圆，探测边界外没有数据，和探测区域内形成对比就会有圆形的轮廓。其次，经常关注气象的话，会发现环形的雷达回波图并不罕见，这通常是因为雷达受到了干扰，或雷达站输出的数据错误。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2022/10/15/634a5c88781a4.jpg&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88781a4.jpg&#34;
 	
 	
 	
@@ -38,7 +38,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;根据视频截图大致定位，“怪圈”的圆心位置大约位于湖北省随州市。翻阅随州市7月26日01:00到05:00的气象雷达回波图可以发现，在7月26日04:12分后，雷达没有了数据。而在04:12分的回波图中，雷达所在地正是高雷达反射率的区域，这代表该片区域当时很可能正在遭遇强对流天气。随州市气象台于26日晨发布的暴雨橙色预警也证实了这一点。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2022/10/15/634a5c888b229.gif&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c888b229.gif&#34;
 	
 	
 	
@@ -48,7 +48,7 @@
 	
 	
 &gt;
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2022/10/15/634a5c88ac981.jpg&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88ac981.jpg&#34;
 	
 	
 	
@@ -60,7 +60,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;因此我猜测，是强降雨干扰了雷达正常工作，没有数据输出，而某天气APP也出现了BUG，在对雷达回波图进行拼图时使用了错误的数据，导致这个奇怪的红圈出现。&lt;/p&gt;
 &lt;p&gt;其实本来一张错误的雷达回波图根本算不了什么，但时间又恰巧赶上了南京“夏日祭”这事，就有人将这张图联想到宗教的方向，说是“道长出山施法破日本的阵”，我相信不少人是抱着开玩笑的态度说的这种话，但评论里的某些神棍言论让人不禁感叹基础教育任重道远。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2022/10/15/634a5c88781a4.jpg&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88781a4.jpg&#34;
 	
 	
 	

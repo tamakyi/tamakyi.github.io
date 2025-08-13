@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Wed, 13 Aug 2025 01:59:05 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/typecho/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 13 Aug 2025 04:01:03 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/typecho/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>再见了 TypeCho</title>
         <link>https://blog.tama.guru/new-record/typecho.html</link>
         <pubDate>Tue, 01 Jul 2025 21:46:00 +0800</pubDate>
@@ -34,7 +34,7 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 &lt;h3 id=&#34;介绍&#34;&gt;介绍
 &lt;/h3&gt;&lt;p&gt;RuleApi，基于typecho正式版数据库，使用JAVA语言Springboot框架，整合redis缓存数据库，COS、OSS对象存储，是目前typecho程序功能最全，接口最完善，用户体验最好，且性能最佳的API程序。集成了用户模块（登陆，注册，邮箱验证，用户查询，用户修改），文章模块，评论模块，分类模块，和上传模块（三合一上传方式，OSS，COS，本地上传均可），在安装完成后，可以进一步扩展typecho网站的功能，并实现更强大的性能，更全面的应用范围。&lt;/p&gt;
 &lt;h3 id=&#34;截图&#34;&gt;截图
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/17/65576a92ee3f8.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65576a92ee3f8.png&#34;
 	
 	
 	
@@ -44,7 +44,7 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 	
 	
 &gt;
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/17/65576aa82e79e.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65576aa82e79e.png&#34;
 	
 	
 	
@@ -154,7 +154,7 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    proxy_set_header REMOTE-HOST $remote_addr;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;注意修改端口。之后访问https://rule.tama.host可以进入可视化管理页面。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/17/65577208c1bb8.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65577208c1bb8.png&#34;
 	
 	
 	
@@ -165,7 +165,7 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 	
 &gt;
 首次进去先点击安装及更新，每次更新之后都要点这个。此处需要填写&lt;code&gt;webinfo.key&lt;/code&gt;中配置的key。更新完成后关闭界面可以进入管理中心。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/17/6557722f7f421.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/6557722f7f421.png&#34;
 	
 	
 	
@@ -179,7 +179,7 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 &lt;/h4&gt;&lt;p&gt;这里的参数很多，我的修改只为了保证程序的运行，其他细项可以自行修改。
 &lt;code&gt;安全设置&lt;/code&gt;建议打开机器人限制模式。
 &lt;code&gt;应用模块-应用管理&lt;/code&gt;是重要的步骤，内容可以按自己的设置添加修改：
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/17/6557734790de7.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/6557734790de7.png&#34;
 	
 	
 	
@@ -188,7 +188,7 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 		alt=&#34;应用设置1&#34;
 	
 	
-&gt;&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/17/655773783661e.png&#34;
+&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/655773783661e.png&#34;
 	
 	
 	
@@ -199,7 +199,7 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 	
 &gt;
 之后会得到一个&lt;code&gt;应用key&lt;/code&gt;。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/17/655773af8f48f.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/655773af8f48f.png&#34;
 	
 	
 	
@@ -211,7 +211,7 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 &gt;
 之后还需要到存储模块设置一个上传文件/视频的方式，可以选择OSS/COS/FTP/本地上传。如果使用本地上传，需要把本地&amp;amp;FTP图片访问地址修改为：&lt;code&gt;https://rule.tama.host/images/&lt;/code&gt;，rule.tama.host修改成你ruleapi的地址。（来自：&lt;a class=&#34;link&#34; href=&#34;https://www.ijkxs.com/9955.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://www.ijkxs.com/9955.html&lt;/a&gt;）
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/17/65577452b2529.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65577452b2529.png&#34;
 	
 	
 	
@@ -233,7 +233,7 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 Github:&lt;a class=&#34;link&#34; href=&#34;https://github.com/buxia97/RuleApi&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/buxia97/RuleApp&lt;/a&gt;
 假设下载的目录是C:\Files\RuleApp，打开HBulderX，并执行&lt;code&gt;文件&amp;gt;导入&amp;gt;从本地目录导入&lt;/code&gt;
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/17/6557762f65a2d.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/6557762f65a2d.png&#34;
 	
 	
 	
@@ -258,7 +258,7 @@ Github:&lt;a class=&#34;link&#34; href=&#34;https://github.com/buxia97/RuleApi&#
 3.app模块配置中根据需要选择Oauth如果没有配置的话把勾取消掉。
 如果不选择Push的话，每次启动app都会有弹窗提示，建议配置，配置需要到&lt;a class=&#34;link&#34; href=&#34;https://dev.dcloud.net.cn/pages/app/detail&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://dev.dcloud.net.cn/pages/app/detail&lt;/a&gt;中&lt;code&gt;我的应用&amp;gt; 应用名称&amp;gt;Android云端证书&lt;/code&gt;中查看证书详情，并记录sha1 sha256和md5值。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/17/655778cf37399.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/655778cf37399.png&#34;
 	
 	
 	
@@ -270,7 +270,7 @@ Github:&lt;a class=&#34;link&#34; href=&#34;https://github.com/buxia97/RuleApi&#
 &gt;
 然后到&lt;code&gt;各平台信息&lt;/code&gt;中填写对应值，包名也要一并填写。
 然后把数值填写到&lt;code&gt;uniPush&amp;gt;1.0&amp;gt;应用信息&lt;/code&gt;选择APPID，填写应用名称和包名、选择平台并选择Android应用签名。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/17/6557798cb22be.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/6557798cb22be.png&#34;
 	
 	
 	
@@ -281,7 +281,7 @@ Github:&lt;a class=&#34;link&#34; href=&#34;https://github.com/buxia97/RuleApi&#
 	
 &gt;
 保存成功后进入&lt;code&gt;uniPush&amp;gt;1.0&amp;gt;消息推送&amp;gt;配置管理&amp;gt;应用配置&lt;/code&gt;下，把Appid Appkey MasterSectrt值填写到ruleapi的&lt;code&gt;通知模块&amp;gt;UniPush配置&lt;/code&gt;中。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/17/65577a0903248.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65577a0903248.png&#34;
 	
 	
 	
@@ -291,7 +291,7 @@ Github:&lt;a class=&#34;link&#34; href=&#34;https://github.com/buxia97/RuleApi&#
 	
 	
 &gt;
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/17/65577a30b67f8.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65577a30b67f8.png&#34;
 	
 	
 	
@@ -303,7 +303,7 @@ Github:&lt;a class=&#34;link&#34; href=&#34;https://github.com/buxia97/RuleApi&#
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;调试&#34;&gt;调试
 &lt;/h4&gt;&lt;p&gt;到HBulderX的运行中选择运行到浏览器，等几分钟会跳转到浏览器并打开页面，可以查看是否有误。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/17/65577acb6c90f.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65577acb6c90f.png&#34;
 	
 	
 	
@@ -315,7 +315,7 @@ Github:&lt;a class=&#34;link&#34; href=&#34;https://github.com/buxia97/RuleApi&#
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;编译&#34;&gt;编译
 &lt;/h4&gt;&lt;p&gt;执行HBulderX的的发行&amp;gt;原生App-云打包。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/17/65577b174db42.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65577b174db42.png&#34;
 	
 	
 	
@@ -326,7 +326,7 @@ Github:&lt;a class=&#34;link&#34; href=&#34;https://github.com/buxia97/RuleApi&#
 	
 &gt;
 填写包名并选择使用云端证书，点击打包，会提示下载相关依赖，下载完成后会自动启动打包，如果没有配置错误一般三到五分钟后就能生成apk包。
-&lt;img src=&#34;https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/2023/11/17/65577b62916d8.png&#34;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65577b62916d8.png&#34;
 	
 	
 	
