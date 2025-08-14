@@ -1,70 +1,50 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Miniconda on 狼的公告板 ver.Hugo</title>
-        <link>https://blog.tama.guru/tags/miniconda.html</link>
-        <description>Recent content in Miniconda on 狼的公告板 ver.Hugo</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/miniconda/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>zsh下miniconda的正确安装方法及换源方法</title>
-        <link>https://blog.tama.guru/record/miniconda.html</link>
-        <pubDate>Fri, 25 Aug 2023 01:04:56 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/record/miniconda.html</guid>
-        <description>&lt;p&gt;Anaconda 是一个用于科学计算的 Python 发行版，支持 Linux, Mac, Windows, 包含了众多流行的科学计算、数据分析的 Python 包。Miniconda 是一个 Anaconda 的轻量级替代，默认只包含了 python 和 conda，但是可以通过 pip 和 conda 来安装所需要的包。通常情况下安装Miniconda构建虚拟环境是很方便的，但是安装过程中会碰到一些奇怪的问题导致使用时一直报错，这里记录一下一个成功的安装方法。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;####下载并执行安装脚本&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod +x Miniconda3-latest-Linux-x86_64.sh
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bash Miniconda3-latest-Linux-x86_64.sh
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后一路yes,到最后一步是否&lt;code&gt;conda init&lt;/code&gt;一定要选no，不然大概率出问题。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Miniconda on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/miniconda.html</link><description>Recent content in Miniconda on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 14 Aug 2025 03:33:47 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/miniconda/index.xml" rel="self" type="application/rss+xml"/><item><title>zsh下miniconda的正确安装方法及换源方法</title><link>https://blog.tama.guru/record/miniconda.html</link><pubDate>Fri, 25 Aug 2023 01:04:56 +0800</pubDate><guid>https://blog.tama.guru/record/miniconda.html</guid><description>&lt;p>Anaconda 是一个用于科学计算的 Python 发行版，支持 Linux, Mac, Windows, 包含了众多流行的科学计算、数据分析的 Python 包。Miniconda 是一个 Anaconda 的轻量级替代，默认只包含了 python 和 conda，但是可以通过 pip 和 conda 来安装所需要的包。通常情况下安装Miniconda构建虚拟环境是很方便的，但是安装过程中会碰到一些奇怪的问题导致使用时一直报错，这里记录一下一个成功的安装方法。&lt;/p>
+&lt;hr>
+&lt;p>####下载并执行安装脚本&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">chmod +x Miniconda3-latest-Linux-x86_64.sh
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">bash Miniconda3-latest-Linux-x86_64.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后一路yes,到最后一步是否&lt;code>conda init&lt;/code>一定要选no，不然大概率出问题。
 ####修改.zshrc
-文件位于用户名根目录下，打开后在最后一行添加&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;eval &amp;#34;$(/root/miniconda3/bin/conda shell.zsh hook)&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;因为我安装位置在&lt;code&gt;/root&lt;/code&gt;下，如果不是这个路径自行修改。
-然后使文件生效：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;source ~/.zshrc
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;####修改为国内源
-首先执行：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda config --write-default
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后用户目录下会有一个&lt;code&gt;.condarc&lt;/code&gt;的文件，打开，在最后输入&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;channels:
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - defaults
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;show_channel_urls: true
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;default_channels:
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;custom_channels:
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  deepmodeling: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# channel_priority: flexible
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;channel_priority: strict
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# pip_interop_enabled: false
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip_interop_enabled: true
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# safety_checks: warn
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;safety_checks: enabled
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# auto_activate_base: true
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;auto_activate_base: false
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# report_errors:
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;report_errors: false
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;保存，然后执行&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda update --all
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;可以看到现在更新很快了。&lt;/p&gt;
-</description>
-        </item>
-        
-    </channel>
-</rss>
+文件位于用户名根目录下，打开后在最后一行添加&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">eval &amp;#34;$(/root/miniconda3/bin/conda shell.zsh hook)&amp;#34;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>因为我安装位置在&lt;code>/root&lt;/code>下，如果不是这个路径自行修改。
+然后使文件生效：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">source ~/.zshrc
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>####修改为国内源
+首先执行：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">conda config --write-default
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后用户目录下会有一个&lt;code>.condarc&lt;/code>的文件，打开，在最后输入&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">channels:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - defaults
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">show_channel_urls: true
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">default_channels:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">custom_channels:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> deepmodeling: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># channel_priority: flexible
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">channel_priority: strict
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># pip_interop_enabled: false
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pip_interop_enabled: true
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># safety_checks: warn
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">safety_checks: enabled
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># auto_activate_base: true
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">auto_activate_base: false
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># report_errors:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">report_errors: false
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>保存，然后执行&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">conda update --all
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>可以看到现在更新很快了。&lt;/p></description></item></channel></rss>

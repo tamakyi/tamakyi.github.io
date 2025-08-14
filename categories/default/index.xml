@@ -1,146 +1,80 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Default on 狼的公告板 ver.Hugo</title>
-        <link>https://blog.tama.guru/categories/default.html</link>
-        <description>Recent content in Default on 狼的公告板 ver.Hugo</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/categories/default/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>r2的安全性配置（主要是缓存）</title>
-        <link>https://blog.tama.guru/post/r2_waf_rules.html.html</link>
-        <pubDate>Tue, 20 Aug 2024 02:36:00 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/post/r2_waf_rules.html.html</guid>
-        <description>&lt;p&gt;因为本站使用的R2资源比较少，整个桶不过50M，一个月下来B类访问量也不足4W，之前基本上没考虑过什么盗刷的问题，昨天在文章下面有用户提到他的资源访问量比较大，一天下来就有我的数量级了，这种情况下一不小心可能就有机会给Cloudflare打钱。之前本站大部分资源都是仍在OSS上的，从上个月开始访问速度就非常不正常，试着把东西都扔到R2上整体访问速度居然还提升了&amp;hellip;阿里云的防盗刷配置还是比较简单的，R2就没那么直观，可以从以下几个方面入手：&lt;/p&gt;
-&lt;h4 id=&#34;缓存&#34;&gt;缓存
-&lt;/h4&gt;&lt;p&gt;对于资源的缓存配置好可以避免直接访问到桶里的数据，我看了下能配置的入口有两个：
-一是在存储桶内的设置项配置&lt;code&gt;CORS策略&lt;/code&gt;，主要是添加&lt;code&gt;&amp;quot;MaxAgeSeconds&amp;quot;: 43200&lt;/code&gt;这一项，在官方文档里的解释是：指定允许浏览器缓存 CORS 预检响应的时间（以秒为单位），最大值是43200，此举可能有一定帮助但不是很确定。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c38c20c94af.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c38c20c94af.png&#34; alt=&#34;CORS策略&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c38c20c94af.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;CORS策略&#34;
-	
-	
-&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Default on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/categories/default.html</link><description>Recent content in Default on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 14 Aug 2025 03:33:47 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/categories/default/index.xml" rel="self" type="application/rss+xml"/><item><title>r2的安全性配置（主要是缓存）</title><link>https://blog.tama.guru/post/r2_waf_rules.html.html</link><pubDate>Tue, 20 Aug 2024 02:36:00 +0800</pubDate><guid>https://blog.tama.guru/post/r2_waf_rules.html.html</guid><description>&lt;p>因为本站使用的R2资源比较少，整个桶不过50M，一个月下来B类访问量也不足4W，之前基本上没考虑过什么盗刷的问题，昨天在文章下面有用户提到他的资源访问量比较大，一天下来就有我的数量级了，这种情况下一不小心可能就有机会给Cloudflare打钱。之前本站大部分资源都是仍在OSS上的，从上个月开始访问速度就非常不正常，试着把东西都扔到R2上整体访问速度居然还提升了&amp;hellip;阿里云的防盗刷配置还是比较简单的，R2就没那么直观，可以从以下几个方面入手：&lt;/p>
+&lt;h4 id="缓存">缓存
+&lt;/h4>&lt;p>对于资源的缓存配置好可以避免直接访问到桶里的数据，我看了下能配置的入口有两个：
+一是在存储桶内的设置项配置&lt;code>CORS策略&lt;/code>，主要是添加&lt;code>&amp;quot;MaxAgeSeconds&amp;quot;: 43200&lt;/code>这一项，在官方文档里的解释是：指定允许浏览器缓存 CORS 预检响应的时间（以秒为单位），最大值是43200，此举可能有一定帮助但不是很确定。
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/08/20/66c38c20c94af.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/08/20/66c38c20c94af.png" alt="CORS策略" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/08/20/66c38c20c94af.png"
+loading="lazy"
+alt="CORS策略"
+>
 二是利用Cloudflare的页面规则功能，为R2域名添加缓存设置项：
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c38d1e83739.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c38d1e83739.png&#34; alt=&#34;缓存设置项&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c38d1e83739.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;缓存设置项&#34;
-	
-	
-&gt;
-因为我的资源都放在&lt;code&gt;r2.****.***&lt;/code&gt;下，所以我配置的域名是&lt;code&gt;r2.****.***/*&lt;/code&gt;，缓存基本都拉到最大值，经过测试开启后确实也是从本地读取资源了。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c38dad3b00a.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c38dad3b00a.png&#34; alt=&#34;资源测试&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c38dad3b00a.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;资源测试&#34;
-	
-	
-&gt;
-另外缓存配置下也有个Cache Rules，不知道和上面有没有冲突，我是一并配置了。&lt;/p&gt;
-&lt;h4 id=&#34;防盗链可选&#34;&gt;防盗链（可选）
-&lt;/h4&gt;&lt;p&gt;防盗链一般使用的是安全性下的WAF-自定义功能，配置的规则方式为：字段：&lt;code&gt;引用方 不包含 允许的域名1&lt;/code&gt; Or &lt;code&gt;引用方 不包含 允许的域名2&lt;/code&gt;&amp;hellip; And &lt;code&gt;主机名 包含 r2地址&lt;/code&gt; 时采取 &lt;code&gt;阻止&lt;/code&gt; 的措施，比如我图中的配置：
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c38f9d3e332.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c38f9d3e332.png&#34; alt=&#34;防盗链配置&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c38f9d3e332.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;防盗链配置&#34;
-	
-	
-&gt;
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/08/20/66c38d1e83739.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/08/20/66c38d1e83739.png" alt="缓存设置项" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/08/20/66c38d1e83739.png"
+loading="lazy"
+alt="缓存设置项"
+>
+因为我的资源都放在&lt;code>r2.****.***&lt;/code>下，所以我配置的域名是&lt;code>r2.****.***/*&lt;/code>，缓存基本都拉到最大值，经过测试开启后确实也是从本地读取资源了。
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/08/20/66c38dad3b00a.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/08/20/66c38dad3b00a.png" alt="资源测试" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/08/20/66c38dad3b00a.png"
+loading="lazy"
+alt="资源测试"
+>
+另外缓存配置下也有个Cache Rules，不知道和上面有没有冲突，我是一并配置了。&lt;/p>
+&lt;h4 id="防盗链可选">防盗链（可选）
+&lt;/h4>&lt;p>防盗链一般使用的是安全性下的WAF-自定义功能，配置的规则方式为：字段：&lt;code>引用方 不包含 允许的域名1&lt;/code> Or &lt;code>引用方 不包含 允许的域名2&lt;/code>&amp;hellip; And &lt;code>主机名 包含 r2地址&lt;/code> 时采取 &lt;code>阻止&lt;/code> 的措施，比如我图中的配置：
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/08/20/66c38f9d3e332.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/08/20/66c38f9d3e332.png" alt="防盗链配置" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/08/20/66c38f9d3e332.png"
+loading="lazy"
+alt="防盗链配置"
+>
 这样就是当不包含blog.tama.guru或tama.host的引用方去访问我的r2域名时，进行阻止，此时直接访问桶内资源已经是提示被ban了。这里的https://可以不要。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c3900eaa9ce.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c3900eaa9ce.png&#34; alt=&#34;被阻止了&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c3900eaa9ce.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;被阻止了&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;h4 id=&#34;其他事项&#34;&gt;其他事项
-&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;启用如图所示的防盗链规则的话有可能会出现配置允许的域名但是也无法访问的情况，因此建议考虑是否开启，我个人觉得有缓存这一级保护就差不多了。&lt;/li&gt;
-&lt;li&gt;启动规则之后在安全性-事件下会显示访问信息记录，包括IP 国家/区域 试图访问的链接等。我刚配置好就碰到个笨蛋扫我后台&amp;hellip;难崩&amp;hellip;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        <item>
-        <title>简评A380（显卡 不是飞机）</title>
-        <link>https://blog.tama.guru/default/a380-evaluation.html</link>
-        <pubDate>Thu, 21 Mar 2024 23:32:00 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/default/a380-evaluation.html</guid>
-        <description>&lt;p&gt;NAS换成2U服务器之后机箱空间剩了好多，本来想旧物利用，把&lt;del&gt;从哥布林手里抢回来的失明女骑士&lt;/del&gt;P106接上去玩点AI作图，或者是把百来块整的DG1接上做转码卡。结果根本装不进去&amp;hellip;而且DG1的兼容性问题很奇怪，只有第一次装驱动的时候会出现，后面就再也没出现过了&amp;hellip;
-考虑到现在硬盘的价格和后续有转码的需求，于是去某鱼上搞了一张蓝戟半高A380（或者叫DG2）。&lt;/p&gt;
-&lt;p&gt;[scode type=&amp;ldquo;yellow&amp;rdquo;]请注意，在蓝戟官网并没有半高这个版本。[/scode]
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/08/20/66c3900eaa9ce.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/08/20/66c3900eaa9ce.png" alt="被阻止了" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/08/20/66c3900eaa9ce.png"
+loading="lazy"
+alt="被阻止了"
+>&lt;/p>
+&lt;h4 id="其他事项">其他事项
+&lt;/h4>&lt;ul>
+&lt;li>启用如图所示的防盗链规则的话有可能会出现配置允许的域名但是也无法访问的情况，因此建议考虑是否开启，我个人觉得有缓存这一级保护就差不多了。&lt;/li>
+&lt;li>启动规则之后在安全性-事件下会显示访问信息记录，包括IP 国家/区域 试图访问的链接等。我刚配置好就碰到个笨蛋扫我后台&amp;hellip;难崩&amp;hellip;&lt;/li>
+&lt;/ul></description></item><item><title>简评A380（显卡 不是飞机）</title><link>https://blog.tama.guru/default/a380-evaluation.html</link><pubDate>Thu, 21 Mar 2024 23:32:00 +0800</pubDate><guid>https://blog.tama.guru/default/a380-evaluation.html</guid><description>&lt;p>NAS换成2U服务器之后机箱空间剩了好多，本来想旧物利用，把&lt;del>从哥布林手里抢回来的失明女骑士&lt;/del>P106接上去玩点AI作图，或者是把百来块整的DG1接上做转码卡。结果根本装不进去&amp;hellip;而且DG1的兼容性问题很奇怪，只有第一次装驱动的时候会出现，后面就再也没出现过了&amp;hellip;
+考虑到现在硬盘的价格和后续有转码的需求，于是去某鱼上搞了一张蓝戟半高A380（或者叫DG2）。&lt;/p>
+&lt;p>[scode type=&amp;ldquo;yellow&amp;rdquo;]请注意，在蓝戟官网并没有半高这个版本。[/scode]
 [scode type=&amp;ldquo;red&amp;rdquo;]无论是蓝戟官网驱动还是蓝厂官方驱动，安装完后均无法打开面板，貌似是通病。而且在安装后期程序会卡死，如果直接关掉会发现安装程序会还占着几十的CPU。[/scode]
-20240331更新：使用最新版DDU卸载原驱动并安装Intel官方提供的最新驱动，目前已经能安装成功了。如果使用的是Windows自带的安全软件，DDU卸载过程中&lt;code&gt;Antimalware Service Executable&lt;/code&gt;会持续占用CPU并造成卸载过程卡住，需要到安全中心把&lt;code&gt;病毒和威胁防护设置&lt;/code&gt;下的&lt;code&gt;实时保护&lt;/code&gt;等全部关闭，等待卸载完成后再手动开启。驱动安装过程也是如此，全部关闭了之后貌似没有再出现什么问题。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/03/31/6608fe9d84571.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/31/6608fe9d84571.png&#34; alt=&#34;病毒防护设置&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/31/6608fe9d84571.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;病毒防护设置&#34;
-	
-	
-&gt;
-[scode type=&amp;ldquo;yellow&amp;rdquo;]面板在点击最大化按钮时会闪退，目前不清楚时系统问题还是ARK软件问题。[/scode]&lt;/p&gt;
-&lt;p&gt;贴一下A380的常规版本参数：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;频率：核心/显存
+20240331更新：使用最新版DDU卸载原驱动并安装Intel官方提供的最新驱动，目前已经能安装成功了。如果使用的是Windows自带的安全软件，DDU卸载过程中&lt;code>Antimalware Service Executable&lt;/code>会持续占用CPU并造成卸载过程卡住，需要到安全中心把&lt;code>病毒和威胁防护设置&lt;/code>下的&lt;code>实时保护&lt;/code>等全部关闭，等待卸载完成后再手动开启。驱动安装过程也是如此，全部关闭了之后貌似没有再出现什么问题。
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/03/31/6608fe9d84571.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/03/31/6608fe9d84571.png" alt="病毒防护设置" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/03/31/6608fe9d84571.png"
+loading="lazy"
+alt="病毒防护设置"
+>
+[scode type=&amp;ldquo;yellow&amp;rdquo;]面板在点击最大化按钮时会闪退，目前不清楚时系统问题还是ARK软件问题。[/scode]&lt;/p>
+&lt;p>贴一下A380的常规版本参数：&lt;/p>
+&lt;blockquote>
+&lt;p>频率：核心/显存
 GPU频率: 2250 MHz
 显存频率: 15.5 Gbps
 Graphics 6GB 96-bit GDDR6
@@ -148,156 +82,104 @@ DirectX® 12 Ultimate
 PCI® Express4.0 支持 1 x
 8針 电源接头
 3 x DisplayPort™ 2.0 with DSC / 1 x HDMI™ 2.0b
-条纹轴流扇 0dB静酷技术 超合金显卡技术 8K分辨率支持&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;在GPU-Z下的信息：
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/03/21/65fc4dd9cd1da.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/21/65fc4dd9cd1da.png&#34; alt=&#34;GPU-Z&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/21/65fc4dd9cd1da.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;GPU-Z&#34;
-	
-	
-&gt;
-值得注意的是它提示能在8&lt;em&gt;4下运行，但只工作在8&lt;/em&gt;3。
-因为这张卡基本上是转码用的，后续测试也基本上只在转码环境下。至于跑分，我觉得这种卡就没必要了，性能就在那，买卡的应该都是为了转码性能吧。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;NEAV1E
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/03/21/65fc50a11d4dc.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/21/65fc50a11d4dc.png&#34; alt=&#34;NEAV1E1&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/21/65fc50a11d4dc.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;NEAV1E1&#34;
-	
-	
-&gt;
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/03/21/65fc50c19deb8.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/21/65fc50c19deb8.png&#34; alt=&#34;NEAV1E2&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/21/65fc50c19deb8.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;NEAV1E2&#34;
-	
-	
-&gt;
-这玩意无论使用什么转码方式都不能调用显卡，全程CPU编码（而且CPU都跑不满），很奇怪。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;HandBrake
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/03/21/65fc522e5fcd0.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/21/65fc522e5fcd0.png&#34; alt=&#34;HandBrake&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/21/65fc522e5fcd0.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;HandBrake&#34;
-	
-	
-&gt;
+条纹轴流扇 0dB静酷技术 超合金显卡技术 8K分辨率支持&lt;/p>&lt;/blockquote>
+&lt;p>在GPU-Z下的信息：
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/03/21/65fc4dd9cd1da.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/03/21/65fc4dd9cd1da.png" alt="GPU-Z" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/03/21/65fc4dd9cd1da.png"
+loading="lazy"
+alt="GPU-Z"
+>
+值得注意的是它提示能在8&lt;em>4下运行，但只工作在8&lt;/em>3。
+因为这张卡基本上是转码用的，后续测试也基本上只在转码环境下。至于跑分，我觉得这种卡就没必要了，性能就在那，买卡的应该都是为了转码性能吧。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>NEAV1E
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/03/21/65fc50a11d4dc.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/03/21/65fc50a11d4dc.png" alt="NEAV1E1" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/03/21/65fc50a11d4dc.png"
+loading="lazy"
+alt="NEAV1E1"
+>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/03/21/65fc50c19deb8.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/03/21/65fc50c19deb8.png" alt="NEAV1E2" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/03/21/65fc50c19deb8.png"
+loading="lazy"
+alt="NEAV1E2"
+>
+这玩意无论使用什么转码方式都不能调用显卡，全程CPU编码（而且CPU都跑不满），很奇怪。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>HandBrake
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/03/21/65fc522e5fcd0.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/03/21/65fc522e5fcd0.png" alt="HandBrake" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/03/21/65fc522e5fcd0.png"
+loading="lazy"
+alt="HandBrake"
+>
 使用AV1（Intel QSV）编码，大概是10400的UHD630编码265的4-5倍&amp;hellip;，相同码率下导出的视频是原视频大小的1/2到1/3。但是还是很奇怪，CPU会跑到80-90的占用率，A380只跑了50-60的占用率&amp;hellip;
-其他的后面再测试。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</description>
-        </item>
-        <item>
-        <title>更换了tama.host的模板，现在更像个导航页了</title>
-        <link>https://blog.tama.guru/default/tama-host-remake.html</link>
-        <pubDate>Sat, 28 Oct 2023 01:03:08 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/default/tama-host-remake.html</guid>
-        <description>&lt;p&gt;导航站的地址不变，依旧是&lt;a class=&#34;link&#34; href=&#34;https://tama.host/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://tama.host/&lt;/a&gt;，只不过原来的版本就只有一个搜索框（其实右侧可以打开导航列表，但是不明显），而且当时脑子一抽用了黄黑做网站logo，我在外面打开自己的网站都脸红！
-而新的导航页基于&lt;a class=&#34;link&#34; href=&#34;https://github.com/ch3nnn/webstack-go&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;webstack-go项目&lt;/a&gt;，界面简洁干净，且可以选择后台添加内容（纯静态版本就需要手动修改html，上班时间我是打开一个小小的窗口一点点的改，里面天量的div一不小心就错删）。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/10/28/653beb5662d21.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/10/28/653beb5662d21.png&#34; alt=&#34;首页&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/10/28/653beb5662d21.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;首页&#34;
-	
-	
-&gt;
-现在我所做的修改包括：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;把部分静态资源文件扔到OSS上。目前主要是CSS和JS文件以及部分的图片，字体因为阿里云跨域问题保留使用fontawesome和lineicons，至于图标，等以后添加得差不多了再上传。&lt;/li&gt;
-&lt;li&gt;原来本站的匿名提问箱使用的部分资源位于tama.host下，更换之后这部分无法访问（具体就是10月26日晚至27日中午访问提问箱会出现首页弹窗报错，部分内容不显示），现已新增二级域名并迁移。&lt;/li&gt;
-&lt;li&gt;把我edge浏览器上杂七杂八的标签整理汇总并分享，后续有好东西会慢慢增加。&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        <item>
-        <title>AMD直播推流真的就是一坨答辩！</title>
-        <link>https://blog.tama.guru/default/adm_stream.html</link>
-        <pubDate>Sun, 07 May 2023 16:57:09 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/default/adm_stream.html</guid>
-        <description>&lt;p&gt;AMD在编解码这一块就是一坨大便！
-最近把平台从Intel转到AMD，现在家里的两台机器已经是清一色的红厂CPU了。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-  &lt;tr&gt;
-    &lt;th colspan=&#34;2&#34;&gt;主电脑&lt;/th&gt;
-  &lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-    &lt;td&gt;CPU:&lt;/td&gt;
-    &lt;td&gt;5700X&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;显卡：&lt;/td&gt;
-    &lt;td&gt;3060ti&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td colspan=&#34;2&#34;&gt;备胎机&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;CPU:&lt;/td&gt;
-    &lt;td&gt;2200G&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;显卡：&lt;/td&gt;
-    &lt;td&gt;核显Vega8&lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+其他的后面再测试。&lt;/p>
+&lt;/li>
+&lt;/ul></description></item><item><title>更换了tama.host的模板，现在更像个导航页了</title><link>https://blog.tama.guru/default/tama-host-remake.html</link><pubDate>Sat, 28 Oct 2023 01:03:08 +0800</pubDate><guid>https://blog.tama.guru/default/tama-host-remake.html</guid><description>&lt;p>导航站的地址不变，依旧是&lt;a class="link" href="https://tama.host/" target="_blank" rel="noopener"
+>https://tama.host/&lt;/a>，只不过原来的版本就只有一个搜索框（其实右侧可以打开导航列表，但是不明显），而且当时脑子一抽用了黄黑做网站logo，我在外面打开自己的网站都脸红！
+而新的导航页基于&lt;a class="link" href="https://github.com/ch3nnn/webstack-go" target="_blank" rel="noopener"
+>webstack-go项目&lt;/a>，界面简洁干净，且可以选择后台添加内容（纯静态版本就需要手动修改html，上班时间我是打开一个小小的窗口一点点的改，里面天量的div一不小心就错删）。
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/10/28/653beb5662d21.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/10/28/653beb5662d21.png" alt="首页" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/10/28/653beb5662d21.png"
+loading="lazy"
+alt="首页"
+>
+现在我所做的修改包括：&lt;/p>
+&lt;ul>
+&lt;li>把部分静态资源文件扔到OSS上。目前主要是CSS和JS文件以及部分的图片，字体因为阿里云跨域问题保留使用fontawesome和lineicons，至于图标，等以后添加得差不多了再上传。&lt;/li>
+&lt;li>原来本站的匿名提问箱使用的部分资源位于tama.host下，更换之后这部分无法访问（具体就是10月26日晚至27日中午访问提问箱会出现首页弹窗报错，部分内容不显示），现已新增二级域名并迁移。&lt;/li>
+&lt;li>把我edge浏览器上杂七杂八的标签整理汇总并分享，后续有好东西会慢慢增加。&lt;/li>
+&lt;/ul></description></item><item><title>AMD直播推流真的就是一坨答辩！</title><link>https://blog.tama.guru/default/adm_stream.html</link><pubDate>Sun, 07 May 2023 16:57:09 +0800</pubDate><guid>https://blog.tama.guru/default/adm_stream.html</guid><description>&lt;p>AMD在编解码这一块就是一坨大便！
+最近把平台从Intel转到AMD，现在家里的两台机器已经是清一色的红厂CPU了。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th colspan="2">主电脑&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>CPU:&lt;/td>
+&lt;td>5700X&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>显卡：&lt;/td>
+&lt;td>3060ti&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan="2">备胎机&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>CPU:&lt;/td>
+&lt;td>2200G&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>显卡：&lt;/td>
+&lt;td>核显Vega8&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
 自己打打游戏都还好，但是在换上新CPU的第一次直播我就发现，我这端开始提示`编码过载`，然后别人看直播都是一卡一卡的。这就很奇怪，明明配置比之前高了不少，而且设置也没改过，怎么会这样呢？水土不服？无论是奥德赛、欧卡，甚至是Muse Dash这种不是很依赖3D性能的游戏都很卡。
 ![这是当前的OBS配置，没有改动过][1]
 我自己玩起来是一点卡顿都没有的，那么有问题的很可能就是CPU。10400换了5700X之后，最重要的一个地方是核显没了，是不是这个原因呢？经过一番搜索，比如这里：[OBS编码详解][2]
@@ -306,247 +188,226 @@ PCI® Express4.0 支持 1 x
 ![下面的评论][5]
 AMD有这么拉吗？我平台都换了，总不能再换回去吧...
 我试想了几个解决方案：
-&lt;ol&gt;
-&lt;li&gt;通过内网用二胎机用VEGA8做推流编码工作。
-主要是看到这篇文章：&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/49187146&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://zhuanlan.zhihu.com/p/49187146&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;blockquote&gt;
-&lt;p&gt;游戏机只负责玩游戏，由于游戏机通过显卡连了根线到采集卡，所以他把采集卡当做一块显示器，采集卡便采集这块“显示器”的视频数据，并因为装在直播主机上，使得该数据可以被直播机（OBS）捕获（直播主机把采集卡当做一个视频输入源，就像直播机外接了一个摄像头一样）。这样一来，游戏机借由另一台电脑来直播，自身无需承担任何直播相关的性能压力。&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;这个情况和我现在的需求倒是挺像的，也确实有一台可以用作直播主机的机器，问题就是采集卡，好像也有办法直接通过软件推流到另一台电脑上而不需要通过采集卡，还有就是VEGA8能不能应付这个情况？稍微搜索了一下，发现如果要用采集卡的话对卡的质量要求挺高的（也挺贵的），而且我的备胎机是在另一个房间里，那么长的距离传输对延迟和各方面是不是都有一些影响？
-由于备胎平时还要用作NAS，本身机箱空间就小，平时温度挺高的，说实话我不是很想用这个方式，怕的是再加上编码这个活儿稳定性会大幅降低。&lt;/p&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;再加个核显
-也是偶然看到有&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/617531197&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://zhuanlan.zhihu.com/p/617531197&lt;/a&gt;这个文章，第一次知道有外置核显这种玩意 ::acfun:02::
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/645766a9cb0b8.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/645766a9cb0b8.png&#34; alt=&#34;DG1外观&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/645766a9cb0b8.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;DG1外观&#34;
-	
-	
-&gt;
-参数（来源&lt;a class=&#34;link&#34; href=&#34;https://ark.intel.com/content/www/tw/zh/ark/products/211014/intel-iris-xe-dedicated-graphics-card-80-eu.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Intel Ark&lt;/a&gt;)：&lt;/li&gt;
-&lt;/ol&gt;
-&lt;table&gt;
-&lt;thead&gt;
-  &lt;tr&gt;
-    &lt;th&gt;ARK | 比較 Intel® 產品&lt;/th&gt;
-    &lt;th&gt;&lt;/th&gt;
-  &lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-    &lt;td&gt;2023/05/07 16:53:56&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;Intel® Iris® Xe 獨立顯示卡 (80 EU)&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;關鍵元件&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;產品系列&lt;/td&gt;
-    &lt;td&gt;Intel® Iris® Xe 顯示晶片獨立 GPU&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;代號&lt;/td&gt;
-    &lt;td&gt;產品原名&amp;nbsp;&amp;nbsp;DG1&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;狀態&lt;/td&gt;
-    &lt;td&gt;Launched&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;推出日期&lt;/td&gt;
-    &lt;td&gt;Q1&#39;21&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;GPU 規格&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;繪圖最大動態頻率&lt;/td&gt;
-    &lt;td&gt;1500 MHz&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;TDP&lt;/td&gt;
-    &lt;td&gt;28 W&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;PCI Express 設定 ‡&lt;/td&gt;
-    &lt;td&gt;Up to x4 Gen4&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;記憶體規格&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;繪圖記憶體介面&lt;/td&gt;
-    &lt;td&gt;128 bit&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;繪圖記憶體頻寬&lt;/td&gt;
-    &lt;td&gt;68 GB/s&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;繪圖記憶體速度&lt;/td&gt;
-    &lt;td&gt;4267 Gbps&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;支援的技術&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;DirectX* 支援&lt;/td&gt;
-    &lt;td&gt;12.1&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Vulkan* 支援&lt;/td&gt;
-    &lt;td&gt;1&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;OpenGL* 支援&lt;/td&gt;
-    &lt;td&gt;4.6&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;I/O 規格&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;支援的顯示器數量 ‡&lt;/td&gt;
-    &lt;td&gt;3&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;圖形輸出‡&lt;/td&gt;
-    &lt;td&gt;DP 1.4 w/ HDR |&amp;nbsp;&amp;nbsp;HDMI 2.0b&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;最大解析度 (HDMI)‡&lt;/td&gt;
-    &lt;td&gt;4096 x 2160@60Hz&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;最大解析度 (DP)‡&lt;/td&gt;
-    &lt;td&gt;7680 x 4320@60Hz&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;功能&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;H.264 硬體編碼/解碼&lt;/td&gt;
-    &lt;td&gt;是&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;H.265 (HEVC) 硬體編碼/解碼&lt;/td&gt;
-    &lt;td&gt;Yes |&amp;nbsp;&amp;nbsp;12-bit&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;進階技術&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Intel® Adaptix™ 技術&lt;/td&gt;
-    &lt;td&gt;否&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Intel® Deep Learning Boost&lt;/td&gt;
-    &lt;td&gt;是&lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-看起来好像还真有点那回事。今天下单了一张，过段时间到货了测试看看。
-</description>
-        </item>
-        <item>
-        <title>在debian11安装并使用wifite</title>
-        <link>https://blog.tama.guru/default/wifite_in_debian11.html</link>
-        <pubDate>Sat, 02 Jul 2022 20:24:31 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/default/wifite_in_debian11.html</guid>
-        <description>&lt;p&gt;在debian11直接apt install -y wifite 并运行会提示：
-[!] Warning: Recommended app bully was not found. install @ &lt;a class=&#34;link&#34; href=&#34;https://github.com/aanarchyy/bully&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/aanarchyy/bully&lt;/a&gt;
-[!] Warning: Recommended app pyrit was not found. install @ &lt;a class=&#34;link&#34; href=&#34;https://github.com/JPaulMora/Pyrit/wiki&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/JPaulMora/Pyrit/wiki&lt;/a&gt;
-[!] Warning: Recommended app hashcat was not found. install @ &lt;a class=&#34;link&#34; href=&#34;https://hashcat.net/hashcat/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://hashcat.net/hashcat/&lt;/a&gt;
+&lt;ol>
+&lt;li>通过内网用二胎机用VEGA8做推流编码工作。
+主要是看到这篇文章：&lt;a class="link" href="https://zhuanlan.zhihu.com/p/49187146" target="_blank" rel="noopener"
+>https://zhuanlan.zhihu.com/p/49187146&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;blockquote>
+&lt;p>游戏机只负责玩游戏，由于游戏机通过显卡连了根线到采集卡，所以他把采集卡当做一块显示器，采集卡便采集这块“显示器”的视频数据，并因为装在直播主机上，使得该数据可以被直播机（OBS）捕获（直播主机把采集卡当做一个视频输入源，就像直播机外接了一个摄像头一样）。这样一来，游戏机借由另一台电脑来直播，自身无需承担任何直播相关的性能压力。&lt;/p>&lt;/blockquote>
+&lt;p>这个情况和我现在的需求倒是挺像的，也确实有一台可以用作直播主机的机器，问题就是采集卡，好像也有办法直接通过软件推流到另一台电脑上而不需要通过采集卡，还有就是VEGA8能不能应付这个情况？稍微搜索了一下，发现如果要用采集卡的话对卡的质量要求挺高的（也挺贵的），而且我的备胎机是在另一个房间里，那么长的距离传输对延迟和各方面是不是都有一些影响？
+由于备胎平时还要用作NAS，本身机箱空间就小，平时温度挺高的，说实话我不是很想用这个方式，怕的是再加上编码这个活儿稳定性会大幅降低。&lt;/p>
+&lt;ol start="2">
+&lt;li>再加个核显
+也是偶然看到有&lt;a class="link" href="https://zhuanlan.zhihu.com/p/617531197" target="_blank" rel="noopener"
+>https://zhuanlan.zhihu.com/p/617531197&lt;/a>这个文章，第一次知道有外置核显这种玩意 ::acfun:02::
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/05/07/645766a9cb0b8.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/05/07/645766a9cb0b8.png" alt="DG1外观" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/05/07/645766a9cb0b8.png"
+loading="lazy"
+alt="DG1外观"
+>
+参数（来源&lt;a class="link" href="https://ark.intel.com/content/www/tw/zh/ark/products/211014/intel-iris-xe-dedicated-graphics-card-80-eu.html" target="_blank" rel="noopener"
+>Intel Ark&lt;/a>)：&lt;/li>
+&lt;/ol>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>ARK | 比較 Intel® 產品&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>2023/05/07 16:53:56&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>Intel® Iris® Xe 獨立顯示卡 (80 EU)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>關鍵元件&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>產品系列&lt;/td>
+&lt;td>Intel® Iris® Xe 顯示晶片獨立 GPU&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>代號&lt;/td>
+&lt;td>產品原名&amp;nbsp;&amp;nbsp;DG1&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>狀態&lt;/td>
+&lt;td>Launched&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>推出日期&lt;/td>
+&lt;td>Q1'21&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>GPU 規格&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>繪圖最大動態頻率&lt;/td>
+&lt;td>1500 MHz&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>TDP&lt;/td>
+&lt;td>28 W&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>PCI Express 設定 ‡&lt;/td>
+&lt;td>Up to x4 Gen4&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>記憶體規格&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>繪圖記憶體介面&lt;/td>
+&lt;td>128 bit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>繪圖記憶體頻寬&lt;/td>
+&lt;td>68 GB/s&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>繪圖記憶體速度&lt;/td>
+&lt;td>4267 Gbps&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>支援的技術&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>DirectX* 支援&lt;/td>
+&lt;td>12.1&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Vulkan* 支援&lt;/td>
+&lt;td>1&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>OpenGL* 支援&lt;/td>
+&lt;td>4.6&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>I/O 規格&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>支援的顯示器數量 ‡&lt;/td>
+&lt;td>3&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>圖形輸出‡&lt;/td>
+&lt;td>DP 1.4 w/ HDR |&amp;nbsp;&amp;nbsp;HDMI 2.0b&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>最大解析度 (HDMI)‡&lt;/td>
+&lt;td>4096 x 2160@60Hz&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>最大解析度 (DP)‡&lt;/td>
+&lt;td>7680 x 4320@60Hz&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>功能&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>H.264 硬體編碼/解碼&lt;/td>
+&lt;td>是&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>H.265 (HEVC) 硬體編碼/解碼&lt;/td>
+&lt;td>Yes |&amp;nbsp;&amp;nbsp;12-bit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>進階技術&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Intel® Adaptix™ 技術&lt;/td>
+&lt;td>否&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Intel® Deep Learning Boost&lt;/td>
+&lt;td>是&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+看起来好像还真有点那回事。今天下单了一张，过段时间到货了测试看看。</description></item><item><title>在debian11安装并使用wifite</title><link>https://blog.tama.guru/default/wifite_in_debian11.html</link><pubDate>Sat, 02 Jul 2022 20:24:31 +0800</pubDate><guid>https://blog.tama.guru/default/wifite_in_debian11.html</guid><description>&lt;p>在debian11直接apt install -y wifite 并运行会提示：
+[!] Warning: Recommended app bully was not found. install @ &lt;a class="link" href="https://github.com/aanarchyy/bully" target="_blank" rel="noopener"
+>https://github.com/aanarchyy/bully&lt;/a>
+[!] Warning: Recommended app pyrit was not found. install @ &lt;a class="link" href="https://github.com/JPaulMora/Pyrit/wiki" target="_blank" rel="noopener"
+>https://github.com/JPaulMora/Pyrit/wiki&lt;/a>
+[!] Warning: Recommended app hashcat was not found. install @ &lt;a class="link" href="https://hashcat.net/hashcat/" target="_blank" rel="noopener"
+>https://hashcat.net/hashcat/&lt;/a>
 [!] Warning: Recommended app hcxdumptool was not found. install @ apt install hcxdumptool
 [!] Warning: Recommended app hcxpcapngtool was not found. install @ apt install hcxtools
 [!] Warning: Recommended app macchanger was not found. install @ apt install macchanger
 接下来把他需求的所有组件都安装一遍：
 ①bully:这个安装很简单
-git clone &lt;a class=&#34;link&#34; href=&#34;https://github.com/aanarchyy/bully&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/aanarchyy/bully&lt;/a&gt;
+git clone &lt;a class="link" href="https://github.com/aanarchyy/bully" target="_blank" rel="noopener"
+>https://github.com/aanarchyy/bully&lt;/a>
 cd bully/src/
 make &amp;amp;&amp;amp; make install
 ②pyrit：注意的是pyrit需要python2.7环境，需要先手动安装python2.7:
 apt install -y python2.7 python2.7-dev
-git clone &lt;a class=&#34;link&#34; href=&#34;https://github.com/JPaulMora/Pyrit.git&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/JPaulMora/Pyrit.git&lt;/a&gt;
-pip install psycopg2&lt;br&gt;
+git clone &lt;a class="link" href="https://github.com/JPaulMora/Pyrit.git" target="_blank" rel="noopener"
+>https://github.com/JPaulMora/Pyrit.git&lt;/a>
+pip install psycopg2&lt;br>
 pip install scapy
 cd pyrit &amp;amp;&amp;amp; python2 setup.py clean &amp;amp;&amp;amp; python2 setup.py build
 python2 setup.py install
 ③hashcat：hashcat依赖libconv组件，有可能安装了它找不到，因此可按以下步骤：
-wget &lt;a class=&#34;link&#34; href=&#34;https://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.17.tar.gz&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.17.tar.gz&lt;/a&gt;
+wget &lt;a class="link" href="https://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.17.tar.gz" target="_blank" rel="noopener"
+>https://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.17.tar.gz&lt;/a>
 tar zxvf libiconv-1.17.tar.gz &amp;amp;&amp;amp; cd libiconv-1.17
 ./configure &amp;ndash;prefix=/usr/local
 make &amp;amp;&amp;amp; make install
 有可能还是会出错，搜索一下只不是有多个iconv.h
 find / -name iconv.h
 果然在/usr/local/include下有一个，这个需要改名
-mv /usr/local/include/iconv.h  /usr/local/include/iconv.h.bak
+mv /usr/local/include/iconv.h /usr/local/include/iconv.h.bak
 之后安装hashcat:
-wget &lt;a class=&#34;link&#34; href=&#34;https://hashcat.net/files/hashcat-6.2.5.7z&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://hashcat.net/files/hashcat-6.2.5.7z&lt;/a&gt;
+wget &lt;a class="link" href="https://hashcat.net/files/hashcat-6.2.5.7z" target="_blank" rel="noopener"
+>https://hashcat.net/files/hashcat-6.2.5.7z&lt;/a>
 tar zxvf hashcat-6.2.5.7z
 cd hashcat-6.2.5
-make &amp;amp;&amp;amp; make install&lt;/p&gt;
-</description>
-        </item>
-        
-    </channel>
-</rss>
+make &amp;amp;&amp;amp; make install&lt;/p></description></item></channel></rss>

@@ -1,94 +1,54 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>自选IP on 狼的公告板 ver.Hugo</title>
-        <link>https://blog.tama.guru/tags/%E8%87%AA%E9%80%89ip.html</link>
-        <description>Recent content in 自选IP on 狼的公告板 ver.Hugo</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E8%87%AA%E9%80%89ip/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>使用Cloudflare的SaaS实现自选IP</title>
-        <link>https://blog.tama.guru/record/Cloudflare_SaaS.html</link>
-        <pubDate>Fri, 31 May 2024 23:59:00 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/record/Cloudflare_SaaS.html</guid>
-        <description>&lt;p&gt;前几天闲的没事查一下目前几个域名的续费价格，发现动不动都是几百一年&amp;hellip;如果现有的优惠到期之后我多半是不会再继续用了，趁此机会我购入了一个新的域名，够短，也挺有个性&amp;ndash;&amp;gt;&lt;a class=&#34;link&#34; href=&#34;http://tma.moe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;tma.moe&lt;/a&gt;&amp;lt;&amp;ndash; 不要无端联想某视频番号。因为迁移需要一定时间，目前我打算套个CF用。但是很早之前partner就已经用不了了&amp;hellip;(虽然我还有个域名能用，但是那玩意到期之后也很贵）&lt;/p&gt;
-&lt;p&gt;目前网上的方法基本上是使用SaaS这个功能来实现的，通过这个方式套在一些对国内有特殊优化的网站来借用它们的服务进行解析。我尝试了下确实能用，但目前还找不到一个好的域名能套，目前国内还是一片红&amp;hellip;&lt;/p&gt;
-&lt;h3 id=&#34;前期准备&#34;&gt;前期准备
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;准备两个域名，一个是我们对外提供访问服务的网站，假设为&lt;code&gt;a.com&lt;/code&gt;，&lt;code&gt;a.com&lt;/code&gt;把DNS解析到DNSPOD上。以及一个解析在Cloudflare上并完成解析的&lt;code&gt;b.com&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;Cloudflare绑定了外币卡并开通SaaS服务，具体流程自己百度。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;cloudflare准备&#34;&gt;Cloudflare准备
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;先在Cloudflare的DNS上新增一个A记录，这个域名将作为我们的回源域名，记录值是真实的服务器IP，可以用二级域名，也可以直接用一级，假设我这里留下的&lt;code&gt;back.b.com&lt;/code&gt;，解析到真实服务器IP&lt;code&gt;114.51.4.191&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;然后在左侧的&lt;code&gt;SSL/TLS&lt;/code&gt;下的自定义主机名下新增一个回退源，回退源即为刚才我们配置的&lt;code&gt;back.b.com&lt;/code&gt;，保存之后等待回退源状态显示为：&lt;code&gt;有效&lt;/code&gt;。
-然后点击&lt;code&gt;添加自定义主机名&lt;/code&gt;，自定义主机名内容为我们需要外部访问的&lt;code&gt;a.com&lt;/code&gt;及其二级域名，假设我这里需要外部访问的域名为&lt;code&gt;new.a.com&lt;/code&gt;，就将这个网站填入自定义主机名，其他配置保留原样，然后点击&lt;code&gt;添加自定义主机名&lt;/code&gt;。此时会生成一个TXT主机记录和TXT记录值，假如主机记录是&lt;code&gt;_cf-custom-hostname.new.a.com&lt;/code&gt;，记录值是&lt;code&gt;11233444-eeee-ffff-gggg-3rcfffsdsd&lt;/code&gt;，记住这两个值，至此CF配置完成。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;dnspod准备&#34;&gt;DNSPOD准备
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;首先在&lt;code&gt;a.com&lt;/code&gt;下的记录管理添加一个TXT记录，记录名为&lt;code&gt;_cf-custom-hostname.new&lt;/code&gt;&lt;strong&gt;注意这里只填写前面部分&lt;/strong&gt;，记录值为&lt;code&gt;11233444-eeee-ffff-gggg-3rcfffsdsd&lt;/code&gt;，等待该记录生效。&lt;/li&gt;
-&lt;li&gt;接下来就是实现优选IP的最重要一步：在&lt;code&gt;a.com&lt;/code&gt;下的记录管理添加一或两个记录，可以是A，也可以是CNAME，两个主机记录都是&lt;code&gt;new&lt;/code&gt;，一个线路是境内，一个线路放境外（如果只加一个这里留默认就行了，主要是针对不同线路有不同优化需求的，如果还希望针对不同运营商进行优化，这里还可以细化）。境外随便一个CF的IP基本上都能正常访问，建议放个&lt;code&gt;1.0.0.5&lt;/code&gt;。
-境内这里就要留心了，这里优选域名/ip选不好就很容易一片红。自用线路建议使用&lt;code&gt;[CloudflareST][2]&lt;/code&gt;测试速度最优的IP，也可以用&lt;a class=&#34;link&#34; href=&#34;https://vps789.com/hostmonitor/?hostProvider=CF%E4%BC%98%E9%80%89IP&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;CF优选IP&lt;/a&gt;这样的网站查看一些CF域名/IP的运营商访问速度。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f0e45bb4e.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f0e45bb4e.png&#34; alt=&#34;像第一个三网都还行，第三个移动访问就经常挂了。&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f0e45bb4e.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;像第一个三网都还行，第三个移动访问就经常挂了。&#34;
-	
-	
-&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>自选IP on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/%E8%87%AA%E9%80%89ip.html</link><description>Recent content in 自选IP on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 14 Aug 2025 03:33:47 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E8%87%AA%E9%80%89ip/index.xml" rel="self" type="application/rss+xml"/><item><title>使用Cloudflare的SaaS实现自选IP</title><link>https://blog.tama.guru/record/Cloudflare_SaaS.html</link><pubDate>Fri, 31 May 2024 23:59:00 +0800</pubDate><guid>https://blog.tama.guru/record/Cloudflare_SaaS.html</guid><description>&lt;p>前几天闲的没事查一下目前几个域名的续费价格，发现动不动都是几百一年&amp;hellip;如果现有的优惠到期之后我多半是不会再继续用了，趁此机会我购入了一个新的域名，够短，也挺有个性&amp;ndash;&amp;gt;&lt;a class="link" href="http://tma.moe" target="_blank" rel="noopener"
+>tma.moe&lt;/a>&amp;lt;&amp;ndash; 不要无端联想某视频番号。因为迁移需要一定时间，目前我打算套个CF用。但是很早之前partner就已经用不了了&amp;hellip;(虽然我还有个域名能用，但是那玩意到期之后也很贵）&lt;/p>
+&lt;p>目前网上的方法基本上是使用SaaS这个功能来实现的，通过这个方式套在一些对国内有特殊优化的网站来借用它们的服务进行解析。我尝试了下确实能用，但目前还找不到一个好的域名能套，目前国内还是一片红&amp;hellip;&lt;/p>
+&lt;h3 id="前期准备">前期准备
+&lt;/h3>&lt;ol>
+&lt;li>准备两个域名，一个是我们对外提供访问服务的网站，假设为&lt;code>a.com&lt;/code>，&lt;code>a.com&lt;/code>把DNS解析到DNSPOD上。以及一个解析在Cloudflare上并完成解析的&lt;code>b.com&lt;/code>。&lt;/li>
+&lt;li>Cloudflare绑定了外币卡并开通SaaS服务，具体流程自己百度。&lt;/li>
+&lt;/ol>
+&lt;h3 id="cloudflare准备">Cloudflare准备
+&lt;/h3>&lt;ol>
+&lt;li>先在Cloudflare的DNS上新增一个A记录，这个域名将作为我们的回源域名，记录值是真实的服务器IP，可以用二级域名，也可以直接用一级，假设我这里留下的&lt;code>back.b.com&lt;/code>，解析到真实服务器IP&lt;code>114.51.4.191&lt;/code>。&lt;/li>
+&lt;li>然后在左侧的&lt;code>SSL/TLS&lt;/code>下的自定义主机名下新增一个回退源，回退源即为刚才我们配置的&lt;code>back.b.com&lt;/code>，保存之后等待回退源状态显示为：&lt;code>有效&lt;/code>。
+然后点击&lt;code>添加自定义主机名&lt;/code>，自定义主机名内容为我们需要外部访问的&lt;code>a.com&lt;/code>及其二级域名，假设我这里需要外部访问的域名为&lt;code>new.a.com&lt;/code>，就将这个网站填入自定义主机名，其他配置保留原样，然后点击&lt;code>添加自定义主机名&lt;/code>。此时会生成一个TXT主机记录和TXT记录值，假如主机记录是&lt;code>_cf-custom-hostname.new.a.com&lt;/code>，记录值是&lt;code>11233444-eeee-ffff-gggg-3rcfffsdsd&lt;/code>，记住这两个值，至此CF配置完成。&lt;/li>
+&lt;/ol>
+&lt;h3 id="dnspod准备">DNSPOD准备
+&lt;/h3>&lt;ol>
+&lt;li>首先在&lt;code>a.com&lt;/code>下的记录管理添加一个TXT记录，记录名为&lt;code>_cf-custom-hostname.new&lt;/code>&lt;strong>注意这里只填写前面部分&lt;/strong>，记录值为&lt;code>11233444-eeee-ffff-gggg-3rcfffsdsd&lt;/code>，等待该记录生效。&lt;/li>
+&lt;li>接下来就是实现优选IP的最重要一步：在&lt;code>a.com&lt;/code>下的记录管理添加一或两个记录，可以是A，也可以是CNAME，两个主机记录都是&lt;code>new&lt;/code>，一个线路是境内，一个线路放境外（如果只加一个这里留默认就行了，主要是针对不同线路有不同优化需求的，如果还希望针对不同运营商进行优化，这里还可以细化）。境外随便一个CF的IP基本上都能正常访问，建议放个&lt;code>1.0.0.5&lt;/code>。
+境内这里就要留心了，这里优选域名/ip选不好就很容易一片红。自用线路建议使用&lt;code>[CloudflareST][2]&lt;/code>测试速度最优的IP，也可以用&lt;a class="link" href="https://vps789.com/hostmonitor/?hostProvider=CF%E4%BC%98%E9%80%89IP" target="_blank" rel="noopener"
+>CF优选IP&lt;/a>这样的网站查看一些CF域名/IP的运营商访问速度。
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/05/31/6659f0e45bb4e.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/05/31/6659f0e45bb4e.png" alt="像第一个三网都还行，第三个移动访问就经常挂了。" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/05/31/6659f0e45bb4e.png"
+loading="lazy"
+alt="像第一个三网都还行，第三个移动访问就经常挂了。"
+>
 我们可以使用CNAME套在这些域名上来实现“借用”他们的解析来优化我们的访问。
-我们可以使用&lt;a class=&#34;link&#34; href=&#34;https://ping.cn&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;ping.cn&lt;/a&gt;来测试速度：
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f22dee158.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f22dee158.png&#34; alt=&#34;国内速度，看起来还行&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f22dee158.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;国内速度，看起来还行&#34;
-	
-	
-&gt;
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f24ba9923.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f24ba9923.png&#34; alt=&#34;境外速度，没什么好说的&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f24ba9923.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;境外速度，没什么好说的&#34;
-	
-	
-&gt;
-看起来还行。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;总结&#34;&gt;总结
-&lt;/h3&gt;&lt;p&gt;这样做说实话确实挺麻烦的，首先是每次添加域名都需要在CF上设置一次SaaS添加自定义主机名，然后再在DNSPOD上添加TXT、配置优选解析，而且免费SaaS有上限，虽然那个上限一般人也达不到就是了。而且这样做可以直接使用CF的SSL证书，不用担心免费证书过期的事了。&lt;/p&gt;</description>
-        </item>
-        
-    </channel>
-</rss>
+我们可以使用&lt;a class="link" href="https://ping.cn" target="_blank" rel="noopener"
+>ping.cn&lt;/a>来测试速度：
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/05/31/6659f22dee158.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/05/31/6659f22dee158.png" alt="国内速度，看起来还行" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/05/31/6659f22dee158.png"
+loading="lazy"
+alt="国内速度，看起来还行"
+>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/05/31/6659f24ba9923.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/05/31/6659f24ba9923.png" alt="境外速度，没什么好说的" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/05/31/6659f24ba9923.png"
+loading="lazy"
+alt="境外速度，没什么好说的"
+>
+看起来还行。&lt;/li>
+&lt;/ol>
+&lt;h3 id="总结">总结
+&lt;/h3>&lt;p>这样做说实话确实挺麻烦的，首先是每次添加域名都需要在CF上设置一次SaaS添加自定义主机名，然后再在DNSPOD上添加TXT、配置优选解析，而且免费SaaS有上限，虽然那个上限一般人也达不到就是了。而且这样做可以直接使用CF的SSL证书，不用担心免费证书过期的事了。&lt;/p></description></item></channel></rss>

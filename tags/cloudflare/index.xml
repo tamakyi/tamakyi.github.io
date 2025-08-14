@@ -1,442 +1,361 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Cloudflare on 狼的公告板 ver.Hugo</title>
-        <link>https://blog.tama.guru/tags/cloudflare.html</link>
-        <description>Recent content in Cloudflare on 狼的公告板 ver.Hugo</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/cloudflare/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>[好软推荐] Cloudpaste-开源在线文本/文件分享平台</title>
-        <link>https://blog.tama.guru/record/cloudpaste.html</link>
-        <pubDate>Fri, 18 Jul 2025 10:21:11 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/record/cloudpaste.html</guid>
-        <description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post [好软推荐] Cloudpaste-开源在线文本/文件分享平台" /&gt;&lt;p&gt;之前看到有人推荐了&lt;a class=&#34;link&#34; href=&#34;https://github.com/ling-drag0n/CloudPaste&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;cloudpaste&lt;/a&gt;这个项目，主要作用是能够提供简单的文本及文件分享服务，前后端部分使用GitHub Action+Cloudflare Worker，存储桶部分使用Cloudflare R2等免费服务，即可实现免费使用。除了在国内因为众所周知的原因Worker域名无法访问，需要自行配置域名。&lt;/p&gt;
-&lt;p&gt;前后端配置基本可以直接参照项目内文档：&lt;/p&gt;
-&lt;h5 id=&#34;github-仓库fork和后端配置&#34;&gt;GitHub 仓库fork和后端配置
-&lt;/h5&gt;&lt;p&gt;受限要将仓库fork下来，然后为fork的仓库添加变量，具体路径为仓库的&lt;code&gt;Settings-Secrets and variables-Actions-New repository secrets&lt;/code&gt;。添加的secrets为：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;CLOUDFLARE_API_TOKEN&lt;/li&gt;
-&lt;li&gt;CLOUDFLARE_ACCOUNT_ID&lt;/li&gt;
-&lt;li&gt;ENCRYPTION_SECRET&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;前面两个参数在后面获取到，后面的ENCRYPTION_SECRET可以选填，如果没有会自动生成。&lt;/p&gt;
-&lt;h5 id=&#34;cloudflare-token配置&#34;&gt;CloudFlare TOKEN配置
-&lt;/h5&gt;&lt;p&gt;登录CloudFlare后访问&lt;a class=&#34;link&#34; href=&#34;https://dash.cloudflare.com/profile/api-tokens&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;API令牌管理&lt;/a&gt;界面，创建一个新的API令牌，模版选择&amp;quot;Cloudflare Workers&amp;quot;，并编辑内容添加D1数据库编辑权限，记录下TOKEN，即为后面要用到的&lt;code&gt;CLOUDFLARE_API_TOKEN&lt;/code&gt;。
-&lt;code&gt;CLOUDFLARE_ACCOUNT_ID&lt;/code&gt;位于Cloudflare主界面的右侧。&lt;/p&gt;
-&lt;h5 id=&#34;开通d1和r2并配置pages&#34;&gt;开通D1和R2，并配置Pages
-&lt;/h5&gt;&lt;p&gt;D1位于左侧的存储和数据库下，的D1 SQL数据库；R2位于左侧的R2对象存储。两者都是需要点进去开通即可，其他不需要动。
-D1和R2都有免费额度，可以大胆使用。&lt;/p&gt;
-&lt;h5 id=&#34;github-配置actions前端自动部署&#34;&gt;GitHub 配置Actions前端自动部署
-&lt;/h5&gt;&lt;p&gt;返回到GitHub仓库页，找到Actions，运行&lt;code&gt;deploy-front-cloudflare.yml&lt;/code&gt;这个工作流，初次运行会进行D1数据库和Pages的创建。&lt;/p&gt;
-&lt;h5 id=&#34;配置cloudflare-workers&#34;&gt;配置CloudFlare Workers
-&lt;/h5&gt;&lt;p&gt;Pages现在已经移动到&lt;code&gt;计算（Workers）&lt;/code&gt;下，找到&lt;code&gt;Workers和Pages&lt;/code&gt;，此时应该会看到刚才工作流创建的Pages，我的前端名称是&lt;code&gt;cloudpaste-frontend&lt;/code&gt;，后端为&lt;code&gt;cloudpaste-backend&lt;/code&gt;。
-先配置&lt;code&gt;cloudpaste-backend&lt;/code&gt;，在项目内的&lt;code&gt;设置-变量和机密&lt;/code&gt;，添加一个文本类型的变量，变量名是&lt;code&gt;ENCRYPTION_SECRET&lt;/code&gt;，值即之前我们自己填的或者自动生成的。然后要配置&lt;code&gt;域和路由&lt;/code&gt;，添加一个自定义域，这里最好设置一个自己的域名（例如https://backend.tama.guru），因为默认分配的workers.dev这个域名无法直接访问，使用部分功能时会受限。
-然后到配置&lt;code&gt;cloudpaste-frontend&lt;/code&gt;这边，也是进到&lt;code&gt;设置&lt;/code&gt;，找到&lt;code&gt;变量和机密&lt;/code&gt;，添加一个文本类型的变量，变量名是&lt;code&gt;VITE_BACKEND_URL&lt;/code&gt;，对应的值是刚才在&lt;code&gt;cloudpaste-backend&lt;/code&gt;中的&lt;code&gt;workers.dev&lt;/code&gt;域名或自定义的域名，注意填写末尾不带&amp;quot;/&amp;quot;。同样的，还需要在&lt;code&gt;cloudpaste-frontend&lt;/code&gt;的自定义域配置一个自己的域名（例如https://frontend.tama.guru），并配置好解析。&lt;/p&gt;
-&lt;h5 id=&#34;重新运行前端工作流&#34;&gt;重新运行前端工作流
-&lt;/h5&gt;&lt;p&gt;返回到GitHub仓库页，找到Actions，再次运行&lt;code&gt;deploy-front-cloudflare.yml&lt;/code&gt;这个工作流。运行完成之后之前的配置才回生效，此时可以通过https://frontend.tama.guru访问前端，而对应的后端则是https://backend.tama.guru。&lt;/p&gt;
-&lt;h5 id=&#34;完成初步配置工作&#34;&gt;完成初步配置工作
-&lt;/h5&gt;&lt;p&gt;访问前端地址登录后台，默认的管理员信息是：&lt;strong&gt;用户名: admin, 密码: admin123&lt;/strong&gt;，登录后请马上修改。&lt;/p&gt;
-&lt;h5 id=&#34;挂载s3存储&#34;&gt;挂载S3存储
-&lt;/h5&gt;&lt;p&gt;完成以上工作后仅能实现文本分享和编辑的功能，如果需要实现文件分享还需要配置S3存储，目前建议使用的包括R2、B2、七牛云三个，三个都有免费额度，且经过一段时间的试用相关功能都是正常的。&lt;/p&gt;
-&lt;h6 id=&#34;挂载r2存储桶&#34;&gt;挂载R2存储桶
-&lt;/h6&gt;&lt;p&gt;打开CloudFlare R2对象存储页面，新建一个存储桶，比如我命名为&lt;code&gt;cloudpaste-r2&lt;/code&gt;，并添加一个API令牌。令牌权限为读和写，制定存储桶为&lt;code&gt;cloudpaste-r2&lt;/code&gt;，其他不用动，保存并记录API令牌，然后点进&lt;code&gt;cloudpaste-r2&lt;/code&gt;存储桶，在设置下找到&lt;code&gt;CORS策略&lt;/code&gt;，点击编辑，内容为：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;#34;AllowedOrigins&amp;#34;: [&amp;#34;http://localhost:3000&amp;#34;, &amp;#34;https://根据自己的前端域名来替代，比如我的https://frontend.tama.guru&amp;#34;],
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;#34;AllowedMethods&amp;#34;: [&amp;#34;GET&amp;#34;, &amp;#34;PUT&amp;#34;, &amp;#34;POST&amp;#34;, &amp;#34;DELETE&amp;#34;, &amp;#34;HEAD&amp;#34;],
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;#34;AllowedHeaders&amp;#34;: [&amp;#34;*&amp;#34;],
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;#34;ExposeHeaders&amp;#34;: [&amp;#34;ETag&amp;#34;],
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;#34;MaxAgeSeconds&amp;#34;: 3600
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;]
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后回到前端页面的后台，在S3存储配置下添加一个新配置，&lt;code&gt;配置名称&lt;/code&gt;任意，为了区分我起名和r2存储桶一样的名字&lt;code&gt;cloudpaste-r2&lt;/code&gt;，&lt;code&gt;提供商&lt;/code&gt;为&lt;code&gt;Cloudflare R2&lt;/code&gt;，&lt;code&gt;存储桶名称&lt;/code&gt;即&lt;code&gt;cloudpaste-r2&lt;/code&gt;，&lt;code&gt;存储容量&lt;/code&gt;最好就保留10G，好像就免费10G？&lt;code&gt;端点URL&lt;/code&gt;按要求的格式填写&lt;code&gt;https://&amp;lt;accountid&amp;gt;.r2.cloudflarestorage.com&lt;/code&gt;，&lt;code&gt;accountid&lt;/code&gt;在cloudflare页面下可以找到，也就是前面所说的&lt;code&gt;CLOUDFLARE_ACCOUNT_ID&lt;/code&gt;。&lt;code&gt;区域&lt;/code&gt;根据建桶时所选的位置，我选的亚太，这里就填apac，默认填auto也可以。&lt;code&gt;访问密钥 ID&lt;/code&gt;和&lt;code&gt;秘密访问密钥&lt;/code&gt;即上面申请到的&lt;code&gt;API令牌信息&lt;/code&gt;，其他可以保持默认不变，保存即可。此时点击&lt;code&gt;测试连接&lt;/code&gt;，应该会提示：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;配置完全可用
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;✓ 读权限正常 ✓ 写权限正常 ✓ CORS 配置正确 ✓ 前端上传模拟成功
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果没有配置CORS，这里会提示CORS配置不正确，上传文件时也会报错。&lt;/p&gt;
-&lt;p&gt;最后到&lt;code&gt;挂载管理&lt;/code&gt;处，选择&lt;code&gt;新建挂载点&lt;/code&gt;，&lt;code&gt;挂载点名称&lt;/code&gt;也是任意的，为保持一致我使用&lt;code&gt;cloudpaste-r2&lt;/code&gt;，&lt;code&gt;存储类型&lt;/code&gt;为S3存储，&lt;code&gt;S3存储配置&lt;/code&gt;选择刚才创建的&lt;code&gt;cloudpaste-r2(Cloudflare R2)&lt;/code&gt;，&lt;code&gt;挂载路径&lt;/code&gt;我填写的是&lt;code&gt;/r2&lt;/code&gt;，根据个人情况填写即可，最后&lt;code&gt;勾选启用状态&lt;/code&gt;，选择创建即可。 此时在文件上传页面和挂载浏览页面都可以看到这个&lt;code&gt;r2&lt;/code&gt;挂载点了，可以尝试上传文件，如果提示大小超限需要到后台的&lt;code&gt;系统设置&lt;/code&gt;中调整&lt;code&gt;最大上传文件大小&lt;/code&gt;，并更新设置，该选项默认为100MB。&lt;/p&gt;
-&lt;h6 id=&#34;挂载七牛云对象存储kodo&#34;&gt;挂载七牛云对象存储kodo
-&lt;/h6&gt;&lt;p&gt;我以七牛云作为兼容S3标准的代表，在七牛云的对象存储中选择空间管理-新建空间，存储空间名称和R2中存储桶名称意义一致，我填写的是&lt;code&gt;cloudpaste-qiniu&lt;/code&gt;，存储区域选择国外任意地点（选择国内需要实名），我选择北美-洛杉矶，访问控制选择为私有。还需要配置CORS规则，点进&lt;code&gt;cloudpaste-qiniu&lt;/code&gt;这个桶的&lt;code&gt;空间设置&lt;/code&gt;，&lt;code&gt;跨域设置&lt;/code&gt;内&lt;code&gt;新增规则&lt;/code&gt;，&lt;code&gt;来源&lt;/code&gt;填写我们的&lt;code&gt;前端域名https://frontend.tama.guru&lt;/code&gt;，&lt;code&gt;允许 Methods&lt;/code&gt;我全勾选了，然后保存。
-七牛云并没有针对存储桶有单独的API密钥，需要到&lt;code&gt;个人中心&lt;/code&gt;中的&lt;code&gt;密钥管理&lt;/code&gt;，打开&lt;code&gt;密钥访问权限&lt;/code&gt;，并新增一组AccessKey/SecretKey，保存好这组AK和SK。
-回到网站后台，操作和前面一样，只不过提供商类型要选择其他S3兼容服务，端点URL为：&lt;code&gt;http://存储空间名称.s3.存储区域名称.qiniucs.com&lt;/code&gt;，根据上述配置我这里对应的是&lt;code&gt;http://cloudpaste-qiniu.s3.us-north-1.qiniucs.com&lt;/code&gt;，访问密钥即前面的AK，秘密访问密钥即SK，保存即可，其他参照R2的添加步骤即可。
-需要注意的是，七牛云的免费套餐只支持http。&lt;/p&gt;</description>
-        </item>
-        <item>
-        <title>使用Cloudflare的SaaS实现自选IP</title>
-        <link>https://blog.tama.guru/record/Cloudflare_SaaS.html</link>
-        <pubDate>Fri, 31 May 2024 23:59:00 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/record/Cloudflare_SaaS.html</guid>
-        <description>&lt;p&gt;前几天闲的没事查一下目前几个域名的续费价格，发现动不动都是几百一年&amp;hellip;如果现有的优惠到期之后我多半是不会再继续用了，趁此机会我购入了一个新的域名，够短，也挺有个性&amp;ndash;&amp;gt;&lt;a class=&#34;link&#34; href=&#34;http://tma.moe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;tma.moe&lt;/a&gt;&amp;lt;&amp;ndash; 不要无端联想某视频番号。因为迁移需要一定时间，目前我打算套个CF用。但是很早之前partner就已经用不了了&amp;hellip;(虽然我还有个域名能用，但是那玩意到期之后也很贵）&lt;/p&gt;
-&lt;p&gt;目前网上的方法基本上是使用SaaS这个功能来实现的，通过这个方式套在一些对国内有特殊优化的网站来借用它们的服务进行解析。我尝试了下确实能用，但目前还找不到一个好的域名能套，目前国内还是一片红&amp;hellip;&lt;/p&gt;
-&lt;h3 id=&#34;前期准备&#34;&gt;前期准备
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;准备两个域名，一个是我们对外提供访问服务的网站，假设为&lt;code&gt;a.com&lt;/code&gt;，&lt;code&gt;a.com&lt;/code&gt;把DNS解析到DNSPOD上。以及一个解析在Cloudflare上并完成解析的&lt;code&gt;b.com&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;Cloudflare绑定了外币卡并开通SaaS服务，具体流程自己百度。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;cloudflare准备&#34;&gt;Cloudflare准备
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;先在Cloudflare的DNS上新增一个A记录，这个域名将作为我们的回源域名，记录值是真实的服务器IP，可以用二级域名，也可以直接用一级，假设我这里留下的&lt;code&gt;back.b.com&lt;/code&gt;，解析到真实服务器IP&lt;code&gt;114.51.4.191&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;然后在左侧的&lt;code&gt;SSL/TLS&lt;/code&gt;下的自定义主机名下新增一个回退源，回退源即为刚才我们配置的&lt;code&gt;back.b.com&lt;/code&gt;，保存之后等待回退源状态显示为：&lt;code&gt;有效&lt;/code&gt;。
-然后点击&lt;code&gt;添加自定义主机名&lt;/code&gt;，自定义主机名内容为我们需要外部访问的&lt;code&gt;a.com&lt;/code&gt;及其二级域名，假设我这里需要外部访问的域名为&lt;code&gt;new.a.com&lt;/code&gt;，就将这个网站填入自定义主机名，其他配置保留原样，然后点击&lt;code&gt;添加自定义主机名&lt;/code&gt;。此时会生成一个TXT主机记录和TXT记录值，假如主机记录是&lt;code&gt;_cf-custom-hostname.new.a.com&lt;/code&gt;，记录值是&lt;code&gt;11233444-eeee-ffff-gggg-3rcfffsdsd&lt;/code&gt;，记住这两个值，至此CF配置完成。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;dnspod准备&#34;&gt;DNSPOD准备
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;首先在&lt;code&gt;a.com&lt;/code&gt;下的记录管理添加一个TXT记录，记录名为&lt;code&gt;_cf-custom-hostname.new&lt;/code&gt;&lt;strong&gt;注意这里只填写前面部分&lt;/strong&gt;，记录值为&lt;code&gt;11233444-eeee-ffff-gggg-3rcfffsdsd&lt;/code&gt;，等待该记录生效。&lt;/li&gt;
-&lt;li&gt;接下来就是实现优选IP的最重要一步：在&lt;code&gt;a.com&lt;/code&gt;下的记录管理添加一或两个记录，可以是A，也可以是CNAME，两个主机记录都是&lt;code&gt;new&lt;/code&gt;，一个线路是境内，一个线路放境外（如果只加一个这里留默认就行了，主要是针对不同线路有不同优化需求的，如果还希望针对不同运营商进行优化，这里还可以细化）。境外随便一个CF的IP基本上都能正常访问，建议放个&lt;code&gt;1.0.0.5&lt;/code&gt;。
-境内这里就要留心了，这里优选域名/ip选不好就很容易一片红。自用线路建议使用&lt;code&gt;[CloudflareST][2]&lt;/code&gt;测试速度最优的IP，也可以用&lt;a class=&#34;link&#34; href=&#34;https://vps789.com/hostmonitor/?hostProvider=CF%E4%BC%98%E9%80%89IP&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;CF优选IP&lt;/a&gt;这样的网站查看一些CF域名/IP的运营商访问速度。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f0e45bb4e.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f0e45bb4e.png&#34; alt=&#34;像第一个三网都还行，第三个移动访问就经常挂了。&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f0e45bb4e.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;像第一个三网都还行，第三个移动访问就经常挂了。&#34;
-	
-	
-&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cloudflare on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/cloudflare.html</link><description>Recent content in Cloudflare on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 14 Aug 2025 03:33:47 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/cloudflare/index.xml" rel="self" type="application/rss+xml"/><item><title>[好软推荐] Cloudpaste-开源在线文本/文件分享平台</title><link>https://blog.tama.guru/record/cloudpaste.html</link><pubDate>Fri, 18 Jul 2025 10:21:11 +0800</pubDate><guid>https://blog.tama.guru/record/cloudpaste.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post [好软推荐] Cloudpaste-开源在线文本/文件分享平台" />&lt;p>之前看到有人推荐了&lt;a class="link" href="https://github.com/ling-drag0n/CloudPaste" target="_blank" rel="noopener"
+>cloudpaste&lt;/a>这个项目，主要作用是能够提供简单的文本及文件分享服务，前后端部分使用GitHub Action+Cloudflare Worker，存储桶部分使用Cloudflare R2等免费服务，即可实现免费使用。除了在国内因为众所周知的原因Worker域名无法访问，需要自行配置域名。&lt;/p>
+&lt;p>前后端配置基本可以直接参照项目内文档：&lt;/p>
+&lt;h5 id="github-仓库fork和后端配置">GitHub 仓库fork和后端配置
+&lt;/h5>&lt;p>受限要将仓库fork下来，然后为fork的仓库添加变量，具体路径为仓库的&lt;code>Settings-Secrets and variables-Actions-New repository secrets&lt;/code>。添加的secrets为：&lt;/p>
+&lt;ul>
+&lt;li>CLOUDFLARE_API_TOKEN&lt;/li>
+&lt;li>CLOUDFLARE_ACCOUNT_ID&lt;/li>
+&lt;li>ENCRYPTION_SECRET&lt;/li>
+&lt;/ul>
+&lt;p>前面两个参数在后面获取到，后面的ENCRYPTION_SECRET可以选填，如果没有会自动生成。&lt;/p>
+&lt;h5 id="cloudflare-token配置">CloudFlare TOKEN配置
+&lt;/h5>&lt;p>登录CloudFlare后访问&lt;a class="link" href="https://dash.cloudflare.com/profile/api-tokens" target="_blank" rel="noopener"
+>API令牌管理&lt;/a>界面，创建一个新的API令牌，模版选择&amp;quot;Cloudflare Workers&amp;quot;，并编辑内容添加D1数据库编辑权限，记录下TOKEN，即为后面要用到的&lt;code>CLOUDFLARE_API_TOKEN&lt;/code>。
+&lt;code>CLOUDFLARE_ACCOUNT_ID&lt;/code>位于Cloudflare主界面的右侧。&lt;/p>
+&lt;h5 id="开通d1和r2并配置pages">开通D1和R2，并配置Pages
+&lt;/h5>&lt;p>D1位于左侧的存储和数据库下，的D1 SQL数据库；R2位于左侧的R2对象存储。两者都是需要点进去开通即可，其他不需要动。
+D1和R2都有免费额度，可以大胆使用。&lt;/p>
+&lt;h5 id="github-配置actions前端自动部署">GitHub 配置Actions前端自动部署
+&lt;/h5>&lt;p>返回到GitHub仓库页，找到Actions，运行&lt;code>deploy-front-cloudflare.yml&lt;/code>这个工作流，初次运行会进行D1数据库和Pages的创建。&lt;/p>
+&lt;h5 id="配置cloudflare-workers">配置CloudFlare Workers
+&lt;/h5>&lt;p>Pages现在已经移动到&lt;code>计算（Workers）&lt;/code>下，找到&lt;code>Workers和Pages&lt;/code>，此时应该会看到刚才工作流创建的Pages，我的前端名称是&lt;code>cloudpaste-frontend&lt;/code>，后端为&lt;code>cloudpaste-backend&lt;/code>。
+先配置&lt;code>cloudpaste-backend&lt;/code>，在项目内的&lt;code>设置-变量和机密&lt;/code>，添加一个文本类型的变量，变量名是&lt;code>ENCRYPTION_SECRET&lt;/code>，值即之前我们自己填的或者自动生成的。然后要配置&lt;code>域和路由&lt;/code>，添加一个自定义域，这里最好设置一个自己的域名（例如https://backend.tama.guru），因为默认分配的workers.dev这个域名无法直接访问，使用部分功能时会受限。
+然后到配置&lt;code>cloudpaste-frontend&lt;/code>这边，也是进到&lt;code>设置&lt;/code>，找到&lt;code>变量和机密&lt;/code>，添加一个文本类型的变量，变量名是&lt;code>VITE_BACKEND_URL&lt;/code>，对应的值是刚才在&lt;code>cloudpaste-backend&lt;/code>中的&lt;code>workers.dev&lt;/code>域名或自定义的域名，注意填写末尾不带&amp;quot;/&amp;quot;。同样的，还需要在&lt;code>cloudpaste-frontend&lt;/code>的自定义域配置一个自己的域名（例如https://frontend.tama.guru），并配置好解析。&lt;/p>
+&lt;h5 id="重新运行前端工作流">重新运行前端工作流
+&lt;/h5>&lt;p>返回到GitHub仓库页，找到Actions，再次运行&lt;code>deploy-front-cloudflare.yml&lt;/code>这个工作流。运行完成之后之前的配置才回生效，此时可以通过https://frontend.tama.guru访问前端，而对应的后端则是https://backend.tama.guru。&lt;/p>
+&lt;h5 id="完成初步配置工作">完成初步配置工作
+&lt;/h5>&lt;p>访问前端地址登录后台，默认的管理员信息是：&lt;strong>用户名: admin, 密码: admin123&lt;/strong>，登录后请马上修改。&lt;/p>
+&lt;h5 id="挂载s3存储">挂载S3存储
+&lt;/h5>&lt;p>完成以上工作后仅能实现文本分享和编辑的功能，如果需要实现文件分享还需要配置S3存储，目前建议使用的包括R2、B2、七牛云三个，三个都有免费额度，且经过一段时间的试用相关功能都是正常的。&lt;/p>
+&lt;h6 id="挂载r2存储桶">挂载R2存储桶
+&lt;/h6>&lt;p>打开CloudFlare R2对象存储页面，新建一个存储桶，比如我命名为&lt;code>cloudpaste-r2&lt;/code>，并添加一个API令牌。令牌权限为读和写，制定存储桶为&lt;code>cloudpaste-r2&lt;/code>，其他不用动，保存并记录API令牌，然后点进&lt;code>cloudpaste-r2&lt;/code>存储桶，在设置下找到&lt;code>CORS策略&lt;/code>，点击编辑，内容为：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">[
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">{
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;#34;AllowedOrigins&amp;#34;: [&amp;#34;http://localhost:3000&amp;#34;, &amp;#34;https://根据自己的前端域名来替代，比如我的https://frontend.tama.guru&amp;#34;],
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;#34;AllowedMethods&amp;#34;: [&amp;#34;GET&amp;#34;, &amp;#34;PUT&amp;#34;, &amp;#34;POST&amp;#34;, &amp;#34;DELETE&amp;#34;, &amp;#34;HEAD&amp;#34;],
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;#34;AllowedHeaders&amp;#34;: [&amp;#34;*&amp;#34;],
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;#34;ExposeHeaders&amp;#34;: [&amp;#34;ETag&amp;#34;],
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;#34;MaxAgeSeconds&amp;#34;: 3600
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后回到前端页面的后台，在S3存储配置下添加一个新配置，&lt;code>配置名称&lt;/code>任意，为了区分我起名和r2存储桶一样的名字&lt;code>cloudpaste-r2&lt;/code>，&lt;code>提供商&lt;/code>为&lt;code>Cloudflare R2&lt;/code>，&lt;code>存储桶名称&lt;/code>即&lt;code>cloudpaste-r2&lt;/code>，&lt;code>存储容量&lt;/code>最好就保留10G，好像就免费10G？&lt;code>端点URL&lt;/code>按要求的格式填写&lt;code>https://&amp;lt;accountid&amp;gt;.r2.cloudflarestorage.com&lt;/code>，&lt;code>accountid&lt;/code>在cloudflare页面下可以找到，也就是前面所说的&lt;code>CLOUDFLARE_ACCOUNT_ID&lt;/code>。&lt;code>区域&lt;/code>根据建桶时所选的位置，我选的亚太，这里就填apac，默认填auto也可以。&lt;code>访问密钥 ID&lt;/code>和&lt;code>秘密访问密钥&lt;/code>即上面申请到的&lt;code>API令牌信息&lt;/code>，其他可以保持默认不变，保存即可。此时点击&lt;code>测试连接&lt;/code>，应该会提示：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">配置完全可用
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">✓ 读权限正常 ✓ 写权限正常 ✓ CORS 配置正确 ✓ 前端上传模拟成功
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果没有配置CORS，这里会提示CORS配置不正确，上传文件时也会报错。&lt;/p>
+&lt;p>最后到&lt;code>挂载管理&lt;/code>处，选择&lt;code>新建挂载点&lt;/code>，&lt;code>挂载点名称&lt;/code>也是任意的，为保持一致我使用&lt;code>cloudpaste-r2&lt;/code>，&lt;code>存储类型&lt;/code>为S3存储，&lt;code>S3存储配置&lt;/code>选择刚才创建的&lt;code>cloudpaste-r2(Cloudflare R2)&lt;/code>，&lt;code>挂载路径&lt;/code>我填写的是&lt;code>/r2&lt;/code>，根据个人情况填写即可，最后&lt;code>勾选启用状态&lt;/code>，选择创建即可。 此时在文件上传页面和挂载浏览页面都可以看到这个&lt;code>r2&lt;/code>挂载点了，可以尝试上传文件，如果提示大小超限需要到后台的&lt;code>系统设置&lt;/code>中调整&lt;code>最大上传文件大小&lt;/code>，并更新设置，该选项默认为100MB。&lt;/p>
+&lt;h6 id="挂载七牛云对象存储kodo">挂载七牛云对象存储kodo
+&lt;/h6>&lt;p>我以七牛云作为兼容S3标准的代表，在七牛云的对象存储中选择空间管理-新建空间，存储空间名称和R2中存储桶名称意义一致，我填写的是&lt;code>cloudpaste-qiniu&lt;/code>，存储区域选择国外任意地点（选择国内需要实名），我选择北美-洛杉矶，访问控制选择为私有。还需要配置CORS规则，点进&lt;code>cloudpaste-qiniu&lt;/code>这个桶的&lt;code>空间设置&lt;/code>，&lt;code>跨域设置&lt;/code>内&lt;code>新增规则&lt;/code>，&lt;code>来源&lt;/code>填写我们的&lt;code>前端域名https://frontend.tama.guru&lt;/code>，&lt;code>允许 Methods&lt;/code>我全勾选了，然后保存。
+七牛云并没有针对存储桶有单独的API密钥，需要到&lt;code>个人中心&lt;/code>中的&lt;code>密钥管理&lt;/code>，打开&lt;code>密钥访问权限&lt;/code>，并新增一组AccessKey/SecretKey，保存好这组AK和SK。
+回到网站后台，操作和前面一样，只不过提供商类型要选择其他S3兼容服务，端点URL为：&lt;code>http://存储空间名称.s3.存储区域名称.qiniucs.com&lt;/code>，根据上述配置我这里对应的是&lt;code>http://cloudpaste-qiniu.s3.us-north-1.qiniucs.com&lt;/code>，访问密钥即前面的AK，秘密访问密钥即SK，保存即可，其他参照R2的添加步骤即可。
+需要注意的是，七牛云的免费套餐只支持http。&lt;/p></description></item><item><title>使用Cloudflare的SaaS实现自选IP</title><link>https://blog.tama.guru/record/Cloudflare_SaaS.html</link><pubDate>Fri, 31 May 2024 23:59:00 +0800</pubDate><guid>https://blog.tama.guru/record/Cloudflare_SaaS.html</guid><description>&lt;p>前几天闲的没事查一下目前几个域名的续费价格，发现动不动都是几百一年&amp;hellip;如果现有的优惠到期之后我多半是不会再继续用了，趁此机会我购入了一个新的域名，够短，也挺有个性&amp;ndash;&amp;gt;&lt;a class="link" href="http://tma.moe" target="_blank" rel="noopener"
+>tma.moe&lt;/a>&amp;lt;&amp;ndash; 不要无端联想某视频番号。因为迁移需要一定时间，目前我打算套个CF用。但是很早之前partner就已经用不了了&amp;hellip;(虽然我还有个域名能用，但是那玩意到期之后也很贵）&lt;/p>
+&lt;p>目前网上的方法基本上是使用SaaS这个功能来实现的，通过这个方式套在一些对国内有特殊优化的网站来借用它们的服务进行解析。我尝试了下确实能用，但目前还找不到一个好的域名能套，目前国内还是一片红&amp;hellip;&lt;/p>
+&lt;h3 id="前期准备">前期准备
+&lt;/h3>&lt;ol>
+&lt;li>准备两个域名，一个是我们对外提供访问服务的网站，假设为&lt;code>a.com&lt;/code>，&lt;code>a.com&lt;/code>把DNS解析到DNSPOD上。以及一个解析在Cloudflare上并完成解析的&lt;code>b.com&lt;/code>。&lt;/li>
+&lt;li>Cloudflare绑定了外币卡并开通SaaS服务，具体流程自己百度。&lt;/li>
+&lt;/ol>
+&lt;h3 id="cloudflare准备">Cloudflare准备
+&lt;/h3>&lt;ol>
+&lt;li>先在Cloudflare的DNS上新增一个A记录，这个域名将作为我们的回源域名，记录值是真实的服务器IP，可以用二级域名，也可以直接用一级，假设我这里留下的&lt;code>back.b.com&lt;/code>，解析到真实服务器IP&lt;code>114.51.4.191&lt;/code>。&lt;/li>
+&lt;li>然后在左侧的&lt;code>SSL/TLS&lt;/code>下的自定义主机名下新增一个回退源，回退源即为刚才我们配置的&lt;code>back.b.com&lt;/code>，保存之后等待回退源状态显示为：&lt;code>有效&lt;/code>。
+然后点击&lt;code>添加自定义主机名&lt;/code>，自定义主机名内容为我们需要外部访问的&lt;code>a.com&lt;/code>及其二级域名，假设我这里需要外部访问的域名为&lt;code>new.a.com&lt;/code>，就将这个网站填入自定义主机名，其他配置保留原样，然后点击&lt;code>添加自定义主机名&lt;/code>。此时会生成一个TXT主机记录和TXT记录值，假如主机记录是&lt;code>_cf-custom-hostname.new.a.com&lt;/code>，记录值是&lt;code>11233444-eeee-ffff-gggg-3rcfffsdsd&lt;/code>，记住这两个值，至此CF配置完成。&lt;/li>
+&lt;/ol>
+&lt;h3 id="dnspod准备">DNSPOD准备
+&lt;/h3>&lt;ol>
+&lt;li>首先在&lt;code>a.com&lt;/code>下的记录管理添加一个TXT记录，记录名为&lt;code>_cf-custom-hostname.new&lt;/code>&lt;strong>注意这里只填写前面部分&lt;/strong>，记录值为&lt;code>11233444-eeee-ffff-gggg-3rcfffsdsd&lt;/code>，等待该记录生效。&lt;/li>
+&lt;li>接下来就是实现优选IP的最重要一步：在&lt;code>a.com&lt;/code>下的记录管理添加一或两个记录，可以是A，也可以是CNAME，两个主机记录都是&lt;code>new&lt;/code>，一个线路是境内，一个线路放境外（如果只加一个这里留默认就行了，主要是针对不同线路有不同优化需求的，如果还希望针对不同运营商进行优化，这里还可以细化）。境外随便一个CF的IP基本上都能正常访问，建议放个&lt;code>1.0.0.5&lt;/code>。
+境内这里就要留心了，这里优选域名/ip选不好就很容易一片红。自用线路建议使用&lt;code>[CloudflareST][2]&lt;/code>测试速度最优的IP，也可以用&lt;a class="link" href="https://vps789.com/hostmonitor/?hostProvider=CF%E4%BC%98%E9%80%89IP" target="_blank" rel="noopener"
+>CF优选IP&lt;/a>这样的网站查看一些CF域名/IP的运营商访问速度。
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/05/31/6659f0e45bb4e.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/05/31/6659f0e45bb4e.png" alt="像第一个三网都还行，第三个移动访问就经常挂了。" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/05/31/6659f0e45bb4e.png"
+loading="lazy"
+alt="像第一个三网都还行，第三个移动访问就经常挂了。"
+>
 我们可以使用CNAME套在这些域名上来实现“借用”他们的解析来优化我们的访问。
-我们可以使用&lt;a class=&#34;link&#34; href=&#34;https://ping.cn&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;ping.cn&lt;/a&gt;来测试速度：
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f22dee158.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f22dee158.png&#34; alt=&#34;国内速度，看起来还行&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f22dee158.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;国内速度，看起来还行&#34;
-	
-	
-&gt;
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f24ba9923.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f24ba9923.png&#34; alt=&#34;境外速度，没什么好说的&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f24ba9923.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;境外速度，没什么好说的&#34;
-	
-	
-&gt;
-看起来还行。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;总结&#34;&gt;总结
-&lt;/h3&gt;&lt;p&gt;这样做说实话确实挺麻烦的，首先是每次添加域名都需要在CF上设置一次SaaS添加自定义主机名，然后再在DNSPOD上添加TXT、配置优选解析，而且免费SaaS有上限，虽然那个上限一般人也达不到就是了。而且这样做可以直接使用CF的SSL证书，不用担心免费证书过期的事了。&lt;/p&gt;</description>
-        </item>
-        <item>
-        <title>使用S3 Browser管理Cloudflare R2存储桶</title>
-        <link>https://blog.tama.guru/record/s3browser_r2_manager.html</link>
-        <pubDate>Sat, 13 Jan 2024 22:53:02 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/record/s3browser_r2_manager.html</guid>
-        <description>&lt;p&gt;本来我是要把导航页所有的文件搬到Github上并&lt;strong&gt;试图&lt;/strong&gt;通过jsdelivr加速访问，但是我发现国内移动网络根本无法直连jsdelivr&amp;hellip;在多次反馈网页无法打开之后，最后还是退一步选择迁移到R2上了。但是R2的网页端管理真的是做得一团糟，上传经常半路失败不说，一次还只能上传100个文件，更恶心的是文件夹无法删除，对于我来说是体验真的不好了。&lt;/p&gt;
-&lt;p&gt;既然兼容AWS S3，那就用S3的方法去管理他。
-需要用到&lt;a class=&#34;link&#34; href=&#34;https://s3browser.com/download.aspx&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;S3Browser&lt;/a&gt;这个软件，只有英文，但是不妨碍使用。
-安装完成之后选择&lt;code&gt;Add new account&lt;/code&gt;。
-&lt;code&gt;Display Name&lt;/code&gt;任意填写即可，&lt;code&gt;Account type&lt;/code&gt;选择&lt;code&gt;S3 Compatible Storage&lt;/code&gt;，即兼容S3存储。&lt;code&gt;REST Endpotin&lt;/code&gt;对应的是&lt;code&gt;S3 API&lt;/code&gt;的值，但是不能整个填写进去。比如网页端显示的&lt;code&gt;S3 API&lt;/code&gt;为：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://xxxxxxxxxxxxxxxxxxx.r2.cloudflarestorage.com/tamabox
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;那这里要填写的是&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xxxxxxxxxxxxxxxxxxx.r2.cloudflarestorage.com
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;AK&lt;/code&gt;和&lt;code&gt;SK&lt;/code&gt;是创建桶的时候提供的，如果忘记了就没救了，重新弄个桶吧。
-&lt;code&gt;Encrypt Access Keys with a password&lt;/code&gt;和&lt;code&gt;Use secure transfer(SSL/TSL)&lt;/code&gt;选项保留默认即可。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/01/13/65a2a0bdc8b8c.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/13/65a2a0bdc8b8c.png&#34; alt=&#34;add account info 1&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/13/65a2a0bdc8b8c.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;add account info 1&#34;
-	
-	
-&gt;
-配置完之后要点开左下角的&lt;code&gt;advanced settings&lt;/code&gt;。
-&lt;code&gt;Signature version&lt;/code&gt;选择&lt;code&gt;Signature V4&lt;/code&gt;.
-&lt;code&gt;Addressing model&lt;/code&gt;选择&lt;code&gt;Virtual hosted style&lt;/code&gt;.
-其他选项保留初始值不用动，点close再save changes&lt;code&gt;即可。 ![add account info 2][3] 这时候应该是能连接进R2内部了，就当作一个文件管理器操作就行了。 ![setting complete][4] &amp;lt;br/&amp;gt; 如果只用来做图床的话可以用&lt;/code&gt;Pic-Go`这个软件，操作方法也类似。&lt;/p&gt;</description>
-        </item>
-        <item>
-        <title>在兰空图床配置并使用Cloudflare R2 存储桶</title>
-        <link>https://blog.tama.guru/record/r2_on_lskypro.html</link>
-        <pubDate>Mon, 08 Jan 2024 16:00:00 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/record/r2_on_lskypro.html</guid>
-        <description>&lt;h3 id=&#34;什么是r2为什么用r2&#34;&gt;什么是R2，为什么用R2
-&lt;/h3&gt;&lt;p&gt;R2是由Cloudflare推出的对象存储，接口兼容AWS S3且有免费套餐，套餐内容如下：&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;类别&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;永远免费&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;按月收费&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;存储&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;10GB/月&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;0.015 美元/GB 存储&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;A类操作:状态改变&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;100 万次/月&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;4.50 美元/百万次&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;B类操作:读取状态&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;1000 万次/月&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;0.36 美元/百万次&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;根据文档，各类操作包括：&lt;/p&gt;
-&lt;center&gt;A类操作&lt;/center&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;操作名称&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;操作含义&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;ListBuckets&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;列出的存储桶及其所有者&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;PutBucket&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;创建存储桶&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;ListObjects&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;返回存储桶中的对象&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;PutObject&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;创建对象&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;CopyObject&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;复制对象&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;CompleteMultipartUpload&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;完成分片上传&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;CreateMultipartUpload&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;创建分片上传任务&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;ListMultipartUploads&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;列出分片上传（进度）&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;UploadPart&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;分片上传&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;UploadPartCopy&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;从一个已存在的Object中拷贝数据来上传一个分片&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;ListParts&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;列出分片&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;PutBucketEncryption&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;存储桶加密&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;PutBucketCors&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;为指定的存储桶设置跨域资源共享CORS规则&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;PutBucketLifecycleConfiguration&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;设置对象生命周期规则&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;center&gt;B类操作&lt;/center&gt;
-|             操作名称            |                   操作含义                   |
+我们可以使用&lt;a class="link" href="https://ping.cn" target="_blank" rel="noopener"
+>ping.cn&lt;/a>来测试速度：
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/05/31/6659f22dee158.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/05/31/6659f22dee158.png" alt="国内速度，看起来还行" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/05/31/6659f22dee158.png"
+loading="lazy"
+alt="国内速度，看起来还行"
+>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/05/31/6659f24ba9923.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/05/31/6659f24ba9923.png" alt="境外速度，没什么好说的" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/05/31/6659f24ba9923.png"
+loading="lazy"
+alt="境外速度，没什么好说的"
+>
+看起来还行。&lt;/li>
+&lt;/ol>
+&lt;h3 id="总结">总结
+&lt;/h3>&lt;p>这样做说实话确实挺麻烦的，首先是每次添加域名都需要在CF上设置一次SaaS添加自定义主机名，然后再在DNSPOD上添加TXT、配置优选解析，而且免费SaaS有上限，虽然那个上限一般人也达不到就是了。而且这样做可以直接使用CF的SSL证书，不用担心免费证书过期的事了。&lt;/p></description></item><item><title>使用S3 Browser管理Cloudflare R2存储桶</title><link>https://blog.tama.guru/record/s3browser_r2_manager.html</link><pubDate>Sat, 13 Jan 2024 22:53:02 +0800</pubDate><guid>https://blog.tama.guru/record/s3browser_r2_manager.html</guid><description>&lt;p>本来我是要把导航页所有的文件搬到Github上并&lt;strong>试图&lt;/strong>通过jsdelivr加速访问，但是我发现国内移动网络根本无法直连jsdelivr&amp;hellip;在多次反馈网页无法打开之后，最后还是退一步选择迁移到R2上了。但是R2的网页端管理真的是做得一团糟，上传经常半路失败不说，一次还只能上传100个文件，更恶心的是文件夹无法删除，对于我来说是体验真的不好了。&lt;/p>
+&lt;p>既然兼容AWS S3，那就用S3的方法去管理他。
+需要用到&lt;a class="link" href="https://s3browser.com/download.aspx" target="_blank" rel="noopener"
+>S3Browser&lt;/a>这个软件，只有英文，但是不妨碍使用。
+安装完成之后选择&lt;code>Add new account&lt;/code>。
+&lt;code>Display Name&lt;/code>任意填写即可，&lt;code>Account type&lt;/code>选择&lt;code>S3 Compatible Storage&lt;/code>，即兼容S3存储。&lt;code>REST Endpotin&lt;/code>对应的是&lt;code>S3 API&lt;/code>的值，但是不能整个填写进去。比如网页端显示的&lt;code>S3 API&lt;/code>为：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">https://xxxxxxxxxxxxxxxxxxx.r2.cloudflarestorage.com/tamabox
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>那这里要填写的是&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">xxxxxxxxxxxxxxxxxxx.r2.cloudflarestorage.com
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>AK&lt;/code>和&lt;code>SK&lt;/code>是创建桶的时候提供的，如果忘记了就没救了，重新弄个桶吧。
+&lt;code>Encrypt Access Keys with a password&lt;/code>和&lt;code>Use secure transfer(SSL/TSL)&lt;/code>选项保留默认即可。
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/01/13/65a2a0bdc8b8c.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/01/13/65a2a0bdc8b8c.png" alt="add account info 1" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/01/13/65a2a0bdc8b8c.png"
+loading="lazy"
+alt="add account info 1"
+>
+配置完之后要点开左下角的&lt;code>advanced settings&lt;/code>。
+&lt;code>Signature version&lt;/code>选择&lt;code>Signature V4&lt;/code>.
+&lt;code>Addressing model&lt;/code>选择&lt;code>Virtual hosted style&lt;/code>.
+其他选项保留初始值不用动，点close再save changes&lt;code>即可。 ![add account info 2][3] 这时候应该是能连接进R2内部了，就当作一个文件管理器操作就行了。 ![setting complete][4] &amp;lt;br/&amp;gt; 如果只用来做图床的话可以用&lt;/code>Pic-Go`这个软件，操作方法也类似。&lt;/p></description></item><item><title>在兰空图床配置并使用Cloudflare R2 存储桶</title><link>https://blog.tama.guru/record/r2_on_lskypro.html</link><pubDate>Mon, 08 Jan 2024 16:00:00 +0800</pubDate><guid>https://blog.tama.guru/record/r2_on_lskypro.html</guid><description>&lt;h3 id="什么是r2为什么用r2">什么是R2，为什么用R2
+&lt;/h3>&lt;p>R2是由Cloudflare推出的对象存储，接口兼容AWS S3且有免费套餐，套餐内容如下：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">类别&lt;/th>
+&lt;th style="text-align: center">永远免费&lt;/th>
+&lt;th style="text-align: center">按月收费&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">存储&lt;/td>
+&lt;td style="text-align: center">10GB/月&lt;/td>
+&lt;td style="text-align: center">0.015 美元/GB 存储&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">A类操作:状态改变&lt;/td>
+&lt;td style="text-align: center">100 万次/月&lt;/td>
+&lt;td style="text-align: center">4.50 美元/百万次&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">B类操作:读取状态&lt;/td>
+&lt;td style="text-align: center">1000 万次/月&lt;/td>
+&lt;td style="text-align: center">0.36 美元/百万次&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>根据文档，各类操作包括：&lt;/p>
+&lt;center>A类操作&lt;/center>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">操作名称&lt;/th>
+&lt;th style="text-align: center">操作含义&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">ListBuckets&lt;/td>
+&lt;td style="text-align: center">列出的存储桶及其所有者&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">PutBucket&lt;/td>
+&lt;td style="text-align: center">创建存储桶&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">ListObjects&lt;/td>
+&lt;td style="text-align: center">返回存储桶中的对象&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">PutObject&lt;/td>
+&lt;td style="text-align: center">创建对象&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">CopyObject&lt;/td>
+&lt;td style="text-align: center">复制对象&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">CompleteMultipartUpload&lt;/td>
+&lt;td style="text-align: center">完成分片上传&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">CreateMultipartUpload&lt;/td>
+&lt;td style="text-align: center">创建分片上传任务&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">ListMultipartUploads&lt;/td>
+&lt;td style="text-align: center">列出分片上传（进度）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">UploadPart&lt;/td>
+&lt;td style="text-align: center">分片上传&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">UploadPartCopy&lt;/td>
+&lt;td style="text-align: center">从一个已存在的Object中拷贝数据来上传一个分片&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">ListParts&lt;/td>
+&lt;td style="text-align: center">列出分片&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">PutBucketEncryption&lt;/td>
+&lt;td style="text-align: center">存储桶加密&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">PutBucketCors&lt;/td>
+&lt;td style="text-align: center">为指定的存储桶设置跨域资源共享CORS规则&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">PutBucketLifecycleConfiguration&lt;/td>
+&lt;td style="text-align: center">设置对象生命周期规则&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;center>B类操作&lt;/center>
+| 操作名称 | 操作含义 |
 |:-------------------------------:|:--------------------------------------------:|
-|            HeadBucket           |     确定是否存在存储桶以及是否有访问权限     |
-|            HeadObject           |      确定是否存在对象以及是否有访问权限      |
-|            GetObject            |               获取（下载）对象               |
-|           UsageSummary          |                 使用情况摘要                 |
-|       GetBucketEncryption       |            获取（下载）加密存储桶            |
-|        GetBucketLocation        |           获取（下载）加存储桶位置           |
-|          GetBucketCors          |      获取存储桶设置跨域资源共享CORS规则      |
-| GetBucketLifecycleConfiguration |             获取对象生命周期规则             |
-&lt;center&gt;免费操作&lt;/center&gt;
-|             操作名称            |                   操作含义                   |
+| HeadBucket | 确定是否存在存储桶以及是否有访问权限 |
+| HeadObject | 确定是否存在对象以及是否有访问权限 |
+| GetObject | 获取（下载）对象 |
+| UsageSummary | 使用情况摘要 |
+| GetBucketEncryption | 获取（下载）加密存储桶 |
+| GetBucketLocation | 获取（下载）加存储桶位置 |
+| GetBucketCors | 获取存储桶设置跨域资源共享CORS规则 |
+| GetBucketLifecycleConfiguration | 获取对象生命周期规则 |
+&lt;center>免费操作&lt;/center>
+| 操作名称 | 操作含义 |
 |:-------------------------------:|:--------------------------------------------:|
-|           DeleteObject          |                   删除对象                   |
-|           DeleteBucket          |                    删除桶                    |
-|      DeleteMultipartUpload      |                 中止分片上传                 |
+| DeleteObject | 删除对象 |
+| DeleteBucket | 删除桶 |
+| DeleteMultipartUpload | 中止分片上传 |
 也就是说R2只对存储和状态修改产生费用，下载不计费，对于小网站来说足够了。
 注意:看一下这篇文章[https://machbbs.com/hostloc/640526][1]，避免被坑美刀。
-&lt;h3 id=&#34;有什么不足&#34;&gt;有什么不足
-&lt;/h3&gt;&lt;p&gt;Cloudflare祝您新的一年红红火火。&lt;/p&gt;
-&lt;h3 id=&#34;如何接入&#34;&gt;如何接入
-&lt;/h3&gt;&lt;h4 id=&#34;cloudflare网页端配置&#34;&gt;Cloudflare网页端配置
-&lt;/h4&gt;&lt;p&gt;配置之前需要把一个域名接入Cloudflare并设置好解析。比如我的域名&lt;code&gt;i-tama.website&lt;/code&gt;分配一个二级域名&lt;code&gt;r2.i-tama.website&lt;/code&gt;用于自定义访问域名，解析内容任意即可，因为后面接入的时候会自动修改成CNAME接入。&lt;/p&gt;
-&lt;p&gt;首先进入Cloudflare仪表盘的R2，点击创建存储桶：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;存储桶名称&lt;/code&gt;：填写3-63个不含特殊字符，比如我使用的&lt;code&gt;tamabox&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;位置：选择自动，提供位置提示默认是无的情况下会根据位置自动选择，如果是针对中国的网站那最好是修改为亚太地区(APAC)。（注：记住这个APAC，后面会用到）&lt;/p&gt;
-&lt;p&gt;然后点击创建，创建完成之后进入设置，设置界面有几个需要注意的地方：&lt;/p&gt;
-&lt;p&gt;名称和S3 API：这两个后面连接需要用得到，可以保存下来。&lt;/p&gt;
-&lt;p&gt;自定义域：这里就是配置自定义域名的位置，点击&lt;code&gt;连接域&lt;/code&gt;，填写需要自定义访问的域名（不加https），例如&lt;code&gt;r2.i-tama.website&lt;/code&gt;，并继续，然后会提示现有DNS记录将变更成CNAME解析，点击连接域之后等待初始化完成，约1-2分钟即可。成功后该域的状态应为&lt;code&gt;有效&lt;/code&gt;，且访问存储桶为&lt;code&gt;已允许&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;R2.dev子域：这里配置允许会生成一个&lt;code&gt;r2.dev&lt;/code&gt;结尾的二级域名用于公共访问，使用这个方式访问可能会有速度限制，但我没尝试过。配置也很简单，点击允许之后输入&lt;code&gt;allow&lt;/code&gt;即可。&lt;/p&gt;
-&lt;p&gt;CORS策略：实际使用时可能会碰到跨域错误在这里配置即可，此处不做修改。&lt;/p&gt;
-&lt;p&gt;以上配置完成后回退到R2仪表盘，进入账户详细信息下的管理R2 API令牌并选择创建API令牌：&lt;/p&gt;
-&lt;p&gt;令牌名称：任意填写 记得就行。&lt;/p&gt;
-&lt;p&gt;权限：因为我们是用来做图床的，涉及到文件读写，建议直接配置成管理员读和写。&lt;/p&gt;
-&lt;p&gt;指定存储桶：建议一个桶一个API，所以我选择仅应用于特定存储桶，并选择刚才创建的桶。&lt;/p&gt;
-&lt;p&gt;TTL:永久。&lt;/p&gt;
-&lt;p&gt;客户端IP地址筛选：留空即可。&lt;/p&gt;
-&lt;p&gt;最后创建API令牌，此时会得到令牌值、访问秘钥ID和机密访问密钥三个值，需要妥善保存好，因为确认之后就不会再出现这些数据了。&lt;/p&gt;
-&lt;p&gt;至此，Cloudflare网页端配置完成。&lt;/p&gt;
-&lt;h4 id=&#34;图床端配置&#34;&gt;图床端配置
-&lt;/h4&gt;&lt;p&gt;登录管理员账号进入系统设置 &amp;gt; 存储策略，选择新建一个存储策略。&lt;/p&gt;
-&lt;p&gt;角色组根据自己的选择去配置即可。&lt;/p&gt;
-&lt;p&gt;名称和简介自行设置好即可。&lt;/p&gt;
-&lt;p&gt;存储策略选择AWS S3。&lt;/p&gt;
-&lt;p&gt;访问域名填写在Cloudflare设置的自定义域，比如我的是&lt;code&gt;https://r2.i-tama.website/tamabox&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;注意，这里的格式是自定义域名+桶名称，如果只填写域名，后面上传的时候会发现我们上传的图片a.png会被上传到&lt;code&gt;https://r2.i-tama.website/tamabox/%year%/%month%/%day%/a.png&lt;/code&gt;，但图床中显示的链接是&lt;code&gt;https://r2.i-tama.website/%year%/%month%/%day%/a.png&lt;/code&gt;，结果就是404了。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;AccessKeyId和SecretAccessKey即前面提到的访问秘钥ID以及机密访问秘钥。&lt;/p&gt;
-&lt;p&gt;连接地址填写S3 API。&lt;/p&gt;
-&lt;p&gt;区域就是前面我们配置位置信息的简码，如果我们选择亚太这里就是填apac。&lt;/p&gt;
-&lt;p&gt;储存桶名称即桶名称。&lt;/p&gt;
-&lt;p&gt;是否使用路径样式&lt;strong&gt;不要勾选&lt;/strong&gt;，因为勾选之后上传到R2会再多一层路径。比如原来上传的位置是&lt;code&gt;https://r2.i-tama.website/tamabox/%year%/%month%/%day%/a.png&lt;/code&gt;，勾选之后就变成&lt;code&gt;https://r2.i-tama.website/tamabox/tamabox/%year%/%month%/%day%/a.png&lt;/code&gt;了。&lt;/p&gt;
-&lt;p&gt;是否在文件上设置公开ACL，这里打开，保存之后随意上传个文件测试是否能上传成功，一般按这个步骤是不会有问题的。&lt;/p&gt;
-&lt;h3 id=&#34;体验如何&#34;&gt;体验如何
-&lt;/h3&gt;&lt;p&gt;我没开代理的情况下上传大概是200-300kb/s，下载差不多也是这个速度，只能说基本够用。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>通过Cloudflare零信任(cloudflare zero trush)给内网服务器做穿透并搭建webssh的小记</title>
-        <link>https://blog.tama.guru/record/cloudflare_webssh_zerotrush.html</link>
-        <pubDate>Fri, 18 Aug 2023 14:23:00 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/record/cloudflare_webssh_zerotrush.html</guid>
-        <description>&lt;p&gt;通过cloudflare zero trush可以非常快速且方便的搭建内网穿透，而且速度一般情况下可以接受，最重要的是成本很低，你只需要：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;一个cloudflare账号&lt;/li&gt;
-&lt;li&gt;一个托管到cloudflare的域名&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;以上内容百度到处都是，不再赘述，以下仅记录搭建webssh的过程。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;####1、安装并配置tunnel
-需要在ssh服务器上执行如下命令：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#安装cloudflared，我用的arch，其他平台自己替换。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S cloudflared
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#这一步执行后会得到一个链接，复制到浏览器打开，然后选择一个托管到cloudflare的域名，确认之后会将对应的pem证书推到你服务器的.cloudflare目录下。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cloudflared tunnel login
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#创建一个tunnel，其中$tunnel-name自行配置
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cloudflared tunnel create $tunnel-name
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#查看tunnel列表
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cloudflared tunnel list
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;此时在输出的列表中找到刚才创建的tunnel名为$tunnel-name对应的ID，一般格式为&lt;code&gt;xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&lt;/code&gt;。
+&lt;h3 id="有什么不足">有什么不足
+&lt;/h3>&lt;p>Cloudflare祝您新的一年红红火火。&lt;/p>
+&lt;h3 id="如何接入">如何接入
+&lt;/h3>&lt;h4 id="cloudflare网页端配置">Cloudflare网页端配置
+&lt;/h4>&lt;p>配置之前需要把一个域名接入Cloudflare并设置好解析。比如我的域名&lt;code>i-tama.website&lt;/code>分配一个二级域名&lt;code>r2.i-tama.website&lt;/code>用于自定义访问域名，解析内容任意即可，因为后面接入的时候会自动修改成CNAME接入。&lt;/p>
+&lt;p>首先进入Cloudflare仪表盘的R2，点击创建存储桶：&lt;/p>
+&lt;p>&lt;code>存储桶名称&lt;/code>：填写3-63个不含特殊字符，比如我使用的&lt;code>tamabox&lt;/code>。&lt;/p>
+&lt;p>位置：选择自动，提供位置提示默认是无的情况下会根据位置自动选择，如果是针对中国的网站那最好是修改为亚太地区(APAC)。（注：记住这个APAC，后面会用到）&lt;/p>
+&lt;p>然后点击创建，创建完成之后进入设置，设置界面有几个需要注意的地方：&lt;/p>
+&lt;p>名称和S3 API：这两个后面连接需要用得到，可以保存下来。&lt;/p>
+&lt;p>自定义域：这里就是配置自定义域名的位置，点击&lt;code>连接域&lt;/code>，填写需要自定义访问的域名（不加https），例如&lt;code>r2.i-tama.website&lt;/code>，并继续，然后会提示现有DNS记录将变更成CNAME解析，点击连接域之后等待初始化完成，约1-2分钟即可。成功后该域的状态应为&lt;code>有效&lt;/code>，且访问存储桶为&lt;code>已允许&lt;/code>。&lt;/p>
+&lt;p>R2.dev子域：这里配置允许会生成一个&lt;code>r2.dev&lt;/code>结尾的二级域名用于公共访问，使用这个方式访问可能会有速度限制，但我没尝试过。配置也很简单，点击允许之后输入&lt;code>allow&lt;/code>即可。&lt;/p>
+&lt;p>CORS策略：实际使用时可能会碰到跨域错误在这里配置即可，此处不做修改。&lt;/p>
+&lt;p>以上配置完成后回退到R2仪表盘，进入账户详细信息下的管理R2 API令牌并选择创建API令牌：&lt;/p>
+&lt;p>令牌名称：任意填写 记得就行。&lt;/p>
+&lt;p>权限：因为我们是用来做图床的，涉及到文件读写，建议直接配置成管理员读和写。&lt;/p>
+&lt;p>指定存储桶：建议一个桶一个API，所以我选择仅应用于特定存储桶，并选择刚才创建的桶。&lt;/p>
+&lt;p>TTL:永久。&lt;/p>
+&lt;p>客户端IP地址筛选：留空即可。&lt;/p>
+&lt;p>最后创建API令牌，此时会得到令牌值、访问秘钥ID和机密访问密钥三个值，需要妥善保存好，因为确认之后就不会再出现这些数据了。&lt;/p>
+&lt;p>至此，Cloudflare网页端配置完成。&lt;/p>
+&lt;h4 id="图床端配置">图床端配置
+&lt;/h4>&lt;p>登录管理员账号进入系统设置 &amp;gt; 存储策略，选择新建一个存储策略。&lt;/p>
+&lt;p>角色组根据自己的选择去配置即可。&lt;/p>
+&lt;p>名称和简介自行设置好即可。&lt;/p>
+&lt;p>存储策略选择AWS S3。&lt;/p>
+&lt;p>访问域名填写在Cloudflare设置的自定义域，比如我的是&lt;code>https://r2.i-tama.website/tamabox&lt;/code>。&lt;/p>
+&lt;p>&lt;strong>注意，这里的格式是自定义域名+桶名称，如果只填写域名，后面上传的时候会发现我们上传的图片a.png会被上传到&lt;code>https://r2.i-tama.website/tamabox/%year%/%month%/%day%/a.png&lt;/code>，但图床中显示的链接是&lt;code>https://r2.i-tama.website/%year%/%month%/%day%/a.png&lt;/code>，结果就是404了。&lt;/strong>&lt;/p>
+&lt;p>AccessKeyId和SecretAccessKey即前面提到的访问秘钥ID以及机密访问秘钥。&lt;/p>
+&lt;p>连接地址填写S3 API。&lt;/p>
+&lt;p>区域就是前面我们配置位置信息的简码，如果我们选择亚太这里就是填apac。&lt;/p>
+&lt;p>储存桶名称即桶名称。&lt;/p>
+&lt;p>是否使用路径样式&lt;strong>不要勾选&lt;/strong>，因为勾选之后上传到R2会再多一层路径。比如原来上传的位置是&lt;code>https://r2.i-tama.website/tamabox/%year%/%month%/%day%/a.png&lt;/code>，勾选之后就变成&lt;code>https://r2.i-tama.website/tamabox/tamabox/%year%/%month%/%day%/a.png&lt;/code>了。&lt;/p>
+&lt;p>是否在文件上设置公开ACL，这里打开，保存之后随意上传个文件测试是否能上传成功，一般按这个步骤是不会有问题的。&lt;/p>
+&lt;h3 id="体验如何">体验如何
+&lt;/h3>&lt;p>我没开代理的情况下上传大概是200-300kb/s，下载差不多也是这个速度，只能说基本够用。&lt;/p></description></item><item><title>通过Cloudflare零信任(cloudflare zero trush)给内网服务器做穿透并搭建webssh的小记</title><link>https://blog.tama.guru/record/cloudflare_webssh_zerotrush.html</link><pubDate>Fri, 18 Aug 2023 14:23:00 +0800</pubDate><guid>https://blog.tama.guru/record/cloudflare_webssh_zerotrush.html</guid><description>&lt;p>通过cloudflare zero trush可以非常快速且方便的搭建内网穿透，而且速度一般情况下可以接受，最重要的是成本很低，你只需要：&lt;/p>
+&lt;ol>
+&lt;li>一个cloudflare账号&lt;/li>
+&lt;li>一个托管到cloudflare的域名&lt;/li>
+&lt;/ol>
+&lt;p>以上内容百度到处都是，不再赘述，以下仅记录搭建webssh的过程。&lt;/p>
+&lt;hr>
+&lt;p>####1、安装并配置tunnel
+需要在ssh服务器上执行如下命令：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">#安装cloudflared，我用的arch，其他平台自己替换。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo pacman -S cloudflared
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">#这一步执行后会得到一个链接，复制到浏览器打开，然后选择一个托管到cloudflare的域名，确认之后会将对应的pem证书推到你服务器的.cloudflare目录下。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cloudflared tunnel login
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">#创建一个tunnel，其中$tunnel-name自行配置
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cloudflared tunnel create $tunnel-name
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">#查看tunnel列表
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cloudflared tunnel list
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>此时在输出的列表中找到刚才创建的tunnel名为$tunnel-name对应的ID，一般格式为&lt;code>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&lt;/code>。
 ####2.创建配置文件。
-进入用户目录下的&lt;code&gt;.cloudflared&lt;/code&gt;文件夹，创建名为&lt;code&gt;config.yam&lt;/code&gt;的文件，内容如下：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tunnel: &lt;span class=&#34;nv&#34;&gt;$ID&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;credentials-file: /home/&lt;span class=&#34;nv&#34;&gt;$username&lt;/span&gt;/.cloudflared/&lt;span class=&#34;nv&#34;&gt;$ID&lt;/span&gt;.json
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ingress:
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c1&#34;&gt;# ssh&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - hostname: ssh.example.com
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    service: ssh://localhost
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c1&#34;&gt;# vnc远程桌面，端口5900&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - hostname: vnc.example.com
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    service: tcp://localhost:5900
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c1&#34;&gt;# 其他http服务&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - hostname: file.example.com
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    service: http://localhost:9527
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - hostname: speed-test.example.com
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    service: http://localhost:9898
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c1&#34;&gt;# 如果都没有匹配，则返回404，这句不能少&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - service: http_status:404
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;其中$ID替换为上面的ID，$username为你服务器本地用户名，&lt;code&gt;hostname&lt;/code&gt;字段对应外网访问的网址，&lt;code&gt;service&lt;/code&gt;字段对应内网网址，如果是带端口的在后面增加即可。
+进入用户目录下的&lt;code>.cloudflared&lt;/code>文件夹，创建名为&lt;code>config.yam&lt;/code>的文件，内容如下：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">tunnel: &lt;span class="nv">$ID&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">credentials-file: /home/&lt;span class="nv">$username&lt;/span>/.cloudflared/&lt;span class="nv">$ID&lt;/span>.json
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ingress:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># ssh&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - hostname: ssh.example.com
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> service: ssh://localhost
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># vnc远程桌面，端口5900&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - hostname: vnc.example.com
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> service: tcp://localhost:5900
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># 其他http服务&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - hostname: file.example.com
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> service: http://localhost:9527
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - hostname: speed-test.example.com
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> service: http://localhost:9898
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># 如果都没有匹配，则返回404，这句不能少&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - service: http_status:404
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>其中$ID替换为上面的ID，$username为你服务器本地用户名，&lt;code>hostname&lt;/code>字段对应外网访问的网址，&lt;code>service&lt;/code>字段对应内网网址，如果是带端口的在后面增加即可。
 ####3.写一个脚本，自动更新DNS以及运行tunnel
-&lt;code&gt;vim ~/tunnel-sh.sh&lt;/code&gt;
-内容如下：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# update cloudflare DNS record
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/usr/bin/cloudflared tunnel route dns $tunnel-name ssh.example.com
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/usr/bin/cloudflared tunnel route dns $tunnel-name vnc.example.com
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/usr/bin/cloudflared tunnel route dns $tunnel-name file.example.com
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/usr/bin/cloudflared tunnel route dns $tunnel-name speed-test.example.com
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# run tunnel
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/usr/bin/cloudflared tunnel run $tunnel-name
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;注意把$tunnel-name和网址换成自己的。
+&lt;code>vim ~/tunnel-sh.sh&lt;/code>
+内容如下：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl"># update cloudflare DNS record
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">/usr/bin/cloudflared tunnel route dns $tunnel-name ssh.example.com
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">/usr/bin/cloudflared tunnel route dns $tunnel-name vnc.example.com
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">/usr/bin/cloudflared tunnel route dns $tunnel-name file.example.com
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">/usr/bin/cloudflared tunnel route dns $tunnel-name speed-test.example.com
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># run tunnel
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">/usr/bin/cloudflared tunnel run $tunnel-name
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>注意把$tunnel-name和网址换成自己的。
 ####4.开机自启
 新建一个service，
-&lt;code&gt;sudo vim /etc/systemd/system/cloudflared-tunnel.service&lt;/code&gt;
-内容如下：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;Unit&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;Description&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;cloudflared tunnel
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;Wants&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;network-online.target
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;After&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;network-online.target
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;Service&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;User&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$username&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;ExecStart&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;sh /home/&lt;span class=&#34;nv&#34;&gt;$username&lt;/span&gt;/tunnel-sh.sh
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;Install&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;WantedBy&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;default.target
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;注意把$username换成自己的。
-####5.启动&amp;amp;开机自启&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl start cloudflared-tunnel.service
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl enable cloudflared-tunnel.service
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;####6.配置application
+&lt;code>sudo vim /etc/systemd/system/cloudflared-tunnel.service&lt;/code>
+内容如下：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>Unit&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">Description&lt;/span>&lt;span class="o">=&lt;/span>cloudflared tunnel
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">Wants&lt;/span>&lt;span class="o">=&lt;/span>network-online.target
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">After&lt;/span>&lt;span class="o">=&lt;/span>network-online.target
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>Service&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">User&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nv">$username&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">ExecStart&lt;/span>&lt;span class="o">=&lt;/span>sh /home/&lt;span class="nv">$username&lt;/span>/tunnel-sh.sh
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>Install&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">WantedBy&lt;/span>&lt;span class="o">=&lt;/span>default.target
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>注意把$username换成自己的。
+####5.启动&amp;amp;开机自启&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">sudo systemctl start cloudflared-tunnel.service
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo systemctl enable cloudflared-tunnel.service
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>####6.配置application
 ssh是无法直接访问的，但是cloudflare提供了application套件，配置位于cloudflare的zerotrush下的access目录。
-进去之后选择&lt;code&gt;add an application&lt;/code&gt;，类型选&lt;code&gt;self hosted&lt;/code&gt;
-&lt;code&gt;Application Configuration&lt;/code&gt;配置如下：
-&lt;code&gt;Application name(Required)&lt;/code&gt;:app名称，随意设定
-&lt;code&gt;Session Duration(Required)&lt;/code&gt;:会话时长，设置一次会话多久超时，一般默认24即可。
-&lt;code&gt;Application domain&lt;/code&gt;:我们在服务器上的配置中ssh访问链接为ssh.example.com，因此这里填&lt;code&gt;ssh&lt;/code&gt;
-&lt;code&gt;Domain(Required)&lt;/code&gt;:域名，我们在服务器上的配置中ssh访问链接为ssh.example.com，因此这里填&lt;code&gt;example.com&lt;/code&gt;
+进去之后选择&lt;code>add an application&lt;/code>，类型选&lt;code>self hosted&lt;/code>
+&lt;code>Application Configuration&lt;/code>配置如下：
+&lt;code>Application name(Required)&lt;/code>:app名称，随意设定
+&lt;code>Session Duration(Required)&lt;/code>:会话时长，设置一次会话多久超时，一般默认24即可。
+&lt;code>Application domain&lt;/code>:我们在服务器上的配置中ssh访问链接为ssh.example.com，因此这里填&lt;code>ssh&lt;/code>
+&lt;code>Domain(Required)&lt;/code>:域名，我们在服务器上的配置中ssh访问链接为ssh.example.com，因此这里填&lt;code>example.com&lt;/code>
 然后点击next。
-&lt;code&gt;Policy&lt;/code&gt;配置与安全性相关：，规则名称
-&lt;code&gt;Policy name&lt;/code&gt;：随意设定
-&lt;code&gt;Action&lt;/code&gt;:选择这个规则下的内容允许还是拒绝
-&lt;code&gt;Session duration&lt;/code&gt;：一次会话多久过期
-&lt;code&gt;Configure rules&lt;/code&gt;配置如下：
-&lt;code&gt;Selector&lt;/code&gt;:规则认证方式，以email为例，会要求每次进入网页验证邮箱PIN码
-&lt;code&gt;Value&lt;/code&gt;：规则，与&lt;code&gt;Selector&lt;/code&gt;相关。
+&lt;code>Policy&lt;/code>配置与安全性相关：，规则名称
+&lt;code>Policy name&lt;/code>：随意设定
+&lt;code>Action&lt;/code>:选择这个规则下的内容允许还是拒绝
+&lt;code>Session duration&lt;/code>：一次会话多久过期
+&lt;code>Configure rules&lt;/code>配置如下：
+&lt;code>Selector&lt;/code>:规则认证方式，以email为例，会要求每次进入网页验证邮箱PIN码
+&lt;code>Value&lt;/code>：规则，与&lt;code>Selector&lt;/code>相关。
 然后点击next。
-在&lt;code&gt;Additional settings&lt;/code&gt;下的&lt;code&gt;Browser rendering&lt;/code&gt;切换为SSH，最后点击&lt;code&gt;add application&lt;/code&gt;即可web访问到ssh了。&lt;/p&gt;
-</description>
-        </item>
-        
-    </channel>
-</rss>
+在&lt;code>Additional settings&lt;/code>下的&lt;code>Browser rendering&lt;/code>切换为SSH，最后点击&lt;code>add application&lt;/code>即可web访问到ssh了。&lt;/p></description></item></channel></rss>

@@ -1,125 +1,63 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Science on 狼的公告板 ver.Hugo</title>
-        <link>https://blog.tama.guru/categories/science.html</link>
-        <description>Recent content in Science on 狼的公告板 ver.Hugo</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/categories/science/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>不吐不快，谈谈气象雷达图上的“怪圈”</title>
-        <link>https://blog.tama.guru/science/doppler.html</link>
-        <pubDate>Wed, 27 Jul 2022 12:52:00 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/science/doppler.html</guid>
-        <description>&lt;p&gt;文前声明：作者非相关专业人士，部分内容仅代表本人猜测，杠就是你对。&lt;/p&gt;
-&lt;p&gt;7月25日到26日，华北、华中、华东地区迎来了新一轮大规模降雨，前后波及十余省份，历时三十余小时。&lt;/p&gt;
-&lt;p&gt;近两天总能在某音上刷到有关一张气象雷达图的视频，文案经常被配上什么“道家斗法破阵”，评论区也大都是“道长出山了”“一个坚定的唯物主义者陷入了沉思”“科学两个字卡在喉咙里”这种画风。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c889b873.jpg&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c889b873.jpg&#34; alt=&#34;62e0b8fa1840e.jpg&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c889b873.jpg&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;62e0b8fa1840e.jpg&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;首先，气象多普勒雷达的探测区域本来就是一个以雷达为圆心的圆，探测边界外没有数据，和探测区域内形成对比就会有圆形的轮廓。其次，经常关注气象的话，会发现环形的雷达回波图并不罕见，这通常是因为雷达受到了干扰，或雷达站输出的数据错误。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88781a4.jpg&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88781a4.jpg&#34; alt=&#34;62e0b92a80d43.jpg&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88781a4.jpg&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;62e0b92a80d43.jpg&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;根据视频截图大致定位，“怪圈”的圆心位置大约位于湖北省随州市。翻阅随州市7月26日01:00到05:00的气象雷达回波图可以发现，在7月26日04:12分后，雷达没有了数据。而在04:12分的回波图中，雷达所在地正是高雷达反射率的区域，这代表该片区域当时很可能正在遭遇强对流天气。随州市气象台于26日晨发布的暴雨橙色预警也证实了这一点。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c888b229.gif&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c888b229.gif&#34; alt=&#34;62e0bb29d63be.gif&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c888b229.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;62e0bb29d63be.gif&#34;
-	
-	
-&gt;
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88ac981.jpg&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88ac981.jpg&#34; alt=&#34;62e0bb3d17678.jpg&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88ac981.jpg&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;62e0bb3d17678.jpg&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;因此我猜测，是强降雨干扰了雷达正常工作，没有数据输出，而某天气APP也出现了BUG，在对雷达回波图进行拼图时使用了错误的数据，导致这个奇怪的红圈出现。&lt;/p&gt;
-&lt;p&gt;其实本来一张错误的雷达回波图根本算不了什么，但时间又恰巧赶上了南京“夏日祭”这事，就有人将这张图联想到宗教的方向，说是“道长出山施法破日本的阵”，我相信不少人是抱着开玩笑的态度说的这种话，但评论里的某些神棍言论让人不禁感叹基础教育任重道远。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88781a4.jpg&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88781a4.jpg&#34; alt=&#34;62e0bb5c76bd9.jpg&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88781a4.jpg&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;62e0bb5c76bd9.jpg&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;这种舆论是不正常也是不应当鼓励的，他们今天能说异常天气是道长作法，明天就可以说是宗教带领抗战胜利。在这个无数抗战先烈用血肉之躯解放得来的国家，容不得封建迷信来指手画脚。&lt;/p&gt;
-&lt;p&gt;最后还是来看看这场历时三十余小时，波及十余省份的大规模降雨吧。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://s3.bmp.ovh/imgs/2022/07/27/fdee4efd835831d8.gif&#34;&gt;
-  &lt;img src=&#34;https://s3.bmp.ovh/imgs/2022/07/27/fdee4efd835831d8.gif&#34; alt=&#34;0726全国雷达拼图&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://s3.bmp.ovh/imgs/2022/07/27/fdee4efd835831d8.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;0726全国雷达拼图&#34;
-	
-	
-&gt;&lt;/p&gt;
-</description>
-        </item>
-        
-    </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Science on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/categories/science.html</link><description>Recent content in Science on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 14 Aug 2025 03:33:47 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/categories/science/index.xml" rel="self" type="application/rss+xml"/><item><title>不吐不快，谈谈气象雷达图上的“怪圈”</title><link>https://blog.tama.guru/science/doppler.html</link><pubDate>Wed, 27 Jul 2022 12:52:00 +0800</pubDate><guid>https://blog.tama.guru/science/doppler.html</guid><description>&lt;p>文前声明：作者非相关专业人士，部分内容仅代表本人猜测，杠就是你对。&lt;/p>
+&lt;p>7月25日到26日，华北、华中、华东地区迎来了新一轮大规模降雨，前后波及十余省份，历时三十余小时。&lt;/p>
+&lt;p>近两天总能在某音上刷到有关一张气象雷达图的视频，文案经常被配上什么“道家斗法破阵”，评论区也大都是“道长出山了”“一个坚定的唯物主义者陷入了沉思”“科学两个字卡在喉咙里”这种画风。
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c889b873.jpg">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c889b873.jpg" alt="62e0b8fa1840e.jpg" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c889b873.jpg"
+loading="lazy"
+alt="62e0b8fa1840e.jpg"
+>&lt;/p>
+&lt;p>首先，气象多普勒雷达的探测区域本来就是一个以雷达为圆心的圆，探测边界外没有数据，和探测区域内形成对比就会有圆形的轮廓。其次，经常关注气象的话，会发现环形的雷达回波图并不罕见，这通常是因为雷达受到了干扰，或雷达站输出的数据错误。
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88781a4.jpg">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88781a4.jpg" alt="62e0b92a80d43.jpg" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88781a4.jpg"
+loading="lazy"
+alt="62e0b92a80d43.jpg"
+>&lt;/p>
+&lt;p>根据视频截图大致定位，“怪圈”的圆心位置大约位于湖北省随州市。翻阅随州市7月26日01:00到05:00的气象雷达回波图可以发现，在7月26日04:12分后，雷达没有了数据。而在04:12分的回波图中，雷达所在地正是高雷达反射率的区域，这代表该片区域当时很可能正在遭遇强对流天气。随州市气象台于26日晨发布的暴雨橙色预警也证实了这一点。
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c888b229.gif">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c888b229.gif" alt="62e0bb29d63be.gif" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c888b229.gif"
+loading="lazy"
+alt="62e0bb29d63be.gif"
+>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88ac981.jpg">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88ac981.jpg" alt="62e0bb3d17678.jpg" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88ac981.jpg"
+loading="lazy"
+alt="62e0bb3d17678.jpg"
+>&lt;/p>
+&lt;p>因此我猜测，是强降雨干扰了雷达正常工作，没有数据输出，而某天气APP也出现了BUG，在对雷达回波图进行拼图时使用了错误的数据，导致这个奇怪的红圈出现。&lt;/p>
+&lt;p>其实本来一张错误的雷达回波图根本算不了什么，但时间又恰巧赶上了南京“夏日祭”这事，就有人将这张图联想到宗教的方向，说是“道长出山施法破日本的阵”，我相信不少人是抱着开玩笑的态度说的这种话，但评论里的某些神棍言论让人不禁感叹基础教育任重道远。
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88781a4.jpg">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88781a4.jpg" alt="62e0bb5c76bd9.jpg" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88781a4.jpg"
+loading="lazy"
+alt="62e0bb5c76bd9.jpg"
+>&lt;/p>
+&lt;p>这种舆论是不正常也是不应当鼓励的，他们今天能说异常天气是道长作法，明天就可以说是宗教带领抗战胜利。在这个无数抗战先烈用血肉之躯解放得来的国家，容不得封建迷信来指手画脚。&lt;/p>
+&lt;p>最后还是来看看这场历时三十余小时，波及十余省份的大规模降雨吧。
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://s3.bmp.ovh/imgs/2022/07/27/fdee4efd835831d8.gif">
+&lt;img src="https://s3.bmp.ovh/imgs/2022/07/27/fdee4efd835831d8.gif" alt="0726全国雷达拼图" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://s3.bmp.ovh/imgs/2022/07/27/fdee4efd835831d8.gif"
+loading="lazy"
+alt="0726全国雷达拼图"
+>&lt;/p></description></item></channel></rss>

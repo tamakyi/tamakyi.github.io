@@ -1,356 +1,308 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Qq on 狼的公告板 ver.Hugo</title>
-        <link>https://blog.tama.guru/tags/qq.html</link>
-        <description>Recent content in Qq on 狼的公告板 ver.Hugo</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/qq/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>在debian安装配置redroid并安装shamrock的记录</title>
-        <link>https://blog.tama.guru/record/redroid.html</link>
-        <pubDate>Wed, 24 Jan 2024 12:01:00 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/record/redroid.html</guid>
-        <description>&lt;h3 id=&#34;前言&#34;&gt;前言
-&lt;/h3&gt;&lt;p&gt;由于某讯对第三方QQ机器人的大力追杀，原有的机器人框架（miraiqq和go-cqhttp）等基本上都无法使用了，登录会直接代码45封号。在此之后发展出shamrock等项目，此类项目的特点是需要虚拟机或实机进行操作，意味着至少需要一个桌面环境或者一台闲置手机，开销相比之前1c512m都能跑的时候高太多。在网上冲浪的时候发现了可以将安卓的Dalvik/ART移植到Linux桌面环境，借此运行安卓APK程序，因此需要用到redroid这个软件。&lt;/p&gt;
-&lt;p&gt;redroid即Remote anDroid，是一个架设云手机的方案，可以透过docker在linux系统上跑安卓系统容器。相比于虚拟机方案，其优势在于：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;开源&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;支持GPU加速+arm转X86转译器&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;与宿主机公用内核等相关资源&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;支持使用scrcpy进行连接&lt;/p&gt;
-&lt;hr&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;给内核添加相关模块&#34;&gt;给内核添加相关模块
-&lt;/h3&gt;&lt;p&gt;首先需要查询系统内核是否支持&lt;code&gt;binder&lt;/code&gt;和&lt;code&gt;ashmem&lt;/code&gt;两个功能，此功能为使用redroid必须的。查询可以通过执行：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;lsmod &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep -e ashmem_linux -e binder_linux
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;进行查询，如果有输出可以略过此步骤。如果没有任何输出则表示内核没有配置好这两个模块，需要重新编译内核。对于Ubuntu系统，官方提供了&lt;a class=&#34;link&#34; href=&#34;https://github.com/remote-android/redroit-doc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;比较简单的流程&lt;/a&gt;，对于其他系统则需要手工维护。&lt;/p&gt;
-&lt;p&gt;首先去下载当前使用内核版本的源码：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;apt install linux-source-&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;uname-r&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;下载完的源码位于&lt;code&gt;/usr/src&lt;/code&gt;，格式是&lt;code&gt;.xz&lt;/code&gt;，进去之后解压源码包并进入解压的文件夹，然后执行&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;make menuconfig
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在弹出界面的勾选：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Device Drivers--Android--Android Drivers--Binder Ipc Driver。 &lt;span class=&#34;c1&#34;&gt;#binder&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Device Drivers--Android--Android Drivers--Binder filesystem。 &lt;span class=&#34;c1&#34;&gt;#binder&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Device Drivers--Android--Staging Drivers--Android--Enable the Anonumous Shared Memory Subsystem &lt;span class=&#34;c1&#34;&gt;#ashmem&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;General Setup--CPU/Task &lt;span class=&#34;nb&#34;&gt;time&lt;/span&gt; and stats accounting--Pressure stall infomation tracking
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;后按&lt;code&gt;save&lt;/code&gt;保存。&lt;/p&gt;
-&lt;p&gt;或者进去之后直接选择&lt;code&gt;exit&lt;/code&gt;并选择&lt;code&gt;save config&lt;/code&gt;。目录下会生成一个&lt;code&gt;.config&lt;/code&gt;的文件，编辑该文件在最后添加以下内容:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CONFIG_ASHMEM&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;y
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CONFIG_ANDROID&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;y
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CONFIG_ANDROID_BINDER_IPC&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;y
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CONFIG_ANDROID_BINDERFS&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;y
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CONFIG_ANDROID_BINDER_DEVICES&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;binder,hwbinder,vndbinder,binderfs&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CONFIG_ANDROID_BINDER_IPC_SELFTEST&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;y
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;保存后执行&lt;code&gt;make&lt;/code&gt; ，建议不要加j让他慢慢编译，经尝试这样会导致报错。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：可能会报错：&lt;code&gt;CONFIG_DEBUG_INFO_BTF&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;这种情况就去&lt;code&gt;.config&lt;/code&gt;文件里面添加以下内容：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CONFIG_DEBUG_INFO_DWARF5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;n
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CONFIG_DEBUG_INFO_BTF&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;n &lt;span class=&#34;c1&#34;&gt;#原值为y&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;跑完后在目录下执行&lt;code&gt;modules_install&lt;/code&gt;和&lt;code&gt;make install&lt;/code&gt;，执行完成后检查内核是否安装到grub了：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;base&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;root&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;@&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;DevBot&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;boot&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# cat /boot/grub/grub.cfg | grep menuentry&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;${feature_menuentry_id}&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;xy&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;];&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;then&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;menuentry_id_option&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;--id&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;menuentry_id_option&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;menuentry_id_option&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;menuentry&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;Debian GNU/Linux&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;debian&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;gnu&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;linux&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;gnu&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;os&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;menuentry_id_option&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;gnulinux-simple-9aba24c5-ec53-4108-b461-4bcc67d1d0dc&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;submenu&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;Advanced options for Debian GNU/Linux&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;menuentry_id_option&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;gnulinux-advanced-9aba24c5-ec53-4108-b461-4bcc67d1d0dc&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;menuentry&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;Debian GNU/Linux, with Linux 6.5.10android&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;debian&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;gnu&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;linux&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;gnu&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;os&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;menuentry_id_option&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;gnulinux-6.5.10android-advanced-9aba24c5-ec53-4108-b461-4bcc67d1d0dc&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;menuentry&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;Debian GNU/Linux, with Linux 6.5.10android (recovery mode)&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;debian&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;gnu&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;linux&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;gnu&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;os&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;menuentry_id_option&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;gnulinux-6.5.10android-recovery-9aba24c5-ec53-4108-b461-4bcc67d1d0dc&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;menuentry&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;Debian GNU/Linux, with Linux 6.5.0-0.deb12.4-amd64&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;debian&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;gnu&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;linux&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;gnu&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;os&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;menuentry_id_option&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;gnulinux-6.5.0-0.deb12.4-amd64-advanced-9aba24c5-ec53-4108-b461-4bcc67d1d0dc&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;menuentry&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;Debian GNU/Linux, with Linux 6.5.0-0.deb12.4-amd64 (recovery mode)&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;debian&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;gnu&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;linux&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;gnu&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;os&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;menuentry_id_option&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;gnulinux-6.5.0-0.deb12.4-amd64-recovery-9aba24c5-ec53-4108-b461-4bcc67d1d0dc&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;menuentry&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;Debian GNU/Linux, with Linux 6.1.0-17-amd64&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;debian&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;gnu&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;linux&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;gnu&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;os&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;menuentry_id_option&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;gnulinux-6.1.0-17-amd64-advanced-9aba24c5-ec53-4108-b461-4bcc67d1d0dc&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;menuentry&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;Debian GNU/Linux, with Linux 6.1.0-17-amd64 (recovery mode)&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;debian&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;gnu&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;linux&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;gnu&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;os&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;menuentry_id_option&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;gnulinux-6.1.0-17-amd64-recovery-9aba24c5-ec53-4108-b461-4bcc67d1d0dc&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;menuentry&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;Debian GNU/Linux, with Linux 6.1.0-15-amd64&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;debian&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;gnu&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;linux&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;gnu&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;os&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;menuentry_id_option&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;gnulinux-6.1.0-15-amd64-advanced-9aba24c5-ec53-4108-b461-4bcc67d1d0dc&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;menuentry&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;Debian GNU/Linux, with Linux 6.1.0-15-amd64 (recovery mode)&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;debian&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;gnu&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;linux&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;gnu&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;os&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;menuentry_id_option&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;gnulinux-6.1.0-15-amd64-recovery-9aba24c5-ec53-4108-b461-4bcc67d1d0dc&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;menuentry&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;UEFI Firmware Settings&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;menuentry_id_option&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;uefi-firmware&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;可以看到&lt;code&gt;Debian GNU/Linux, with Linux 6.5.10android&lt;/code&gt;已经配置进去了。&lt;/p&gt;
-&lt;p&gt;然后我们需要修改内核启动顺序：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#nano /etc/default/grub
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;GRUB_DEFAULT=&amp;#34;1 &amp;gt;0&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;GRUB_TIMEOUT=5
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;GRUB_DISTRIBUTOR=`lsb_release -i -s 2&amp;gt; /dev/null || echo Debian`
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;GRUB_CMDLINE_LINUX_DEFAULT=&amp;#34;quiet splash&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;GRUB_CMDLINE_LINUX=&amp;#34;&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;GRUB_DISABLE_OS_PROBER=false
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;GRUB_DEFAULT为按menuentry顺序排序设置默认启动项，第一项为0，我这里对应的是&lt;code&gt;Debian GNU/Linux&lt;/code&gt;，&lt;code&gt;Debian GNU/Linux, with Linux 6.5.10android&lt;/code&gt;是子菜单&lt;code&gt;Advanced options for Debian GNU/Linux&lt;/code&gt;下的第一项，所以这里应该设置为1 &amp;gt;0.注意&amp;quot;1&amp;quot;和&amp;quot;&amp;gt;&amp;ldquo;之间有一个空格。&lt;/p&gt;
-&lt;p&gt;然后更新保存grub：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;update-grub
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;查看是否配置正确：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat /proc/cmdline
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;重启。然后直接一个&lt;code&gt;uname -a&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;base&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; tamakyi@DevBot:~$ uname -a
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Linux AkarinDevBot 6.5.10android &lt;span class=&#34;c1&#34;&gt;#2 SMP PREEMPT_DYNAMIC Wed Jan 24 00:43:00 HKT 2024 x86_64 GNU/Linux&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果还是不行（提示缺少ashmem）的话，去克隆这个仓库并执行安装加载：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://github.com/choff/anbox-modules
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; anbox-modules
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sh ./INSTALL.sh
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;再检查是否启用完成：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;base&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; tamakyi@DevBot:~$ grep binder /proc/filesystems 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nodev   binder
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;base&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; tamakyi@DevBot:~$ grep ashmem /proc/misc 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;m&#34;&gt;124&lt;/span&gt; ashmem
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;有输出就表示正常启用模块了。如果如果还是用不了，那可能是你需要手动挂载binderfs：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir /dev/binderfs
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mount -t binder none /dev/binderfs/
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后重启再验证，至此redroid的内核依赖模块安装完成。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;安装redroid&#34;&gt;安装redroid
-&lt;/h3&gt;&lt;p&gt;安装过docker的直接运行:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;base&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; root@DevBot:~# docker run -itd --rm --privileged &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    --pull always &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    -v ~/data:/data &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    -p 35555:5555 &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    redroid/redroid:13.0.0-latest
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;其中官方支持的版本如下：（截止20240124）&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Android 14 (redroid/redroid:14.0.0-latest)&lt;/li&gt;
-&lt;li&gt;Android 14 64bit only (redroid/redroid:14.0.0_64only-latest)&lt;/li&gt;
-&lt;li&gt;Android 13 (redroid/redroid:13.0.0-latest)&lt;/li&gt;
-&lt;li&gt;Android 13 64bit only (redroid/redroid:13.0.0_64only-latest)&lt;/li&gt;
-&lt;li&gt;Android 12 (redroid/redroid:12.0.0-latest)&lt;/li&gt;
-&lt;li&gt;Android 12 64bit only (redroid/redroid:12.0.0_64only-latest)&lt;/li&gt;
-&lt;li&gt;Android 11 (redroid/redroid:11.0.0-latest)&lt;/li&gt;
-&lt;li&gt;Android 10 (redroid/redroid:10.0.0-latest)&lt;/li&gt;
-&lt;li&gt;Android 9 (redroid/redroid:9.0.0-latest)&lt;/li&gt;
-&lt;li&gt;Android 8.1 (redroid/redroid:8.1.0-latest)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;版本并不是越高越好，越高占用内存越多，且限制更多，此处我选择安卓10，跑个shamrock足矣。
-&lt;strong&gt;经测试在安卓10内部打开设置会导致宿主机死机，并且重启后docker容器会消失，慎用&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;检查是否正常使用：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# docker ps&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;CONTAINER ID   IMAGE                           COMMAND                   CREATED         STATUS         PORTS                                         NAMES
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;d51457fc4561   redroid/redroid:10.0.0-latest   &lt;span class=&#34;s2&#34;&gt;&amp;#34;/init androidboot.h…&amp;#34;&lt;/span&gt;   &lt;span class=&#34;m&#34;&gt;3&lt;/span&gt; minutes ago   Up &lt;span class=&#34;m&#34;&gt;3&lt;/span&gt; minutes   0.0.0.0:35555-&amp;gt;5555/tcp, :::35555-&amp;gt;5555/tcp   sweet_vaughan
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;下载adb套件：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://dl.google.com/android/repository/platform-tools_r34.0.5-linux.zip &lt;span class=&#34;c1&#34;&gt;#不一定是这个版本，具体以官网为准&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;unzip platform-tools_r34.0.5-linux.zip
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cp platform-tools_r34.0.5-linux/adb /usr/bin
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod +x /usr/bin/adb
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;连接进redroid：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;base&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; root@DevBot:~/platform-tools# adb connect localhost:35555 &lt;span class=&#34;c1&#34;&gt;#前面把docker的5555端口映射到宿主的35555端口&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;connected to localhost:35555 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;base&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; root@DevBot:~/platform-tools# adb devices
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;List of devices attached
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;localhost:35555 device
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;base&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; root@DevBot:~/platform-tools# adb -s localhost:35555 shell &lt;span class=&#34;c1&#34;&gt;#实际上我这里有多个设备连接 所以需要指定设备&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;redroid_x86_64:/ $ 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;redroid_x86_64:/ $ free -h
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                total        used        free      shared     buffers
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Mem:              14G        5.3G        8.2G         12M         82M
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-/+ buffers/cache:           5.2G        8.2G
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Swap:            976M           &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;        976M
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;redroid_x86_64:/ $ df -h
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Filesystem     Size  Used Avail Use% Mounted on
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;overlay        218G   65G  141G  32% /
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tmpfs           64M  592K   63M   1% /dev
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;shm             64M     &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;   64M   0% /dev/shm
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/dev/sdb2      218G   65G  141G  32% /data
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tmpfs          6.7G     &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;  6.7G   0% /mnt
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tmpfs          6.7G     &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;  6.7G   0% /apex
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/dev/fuse      218G   65G  141G  32% /storage/emulated
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;redroid_x86_64:/ $ uname -a
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Linux localhost 6.5.10android &lt;span class=&#34;c1&#34;&gt;#2 SMP PREEMPT_DYNAMIC Wed Jan 24 00:43:00 HKT 2024 x86_64&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;redroid_x86_64:/ $ 
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;查询下&lt;code&gt;build.prop&lt;/code&gt;：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;redroid_x86_64:/ $ su
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;redroid_x86_64:/ &lt;span class=&#34;c1&#34;&gt;# cat /system/build.prop                     &lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# begin common build properties&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# autogenerated by build/make/tools/buildinfo_common.sh&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.system.build.date&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Mon Oct &lt;span class=&#34;m&#34;&gt;16&lt;/span&gt; 08:28:31 UTC &lt;span class=&#34;m&#34;&gt;2023&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.system.build.date.utc&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1697444911&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.system.build.fingerprint&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;redroid/redroid_x86_64/redroid_x86_64:10/QP1A.190711.019/frank10160828:userdebug/test-keys
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.system.build.id&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;QP1A.190711.019
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.system.build.tags&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;test-keys
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.system.build.type&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;userdebug
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.system.build.version.incremental&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;eng.frank.20231016.082901
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.system.build.version.release&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;10&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.system.build.version.sdk&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;29&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.product.system.brand&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;redroid
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.product.system.device&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;redroid_x86_64
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.product.system.manufacturer&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;redroid
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.product.system.model&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;redroid10_x86_64
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.product.system.name&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;redroid_x86_64
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# end common build properties&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# begin build properties&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# autogenerated by buildinfo.sh&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.build.id&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;QP1A.190711.019
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.build.display.id&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;redroid_x86_64-userdebug &lt;span class=&#34;m&#34;&gt;10&lt;/span&gt; QP1A.190711.019 eng.frank.20231016.082901 test-keys
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.build.version.incremental&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;eng.frank.20231016.082901
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.build.version.sdk&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;29&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.build.version.preview_sdk&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.build.version.preview_sdk_fingerprint&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;REL
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.build.version.codename&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;REL
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.build.version.all_codenames&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;REL
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.build.version.release&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;10&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.build.version.security_patch&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;2019-09-05
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.build.version.base_os&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.build.version.min_supported_target_sdk&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;23&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.build.date&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Mon Oct &lt;span class=&#34;m&#34;&gt;16&lt;/span&gt; 08:28:31 UTC &lt;span class=&#34;m&#34;&gt;2023&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.build.date.utc&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1697444911&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.build.type&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;userdebug
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.build.user&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;frank
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.build.host&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;redroid-builder
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.build.tags&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;test-keys
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.build.flavor&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;redroid_x86_64-userdebug
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.build.ab_update&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# ro.product.cpu.abi and ro.product.cpu.abi2 are obsolete,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# use ro.product.cpu.abilist instead.&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.product.cpu.abi&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;x86_64
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.product.cpu.abilist&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;x86_64,x86
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.product.cpu.abilist32&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;x86
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.product.cpu.abilist64&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;x86_64
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.product.locale&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;en-US
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.wifi.channels&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# ro.build.product is obsolete; use ro.product.device&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.build.product&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;redroid_x86_64
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Do not try to parse description or thumbprint&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.build.description&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;redroid_x86_64-userdebug &lt;span class=&#34;m&#34;&gt;10&lt;/span&gt; QP1A.190711.019 eng.frank.20231016.082901 test-keys
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# end build properties&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# from build/make/target/board/gsi_system.prop&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# GSI always generate dex pre-opt in system image&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.cp_system_other_odex&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# GSI always disables adb authentication&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.adb.secure&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# GSI disables non-AOSP nnapi extensions on product partition&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.nnapi.extensions.deny_on_product&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# TODO(b/120679683): disable RescueParty before all problem apps solved&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;persist.sys.disable_rescue&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# TODO(b/78105955): disable privapp_permissions checking before the bug solved&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.control_privapp_permissions&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;disable
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# TODO(b/136212765): the default for LMK&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.lmk.kill_heaviest_task&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.lmk.kill_timeout_ms&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;100&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.lmk.use_minfree_levels&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# end of build/make/target/board/gsi_system.prop&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# ADDITIONAL_BUILD_PROPERTIES&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.bionic.ld.warning&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ro.treble.enabled&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;persist.debug.dalvik.vm.core_platform_api_policy&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;just-warn
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;dalvik.vm.lockprof.threshold&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;500&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;net.bt.name&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Android
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;说明已经正常安装redroid并使用了。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;配置安装shamrock&#34;&gt;配置安装shamrock
-&lt;/h3&gt;&lt;p&gt;首先要把相关的东西准备好（此步骤我在windows远程操作了）：
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Qq on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/qq.html</link><description>Recent content in Qq on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 14 Aug 2025 03:33:47 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/qq/index.xml" rel="self" type="application/rss+xml"/><item><title>在debian安装配置redroid并安装shamrock的记录</title><link>https://blog.tama.guru/record/redroid.html</link><pubDate>Wed, 24 Jan 2024 12:01:00 +0800</pubDate><guid>https://blog.tama.guru/record/redroid.html</guid><description>&lt;h3 id="前言">前言
+&lt;/h3>&lt;p>由于某讯对第三方QQ机器人的大力追杀，原有的机器人框架（miraiqq和go-cqhttp）等基本上都无法使用了，登录会直接代码45封号。在此之后发展出shamrock等项目，此类项目的特点是需要虚拟机或实机进行操作，意味着至少需要一个桌面环境或者一台闲置手机，开销相比之前1c512m都能跑的时候高太多。在网上冲浪的时候发现了可以将安卓的Dalvik/ART移植到Linux桌面环境，借此运行安卓APK程序，因此需要用到redroid这个软件。&lt;/p>
+&lt;p>redroid即Remote anDroid，是一个架设云手机的方案，可以透过docker在linux系统上跑安卓系统容器。相比于虚拟机方案，其优势在于：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>开源&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>支持GPU加速+arm转X86转译器&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>与宿主机公用内核等相关资源&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>支持使用scrcpy进行连接&lt;/p>
+&lt;hr>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="给内核添加相关模块">给内核添加相关模块
+&lt;/h3>&lt;p>首先需要查询系统内核是否支持&lt;code>binder&lt;/code>和&lt;code>ashmem&lt;/code>两个功能，此功能为使用redroid必须的。查询可以通过执行：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">lsmod &lt;span class="p">|&lt;/span> grep -e ashmem_linux -e binder_linux
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>进行查询，如果有输出可以略过此步骤。如果没有任何输出则表示内核没有配置好这两个模块，需要重新编译内核。对于Ubuntu系统，官方提供了&lt;a class="link" href="https://github.com/remote-android/redroit-doc" target="_blank" rel="noopener"
+>比较简单的流程&lt;/a>，对于其他系统则需要手工维护。&lt;/p>
+&lt;p>首先去下载当前使用内核版本的源码：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">apt install linux-source-&lt;span class="k">$(&lt;/span>uname-r&lt;span class="k">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>下载完的源码位于&lt;code>/usr/src&lt;/code>，格式是&lt;code>.xz&lt;/code>，进去之后解压源码包并进入解压的文件夹，然后执行&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">make menuconfig
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>在弹出界面的勾选：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">Device Drivers--Android--Android Drivers--Binder Ipc Driver。 &lt;span class="c1">#binder&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Device Drivers--Android--Android Drivers--Binder filesystem。 &lt;span class="c1">#binder&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Device Drivers--Android--Staging Drivers--Android--Enable the Anonumous Shared Memory Subsystem &lt;span class="c1">#ashmem&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">General Setup--CPU/Task &lt;span class="nb">time&lt;/span> and stats accounting--Pressure stall infomation tracking
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>后按&lt;code>save&lt;/code>保存。&lt;/p>
+&lt;p>或者进去之后直接选择&lt;code>exit&lt;/code>并选择&lt;code>save config&lt;/code>。目录下会生成一个&lt;code>.config&lt;/code>的文件，编辑该文件在最后添加以下内容:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="nv">CONFIG_ASHMEM&lt;/span>&lt;span class="o">=&lt;/span>y
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">CONFIG_ANDROID&lt;/span>&lt;span class="o">=&lt;/span>y
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">CONFIG_ANDROID_BINDER_IPC&lt;/span>&lt;span class="o">=&lt;/span>y
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">CONFIG_ANDROID_BINDERFS&lt;/span>&lt;span class="o">=&lt;/span>y
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">CONFIG_ANDROID_BINDER_DEVICES&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;binder,hwbinder,vndbinder,binderfs&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">CONFIG_ANDROID_BINDER_IPC_SELFTEST&lt;/span>&lt;span class="o">=&lt;/span>y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>保存后执行&lt;code>make&lt;/code> ，建议不要加j让他慢慢编译，经尝试这样会导致报错。&lt;/p>
+&lt;p>&lt;strong>注意&lt;/strong>：可能会报错：&lt;code>CONFIG_DEBUG_INFO_BTF&lt;/code>&lt;/p>
+&lt;p>这种情况就去&lt;code>.config&lt;/code>文件里面添加以下内容：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="nv">CONFIG_DEBUG_INFO_DWARF5&lt;/span>&lt;span class="o">=&lt;/span>n
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">CONFIG_DEBUG_INFO_BTF&lt;/span>&lt;span class="o">=&lt;/span>n &lt;span class="c1">#原值为y&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>跑完后在目录下执行&lt;code>modules_install&lt;/code>和&lt;code>make install&lt;/code>，执行完成后检查内核是否安装到grub了：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="p">(&lt;/span>&lt;span class="n">base&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="n">root&lt;/span>&lt;span class="err">@&lt;/span>&lt;span class="n">DevBot&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">boot&lt;/span>&lt;span class="c1"># cat /boot/grub/grub.cfg | grep menuentry&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="p">[&lt;/span> &lt;span class="n">x&lt;/span>&lt;span class="s2">&amp;#34;${feature_menuentry_id}&amp;#34;&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">xy&lt;/span> &lt;span class="p">];&lt;/span> &lt;span class="n">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">menuentry_id_option&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;--id&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">menuentry_id_option&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">export&lt;/span> &lt;span class="n">menuentry_id_option&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">menuentry&lt;/span> &lt;span class="s1">&amp;#39;Debian GNU/Linux&amp;#39;&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">debian&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">gnu&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">linux&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">gnu&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">os&lt;/span> &lt;span class="o">$&lt;/span>&lt;span class="n">menuentry_id_option&lt;/span> &lt;span class="s1">&amp;#39;gnulinux-simple-9aba24c5-ec53-4108-b461-4bcc67d1d0dc&amp;#39;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">submenu&lt;/span> &lt;span class="s1">&amp;#39;Advanced options for Debian GNU/Linux&amp;#39;&lt;/span> &lt;span class="o">$&lt;/span>&lt;span class="n">menuentry_id_option&lt;/span> &lt;span class="s1">&amp;#39;gnulinux-advanced-9aba24c5-ec53-4108-b461-4bcc67d1d0dc&amp;#39;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">menuentry&lt;/span> &lt;span class="s1">&amp;#39;Debian GNU/Linux, with Linux 6.5.10android&amp;#39;&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">debian&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">gnu&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">linux&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">gnu&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">os&lt;/span> &lt;span class="o">$&lt;/span>&lt;span class="n">menuentry_id_option&lt;/span> &lt;span class="s1">&amp;#39;gnulinux-6.5.10android-advanced-9aba24c5-ec53-4108-b461-4bcc67d1d0dc&amp;#39;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">menuentry&lt;/span> &lt;span class="s1">&amp;#39;Debian GNU/Linux, with Linux 6.5.10android (recovery mode)&amp;#39;&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">debian&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">gnu&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">linux&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">gnu&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">os&lt;/span> &lt;span class="o">$&lt;/span>&lt;span class="n">menuentry_id_option&lt;/span> &lt;span class="s1">&amp;#39;gnulinux-6.5.10android-recovery-9aba24c5-ec53-4108-b461-4bcc67d1d0dc&amp;#39;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">menuentry&lt;/span> &lt;span class="s1">&amp;#39;Debian GNU/Linux, with Linux 6.5.0-0.deb12.4-amd64&amp;#39;&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">debian&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">gnu&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">linux&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">gnu&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">os&lt;/span> &lt;span class="o">$&lt;/span>&lt;span class="n">menuentry_id_option&lt;/span> &lt;span class="s1">&amp;#39;gnulinux-6.5.0-0.deb12.4-amd64-advanced-9aba24c5-ec53-4108-b461-4bcc67d1d0dc&amp;#39;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">menuentry&lt;/span> &lt;span class="s1">&amp;#39;Debian GNU/Linux, with Linux 6.5.0-0.deb12.4-amd64 (recovery mode)&amp;#39;&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">debian&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">gnu&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">linux&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">gnu&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">os&lt;/span> &lt;span class="o">$&lt;/span>&lt;span class="n">menuentry_id_option&lt;/span> &lt;span class="s1">&amp;#39;gnulinux-6.5.0-0.deb12.4-amd64-recovery-9aba24c5-ec53-4108-b461-4bcc67d1d0dc&amp;#39;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">menuentry&lt;/span> &lt;span class="s1">&amp;#39;Debian GNU/Linux, with Linux 6.1.0-17-amd64&amp;#39;&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">debian&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">gnu&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">linux&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">gnu&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">os&lt;/span> &lt;span class="o">$&lt;/span>&lt;span class="n">menuentry_id_option&lt;/span> &lt;span class="s1">&amp;#39;gnulinux-6.1.0-17-amd64-advanced-9aba24c5-ec53-4108-b461-4bcc67d1d0dc&amp;#39;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">menuentry&lt;/span> &lt;span class="s1">&amp;#39;Debian GNU/Linux, with Linux 6.1.0-17-amd64 (recovery mode)&amp;#39;&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">debian&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">gnu&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">linux&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">gnu&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">os&lt;/span> &lt;span class="o">$&lt;/span>&lt;span class="n">menuentry_id_option&lt;/span> &lt;span class="s1">&amp;#39;gnulinux-6.1.0-17-amd64-recovery-9aba24c5-ec53-4108-b461-4bcc67d1d0dc&amp;#39;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">menuentry&lt;/span> &lt;span class="s1">&amp;#39;Debian GNU/Linux, with Linux 6.1.0-15-amd64&amp;#39;&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">debian&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">gnu&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">linux&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">gnu&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">os&lt;/span> &lt;span class="o">$&lt;/span>&lt;span class="n">menuentry_id_option&lt;/span> &lt;span class="s1">&amp;#39;gnulinux-6.1.0-15-amd64-advanced-9aba24c5-ec53-4108-b461-4bcc67d1d0dc&amp;#39;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">menuentry&lt;/span> &lt;span class="s1">&amp;#39;Debian GNU/Linux, with Linux 6.1.0-15-amd64 (recovery mode)&amp;#39;&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">debian&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">gnu&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">linux&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">gnu&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="k">class&lt;/span> &lt;span class="n">os&lt;/span> &lt;span class="o">$&lt;/span>&lt;span class="n">menuentry_id_option&lt;/span> &lt;span class="s1">&amp;#39;gnulinux-6.1.0-15-amd64-recovery-9aba24c5-ec53-4108-b461-4bcc67d1d0dc&amp;#39;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">menuentry&lt;/span> &lt;span class="s1">&amp;#39;UEFI Firmware Settings&amp;#39;&lt;/span> &lt;span class="o">$&lt;/span>&lt;span class="n">menuentry_id_option&lt;/span> &lt;span class="s1">&amp;#39;uefi-firmware&amp;#39;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>可以看到&lt;code>Debian GNU/Linux, with Linux 6.5.10android&lt;/code>已经配置进去了。&lt;/p>
+&lt;p>然后我们需要修改内核启动顺序：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">#nano /etc/default/grub
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">GRUB_DEFAULT=&amp;#34;1 &amp;gt;0&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">GRUB_TIMEOUT=5
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">GRUB_DISTRIBUTOR=`lsb_release -i -s 2&amp;gt; /dev/null || echo Debian`
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">GRUB_CMDLINE_LINUX_DEFAULT=&amp;#34;quiet splash&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">GRUB_CMDLINE_LINUX=&amp;#34;&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">GRUB_DISABLE_OS_PROBER=false
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>GRUB_DEFAULT为按menuentry顺序排序设置默认启动项，第一项为0，我这里对应的是&lt;code>Debian GNU/Linux&lt;/code>，&lt;code>Debian GNU/Linux, with Linux 6.5.10android&lt;/code>是子菜单&lt;code>Advanced options for Debian GNU/Linux&lt;/code>下的第一项，所以这里应该设置为1 &amp;gt;0.注意&amp;quot;1&amp;quot;和&amp;quot;&amp;gt;&amp;ldquo;之间有一个空格。&lt;/p>
+&lt;p>然后更新保存grub：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">update-grub
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>查看是否配置正确：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">cat /proc/cmdline
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>重启。然后直接一个&lt;code>uname -a&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="o">(&lt;/span>base&lt;span class="o">)&lt;/span> tamakyi@DevBot:~$ uname -a
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Linux AkarinDevBot 6.5.10android &lt;span class="c1">#2 SMP PREEMPT_DYNAMIC Wed Jan 24 00:43:00 HKT 2024 x86_64 GNU/Linux&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果还是不行（提示缺少ashmem）的话，去克隆这个仓库并执行安装加载：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">git clone https://github.com/choff/anbox-modules
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> anbox-modules
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sh ./INSTALL.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>再检查是否启用完成：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="o">(&lt;/span>base&lt;span class="o">)&lt;/span> tamakyi@DevBot:~$ grep binder /proc/filesystems
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">nodev binder
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">(&lt;/span>base&lt;span class="o">)&lt;/span> tamakyi@DevBot:~$ grep ashmem /proc/misc
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="m">124&lt;/span> ashmem
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>有输出就表示正常启用模块了。如果如果还是用不了，那可能是你需要手动挂载binderfs：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">mkdir /dev/binderfs
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mount -t binder none /dev/binderfs/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后重启再验证，至此redroid的内核依赖模块安装完成。&lt;/p>
+&lt;hr>
+&lt;h3 id="安装redroid">安装redroid
+&lt;/h3>&lt;p>安装过docker的直接运行:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="o">(&lt;/span>base&lt;span class="o">)&lt;/span> root@DevBot:~# docker run -itd --rm --privileged &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> --pull always &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> -v ~/data:/data &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> -p 35555:5555 &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> redroid/redroid:13.0.0-latest
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>其中官方支持的版本如下：（截止20240124）&lt;/p>
+&lt;ul>
+&lt;li>Android 14 (redroid/redroid:14.0.0-latest)&lt;/li>
+&lt;li>Android 14 64bit only (redroid/redroid:14.0.0_64only-latest)&lt;/li>
+&lt;li>Android 13 (redroid/redroid:13.0.0-latest)&lt;/li>
+&lt;li>Android 13 64bit only (redroid/redroid:13.0.0_64only-latest)&lt;/li>
+&lt;li>Android 12 (redroid/redroid:12.0.0-latest)&lt;/li>
+&lt;li>Android 12 64bit only (redroid/redroid:12.0.0_64only-latest)&lt;/li>
+&lt;li>Android 11 (redroid/redroid:11.0.0-latest)&lt;/li>
+&lt;li>Android 10 (redroid/redroid:10.0.0-latest)&lt;/li>
+&lt;li>Android 9 (redroid/redroid:9.0.0-latest)&lt;/li>
+&lt;li>Android 8.1 (redroid/redroid:8.1.0-latest)&lt;/li>
+&lt;/ul>
+&lt;p>版本并不是越高越好，越高占用内存越多，且限制更多，此处我选择安卓10，跑个shamrock足矣。
+&lt;strong>经测试在安卓10内部打开设置会导致宿主机死机，并且重启后docker容器会消失，慎用&lt;/strong>&lt;/p>
+&lt;p>检查是否正常使用：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># docker ps&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">d51457fc4561 redroid/redroid:10.0.0-latest &lt;span class="s2">&amp;#34;/init androidboot.h…&amp;#34;&lt;/span> &lt;span class="m">3&lt;/span> minutes ago Up &lt;span class="m">3&lt;/span> minutes 0.0.0.0:35555-&amp;gt;5555/tcp, :::35555-&amp;gt;5555/tcp sweet_vaughan
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>下载adb套件：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">wget https://dl.google.com/android/repository/platform-tools_r34.0.5-linux.zip &lt;span class="c1">#不一定是这个版本，具体以官网为准&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">unzip platform-tools_r34.0.5-linux.zip
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cp platform-tools_r34.0.5-linux/adb /usr/bin
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">chmod +x /usr/bin/adb
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>连接进redroid：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="o">(&lt;/span>base&lt;span class="o">)&lt;/span> root@DevBot:~/platform-tools# adb connect localhost:35555 &lt;span class="c1">#前面把docker的5555端口映射到宿主的35555端口&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">connected to localhost:35555
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">(&lt;/span>base&lt;span class="o">)&lt;/span> root@DevBot:~/platform-tools# adb devices
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">List of devices attached
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">localhost:35555 device
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">(&lt;/span>base&lt;span class="o">)&lt;/span> root@DevBot:~/platform-tools# adb -s localhost:35555 shell &lt;span class="c1">#实际上我这里有多个设备连接 所以需要指定设备&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">redroid_x86_64:/ $
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">redroid_x86_64:/ $ free -h
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> total used free shared buffers
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Mem: 14G 5.3G 8.2G 12M 82M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-/+ buffers/cache: 5.2G 8.2G
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Swap: 976M &lt;span class="m">0&lt;/span> 976M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">redroid_x86_64:/ $ df -h
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Filesystem Size Used Avail Use% Mounted on
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">overlay 218G 65G 141G 32% /
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">tmpfs 64M 592K 63M 1% /dev
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">shm 64M &lt;span class="m">0&lt;/span> 64M 0% /dev/shm
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">/dev/sdb2 218G 65G 141G 32% /data
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">tmpfs 6.7G &lt;span class="m">0&lt;/span> 6.7G 0% /mnt
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">tmpfs 6.7G &lt;span class="m">0&lt;/span> 6.7G 0% /apex
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">/dev/fuse 218G 65G 141G 32% /storage/emulated
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">redroid_x86_64:/ $ uname -a
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Linux localhost 6.5.10android &lt;span class="c1">#2 SMP PREEMPT_DYNAMIC Wed Jan 24 00:43:00 HKT 2024 x86_64&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">redroid_x86_64:/ $
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>查询下&lt;code>build.prop&lt;/code>：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">1&lt;span class="p">|&lt;/span>redroid_x86_64:/ $ su
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">1&lt;span class="p">|&lt;/span>redroid_x86_64:/ &lt;span class="c1"># cat /system/build.prop &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># begin common build properties&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># autogenerated by build/make/tools/buildinfo_common.sh&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.system.build.date&lt;span class="o">=&lt;/span>Mon Oct &lt;span class="m">16&lt;/span> 08:28:31 UTC &lt;span class="m">2023&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.system.build.date.utc&lt;span class="o">=&lt;/span>&lt;span class="m">1697444911&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.system.build.fingerprint&lt;span class="o">=&lt;/span>redroid/redroid_x86_64/redroid_x86_64:10/QP1A.190711.019/frank10160828:userdebug/test-keys
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.system.build.id&lt;span class="o">=&lt;/span>QP1A.190711.019
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.system.build.tags&lt;span class="o">=&lt;/span>test-keys
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.system.build.type&lt;span class="o">=&lt;/span>userdebug
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.system.build.version.incremental&lt;span class="o">=&lt;/span>eng.frank.20231016.082901
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.system.build.version.release&lt;span class="o">=&lt;/span>&lt;span class="m">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.system.build.version.sdk&lt;span class="o">=&lt;/span>&lt;span class="m">29&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.product.system.brand&lt;span class="o">=&lt;/span>redroid
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.product.system.device&lt;span class="o">=&lt;/span>redroid_x86_64
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.product.system.manufacturer&lt;span class="o">=&lt;/span>redroid
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.product.system.model&lt;span class="o">=&lt;/span>redroid10_x86_64
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.product.system.name&lt;span class="o">=&lt;/span>redroid_x86_64
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># end common build properties&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># begin build properties&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># autogenerated by buildinfo.sh&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.build.id&lt;span class="o">=&lt;/span>QP1A.190711.019
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.build.display.id&lt;span class="o">=&lt;/span>redroid_x86_64-userdebug &lt;span class="m">10&lt;/span> QP1A.190711.019 eng.frank.20231016.082901 test-keys
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.build.version.incremental&lt;span class="o">=&lt;/span>eng.frank.20231016.082901
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.build.version.sdk&lt;span class="o">=&lt;/span>&lt;span class="m">29&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.build.version.preview_sdk&lt;span class="o">=&lt;/span>&lt;span class="m">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.build.version.preview_sdk_fingerprint&lt;span class="o">=&lt;/span>REL
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.build.version.codename&lt;span class="o">=&lt;/span>REL
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.build.version.all_codenames&lt;span class="o">=&lt;/span>REL
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.build.version.release&lt;span class="o">=&lt;/span>&lt;span class="m">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.build.version.security_patch&lt;span class="o">=&lt;/span>2019-09-05
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.build.version.base_os&lt;span class="o">=&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.build.version.min_supported_target_sdk&lt;span class="o">=&lt;/span>&lt;span class="m">23&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.build.date&lt;span class="o">=&lt;/span>Mon Oct &lt;span class="m">16&lt;/span> 08:28:31 UTC &lt;span class="m">2023&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.build.date.utc&lt;span class="o">=&lt;/span>&lt;span class="m">1697444911&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.build.type&lt;span class="o">=&lt;/span>userdebug
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.build.user&lt;span class="o">=&lt;/span>frank
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.build.host&lt;span class="o">=&lt;/span>redroid-builder
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.build.tags&lt;span class="o">=&lt;/span>test-keys
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.build.flavor&lt;span class="o">=&lt;/span>redroid_x86_64-userdebug
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.build.ab_update&lt;span class="o">=&lt;/span>&lt;span class="nb">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># ro.product.cpu.abi and ro.product.cpu.abi2 are obsolete,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># use ro.product.cpu.abilist instead.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.product.cpu.abi&lt;span class="o">=&lt;/span>x86_64
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.product.cpu.abilist&lt;span class="o">=&lt;/span>x86_64,x86
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.product.cpu.abilist32&lt;span class="o">=&lt;/span>x86
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.product.cpu.abilist64&lt;span class="o">=&lt;/span>x86_64
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.product.locale&lt;span class="o">=&lt;/span>en-US
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.wifi.channels&lt;span class="o">=&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># ro.build.product is obsolete; use ro.product.device&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.build.product&lt;span class="o">=&lt;/span>redroid_x86_64
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Do not try to parse description or thumbprint&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.build.description&lt;span class="o">=&lt;/span>redroid_x86_64-userdebug &lt;span class="m">10&lt;/span> QP1A.190711.019 eng.frank.20231016.082901 test-keys
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># end build properties&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># from build/make/target/board/gsi_system.prop&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># GSI always generate dex pre-opt in system image&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.cp_system_other_odex&lt;span class="o">=&lt;/span>&lt;span class="m">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># GSI always disables adb authentication&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.adb.secure&lt;span class="o">=&lt;/span>&lt;span class="m">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># GSI disables non-AOSP nnapi extensions on product partition&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.nnapi.extensions.deny_on_product&lt;span class="o">=&lt;/span>&lt;span class="nb">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># TODO(b/120679683): disable RescueParty before all problem apps solved&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">persist.sys.disable_rescue&lt;span class="o">=&lt;/span>&lt;span class="nb">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># TODO(b/78105955): disable privapp_permissions checking before the bug solved&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.control_privapp_permissions&lt;span class="o">=&lt;/span>disable
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># TODO(b/136212765): the default for LMK&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.lmk.kill_heaviest_task&lt;span class="o">=&lt;/span>&lt;span class="nb">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.lmk.kill_timeout_ms&lt;span class="o">=&lt;/span>&lt;span class="m">100&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.lmk.use_minfree_levels&lt;span class="o">=&lt;/span>&lt;span class="nb">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># end of build/make/target/board/gsi_system.prop&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># ADDITIONAL_BUILD_PROPERTIES&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.bionic.ld.warning&lt;span class="o">=&lt;/span>&lt;span class="m">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ro.treble.enabled&lt;span class="o">=&lt;/span>&lt;span class="nb">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">persist.debug.dalvik.vm.core_platform_api_policy&lt;span class="o">=&lt;/span>just-warn
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">dalvik.vm.lockprof.threshold&lt;span class="o">=&lt;/span>&lt;span class="m">500&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">net.bt.name&lt;span class="o">=&lt;/span>Android
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>说明已经正常安装redroid并使用了。&lt;/p>
+&lt;hr>
+&lt;h3 id="配置安装shamrock">配置安装shamrock
+&lt;/h3>&lt;p>首先要把相关的东西准备好（此步骤我在windows远程操作了）：
 下载:
-&lt;code&gt;https://github.com/Genymobile/scrcpy/releases/download/v2.3.1/scrcpy-win64-v2.3.1.zip&lt;/code&gt;
-&lt;code&gt;https://downv6.qq.com/qqweb/QQ_1/android_apk/Android_9.0.15_64.apk&lt;/code&gt;
-&lt;code&gt;https://github.com/LSPosed/LSPatch/releases/download/v0.6/manager-v0.6-398-release.apk&lt;/code&gt;
-&lt;code&gt;https://github.com/RikkaApps/Shizuku/releases/download/v13.5.3/shizuku-v13.5.3.r1036.fff3f87-release.apk&lt;/code&gt;
+&lt;code>https://github.com/Genymobile/scrcpy/releases/download/v2.3.1/scrcpy-win64-v2.3.1.zip&lt;/code>
+&lt;code>https://downv6.qq.com/qqweb/QQ_1/android_apk/Android_9.0.15_64.apk&lt;/code>
+&lt;code>https://github.com/LSPosed/LSPatch/releases/download/v0.6/manager-v0.6-398-release.apk&lt;/code>
+&lt;code>https://github.com/RikkaApps/Shizuku/releases/download/v13.5.3/shizuku-v13.5.3.r1036.fff3f87-release.apk&lt;/code>
 以及Shamrock安装包，因为使用的是Action版本，需要登陆Github下载，此处不放链接
-，解压&lt;code&gt;scrcpy-win64-v2.3.1.zip&lt;/code&gt;并把QQ、LSPatch、shizuku、Shamrock放在同一目录，打开powershell，执行：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./adb.exe connect 100.64.0.16:35555 &lt;span class=&#34;c1&#34;&gt;#100.64.0.16为我的debian宿主机远程访问IP。&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./adb.exe devices
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;List of devices attached
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;100.64.0.16:35555     device
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./adb push Android_9.0.15_64.apk /sdcard/
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./adb install LSPatch.apk
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./adb install shizuku-v13.5.3.r1040.1fc3a2d-release.apk
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./adb install Shamrock-v1.0.7.r260.64b7b00-all.apk
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后使用scrcpy：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;scrcpy
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;会进到安卓界面，先打开shizuku，会提示要启用，我们回退到adb窗口，执行：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./adb shell sh /storage/emulated/0/Android/data/moe.shizuku.privileged.api/start.sh
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后shizuku提示&lt;code&gt;shizuku is running&lt;/code&gt;。然后把&lt;code&gt;Authorized 0 applications&lt;/code&gt;点开，勾选LSPatch，再打开LSPatch，到Manager&amp;ndash;Apps点击加号，选择New Patch-Select apk(s) from storage 找到QQ安装包，点击start patch
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d331552e6.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d331552e6.png&#34; alt=&#34;shizuku&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d331552e6.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;shizuku&#34;
-	
-	
-&gt;
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d3ce0b407.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d3ce0b407.png&#34; alt=&#34;lsp-patch&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d3ce0b407.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;lsp-patch&#34;
-	
-	
-&gt;
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d3edd100b.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d3edd100b.png&#34; alt=&#34;start patch&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d3edd100b.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;start patch&#34;
-	
-	
-&gt;
+，解压&lt;code>scrcpy-win64-v2.3.1.zip&lt;/code>并把QQ、LSPatch、shizuku、Shamrock放在同一目录，打开powershell，执行：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">./adb.exe connect 100.64.0.16:35555 &lt;span class="c1">#100.64.0.16为我的debian宿主机远程访问IP。&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">./adb.exe devices
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">List of devices attached
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">100.64.0.16:35555 device
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">./adb push Android_9.0.15_64.apk /sdcard/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">./adb install LSPatch.apk
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">./adb install shizuku-v13.5.3.r1040.1fc3a2d-release.apk
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">./adb install Shamrock-v1.0.7.r260.64b7b00-all.apk
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后使用scrcpy：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">scrcpy
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>会进到安卓界面，先打开shizuku，会提示要启用，我们回退到adb窗口，执行：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">./adb shell sh /storage/emulated/0/Android/data/moe.shizuku.privileged.api/start.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后shizuku提示&lt;code>shizuku is running&lt;/code>。然后把&lt;code>Authorized 0 applications&lt;/code>点开，勾选LSPatch，再打开LSPatch，到Manager&amp;ndash;Apps点击加号，选择New Patch-Select apk(s) from storage 找到QQ安装包，点击start patch
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d331552e6.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d331552e6.png" alt="shizuku" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d331552e6.png"
+loading="lazy"
+alt="shizuku"
+>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d3ce0b407.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d3ce0b407.png" alt="lsp-patch" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d3ce0b407.png"
+loading="lazy"
+alt="lsp-patch"
+>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d3edd100b.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d3edd100b.png" alt="start patch" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d3edd100b.png"
+loading="lazy"
+alt="start patch"
+>
 等待打补丁完成，然后点击Install。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d43075df2.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d43075df2.png&#34; alt=&#34;patch done&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d43075df2.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;patch done&#34;
-	
-	
-&gt;
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d43075df2.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d43075df2.png" alt="patch done" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d43075df2.png"
+loading="lazy"
+alt="patch done"
+>
 安装完成后点击LSPatch里的QQ，找到module scope，把Shamrock打勾，即允许Shamrock对QQ生效。
 然后启动QQ，QQ就闪退了&amp;hellip;
-因为LSPatch目前已停止更新，后续是否会支持新版QQ尚未能明确，此文暂停更新。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;参考文章&#34;&gt;参考文章
-&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://dwcarrot.github.io/blog/2023/12/29/Notes-QQ-Bot-Framework&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;QQ-bot 框架部署记录&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/518415793&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;一次云服务器内核升级之旅 - 知乎 (zhihu.com)&lt;/a&gt;&lt;/p&gt;
-</description>
-        </item>
-        
-    </channel>
-</rss>
+因为LSPatch目前已停止更新，后续是否会支持新版QQ尚未能明确，此文暂停更新。&lt;/p>
+&lt;hr>
+&lt;h3 id="参考文章">参考文章
+&lt;/h3>&lt;p>&lt;a class="link" href="https://dwcarrot.github.io/blog/2023/12/29/Notes-QQ-Bot-Framework" target="_blank" rel="noopener"
+>QQ-bot 框架部署记录&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="https://zhuanlan.zhihu.com/p/518415793" target="_blank" rel="noopener"
+>一次云服务器内核升级之旅 - 知乎 (zhihu.com)&lt;/a>&lt;/p></description></item></channel></rss>

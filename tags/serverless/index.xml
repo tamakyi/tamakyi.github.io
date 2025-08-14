@@ -1,842 +1,814 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Serverless on 狼的公告板 ver.Hugo</title>
-        <link>https://blog.tama.guru/tags/serverless.html</link>
-        <description>Recent content in Serverless on 狼的公告板 ver.Hugo</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/serverless/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>使用vercel&#43;neon方案搭建无需服务器的umami统计服务</title>
-        <link>https://blog.tama.guru/record/umami.html</link>
-        <pubDate>Wed, 26 Mar 2025 12:23:06 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/record/umami.html</guid>
-        <description>&lt;h5 id=&#34;为什么要用umami&#34;&gt;为什么要用umami
-&lt;/h5&gt;&lt;p&gt;在此之前，本站及相关网站服务需要用到统计的地方，都用的是自建的matomo，这是个非常强大的网页统计服务，强大到有些臃肿，这次大搬家我就在想，我真的有必要耗费有限的服务器资源来实现到头来可能一次都用不到的功能吗？答案当然是不，经过一番对比，最终我决定换用ackee或者umami。这两个统计工具都支持无服务器部署，但我还是选择了umami。以下是umami和matomo的一些区别：&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;对比项目&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;matomo&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;umami&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;项目大小&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;26MB（5.3.1）&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;1.83MB（github仓库）&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;JS文件大小&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;67460 bytes&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;2,713 bytes&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;支持serverless&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;理论上支持&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;支持&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;支持2FA&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;是&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;否&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;可定制化JS名称&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;否&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;是&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;使用数据库&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;mysql&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;mysql/PostgreSQL&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;API丰富程度&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;非常丰富&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;无&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;从文件大小上来看umami真的是轻量化了很多，对网站速度都有很大优化。不支持2FA是个扣分项，但服务和数据库都在云端，不需要登录服务器使用，算是没太大影响。数据库这方面使用neon提供的免费Postgre套餐可以满足项目使用需求，所以理论上是不需要投入任何费用的。至于API，仅有官方服务的会提供，自建的版本是没有的。&lt;/p&gt;
-&lt;h5 id=&#34;vercel部署和neon数据库&#34;&gt;vercel部署和neon数据库
-&lt;/h5&gt;&lt;p&gt;先去&lt;a class=&#34;link&#34; href=&#34;https://console.neon.tech&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;neon&lt;/a&gt;使用github或者google账号登录，首次登录会要求新建项目(&lt;code&gt;Create Project&lt;/code&gt;)，只需要输入项目名称(&lt;code&gt;Project Name&lt;/code&gt;)、数据库名称(&lt;code&gt;Database name&lt;/code&gt;)并选择地域(&lt;code&gt;Region&lt;/code&gt;)，前两项根据自己需求填写，地域根据vercel分配一般选择AWS US三个中的一个即可。&lt;/p&gt;
-&lt;p&gt;新建完先要点进项目，左侧&lt;code&gt;Project&lt;/code&gt;下有个&lt;code&gt;Branches&lt;/code&gt;，点击&lt;code&gt;Primary compute&lt;/code&gt;下方的蓝字，默认是0.25-2CU，点进去把&lt;code&gt;Configure the autoscaling range&lt;/code&gt;拖动到只有0.25，并点击&lt;code&gt;SAVE&lt;/code&gt;。之所以要这么做，是因为neon的免费套餐包含0.5G的存储、0.5G的每月数据传输、10个项目和每个项目10个分支、10000的最大并发数，&lt;strong&gt;190的计算时长&lt;/strong&gt;。这里的计算时长(compute hours)关联的是运行的CPU数据、服务器运行时长，比如CU是2，每天运行24小时，一个月的计算时长=2x24x30=1440，这对190来说显然是超出太多了，而调整成0.25则=0.25x24*30=180，正好够用。虽然他支持0.25-2之间的动态调整，谁知道什么情况下突然拉起来，这个情况下数据库就被停了，所以最好调整下。&lt;/p&gt;
-&lt;p&gt;然后回到项目页面，找到&lt;code&gt;Connect&lt;/code&gt;，点进去把左下角的&lt;code&gt;Show Passowrd&lt;/code&gt;点开，然后复制&lt;code&gt;Connect to your database&lt;/code&gt;的内容备用。&lt;/p&gt;
-&lt;p&gt;注册vercel账号并使用github登录，按照官方文档&lt;a class=&#34;link&#34; href=&#34;https://umami.is/docs/guides/running-on-vercel&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;官方文档&lt;/a&gt;直接把项目仓库Fork到自己的github并登录vercel导入这个仓库，或者直接&lt;a class=&#34;link&#34; href=&#34;https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fumami-software%2Fumami&amp;amp;env=DATABASE_URL&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;一键Deploy&lt;/a&gt;。在&lt;code&gt;New Project&lt;/code&gt;页面输入&lt;code&gt;Private Repository Name&lt;/code&gt;，随意即可，再点&lt;code&gt;Create&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;然后配置环境变量，一般只需要三个：&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;变量名称&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;含义&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;必须&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;DATABASE_URL&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;数据库地址，即上面使用neon拿到的&lt;code&gt;Connect to your database&lt;/code&gt;的内容。如果是mysql格式为:mysql://username:mypassword@localhost:3306/数据库名称&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;是&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;HASH_SALT&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;一串随机字符串&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;否&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;TRACKER_SCRIPT_NAME&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;追踪JS文件的名称，不设置默认是umami.js&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;否&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;再点击&lt;code&gt;Deploy&lt;/code&gt;，等待2~3分钟即完成部署。&lt;/p&gt;
-&lt;p&gt;因为vercel提供的vercel.app域名在国内无法解析，部署完成后点进项目的&lt;code&gt;Settings&lt;/code&gt;下的&lt;code&gt;Domains&lt;/code&gt;，选择&lt;code&gt;Add&lt;/code&gt;，在&lt;code&gt;Domain&lt;/code&gt;输入你自己的域名，点&lt;code&gt;Add Domain&lt;/code&gt;保存。至于域名从哪来，可以去一些提供免费二级域名的服务商获取。然后去服务商CNAME解析域名到cname.vercel-dns.com保存，一两分钟后会自动申请好SSL证书，就可以通过自己的域名访问了。&lt;/p&gt;
-&lt;h5 id=&#34;umami设置&#34;&gt;umami设置
-&lt;/h5&gt;&lt;p&gt;umami部署后默认的用户名密码是admin/umami，登录进去在个人资料可以修改语言成中文，在设置下的用户可以修改和添加用户名和密码。&lt;/p&gt;
-&lt;p&gt;在网站页面点击添加网站，输入名称和域名，完成后点击域名的设置，在跟踪代码下可以找到那串script，放到网页的**&lt;/head&gt;**之前即可。&lt;/p&gt;
-&lt;p&gt;完成之后刷新一下访问统计就出来了。&lt;/p&gt;
-&lt;h5 id=&#34;感觉&#34;&gt;感觉
-&lt;/h5&gt;&lt;p&gt;因为直接使用vercel的cdn，访问速度真的很快，而且也没有什么多余的东西。使用matomo的时候不知道是不是我的配置问题访问来源一直出不来，现在也能显示了。虽然没有独立app，直接使用网页访问也是非常顺滑的，而且他没有办法显示访客的具体机型、浏览器版本、系统版本等信息，比如matomo下会显示为&lt;code&gt;Xiaomi 15, Chrome 117.xx.xx, Android 15&lt;/code&gt;，umami就只有&lt;code&gt;Android, Chrome&lt;/code&gt;这种信息，对我来说意义不大。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>在静态网站上使用waline评论系统</title>
-        <link>https://blog.tama.guru/record/waline-on-html.html</link>
-        <pubDate>Sun, 10 Mar 2024 01:24:00 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/record/waline-on-html.html</guid>
-        <description>&lt;h4 id=&#34;waline是什么&#34;&gt;Waline是什么
-&lt;/h4&gt;&lt;blockquote&gt;
-&lt;p&gt;一款从 Valine 衍生的带后端评论系统。可以将 Waline 等价成 With backend Valine.&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;简单来说，Waline可以引入到任意网站上，比如hugo等搭建的静态博客系统。&lt;/p&gt;
-&lt;h4 id=&#34;为什么要用waline&#34;&gt;为什么要用Waline
-&lt;/h4&gt;&lt;p&gt;看到这个的第一眼我就心想：卧槽，我也要整一个！&lt;/p&gt;
-&lt;center&gt;![文章反应功能][1]&lt;/center&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Serverless on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/serverless.html</link><description>Recent content in Serverless on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 14 Aug 2025 03:33:47 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/serverless/index.xml" rel="self" type="application/rss+xml"/><item><title>使用vercel+neon方案搭建无需服务器的umami统计服务</title><link>https://blog.tama.guru/record/umami.html</link><pubDate>Wed, 26 Mar 2025 12:23:06 +0800</pubDate><guid>https://blog.tama.guru/record/umami.html</guid><description>&lt;h5 id="为什么要用umami">为什么要用umami
+&lt;/h5>&lt;p>在此之前，本站及相关网站服务需要用到统计的地方，都用的是自建的matomo，这是个非常强大的网页统计服务，强大到有些臃肿，这次大搬家我就在想，我真的有必要耗费有限的服务器资源来实现到头来可能一次都用不到的功能吗？答案当然是不，经过一番对比，最终我决定换用ackee或者umami。这两个统计工具都支持无服务器部署，但我还是选择了umami。以下是umami和matomo的一些区别：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">对比项目&lt;/th>
+&lt;th style="text-align: center">matomo&lt;/th>
+&lt;th style="text-align: center">umami&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">项目大小&lt;/td>
+&lt;td style="text-align: center">26MB（5.3.1）&lt;/td>
+&lt;td style="text-align: center">1.83MB（github仓库）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">JS文件大小&lt;/td>
+&lt;td style="text-align: center">67460 bytes&lt;/td>
+&lt;td style="text-align: center">2,713 bytes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">支持serverless&lt;/td>
+&lt;td style="text-align: center">理论上支持&lt;/td>
+&lt;td style="text-align: center">支持&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">支持2FA&lt;/td>
+&lt;td style="text-align: center">是&lt;/td>
+&lt;td style="text-align: center">否&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">可定制化JS名称&lt;/td>
+&lt;td style="text-align: center">否&lt;/td>
+&lt;td style="text-align: center">是&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">使用数据库&lt;/td>
+&lt;td style="text-align: center">mysql&lt;/td>
+&lt;td style="text-align: center">mysql/PostgreSQL&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">API丰富程度&lt;/td>
+&lt;td style="text-align: center">非常丰富&lt;/td>
+&lt;td style="text-align: center">无&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>从文件大小上来看umami真的是轻量化了很多，对网站速度都有很大优化。不支持2FA是个扣分项，但服务和数据库都在云端，不需要登录服务器使用，算是没太大影响。数据库这方面使用neon提供的免费Postgre套餐可以满足项目使用需求，所以理论上是不需要投入任何费用的。至于API，仅有官方服务的会提供，自建的版本是没有的。&lt;/p>
+&lt;h5 id="vercel部署和neon数据库">vercel部署和neon数据库
+&lt;/h5>&lt;p>先去&lt;a class="link" href="https://console.neon.tech" target="_blank" rel="noopener"
+>neon&lt;/a>使用github或者google账号登录，首次登录会要求新建项目(&lt;code>Create Project&lt;/code>)，只需要输入项目名称(&lt;code>Project Name&lt;/code>)、数据库名称(&lt;code>Database name&lt;/code>)并选择地域(&lt;code>Region&lt;/code>)，前两项根据自己需求填写，地域根据vercel分配一般选择AWS US三个中的一个即可。&lt;/p>
+&lt;p>新建完先要点进项目，左侧&lt;code>Project&lt;/code>下有个&lt;code>Branches&lt;/code>，点击&lt;code>Primary compute&lt;/code>下方的蓝字，默认是0.25-2CU，点进去把&lt;code>Configure the autoscaling range&lt;/code>拖动到只有0.25，并点击&lt;code>SAVE&lt;/code>。之所以要这么做，是因为neon的免费套餐包含0.5G的存储、0.5G的每月数据传输、10个项目和每个项目10个分支、10000的最大并发数，&lt;strong>190的计算时长&lt;/strong>。这里的计算时长(compute hours)关联的是运行的CPU数据、服务器运行时长，比如CU是2，每天运行24小时，一个月的计算时长=2x24x30=1440，这对190来说显然是超出太多了，而调整成0.25则=0.25x24*30=180，正好够用。虽然他支持0.25-2之间的动态调整，谁知道什么情况下突然拉起来，这个情况下数据库就被停了，所以最好调整下。&lt;/p>
+&lt;p>然后回到项目页面，找到&lt;code>Connect&lt;/code>，点进去把左下角的&lt;code>Show Passowrd&lt;/code>点开，然后复制&lt;code>Connect to your database&lt;/code>的内容备用。&lt;/p>
+&lt;p>注册vercel账号并使用github登录，按照官方文档&lt;a class="link" href="https://umami.is/docs/guides/running-on-vercel" target="_blank" rel="noopener"
+>官方文档&lt;/a>直接把项目仓库Fork到自己的github并登录vercel导入这个仓库，或者直接&lt;a class="link" href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fumami-software%2Fumami&amp;amp;env=DATABASE_URL" target="_blank" rel="noopener"
+>一键Deploy&lt;/a>。在&lt;code>New Project&lt;/code>页面输入&lt;code>Private Repository Name&lt;/code>，随意即可，再点&lt;code>Create&lt;/code>。&lt;/p>
+&lt;p>然后配置环境变量，一般只需要三个：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">变量名称&lt;/th>
+&lt;th style="text-align: center">含义&lt;/th>
+&lt;th style="text-align: center">必须&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">DATABASE_URL&lt;/td>
+&lt;td style="text-align: center">数据库地址，即上面使用neon拿到的&lt;code>Connect to your database&lt;/code>的内容。如果是mysql格式为:mysql://username:mypassword@localhost:3306/数据库名称&lt;/td>
+&lt;td style="text-align: center">是&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">HASH_SALT&lt;/td>
+&lt;td style="text-align: center">一串随机字符串&lt;/td>
+&lt;td style="text-align: center">否&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">TRACKER_SCRIPT_NAME&lt;/td>
+&lt;td style="text-align: center">追踪JS文件的名称，不设置默认是umami.js&lt;/td>
+&lt;td style="text-align: center">否&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>再点击&lt;code>Deploy&lt;/code>，等待2~3分钟即完成部署。&lt;/p>
+&lt;p>因为vercel提供的vercel.app域名在国内无法解析，部署完成后点进项目的&lt;code>Settings&lt;/code>下的&lt;code>Domains&lt;/code>，选择&lt;code>Add&lt;/code>，在&lt;code>Domain&lt;/code>输入你自己的域名，点&lt;code>Add Domain&lt;/code>保存。至于域名从哪来，可以去一些提供免费二级域名的服务商获取。然后去服务商CNAME解析域名到cname.vercel-dns.com保存，一两分钟后会自动申请好SSL证书，就可以通过自己的域名访问了。&lt;/p>
+&lt;h5 id="umami设置">umami设置
+&lt;/h5>&lt;p>umami部署后默认的用户名密码是admin/umami，登录进去在个人资料可以修改语言成中文，在设置下的用户可以修改和添加用户名和密码。&lt;/p>
+&lt;p>在网站页面点击添加网站，输入名称和域名，完成后点击域名的设置，在跟踪代码下可以找到那串script，放到网页的**&lt;/head>**之前即可。&lt;/p>
+&lt;p>完成之后刷新一下访问统计就出来了。&lt;/p>
+&lt;h5 id="感觉">感觉
+&lt;/h5>&lt;p>因为直接使用vercel的cdn，访问速度真的很快，而且也没有什么多余的东西。使用matomo的时候不知道是不是我的配置问题访问来源一直出不来，现在也能显示了。虽然没有独立app，直接使用网页访问也是非常顺滑的，而且他没有办法显示访客的具体机型、浏览器版本、系统版本等信息，比如matomo下会显示为&lt;code>Xiaomi 15, Chrome 117.xx.xx, Android 15&lt;/code>，umami就只有&lt;code>Android, Chrome&lt;/code>这种信息，对我来说意义不大。&lt;/p></description></item><item><title>在静态网站上使用waline评论系统</title><link>https://blog.tama.guru/record/waline-on-html.html</link><pubDate>Sun, 10 Mar 2024 01:24:00 +0800</pubDate><guid>https://blog.tama.guru/record/waline-on-html.html</guid><description>&lt;h4 id="waline是什么">Waline是什么
+&lt;/h4>&lt;blockquote>
+&lt;p>一款从 Valine 衍生的带后端评论系统。可以将 Waline 等价成 With backend Valine.&lt;/p>&lt;/blockquote>
+&lt;p>简单来说，Waline可以引入到任意网站上，比如hugo等搭建的静态博客系统。&lt;/p>
+&lt;h4 id="为什么要用waline">为什么要用Waline
+&lt;/h4>&lt;p>看到这个的第一眼我就心想：卧槽，我也要整一个！&lt;/p>
+&lt;center>![文章反应功能][1]&lt;/center>
 于是现在已经加入到提问箱首页了：[狼的提问箱][2]。
-&lt;h4 id=&#34;怎么搭建呢&#34;&gt;怎么搭建呢？
-&lt;/h4&gt;&lt;p&gt;直接参考&lt;a class=&#34;link&#34; href=&#34;https://waline.js.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;官网&lt;/a&gt;即可，文档较为完善。推荐使用vercel+LeanCloud，可以实现无服务器搭建，当然访问速度有一些慢。&lt;/p&gt;
-&lt;h4 id=&#34;需要注意什么&#34;&gt;需要注意什么？
-&lt;/h4&gt;&lt;p&gt;Waline主要分为三个部分进行配置：&lt;/p&gt;
-&lt;h5 id=&#34;vercel环境变量&#34;&gt;vercel环境变量
-&lt;/h5&gt;&lt;p&gt;配置地址:https://vercel.com/%username%s-projects/%project_name%/settings/environment-variables
-配置文档:&lt;a class=&#34;link&#34; href=&#34;https://waline.js.org/reference/server/env.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://waline.js.org/reference/server/env.html&lt;/a&gt;
+&lt;h4 id="怎么搭建呢">怎么搭建呢？
+&lt;/h4>&lt;p>直接参考&lt;a class="link" href="https://waline.js.org/" target="_blank" rel="noopener"
+>官网&lt;/a>即可，文档较为完善。推荐使用vercel+LeanCloud，可以实现无服务器搭建，当然访问速度有一些慢。&lt;/p>
+&lt;h4 id="需要注意什么">需要注意什么？
+&lt;/h4>&lt;p>Waline主要分为三个部分进行配置：&lt;/p>
+&lt;h5 id="vercel环境变量">vercel环境变量
+&lt;/h5>&lt;p>配置地址:https://vercel.com/%username%s-projects/%project_name%/settings/environment-variables
+配置文档:&lt;a class="link" href="https://waline.js.org/reference/server/env.html" target="_blank" rel="noopener"
+>https://waline.js.org/reference/server/env.html&lt;/a>
 描述：一些全局性的配置
-具体可配置项目如下：&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;环境变量名称&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;默认值&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;备注&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;LEAN_ID&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;-&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;LeanCloud 应用的 App ID&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;LEAN_KEY&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;-&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;LeanCloud 应用的 App Key&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;LEAN_MASTER_KEY&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;-&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;LeanCloud 应用的 Master Key 用于后台修改数据&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;LEAN_SERVER&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;-&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;LeanCloud 服务地址，国内版用户需要配置此项&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;SITE_NAME&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;博客名称&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;SITE_URL&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;博客地址&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;LOGIN&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;当设置为 LOGIN=force 时会要求登录才能评论&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;DISABLE_USERAGENT&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;false&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;是否隐藏评论者的 UA，默认为否&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;DISABLE_REGION&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;false&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;是否隐藏评论者的归属地&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;DISABLE_AUTHOR_NOTIFY&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;false&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;是否禁止新评论通知&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;AVATAR_PROXY&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://avatar.75cdn.workers.dev&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://avatar.75cdn.workers.dev&lt;/a&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;头像的代理地址，设置 false 关闭代理&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;GRAVATAR_STR&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://seccdn.libravatar.org/avatar/%7b%7bmail&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://seccdn.libravatar.org/avatar/{{mail&lt;/a&gt;\md5}}&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;Gravatar 头像的地址，基于 nunjucks 语法&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;LEVELS&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;设置后会根据评论数为每个用户提供等级标签&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;IPQPS&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;60&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;基于 IP 的评论发布频率限制，单位为秒。设置为 0 不限制&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;SECURE_DOMAINS&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;安全域名配置，支持逗号分隔配置多个域名&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;AKISMET_KEY&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;70542d86693e&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;Akismet 反垃圾评论服务 Key (默认开启，不用请设置为 false)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;COMMENT_AUDIT&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;false&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;评论发布审核开关。开启后评论需要经过管理员审核后才能显示，所以建议在评论框默认文字上提供提示&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;RECAPTCHA_V3_KEY&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;reCAPTCHA V3 key，须与客户端同时配置&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;RECAPTCHA_V3_SECRET&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;reCAPTCHA V3 secret，服务端使用，不可泄漏&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;TURNSTILE_KEY&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;Turnstile key，须与客户端同时配置&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;TURNSTILE_SECRET&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;Turnstile secret，服务端使用，不可泄漏&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MARKDOWN_CONFIG&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;{}&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MarkdownIt 配置&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MARKDOWN_HIGHLIGHT&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;true&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;是否启用高亮&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MARKDOWN_EMOJI&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;true&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;是否启用 Emoji 缩写支持&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MARKDOWN_SUB&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;true&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;是否启用下角标支持&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MARKDOWN_SUP&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;true&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;是否启用上角标支持&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MARKDOWN_TEX&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;mathjax&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;解析 TeX 的服务，支持 mathjax、katex、false&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MARKDOWN_MATHJAX&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;{}&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MathJax 选项&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MARKDOWN_KATEX&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;{}&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;KaTeX 选项&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;SMTP_SERVICE&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;SMTP 邮件发送服务提供商&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;SMTP_HOST&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;SMTP 服务器地址&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;SMTP_PORT&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;SMTP 服务器端口。&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;SMTP_USER&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;SMTP 用户名&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;SMTP_PASS&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;SMTP 密码&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;SMTP_SECURE&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;是否使用 SSL 连接 SMTP&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;SENDER_NAME&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;自定义发送邮件的发件人&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;SENDER_EMAIL&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;自定义发送邮件的发件地址&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MONGO_DB&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;　&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MongoDB 数据库名称&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MONGO_USER&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;　&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MongoDB 服务的用户名&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MONGO_PASSWORD&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;　&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MongoDB 服务的密码&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MONGO_HOST&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;127.0.0.1&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MongoDB   服务的地址，支持数组格式&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MONGO_PORT&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;27017&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MongoDB   服务的端口，支持数组格式&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MONGO_REPLICASET&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;　&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MongoDB 集群&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MONGO_AUTHSOURCE&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;　&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MongoDB 认证源&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MONGO_OPT_SSL&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;FALSE&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;是否使用 SSL 进行连接&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MYSQL_DB&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;　&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MySQL 数据库库名&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MYSQL_USER&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;　&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MySQL 数据库的用户名&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MYSQL_PASSWORD&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;　&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MySQL 数据库的密码&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MYSQL_HOST&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;127.0.0.1&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MySQL 服务的地址&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MYSQL_PORT&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;3306&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MySQL 服务的端口&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MYSQL_PREFIX&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;wl_&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MySQL 数据表的表前缀&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MYSQL_CHARSET&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;utf8mb4&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MySQL 数据表的字符集&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;MYSQL_SSL&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;FALSE&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;是否使用 SSL MYSQL   连接数据库&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;TIDB_DB&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;　&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;TiDB 数据库库名&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;TIDB_USER&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;　&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;TiDB 数据库的用户名&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;TIDB_PASSWORD&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;　&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;TiDB 数据库的密码&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;TIDB_HOST&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;127.0.0.1&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;TiDB 服务的地址&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;TIDB_PORT&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;4000&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;TiDB 服务的端口&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;TIDB_PREFIX&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;wl_&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;TiDB 数据表的表前缀&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;TIDB_CHARSET&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;utf8mb4&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;TiDB 数据表的字符集&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;SQLITE_PATH&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;　&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;SQLite 数据库文件的路径，该路径不包含文件名本身&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;JWT_TOKEN&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;　&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;用户登录密钥，随机字符串即可&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;SQLITE_DB&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;waline&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;SQLite   数据库文件名，若文件名变化需要修改该字段值&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;SQLITE_PREFIX&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;wl_&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;SQLite 数据表的表前缀&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;PG_DB&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;　&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;PostgreSQL 数据库库名&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;PG_USER&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;　&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;PostgreSQL   数据库的用户名&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;PG_PASSWORD&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;　&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;PostgreSQL   数据库的密码&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;PG_HOST&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;127.0.0.1&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;PostgreSQL 服务的地址&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;PG_PORT&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;3211&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;PostgreSQL 服务的端口&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;PG_PREFIX&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;wl_&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;PostgreSQL   数据表的表前缀&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;PG_SSL&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;FALSE&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;是否使用 SSL 连接   PostgreSQL 数据库&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;POSTGRES_DATABASE&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;　&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;同 PG_DB&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;POSTGRES_USER&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;　&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;同 PG_USER&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;POSTGRES_PASSWORD&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;　&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;同 PG_PASSWORD&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;POSTGRES_HOST&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;127.0.0.1&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;同 PG_HOST&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;POSTGRES_PORT&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;3211&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;同 PG_PORT&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;POSTGRES_PREFIX&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;wl_&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;同 PG_PREFIX&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;POSTGRES_SSL&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;FALSE&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;同 POSTGRES_SSL&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;TCB_ENV&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;　&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;腾讯云开发环境 ID&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;TCB_ID&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;　&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;腾讯云 API 密钥 ID&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;TCB_KEY&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;　&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;腾讯云 API 密钥 Key&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;JWT_TOKEN&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;　&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;用户登录密钥，如果没有配任何环境变量的话需要配置此变量，随机字符串即可&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;GITHUB_TOKEN&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;　&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;Personal   access tokensopen in new window&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;GITHUB_REPO&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;　&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;仓库名称，例如 walinejs/waline&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;GITHUB_PATH&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;　&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;数据存储目录，例如 data 表示存储在 data 目录下，默认存在仓库根目录下&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;DETA_PROJECT_KEY&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;　&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;Deta 项目密钥&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;OAUTH_URL&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://oauth.lithub.cc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://oauth.lithub.cc&lt;/a&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;OAuth   第三方登录服务地址，可以 自建 authopen in new window 这是能让用户使用   GitHub, Twitter, Facebook, Google, 微博等第三方账户登录最简单的方式。&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;WEBHOOK&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;　&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;评论成功后会向 WEBHOOK   配置的地址发送一条 POST 请求&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;WALINE_ADMIN_MODULE_ASSET_URL&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;//unpkg.com/@waline/admin&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;Waline admin 地址&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;IP2REGION_DB&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;　&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;自定义 IP 查询库路径&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h5 id=&#34;indexjs服务端配置&#34;&gt;index.js（服务端）配置
-&lt;/h5&gt;&lt;p&gt;配置地址:https://github.com/%username%/%repositorie%/blob/main/index.js
-配置文档:&lt;a class=&#34;link&#34; href=&#34;https://waline.js.org/reference/server/config.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://waline.js.org/reference/server/config.html&lt;/a&gt;
+具体可配置项目如下：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">环境变量名称&lt;/th>
+&lt;th style="text-align: center">默认值&lt;/th>
+&lt;th style="text-align: center">备注&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">LEAN_ID&lt;/td>
+&lt;td style="text-align: center">-&lt;/td>
+&lt;td style="text-align: center">LeanCloud 应用的 App ID&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">LEAN_KEY&lt;/td>
+&lt;td style="text-align: center">-&lt;/td>
+&lt;td style="text-align: center">LeanCloud 应用的 App Key&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">LEAN_MASTER_KEY&lt;/td>
+&lt;td style="text-align: center">-&lt;/td>
+&lt;td style="text-align: center">LeanCloud 应用的 Master Key 用于后台修改数据&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">LEAN_SERVER&lt;/td>
+&lt;td style="text-align: center">-&lt;/td>
+&lt;td style="text-align: center">LeanCloud 服务地址，国内版用户需要配置此项&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">SITE_NAME&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">博客名称&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">SITE_URL&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">博客地址&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">LOGIN&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">当设置为 LOGIN=force 时会要求登录才能评论&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">DISABLE_USERAGENT&lt;/td>
+&lt;td style="text-align: center">false&lt;/td>
+&lt;td style="text-align: center">是否隐藏评论者的 UA，默认为否&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">DISABLE_REGION&lt;/td>
+&lt;td style="text-align: center">false&lt;/td>
+&lt;td style="text-align: center">是否隐藏评论者的归属地&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">DISABLE_AUTHOR_NOTIFY&lt;/td>
+&lt;td style="text-align: center">false&lt;/td>
+&lt;td style="text-align: center">是否禁止新评论通知&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">AVATAR_PROXY&lt;/td>
+&lt;td style="text-align: center">&lt;a class="link" href="https://avatar.75cdn.workers.dev" target="_blank" rel="noopener"
+>https://avatar.75cdn.workers.dev&lt;/a>&lt;/td>
+&lt;td style="text-align: center">头像的代理地址，设置 false 关闭代理&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">GRAVATAR_STR&lt;/td>
+&lt;td style="text-align: center">&lt;a class="link" href="https://seccdn.libravatar.org/avatar/%7b%7bmail" target="_blank" rel="noopener"
+>https://seccdn.libravatar.org/avatar/{{mail&lt;/a>\md5}}&lt;/td>
+&lt;td style="text-align: center">Gravatar 头像的地址，基于 nunjucks 语法&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">LEVELS&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">设置后会根据评论数为每个用户提供等级标签&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">IPQPS&lt;/td>
+&lt;td style="text-align: center">60&lt;/td>
+&lt;td style="text-align: center">基于 IP 的评论发布频率限制，单位为秒。设置为 0 不限制&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">SECURE_DOMAINS&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">安全域名配置，支持逗号分隔配置多个域名&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">AKISMET_KEY&lt;/td>
+&lt;td style="text-align: center">70542d86693e&lt;/td>
+&lt;td style="text-align: center">Akismet 反垃圾评论服务 Key (默认开启，不用请设置为 false)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">COMMENT_AUDIT&lt;/td>
+&lt;td style="text-align: center">false&lt;/td>
+&lt;td style="text-align: center">评论发布审核开关。开启后评论需要经过管理员审核后才能显示，所以建议在评论框默认文字上提供提示&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">RECAPTCHA_V3_KEY&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">reCAPTCHA V3 key，须与客户端同时配置&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">RECAPTCHA_V3_SECRET&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">reCAPTCHA V3 secret，服务端使用，不可泄漏&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">TURNSTILE_KEY&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">Turnstile key，须与客户端同时配置&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">TURNSTILE_SECRET&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">Turnstile secret，服务端使用，不可泄漏&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">MARKDOWN_CONFIG&lt;/td>
+&lt;td style="text-align: center">{}&lt;/td>
+&lt;td style="text-align: center">MarkdownIt 配置&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">MARKDOWN_HIGHLIGHT&lt;/td>
+&lt;td style="text-align: center">true&lt;/td>
+&lt;td style="text-align: center">是否启用高亮&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">MARKDOWN_EMOJI&lt;/td>
+&lt;td style="text-align: center">true&lt;/td>
+&lt;td style="text-align: center">是否启用 Emoji 缩写支持&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">MARKDOWN_SUB&lt;/td>
+&lt;td style="text-align: center">true&lt;/td>
+&lt;td style="text-align: center">是否启用下角标支持&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">MARKDOWN_SUP&lt;/td>
+&lt;td style="text-align: center">true&lt;/td>
+&lt;td style="text-align: center">是否启用上角标支持&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">MARKDOWN_TEX&lt;/td>
+&lt;td style="text-align: center">mathjax&lt;/td>
+&lt;td style="text-align: center">解析 TeX 的服务，支持 mathjax、katex、false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">MARKDOWN_MATHJAX&lt;/td>
+&lt;td style="text-align: center">{}&lt;/td>
+&lt;td style="text-align: center">MathJax 选项&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">MARKDOWN_KATEX&lt;/td>
+&lt;td style="text-align: center">{}&lt;/td>
+&lt;td style="text-align: center">KaTeX 选项&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">SMTP_SERVICE&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">SMTP 邮件发送服务提供商&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">SMTP_HOST&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">SMTP 服务器地址&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">SMTP_PORT&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">SMTP 服务器端口。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">SMTP_USER&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">SMTP 用户名&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">SMTP_PASS&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">SMTP 密码&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">SMTP_SECURE&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">是否使用 SSL 连接 SMTP&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">SENDER_NAME&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">自定义发送邮件的发件人&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">SENDER_EMAIL&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">自定义发送邮件的发件地址&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">MONGO_DB&lt;/td>
+&lt;td style="text-align: center">　&lt;/td>
+&lt;td style="text-align: center">MongoDB 数据库名称&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">MONGO_USER&lt;/td>
+&lt;td style="text-align: center">　&lt;/td>
+&lt;td style="text-align: center">MongoDB 服务的用户名&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">MONGO_PASSWORD&lt;/td>
+&lt;td style="text-align: center">　&lt;/td>
+&lt;td style="text-align: center">MongoDB 服务的密码&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">MONGO_HOST&lt;/td>
+&lt;td style="text-align: center">127.0.0.1&lt;/td>
+&lt;td style="text-align: center">MongoDB 服务的地址，支持数组格式&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">MONGO_PORT&lt;/td>
+&lt;td style="text-align: center">27017&lt;/td>
+&lt;td style="text-align: center">MongoDB 服务的端口，支持数组格式&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">MONGO_REPLICASET&lt;/td>
+&lt;td style="text-align: center">　&lt;/td>
+&lt;td style="text-align: center">MongoDB 集群&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">MONGO_AUTHSOURCE&lt;/td>
+&lt;td style="text-align: center">　&lt;/td>
+&lt;td style="text-align: center">MongoDB 认证源&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">MONGO_OPT_SSL&lt;/td>
+&lt;td style="text-align: center">FALSE&lt;/td>
+&lt;td style="text-align: center">是否使用 SSL 进行连接&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">MYSQL_DB&lt;/td>
+&lt;td style="text-align: center">　&lt;/td>
+&lt;td style="text-align: center">MySQL 数据库库名&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">MYSQL_USER&lt;/td>
+&lt;td style="text-align: center">　&lt;/td>
+&lt;td style="text-align: center">MySQL 数据库的用户名&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">MYSQL_PASSWORD&lt;/td>
+&lt;td style="text-align: center">　&lt;/td>
+&lt;td style="text-align: center">MySQL 数据库的密码&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">MYSQL_HOST&lt;/td>
+&lt;td style="text-align: center">127.0.0.1&lt;/td>
+&lt;td style="text-align: center">MySQL 服务的地址&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">MYSQL_PORT&lt;/td>
+&lt;td style="text-align: center">3306&lt;/td>
+&lt;td style="text-align: center">MySQL 服务的端口&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">MYSQL_PREFIX&lt;/td>
+&lt;td style="text-align: center">wl_&lt;/td>
+&lt;td style="text-align: center">MySQL 数据表的表前缀&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">MYSQL_CHARSET&lt;/td>
+&lt;td style="text-align: center">utf8mb4&lt;/td>
+&lt;td style="text-align: center">MySQL 数据表的字符集&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">MYSQL_SSL&lt;/td>
+&lt;td style="text-align: center">FALSE&lt;/td>
+&lt;td style="text-align: center">是否使用 SSL MYSQL 连接数据库&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">TIDB_DB&lt;/td>
+&lt;td style="text-align: center">　&lt;/td>
+&lt;td style="text-align: center">TiDB 数据库库名&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">TIDB_USER&lt;/td>
+&lt;td style="text-align: center">　&lt;/td>
+&lt;td style="text-align: center">TiDB 数据库的用户名&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">TIDB_PASSWORD&lt;/td>
+&lt;td style="text-align: center">　&lt;/td>
+&lt;td style="text-align: center">TiDB 数据库的密码&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">TIDB_HOST&lt;/td>
+&lt;td style="text-align: center">127.0.0.1&lt;/td>
+&lt;td style="text-align: center">TiDB 服务的地址&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">TIDB_PORT&lt;/td>
+&lt;td style="text-align: center">4000&lt;/td>
+&lt;td style="text-align: center">TiDB 服务的端口&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">TIDB_PREFIX&lt;/td>
+&lt;td style="text-align: center">wl_&lt;/td>
+&lt;td style="text-align: center">TiDB 数据表的表前缀&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">TIDB_CHARSET&lt;/td>
+&lt;td style="text-align: center">utf8mb4&lt;/td>
+&lt;td style="text-align: center">TiDB 数据表的字符集&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">SQLITE_PATH&lt;/td>
+&lt;td style="text-align: center">　&lt;/td>
+&lt;td style="text-align: center">SQLite 数据库文件的路径，该路径不包含文件名本身&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">JWT_TOKEN&lt;/td>
+&lt;td style="text-align: center">　&lt;/td>
+&lt;td style="text-align: center">用户登录密钥，随机字符串即可&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">SQLITE_DB&lt;/td>
+&lt;td style="text-align: center">waline&lt;/td>
+&lt;td style="text-align: center">SQLite 数据库文件名，若文件名变化需要修改该字段值&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">SQLITE_PREFIX&lt;/td>
+&lt;td style="text-align: center">wl_&lt;/td>
+&lt;td style="text-align: center">SQLite 数据表的表前缀&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">PG_DB&lt;/td>
+&lt;td style="text-align: center">　&lt;/td>
+&lt;td style="text-align: center">PostgreSQL 数据库库名&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">PG_USER&lt;/td>
+&lt;td style="text-align: center">　&lt;/td>
+&lt;td style="text-align: center">PostgreSQL 数据库的用户名&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">PG_PASSWORD&lt;/td>
+&lt;td style="text-align: center">　&lt;/td>
+&lt;td style="text-align: center">PostgreSQL 数据库的密码&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">PG_HOST&lt;/td>
+&lt;td style="text-align: center">127.0.0.1&lt;/td>
+&lt;td style="text-align: center">PostgreSQL 服务的地址&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">PG_PORT&lt;/td>
+&lt;td style="text-align: center">3211&lt;/td>
+&lt;td style="text-align: center">PostgreSQL 服务的端口&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">PG_PREFIX&lt;/td>
+&lt;td style="text-align: center">wl_&lt;/td>
+&lt;td style="text-align: center">PostgreSQL 数据表的表前缀&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">PG_SSL&lt;/td>
+&lt;td style="text-align: center">FALSE&lt;/td>
+&lt;td style="text-align: center">是否使用 SSL 连接 PostgreSQL 数据库&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">POSTGRES_DATABASE&lt;/td>
+&lt;td style="text-align: center">　&lt;/td>
+&lt;td style="text-align: center">同 PG_DB&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">POSTGRES_USER&lt;/td>
+&lt;td style="text-align: center">　&lt;/td>
+&lt;td style="text-align: center">同 PG_USER&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">POSTGRES_PASSWORD&lt;/td>
+&lt;td style="text-align: center">　&lt;/td>
+&lt;td style="text-align: center">同 PG_PASSWORD&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">POSTGRES_HOST&lt;/td>
+&lt;td style="text-align: center">127.0.0.1&lt;/td>
+&lt;td style="text-align: center">同 PG_HOST&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">POSTGRES_PORT&lt;/td>
+&lt;td style="text-align: center">3211&lt;/td>
+&lt;td style="text-align: center">同 PG_PORT&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">POSTGRES_PREFIX&lt;/td>
+&lt;td style="text-align: center">wl_&lt;/td>
+&lt;td style="text-align: center">同 PG_PREFIX&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">POSTGRES_SSL&lt;/td>
+&lt;td style="text-align: center">FALSE&lt;/td>
+&lt;td style="text-align: center">同 POSTGRES_SSL&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">TCB_ENV&lt;/td>
+&lt;td style="text-align: center">　&lt;/td>
+&lt;td style="text-align: center">腾讯云开发环境 ID&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">TCB_ID&lt;/td>
+&lt;td style="text-align: center">　&lt;/td>
+&lt;td style="text-align: center">腾讯云 API 密钥 ID&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">TCB_KEY&lt;/td>
+&lt;td style="text-align: center">　&lt;/td>
+&lt;td style="text-align: center">腾讯云 API 密钥 Key&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">JWT_TOKEN&lt;/td>
+&lt;td style="text-align: center">　&lt;/td>
+&lt;td style="text-align: center">用户登录密钥，如果没有配任何环境变量的话需要配置此变量，随机字符串即可&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">GITHUB_TOKEN&lt;/td>
+&lt;td style="text-align: center">　&lt;/td>
+&lt;td style="text-align: center">Personal access tokensopen in new window&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">GITHUB_REPO&lt;/td>
+&lt;td style="text-align: center">　&lt;/td>
+&lt;td style="text-align: center">仓库名称，例如 walinejs/waline&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">GITHUB_PATH&lt;/td>
+&lt;td style="text-align: center">　&lt;/td>
+&lt;td style="text-align: center">数据存储目录，例如 data 表示存储在 data 目录下，默认存在仓库根目录下&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">DETA_PROJECT_KEY&lt;/td>
+&lt;td style="text-align: center">　&lt;/td>
+&lt;td style="text-align: center">Deta 项目密钥&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">OAUTH_URL&lt;/td>
+&lt;td style="text-align: center">&lt;a class="link" href="https://oauth.lithub.cc" target="_blank" rel="noopener"
+>https://oauth.lithub.cc&lt;/a>&lt;/td>
+&lt;td style="text-align: center">OAuth 第三方登录服务地址，可以 自建 authopen in new window 这是能让用户使用 GitHub, Twitter, Facebook, Google, 微博等第三方账户登录最简单的方式。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">WEBHOOK&lt;/td>
+&lt;td style="text-align: center">　&lt;/td>
+&lt;td style="text-align: center">评论成功后会向 WEBHOOK 配置的地址发送一条 POST 请求&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">WALINE_ADMIN_MODULE_ASSET_URL&lt;/td>
+&lt;td style="text-align: center">//unpkg.com/@waline/admin&lt;/td>
+&lt;td style="text-align: center">Waline admin 地址&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">IP2REGION_DB&lt;/td>
+&lt;td style="text-align: center">　&lt;/td>
+&lt;td style="text-align: center">自定义 IP 查询库路径&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h5 id="indexjs服务端配置">index.js（服务端）配置
+&lt;/h5>&lt;p>配置地址:https://github.com/%username%/%repositorie%/blob/main/index.js
+配置文档:&lt;a class="link" href="https://waline.js.org/reference/server/config.html" target="_blank" rel="noopener"
+>https://waline.js.org/reference/server/config.html&lt;/a>
 描述：该文件位于github私有仓库内，其中一些项目与vercel环境变量效果一致。在这里修改过的文件会自动在vercel内重新build。
-可配置的项目：&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;名称&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;参考&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;说明&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;plugins&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;plugins: [HelloWorldPlugin],&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;插件系统&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;secureDomains&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;secureDomains: &amp;lsquo;waline.js.org&amp;rsquo;,&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;安全域名&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;forbiddenWords&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;forbiddenWords: [&amp;lsquo;违禁词A&amp;rsquo;, &amp;lsquo;违禁词B&amp;rsquo;],&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;违禁词&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;disallowIPList&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;disallowIPList: [&amp;lsquo;8.8.8.8&amp;rsquo;, &amp;lsquo;4.4.4.4&amp;rsquo;],&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;IP 黑名单&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;mailSubject&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;评论回复邮件标题自定义，等同于环境变量 MAIL_SUBJECT&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;mailTemplate&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;评论回复邮件内容自定义，等同于环境变量 MAIL_TEMPLATE&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;mailSubjectAdmin&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;新评论通知邮件标题自定义，等同于环境变量 MAIL_SUBJECT_ADMIN&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;mailTemplateAdmin&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;新评论通知邮件内容自定义，等同于环境变量 MAIL_TEMPLATE_ADMIN&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;QQTemplate&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;QQ   评论通知模板，等同于环境变量 QQ_TEMPLATE&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;TGTemplate&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;Telegram   评论通知模板，等同于环境变量 TG_TEMPLATE&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;SCTemplate&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;Server酱   评论通知模板，等同于环境变量 SC_TEMPLATE&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;model&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;自定义数据库服务（见https://waline.js.org/cookbook/customize/database.html）&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;encryptPassword&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;自定义用户系统（见https://waline.js.org/cookbook/customize/userdb.html）&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;评论 Hooks&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;包含一些自定义HOOK，详情见文档。&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;修改过的index.js文件参考如下：&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Application&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;require&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;@waline/vercel&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;module&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;exports&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Application&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;plugins&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[],&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c1&#34;&gt;//secureDomains: &amp;#39;*.tama.guru&amp;#39;,
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;nx&#34;&gt;COMMENT_AUDIT&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;forbiddenWords&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;***&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;***&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;前端html内配置&#34;&gt;前端(html内)配置
-&lt;/h5&gt;&lt;p&gt;配置地址:https://%yoursite%/%sitename%.html
-配置文档:&lt;a class=&#34;link&#34; href=&#34;https://waline.netlify.app/client/basic.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://waline.netlify.app/client/basic.html&lt;/a&gt;
+可配置的项目：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">名称&lt;/th>
+&lt;th style="text-align: center">参考&lt;/th>
+&lt;th style="text-align: center">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">plugins&lt;/td>
+&lt;td style="text-align: center">plugins: [HelloWorldPlugin],&lt;/td>
+&lt;td style="text-align: center">插件系统&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">secureDomains&lt;/td>
+&lt;td style="text-align: center">secureDomains: &amp;lsquo;waline.js.org&amp;rsquo;,&lt;/td>
+&lt;td style="text-align: center">安全域名&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">forbiddenWords&lt;/td>
+&lt;td style="text-align: center">forbiddenWords: [&amp;lsquo;违禁词A&amp;rsquo;, &amp;lsquo;违禁词B&amp;rsquo;],&lt;/td>
+&lt;td style="text-align: center">违禁词&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">disallowIPList&lt;/td>
+&lt;td style="text-align: center">disallowIPList: [&amp;lsquo;8.8.8.8&amp;rsquo;, &amp;lsquo;4.4.4.4&amp;rsquo;],&lt;/td>
+&lt;td style="text-align: center">IP 黑名单&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">mailSubject&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">评论回复邮件标题自定义，等同于环境变量 MAIL_SUBJECT&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">mailTemplate&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">评论回复邮件内容自定义，等同于环境变量 MAIL_TEMPLATE&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">mailSubjectAdmin&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">新评论通知邮件标题自定义，等同于环境变量 MAIL_SUBJECT_ADMIN&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">mailTemplateAdmin&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">新评论通知邮件内容自定义，等同于环境变量 MAIL_TEMPLATE_ADMIN&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">QQTemplate&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">QQ 评论通知模板，等同于环境变量 QQ_TEMPLATE&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">TGTemplate&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">Telegram 评论通知模板，等同于环境变量 TG_TEMPLATE&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">SCTemplate&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">Server酱 评论通知模板，等同于环境变量 SC_TEMPLATE&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">model&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">自定义数据库服务（见https://waline.js.org/cookbook/customize/database.html）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">encryptPassword&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">自定义用户系统（见https://waline.js.org/cookbook/customize/userdb.html）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">评论 Hooks&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">包含一些自定义HOOK，详情见文档。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">修改过的index.js文件参考如下：&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="line">&lt;span class="cl">&lt;span class="kr">const&lt;/span> &lt;span class="nx">Application&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">require&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;@waline/vercel&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">module&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">exports&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">Application&lt;/span>&lt;span class="p">({&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">plugins&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">[],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">//secureDomains: &amp;#39;*.tama.guru&amp;#39;,
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nx">COMMENT_AUDIT&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="kc">true&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">forbiddenWords&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;***&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;***&amp;#39;&lt;/span>&lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="前端html内配置">前端(html内)配置
+&lt;/h5>&lt;p>配置地址:https://%yoursite%/%sitename%.html
+配置文档:&lt;a class="link" href="https://waline.netlify.app/client/basic.html" target="_blank" rel="noopener"
+>https://waline.netlify.app/client/basic.html&lt;/a>
 描述：每个html都可以独立配置以达到不同的显示效果
-&lt;strong&gt;注意：以下配置针对v2版本生效，v3未知&lt;/strong&gt;
-可配置的项目：&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;名称&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;类型&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;说明&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;el&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;string&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;Waline 的初始化挂载器。必须是一个有效的 CSS 选择器。&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;serverURL&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;string&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;Waline 的服务端地址。&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;wordLimit&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;number \ [number, number]&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;评论字数限制。填入单个数字时为最大字数限制。设置为 0 时无限制。&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;path&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;string&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;当前 文章页 路径，用于区分不同的 文章页，以保证正确读取该 文章页   下的评论列表。默认为&lt;code&gt;window.location.pathname&lt;/code&gt;，可选为&lt;code&gt;window.location.href&lt;/code&gt;或其他。&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;avatar&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;string&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;Gravatar 头像展示方式。见文档。&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;meta&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;string[]&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;评论者相关属性。可选值: &amp;rsquo;nick&amp;rsquo;, &amp;lsquo;mail&amp;rsquo;, &amp;rsquo;link&amp;rsquo;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;pageSize&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;number&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;评论列表分页，每页条数。&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;lang&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;string&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;多语言支持。可自定义，见文档。&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;visitor&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;boolean&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;开启文章访问量统计。&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;dark&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;string&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;暗黑模式适配。详情见文档。&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;highlight&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;boolean&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;代码高亮，默认开启。&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;avatarCDN&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;string&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;设置 Gravatar 头像 CDN 地址。默认值是https://sdn.geekzu.org/avatar/&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;avatarForce&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;boolean&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;每次访问是否强制拉取最新的评论列表头像&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;emoji&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;(string \ EmojiInfo)[]&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;表情设置，详见文档。&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;requiredMeta&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;string[]&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;设置必填项，默认匿名，可填[&amp;rsquo;nick&amp;rsquo;, &amp;lsquo;mail&amp;rsquo;]等&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;uploadImage&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;Function&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;自定义图片上传方法，方便更好的存储图片。方法执行时会将图片对象传入。&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;login&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;string&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;登录模式状态，分为&amp;rsquo;enable&amp;rsquo;: 启用登录 (默认) &amp;lsquo;disable&amp;rsquo;: 禁用登录，用户只能填写信息评论 &amp;lsquo;force&amp;rsquo;:   强制登录，用户必须注册并登录才可发布评论&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;copyright&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;boolean&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;是否显示页脚版权信息。&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;修改过的html文件参考如下：&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/waline.js&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;link&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;href&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;/waline.css&amp;#39;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;rel&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;stylesheet&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;waline&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;waline&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Waline&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;init&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         &lt;span class=&#34;nx&#34;&gt;el&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;#waline&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         &lt;span class=&#34;nx&#34;&gt;serverURL&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;https://%yourwalineserversite%&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         &lt;span class=&#34;nx&#34;&gt;reaction&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ture&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         &lt;span class=&#34;nx&#34;&gt;meta&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;nick&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;mail&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         &lt;span class=&#34;nx&#34;&gt;requiredMeta&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;mail&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         &lt;span class=&#34;nx&#34;&gt;pageview&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         &lt;span class=&#34;nx&#34;&gt;search&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         &lt;span class=&#34;nx&#34;&gt;comment&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         &lt;span class=&#34;nx&#34;&gt;login&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;disable&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         &lt;span class=&#34;nx&#34;&gt;wordLimit&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;50&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         &lt;span class=&#34;nx&#34;&gt;pageSize&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         &lt;span class=&#34;nx&#34;&gt;avatar&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;monsterid&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         &lt;span class=&#34;nx&#34;&gt;emoji&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;             &lt;span class=&#34;s1&#34;&gt;&amp;#39;https://unpkg.com/@waline/emojis@1.2.0/tieba&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         &lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         &lt;span class=&#34;c1&#34;&gt;//禁止图片上传按钮
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;         &lt;span class=&#34;nx&#34;&gt;imageUploader&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         &lt;span class=&#34;c1&#34;&gt;//不显示版权标志
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;         &lt;span class=&#34;nx&#34;&gt;copyright&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;再次提醒，我引用最新的v3版本会报错，建议用v2。&lt;/strong&gt;&lt;/p&gt;</description>
-        </item>
-        
-    </channel>
-</rss>
+&lt;strong>注意：以下配置针对v2版本生效，v3未知&lt;/strong>
+可配置的项目：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">名称&lt;/th>
+&lt;th style="text-align: center">类型&lt;/th>
+&lt;th style="text-align: center">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">el&lt;/td>
+&lt;td style="text-align: center">string&lt;/td>
+&lt;td style="text-align: center">Waline 的初始化挂载器。必须是一个有效的 CSS 选择器。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">serverURL&lt;/td>
+&lt;td style="text-align: center">string&lt;/td>
+&lt;td style="text-align: center">Waline 的服务端地址。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">wordLimit&lt;/td>
+&lt;td style="text-align: center">number \ [number, number]&lt;/td>
+&lt;td style="text-align: center">评论字数限制。填入单个数字时为最大字数限制。设置为 0 时无限制。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">path&lt;/td>
+&lt;td style="text-align: center">string&lt;/td>
+&lt;td style="text-align: center">当前 文章页 路径，用于区分不同的 文章页，以保证正确读取该 文章页 下的评论列表。默认为&lt;code>window.location.pathname&lt;/code>，可选为&lt;code>window.location.href&lt;/code>或其他。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">avatar&lt;/td>
+&lt;td style="text-align: center">string&lt;/td>
+&lt;td style="text-align: center">Gravatar 头像展示方式。见文档。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">meta&lt;/td>
+&lt;td style="text-align: center">string[]&lt;/td>
+&lt;td style="text-align: center">评论者相关属性。可选值: &amp;rsquo;nick&amp;rsquo;, &amp;lsquo;mail&amp;rsquo;, &amp;rsquo;link&amp;rsquo;&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">pageSize&lt;/td>
+&lt;td style="text-align: center">number&lt;/td>
+&lt;td style="text-align: center">评论列表分页，每页条数。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">lang&lt;/td>
+&lt;td style="text-align: center">string&lt;/td>
+&lt;td style="text-align: center">多语言支持。可自定义，见文档。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">visitor&lt;/td>
+&lt;td style="text-align: center">boolean&lt;/td>
+&lt;td style="text-align: center">开启文章访问量统计。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">dark&lt;/td>
+&lt;td style="text-align: center">string&lt;/td>
+&lt;td style="text-align: center">暗黑模式适配。详情见文档。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">highlight&lt;/td>
+&lt;td style="text-align: center">boolean&lt;/td>
+&lt;td style="text-align: center">代码高亮，默认开启。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">avatarCDN&lt;/td>
+&lt;td style="text-align: center">string&lt;/td>
+&lt;td style="text-align: center">设置 Gravatar 头像 CDN 地址。默认值是https://sdn.geekzu.org/avatar/&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">avatarForce&lt;/td>
+&lt;td style="text-align: center">boolean&lt;/td>
+&lt;td style="text-align: center">每次访问是否强制拉取最新的评论列表头像&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">emoji&lt;/td>
+&lt;td style="text-align: center">(string \ EmojiInfo)[]&lt;/td>
+&lt;td style="text-align: center">表情设置，详见文档。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">requiredMeta&lt;/td>
+&lt;td style="text-align: center">string[]&lt;/td>
+&lt;td style="text-align: center">设置必填项，默认匿名，可填[&amp;rsquo;nick&amp;rsquo;, &amp;lsquo;mail&amp;rsquo;]等&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">uploadImage&lt;/td>
+&lt;td style="text-align: center">Function&lt;/td>
+&lt;td style="text-align: center">自定义图片上传方法，方便更好的存储图片。方法执行时会将图片对象传入。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">login&lt;/td>
+&lt;td style="text-align: center">string&lt;/td>
+&lt;td style="text-align: center">登录模式状态，分为&amp;rsquo;enable&amp;rsquo;: 启用登录 (默认) &amp;lsquo;disable&amp;rsquo;: 禁用登录，用户只能填写信息评论 &amp;lsquo;force&amp;rsquo;: 强制登录，用户必须注册并登录才可发布评论&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">copyright&lt;/td>
+&lt;td style="text-align: center">boolean&lt;/td>
+&lt;td style="text-align: center">是否显示页脚版权信息。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">修改过的html文件参考如下：&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">script&lt;/span> &lt;span class="na">src&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;/waline.js&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&amp;lt;/&lt;/span>&lt;span class="nt">script&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">link&lt;/span> &lt;span class="na">href&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#39;/waline.css&amp;#39;&lt;/span> &lt;span class="na">rel&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#39;stylesheet&amp;#39;&lt;/span> &lt;span class="p">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span> &lt;span class="na">id&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;waline&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&amp;lt;/&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">script&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">const&lt;/span> &lt;span class="nx">waline&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">Waline&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">init&lt;/span>&lt;span class="p">({&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">el&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;#waline&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">serverURL&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;https://%yourwalineserversite%&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">reaction&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="nx">ture&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">meta&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;nick&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="s1">&amp;#39;mail&amp;#39;&lt;/span>&lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">requiredMeta&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;mail&amp;#39;&lt;/span>&lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">pageview&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="kc">true&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">search&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">comment&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">login&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;disable&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">wordLimit&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">50&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">pageSize&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">5&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">avatar&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;monsterid&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">emoji&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;https://unpkg.com/@waline/emojis@1.2.0/tieba&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">//禁止图片上传按钮
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nx">imageUploader&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">//不显示版权标志
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nx">copyright&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">script&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>再次提醒，我引用最新的v3版本会报错，建议用v2。&lt;/strong>&lt;/p></description></item></channel></rss>

@@ -1,154 +1,86 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>出境易 on 狼的公告板 ver.Hugo</title>
-        <link>https://blog.tama.guru/tags/%E5%87%BA%E5%A2%83%E6%98%93.html</link>
-        <description>Recent content in 出境易 on 狼的公告板 ver.Hugo</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E5%87%BA%E5%A2%83%E6%98%93/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>鸿蒙Next居然兼容安卓了？</title>
-        <link>https://blog.tama.guru/record/android-on-harmony.html</link>
-        <pubDate>Tue, 03 Dec 2024 23:03:56 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/record/android-on-harmony.html</guid>
-        <description>&lt;p&gt;昨天，有消息称Next的应用商店上架了出境易，用过华子的都知道这玩意可以用过某些&lt;del&gt;不可告人&lt;/del&gt;的方式来实现对某些国外应用的安装和使用，所以这次上架就有意思了,因为这上面的几乎所有应用目前基本上不会为Next做适配，那就说明它会通过某种方法来兼容安卓应用来实现运行如上应用的能力。&lt;/p&gt;
-&lt;h4 id=&#34;出境易&#34;&gt;出境易
-&lt;/h4&gt;&lt;p&gt;安装过程就不介绍了，首次运行的时候需要下载将近600M的数据并且重启系统，一开始我也以为是个虚拟机，但后面tg上有人放出一张截图，疑似是通过lxc来跑安卓容器实现的。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f145f185fa.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f145f185fa.png&#34; alt=&#34;疑似容器&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f145f185fa.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;疑似容器&#34;
-	
-	
-&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>出境易 on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/%E5%87%BA%E5%A2%83%E6%98%93.html</link><description>Recent content in 出境易 on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 14 Aug 2025 03:33:47 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E5%87%BA%E5%A2%83%E6%98%93/index.xml" rel="self" type="application/rss+xml"/><item><title>鸿蒙Next居然兼容安卓了？</title><link>https://blog.tama.guru/record/android-on-harmony.html</link><pubDate>Tue, 03 Dec 2024 23:03:56 +0800</pubDate><guid>https://blog.tama.guru/record/android-on-harmony.html</guid><description>&lt;p>昨天，有消息称Next的应用商店上架了出境易，用过华子的都知道这玩意可以用过某些&lt;del>不可告人&lt;/del>的方式来实现对某些国外应用的安装和使用，所以这次上架就有意思了,因为这上面的几乎所有应用目前基本上不会为Next做适配，那就说明它会通过某种方法来兼容安卓应用来实现运行如上应用的能力。&lt;/p>
+&lt;h4 id="出境易">出境易
+&lt;/h4>&lt;p>安装过程就不介绍了，首次运行的时候需要下载将近600M的数据并且重启系统，一开始我也以为是个虚拟机，但后面tg上有人放出一张截图，疑似是通过lxc来跑安卓容器实现的。
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/12/03/674f145f185fa.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/12/03/674f145f185fa.png" alt="疑似容器" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/12/03/674f145f185fa.png"
+loading="lazy"
+alt="疑似容器"
+>
 出境易内置了一个microG套件，G家软件基本上都可以使用了，如果是市场里没有的应用可以从GPlay检索获取，但是有一些不是很正规的应用很明显是没办法直接在市场里面找到的。
 市场内可以找到edge浏览器，安装后基本上能够正常使用（存在一些小问题，比如掉帧和莫名的黑屏），然后我去找到个clash的安装包，edge下载之后会调用出境易安装，居然成功了&amp;hellip;
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f16631ec7d.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f16631ec7d.png&#34; alt=&#34;clash安装成功&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f16631ec7d.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;clash安装成功&#34;
-	
-	
-&gt;
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/12/03/674f16631ec7d.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/12/03/674f16631ec7d.png" alt="clash安装成功" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/12/03/674f16631ec7d.png"
+loading="lazy"
+alt="clash安装成功"
+>
 然后我再试着安装其他应用，却显示&amp;quot;该应用未与出境易达成合作，暂不支持安装&amp;quot;
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f16966d219.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f16966d219.png&#34; alt=&#34;其他应用却无法安装&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f16966d219.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;其他应用却无法安装&#34;
-	
-	
-&gt;
-看来正如网上说，出境易是有一套应用白名单的，匹配到的应用才会允许安装。但我尝试去telegram官网下载安装，一样会提示&amp;quot;该应用未与出境易达成合作，暂不支持安装&amp;quot;，而出境易市场内的telegram却能正常安装，我暂且蒙在鼓里。&lt;/p&gt;
-&lt;h4 id=&#34;卓易通&#34;&gt;卓易通
-&lt;/h4&gt;&lt;p&gt;安装出境易之后还带了另一个叫卓易通的应用，这东西默认是隐藏的，需要手动启用。
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/12/03/674f16966d219.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/12/03/674f16966d219.png" alt="其他应用却无法安装" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/12/03/674f16966d219.png"
+loading="lazy"
+alt="其他应用却无法安装"
+>
+看来正如网上说，出境易是有一套应用白名单的，匹配到的应用才会允许安装。但我尝试去telegram官网下载安装，一样会提示&amp;quot;该应用未与出境易达成合作，暂不支持安装&amp;quot;，而出境易市场内的telegram却能正常安装，我暂且蒙在鼓里。&lt;/p>
+&lt;h4 id="卓易通">卓易通
+&lt;/h4>&lt;p>安装出境易之后还带了另一个叫卓易通的应用，这东西默认是隐藏的，需要手动启用。
 具体操作是使用出境易下载程序管理类应用来手动启用。
 比如我是出境易日区的市场，可以找到一个设备信息的应用：
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f1909ea64e.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f1909ea64e.png&#34; alt=&#34;Device Info&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f1909ea64e.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Device Info&#34;
-	
-	
-&gt;
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/12/03/674f1909ea64e.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/12/03/674f1909ea64e.png" alt="Device Info" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/12/03/674f1909ea64e.png"
+loading="lazy"
+alt="Device Info"
+>
 安装之后切换到应用程序页面的系统菜单项，找到卓易通和文件共享，点开之后点开右上角的小齿轮，选择启用即可。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f19687820e.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f19687820e.png&#34; alt=&#34;激活应用&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f19687820e.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;激活应用&#34;
-	
-	
-&gt;
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f198a1881e.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f198a1881e.png&#34; alt=&#34;激活应用2&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f198a1881e.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;激活应用2&#34;
-	
-	
-&gt;
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/12/03/674f19687820e.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/12/03/674f19687820e.png" alt="激活应用" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/12/03/674f19687820e.png"
+loading="lazy"
+alt="激活应用"
+>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/12/03/674f198a1881e.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/12/03/674f198a1881e.png" alt="激活应用2" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/12/03/674f198a1881e.png"
+loading="lazy"
+alt="激活应用2"
+>
 然后我们回到Device Info，找到文件共享这个应用，点开选择发动，就会进入一个类似文件管理器的界面，再这个地方可以选择下载好的apk调用卓易通安装了。
 如果上面的界面无法显示应用，也没有弹窗申请授权获取应用列表的话，需要手动到出境易里面找到Device Info授权。
 卓易通可以安装大部分的应用，但不是全部，因为卓易通和出境易恰恰相反，卓易通采用的是黑名单机制，在黑名单上的应用都无法安装，除此之外一些盗版应用和涩涩应用也无法安装，比如eh&amp;hellip;
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f1b7540bf0.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f1b7540bf0.png&#34; alt=&#34;ehviewer&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f1b7540bf0.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;ehviewer&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;h4 id=&#34;总结&#34;&gt;总结
-&lt;/h4&gt;&lt;p&gt;上架出境易这个应用无疑是能缓解目前Next应用不足且质量参差不齐的情况，这也是鸿蒙生态目前最大的问题，但这次改变会让我留在Next吗？不会，原因如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;操作繁琐。上面使用卓易通安装需要每次都要从Device Info进入文件共享。&lt;/li&gt;
-&lt;li&gt;别扭。总感觉后台多了个容器，耗电会有所增加。而且每次切到后台再切回去有大概率应用会重启，后台驻留能力超弱&amp;hellip;&lt;/li&gt;
-&lt;li&gt;BUG多。目前我碰到的问题包括但不限于：Edge切换页面时的短暂黑屏、视频类应用顶部的大白边、无法调用系统相册（即使授权了）等。&lt;/li&gt;
-&lt;li&gt;搞不来涩涩。&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        
-    </channel>
-</rss>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/12/03/674f1b7540bf0.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/12/03/674f1b7540bf0.png" alt="ehviewer" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/12/03/674f1b7540bf0.png"
+loading="lazy"
+alt="ehviewer"
+>&lt;/p>
+&lt;h4 id="总结">总结
+&lt;/h4>&lt;p>上架出境易这个应用无疑是能缓解目前Next应用不足且质量参差不齐的情况，这也是鸿蒙生态目前最大的问题，但这次改变会让我留在Next吗？不会，原因如下：&lt;/p>
+&lt;ul>
+&lt;li>操作繁琐。上面使用卓易通安装需要每次都要从Device Info进入文件共享。&lt;/li>
+&lt;li>别扭。总感觉后台多了个容器，耗电会有所增加。而且每次切到后台再切回去有大概率应用会重启，后台驻留能力超弱&amp;hellip;&lt;/li>
+&lt;li>BUG多。目前我碰到的问题包括但不限于：Edge切换页面时的短暂黑屏、视频类应用顶部的大白边、无法调用系统相册（即使授权了）等。&lt;/li>
+&lt;li>搞不来涩涩。&lt;/li>
+&lt;/ul></description></item></channel></rss>

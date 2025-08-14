@@ -1,557 +1,49 @@
-<!DOCTYPE html>
-<html lang="zh-cn" dir="ltr">
-    <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="什么是headscale An open source, self-hosted implementation of the Tailscale control server 要说headscale肯定就要先说tailscale，这是一项VPN服务，可让您拥有的设备和应用程序在世界任何地方安全，轻松地访问。它支持使用开源 WireGuard 协议进行加密的点对点连接，这意味着只有专用网络上的设备才能相互通信。 也就意味着，在任意设备上安装tailscale之后，即可组建一个VPN网络，非常方便的达到内网穿透以及达成一些不可告人的目的。\n">
-<title>在debian下安装headscale的记录</title>
-
-<link rel='canonical' href='https://blog.tama.guru/record/headscale.html'>
-
-<link rel="stylesheet" href="/scss/style.min.672ab4e51c9b70c9ecf59b198a742ea0088310f81623d2e615c73085383997a8.css"><meta property='og:title' content="在debian下安装headscale的记录">
-<meta property='og:description' content="什么是headscale An open source, self-hosted implementation of the Tailscale control server 要说headscale肯定就要先说tailscale，这是一项VPN服务，可让您拥有的设备和应用程序在世界任何地方安全，轻松地访问。它支持使用开源 WireGuard 协议进行加密的点对点连接，这意味着只有专用网络上的设备才能相互通信。 也就意味着，在任意设备上安装tailscale之后，即可组建一个VPN网络，非常方便的达到内网穿透以及达成一些不可告人的目的。\n">
-<meta property='og:url' content='https://blog.tama.guru/record/headscale.html'>
-<meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='headscale' /><meta property='article:published_time' content='2023-09-14T00:36:00&#43;08:00'/><meta property='article:modified_time' content='2025-08-14T02:54:19&#43;00:00'/>
-<meta name="twitter:title" content="在debian下安装headscale的记录">
-<meta name="twitter:description" content="什么是headscale An open source, self-hosted implementation of the Tailscale control server 要说headscale肯定就要先说tailscale，这是一项VPN服务，可让您拥有的设备和应用程序在世界任何地方安全，轻松地访问。它支持使用开源 WireGuard 协议进行加密的点对点连接，这意味着只有专用网络上的设备才能相互通信。 也就意味着，在任意设备上安装tailscale之后，即可组建一个VPN网络，非常方便的达到内网穿透以及达成一些不可告人的目的。\n">
-    <link rel="shortcut icon" href="/static/favicon.ico" />
-
-    </head>
-    <body class="
-    article-page
-    ">
-    <script>
-        (function() {
-            const colorSchemeKey = 'StackColorScheme';
-            if(!localStorage.getItem(colorSchemeKey)){
-                localStorage.setItem(colorSchemeKey, "auto");
-            }
-        })();
-    </script><script>
-    (function() {
-        const colorSchemeKey = 'StackColorScheme';
-        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
-        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
-
-        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
-            
-
-            document.documentElement.dataset.scheme = 'dark';
-        } else {
-            document.documentElement.dataset.scheme = 'light';
-        }
-    })();
-</script>
-<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
-    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
-        <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-        </span>
-    </button>
-
-    <header>
-        
-            
-            <figure class="site-avatar">
-                <a href="/">
-                
-                    
-                    
-                    
-                        
-                        <img src="/img/avatar_hu_d6a5c15246229c7b.png" width="300"
-                            height="300" class="site-logo" loading="lazy" alt="Avatar">
-                    
-                
-                </a>
-                
-                    <span class="emoji">🍥</span>
-                
-            </figure>
-            
-        
-        
-        <div class="site-meta">
-            <h1 class="site-name"><a href="/">狼的公告板 ver.Hugo</a></h1>
-            <h2 class="site-description">念念不忘，必有回响</h2>
-        </div>
-    </header><ol class="menu-social">
-            
-                <li>
-                    <a 
-                        href='https://github.com/tamakyi'
-                        target="_blank"
-                        title="GitHub"
-                        rel="me"
-                    >
-                        
-                        
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
-</svg>
-
-
-
-                        
-                    </a>
-                </li>
-            
-                <li>
-                    <a 
-                        href='https://twitter.com'
-                        target="_blank"
-                        title="Twitter"
-                        rel="me"
-                    >
-                        
-                        
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
-</svg>
-
-
-
-                        
-                    </a>
-                </li>
-            
-        </ol><ol class="menu" id="main-menu">
-        
-        
-        
-        <li >
-            <a href='/index.html' >
-                
-                
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <polyline points="5 12 3 12 12 3 21 12 19 12" />
-  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
-  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
-</svg>
-
-
-
-                
-                <span>Home | 主页</span>
-            </a>
-        </li>
-        
-        
-        <li >
-            <a href='https://box.tama.guru/' target="_blank">
-                
-                
-                
-                    <!--
-tags: [sign, symbol, ask, sentence, word, letters, "?"]
-version: "1.16"
-unicode: "ec9d"
--->
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="32"
-  height="32"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="#000000"
-  stroke-width="1"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M8 8a3.5 3 0 0 1 3.5 -3h1a3.5 3 0 0 1 3.5 3a3 3 0 0 1 -2 3a3 4 0 0 0 -2 4" />
-  <path d="M12 19l0 .01" />
-</svg>
-
-                
-                <span>Box | 提问箱</span>
-            </a>
-        </li>
-        
-        
-        <li >
-            <a href='/server-%E8%87%AA%E5%BB%BA%E6%9C%8D%E5%8A%A1.html' >
-                
-                
-                
-                    <!--
-category: Devices
-tags: [storage, hosting, www]
-version: "1.0"
-unicode: "eb1f"
--->
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M3 4m0 3a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3z" />
-  <path d="M3 12m0 3a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3z" />
-  <path d="M7 8l0 .01" />
-  <path d="M7 16l0 .01" />
-</svg>
-
-                
-                <span>Server | 自建服务</span>
-            </a>
-        </li>
-        
-        
-        <li >
-            <a href='/travel-%E6%97%85%E8%A1%8C%E8%AE%B0%E5%BD%95.html' >
-                
-                
-                
-                    <!--
-category: E-commerce
-tags: [education, school, learning, adventure, travel]
-version: "1.43"
-unicode: "ef47"
--->
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M5 18v-6a6 6 0 0 1 6 -6h2a6 6 0 0 1 6 6v6a3 3 0 0 1 -3 3h-8a3 3 0 0 1 -3 -3z" />
-  <path d="M10 6v-1a2 2 0 1 1 4 0v1" />
-  <path d="M9 21v-4a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v4" />
-  <path d="M11 10h2" />
-</svg>
-
-                
-                <span>travel | 旅行记录</span>
-            </a>
-        </li>
-        
-        
-        <li >
-            <a href='/search.html' >
-                
-                
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="10" cy="10" r="7" />
-  <line x1="21" y1="21" x2="15" y2="15" />
-</svg>
-
-
-
-                
-                <span>Search | 搜索</span>
-            </a>
-        </li>
-        
-        
-        <li >
-            <a href='/archives.html' >
-                
-                
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <rect x="3" y="4" width="18" height="4" rx="2" />
-  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
-  <line x1="10" y1="12" x2="14" y2="12" />
-</svg>
-
-
-
-                
-                <span>Archives | 档案</span>
-            </a>
-        </li>
-        
-        
-        <li >
-            <a href='/about-%E5%85%B3%E4%BA%8E.html' >
-                
-                
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="7" r="4" />
-  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-</svg>
-
-
-
-                
-                <span>About | 关于</span>
-            </a>
-        </li>
-        
-        
-        <li >
-            <a href='/links-%E9%93%BE%E6%8E%A5.html' >
-                
-                
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
-  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
-</svg>
-
-
-
-                
-                <span>Links | 链接</span>
-            </a>
-        </li>
-        
-        <li class="menu-bottom-section">
-            <ol class="menu">
-                    
-                        <li id="i18n-switch">  
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M4 5h7" />
-  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
-  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
-  <path d="M12 20l4 -9l4 9" />
-  <path d="M19.1 18h-6.2" />
-</svg>
-
-
-
-                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
-                                
-                                    <option value="https://blog.tama.guru/en/index.html" >English</option>
-                                
-                                    <option value="https://blog.tama.guru/index.html" selected>中文</option>
-                                
-                            </select>
-                        </li>
-                    
-                
-
-                
-                     <li id="dark-mode-toggle">
-                        <!--
-tags: [night, dark mode]
-category: Weather
-version: "1.21"
-unicode: "ece7"
--->
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="32"
-  height="32"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="#000000"
-  stroke-width="1"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
-  <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2" />
-  <path d="M19 11h2m-1 -1v2" />
-</svg>
-
-                    暗色模式
-                    </li>
-                
-            </ol>
-        </li>
-    </ol>
-</aside>
-
-    <aside class="sidebar right-sidebar sticky">
-        
-            
-                
-    <section class="widget archives">
-        <div class="widget-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <line x1="5" y1="9" x2="19" y2="9" />
-  <line x1="5" y1="15" x2="19" y2="15" />
-  <line x1="11" y1="4" x2="7" y2="20" />
-  <line x1="17" y1="4" x2="13" y2="20" />
-</svg>
-
-
-
-        </div>
-        <h2 class="widget-title section-title">目录</h2>
-        
-        <div class="widget--toc">
-            <nav id="TableOfContents">
-  <ol>
-    <li>
-      <ol>
-        <li>
-          <ol>
-            <li></li>
-          </ol>
-        </li>
-      </ol>
-    </li>
-  </ol>
-</nav>
-        </div>
-    </section>
-
-            
-        
-    </aside>
-
-
-            <main class="main full-width">
-    <article class="main-article">
-    <header class="article-header">
-
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="/categories/record.html" >
-                Record
-            </a>
-        
-    </header>
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/record/headscale.html">在debian下安装headscale的记录</a>
-        </h2>
-    
-        
-    </div>
-
-    
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published">2023年09月14日</time>
-            </div>
-        
-
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-                <time class="article-time--reading">
-                    阅读时长: 6 分钟
-                </time>
-            </div>
-        
-    </footer>
-    
-
-    
-</div>
-
-</header>
-
-    
-    <div class="article-details" style="padding-top: 15px;padding-bottom: 0px;">
-        <footer class="article-time">
-            <div>
-                <!--
-category: System
-tags: [view, watch]
-version: "1.0"
-unicode: "ea9a"
--->
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="20"
-  height="20"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="#000000"
-  stroke-width="0.5"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
-  <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
-</svg>
-
-                <span title="阅读次数" style="display: inline;font-size: 1.4rem;">阅读次数: <span class="waline-pageview-count" data-path="/record/headscale.html" /></span>
-            </div>
-        </footer>
-    </div>
-
-
-<section class="article-content">
-    
-    
-    <h5 id="什么是headscale">什么是headscale
-</h5><p><code>An open source, self-hosted implementation of the Tailscale control server</code>
+<!doctype html><html lang=zh-cn dir=ltr><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><meta name=description content="什么是headscale An open source, self-hosted implementation of the Tailscale control server 要说headscale肯定就要先说tailscale，这是一项VPN服务，可让您拥有的设备和应用程序在世界任何地方安全，轻松地访问。它支持使用开源 WireGuard 协议进行加密的点对点连接，这意味着只有专用网络上的设备才能相互通信。 也就意味着，在任意设备上安装tailscale之后，即可组建一个VPN网络，非常方便的达到内网穿透以及达成一些不可告人的目的。\n"><title>在debian下安装headscale的记录</title><link rel=canonical href=https://blog.tama.guru/record/headscale.html><link rel=stylesheet href=/scss/style.min.672ab4e51c9b70c9ecf59b198a742ea0088310f81623d2e615c73085383997a8.css><meta property='og:title' content="在debian下安装headscale的记录"><meta property='og:description' content="什么是headscale An open source, self-hosted implementation of the Tailscale control server 要说headscale肯定就要先说tailscale，这是一项VPN服务，可让您拥有的设备和应用程序在世界任何地方安全，轻松地访问。它支持使用开源 WireGuard 协议进行加密的点对点连接，这意味着只有专用网络上的设备才能相互通信。 也就意味着，在任意设备上安装tailscale之后，即可组建一个VPN网络，非常方便的达到内网穿透以及达成一些不可告人的目的。\n"><meta property='og:url' content='https://blog.tama.guru/record/headscale.html'><meta property='og:site_name' content='狼的公告板 ver.Hugo'><meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='headscale'><meta property='article:published_time' content='2023-09-14T00:36:00+08:00'><meta property='article:modified_time' content='2025-08-14T03:33:47+00:00'><meta name=twitter:title content="在debian下安装headscale的记录"><meta name=twitter:description content="什么是headscale An open source, self-hosted implementation of the Tailscale control server 要说headscale肯定就要先说tailscale，这是一项VPN服务，可让您拥有的设备和应用程序在世界任何地方安全，轻松地访问。它支持使用开源 WireGuard 协议进行加密的点对点连接，这意味着只有专用网络上的设备才能相互通信。 也就意味着，在任意设备上安装tailscale之后，即可组建一个VPN网络，非常方便的达到内网穿透以及达成一些不可告人的目的。\n"><link rel="shortcut icon" href=/static/favicon.ico></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=切换菜单>
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/><img src=/img/avatar_hu_d6a5c15246229c7b.png width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+</a><span class=emoji>🍥</span></figure><div class=site-meta><h1 class=site-name><a href=/>狼的公告板 ver.Hugo</a></h1><h2 class=site-description>念念不忘，必有回响</h2></div></header><ol class=menu-social><li><a href=https://github.com/tamakyi target=_blank title=GitHub rel=me><svg class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li><li><a href=https://twitter.com target=_blank title=Twitter rel=me><svg class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84.0 00.497-3.753C20.18 7.773 21.692 5.25 22 4.009z"/></svg></a></li></ol><ol class=menu id=main-menu><li><a href=/index.html><svg class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<span>Home | 主页</span></a></li><li><a href=https://box.tama.guru/ target=_blank><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8a3.5 3 0 013.5-3h1A3.5 3 0 0116 8a3 3 0 01-2 3 3 4 0 00-2 4"/><path d="M12 19v.01"/></svg>
+<span>Box | 提问箱</span></a></li><li><a href=/server-%E8%87%AA%E5%BB%BA%E6%9C%8D%E5%8A%A1.html><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4m0 3a3 3 0 013-3h12a3 3 0 013 3v2a3 3 0 01-3 3H6A3 3 0 013 9z"/><path d="M3 12m0 3a3 3 0 013-3h12a3 3 0 013 3v2a3 3 0 01-3 3H6a3 3 0 01-3-3z"/><path d="M7 8v.01"/><path d="M7 16v.01"/></svg>
+<span>Server | 自建服务</span></a></li><li><a href=/travel-%E6%97%85%E8%A1%8C%E8%AE%B0%E5%BD%95.html><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18v-6a6 6 0 016-6h2a6 6 0 016 6v6a3 3 0 01-3 3H8a3 3 0 01-3-3z"/><path d="M10 6V5a2 2 0 114 0v1"/><path d="M9 21v-4a2 2 0 012-2h2a2 2 0 012 2v4"/><path d="M11 10h2"/></svg>
+<span>travel | 旅行记录</span></a></li><li><a href=/search.html><svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>Search | 搜索</span></a></li><li><a href=/archives.html><svg class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>Archives | 档案</span></a></li><li><a href=/about-%E5%85%B3%E4%BA%8E.html><svg class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+<span>About | 关于</span></a></li><li><a href=/links-%E9%93%BE%E6%8E%A5.html><svg class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 14a3.5 3.5.0 005 0l4-4a3.5 3.5.0 00-5-5l-.5.5"/><path d="M14 10a3.5 3.5.0 00-5 0l-4 4a3.5 3.5.0 005 5l.5-.5"/></svg>
+<span>Links | 链接</span></a></li><li class=menu-bottom-section><ol class=menu><li id=i18n-switch><svg class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 5h7"/><path d="M9 3v2c0 4.418-2.239 8-5 8"/><path d="M5 9c-.003 2.144 2.952 3.908 6.7 4"/><path d="M12 20l4-9 4 9"/><path d="M19.1 18h-6.2"/></svg>
+<select name=language title=language onchange="window.location.href=this.selectedOptions[0].value"><option value=https://blog.tama.guru/en/index.html>English</option><option value=https://blog.tama.guru/index.html selected>中文</option></select></li><li id=dark-mode-toggle><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c.132.0.263.0.393.0a7.5 7.5.0 007.92 12.446A9 9 0 1112 2.992z"/><path d="M17 4a2 2 0 002 2 2 2 0 00-2 2 2 2 0 00-2-2 2 2 0 002-2"/><path d="M19 11h2m-1-1v2"/></svg>
+暗色模式</li></ol></li></ol></aside><aside class="sidebar right-sidebar sticky"><section class="widget archives"><div class=widget-icon><svg class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">目录</h2><div class=widget--toc><nav id=TableOfContents><ol><li><ol><li><ol><li></li></ol></li></ol></li></ol></nav></div></section></aside><main class="main full-width"><article class=main-article><header class=article-header><div class=article-details><header class=article-category><a href=/categories/record.html>Record</a></header><div class=article-title-wrapper><h2 class=article-title><a href=/record/headscale.html>在debian下安装headscale的记录</a></h2></div><footer class=article-time><div><svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>2023年09月14日</time></div><div><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>阅读时长: 6 分钟</time></div></footer></div></header><div class=article-details style=padding-top:15px;padding-bottom:0><footer class=article-time><div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width=".5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12a2 2 0 104 0 2 2 0 00-4 0"/><path d="M21 12c-2.4 4-5.4 6-9 6s-6.6-2-9-6c2.4-4 5.4-6 9-6s6.6 2 9 6"/></svg>
+<span title=阅读次数 style=display:inline;font-size:1.4rem>阅读次数: <span class=waline-pageview-count data-path=/record/headscale.html></span></div></footer></div><section class=article-content><h5 id=什么是headscale>什么是headscale</h5><p><code>An open source, self-hosted implementation of the Tailscale control server</code>
 要说headscale肯定就要先说tailscale，这是一项VPN服务，可让您拥有的设备和应用程序在世界任何地方安全，轻松地访问。它支持使用开源 WireGuard 协议进行加密的点对点连接，这意味着只有专用网络上的设备才能相互通信。
-也就意味着，在任意设备上安装tailscale之后，即可组建一个VPN网络，非常方便的达到内网穿透以及达成一些不可告人的目的。</p>
-<h5 id="为什么要安装headscale">为什么要安装headscale
-</h5><p>tailscale是闭源的商业软件，客户端有上限（虽然一般人也用不到它的上限），而且服务器是定死的，国内连接的时候偶尔会有很大的延迟（基本都是200+，但是如果部署在国外就好一些，比如下面是我在南亚的服务器：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Bangalore: 17.85 ms
-</span></span><span class="line"><span class="cl">Singapore: 61.31 ms
-</span></span><span class="line"><span class="cl">Dubai: 77.91 ms
-</span></span><span class="line"><span class="cl">Hong Kong: 98.53 ms
-</span></span><span class="line"><span class="cl">Paris: 114.17 ms
-</span></span><span class="line"><span class="cl">Madrid: 116.31 ms
-</span></span><span class="line"><span class="cl">Frankfurt: 121.60 ms
-</span></span><span class="line"><span class="cl">Amsterdam: 121.80 ms
-</span></span><span class="line"><span class="cl">Tokyo: 124.99 ms
-</span></span><span class="line"><span class="cl">Warsaw: 126.75 ms
-</span></span><span class="line"><span class="cl">London: 135.55 ms
-</span></span><span class="line"><span class="cl">Sydney: 149.78 ms
-</span></span><span class="line"><span class="cl">Miami: 219.59 ms
-</span></span><span class="line"><span class="cl">Los Angeles: 220.80 ms
-</span></span><span class="line"><span class="cl">Denver: 225.65 ms
-</span></span><span class="line"><span class="cl">Seattle: 230.58 ms
-</span></span><span class="line"><span class="cl">Chicago: 238.62 ms
-</span></span><span class="line"><span class="cl">San Francisco: 242.12 ms
-</span></span><span class="line"><span class="cl">New York City: 246.40 ms
-</span></span><span class="line"><span class="cl">Dallas: 246.59 ms
-</span></span><span class="line"><span class="cl">Toronto: 251.18 ms
-</span></span><span class="line"><span class="cl">Nairobi: 280.36 ms
-</span></span><span class="line"><span class="cl">Honolulu: 292.43 ms
-</span></span><span class="line"><span class="cl">Johannesburg: 294.61 ms
-</span></span><span class="line"><span class="cl">São Paulo: 295.29 ms
+也就意味着，在任意设备上安装tailscale之后，即可组建一个VPN网络，非常方便的达到内网穿透以及达成一些不可告人的目的。</p><h5 id=为什么要安装headscale>为什么要安装headscale</h5><p>tailscale是闭源的商业软件，客户端有上限（虽然一般人也用不到它的上限），而且服务器是定死的，国内连接的时候偶尔会有很大的延迟（基本都是200+，但是如果部署在国外就好一些，比如下面是我在南亚的服务器：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>Bangalore: 17.85 ms
+</span></span><span class=line><span class=cl>Singapore: 61.31 ms
+</span></span><span class=line><span class=cl>Dubai: 77.91 ms
+</span></span><span class=line><span class=cl>Hong Kong: 98.53 ms
+</span></span><span class=line><span class=cl>Paris: 114.17 ms
+</span></span><span class=line><span class=cl>Madrid: 116.31 ms
+</span></span><span class=line><span class=cl>Frankfurt: 121.60 ms
+</span></span><span class=line><span class=cl>Amsterdam: 121.80 ms
+</span></span><span class=line><span class=cl>Tokyo: 124.99 ms
+</span></span><span class=line><span class=cl>Warsaw: 126.75 ms
+</span></span><span class=line><span class=cl>London: 135.55 ms
+</span></span><span class=line><span class=cl>Sydney: 149.78 ms
+</span></span><span class=line><span class=cl>Miami: 219.59 ms
+</span></span><span class=line><span class=cl>Los Angeles: 220.80 ms
+</span></span><span class=line><span class=cl>Denver: 225.65 ms
+</span></span><span class=line><span class=cl>Seattle: 230.58 ms
+</span></span><span class=line><span class=cl>Chicago: 238.62 ms
+</span></span><span class=line><span class=cl>San Francisco: 242.12 ms
+</span></span><span class=line><span class=cl>New York City: 246.40 ms
+</span></span><span class=line><span class=cl>Dallas: 246.59 ms
+</span></span><span class=line><span class=cl>Toronto: 251.18 ms
+</span></span><span class=line><span class=cl>Nairobi: 280.36 ms
+</span></span><span class=line><span class=cl>Honolulu: 292.43 ms
+</span></span><span class=line><span class=cl>Johannesburg: 294.61 ms
+</span></span><span class=line><span class=cl>São Paulo: 295.29 ms
 </span></span></code></pre></div><p>而headscale则是tailscale的开源解决方案，这意味着所有的流量都只通过你的服务器，功能也任由你选择。
-但是headscale有一点不好，它没有图形界面，这意味着需要全程在终端进行操作。</p>
-<hr>
-<p>#####如何安装
+但是headscale有一点不好，它没有图形界面，这意味着需要全程在终端进行操作。</p><hr><p>#####如何安装
 ######1.下载并配置
-以debian为例，去<a class="link" href="https://github.com/juanfont/headscale/releases"  target="_blank" rel="noopener"
-    >https://github.com/juanfont/headscale/releases</a>下载适合自己发行版和架构的版本（我没用deb包），下载到<code>/usr/local/bin/</code>并重命名为<code>headscale</code>。
+以debian为例，去<a class=link href=https://github.com/juanfont/headscale/releases target=_blank rel=noopener>https://github.com/juanfont/headscale/releases</a>下载适合自己发行版和架构的版本（我没用deb包），下载到<code>/usr/local/bin/</code>并重命名为<code>headscale</code>。
 当前最新版是0.22.3，即：
 <code>wget --output-document=/usr/local/bin/headscale https://github.com/juanfont/headscale/releases/download/v0.22.3/headscale_0.22.3_linux_amd64</code>
 之后再加上运行权限：
@@ -560,549 +52,112 @@ unicode: "ea9a"
 <code>mkdir -p /var/lib/headscale</code>
 创建空的 SQLite 数据库文件：
 <code>touch /var/lib/headscale/db.sqlite</code>
-创建配置目录并下载配置文件：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mkdir -p /etc/headscale &amp;&amp; cd /etc/headscale
-</span></span><span class="line"><span class="cl">wget https://github.com/juanfont/headscale/raw/main/config-example.yaml -O /etc/headscale/config.yaml
-</span></span></code></pre></div><p>然后修改配置文件</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">nano /etc/headscale/config.yaml
-</span></span></code></pre></div><p>主要修改几个地方：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">server_url: http://SERVERIP #SERVERIP改为公网IP地址 注意，此处直接修改为http://SERVERIP:PORT1便不会出现404问题
-</span></span><span class="line"><span class="cl">listen_addr: 0.0.0.0:PORT1 #PORT1默认8080，可改为连接的端口，之后连接会通过0.0.0.0:PORT1`进行，如果安装了防火墙记得放行端口
-</span></span><span class="line"><span class="cl">metrics_listen_addr: 0.0.0.0:PORT2 #PORT2默认9090，可改为连接的端口，之后连接会通过0.0.0.0:PORT2`进行，如果安装了防火墙记得放行端口
-</span></span><span class="line"><span class="cl">grpc_listen_addr: 0.0.0.0:50443
-</span></span><span class="line"><span class="cl">magic_dns： false #关闭magic_dns功能
-</span></span><span class="line"><span class="cl">ip_prefixes:
-</span></span><span class="line"><span class="cl">  - fd7a:115c:a1e0::/48 #自定义IPV6网段，如果用不到可以屏蔽此行
-</span></span><span class="line"><span class="cl">  - 10.64.0.0/16 #自定义IPV4网段
-</span></span></code></pre></div><p>创建systemd守护程序</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">nano /etc/systemd/system/headscale.service
-</span></span></code></pre></div><p>修改内容为：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="p">[</span><span class="n">Unit</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="n">Description</span><span class="o">=</span><span class="n">headscale</span> <span class="n">controller</span>
-</span></span><span class="line"><span class="cl"><span class="n">After</span><span class="o">=</span><span class="n">syslog</span><span class="o">.</span><span class="n">target</span>
-</span></span><span class="line"><span class="cl"><span class="n">After</span><span class="o">=</span><span class="n">network</span><span class="o">.</span><span class="n">target</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">Service</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="n">Type</span><span class="o">=</span><span class="n">simple</span>
-</span></span><span class="line"><span class="cl"><span class="n">User</span><span class="o">=</span><span class="n">headscale</span>
-</span></span><span class="line"><span class="cl"><span class="n">Group</span><span class="o">=</span><span class="n">headscale</span>
-</span></span><span class="line"><span class="cl"><span class="n">ExecStart</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">headscale</span> <span class="n">serve</span>
-</span></span><span class="line"><span class="cl"><span class="n">Restart</span><span class="o">=</span><span class="n">always</span>
-</span></span><span class="line"><span class="cl"><span class="n">RestartSec</span><span class="o">=</span><span class="mi">5</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Optional security enhancements</span>
-</span></span><span class="line"><span class="cl"><span class="n">NoNewPrivileges</span><span class="o">=</span><span class="n">yes</span>
-</span></span><span class="line"><span class="cl"><span class="n">PrivateTmp</span><span class="o">=</span><span class="n">yes</span>
-</span></span><span class="line"><span class="cl"><span class="n">ProtectSystem</span><span class="o">=</span><span class="n">strict</span>
-</span></span><span class="line"><span class="cl"><span class="n">ProtectHome</span><span class="o">=</span><span class="n">yes</span>
-</span></span><span class="line"><span class="cl"><span class="n">ReadWritePaths</span><span class="o">=/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">headscale</span> <span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">headscale</span>
-</span></span><span class="line"><span class="cl"><span class="n">AmbientCapabilities</span><span class="o">=</span><span class="n">CAP_NET_BIND_SERVICE</span>
-</span></span><span class="line"><span class="cl"><span class="n">RuntimeDirectory</span><span class="o">=</span><span class="n">headscale</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">Install</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="n">WantedBy</span><span class="o">=</span><span class="n">multi</span><span class="o">-</span><span class="n">user</span><span class="o">.</span><span class="n">target</span>
-</span></span></code></pre></div><p>创建 headscale 用户：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">useradd headscale -d /home/headscale -m
-</span></span></code></pre></div><p>修改 /var/lib/headscale 目录的所有者：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">chown</span> <span class="o">-</span><span class="n">R</span> <span class="n">headscale</span><span class="p">:</span><span class="n">headscale</span> <span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">headscale</span>
-</span></span></code></pre></div><p>Reload SystemD 以加载新的配置文件：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">systemctl</span> <span class="n">daemon</span><span class="o">-</span><span class="n">reload</span>
-</span></span></code></pre></div><p>启动 Headscale 服务并设置开机自启：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">systemctl enable --now headscale
-</span></span></code></pre></div><p>tailscale 中有一个概念叫 tailnet，你可以理解成租户，租户与租户之间是相互隔离的，具体看参考 Tailscale 的官方文档：What is a tailnet。Headscale 也有类似的实现叫 namespace，即命名空间。我们需要先创建一个 namespace，以便后续客户端接入，例如：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">headscale namespaces create default #此处命名空间为default
+创建配置目录并下载配置文件：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>mkdir -p /etc/headscale &amp;&amp; cd /etc/headscale
+</span></span><span class=line><span class=cl>wget https://github.com/juanfont/headscale/raw/main/config-example.yaml -O /etc/headscale/config.yaml
+</span></span></code></pre></div><p>然后修改配置文件</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>nano /etc/headscale/config.yaml
+</span></span></code></pre></div><p>主要修改几个地方：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>server_url: http://SERVERIP #SERVERIP改为公网IP地址 注意，此处直接修改为http://SERVERIP:PORT1便不会出现404问题
+</span></span><span class=line><span class=cl>listen_addr: 0.0.0.0:PORT1 #PORT1默认8080，可改为连接的端口，之后连接会通过0.0.0.0:PORT1`进行，如果安装了防火墙记得放行端口
+</span></span><span class=line><span class=cl>metrics_listen_addr: 0.0.0.0:PORT2 #PORT2默认9090，可改为连接的端口，之后连接会通过0.0.0.0:PORT2`进行，如果安装了防火墙记得放行端口
+</span></span><span class=line><span class=cl>grpc_listen_addr: 0.0.0.0:50443
+</span></span><span class=line><span class=cl>magic_dns： false #关闭magic_dns功能
+</span></span><span class=line><span class=cl>ip_prefixes:
+</span></span><span class=line><span class=cl>  - fd7a:115c:a1e0::/48 #自定义IPV6网段，如果用不到可以屏蔽此行
+</span></span><span class=line><span class=cl>  - 10.64.0.0/16 #自定义IPV4网段
+</span></span></code></pre></div><p>创建systemd守护程序</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>nano /etc/systemd/system/headscale.service
+</span></span></code></pre></div><p>修改内容为：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-gdscript3 data-lang=gdscript3><span class=line><span class=cl><span class=p>[</span><span class=n>Unit</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=n>Description</span><span class=o>=</span><span class=n>headscale</span> <span class=n>controller</span>
+</span></span><span class=line><span class=cl><span class=n>After</span><span class=o>=</span><span class=n>syslog</span><span class=o>.</span><span class=n>target</span>
+</span></span><span class=line><span class=cl><span class=n>After</span><span class=o>=</span><span class=n>network</span><span class=o>.</span><span class=n>target</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>[</span><span class=n>Service</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=n>Type</span><span class=o>=</span><span class=n>simple</span>
+</span></span><span class=line><span class=cl><span class=n>User</span><span class=o>=</span><span class=n>headscale</span>
+</span></span><span class=line><span class=cl><span class=n>Group</span><span class=o>=</span><span class=n>headscale</span>
+</span></span><span class=line><span class=cl><span class=n>ExecStart</span><span class=o>=/</span><span class=n>usr</span><span class=o>/</span><span class=n>local</span><span class=o>/</span><span class=n>bin</span><span class=o>/</span><span class=n>headscale</span> <span class=n>serve</span>
+</span></span><span class=line><span class=cl><span class=n>Restart</span><span class=o>=</span><span class=n>always</span>
+</span></span><span class=line><span class=cl><span class=n>RestartSec</span><span class=o>=</span><span class=mi>5</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Optional security enhancements</span>
+</span></span><span class=line><span class=cl><span class=n>NoNewPrivileges</span><span class=o>=</span><span class=n>yes</span>
+</span></span><span class=line><span class=cl><span class=n>PrivateTmp</span><span class=o>=</span><span class=n>yes</span>
+</span></span><span class=line><span class=cl><span class=n>ProtectSystem</span><span class=o>=</span><span class=n>strict</span>
+</span></span><span class=line><span class=cl><span class=n>ProtectHome</span><span class=o>=</span><span class=n>yes</span>
+</span></span><span class=line><span class=cl><span class=n>ReadWritePaths</span><span class=o>=/</span><span class=k>var</span><span class=o>/</span><span class=n>lib</span><span class=o>/</span><span class=n>headscale</span> <span class=o>/</span><span class=k>var</span><span class=o>/</span><span class=n>run</span><span class=o>/</span><span class=n>headscale</span>
+</span></span><span class=line><span class=cl><span class=n>AmbientCapabilities</span><span class=o>=</span><span class=n>CAP_NET_BIND_SERVICE</span>
+</span></span><span class=line><span class=cl><span class=n>RuntimeDirectory</span><span class=o>=</span><span class=n>headscale</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>[</span><span class=n>Install</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=n>WantedBy</span><span class=o>=</span><span class=n>multi</span><span class=o>-</span><span class=n>user</span><span class=o>.</span><span class=n>target</span>
+</span></span></code></pre></div><p>创建 headscale 用户：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>useradd headscale -d /home/headscale -m
+</span></span></code></pre></div><p>修改 /var/lib/headscale 目录的所有者：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-gdscript3 data-lang=gdscript3><span class=line><span class=cl><span class=n>chown</span> <span class=o>-</span><span class=n>R</span> <span class=n>headscale</span><span class=p>:</span><span class=n>headscale</span> <span class=o>/</span><span class=k>var</span><span class=o>/</span><span class=n>lib</span><span class=o>/</span><span class=n>headscale</span>
+</span></span></code></pre></div><p>Reload SystemD 以加载新的配置文件：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-gdscript3 data-lang=gdscript3><span class=line><span class=cl><span class=n>systemctl</span> <span class=n>daemon</span><span class=o>-</span><span class=n>reload</span>
+</span></span></code></pre></div><p>启动 Headscale 服务并设置开机自启：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>systemctl enable --now headscale
+</span></span></code></pre></div><p>tailscale 中有一个概念叫 tailnet，你可以理解成租户，租户与租户之间是相互隔离的，具体看参考 Tailscale 的官方文档：What is a tailnet。Headscale 也有类似的实现叫 namespace，即命名空间。我们需要先创建一个 namespace，以便后续客户端接入，例如：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>headscale namespaces create default #此处命名空间为default
 </span></span></code></pre></div><p>到此服务端部分基本配置完毕。
 ######2.接入headscale
-对于已经安装了tailscale的linux系统，可以直接执行</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">tailscale up --login-server=http://SERVERIP:PORT1 --accept-routes=true --accept-dns=false
-</span></span></code></pre></div><p>如果之前已经接入过tailscale，需要执行：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">tailscale up --login-server=http://SERVERIP:PORT1 --accept-routes=true --accept-dns=false --force-reauth
-</span></span></code></pre></div><p>Windows操作其实也类似，按官网说法我们需要修改注册表，但其实我们只要进入软件的安装目录并右键启动Powershell，执行如下命令:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">.\tailscale.exe up --accept-dns=false --accept-routes --login-server=http://SERVERIP:PORT1 --unattended
-</span></span></code></pre></div><p>之后会提示：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">To authenticate, visit:
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	http://SERVERIP:PORT1/register/nodekey:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-</span></span></code></pre></div><p>
-  <div class="post-img-view">
-  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e2bfd7452.png">
-  <img src="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e2bfd7452.png" alt="hs-in"  />
-  </a>
-  </div>
-<img src="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e2bfd7452.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="hs-in"
-	
-	
->
-把其中的</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">headscale nodes register --user USERNAME --key nodekey:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+对于已经安装了tailscale的linux系统，可以直接执行</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>tailscale up --login-server=http://SERVERIP:PORT1 --accept-routes=true --accept-dns=false
+</span></span></code></pre></div><p>如果之前已经接入过tailscale，需要执行：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>tailscale up --login-server=http://SERVERIP:PORT1 --accept-routes=true --accept-dns=false --force-reauth
+</span></span></code></pre></div><p>Windows操作其实也类似，按官网说法我们需要修改注册表，但其实我们只要进入软件的安装目录并右键启动Powershell，执行如下命令:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>.\tailscale.exe up --accept-dns=false --accept-routes --login-server=http://SERVERIP:PORT1 --unattended
+</span></span></code></pre></div><p>之后会提示：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>To authenticate, visit:
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	http://SERVERIP:PORT1/register/nodekey:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+</span></span></code></pre></div><p><div class=post-img-view><a data-fancybox=gallery href=https://r2.337845818.best/oss-to-r2/2023/09/14/6501e2bfd7452.png><img src=https://r2.337845818.best/oss-to-r2/2023/09/14/6501e2bfd7452.png alt=hs-in></a></div><img src=https://r2.337845818.best/oss-to-r2/2023/09/14/6501e2bfd7452.png loading=lazy alt=hs-in>
+把其中的</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>headscale nodes register --user USERNAME --key nodekey:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 </span></span></code></pre></div><p>复制到服务器终端中，并修改<code>USERNAME</code>为命名空间，比如上面我们设置的是<code>default</code>。
-执行之后服务器提示：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Machine xxx registered
-</span></span></code></pre></div><p>客户端提示：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Success.
+执行之后服务器提示：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>Machine xxx registered
+</span></span></code></pre></div><p>客户端提示：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>Success.
 </span></span></code></pre></div><p>在服务器执行
 <code>headscale nodes list</code>
-可以看到客户端分配到的IP地址为<code>100.64.0.1</code>：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ID | Hostname  | Name      | MachineKey | NodeKey | User    | IP addresses | Ephemeral | Last seen           | Expiration          | Online | Expired
-</span></span><span class="line"><span class="cl">1  | xxx | xxx | [xxx]    | [xxx] | default | 100.64.0.1, | false     | 2023-09-13 15:47:03 | 0001-01-01 00:00:00 | online | no
+可以看到客户端分配到的IP地址为<code>100.64.0.1</code>：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>ID | Hostname  | Name      | MachineKey | NodeKey | User    | IP addresses | Ephemeral | Last seen           | Expiration          | Online | Expired
+</span></span><span class=line><span class=cl>1  | xxx | xxx | [xxx]    | [xxx] | default | 100.64.0.1, | false     | 2023-09-13 15:47:03 | 0001-01-01 00:00:00 | online | no
 </span></span></code></pre></div><p>相同的方法再添加第二个服务器，分配到ip:<code>100.64.0.2</code>
-用进行互PING已经通了：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># ping 100.64.0.2
-</span></span><span class="line"><span class="cl">PING 100.64.0.2 (100.64.0.2) 56(84) bytes of data.
-</span></span><span class="line"><span class="cl">64 bytes from 100.64.0.2: icmp_seq=1 ttl=64 time=0.041 ms
-</span></span><span class="line"><span class="cl">64 bytes from 100.64.0.2: icmp_seq=2 ttl=64 time=0.042 ms
-</span></span><span class="line"><span class="cl">64 bytes from 100.64.0.2: icmp_seq=3 ttl=64 time=0.043 ms
-</span></span><span class="line"><span class="cl">64 bytes from 100.64.0.2: icmp_seq=4 ttl=64 time=0.046 ms
-</span></span><span class="line"><span class="cl">^C
-</span></span><span class="line"><span class="cl">--- 100.64.0.2 ping statistics ---
-</span></span><span class="line"><span class="cl">4 packets transmitted, 4 received, 0% packet loss, time 3057ms
-</span></span><span class="line"><span class="cl">rtt min/avg/max/mdev = 0.041/0.043/0.046/0.002 ms
+用进行互PING已经通了：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># ping 100.64.0.2
+</span></span><span class=line><span class=cl>PING 100.64.0.2 (100.64.0.2) 56(84) bytes of data.
+</span></span><span class=line><span class=cl>64 bytes from 100.64.0.2: icmp_seq=1 ttl=64 time=0.041 ms
+</span></span><span class=line><span class=cl>64 bytes from 100.64.0.2: icmp_seq=2 ttl=64 time=0.042 ms
+</span></span><span class=line><span class=cl>64 bytes from 100.64.0.2: icmp_seq=3 ttl=64 time=0.043 ms
+</span></span><span class=line><span class=cl>64 bytes from 100.64.0.2: icmp_seq=4 ttl=64 time=0.046 ms
+</span></span><span class=line><span class=cl>^C
+</span></span><span class=line><span class=cl>--- 100.64.0.2 ping statistics ---
+</span></span><span class=line><span class=cl>4 packets transmitted, 4 received, 0% packet loss, time 3057ms
+</span></span><span class=line><span class=cl>rtt min/avg/max/mdev = 0.041/0.043/0.046/0.002 ms
 </span></span></code></pre></div><p>延迟很低，很好。
 ######3.支持了哪些平台？
-截至9月14日，基本已经实现了全平台支持，详情见<a class="link" href="https://github.com/juanfont/headscale"  target="_blank" rel="noopener"
-    >https://github.com/juanfont/headscale</a>。
+截至9月14日，基本已经实现了全平台支持，详情见<a class=link href=https://github.com/juanfont/headscale target=_blank rel=noopener>https://github.com/juanfont/headscale</a>。
 官方tailscale在1.30.0之后的版本基本都实现了自定义url。
-以安卓为例，打开应用程序后，必须反复打开和关闭右侧顶部栏上的烤肉串菜单图标（三个点），直到菜单中出现“更改服务器”选项。
-
-  <div class="post-img-view">
-  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8393b827.png">
-  <img src="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8393b827.png" alt="狂点三个点"  />
-  </a>
-  </div>
-<img src="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8393b827.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="狂点三个点"
-	
-	
->
-
-  <div class="post-img-view">
-  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e854095bb.png">
-  <img src="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e854095bb.png" alt="出现Change server"  />
-  </a>
-  </div>
-<img src="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e854095bb.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="出现Change server"
-	
-	
->
-可以在此处输入<code>http://SERVERIP:PORT1</code>。保存返回上一步，然后选择<code>Sign in with other</code>
-
-  <div class="post-img-view">
-  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8897db77.png">
-  <img src="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8897db77.png" alt="Sign in with other"  />
-  </a>
-  </div>
-<img src="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8897db77.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="Sign in with other"
-	
-	
->
-然后就一如既往的404了，使用浏览器打开这个网页，添加端口到IP后面再访问。
-
-  <div class="post-img-view">
-  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8cc39e42.png">
-  <img src="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8cc39e42.png" alt="404了"  />
-  </a>
-  </div>
-<img src="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8cc39e42.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="404了"
-	
-	
->
-
-  <div class="post-img-view">
-  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8f3822db.png">
-  <img src="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8f3822db.png" alt="不404了"  />
-  </a>
-  </div>
-<img src="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8f3822db.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="不404了"
-	
-	
->
-然后按照上面把那窜命令修改后复制到服务端执行，显示成功后安卓端杀掉tailscale进程，再重新进去之后就可以正常使用了。
-
-  <div class="post-img-view">
-  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e959e894c.png">
-  <img src="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e959e894c.png" alt="正常使用了"  />
-  </a>
-  </div>
-<img src="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e959e894c.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="正常使用了"
-	
-	
->
+以安卓为例，打开应用程序后，必须反复打开和关闭右侧顶部栏上的烤肉串菜单图标（三个点），直到菜单中出现“更改服务器”选项。<div class=post-img-view><a data-fancybox=gallery href=https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8393b827.png><img src=https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8393b827.png alt=狂点三个点></a></div><img src=https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8393b827.png loading=lazy alt=狂点三个点><div class=post-img-view><a data-fancybox=gallery href=https://r2.337845818.best/oss-to-r2/2023/09/14/6501e854095bb.png><img src=https://r2.337845818.best/oss-to-r2/2023/09/14/6501e854095bb.png alt="出现Change server"></a></div><img src=https://r2.337845818.best/oss-to-r2/2023/09/14/6501e854095bb.png loading=lazy alt="出现Change server">
+可以在此处输入<code>http://SERVERIP:PORT1</code>。保存返回上一步，然后选择<code>Sign in with other</code><div class=post-img-view><a data-fancybox=gallery href=https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8897db77.png><img src=https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8897db77.png alt="Sign in with other"></a></div><img src=https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8897db77.png loading=lazy alt="Sign in with other">
+然后就一如既往的404了，使用浏览器打开这个网页，添加端口到IP后面再访问。<div class=post-img-view><a data-fancybox=gallery href=https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8cc39e42.png><img src=https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8cc39e42.png alt=404了></a></div><img src=https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8cc39e42.png loading=lazy alt=404了><div class=post-img-view><a data-fancybox=gallery href=https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8f3822db.png><img src=https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8f3822db.png alt=不404了></a></div><img src=https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8f3822db.png loading=lazy alt=不404了>
+然后按照上面把那窜命令修改后复制到服务端执行，显示成功后安卓端杀掉tailscale进程，再重新进去之后就可以正常使用了。<div class=post-img-view><a data-fancybox=gallery href=https://r2.337845818.best/oss-to-r2/2023/09/14/6501e959e894c.png><img src=https://r2.337845818.best/oss-to-r2/2023/09/14/6501e959e894c.png alt=正常使用了></a></div><img src=https://r2.337845818.best/oss-to-r2/2023/09/14/6501e959e894c.png loading=lazy alt=正常使用了>
 ######4.打通局域网
 需求:假设本地里面有一台设备,headscale ip为<code>10.64.0.5</code>，内网ip为<code>192.168.50.79</code>，但是我不想内网每台设备都接入headscale，希望通过<code>10.64.0.5</code>来打通局域网。
 客户端（10.64.0.5）配置:
-1.开启ipv4和ipv6转发</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">echo &#39;net.ipv4.ip_forward = 1&#39; | tee /etc/sysctl.d/ipforwarding.conf
-</span></span><span class="line"><span class="cl">echo &#39;net.ipv6.conf.all.forwarding = 1&#39; | tee -a /etc/sysctl.d/ipforwarding.conf
-</span></span><span class="line"><span class="cl">sysctl -p /etc/sysctl.d/ipforwarding.conf
-</span></span></code></pre></div><p>2.修改tailscale启动配置</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">tailscale up --login-server=http://SERVERIP:PORT1 --accept-routes=true --accept-dns=false --advertise-routes=192.168.50.0/24
+1.开启ipv4和ipv6转发</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>echo &#39;net.ipv4.ip_forward = 1&#39; | tee /etc/sysctl.d/ipforwarding.conf
+</span></span><span class=line><span class=cl>echo &#39;net.ipv6.conf.all.forwarding = 1&#39; | tee -a /etc/sysctl.d/ipforwarding.conf
+</span></span><span class=line><span class=cl>sysctl -p /etc/sysctl.d/ipforwarding.conf
+</span></span></code></pre></div><p>2.修改tailscale启动配置</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>tailscale up --login-server=http://SERVERIP:PORT1 --accept-routes=true --accept-dns=false --advertise-routes=192.168.50.0/24
 </span></span></code></pre></div><p>其中<code>http://SERVERIP:PORT1</code>为上面的headscale服务器地址和ip，<code>192.168.50.0/24</code>是客户端的内网网段。
 服务端（headscale服务器）
-查看10.64.0.5的id</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># headscale nodes list                         ID | Hostname             | Name                | MachineKey | NodeKey | User     | IP addresses                  | Ephemeral | Last seen           | Expiration          | Online  | Expired
-</span></span><span class="line"><span class="cl">5  | akarinbot            | akarinbot           | [WEJPM]    | [ETS1a] | tamaroot | 100.64.0.5, fd7a:115c:a1e0::1 | false     | 2023-09-14 03:58:37 | 0001-01-01 00:00:00 | online  | no
-</span></span></code></pre></div><p>可以看到此处id为5。接下来查看该服务下的路由:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">headscale routes list -i 5
-</span></span><span class="line"><span class="cl"># headscale routes list -i 1
-</span></span><span class="line"><span class="cl">ID | Machine   | Prefix          | Advertised | Enabled | Primary
-</span></span><span class="line"><span class="cl">7  | akarinbot | 192.168.50.0/24 | true       | false    | true
-</span></span></code></pre></div><p>这里路由id为7，且Enabled状态为false。接下来开启这个路由</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># headscale routes enable  -r 7
+查看10.64.0.5的id</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># headscale nodes list                         ID | Hostname             | Name                | MachineKey | NodeKey | User     | IP addresses                  | Ephemeral | Last seen           | Expiration          | Online  | Expired
+</span></span><span class=line><span class=cl>5  | akarinbot            | akarinbot           | [WEJPM]    | [ETS1a] | tamaroot | 100.64.0.5, fd7a:115c:a1e0::1 | false     | 2023-09-14 03:58:37 | 0001-01-01 00:00:00 | online  | no
+</span></span></code></pre></div><p>可以看到此处id为5。接下来查看该服务下的路由:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>headscale routes list -i 5
+</span></span><span class=line><span class=cl># headscale routes list -i 1
+</span></span><span class=line><span class=cl>ID | Machine   | Prefix          | Advertised | Enabled | Primary
+</span></span><span class=line><span class=cl>7  | akarinbot | 192.168.50.0/24 | true       | false    | true
+</span></span></code></pre></div><p>这里路由id为7，且Enabled状态为false。接下来开启这个路由</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># headscale routes enable  -r 7
 </span></span></code></pre></div><p>此时Enabled状态为true。
 现在在任意客户端访问192.168.50.0/24网段的ip都能联通了。
 #####5.其他事项
-如果deb包下载很慢，可以用其他软件下载:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://pkgs.tailscale.com/stable/tailscale_{版本号}_{架构}.deb
-</span></span></code></pre></div><p>例如：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://pkgs.tailscale.com/stable/tailscale_1.56.1_amd64.deb
-</span></span></code></pre></div>
-</section>
-
-    <footer class="article-footer">
-    
-    <section class="article-tags">
-        
-            <a href="/tags/headscale.html">Headscale</a>
-        
-    </section>
-
-
-    
-    <section class="article-copyright">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
-</svg>
-
-
-
-        <span>Licensed under CC BY-NC-SA 4.0</span>
-    </section>
-    <section class="article-lastmod">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-        <span>
-            最后更新于 2025年08月14日 02:54
-        </span>
-    </section></footer>
-
-
-    
-</article>
-
-    
-
-    
-
-<aside class="related-content--wrapper">
-    <h2 class="section-title">相关文章</h2>
-    <div class="related-content">
-        <div class="flex article-list--tile">
-            
-                
-<article class="has-image">
-    <a href="/record/gamehub.html">
-        
-        
-            <div class="article-image">
-                
-                    <img src="https://r2.337845818.best/tamabox/2025/07/02/686410ca3aae0.png" loading="lazy" data-key="gamehub" data-hash="https://r2.337845818.best/tamabox/2025/07/02/686410ca3aae0.png"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">[好软推荐] 盖世游戏-意外好用的windows游戏模拟器</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/record/acfun-gift-count.html">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">关于AcFun礼物统计网页的说明</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/record/anti-360albumviewer.html">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">如何避免大数字自动安装大数字看图(360AlbumViewer)</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/record/traccar.html">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">搭建自己的轨迹记录程序 Traccar</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/record/next-terminal.html">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">[软件推荐]Next-terminal堡垒机</h2>
-        </div>
-    </a>
-</article>
-
-            
-        </div>
-    </div>
-</aside>
-
-     
-    
-        
-    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
-<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
-<div id="waline" class="waline-container"></div>
-<style>
-    .waline-container {
-        background-color: var(--card-background);
-        border-radius: var(--card-border-radius);
-        box-shadow: var(--shadow-l1);
-        padding: var(--card-padding);
-        --waline-font-size: var(--article-font-size);
-    }
-    .waline-container .wl-count {
-        color: var(--card-text-color-main);
-    }
-</style><script>
-    
-    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://unpkg.com/@waline/emojis@1.0.1/weibo","https://gcore.jsdelivr.net/gh/tamakyi/emoji-collection@main/acfun-classic/60x60"],"imageUploader":false,"lang":"zh-CN","locale":{"admin":"博主","mail":"邮箱","nick":"昵称","placeholder":"欢迎评论，评论会先由博主进行审核再显示。","reaction0":"哇哦","reaction1":"prpr","reaction2":"流汗","reaction3":"生气","reaction4":"流鼻血","reaction5":"あべ"},"login":"disable","meta":["nick","mail"],"nocopyright":true,"pageSize":6,"pageview":true,"reaction":["https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGQ3OTRhYzRjMTBkZmZhZDVmZTA1EIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChQwOGEyOTlhYzRjMTBmOWFkZjAwYRCIzNcv.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGRhOTVhYzRjMTBkNmViYTVlNTA2EIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGU1OTJhYzRjMTBmMzk3ZmVmNTAyEIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGNkODdhYzRjMTBjYmEwOTFjNjAxEIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChQwODliOGVhYzRjMTBmOGM0ZWY1ZRCIzNcv.gif"],"requiredMeta":["nick","mail"],"search":false,"serverURL":"https://artalk.tama.guru"});
-</script>
-
-    
-
-    
-  <script src="https://cdnjs.snrat.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.snrat.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
-  <script src="https://cdnjs.snrat.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-
-<script defer src="https://mami.tama.guru/tamami.js" data-website-id="b7b72f5c-977d-4d23-8ec8-be46d93bd8d5"></script>
-<script>
-    (function(u, c) {
-      var d = document, t = 'script', o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function(e) { c(e); }); }
-      s.parentNode.insertBefore(o, s);
-    })('https://cdnjs.snrat.com/ajax/libs/pangu/4.0.7/pangu.min.js', function() {
-      pangu.spacingPage();
-    });
-</script>
-<footer class="site-footer">
-    <section class="copyright">
-        &copy; 
-        
-            2022 - 
-        
-        2025 tamakyi
-    </section>
-    
-    <section class="powerby">
-        
-        <section class="running-time">
-        本博客已稳定运行
-        <span id="runningdays" class="running-days"></span>
-        </section>
-
-        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
-    </section>
-</footer>
-
-
-    
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-    
-    <div class="pswp__bg"></div>
-
-    
-    <div class="pswp__scroll-wrap">
-
-        
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-
-        
-        <div class="pswp__ui pswp__ui--hidden">
-
-            <div class="pswp__top-bar">
-
-                
-
-                <div class="pswp__counter"></div>
-
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-                
-                
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                        <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div>
-            </div>
-
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-
-        </div>
-
-    </div>
-
-</div><script 
-                src="https://cdnjs.snrat.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
-                defer
-                >
-            </script><script 
-                src="https://cdnjs.snrat.com/ajax/libs/photoswipe/4.1.3/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
-                defer
-                >
-            </script><link 
-                rel="stylesheet" 
-                href="https://cdnjs.snrat.com/ajax/libs/photoswipe/4.1.3/default-skin/default-skin.min.css"crossorigin="anonymous"
-            ><link 
-                rel="stylesheet" 
-                href="https://cdnjs.snrat.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.css"crossorigin="anonymous"
-            >
-
-            </main>
-        </div>
-        <script 
-                src="https://cdnjs.snrat.com/ajax/libs/node-vibrant/3.1.6/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
-                
-                >
-            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
-<script>
-    (function () {
-        const customFont = document.createElement('link');
-        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
-
-        customFont.type = "text/css";
-        customFont.rel = "stylesheet";
-
-        document.head.appendChild(customFont);
-    }());
-</script>
-<script src="https://cdnjs.snrat.com/ajax/libs/nprogress/0.2.0/nprogress.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdnjs.snrat.com/ajax/libs/nprogress/0.2.0/nprogress.css" crossorigin="anonymous" />
-<script>
-    NProgress.start();
-    document.addEventListener("readystatechange", () => {
-        if (document.readyState === "interactive") NProgress.inc(0.8);
-        if (document.readyState === "complete") NProgress.done();
-    });
-</script>
-
-
-<script>
-    let s1 = '2022-5-18'; 
-    s1 = new Date(s1.replace(/-/g, "/"));
-    let s2 = new Date();
-    let timeDifference = s2.getTime() - s1.getTime();
-
-    let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-    let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-
-    let result = days + "天" + hours + "小时" + minutes + "分钟";
-    document.getElementById('runningdays').innerHTML = result;
-</script>
-    </body>
-</html>
+如果deb包下载很慢，可以用其他软件下载:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>https://pkgs.tailscale.com/stable/tailscale_{版本号}_{架构}.deb
+</span></span></code></pre></div><p>例如：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>https://pkgs.tailscale.com/stable/tailscale_1.56.1_amd64.deb
+</span></span></code></pre></div></section><footer class=article-footer><section class=article-tags><a href=/tags/headscale.html>Headscale</a></section><section class=article-copyright><svg class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Licensed under CC BY-NC-SA 4.0</span></section><section class=article-lastmod><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<span>最后更新于 2025年08月14日 03:33</span></section></footer></article><aside class=related-content--wrapper><h2 class=section-title>相关文章</h2><div class=related-content><div class="flex article-list--tile"><article class=has-image><a href=/record/gamehub.html><div class=article-image><img src=https://r2.337845818.best/tamabox/2025/07/02/686410ca3aae0.png loading=lazy data-key=gamehub data-hash=https://r2.337845818.best/tamabox/2025/07/02/686410ca3aae0.png></div><div class=article-details><h2 class=article-title>[好软推荐] 盖世游戏-意外好用的windows游戏模拟器</h2></div></a></article><article><a href=/record/acfun-gift-count.html><div class=article-details><h2 class=article-title>关于AcFun礼物统计网页的说明</h2></div></a></article><article><a href=/record/anti-360albumviewer.html><div class=article-details><h2 class=article-title>如何避免大数字自动安装大数字看图(360AlbumViewer)</h2></div></a></article><article><a href=/record/traccar.html><div class=article-details><h2 class=article-title>搭建自己的轨迹记录程序 Traccar</h2></div></a></article><article><a href=/record/next-terminal.html><div class=article-details><h2 class=article-title>[软件推荐]Next-terminal堡垒机</h2></div></a></article></div></div></aside><script src=//unpkg.com/@waline/client@v2/dist/waline.js></script><link href=//unpkg.com/@waline/client@v2/dist/waline.css rel=stylesheet><div id=waline class=waline-container></div><style>.waline-container{background-color:var(--card-background);border-radius:var(--card-border-radius);box-shadow:var(--shadow-l1);padding:var(--card-padding);--waline-font-size:var(--article-font-size)}.waline-container .wl-count{color:var(--card-text-color-main)}</style><script>Waline.init({dark:'html[data-scheme="dark"]',el:"#waline",emoji:["https://unpkg.com/@waline/emojis@1.0.1/weibo","https://gcore.jsdelivr.net/gh/tamakyi/emoji-collection@main/acfun-classic/60x60"],imageUploader:!1,lang:"zh-CN",locale:{admin:"博主",mail:"邮箱",nick:"昵称",placeholder:"欢迎评论，评论会先由博主进行审核再显示。",reaction0:"哇哦",reaction1:"prpr",reaction2:"流汗",reaction3:"生气",reaction4:"流鼻血",reaction5:"あべ"},login:"disable",meta:["nick","mail"],nocopyright:!0,pageSize:6,pageview:!0,reaction:["https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGQ3OTRhYzRjMTBkZmZhZDVmZTA1EIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChQwOGEyOTlhYzRjMTBmOWFkZjAwYRCIzNcv.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGRhOTVhYzRjMTBkNmViYTVlNTA2EIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGU1OTJhYzRjMTBmMzk3ZmVmNTAyEIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChYwOGNkODdhYzRjMTBjYmEwOTFjNjAxEIjM1y8.gif","https://ali-imgs.acfun.cn/kimg/bs2/zt-image-host/ChQwODliOGVhYzRjMTBmOGM0ZWY1ZRCIzNcv.gif"],requiredMeta:["nick","mail"],search:!1,serverURL:"https://artalk.tama.guru"})</script><script src=https://cdnjs.snrat.com/ajax/libs/jquery/3.5.1/jquery.min.js></script><link rel=stylesheet href=https://cdnjs.snrat.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css><script src=https://cdnjs.snrat.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js></script><script defer src=https://mami.tama.guru/tamami.js data-website-id=b7b72f5c-977d-4d23-8ec8-be46d93bd8d5></script><script>(function(e,t){var s=document,o="script",n=s.createElement(o),i=s.getElementsByTagName(o)[0];n.src=e,t&&n.addEventListener("load",function(e){t(e)}),i.parentNode.insertBefore(n,i)})("https://cdnjs.snrat.com/ajax/libs/pangu/4.0.7/pangu.min.js",function(){pangu.spacingPage()})</script><footer class=site-footer><section class=copyright>&copy;
+2022 -
+2025 tamakyi</section><section class=powerby><section class=running-time>本博客已稳定运行
+<span id=runningdays class=running-days></span></section>使用 <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> 构建<br></section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdnjs.snrat.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdnjs.snrat.com/ajax/libs/photoswipe/4.1.3/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdnjs.snrat.com/ajax/libs/photoswipe/4.1.3/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.snrat.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.css crossorigin=anonymous></main></div><script src=https://cdnjs.snrat.com/ajax/libs/node-vibrant/3.1.6/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js defer></script><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script><script src=https://cdnjs.snrat.com/ajax/libs/nprogress/0.2.0/nprogress.js crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.snrat.com/ajax/libs/nprogress/0.2.0/nprogress.css crossorigin=anonymous><script>NProgress.start(),document.addEventListener("readystatechange",()=>{document.readyState==="interactive"&&NProgress.inc(.8),document.readyState==="complete"&&NProgress.done()})</script><script>let s1="2022-5-18";s1=new Date(s1.replace(/-/g,"/"));let s2=new Date,timeDifference=s2.getTime()-s1.getTime(),days=Math.floor(timeDifference/(1e3*60*60*24)),hours=Math.floor(timeDifference%(1e3*60*60*24)/(1e3*60*60)),minutes=Math.floor(timeDifference%(1e3*60*60)/(1e3*60)),result=days+"天"+hours+"小时"+minutes+"分钟";document.getElementById("runningdays").innerHTML=result</script></body></html>

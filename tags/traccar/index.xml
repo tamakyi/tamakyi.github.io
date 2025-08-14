@@ -1,92 +1,72 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Traccar on 狼的公告板 ver.Hugo</title>
-        <link>https://blog.tama.guru/tags/traccar.html</link>
-        <description>Recent content in Traccar on 狼的公告板 ver.Hugo</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/traccar/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>搭建自己的轨迹记录程序 Traccar</title>
-        <link>https://blog.tama.guru/record/traccar.html</link>
-        <pubDate>Sun, 20 Apr 2025 05:57:00 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/record/traccar.html</guid>
-        <description>&lt;p&gt;今天外出玩耍的时候突发奇想我能不能每天记录一下自己每天的生活轨迹，百度了下已经有很多成熟的应用了，但是这种比较私密的数据要发送到别人的服务器上说实话我是不太想的，然后去github上找了下，发现了好几个方案，都尝试了一遍，主要是&lt;a class=&#34;link&#34; href=&#34;https://github.com/cctyl/TrackRecord&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/cctyl/TrackRecord&lt;/a&gt;，搭完发现太简陋了，不适合我，其他几个更是已经几年没更新了，最后尝试了下traccar，感觉算是比较成熟的方案，也符合我的需求。&lt;/p&gt;
-&lt;h4 id=&#34;正常安装&#34;&gt;正常安装
-&lt;/h4&gt;&lt;p&gt;其官网位于：&lt;a class=&#34;link&#34; href=&#34;https://www.traccar.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://www.traccar.org/&lt;/a&gt;，项目主要仓库在Github上：&lt;a class=&#34;link&#34; href=&#34;https://github.com/traccar/traccar&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/traccar/traccar&lt;/a&gt;。直接去release上根据服务器类型下载对应的文件就行了，目前linux支持arm和x64，windows仅支持x64。以我在树莓派上运行为例，下载之后解压执行就能自动配置好：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://bgithub.xyz/traccar/traccar/releases/download/v6.6/traccar-linux-arm-6.6.zip
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;unzip traccar-linux-arm-6.6.zip
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo ./traccar.run
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后执行:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl start traccar.service
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;再等个几分钟（树莓派太慢了，所以会很久），就可以访问&lt;code&gt;设备IP:8082&lt;/code&gt;进入管理界面。初次使用需要配置服务名称、邮箱和密码，然后使用邮箱和密码登录即可。&lt;/p&gt;
-&lt;h4 id=&#34;使用docker安装&#34;&gt;使用docker安装
-&lt;/h4&gt;&lt;p&gt;首先执行:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker run  --rm  --entrypoint cat  traccar/traccar:latest  /opt/traccar/conf/traccar.xml &amp;gt; /root/traccar/traccar.xml
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;其中&lt;code&gt;/root/traccar/traccar.xml&lt;/code&gt;根据实际情况配置，我的配置文件放在&lt;code&gt;/root/traccar&lt;/code&gt;下所以这么弄了。
-然后执行：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker run -d --restart always --name traccar --hostname traccar -p 8082:8082 -p 5023:5023 -p 5023:5023/udp -p 5055:5055 -p 5055:5055/udp -v /root/traccar/traccar/logs:/opt/traccar/logs:rw -v /root/traccar/traccar.xml:/opt/traccar/conf/traccar.xml:ro -v /root/traccar/templates:/opt/traccar/templates/short -e &lt;span class=&#34;nv&#34;&gt;TZ&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Asia/Shanghai traccar/traccar:latest
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里所有的&lt;code&gt;/root/traccar&lt;/code&gt;都要根据实际情况修改，然后确保&lt;code&gt;8082 5023 5055&lt;/code&gt;这三个端口都是没有被占用的，有的话改到其他端口下。
-同样再等个几分钟，就可以访问&lt;code&gt;设备IP:8082&lt;/code&gt;进入管理界面。初次使用需要配置服务名称、邮箱和密码，然后使用邮箱和密码登录即可。&lt;/p&gt;
-&lt;h4 id=&#34;修改数据库&#34;&gt;修改数据库
-&lt;/h4&gt;&lt;p&gt;默认情况下它使用的是h2作为数据库，这是一种开源的关系型数据库，采用Java语言编写，数据存储于内存内，为了保证数据安全建议修改为mysql连接方式。
-具体操作是修改数据目录下的&lt;code&gt;traccar.xml&lt;/code&gt;文件，原内容是：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;?xml &lt;span class=&#34;nv&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;1.0&amp;#34;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;encoding&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;UTF-8&amp;#34;&lt;/span&gt;?&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;!DOCTYPE properties SYSTEM &lt;span class=&#34;s1&#34;&gt;&amp;#39;http://java.sun.com/dtd/properties.dtd&amp;#39;&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;properties&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;lt;!-- Documentation: https://www.traccar.org/configuration-file/ --&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;lt;entry &lt;span class=&#34;nv&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;database.driver&amp;#39;&lt;/span&gt;&amp;gt;org.h2.Driver&amp;lt;/entry&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;lt;entry &lt;span class=&#34;nv&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;database.url&amp;#39;&lt;/span&gt;&amp;gt;jdbc:h2:./data/database&amp;lt;/entry&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;lt;entry &lt;span class=&#34;nv&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;database.user&amp;#39;&lt;/span&gt;&amp;gt;sa&amp;lt;/entry&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;lt;entry &lt;span class=&#34;nv&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;database.password&amp;#39;&lt;/span&gt;&amp;gt;&amp;lt;/entry&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;/properties&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;修改为：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;?xml &lt;span class=&#34;nv&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;1.0&amp;#34;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;encoding&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;UTF-8&amp;#34;&lt;/span&gt;?&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;!DOCTYPE properties SYSTEM &lt;span class=&#34;s1&#34;&gt;&amp;#39;http://java.sun.com/dtd/properties.dtd&amp;#39;&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;properties&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;lt;!-- Documentation: https://www.traccar.org/configuration-file/ --&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;lt;entry &lt;span class=&#34;nv&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;database.driver&amp;#39;&lt;/span&gt;&amp;gt;com.mysql.cj.jdbc.Driver&amp;lt;/entry&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;lt;entry &lt;span class=&#34;nv&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;database.url&amp;#39;&lt;/span&gt;&amp;gt;jdbc:mysql://sql地址:端口/数据库名称?zeroDateTimeBehavior&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;round&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;amp&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;serverTimezone&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;UTC&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;amp&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;allowPublicKeyRetrieval&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;true&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;amp&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;useSSL&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;false&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;amp&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;allowMultiQueries&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;true&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;amp&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;autoReconnect&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;true&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;amp&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;useUnicode&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;yes&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;amp&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;characterEncoding&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;UTF-8&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;a&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;lt;entry &lt;span class=&#34;nv&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;database.user&amp;#39;&lt;/span&gt;&amp;gt;数据库用户名&amp;lt;/entry&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;lt;entry &lt;span class=&#34;nv&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;database.password&amp;#39;&lt;/span&gt;&amp;gt;数据库密码&amp;lt;/entry&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;/properties&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;保存文件，如果使用正常方式安装的执行:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl restart traccar.service
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果使用的是docker则执行：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker restart 容器ID
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;需要注意的是修改数据库不会把h2上的数据迁移过去，所以需要重新设置密码。&lt;/p&gt;
-&lt;h4 id=&#34;添加设备&#34;&gt;添加设备
-&lt;/h4&gt;&lt;p&gt;Github上提供了编译好的APP，支持IOS和安卓，可以直接下载安装。
-下载完后需要添加好定位权限并锁定后台，然后在APP中修改服务器地址，比如服务器IP是&lt;code&gt;192.168.50.121&lt;/code&gt;，那这里就要填写&lt;code&gt;http://192.168.50.121:5055&lt;/code&gt;。当然，这是针对没有公网的情况，如果需要在外网访问就自行做穿透。
-然后记录下显示的&lt;code&gt;设备编码&lt;/code&gt;，是个6位数字。
-&lt;code&gt;精度&lt;/code&gt;可选高中低，应该是越高耗电越多。
-&lt;code&gt;定位频率&lt;/code&gt;：多久一次上报位置信息，我设置了1200秒，不需要太高。
-后面&lt;code&gt;距离&lt;/code&gt;、&lt;code&gt;角度&lt;/code&gt;等我没调整。&lt;/p&gt;
-&lt;h4 id=&#34;网页端使用&#34;&gt;网页端使用
-&lt;/h4&gt;&lt;p&gt;要做的主要就是连接设备和配置地图信息了。&lt;/p&gt;
-&lt;h5 id=&#34;连接设备&#34;&gt;连接设备
-&lt;/h5&gt;&lt;p&gt;点击&lt;code&gt;左上角的加号&lt;/code&gt;，会跳转到&lt;code&gt;设备页面&lt;/code&gt;，要求的必填项有&lt;code&gt;名称&lt;/code&gt;和&lt;code&gt;标识符&lt;/code&gt;，&lt;code&gt;名称&lt;/code&gt;可以随意填写，&lt;code&gt;标识符&lt;/code&gt;就是刚才我们手机上的六位数字，如果手机端配置地址无误，几秒钟之后手机的位置和电量就显示在网页上了。可以查看到详细的经纬度、海拔和轨迹信息。&lt;/p&gt;
-&lt;h5 id=&#34;配置地图信息&#34;&gt;配置地图信息
-&lt;/h5&gt;&lt;p&gt;设置里的首选项第一行的地图中可选的地图很多，红色需要添加key或者付费，免费的支持LocatioIQ、谷歌、高德等地图，但是高德会因为你知道的原因产生偏移，可以通过修改编译原文件的方式解决，但我就算了，不一定用高德其他效果也还不错。&lt;/p&gt;
-&lt;h4 id=&#34;其他&#34;&gt;其他
-&lt;/h4&gt;&lt;h5 id=&#34;添加两步验证&#34;&gt;添加两步验证
-&lt;/h5&gt;&lt;p&gt;如果要暴露在公网上，建议还是添加个2FA保护登录信息，具体操作是在设置的服务器选项下的属性，点击添加，属性选择启用一次性密码，然后确认添加，在出现的启用一次性密码复选框上打勾，此时到设置的账户界面会多一行一次性密码密钥，点击里面有个刷新按钮，然后就弹出密钥了，把它复制到那些两步验证APP上保存即可，网页端也要记得点击保存。&lt;/p&gt;
-&lt;h5 id=&#34;感想&#34;&gt;感想
-&lt;/h5&gt;&lt;p&gt;这个东西整体基本符合我的要求，该有的功能都有了，配置里还有很多个性化玩法，也看到有好多人把这东西接入hass或者rednode，后面我也会研究研究。
-当然该吐槽的也要吐槽，基于JAVA的东西是真吃内存啊，光容器就吃掉了800M+的内存，mysql那边也盯着内存不放，还好树莓派买的4G版，不然真不敢玩。&lt;/p&gt;
-</description>
-        </item>
-        
-    </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Traccar on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/traccar.html</link><description>Recent content in Traccar on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 14 Aug 2025 03:33:47 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/traccar/index.xml" rel="self" type="application/rss+xml"/><item><title>搭建自己的轨迹记录程序 Traccar</title><link>https://blog.tama.guru/record/traccar.html</link><pubDate>Sun, 20 Apr 2025 05:57:00 +0800</pubDate><guid>https://blog.tama.guru/record/traccar.html</guid><description>&lt;p>今天外出玩耍的时候突发奇想我能不能每天记录一下自己每天的生活轨迹，百度了下已经有很多成熟的应用了，但是这种比较私密的数据要发送到别人的服务器上说实话我是不太想的，然后去github上找了下，发现了好几个方案，都尝试了一遍，主要是&lt;a class="link" href="https://github.com/cctyl/TrackRecord" target="_blank" rel="noopener"
+>https://github.com/cctyl/TrackRecord&lt;/a>，搭完发现太简陋了，不适合我，其他几个更是已经几年没更新了，最后尝试了下traccar，感觉算是比较成熟的方案，也符合我的需求。&lt;/p>
+&lt;h4 id="正常安装">正常安装
+&lt;/h4>&lt;p>其官网位于：&lt;a class="link" href="https://www.traccar.org/" target="_blank" rel="noopener"
+>https://www.traccar.org/&lt;/a>，项目主要仓库在Github上：&lt;a class="link" href="https://github.com/traccar/traccar" target="_blank" rel="noopener"
+>https://github.com/traccar/traccar&lt;/a>。直接去release上根据服务器类型下载对应的文件就行了，目前linux支持arm和x64，windows仅支持x64。以我在树莓派上运行为例，下载之后解压执行就能自动配置好：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">wget https://bgithub.xyz/traccar/traccar/releases/download/v6.6/traccar-linux-arm-6.6.zip
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">unzip traccar-linux-arm-6.6.zip
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo ./traccar.run
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后执行:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo systemctl start traccar.service
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>再等个几分钟（树莓派太慢了，所以会很久），就可以访问&lt;code>设备IP:8082&lt;/code>进入管理界面。初次使用需要配置服务名称、邮箱和密码，然后使用邮箱和密码登录即可。&lt;/p>
+&lt;h4 id="使用docker安装">使用docker安装
+&lt;/h4>&lt;p>首先执行:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">docker run --rm --entrypoint cat traccar/traccar:latest /opt/traccar/conf/traccar.xml &amp;gt; /root/traccar/traccar.xml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>其中&lt;code>/root/traccar/traccar.xml&lt;/code>根据实际情况配置，我的配置文件放在&lt;code>/root/traccar&lt;/code>下所以这么弄了。
+然后执行：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">docker run -d --restart always --name traccar --hostname traccar -p 8082:8082 -p 5023:5023 -p 5023:5023/udp -p 5055:5055 -p 5055:5055/udp -v /root/traccar/traccar/logs:/opt/traccar/logs:rw -v /root/traccar/traccar.xml:/opt/traccar/conf/traccar.xml:ro -v /root/traccar/templates:/opt/traccar/templates/short -e &lt;span class="nv">TZ&lt;/span>&lt;span class="o">=&lt;/span>Asia/Shanghai traccar/traccar:latest
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这里所有的&lt;code>/root/traccar&lt;/code>都要根据实际情况修改，然后确保&lt;code>8082 5023 5055&lt;/code>这三个端口都是没有被占用的，有的话改到其他端口下。
+同样再等个几分钟，就可以访问&lt;code>设备IP:8082&lt;/code>进入管理界面。初次使用需要配置服务名称、邮箱和密码，然后使用邮箱和密码登录即可。&lt;/p>
+&lt;h4 id="修改数据库">修改数据库
+&lt;/h4>&lt;p>默认情况下它使用的是h2作为数据库，这是一种开源的关系型数据库，采用Java语言编写，数据存储于内存内，为了保证数据安全建议修改为mysql连接方式。
+具体操作是修改数据目录下的&lt;code>traccar.xml&lt;/code>文件，原内容是：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&amp;lt;?xml &lt;span class="nv">version&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;1.0&amp;#34;&lt;/span> &lt;span class="nv">encoding&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;UTF-8&amp;#34;&lt;/span>?&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;lt;!DOCTYPE properties SYSTEM &lt;span class="s1">&amp;#39;http://java.sun.com/dtd/properties.dtd&amp;#39;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;lt;properties&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;!-- Documentation: https://www.traccar.org/configuration-file/ --&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;entry &lt;span class="nv">key&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;database.driver&amp;#39;&lt;/span>&amp;gt;org.h2.Driver&amp;lt;/entry&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;entry &lt;span class="nv">key&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;database.url&amp;#39;&lt;/span>&amp;gt;jdbc:h2:./data/database&amp;lt;/entry&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;entry &lt;span class="nv">key&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;database.user&amp;#39;&lt;/span>&amp;gt;sa&amp;lt;/entry&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;entry &lt;span class="nv">key&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;database.password&amp;#39;&lt;/span>&amp;gt;&amp;lt;/entry&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;lt;/properties&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>修改为：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&amp;lt;?xml &lt;span class="nv">version&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;1.0&amp;#34;&lt;/span> &lt;span class="nv">encoding&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;UTF-8&amp;#34;&lt;/span>?&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;lt;!DOCTYPE properties SYSTEM &lt;span class="s1">&amp;#39;http://java.sun.com/dtd/properties.dtd&amp;#39;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;lt;properties&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;!-- Documentation: https://www.traccar.org/configuration-file/ --&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;entry &lt;span class="nv">key&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;database.driver&amp;#39;&lt;/span>&amp;gt;com.mysql.cj.jdbc.Driver&amp;lt;/entry&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;entry &lt;span class="nv">key&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;database.url&amp;#39;&lt;/span>&amp;gt;jdbc:mysql://sql地址:端口/数据库名称?zeroDateTimeBehavior&lt;span class="o">=&lt;/span>round&lt;span class="p">&amp;amp;&lt;/span>amp&lt;span class="p">;&lt;/span>&lt;span class="nv">serverTimezone&lt;/span>&lt;span class="o">=&lt;/span>UTC&lt;span class="p">&amp;amp;&lt;/span>amp&lt;span class="p">;&lt;/span>&lt;span class="nv">allowPublicKeyRetrieval&lt;/span>&lt;span class="o">=&lt;/span>true&lt;span class="p">&amp;amp;&lt;/span>amp&lt;span class="p">;&lt;/span>&lt;span class="nv">useSSL&lt;/span>&lt;span class="o">=&lt;/span>false&lt;span class="p">&amp;amp;&lt;/span>amp&lt;span class="p">;&lt;/span>&lt;span class="nv">allowMultiQueries&lt;/span>&lt;span class="o">=&lt;/span>true&lt;span class="p">&amp;amp;&lt;/span>amp&lt;span class="p">;&lt;/span>&lt;span class="nv">autoReconnect&lt;/span>&lt;span class="o">=&lt;/span>true&lt;span class="p">&amp;amp;&lt;/span>amp&lt;span class="p">;&lt;/span>&lt;span class="nv">useUnicode&lt;/span>&lt;span class="o">=&lt;/span>yes&lt;span class="p">&amp;amp;&lt;/span>amp&lt;span class="p">;&lt;/span>&lt;span class="nv">characterEncoding&lt;/span>&lt;span class="o">=&lt;/span>UTF-8&lt;span class="p">&amp;amp;&lt;/span>a&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;entry &lt;span class="nv">key&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;database.user&amp;#39;&lt;/span>&amp;gt;数据库用户名&amp;lt;/entry&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;entry &lt;span class="nv">key&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;database.password&amp;#39;&lt;/span>&amp;gt;数据库密码&amp;lt;/entry&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;lt;/properties&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>保存文件，如果使用正常方式安装的执行:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo systemctl restart traccar.service
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果使用的是docker则执行：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">docker restart 容器ID
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>需要注意的是修改数据库不会把h2上的数据迁移过去，所以需要重新设置密码。&lt;/p>
+&lt;h4 id="添加设备">添加设备
+&lt;/h4>&lt;p>Github上提供了编译好的APP，支持IOS和安卓，可以直接下载安装。
+下载完后需要添加好定位权限并锁定后台，然后在APP中修改服务器地址，比如服务器IP是&lt;code>192.168.50.121&lt;/code>，那这里就要填写&lt;code>http://192.168.50.121:5055&lt;/code>。当然，这是针对没有公网的情况，如果需要在外网访问就自行做穿透。
+然后记录下显示的&lt;code>设备编码&lt;/code>，是个6位数字。
+&lt;code>精度&lt;/code>可选高中低，应该是越高耗电越多。
+&lt;code>定位频率&lt;/code>：多久一次上报位置信息，我设置了1200秒，不需要太高。
+后面&lt;code>距离&lt;/code>、&lt;code>角度&lt;/code>等我没调整。&lt;/p>
+&lt;h4 id="网页端使用">网页端使用
+&lt;/h4>&lt;p>要做的主要就是连接设备和配置地图信息了。&lt;/p>
+&lt;h5 id="连接设备">连接设备
+&lt;/h5>&lt;p>点击&lt;code>左上角的加号&lt;/code>，会跳转到&lt;code>设备页面&lt;/code>，要求的必填项有&lt;code>名称&lt;/code>和&lt;code>标识符&lt;/code>，&lt;code>名称&lt;/code>可以随意填写，&lt;code>标识符&lt;/code>就是刚才我们手机上的六位数字，如果手机端配置地址无误，几秒钟之后手机的位置和电量就显示在网页上了。可以查看到详细的经纬度、海拔和轨迹信息。&lt;/p>
+&lt;h5 id="配置地图信息">配置地图信息
+&lt;/h5>&lt;p>设置里的首选项第一行的地图中可选的地图很多，红色需要添加key或者付费，免费的支持LocatioIQ、谷歌、高德等地图，但是高德会因为你知道的原因产生偏移，可以通过修改编译原文件的方式解决，但我就算了，不一定用高德其他效果也还不错。&lt;/p>
+&lt;h4 id="其他">其他
+&lt;/h4>&lt;h5 id="添加两步验证">添加两步验证
+&lt;/h5>&lt;p>如果要暴露在公网上，建议还是添加个2FA保护登录信息，具体操作是在设置的服务器选项下的属性，点击添加，属性选择启用一次性密码，然后确认添加，在出现的启用一次性密码复选框上打勾，此时到设置的账户界面会多一行一次性密码密钥，点击里面有个刷新按钮，然后就弹出密钥了，把它复制到那些两步验证APP上保存即可，网页端也要记得点击保存。&lt;/p>
+&lt;h5 id="感想">感想
+&lt;/h5>&lt;p>这个东西整体基本符合我的要求，该有的功能都有了，配置里还有很多个性化玩法，也看到有好多人把这东西接入hass或者rednode，后面我也会研究研究。
+当然该吐槽的也要吐槽，基于JAVA的东西是真吃内存啊，光容器就吃掉了800M+的内存，mysql那边也盯着内存不放，还好树莓派买的4G版，不然真不敢玩。&lt;/p></description></item></channel></rss>

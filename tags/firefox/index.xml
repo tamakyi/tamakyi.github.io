@@ -1,57 +1,42 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Firefox on 狼的公告板 ver.Hugo</title>
-        <link>https://blog.tama.guru/tags/firefox.html</link>
-        <description>Recent content in Firefox on 狼的公告板 ver.Hugo</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/firefox/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>在docker里运行火狐浏览器</title>
-        <link>https://blog.tama.guru/record/firefox-on-docker.html</link>
-        <pubDate>Fri, 26 Apr 2024 15:53:00 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/record/firefox-on-docker.html</guid>
-        <description>&lt;p&gt;有时候我会需要在远程计算机上使用浏览器进行一些操作，但是存在一些问题。一是远程计算机本身空间容量/配置较低，预装的是core系统，因为使用个浏览器去安装整个桌面环境有点浪费了，也不利于系统稳定；二是软件可能会破坏原有的依赖，轻则软件报错，重则无法启动，这个就很难绷了。
-好在docker能实现把远程的浏览器套到本地浏览器运行，看样子是一个webvnc，但是只能打开浏览器。项目是&lt;code&gt;https://github.com/jlesage/firefox&lt;/code&gt;，方法也很简单，直接执行：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;docker run -d \
-    --name=firefox \
-    -p 5800:5800 \
-    -v /home/tamakyi/firefox/config:/config:rw \
-    jlesage/firefox
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;然后到ip:5800端口就能打开远端的火狐浏览器了。但是这样仅能保证运行，会发现中文字体全部都变成方块了，因此需要调整成：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;docker run -d \
-    --name=firefox \
-    -p 5800:5800 \
-    -v /home/tamakyi/firefox/config:/config:rw \
-    -e TZ=Asia/Hong_Kong \
-    -e KEEP_APP_RUNNING=1 \
-    -e ENABLE_CJK_FONT=1 \
-    jlesage/firefox
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;其中&lt;code&gt;/home/tamakyi/firefox/config&lt;/code&gt;为宿主机的配置文件目录，需要自行修改，&lt;code&gt;KEEP_APP_RUNNING=1&lt;/code&gt;标明关掉本地浏览器页面保持远端浏览器运行，&lt;code&gt;ENABLE_CJK_FONT=1&lt;/code&gt;标明开启中文字体支持。
-到这里其实已经能够正常运行了，完整的配置可以参考:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;docker run -d \
-    --name=firefox \
-    -p 5800:5800 \
-    -v /home/tamakyi/firefox/config:/config:rw \
-    -e TZ=Asia/Hong_Kong \
-    -e KEEP_APP_RUNNING=1 \
-    -e ENABLE_CJK_FONT=1 \
-    -e DISPLAY_WIDTH=1920 \
-    -e DISPLAY_HEIGHT=1080 \
-    -e SECURE_CONNECTION=1 \
-    --shm-size 2g \
-    jlesage/firefox
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;其他可选性包括：
-&lt;code&gt;DISPLAY_WIDTH&lt;/code&gt;和&lt;code&gt;DISPLAY_HEIGHT&lt;/code&gt;：生成浏览器的分辨率，如果配置不高的机器建议不要太高。
-&lt;code&gt;SECURE_CONNECTION&lt;/code&gt;：开启https
-&lt;code&gt;shm-size&lt;/code&gt;：配置容器内存使用上限。
-执行之后并不会像项目下的源码下能直接访问，会报错，原因可以通过查询docker的运行日志找到：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;[init ] container is starting...
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Firefox on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/firefox.html</link><description>Recent content in Firefox on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 14 Aug 2025 03:33:47 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/firefox/index.xml" rel="self" type="application/rss+xml"/><item><title>在docker里运行火狐浏览器</title><link>https://blog.tama.guru/record/firefox-on-docker.html</link><pubDate>Fri, 26 Apr 2024 15:53:00 +0800</pubDate><guid>https://blog.tama.guru/record/firefox-on-docker.html</guid><description>&lt;p>有时候我会需要在远程计算机上使用浏览器进行一些操作，但是存在一些问题。一是远程计算机本身空间容量/配置较低，预装的是core系统，因为使用个浏览器去安装整个桌面环境有点浪费了，也不利于系统稳定；二是软件可能会破坏原有的依赖，轻则软件报错，重则无法启动，这个就很难绷了。
+好在docker能实现把远程的浏览器套到本地浏览器运行，看样子是一个webvnc，但是只能打开浏览器。项目是&lt;code>https://github.com/jlesage/firefox&lt;/code>，方法也很简单，直接执行：&lt;/p>
+&lt;pre>&lt;code>docker run -d \
+--name=firefox \
+-p 5800:5800 \
+-v /home/tamakyi/firefox/config:/config:rw \
+jlesage/firefox
+&lt;/code>&lt;/pre>
+&lt;p>然后到ip:5800端口就能打开远端的火狐浏览器了。但是这样仅能保证运行，会发现中文字体全部都变成方块了，因此需要调整成：&lt;/p>
+&lt;pre>&lt;code>docker run -d \
+--name=firefox \
+-p 5800:5800 \
+-v /home/tamakyi/firefox/config:/config:rw \
+-e TZ=Asia/Hong_Kong \
+-e KEEP_APP_RUNNING=1 \
+-e ENABLE_CJK_FONT=1 \
+jlesage/firefox
+&lt;/code>&lt;/pre>
+&lt;p>其中&lt;code>/home/tamakyi/firefox/config&lt;/code>为宿主机的配置文件目录，需要自行修改，&lt;code>KEEP_APP_RUNNING=1&lt;/code>标明关掉本地浏览器页面保持远端浏览器运行，&lt;code>ENABLE_CJK_FONT=1&lt;/code>标明开启中文字体支持。
+到这里其实已经能够正常运行了，完整的配置可以参考:&lt;/p>
+&lt;pre>&lt;code>docker run -d \
+--name=firefox \
+-p 5800:5800 \
+-v /home/tamakyi/firefox/config:/config:rw \
+-e TZ=Asia/Hong_Kong \
+-e KEEP_APP_RUNNING=1 \
+-e ENABLE_CJK_FONT=1 \
+-e DISPLAY_WIDTH=1920 \
+-e DISPLAY_HEIGHT=1080 \
+-e SECURE_CONNECTION=1 \
+--shm-size 2g \
+jlesage/firefox
+&lt;/code>&lt;/pre>
+&lt;p>其他可选性包括：
+&lt;code>DISPLAY_WIDTH&lt;/code>和&lt;code>DISPLAY_HEIGHT&lt;/code>：生成浏览器的分辨率，如果配置不高的机器建议不要太高。
+&lt;code>SECURE_CONNECTION&lt;/code>：开启https
+&lt;code>shm-size&lt;/code>：配置容器内存使用上限。
+执行之后并不会像项目下的源码下能直接访问，会报错，原因可以通过查询docker的运行日志找到：&lt;/p>
+&lt;pre>&lt;code>[init ] container is starting...
 [cont-env ] loading container environment variables...
 ...
 [cont-init ] 15-cjk-font.sh: installing CJK font...
@@ -71,19 +56,14 @@
 ...
 [app ] Mozilla Firefox 124.0.1
 [supervisor ] all services started.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;一般会在&lt;code&gt;15-cjk-font.sh&lt;/code&gt;这个步骤停留一段时间，需要下载挺多的数据，具体与网络有关。等到提示&lt;code&gt;all services started&lt;/code&gt;此时才能正常访问。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：如果你部署在公网服务器上，此时是可以直接通过ip+端口的方式访问的，及其不安全，且默认iptables防火墙无法配置该端口的访问权限&amp;hellip;（网上说的方法都试过了，没用）。因此，我建议再套一层firewall-cmd：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;apt install firewalld
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;安装完记得配置常用端口的开启：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;firewall-cmd --zone=public --add-port=YOUR_PORT/tcp --permanent
+&lt;/code>&lt;/pre>
+&lt;p>一般会在&lt;code>15-cjk-font.sh&lt;/code>这个步骤停留一段时间，需要下载挺多的数据，具体与网络有关。等到提示&lt;code>all services started&lt;/code>此时才能正常访问。&lt;/p>
+&lt;p>&lt;strong>注意&lt;/strong>：如果你部署在公网服务器上，此时是可以直接通过ip+端口的方式访问的，及其不安全，且默认iptables防火墙无法配置该端口的访问权限&amp;hellip;（网上说的方法都试过了，没用）。因此，我建议再套一层firewall-cmd：&lt;/p>
+&lt;pre>&lt;code>apt install firewalld
+&lt;/code>&lt;/pre>
+&lt;p>安装完记得配置常用端口的开启：&lt;/p>
+&lt;pre>&lt;code>firewall-cmd --zone=public --add-port=YOUR_PORT/tcp --permanent
 firewall-cmd --reload
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;这样虽然麻烦了点，但是安全性显著提高了。但是有一个问题，就是docker容器&lt;strong&gt;无法联网&lt;/strong&gt;了，估计是什么地方冲突，后面再检查。
-最后还是&lt;strong&gt;即开即用，用完就关&lt;/strong&gt;。&lt;/p&gt;
-</description>
-        </item>
-        
-    </channel>
-</rss>
+&lt;/code>&lt;/pre>
+&lt;p>这样虽然麻烦了点，但是安全性显著提高了。但是有一个问题，就是docker容器&lt;strong>无法联网&lt;/strong>了，估计是什么地方冲突，后面再检查。
+最后还是&lt;strong>即开即用，用完就关&lt;/strong>。&lt;/p></description></item></channel></rss>

@@ -1,41 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>越狱 on 狼的公告板 ver.Hugo</title>
-        <link>https://blog.tama.guru/tags/%E8%B6%8A%E7%8B%B1.html</link>
-        <description>Recent content in 越狱 on 狼的公告板 ver.Hugo</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E8%B6%8A%E7%8B%B1/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>一个新的kindle越狱方案（适用于5.16.2.1.1以下）</title>
-        <link>https://blog.tama.guru/record/LanguageBreak.html</link>
-        <pubDate>Mon, 30 Oct 2023 11:56:00 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/record/LanguageBreak.html</guid>
-        <description>&lt;p&gt;10月29日，Github用户&lt;a class=&#34;link&#34; href=&#34;https://github.com/notmarek&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;notmarek&lt;/a&gt;发布了一个仓库&lt;a class=&#34;link&#34; href=&#34;https://github.com/notmarek/LanguageBreak&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;LanguageBreak&lt;/a&gt;，内容是版本号&amp;lt;=5.16.2.1.1的kindle设备的越狱（截至10月30日官网最新版本号为5.16.4），而在此之前仅5.14.2及以下的版本才有机会越狱。&lt;/p&gt;
-&lt;p&gt;作者对此项目的介绍在：&lt;a class=&#34;link&#34; href=&#34;https://www.mobileread.com/forums/showthread.php?t=356872&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://www.mobileread.com/forums/showthread.php?t=356872&lt;/a&gt;。该漏洞相关信息：&lt;a class=&#34;link&#34; href=&#34;https://www.mobileread.com/forums/showthread.php?t=356766&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://www.mobileread.com/forums/showthread.php?t=356766&lt;/a&gt;，内容如下：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Looking at the differences between 5.16.2 and 5.16.3, I think I found
-a smoking gun of a change.&lt;/p&gt;
-&lt;p&gt;There is small difference the versions of
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>越狱 on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/%E8%B6%8A%E7%8B%B1.html</link><description>Recent content in 越狱 on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 14 Aug 2025 03:33:47 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E8%B6%8A%E7%8B%B1/index.xml" rel="self" type="application/rss+xml"/><item><title>一个新的kindle越狱方案（适用于5.16.2.1.1以下）</title><link>https://blog.tama.guru/record/LanguageBreak.html</link><pubDate>Mon, 30 Oct 2023 11:56:00 +0800</pubDate><guid>https://blog.tama.guru/record/LanguageBreak.html</guid><description>&lt;p>10月29日，Github用户&lt;a class="link" href="https://github.com/notmarek" target="_blank" rel="noopener"
+>notmarek&lt;/a>发布了一个仓库&lt;a class="link" href="https://github.com/notmarek/LanguageBreak" target="_blank" rel="noopener"
+>LanguageBreak&lt;/a>，内容是版本号&amp;lt;=5.16.2.1.1的kindle设备的越狱（截至10月30日官网最新版本号为5.16.4），而在此之前仅5.14.2及以下的版本才有机会越狱。&lt;/p>
+&lt;p>作者对此项目的介绍在：&lt;a class="link" href="https://www.mobileread.com/forums/showthread.php?t=356872" target="_blank" rel="noopener"
+>https://www.mobileread.com/forums/showthread.php?t=356872&lt;/a>。该漏洞相关信息：&lt;a class="link" href="https://www.mobileread.com/forums/showthread.php?t=356766" target="_blank" rel="noopener"
+>https://www.mobileread.com/forums/showthread.php?t=356766&lt;/a>，内容如下：&lt;/p>
+&lt;blockquote>
+&lt;p>Looking at the differences between 5.16.2 and 5.16.3, I think I found
+a smoking gun of a change.&lt;/p>
+&lt;p>There is small difference the versions of
 &amp;ldquo;usr/lib/blanket/langpicker.so.1.0&amp;rdquo; In the function:
-module_langpicker_utilDeleteExtraDictionaries&lt;/p&gt;
-&lt;p&gt;Before: Code:
+module_langpicker_utilDeleteExtraDictionaries&lt;/p>
+&lt;p>Before: Code:
 __sprintf_chk(acStack_238,1,0x206,&amp;ldquo;rm -rf %s/%s&amp;rdquo;,&amp;quot;/mnt/us/documents/dictionaries&amp;quot;,pcVar2);
 pcVar6 = (char *)system(acStack_238); after: Code:
 __sprintf_chk(acStack_830,1,0x200,&amp;quot;%s/%s&amp;quot;,&amp;quot;/mnt/us/documents/dictionaries&amp;quot;,pcVar2);
-pcVar6 = (char *)lab126_rmdir(acStack_830); This was passing strings to &amp;ldquo;system()&amp;rdquo; which is a glaring problem.&lt;/p&gt;
-&lt;p&gt;Expanding out a bit: Code:   __dirp =
-opendir(&amp;quot;/mnt/us/documents/dictionaries&amp;quot;);   if (__dirp == (DIR *)0x0)
+pcVar6 = (char *)lab126_rmdir(acStack_830); This was passing strings to &amp;ldquo;system()&amp;rdquo; which is a glaring problem.&lt;/p>
+&lt;p>Expanding out a bit: Code: __dirp =
+opendir(&amp;quot;/mnt/us/documents/dictionaries&amp;quot;); if (__dirp == (DIR *)0x0)
 {
 if (iVar1 == 0) {
 return;
-}   }   else { LAB_000134d4:
+} } else { LAB_000134d4:
 pdVar4 = readdir(__dirp);
 if (pdVar4 != (dirent *)0x0) {
 pcVar2 = pdVar4-&amp;gt;d_name;
@@ -49,17 +34,17 @@ pcVar6 = (char *)system(acStack_238);
 if ((pcVar6 == (char *)0x0) || ((g_blanket_llog_mask &amp;amp; 0x2000000) == 0))
 goto LAB_000134d4;
 pcVar2 =
-&amp;ldquo;E langpicker:DELETE_DICTIONARIES_FAILED:returnCode=%d:Error deleting unneeded dictionary  directory&amp;rdquo; It looks like this code walks
+&amp;ldquo;E langpicker:DELETE_DICTIONARIES_FAILED:returnCode=%d:Error deleting unneeded dictionary directory&amp;rdquo; It looks like this code walks
 through &amp;ldquo;/mnt/us/documents/dictionaries&amp;rdquo; (which is on the exposed file
-system!)&lt;/p&gt;
-&lt;p&gt;For each filename it finds, if it isn&amp;rsquo;t in the list, it will append
-that filename to a string and pass it to system.&lt;/p&gt;
-&lt;p&gt;Using Shell escapes such as Code: &lt;code&gt;someprogram&lt;/code&gt; or Code: $(some
+system!)&lt;/p>
+&lt;p>For each filename it finds, if it isn&amp;rsquo;t in the list, it will append
+that filename to a string and pass it to system.&lt;/p>
+&lt;p>Using Shell escapes such as Code: &lt;code>someprogram&lt;/code> or Code: $(some
 program) should be valid filenames. However, slashes are NOT normally
 allowed (is that why there was a mention of corrupting the VFAT file
-system?)&lt;/p&gt;
-&lt;p&gt;Looking at the calling function, it appears to be: &amp;lsquo;changeLocale&amp;rsquo;&lt;/p&gt;
-&lt;p&gt;This is called from the startup script &amp;ldquo;etc/upstart/langpicker.conf&amp;rdquo;
+system?)&lt;/p>
+&lt;p>Looking at the calling function, it appears to be: &amp;lsquo;changeLocale&amp;rsquo;&lt;/p>
+&lt;p>This is called from the startup script &amp;ldquo;etc/upstart/langpicker.conf&amp;rdquo;
 Code:
 # send the event to langpicker module to install the language
 lipc-send-event com.lab126.blanket.langpicker changeLocale -s &amp;ldquo;en-US&amp;rdquo; and from &amp;ldquo;langPicker&amp;rdquo; (&amp;ldquo;language_picker.js&amp;rdquo;) Code:
@@ -67,21 +52,21 @@ setTimeout(function() {
 nativeBridge.sendLipcEvent(LIPC_PILLOW_SOURCE, &amp;ldquo;changeLocale&amp;rdquo;, changeLocaleParams);
 actionsInactive = false;
 }, SPLASH_EVENT_TIME_OUT); It does NOT appear to be called when changing the language in the GUI - but that uses Java (settings
-booklet) and not Javascript (language_picker.js).&lt;/p&gt;
-&lt;p&gt;So, the exploit path seems to be: Create a file in
+booklet) and not Javascript (language_picker.js).&lt;/p>
+&lt;p>So, the exploit path seems to be: Create a file in
 documents/dictionaries with Shell injection to run something Use
-&amp;lsquo;mesquito&amp;rsquo; to call the LIPC function changeLocale&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;在原文下面有很多用户表示通过这个方法已经成功实现越狱了。
+&amp;lsquo;mesquito&amp;rsquo; to call the LIPC function changeLocale&lt;/p>&lt;/blockquote>
+&lt;p>在原文下面有很多用户表示通过这个方法已经成功实现越狱了。
 包括但不限于：
 Kindle 第 10 代（5.14.3.2）
 KPW4和KPW5 （5.16.2.1和5.16.2）
 KPW2（5.12.2.2）
-但也有很多人表示操作过程中遇到问题，因为项目是刚发布的，后续应该会有修复。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;越狱的相关说明（机翻）：&lt;/p&gt;
-&lt;p&gt;越狱部分：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;1.在 Kindle 搜索栏中输入 ;enter_demo
+但也有很多人表示操作过程中遇到问题，因为项目是刚发布的，后续应该会有修复。&lt;/p>
+&lt;hr>
+&lt;p>越狱的相关说明（机翻）：&lt;/p>
+&lt;p>越狱部分：&lt;/p>
+&lt;blockquote>
+&lt;p>1.在 Kindle 搜索栏中输入 ;enter_demo
 2.重新启动设备
 3.进入演示模式后，跳过 wifi 设置，输入随机值进行商店注册
 4.跳过搜索演示有效载荷
@@ -99,262 +84,160 @@ KPW2（5.12.2.2）
 16.按照屏幕上的指示按住电源按钮
 17.几秒钟后，你将进入语言选择菜单
 18.选择 &amp;ldquo;中文&amp;rdquo;（在 &amp;ldquo;奇特的伪托语言 &amp;ldquo;上面的那个）。
-19.你的 kindle 应该会重启，屏幕上会出现一些日志信息.&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;越狱后的操作：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;1.设备重启后，在搜索栏中输入 ;uzb
+19.你的 kindle 应该会重启，屏幕上会出现一些日志信息.&lt;/p>&lt;/blockquote>
+&lt;p>越狱后的操作：&lt;/p>
+&lt;blockquote>
+&lt;p>1.设备重启后，在搜索栏中输入 ;uzb
 2.将设备连接到 PC，然后将 update_hotfix_languagebreak.bin 复制到 Kindle 存储根目录下。
 3.弹出设备，输入 ;dsts 或向下滑动并选择设置图标，进入设备设置菜单
 4.选择 &amp;ldquo;更新你的 Kindle&amp;rdquo;，安装自定义修复程序
-5.这将使您的设备退出演示模式，并清理不需要的越狱文件。&lt;/p&gt;&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;p&gt;过段时间我拿自己的KPW3试试（反正我有TTL线，随时跑路）&lt;/p&gt;</description>
-        </item>
-        <item>
-        <title>记一次KPW3拆机降级</title>
-        <link>https://blog.tama.guru/record/264.html</link>
-        <pubDate>Sun, 23 Jul 2023 22:40:00 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/record/264.html</guid>
-        <description>&lt;blockquote&gt;
-&lt;p&gt;&amp;ldquo;亚马逊将于一年之后即2023年6月30日，在中国停止Kindle电子书店的运营。在此之后，您将不能购买新的电子书。对于已经购买的电子书，您可以在2024年6月30日之前下载，并且可以在此后继续阅读。&amp;rdquo;&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;以上公告来自亚马逊。这意味着6月30日起Kindle的国内线上服务将不再完整，需要完整的服务需要申请一个其他地区的亚马逊账号，但是国外的亚马逊商城中文书籍极少甚至有些地区没有，趁这个机会我就想把手头的KPW3越个狱。
-之所以要拆机是因为KPW3当前免拆机越狱的最后一个版本是5.14.2（来源：&lt;a class=&#34;link&#34; href=&#34;https://bookfere.com/post/406.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Kindle 越狱支持一览：检查 Kindle 设备能否越狱&lt;/a&gt;），而我的设备已经升级到5.15.1.1,想要降级越狱必须拆机。&lt;/p&gt;
-&lt;p&gt;准备工作：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;杜邦线公对母若干根&lt;/li&gt;
-&lt;li&gt;TTL刷机板（我用的是FT232RL，这玩意能选择输出1.8 3.3或者5伏）&lt;/li&gt;
-&lt;li&gt;拆机工具（包括但不限于翘片、螺丝刀、最好有热吹风）&lt;/li&gt;
-&lt;li&gt;电烙铁（选配，但是最好是有）&lt;/li&gt;
-&lt;li&gt;SecureCRT&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;拆机过程不再赘述网上一抓一大把，拿出主板的时候注意从顶部抠开。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd38ff776cb.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd38ff776cb.png&#34; alt=&#34;底部的充电口和电源会有卡槽，因此选择顶部拆除主板&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd38ff776cb.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;底部的充电口和电源会有卡槽，因此选择顶部拆除主板&#34;
-	
-	
-&gt;
+5.这将使您的设备退出演示模式，并清理不需要的越狱文件。&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;p>过段时间我拿自己的KPW3试试（反正我有TTL线，随时跑路）&lt;/p></description></item><item><title>记一次KPW3拆机降级</title><link>https://blog.tama.guru/record/264.html</link><pubDate>Sun, 23 Jul 2023 22:40:00 +0800</pubDate><guid>https://blog.tama.guru/record/264.html</guid><description>&lt;blockquote>
+&lt;p>&amp;ldquo;亚马逊将于一年之后即2023年6月30日，在中国停止Kindle电子书店的运营。在此之后，您将不能购买新的电子书。对于已经购买的电子书，您可以在2024年6月30日之前下载，并且可以在此后继续阅读。&amp;rdquo;&lt;/p>&lt;/blockquote>
+&lt;p>以上公告来自亚马逊。这意味着6月30日起Kindle的国内线上服务将不再完整，需要完整的服务需要申请一个其他地区的亚马逊账号，但是国外的亚马逊商城中文书籍极少甚至有些地区没有，趁这个机会我就想把手头的KPW3越个狱。
+之所以要拆机是因为KPW3当前免拆机越狱的最后一个版本是5.14.2（来源：&lt;a class="link" href="https://bookfere.com/post/406.html" target="_blank" rel="noopener"
+>Kindle 越狱支持一览：检查 Kindle 设备能否越狱&lt;/a>），而我的设备已经升级到5.15.1.1,想要降级越狱必须拆机。&lt;/p>
+&lt;p>准备工作：&lt;/p>
+&lt;ul>
+&lt;li>杜邦线公对母若干根&lt;/li>
+&lt;li>TTL刷机板（我用的是FT232RL，这玩意能选择输出1.8 3.3或者5伏）&lt;/li>
+&lt;li>拆机工具（包括但不限于翘片、螺丝刀、最好有热吹风）&lt;/li>
+&lt;li>电烙铁（选配，但是最好是有）&lt;/li>
+&lt;li>SecureCRT&lt;/li>
+&lt;/ul>
+&lt;p>拆机过程不再赘述网上一抓一大把，拿出主板的时候注意从顶部抠开。
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/07/23/64bd38ff776cb.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/07/23/64bd38ff776cb.png" alt="底部的充电口和电源会有卡槽，因此选择顶部拆除主板" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/07/23/64bd38ff776cb.png"
+loading="lazy"
+alt="底部的充电口和电源会有卡槽，因此选择顶部拆除主板"
+>
 安装好TTL的驱动并确定好COM端口号，配置SecureCRT如下图所示。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd39ced253e.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd39ced253e.png&#34; alt=&#34;我的端口是COM4，SecureCRT配置一定要如图所示设置&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd39ced253e.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;我的端口是COM4，SecureCRT配置一定要如图所示设置&#34;
-	
-	
-&gt;
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/07/23/64bd39ced253e.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/07/23/64bd39ced253e.png" alt="我的端口是COM4，SecureCRT配置一定要如图所示设置" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/07/23/64bd39ced253e.png"
+loading="lazy"
+alt="我的端口是COM4，SecureCRT配置一定要如图所示设置"
+>
 接下来进行硬件连接，需要切换成3.3V模式，然后划出三根线，GND连接主板上任意部位，我连接到充电口；DEBUG接口左边为RX，连接到TTL的TX，中间为TX，连接到TTL的RX，最终如下图所示。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3b5343c36.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3b5343c36.png&#34; alt=&#34;接线方式&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3b5343c36.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;接线方式&#34;
-	
-	
-&gt;
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3b5343c36.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3b5343c36.png" alt="接线方式" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3b5343c36.png"
+loading="lazy"
+alt="接线方式"
+>
 *正式刷写时此处应用烙铁飞出RX TX这两根线并固定好，否则刷到半断开了容易GG。
 此时重启KPW3，SecureCRT上应该会显示出一些信息，证明是连接成功了。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3c4f9ca10.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3c4f9ca10.png&#34; alt=&#34;SecureCRT信息&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3c4f9ca10.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;SecureCRT信息&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;剩下的部分等我的烙铁到了再更新 ::acfun:11:: 。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;焊点太小了焊不上，此贴终结。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;买了个J焊头，这次焊上去了，继续更新。因为触点实在太小了，拉了两坨锡把触点搞大，好在没有连锡。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c64da366c22.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c64da366c22.png&#34; alt=&#34;2023-07-30T11:46:40.png&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c64da366c22.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;2023-07-30T11:46:40.png&#34;
-	
-	
-&gt;
-长按电源10S重启，直到SecureCRT信息跳动，疯狂的按Enter（其实只要在&lt;code&gt;Hit any key to stop autoboot:0&lt;/code&gt;之前按住就行了，不然会进入正常启动流程。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c64dfb2e960.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c64dfb2e960.png&#34; alt=&#34;2023-07-30T11:48:09.png&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c64dfb2e960.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;2023-07-30T11:48:09.png&#34;
-	
-	
-&gt;
-然后电脑安装这个&lt;a class=&#34;link&#34; href=&#34;https://359303267.github.io/files/kindle-02/Zadig.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;驱动&lt;/a&gt;，驱动选择&lt;code&gt;libsub-win32&lt;/code&gt;即可。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c654fdd287a.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c654fdd287a.png&#34; alt=&#34;驱动安装&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c654fdd287a.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;驱动安装&#34;
-	
-	
-&gt;
-驱动安装完成后回到SecureCRT,在&lt;code&gt;uboot&amp;gt;&lt;/code&gt;后输入&lt;code&gt;run bootcmd_diags&lt;/code&gt;回车，然后再次疯狂回车，避免程序跑完后系统正常启动。注意，&lt;em&gt;此时要把USB数据线与电脑连接。&lt;/em&gt;
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c655b86b3a3.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c655b86b3a3.png&#34; alt=&#34;进入Recovery模式&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c655b86b3a3.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;进入Recovery模式&#34;
-	
-	
-&gt;
-如果成功了，会弹出一个Menu菜单，这个菜单会有倒计时，10秒没有反应就正常启动，因此要快点按住&lt;code&gt;e&lt;/code&gt;，此时电脑会弹出一个Kindle的分区，把&lt;code&gt;update_pw3_factory_5.8.9.0.1.bin&lt;/code&gt;这个固件放进去，复制完成后按住&lt;code&gt;1&lt;/code&gt;，系统会进入恢复模式并自动升级。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c656bd55ca9.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c656bd55ca9.png&#34; alt=&#34;复制到kindle&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c656bd55ca9.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;复制到kindle&#34;
-	
-	
-&gt;
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c656d7ad5cd.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c656d7ad5cd.png&#34; alt=&#34;复制到Kindle2&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c656d7ad5cd.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;复制到Kindle2&#34;
-	
-	
-&gt;
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c657074ccc8.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c657074ccc8.png&#34; alt=&#34;开始升级&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c657074ccc8.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;开始升级&#34;
-	
-	
-&gt;
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3c4f9ca10.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3c4f9ca10.png" alt="SecureCRT信息" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3c4f9ca10.png"
+loading="lazy"
+alt="SecureCRT信息"
+>&lt;/p>
+&lt;p>剩下的部分等我的烙铁到了再更新 ::acfun:11:: 。&lt;/p>
+&lt;hr>
+&lt;p>焊点太小了焊不上，此贴终结。&lt;/p>
+&lt;hr>
+&lt;p>买了个J焊头，这次焊上去了，继续更新。因为触点实在太小了，拉了两坨锡把触点搞大，好在没有连锡。
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/07/30/64c64da366c22.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c64da366c22.png" alt="2023-07-30T11:46:40.png" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c64da366c22.png"
+loading="lazy"
+alt="2023-07-30T11:46:40.png"
+>
+长按电源10S重启，直到SecureCRT信息跳动，疯狂的按Enter（其实只要在&lt;code>Hit any key to stop autoboot:0&lt;/code>之前按住就行了，不然会进入正常启动流程。
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/07/30/64c64dfb2e960.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c64dfb2e960.png" alt="2023-07-30T11:48:09.png" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c64dfb2e960.png"
+loading="lazy"
+alt="2023-07-30T11:48:09.png"
+>
+然后电脑安装这个&lt;a class="link" href="https://359303267.github.io/files/kindle-02/Zadig.zip" target="_blank" rel="noopener"
+>驱动&lt;/a>，驱动选择&lt;code>libsub-win32&lt;/code>即可。
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/07/30/64c654fdd287a.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c654fdd287a.png" alt="驱动安装" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c654fdd287a.png"
+loading="lazy"
+alt="驱动安装"
+>
+驱动安装完成后回到SecureCRT,在&lt;code>uboot&amp;gt;&lt;/code>后输入&lt;code>run bootcmd_diags&lt;/code>回车，然后再次疯狂回车，避免程序跑完后系统正常启动。注意，&lt;em>此时要把USB数据线与电脑连接。&lt;/em>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/07/30/64c655b86b3a3.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c655b86b3a3.png" alt="进入Recovery模式" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c655b86b3a3.png"
+loading="lazy"
+alt="进入Recovery模式"
+>
+如果成功了，会弹出一个Menu菜单，这个菜单会有倒计时，10秒没有反应就正常启动，因此要快点按住&lt;code>e&lt;/code>，此时电脑会弹出一个Kindle的分区，把&lt;code>update_pw3_factory_5.8.9.0.1.bin&lt;/code>这个固件放进去，复制完成后按住&lt;code>1&lt;/code>，系统会进入恢复模式并自动升级。
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/07/30/64c656bd55ca9.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c656bd55ca9.png" alt="复制到kindle" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c656bd55ca9.png"
+loading="lazy"
+alt="复制到kindle"
+>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/07/30/64c656d7ad5cd.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c656d7ad5cd.png" alt="复制到Kindle2" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c656d7ad5cd.png"
+loading="lazy"
+alt="复制到Kindle2"
+>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/07/30/64c657074ccc8.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c657074ccc8.png" alt="开始升级" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c657074ccc8.png"
+loading="lazy"
+alt="开始升级"
+>
 在Kindle上可以看到显示正在安装更新。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c6575d5d9ee.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c6575d5d9ee.png&#34; alt=&#34;正在安装更新&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c6575d5d9ee.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;正在安装更新&#34;
-	
-	
-&gt;
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/07/30/64c6575d5d9ee.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c6575d5d9ee.png" alt="正在安装更新" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c6575d5d9ee.png"
+loading="lazy"
+alt="正在安装更新"
+>
 这个时间是比较久的，而且线路松动的话设备很容易寄，因此焊接必须要做好，保证线路不能松动。
 等大约二十分钟后系统自动重启，可以看到系统版本已经降下来了。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c65790d27fa.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c65790d27fa.png&#34; alt=&#34;降级成功&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c65790d27fa.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;降级成功&#34;
-	
-	
-&gt;&lt;/p&gt;
-</description>
-        </item>
-        
-    </channel>
-</rss>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/07/30/64c65790d27fa.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c65790d27fa.png" alt="降级成功" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c65790d27fa.png"
+loading="lazy"
+alt="降级成功"
+>&lt;/p></description></item></channel></rss>

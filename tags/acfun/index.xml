@@ -1,122 +1,93 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Acfun on 狼的公告板 ver.Hugo</title>
-        <link>https://blog.tama.guru/tags/acfun.html</link>
-        <description>Recent content in Acfun on 狼的公告板 ver.Hugo</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/acfun/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>关于AcFun礼物统计网页的说明</title>
-        <link>https://blog.tama.guru/record/acfun-gift-count.html</link>
-        <pubDate>Sun, 04 May 2025 04:11:00 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/record/acfun-gift-count.html</guid>
-        <description>&lt;p&gt;服务地址：&lt;a class=&#34;link&#34; href=&#34;http://acfun.tama.guru/acfun-tools/acfun-gift.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;AcFun礼物统计&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;注意！！！网站不需要你提供账号密码或cookie等隐私信息，网站也不存储用户提供的任何信息，请做好个人隐私保护！！！&lt;/p&gt;
-&lt;h4 id=&#34;前言&#34;&gt;前言
-&lt;/h4&gt;&lt;p&gt;前面基本都是废话，请直接跳转到&lt;a class=&#34;link&#34; href=&#34;#main&#34; &gt;第二部分&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;del&gt;因为基本没人给我打赏所以不怎么关注&lt;/del&gt;，但是上次群里有在说原来的acfun统计插件无法使用了，我检查了一下发现确实是没办法正常使用。虽然通过打开插件开发者设置+全局挂梯子还可以继续安装，但是在实际使用环节中是获取不到数据的，具体问题是&lt;strong&gt;获取收到/送出礼物失败&lt;/strong&gt;，懒得去看是啥原因了，毕竟最近浏览器对插件的管控貌似越来越严格。
-但是，经过对原插件的分析，法院获取数据源是通过&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;config&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ACFUN_MOBILE_SERVER&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;config&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;URLS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;WALLET&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;SEND_GIFT&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;实现的，也就是对应的:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://m.acfun.cn
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/rest/apph5-direct/pay/reward/giveRecords
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/rest/apph5-direct/pay/reward/receiveRecords
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;经过访问发现API没换，能正常访问，那只能说明是插件端的问题，希望作者修修了。&lt;/p&gt;
-&lt;h4 id=&#34;教程部分&#34;&gt;&lt;span id=&#34;main&#34;&gt;教程部分&lt;/span&gt;
-&lt;/h4&gt;&lt;p&gt;目前做了个网页，目的是让用户自己复制礼物数据提交给网站处理输出内容，虽然只是临时方案，&lt;del&gt;有总比没有好&lt;/del&gt;。
-前提只要确保：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;正常登录了AcFun网页端&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;然后访问对应的网址，如果是&lt;strong&gt;查询收到礼物&lt;/strong&gt;则在登录了AcFun的同一浏览器访问：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://m.acfun.cn/rest/apph5-direct/pay/reward/receiveRecords
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;查询送出的礼物则是：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://m.acfun.cn/rest/apph5-direct/pay/reward/giveRecords
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;网页输出的内容近似于：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;#34;result&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;#34;pcursor&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;*********&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;#34;host-name&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;hb2-acfun-kce-node26.aliyun&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;#34;records&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:[{&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;#34;giftCount&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;#34;createTime&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1711986490403&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;#34;userId&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;46213698&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;#34;giftName&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;桃子&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;#34;azuanAmount&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;80&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;#34;userName&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;七耳兔软糖72two&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;},{&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;#34;giftCount&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;#34;createTime&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1711986486397&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;#34;userId&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;46213698&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;#34;giftName&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;桃子&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;#34;azuanAmount&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;480&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;#34;userName&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;七耳兔软糖72two&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}]}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样输出的结果会很乱，一是因为需要手工转换时间戳，二是API不提供按时间筛选的功能，三是它只会输出明细，所以这个网页只是为了帮你解决以上三个问题。
-&lt;strong&gt;你需要做的是&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;直接把所有内容复制过来，粘贴到网页数据输入区域。&lt;/li&gt;
-&lt;li&gt;选择统计开始时间和结束时间，不选择的话就默认输出所有时间。&lt;/li&gt;
-&lt;li&gt;点击获取结果。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;最后会按UID汇总礼物信息，后附明细数据。&lt;/p&gt;
-&lt;h4 id=&#34;样例&#34;&gt;样例
-&lt;/h4&gt;&lt;p&gt;汇总统计：&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;UID&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;用户名&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;总礼物数&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;总钻石数&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;打赏金额（元）&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;46213698&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;七耳兔软糖72two&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;7&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;560&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;0.70&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;明细数据：&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;UID&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;用户名&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;礼物名称&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;数量&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;时间&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;钻石数&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;打赏金额（元）&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;46213698&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;七耳兔软糖72two&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;桃子&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;1&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;2024/4/1 23:48:10&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;80&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;0.10&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;46213698&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;七耳兔软糖72two&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;桃子&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;6&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;2024/4/1 23:48:06&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;480&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;0.60&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-</description>
-        </item>
-        <item>
-        <title>[金曲鉴赏]丁真：I Got Smoke</title>
-        <link>https://blog.tama.guru/videoshare/igotsmoke.html</link>
-        <pubDate>Wed, 14 Sep 2022 23:34:00 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/videoshare/igotsmoke.html</guid>
-        <description>&lt;p&gt;真的超神了
-[vplayer url=&amp;ldquo;https://share.tama.guru/d/AliDisk/%E5%88%86%E4%BA%AB/%E8%A7%86%E9%A2%91/I%20got%20somke%20%E5%BD%95%E5%B1%8F%E7%89%88.mp4&amp;rdquo;  /]&lt;/p&gt;
-</description>
-        </item>
-        
-    </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Acfun on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/acfun.html</link><description>Recent content in Acfun on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 14 Aug 2025 03:33:47 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/acfun/index.xml" rel="self" type="application/rss+xml"/><item><title>关于AcFun礼物统计网页的说明</title><link>https://blog.tama.guru/record/acfun-gift-count.html</link><pubDate>Sun, 04 May 2025 04:11:00 +0800</pubDate><guid>https://blog.tama.guru/record/acfun-gift-count.html</guid><description>&lt;p>服务地址：&lt;a class="link" href="http://acfun.tama.guru/acfun-tools/acfun-gift.html" target="_blank" rel="noopener"
+>AcFun礼物统计&lt;/a>&lt;/p>
+&lt;p>注意！！！网站不需要你提供账号密码或cookie等隐私信息，网站也不存储用户提供的任何信息，请做好个人隐私保护！！！&lt;/p>
+&lt;h4 id="前言">前言
+&lt;/h4>&lt;p>前面基本都是废话，请直接跳转到&lt;a class="link" href="#main" >第二部分&lt;/a>。&lt;/p>
+&lt;p>&lt;del>因为基本没人给我打赏所以不怎么关注&lt;/del>，但是上次群里有在说原来的acfun统计插件无法使用了，我检查了一下发现确实是没办法正常使用。虽然通过打开插件开发者设置+全局挂梯子还可以继续安装，但是在实际使用环节中是获取不到数据的，具体问题是&lt;strong>获取收到/送出礼物失败&lt;/strong>，懒得去看是啥原因了，毕竟最近浏览器对插件的管控貌似越来越严格。
+但是，经过对原插件的分析，法院获取数据源是通过&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">config&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">ACFUN_MOBILE_SERVER&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nx">config&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">URLS&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">WALLET&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">SEND_GIFT&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>实现的，也就是对应的:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="cl">https://m.acfun.cn
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="cl">/rest/apph5-direct/pay/reward/giveRecords
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">/rest/apph5-direct/pay/reward/receiveRecords
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>经过访问发现API没换，能正常访问，那只能说明是插件端的问题，希望作者修修了。&lt;/p>
+&lt;h4 id="教程部分">&lt;span id="main">教程部分&lt;/span>
+&lt;/h4>&lt;p>目前做了个网页，目的是让用户自己复制礼物数据提交给网站处理输出内容，虽然只是临时方案，&lt;del>有总比没有好&lt;/del>。
+前提只要确保：&lt;/p>
+&lt;ul>
+&lt;li>正常登录了AcFun网页端&lt;/li>
+&lt;/ul>
+&lt;p>然后访问对应的网址，如果是&lt;strong>查询收到礼物&lt;/strong>则在登录了AcFun的同一浏览器访问：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="cl">https://m.acfun.cn/rest/apph5-direct/pay/reward/receiveRecords
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>查询送出的礼物则是：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="cl">https://m.acfun.cn/rest/apph5-direct/pay/reward/giveRecords
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>网页输出的内容近似于：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>&lt;span class="nt">&amp;#34;result&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;pcursor&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;*********&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;host-name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;hb2-acfun-kce-node26.aliyun&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;records&amp;#34;&lt;/span>&lt;span class="p">:[{&lt;/span>&lt;span class="nt">&amp;#34;giftCount&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;createTime&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">1711986490403&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;userId&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">46213698&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;giftName&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;桃子&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;azuanAmount&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">80&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;userName&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;七耳兔软糖72two&amp;#34;&lt;/span>&lt;span class="p">},{&lt;/span>&lt;span class="nt">&amp;#34;giftCount&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">6&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;createTime&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">1711986486397&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;userId&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">46213698&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;giftName&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;桃子&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;azuanAmount&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">480&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nt">&amp;#34;userName&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="s2">&amp;#34;七耳兔软糖72two&amp;#34;&lt;/span>&lt;span class="p">}]}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这样输出的结果会很乱，一是因为需要手工转换时间戳，二是API不提供按时间筛选的功能，三是它只会输出明细，所以这个网页只是为了帮你解决以上三个问题。
+&lt;strong>你需要做的是&lt;/strong>：&lt;/p>
+&lt;ul>
+&lt;li>直接把所有内容复制过来，粘贴到网页数据输入区域。&lt;/li>
+&lt;li>选择统计开始时间和结束时间，不选择的话就默认输出所有时间。&lt;/li>
+&lt;li>点击获取结果。&lt;/li>
+&lt;/ul>
+&lt;p>最后会按UID汇总礼物信息，后附明细数据。&lt;/p>
+&lt;h4 id="样例">样例
+&lt;/h4>&lt;p>汇总统计：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">UID&lt;/th>
+&lt;th style="text-align: center">用户名&lt;/th>
+&lt;th style="text-align: center">总礼物数&lt;/th>
+&lt;th style="text-align: center">总钻石数&lt;/th>
+&lt;th style="text-align: center">打赏金额（元）&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">46213698&lt;/td>
+&lt;td style="text-align: center">七耳兔软糖72two&lt;/td>
+&lt;td style="text-align: center">7&lt;/td>
+&lt;td style="text-align: center">560&lt;/td>
+&lt;td style="text-align: center">0.70&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>明细数据：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">UID&lt;/th>
+&lt;th style="text-align: center">用户名&lt;/th>
+&lt;th style="text-align: center">礼物名称&lt;/th>
+&lt;th style="text-align: center">数量&lt;/th>
+&lt;th style="text-align: center">时间&lt;/th>
+&lt;th style="text-align: center">钻石数&lt;/th>
+&lt;th style="text-align: center">打赏金额（元）&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">46213698&lt;/td>
+&lt;td style="text-align: center">七耳兔软糖72two&lt;/td>
+&lt;td style="text-align: center">桃子&lt;/td>
+&lt;td style="text-align: center">1&lt;/td>
+&lt;td style="text-align: center">2024/4/1 23:48:10&lt;/td>
+&lt;td style="text-align: center">80&lt;/td>
+&lt;td style="text-align: center">0.10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">46213698&lt;/td>
+&lt;td style="text-align: center">七耳兔软糖72two&lt;/td>
+&lt;td style="text-align: center">桃子&lt;/td>
+&lt;td style="text-align: center">6&lt;/td>
+&lt;td style="text-align: center">2024/4/1 23:48:06&lt;/td>
+&lt;td style="text-align: center">480&lt;/td>
+&lt;td style="text-align: center">0.60&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>[金曲鉴赏]丁真：I Got Smoke</title><link>https://blog.tama.guru/videoshare/igotsmoke.html</link><pubDate>Wed, 14 Sep 2022 23:34:00 +0800</pubDate><guid>https://blog.tama.guru/videoshare/igotsmoke.html</guid><description>&lt;p>真的超神了
+[vplayer url=&amp;ldquo;https://share.tama.guru/d/AliDisk/%E5%88%86%E4%BA%AB/%E8%A7%86%E9%A2%91/I%20got%20somke%20%E5%BD%95%E5%B1%8F%E7%89%88.mp4&amp;rdquo; /]&lt;/p></description></item></channel></rss>

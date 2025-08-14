@@ -1,345 +1,200 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>群晖 on 狼的公告板 ver.Hugo</title>
-        <link>https://blog.tama.guru/tags/%E7%BE%A4%E6%99%96.html</link>
-        <description>Recent content in 群晖 on 狼的公告板 ver.Hugo</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E7%BE%A4%E6%99%96/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>一种很新的群晖安装方法</title>
-        <link>https://blog.tama.guru/record/new_dsm_install.html</link>
-        <pubDate>Sat, 12 Aug 2023 16:26:00 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/record/new_dsm_install.html</guid>
-        <description>&lt;p&gt;这个方法需要一个叫做&amp;quot;arpl&amp;quot;的固件（链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/fbelavenuto/arpl/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/fbelavenuto/arpl/releases&lt;/a&gt;），其特点是引导式安装，不需要手工提取&lt;code&gt;grup.cfg&lt;/code&gt;修改相关文件，相对较为简单。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>群晖 on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/%E7%BE%A4%E6%99%96.html</link><description>Recent content in 群晖 on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 14 Aug 2025 03:33:47 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E7%BE%A4%E6%99%96/index.xml" rel="self" type="application/rss+xml"/><item><title>一种很新的群晖安装方法</title><link>https://blog.tama.guru/record/new_dsm_install.html</link><pubDate>Sat, 12 Aug 2023 16:26:00 +0800</pubDate><guid>https://blog.tama.guru/record/new_dsm_install.html</guid><description>&lt;p>这个方法需要一个叫做&amp;quot;arpl&amp;quot;的固件（链接：&lt;a class="link" href="https://github.com/fbelavenuto/arpl/releases" target="_blank" rel="noopener"
+>https://github.com/fbelavenuto/arpl/releases&lt;/a>），其特点是引导式安装，不需要手工提取&lt;code>grup.cfg&lt;/code>修改相关文件，相对较为简单。
 ###1.下载和安装
 去上面的网站下载对应版本的zip包，解压并使用Win32DiskImager之类的工具写入U盘。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d732efe98f4.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d732efe98f4.png&#34; alt=&#34;arpl&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d732efe98f4.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;arpl&#34;
-	
-	
-&gt;
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d732efe98f4.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d732efe98f4.png" alt="arpl" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d732efe98f4.png"
+loading="lazy"
+alt="arpl"
+>
 一般下载最新版即可，我是在物理机安装因此选择第一个。
 写完之后把U盘安装到需要安装群晖的主板上并在BIOS中设置好UEFI启动，因各主板步骤不一致此处不赘述。
 ###2.进入和初步配置arpl
-开启群晖主板电源等待1分钟之后，在路由器界面找到主板网卡IP,浏览器输入&lt;code&gt;http://ip:7681&lt;/code&gt;即可进入arpl界面。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d733a862a8d.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d733a862a8d.png&#34; alt=&#34;IP&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d733a862a8d.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;IP&#34;
-	
-	
-&gt;
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d733df70ec6.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d733df70ec6.png&#34; alt=&#34;arpl界面&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d733df70ec6.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;arpl界面&#34;
-	
-	
-&gt;
-进去之后先选择&lt;code&gt;x Cmdline menu&lt;/code&gt;，然后进入&lt;code&gt;c Define a custom MAC&lt;/code&gt;，此步骤用于修改mac1的数据，如果需要洗白建议先做这一步，修改MAC后需要重新进入路由器界面找到主板网卡IP，因为IP会重新分配。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d7346458918.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d7346458918.png&#34; alt=&#34;修改MAC&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d7346458918.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;修改MAC&#34;
-	
-	
-&gt;
+开启群晖主板电源等待1分钟之后，在路由器界面找到主板网卡IP,浏览器输入&lt;code>http://ip:7681&lt;/code>即可进入arpl界面。
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d733a862a8d.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d733a862a8d.png" alt="IP" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d733a862a8d.png"
+loading="lazy"
+alt="IP"
+>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d733df70ec6.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d733df70ec6.png" alt="arpl界面" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d733df70ec6.png"
+loading="lazy"
+alt="arpl界面"
+>
+进去之后先选择&lt;code>x Cmdline menu&lt;/code>，然后进入&lt;code>c Define a custom MAC&lt;/code>，此步骤用于修改mac1的数据，如果需要洗白建议先做这一步，修改MAC后需要重新进入路由器界面找到主板网卡IP，因为IP会重新分配。
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d7346458918.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d7346458918.png" alt="修改MAC" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d7346458918.png"
+loading="lazy"
+alt="修改MAC"
+>
 ###3.配置arpl
-####首先是&lt;code&gt;m Choose a model&lt;/code&gt;
+####首先是&lt;code>m Choose a model&lt;/code>
 即选择安装的群晖型号，此处我以DS918+为例。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d734f031a5b.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d734f031a5b.png&#34; alt=&#34;DS918&amp;#43;&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d734f031a5b.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;DS918&amp;#43;&#34;
-	
-	
-&gt;
-####第二步,&lt;code&gt;n Choose a Build Number&lt;/code&gt;
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d734f031a5b.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d734f031a5b.png" alt="DS918&amp;#43;" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d734f031a5b.png"
+loading="lazy"
+alt="DS918&amp;#43;"
+>
+####第二步,&lt;code>n Choose a Build Number&lt;/code>
 即选择安装的版本，当前我要安装的是7.1.1，即版本号42962.
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d735383187c.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d735383187c.png&#34; alt=&#34;42962&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d735383187c.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;42962&#34;
-	
-	
-&gt;
-####第三步，&lt;code&gt;s Choose a serial number&lt;/code&gt;
-即输入序列号，进去之后会有两个选项，一个是&lt;code&gt;a Generate a random serial number&lt;/code&gt;，即随机生成一个SN，如果玩黑的直接选这个即可。如果有SN码则选择第二个&lt;code&gt;m Enter a serial number&lt;/code&gt;，输入后回车会提示&lt;code&gt;Invalid serial, continue?&lt;/code&gt;，不理，确认即可。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d735fb61ff8.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d735fb61ff8.png&#34; alt=&#34;Invalid serial&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d735fb61ff8.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Invalid serial&#34;
-	
-	
-&gt;
-####第四步，&lt;code&gt;Addone&lt;/code&gt;
-即插件安装，默认会安装&lt;code&gt;misc&lt;/code&gt;和&lt;code&gt;acpid&lt;/code&gt;这两个插件，其他可以手动选择，好像对我都没用，所以就保留默认了。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d7365373041.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d7365373041.png&#34; alt=&#34;addons install&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d7365373041.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;addons install&#34;
-	
-	
-&gt;
-####第五步，&lt;code&gt;x Cmdline menu&lt;/code&gt;
-这个界面可以对一些详细的配置进行修改，比如有两个网口，想设置第二个网口的mac，则可以在&lt;code&gt;a Add/edit a cmdline item&lt;/code&gt;中输入&lt;code&gt;mac2&lt;/code&gt;并回车，然后输入MAC2的地址即可，其他例如U盘的PID和VID也可以通过这个方式修改。其他选项如字面意思理解，此处不赘述。（更正：不需要设置PID和VID，见&lt;a class=&#34;link&#34; href=&#34;https://github.com/fbelavenuto/arpl/blob/main/README-Zh.md&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/fbelavenuto/arpl/blob/main/README-Zh.md&lt;/a&gt;）
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d736c8d7f49.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d736c8d7f49.png&#34; alt=&#34;Cmdline menu&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d736c8d7f49.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Cmdline menu&#34;
-	
-	
-&gt;
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d737ff28aa9.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d737ff28aa9.png&#34; alt=&#34;修改PID&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d737ff28aa9.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;修改PID&#34;
-	
-	
-&gt;
-####第六步，&lt;code&gt;i Synoinfo menu&lt;/code&gt;
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d735383187c.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d735383187c.png" alt="42962" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d735383187c.png"
+loading="lazy"
+alt="42962"
+>
+####第三步，&lt;code>s Choose a serial number&lt;/code>
+即输入序列号，进去之后会有两个选项，一个是&lt;code>a Generate a random serial number&lt;/code>，即随机生成一个SN，如果玩黑的直接选这个即可。如果有SN码则选择第二个&lt;code>m Enter a serial number&lt;/code>，输入后回车会提示&lt;code>Invalid serial, continue?&lt;/code>，不理，确认即可。
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d735fb61ff8.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d735fb61ff8.png" alt="Invalid serial" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d735fb61ff8.png"
+loading="lazy"
+alt="Invalid serial"
+>
+####第四步，&lt;code>Addone&lt;/code>
+即插件安装，默认会安装&lt;code>misc&lt;/code>和&lt;code>acpid&lt;/code>这两个插件，其他可以手动选择，好像对我都没用，所以就保留默认了。
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d7365373041.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d7365373041.png" alt="addons install" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d7365373041.png"
+loading="lazy"
+alt="addons install"
+>
+####第五步，&lt;code>x Cmdline menu&lt;/code>
+这个界面可以对一些详细的配置进行修改，比如有两个网口，想设置第二个网口的mac，则可以在&lt;code>a Add/edit a cmdline item&lt;/code>中输入&lt;code>mac2&lt;/code>并回车，然后输入MAC2的地址即可，其他例如U盘的PID和VID也可以通过这个方式修改。其他选项如字面意思理解，此处不赘述。（更正：不需要设置PID和VID，见&lt;a class="link" href="https://github.com/fbelavenuto/arpl/blob/main/README-Zh.md" target="_blank" rel="noopener"
+>https://github.com/fbelavenuto/arpl/blob/main/README-Zh.md&lt;/a>）
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d736c8d7f49.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d736c8d7f49.png" alt="Cmdline menu" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d736c8d7f49.png"
+loading="lazy"
+alt="Cmdline menu"
+>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d737ff28aa9.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d737ff28aa9.png" alt="修改PID" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d737ff28aa9.png"
+loading="lazy"
+alt="修改PID"
+>
+####第六步，&lt;code>i Synoinfo menu&lt;/code>
 展示和修改群晖的相关信息，一般不用修改。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d73782ec5b5.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d73782ec5b5.png&#34; alt=&#34;Synoinfo&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d73782ec5b5.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Synoinfo&#34;
-	
-	
-&gt;
-####第七步，&lt;code&gt;v Advanced menu&lt;/code&gt;
-高级菜单，内容包含&lt;code&gt;切换LKM版本&lt;/code&gt;、&lt;code&gt;模块&lt;/code&gt;、&lt;code&gt;手动编辑配置文件&lt;/code&gt;、&lt;code&gt;尝试恢复DSM启动盘&lt;/code&gt;以及&lt;code&gt;展示SATA端口和设备&lt;/code&gt;，一般只用看看最后一项检查SATA是否安装正常即可。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d738622c42c.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d738622c42c.png&#34; alt=&#34;高级菜单&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d738622c42c.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;高级菜单&#34;
-	
-	
-&gt;
-我的主板有两个SATA控制器，一共四个端口，因为我只安装一块硬盘，所以&lt;code&gt;Port 1&lt;/code&gt;是亮的。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d7392c59480.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d7392c59480.png&#34; alt=&#34;SATA信息&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d7392c59480.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;SATA信息&#34;
-	
-	
-&gt;
-####第八步，&lt;code&gt;Build the loader&lt;/code&gt;
-即编译启动器，它会自动下载所需文件并进行编译，直到提示&lt;code&gt;Ready&lt;/code&gt;会自动退出。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d739dd66108.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d739dd66108.png&#34; alt=&#34;编译过程&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d739dd66108.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;编译过程&#34;
-	
-	
-&gt;
-####第九步，&lt;code&gt;b Boot the loader&lt;/code&gt;
-此处即可开始启动了。此步骤会受U盘读写速度影响，（如果U盘带灯能看到狂闪）选择之后会卡一段时间直到显示&lt;code&gt;Booting...&lt;/code&gt;，需要等待。如果有接显示器，此时会看到关机了，需要手动启动。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d73a4103d18.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d73a4103d18.png&#34; alt=&#34;booting&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d73a4103d18.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;booting&#34;
-	
-	
-&gt;
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d73782ec5b5.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d73782ec5b5.png" alt="Synoinfo" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d73782ec5b5.png"
+loading="lazy"
+alt="Synoinfo"
+>
+####第七步，&lt;code>v Advanced menu&lt;/code>
+高级菜单，内容包含&lt;code>切换LKM版本&lt;/code>、&lt;code>模块&lt;/code>、&lt;code>手动编辑配置文件&lt;/code>、&lt;code>尝试恢复DSM启动盘&lt;/code>以及&lt;code>展示SATA端口和设备&lt;/code>，一般只用看看最后一项检查SATA是否安装正常即可。
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d738622c42c.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d738622c42c.png" alt="高级菜单" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d738622c42c.png"
+loading="lazy"
+alt="高级菜单"
+>
+我的主板有两个SATA控制器，一共四个端口，因为我只安装一块硬盘，所以&lt;code>Port 1&lt;/code>是亮的。
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d7392c59480.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d7392c59480.png" alt="SATA信息" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d7392c59480.png"
+loading="lazy"
+alt="SATA信息"
+>
+####第八步，&lt;code>Build the loader&lt;/code>
+即编译启动器，它会自动下载所需文件并进行编译，直到提示&lt;code>Ready&lt;/code>会自动退出。
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d739dd66108.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d739dd66108.png" alt="编译过程" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d739dd66108.png"
+loading="lazy"
+alt="编译过程"
+>
+####第九步，&lt;code>b Boot the loader&lt;/code>
+此处即可开始启动了。此步骤会受U盘读写速度影响，（如果U盘带灯能看到狂闪）选择之后会卡一段时间直到显示&lt;code>Booting...&lt;/code>，需要等待。如果有接显示器，此时会看到关机了，需要手动启动。
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d73a4103d18.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d73a4103d18.png" alt="booting" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d73a4103d18.png"
+loading="lazy"
+alt="booting"
+>
 ###4.安装固件
 浏览器登陆https://find.synology.com会查找到刚才安装的群晖。不知道为什么，群晖助手一直都显示不到，只有通过浏览器查找才可以。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d73fb7a7d36.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d73fb7a7d36.png&#34; alt=&#34;找到服务器&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d73fb7a7d36.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;找到服务器&#34;
-	
-	
-&gt;
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d73ffacb153.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d73ffacb153.png&#34; alt=&#34;安装&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d73ffacb153.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;安装&#34;
-	
-	
-&gt;
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d74024b8445.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d74024b8445.png&#34; alt=&#34;选择固件&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d74024b8445.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;选择固件&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;###5.一些问题：
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d73fb7a7d36.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d73fb7a7d36.png" alt="找到服务器" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d73fb7a7d36.png"
+loading="lazy"
+alt="找到服务器"
+>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d73ffacb153.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d73ffacb153.png" alt="安装" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d73ffacb153.png"
+loading="lazy"
+alt="安装"
+>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d74024b8445.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d74024b8445.png" alt="选择固件" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d74024b8445.png"
+loading="lazy"
+alt="选择固件"
+>&lt;/p>
+&lt;p>###5.一些问题：
 ####1.无法安装DSM，文件可能已经损坏。
 可能是硬盘插错，U盘VID PID没正确配置，又或者是引导文件有问题，一切皆有可能。
 ####2.作者更新不及时？
-尝试其他同类项目：&lt;a class=&#34;link&#34; href=&#34;https://github.com/AuxXxilium/arc/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/AuxXxilium/arc/releases&lt;/a&gt;&lt;/p&gt;
-</description>
-        </item>
-        
-    </channel>
-</rss>
+尝试其他同类项目：&lt;a class="link" href="https://github.com/AuxXxilium/arc/releases" target="_blank" rel="noopener"
+>https://github.com/AuxXxilium/arc/releases&lt;/a>&lt;/p></description></item></channel></rss>

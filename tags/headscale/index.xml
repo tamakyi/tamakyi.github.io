@@ -1,302 +1,235 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Headscale on 狼的公告板 ver.Hugo</title>
-        <link>https://blog.tama.guru/tags/headscale.html</link>
-        <description>Recent content in Headscale on 狼的公告板 ver.Hugo</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/headscale/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>在debian下安装headscale的记录</title>
-        <link>https://blog.tama.guru/record/headscale.html</link>
-        <pubDate>Thu, 14 Sep 2023 00:36:00 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/record/headscale.html</guid>
-        <description>&lt;h5 id=&#34;什么是headscale&#34;&gt;什么是headscale
-&lt;/h5&gt;&lt;p&gt;&lt;code&gt;An open source, self-hosted implementation of the Tailscale control server&lt;/code&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Headscale on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/headscale.html</link><description>Recent content in Headscale on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 14 Aug 2025 03:33:47 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/headscale/index.xml" rel="self" type="application/rss+xml"/><item><title>在debian下安装headscale的记录</title><link>https://blog.tama.guru/record/headscale.html</link><pubDate>Thu, 14 Sep 2023 00:36:00 +0800</pubDate><guid>https://blog.tama.guru/record/headscale.html</guid><description>&lt;h5 id="什么是headscale">什么是headscale
+&lt;/h5>&lt;p>&lt;code>An open source, self-hosted implementation of the Tailscale control server&lt;/code>
 要说headscale肯定就要先说tailscale，这是一项VPN服务，可让您拥有的设备和应用程序在世界任何地方安全，轻松地访问。它支持使用开源 WireGuard 协议进行加密的点对点连接，这意味着只有专用网络上的设备才能相互通信。
-也就意味着，在任意设备上安装tailscale之后，即可组建一个VPN网络，非常方便的达到内网穿透以及达成一些不可告人的目的。&lt;/p&gt;
-&lt;h5 id=&#34;为什么要安装headscale&#34;&gt;为什么要安装headscale
-&lt;/h5&gt;&lt;p&gt;tailscale是闭源的商业软件，客户端有上限（虽然一般人也用不到它的上限），而且服务器是定死的，国内连接的时候偶尔会有很大的延迟（基本都是200+，但是如果部署在国外就好一些，比如下面是我在南亚的服务器：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Bangalore: 17.85 ms
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Singapore: 61.31 ms
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Dubai: 77.91 ms
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Hong Kong: 98.53 ms
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Paris: 114.17 ms
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Madrid: 116.31 ms
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Frankfurt: 121.60 ms
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Amsterdam: 121.80 ms
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Tokyo: 124.99 ms
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Warsaw: 126.75 ms
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;London: 135.55 ms
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Sydney: 149.78 ms
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Miami: 219.59 ms
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Los Angeles: 220.80 ms
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Denver: 225.65 ms
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Seattle: 230.58 ms
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Chicago: 238.62 ms
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;San Francisco: 242.12 ms
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;New York City: 246.40 ms
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Dallas: 246.59 ms
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Toronto: 251.18 ms
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Nairobi: 280.36 ms
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Honolulu: 292.43 ms
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Johannesburg: 294.61 ms
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;São Paulo: 295.29 ms
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;而headscale则是tailscale的开源解决方案，这意味着所有的流量都只通过你的服务器，功能也任由你选择。
-但是headscale有一点不好，它没有图形界面，这意味着需要全程在终端进行操作。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;#####如何安装
+也就意味着，在任意设备上安装tailscale之后，即可组建一个VPN网络，非常方便的达到内网穿透以及达成一些不可告人的目的。&lt;/p>
+&lt;h5 id="为什么要安装headscale">为什么要安装headscale
+&lt;/h5>&lt;p>tailscale是闭源的商业软件，客户端有上限（虽然一般人也用不到它的上限），而且服务器是定死的，国内连接的时候偶尔会有很大的延迟（基本都是200+，但是如果部署在国外就好一些，比如下面是我在南亚的服务器：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Bangalore: 17.85 ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Singapore: 61.31 ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Dubai: 77.91 ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Hong Kong: 98.53 ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Paris: 114.17 ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Madrid: 116.31 ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Frankfurt: 121.60 ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Amsterdam: 121.80 ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Tokyo: 124.99 ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Warsaw: 126.75 ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">London: 135.55 ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Sydney: 149.78 ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Miami: 219.59 ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Los Angeles: 220.80 ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Denver: 225.65 ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Seattle: 230.58 ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Chicago: 238.62 ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">San Francisco: 242.12 ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">New York City: 246.40 ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Dallas: 246.59 ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Toronto: 251.18 ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Nairobi: 280.36 ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Honolulu: 292.43 ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Johannesburg: 294.61 ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">São Paulo: 295.29 ms
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>而headscale则是tailscale的开源解决方案，这意味着所有的流量都只通过你的服务器，功能也任由你选择。
+但是headscale有一点不好，它没有图形界面，这意味着需要全程在终端进行操作。&lt;/p>
+&lt;hr>
+&lt;p>#####如何安装
 ######1.下载并配置
-以debian为例，去&lt;a class=&#34;link&#34; href=&#34;https://github.com/juanfont/headscale/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/juanfont/headscale/releases&lt;/a&gt;下载适合自己发行版和架构的版本（我没用deb包），下载到&lt;code&gt;/usr/local/bin/&lt;/code&gt;并重命名为&lt;code&gt;headscale&lt;/code&gt;。
+以debian为例，去&lt;a class="link" href="https://github.com/juanfont/headscale/releases" target="_blank" rel="noopener"
+>https://github.com/juanfont/headscale/releases&lt;/a>下载适合自己发行版和架构的版本（我没用deb包），下载到&lt;code>/usr/local/bin/&lt;/code>并重命名为&lt;code>headscale&lt;/code>。
 当前最新版是0.22.3，即：
-&lt;code&gt;wget --output-document=/usr/local/bin/headscale https://github.com/juanfont/headscale/releases/download/v0.22.3/headscale_0.22.3_linux_amd64&lt;/code&gt;
+&lt;code>wget --output-document=/usr/local/bin/headscale https://github.com/juanfont/headscale/releases/download/v0.22.3/headscale_0.22.3_linux_amd64&lt;/code>
 之后再加上运行权限：
-&lt;code&gt;chmod +x /usr/local/bin/headscale&lt;/code&gt;
+&lt;code>chmod +x /usr/local/bin/headscale&lt;/code>
 创建目录用来存储数据与证书：
-&lt;code&gt;mkdir -p /var/lib/headscale&lt;/code&gt;
+&lt;code>mkdir -p /var/lib/headscale&lt;/code>
 创建空的 SQLite 数据库文件：
-&lt;code&gt;touch /var/lib/headscale/db.sqlite&lt;/code&gt;
-创建配置目录并下载配置文件：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir -p /etc/headscale &amp;amp;&amp;amp; cd /etc/headscale
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://github.com/juanfont/headscale/raw/main/config-example.yaml -O /etc/headscale/config.yaml
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后修改配置文件&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nano /etc/headscale/config.yaml
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;主要修改几个地方：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;server_url: http://SERVERIP #SERVERIP改为公网IP地址 注意，此处直接修改为http://SERVERIP:PORT1便不会出现404问题
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;listen_addr: 0.0.0.0:PORT1 #PORT1默认8080，可改为连接的端口，之后连接会通过0.0.0.0:PORT1`进行，如果安装了防火墙记得放行端口
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;metrics_listen_addr: 0.0.0.0:PORT2 #PORT2默认9090，可改为连接的端口，之后连接会通过0.0.0.0:PORT2`进行，如果安装了防火墙记得放行端口
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;grpc_listen_addr: 0.0.0.0:50443
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;magic_dns： false #关闭magic_dns功能
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ip_prefixes:
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - fd7a:115c:a1e0::/48 #自定义IPV6网段，如果用不到可以屏蔽此行
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - 10.64.0.0/16 #自定义IPV4网段
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;创建systemd守护程序&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nano /etc/systemd/system/headscale.service
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;修改内容为：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Unit&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;Description&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;headscale&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;controller&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;After&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;syslog&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;target&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;After&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;network&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;target&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Service&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;Type&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;simple&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;User&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;headscale&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;Group&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;headscale&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;ExecStart&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;usr&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;local&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;bin&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;headscale&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;serve&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;Restart&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;always&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;RestartSec&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Optional security enhancements&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;NoNewPrivileges&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;yes&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;PrivateTmp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;yes&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;ProtectSystem&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;strict&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;ProtectHome&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;yes&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;ReadWritePaths&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=/&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;var&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lib&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;headscale&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;var&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;run&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;headscale&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;AmbientCapabilities&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CAP_NET_BIND_SERVICE&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;RuntimeDirectory&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;headscale&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Install&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;WantedBy&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;multi&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;target&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;创建 headscale 用户：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;useradd headscale -d /home/headscale -m
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;修改 /var/lib/headscale 目录的所有者：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;chown&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;R&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;headscale&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;headscale&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;var&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lib&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;headscale&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Reload SystemD 以加载新的配置文件：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;systemctl&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;daemon&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;reload&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;启动 Headscale 服务并设置开机自启：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl enable --now headscale
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;tailscale 中有一个概念叫 tailnet，你可以理解成租户，租户与租户之间是相互隔离的，具体看参考 Tailscale 的官方文档：What is a tailnet。Headscale 也有类似的实现叫 namespace，即命名空间。我们需要先创建一个 namespace，以便后续客户端接入，例如：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;headscale namespaces create default #此处命名空间为default
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;到此服务端部分基本配置完毕。
+&lt;code>touch /var/lib/headscale/db.sqlite&lt;/code>
+创建配置目录并下载配置文件：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">mkdir -p /etc/headscale &amp;amp;&amp;amp; cd /etc/headscale
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">wget https://github.com/juanfont/headscale/raw/main/config-example.yaml -O /etc/headscale/config.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后修改配置文件&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">nano /etc/headscale/config.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>主要修改几个地方：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">server_url: http://SERVERIP #SERVERIP改为公网IP地址 注意，此处直接修改为http://SERVERIP:PORT1便不会出现404问题
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">listen_addr: 0.0.0.0:PORT1 #PORT1默认8080，可改为连接的端口，之后连接会通过0.0.0.0:PORT1`进行，如果安装了防火墙记得放行端口
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">metrics_listen_addr: 0.0.0.0:PORT2 #PORT2默认9090，可改为连接的端口，之后连接会通过0.0.0.0:PORT2`进行，如果安装了防火墙记得放行端口
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">grpc_listen_addr: 0.0.0.0:50443
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">magic_dns： false #关闭magic_dns功能
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ip_prefixes:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - fd7a:115c:a1e0::/48 #自定义IPV6网段，如果用不到可以屏蔽此行
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - 10.64.0.0/16 #自定义IPV4网段
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>创建systemd守护程序&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">nano /etc/systemd/system/headscale.service
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>修改内容为：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="n">Unit&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Description&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">headscale&lt;/span> &lt;span class="n">controller&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">After&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">syslog&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">target&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">After&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">network&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">target&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="n">Service&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Type&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">simple&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">User&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">headscale&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Group&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">headscale&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">ExecStart&lt;/span>&lt;span class="o">=/&lt;/span>&lt;span class="n">usr&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">local&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">bin&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">headscale&lt;/span> &lt;span class="n">serve&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Restart&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">always&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">RestartSec&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="mi">5&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Optional security enhancements&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">NoNewPrivileges&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">yes&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">PrivateTmp&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">yes&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">ProtectSystem&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">strict&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">ProtectHome&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">yes&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">ReadWritePaths&lt;/span>&lt;span class="o">=/&lt;/span>&lt;span class="k">var&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">lib&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">headscale&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="k">var&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">run&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">headscale&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">AmbientCapabilities&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">CAP_NET_BIND_SERVICE&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">RuntimeDirectory&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">headscale&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="n">Install&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">WantedBy&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">multi&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">user&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">target&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>创建 headscale 用户：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">useradd headscale -d /home/headscale -m
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>修改 /var/lib/headscale 目录的所有者：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="n">chown&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="n">R&lt;/span> &lt;span class="n">headscale&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="n">headscale&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="k">var&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">lib&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">headscale&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Reload SystemD 以加载新的配置文件：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="n">systemctl&lt;/span> &lt;span class="n">daemon&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">reload&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>启动 Headscale 服务并设置开机自启：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">systemctl enable --now headscale
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>tailscale 中有一个概念叫 tailnet，你可以理解成租户，租户与租户之间是相互隔离的，具体看参考 Tailscale 的官方文档：What is a tailnet。Headscale 也有类似的实现叫 namespace，即命名空间。我们需要先创建一个 namespace，以便后续客户端接入，例如：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">headscale namespaces create default #此处命名空间为default
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>到此服务端部分基本配置完毕。
 ######2.接入headscale
-对于已经安装了tailscale的linux系统，可以直接执行&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tailscale up --login-server=http://SERVERIP:PORT1 --accept-routes=true --accept-dns=false
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果之前已经接入过tailscale，需要执行：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tailscale up --login-server=http://SERVERIP:PORT1 --accept-routes=true --accept-dns=false --force-reauth
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Windows操作其实也类似，按官网说法我们需要修改注册表，但其实我们只要进入软件的安装目录并右键启动Powershell，执行如下命令:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;.\tailscale.exe up --accept-dns=false --accept-routes --login-server=http://SERVERIP:PORT1 --unattended
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;之后会提示：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;To authenticate, visit:
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	http://SERVERIP:PORT1/register/nodekey:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e2bfd7452.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e2bfd7452.png&#34; alt=&#34;hs-in&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e2bfd7452.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;hs-in&#34;
-	
-	
-&gt;
-把其中的&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;headscale nodes register --user USERNAME --key nodekey:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;复制到服务器终端中，并修改&lt;code&gt;USERNAME&lt;/code&gt;为命名空间，比如上面我们设置的是&lt;code&gt;default&lt;/code&gt;。
-执行之后服务器提示：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Machine xxx registered
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;客户端提示：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Success.
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在服务器执行
-&lt;code&gt;headscale nodes list&lt;/code&gt;
-可以看到客户端分配到的IP地址为&lt;code&gt;100.64.0.1&lt;/code&gt;：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ID | Hostname  | Name      | MachineKey | NodeKey | User    | IP addresses | Ephemeral | Last seen           | Expiration          | Online | Expired
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1  | xxx | xxx | [xxx]    | [xxx] | default | 100.64.0.1, | false     | 2023-09-13 15:47:03 | 0001-01-01 00:00:00 | online | no
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;相同的方法再添加第二个服务器，分配到ip:&lt;code&gt;100.64.0.2&lt;/code&gt;
-用进行互PING已经通了：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# ping 100.64.0.2
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;PING 100.64.0.2 (100.64.0.2) 56(84) bytes of data.
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;64 bytes from 100.64.0.2: icmp_seq=1 ttl=64 time=0.041 ms
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;64 bytes from 100.64.0.2: icmp_seq=2 ttl=64 time=0.042 ms
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;64 bytes from 100.64.0.2: icmp_seq=3 ttl=64 time=0.043 ms
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;64 bytes from 100.64.0.2: icmp_seq=4 ttl=64 time=0.046 ms
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;^C
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;--- 100.64.0.2 ping statistics ---
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;4 packets transmitted, 4 received, 0% packet loss, time 3057ms
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rtt min/avg/max/mdev = 0.041/0.043/0.046/0.002 ms
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;延迟很低，很好。
+对于已经安装了tailscale的linux系统，可以直接执行&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">tailscale up --login-server=http://SERVERIP:PORT1 --accept-routes=true --accept-dns=false
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果之前已经接入过tailscale，需要执行：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">tailscale up --login-server=http://SERVERIP:PORT1 --accept-routes=true --accept-dns=false --force-reauth
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Windows操作其实也类似，按官网说法我们需要修改注册表，但其实我们只要进入软件的安装目录并右键启动Powershell，执行如下命令:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">.\tailscale.exe up --accept-dns=false --accept-routes --login-server=http://SERVERIP:PORT1 --unattended
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>之后会提示：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">To authenticate, visit:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> http://SERVERIP:PORT1/register/nodekey:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e2bfd7452.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e2bfd7452.png" alt="hs-in" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e2bfd7452.png"
+loading="lazy"
+alt="hs-in"
+>
+把其中的&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">headscale nodes register --user USERNAME --key nodekey:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>复制到服务器终端中，并修改&lt;code>USERNAME&lt;/code>为命名空间，比如上面我们设置的是&lt;code>default&lt;/code>。
+执行之后服务器提示：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Machine xxx registered
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>客户端提示：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Success.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>在服务器执行
+&lt;code>headscale nodes list&lt;/code>
+可以看到客户端分配到的IP地址为&lt;code>100.64.0.1&lt;/code>：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">ID | Hostname | Name | MachineKey | NodeKey | User | IP addresses | Ephemeral | Last seen | Expiration | Online | Expired
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">1 | xxx | xxx | [xxx] | [xxx] | default | 100.64.0.1, | false | 2023-09-13 15:47:03 | 0001-01-01 00:00:00 | online | no
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>相同的方法再添加第二个服务器，分配到ip:&lt;code>100.64.0.2&lt;/code>
+用进行互PING已经通了：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl"># ping 100.64.0.2
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">PING 100.64.0.2 (100.64.0.2) 56(84) bytes of data.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">64 bytes from 100.64.0.2: icmp_seq=1 ttl=64 time=0.041 ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">64 bytes from 100.64.0.2: icmp_seq=2 ttl=64 time=0.042 ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">64 bytes from 100.64.0.2: icmp_seq=3 ttl=64 time=0.043 ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">64 bytes from 100.64.0.2: icmp_seq=4 ttl=64 time=0.046 ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">^C
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">--- 100.64.0.2 ping statistics ---
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">4 packets transmitted, 4 received, 0% packet loss, time 3057ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">rtt min/avg/max/mdev = 0.041/0.043/0.046/0.002 ms
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>延迟很低，很好。
 ######3.支持了哪些平台？
-截至9月14日，基本已经实现了全平台支持，详情见&lt;a class=&#34;link&#34; href=&#34;https://github.com/juanfont/headscale&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/juanfont/headscale&lt;/a&gt;。
+截至9月14日，基本已经实现了全平台支持，详情见&lt;a class="link" href="https://github.com/juanfont/headscale" target="_blank" rel="noopener"
+>https://github.com/juanfont/headscale&lt;/a>。
 官方tailscale在1.30.0之后的版本基本都实现了自定义url。
 以安卓为例，打开应用程序后，必须反复打开和关闭右侧顶部栏上的烤肉串菜单图标（三个点），直到菜单中出现“更改服务器”选项。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8393b827.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8393b827.png&#34; alt=&#34;狂点三个点&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8393b827.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;狂点三个点&#34;
-	
-	
-&gt;
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e854095bb.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e854095bb.png&#34; alt=&#34;出现Change server&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e854095bb.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;出现Change server&#34;
-	
-	
-&gt;
-可以在此处输入&lt;code&gt;http://SERVERIP:PORT1&lt;/code&gt;。保存返回上一步，然后选择&lt;code&gt;Sign in with other&lt;/code&gt;
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8897db77.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8897db77.png&#34; alt=&#34;Sign in with other&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8897db77.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Sign in with other&#34;
-	
-	
-&gt;
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8393b827.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8393b827.png" alt="狂点三个点" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8393b827.png"
+loading="lazy"
+alt="狂点三个点"
+>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e854095bb.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e854095bb.png" alt="出现Change server" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e854095bb.png"
+loading="lazy"
+alt="出现Change server"
+>
+可以在此处输入&lt;code>http://SERVERIP:PORT1&lt;/code>。保存返回上一步，然后选择&lt;code>Sign in with other&lt;/code>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8897db77.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8897db77.png" alt="Sign in with other" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8897db77.png"
+loading="lazy"
+alt="Sign in with other"
+>
 然后就一如既往的404了，使用浏览器打开这个网页，添加端口到IP后面再访问。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8cc39e42.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8cc39e42.png&#34; alt=&#34;404了&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8cc39e42.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;404了&#34;
-	
-	
-&gt;
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8f3822db.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8f3822db.png&#34; alt=&#34;不404了&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8f3822db.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;不404了&#34;
-	
-	
-&gt;
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8cc39e42.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8cc39e42.png" alt="404了" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8cc39e42.png"
+loading="lazy"
+alt="404了"
+>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8f3822db.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8f3822db.png" alt="不404了" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8f3822db.png"
+loading="lazy"
+alt="不404了"
+>
 然后按照上面把那窜命令修改后复制到服务端执行，显示成功后安卓端杀掉tailscale进程，再重新进去之后就可以正常使用了。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e959e894c.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e959e894c.png&#34; alt=&#34;正常使用了&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e959e894c.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;正常使用了&#34;
-	
-	
-&gt;
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e959e894c.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e959e894c.png" alt="正常使用了" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/09/14/6501e959e894c.png"
+loading="lazy"
+alt="正常使用了"
+>
 ######4.打通局域网
-需求:假设本地里面有一台设备,headscale ip为&lt;code&gt;10.64.0.5&lt;/code&gt;，内网ip为&lt;code&gt;192.168.50.79&lt;/code&gt;，但是我不想内网每台设备都接入headscale，希望通过&lt;code&gt;10.64.0.5&lt;/code&gt;来打通局域网。
+需求:假设本地里面有一台设备,headscale ip为&lt;code>10.64.0.5&lt;/code>，内网ip为&lt;code>192.168.50.79&lt;/code>，但是我不想内网每台设备都接入headscale，希望通过&lt;code>10.64.0.5&lt;/code>来打通局域网。
 客户端（10.64.0.5）配置:
-1.开启ipv4和ipv6转发&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;echo &amp;#39;net.ipv4.ip_forward = 1&amp;#39; | tee /etc/sysctl.d/ipforwarding.conf
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;echo &amp;#39;net.ipv6.conf.all.forwarding = 1&amp;#39; | tee -a /etc/sysctl.d/ipforwarding.conf
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sysctl -p /etc/sysctl.d/ipforwarding.conf
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;2.修改tailscale启动配置&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tailscale up --login-server=http://SERVERIP:PORT1 --accept-routes=true --accept-dns=false --advertise-routes=192.168.50.0/24
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;其中&lt;code&gt;http://SERVERIP:PORT1&lt;/code&gt;为上面的headscale服务器地址和ip，&lt;code&gt;192.168.50.0/24&lt;/code&gt;是客户端的内网网段。
+1.开启ipv4和ipv6转发&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">echo &amp;#39;net.ipv4.ip_forward = 1&amp;#39; | tee /etc/sysctl.d/ipforwarding.conf
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">echo &amp;#39;net.ipv6.conf.all.forwarding = 1&amp;#39; | tee -a /etc/sysctl.d/ipforwarding.conf
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sysctl -p /etc/sysctl.d/ipforwarding.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>2.修改tailscale启动配置&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">tailscale up --login-server=http://SERVERIP:PORT1 --accept-routes=true --accept-dns=false --advertise-routes=192.168.50.0/24
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>其中&lt;code>http://SERVERIP:PORT1&lt;/code>为上面的headscale服务器地址和ip，&lt;code>192.168.50.0/24&lt;/code>是客户端的内网网段。
 服务端（headscale服务器）
-查看10.64.0.5的id&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# headscale nodes list                         ID | Hostname             | Name                | MachineKey | NodeKey | User     | IP addresses                  | Ephemeral | Last seen           | Expiration          | Online  | Expired
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;5  | akarinbot            | akarinbot           | [WEJPM]    | [ETS1a] | tamaroot | 100.64.0.5, fd7a:115c:a1e0::1 | false     | 2023-09-14 03:58:37 | 0001-01-01 00:00:00 | online  | no
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;可以看到此处id为5。接下来查看该服务下的路由:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;headscale routes list -i 5
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# headscale routes list -i 1
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ID | Machine   | Prefix          | Advertised | Enabled | Primary
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;7  | akarinbot | 192.168.50.0/24 | true       | false    | true
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里路由id为7，且Enabled状态为false。接下来开启这个路由&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# headscale routes enable  -r 7
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;此时Enabled状态为true。
+查看10.64.0.5的id&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl"># headscale nodes list ID | Hostname | Name | MachineKey | NodeKey | User | IP addresses | Ephemeral | Last seen | Expiration | Online | Expired
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">5 | akarinbot | akarinbot | [WEJPM] | [ETS1a] | tamaroot | 100.64.0.5, fd7a:115c:a1e0::1 | false | 2023-09-14 03:58:37 | 0001-01-01 00:00:00 | online | no
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>可以看到此处id为5。接下来查看该服务下的路由:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">headscale routes list -i 5
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># headscale routes list -i 1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ID | Machine | Prefix | Advertised | Enabled | Primary
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">7 | akarinbot | 192.168.50.0/24 | true | false | true
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这里路由id为7，且Enabled状态为false。接下来开启这个路由&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl"># headscale routes enable -r 7
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>此时Enabled状态为true。
 现在在任意客户端访问192.168.50.0/24网段的ip都能联通了。
 #####5.其他事项
-如果deb包下载很慢，可以用其他软件下载:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://pkgs.tailscale.com/stable/tailscale_{版本号}_{架构}.deb
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;例如：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://pkgs.tailscale.com/stable/tailscale_1.56.1_amd64.deb
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-        </item>
-        
-    </channel>
-</rss>
+如果deb包下载很慢，可以用其他软件下载:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">https://pkgs.tailscale.com/stable/tailscale_{版本号}_{架构}.deb
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>例如：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">https://pkgs.tailscale.com/stable/tailscale_1.56.1_amd64.deb
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

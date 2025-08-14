@@ -1,1161 +1,1097 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Reproduced on 狼的公告板 ver.Hugo</title>
-        <link>https://blog.tama.guru/categories/reproduced.html</link>
-        <description>Recent content in Reproduced on 狼的公告板 ver.Hugo</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/categories/reproduced/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>业余无线电（HAM）A类操作证考试教程(转载记录用）</title>
-        <link>https://blog.tama.guru/reproduced/ham-a.html</link>
-        <pubDate>Sat, 23 Mar 2024 21:25:00 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/reproduced/ham-a.html</guid>
-        <description>&lt;p&gt;最近想考个Ham证，转载一下作为材料记录。能不能过靠你了！&lt;/p&gt;
-&lt;p&gt;本文GitHub地址是&lt;a class=&#34;link&#34; href=&#34;https://github.com/jks-liu/zhihu/blob/master/ham-license-type-a.md&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/jks-liu/zhihu/blob/master/ham-license-type-a.md&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;本文力求用最简单的语言，详细介绍你需要掌握的所有内容。让你既知其然，又知其所以然。&lt;/p&gt;
-&lt;p&gt;最后更新时间：2022年3月8日&lt;/p&gt;
-&lt;p&gt;注意新版题库v20211022已经更新，本文会稍后更新到新版，敬请期待。题库下载地址&lt;a class=&#34;link&#34; href=&#34;http://www.crac.org.cn/News/List?type=6&amp;amp;y=&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;http://www.crac.org.cn/News/List?type=6&amp;y=&lt;/a&gt;，你也可以在下面提到了「智谱APP」中练习。&lt;/p&gt;
-&lt;p&gt;版本日志：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;2020年某月某日：初版&lt;/li&gt;
-&lt;li&gt;2021年4月21日：修订版&lt;/li&gt;
-&lt;li&gt;2022年3月8日：提示更新到新版题库。&lt;/li&gt;
-&lt;li&gt;2023年10月21日：根据最新版题库（v20211022）更新，题库具体的变更内容我在&lt;a class=&#34;link&#34; href=&#34;https://github.com/jks-liu/zhihu/tree/master/resource/ham-quiz-bank/diff-20171031-20211022&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;GitHub做了详细的整理&lt;/a&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;简介&#34;&gt;简介
-&lt;/h2&gt;&lt;p&gt;本人这个月13号考试，下图是我的准考证。由于本人接触这个领域也不久，下文有何不妥之处，还望指出。最新消息，考试已过。虽然没有具体的分数，但应该是满分。所以我相信，每一个把这个教程看两遍（实指）的人都可以高分通过。&lt;/p&gt;
-&lt;p&gt;现在几乎所有地区都可以手机APP报名。APP的名字叫“智谱”。APP中点击下面的“特别入口”，选择“业余无线电”-“业余无线电爱好者”，点“进入”再选择“考试报名”就可以了。&lt;/p&gt;
-&lt;p&gt;简单来说，想要合法地操作业余无线电设备，需要以下几个步骤：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;通过考试（也就是本文所覆盖的内容）&lt;/li&gt;
-&lt;li&gt;购买或自制设备，当然你也可以先买设备再考试&lt;br&gt;
-淘宝剁手之前注意先到&lt;a class=&#34;link&#34; href=&#34;http://www.srrc.org.cn/wp_search.aspx&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;中国无线电管理网站&lt;/a&gt;查询即将购买的设备有没有有效期内的核准代码，注意是针对业余业务的核准码。&lt;/li&gt;
-&lt;li&gt;携带设备去指定机构验机。如果你的机器是购买的并且有上条所说的针对业余业务的核准码，可以免检，跳过此步。&lt;/li&gt;
-&lt;li&gt;申请无线电台许可&lt;/li&gt;
-&lt;li&gt;申请识别码（呼号），和步骤四同时进行&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;考试介绍&#34;&gt;考试介绍
-&lt;/h2&gt;&lt;p&gt;考试分多个等级，新人只能考A类。&lt;/p&gt;
-&lt;p&gt;A类考试共30道单选题，时间40分钟，对25道（含）以上合格。开考十五分钟可以交卷，一半此时大部分人都会交卷。考完试一般十天内会公布结果。&lt;/p&gt;
-&lt;p&gt;题目从题库中随机抽取，题库可从&lt;a class=&#34;link&#34; href=&#34;http://www.crac.org.cn/News/Detail?ID=1862&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;这里&lt;/a&gt;下载。所以题目的第一个选项是正确答案，当然，真正考试的时候会打乱选项。A类题库共361题。&lt;/p&gt;
-&lt;p&gt;各种资料链接（最后更新于2020年12月1日）：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;http://www.crac.org.cn/News/Detail?ID=1862&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;题库以及考试大纲&lt;/a&gt;，这是我们复习的重点&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;http://www.crac.org.cn/News/Detail?ID=ea3df35318824cf4b956b4bcf6a0b0ab&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;这里可以下载到各种法律法规相关文件&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;业余无线电台管理办法（工业和信息化部22号令）
-这一部最重要的一部法规，因为几乎里面的每一条都揉到了下面的题库里。建议每个人都读一读。&lt;/li&gt;
-&lt;li&gt;关于实施《业余无线电台管理办法》若干事项的通知（工信部无[2013]43号）&lt;/li&gt;
-&lt;li&gt;《关于进一步明确和规范业余无线电台管理有关工作的通知》(工无函[2014]24号)&lt;/li&gt;
-&lt;li&gt;业余无线电台操作技术能力验证暂行办法（国无协[2013]1号）&lt;/li&gt;
-&lt;li&gt;关于业余无线电台操作技术能力考核有关事项的通知（国无协[2013]2号）&lt;/li&gt;
-&lt;li&gt;《来访者业余无线电台临时操作证书》申请办法（国无协[2013]3号）&lt;/li&gt;
-&lt;li&gt;关于修订各类别业余无线电台操作技术能力验证考核暂行标准的通知（国无协〔2018〕13号）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;http://www.srrc.org.cn/article23480.aspx&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;《中华人民共和国无线电频率划分规定》（工业和信息化部46号令）&lt;/a&gt;
-这部法规定义了很多无线电相关的术语，以及很多技术相关的内容。由于很长，也没必要全看，适合做参考。&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.cqid.cn/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;这是一个可以帮你刷题/模拟考试的网站&lt;/a&gt;，这样，你就不用去读无聊的题库文件。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;教程安排&#34;&gt;教程安排
-&lt;/h2&gt;&lt;p&gt;这里直接按照考试大纲的顺序编写本教程。所以本教程是针对本考试最系统的教程。&lt;/p&gt;
-&lt;p&gt;凡是题库中出现的知识点（意味着可能会考到），我会着重强调，或将对应的文字&lt;strong&gt;加粗&lt;/strong&gt;。注意，这些强调的内容都是题库中的，考试可能会考的内容。不求你会背诵，至少看到选项的时候你会选。&lt;/p&gt;
-&lt;p&gt;由于这是一个考试指南，所以里面我也会夹杂一些记忆技巧，助你通过考试。&lt;/p&gt;
-&lt;p&gt;想了解业余无线电其它知识的朋友，推荐童效勇、陈方的《业余无线电手册》，最新版本是第五版。这可能是大部分人的启蒙书籍吧。&lt;/p&gt;
-&lt;h1 id=&#34;a1-无线电管理相关法规&#34;&gt;A.1． 无线电管理相关法规
-&lt;/h1&gt;&lt;p&gt;法律法规粗看比较难记，但其有内在的逻辑。运用你的常识和经验，多看几遍，应该不难。&lt;/p&gt;
-&lt;p&gt;业余无线电的上位是无线电。&lt;/p&gt;
-&lt;p&gt;无线电管理的最高法律文件是&lt;a class=&#34;link&#34; href=&#34;http://www.gov.cn/zhengce/content/2016-11/25/content_5137687.htm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;《中华人民共和国无线电管理条例》&lt;/a&gt;。其立法机关是国务院和中央军委。&lt;/p&gt;
-&lt;p&gt;记忆要点：无线电关系国家安全，所以需要&lt;strong&gt;军委&lt;/strong&gt;共同管辖。&lt;/p&gt;
-&lt;p&gt;无线电的主管部门是&lt;strong&gt;各级无线电管理机构&lt;/strong&gt;。&lt;/p&gt;
-&lt;h2 id=&#34;a11-业余电台管理体制和政策&#34;&gt;A.1.1 业余电台管理体制和政策
-&lt;/h2&gt;&lt;p&gt;业余无线电管理的最高法律文件是&lt;a class=&#34;link&#34; href=&#34;http://www.gov.cn/flfg/2012-11/08/content_2260255.htm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;《业余无线电台管理办法》&lt;/a&gt;，其立法机关是大名鼎鼎的&lt;strong&gt;工信部&lt;/strong&gt;（工业和信息化部）。&lt;strong&gt;注意&lt;/strong&gt;：考试的时候看清楚题干中问的是无线电还是业余无线电。&lt;/p&gt;
-&lt;p&gt;注：若无特别说明，引用的法条默认出自《业余无线电台管理办法》。再次强调，我&lt;strong&gt;加粗&lt;/strong&gt;的，都是考试可能考的。&lt;/p&gt;
-&lt;p&gt;第三条 &lt;strong&gt;国家无线电管理机构和省、自治区、直辖市无线电管理机构&lt;/strong&gt;（以下简称&lt;strong&gt;地方无线电管理机构&lt;/strong&gt;）依法对业余无线电台实施监督管理。
-&lt;strong&gt;国家无线电管理机构和地方无线电管理机构&lt;/strong&gt;统称无线电管理机构。&lt;/p&gt;
-&lt;p&gt;考试会问你业余无线电的监管部门，当然你可以说是各级无线电管理机构。题库的答案是&lt;strong&gt;国家无线电管理机构和地方无线电管理机构&lt;/strong&gt;，当然啦，是一个意思。对于一个问题，答案经常会有各种不同的说法，我尽量将题库中的答案选项直接呈现给你，以求混个眼熟，毕竟通过考试是我们很重要的一个目的。考试还会问你地方无线电管理机构指的是什么，显然从上面法条可知是&lt;strong&gt;省、自治区、直辖市无线电管理机构&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;第四条（第三款） 依法设置的业余无线电台受国家法律保护。&lt;/p&gt;
-&lt;h2 id=&#34;a12-业余无线电的相关定义&#34;&gt;A.1.2 业余无线电的相关定义
-&lt;/h2&gt;&lt;p&gt;我国对无线电管理术语 &lt;strong&gt;“业余业务”、“卫星业余业务”和“业余无线电台”&lt;/strong&gt; 做出具体定义的法规文件是&lt;a class=&#34;link&#34; href=&#34;http://www.srrc.org.cn/article23480.aspx&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;&lt;strong&gt;《中华人民共和国无线电频率划分规定》&lt;/strong&gt;&lt;/a&gt;。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;- 业余业务 amateur service：供业余无线电爱好者进行自我训练、相互通信和技术研究的无线电通信业务。业余无线电爱好者系指经正式批准的、对无线电技术有兴趣的人，其兴趣纯系个人爱好而不涉及谋取利润。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Reproduced on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/categories/reproduced.html</link><description>Recent content in Reproduced on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 14 Aug 2025 03:33:47 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/categories/reproduced/index.xml" rel="self" type="application/rss+xml"/><item><title>业余无线电（HAM）A类操作证考试教程(转载记录用）</title><link>https://blog.tama.guru/reproduced/ham-a.html</link><pubDate>Sat, 23 Mar 2024 21:25:00 +0800</pubDate><guid>https://blog.tama.guru/reproduced/ham-a.html</guid><description>&lt;p>最近想考个Ham证，转载一下作为材料记录。能不能过靠你了！&lt;/p>
+&lt;p>本文GitHub地址是&lt;a class="link" href="https://github.com/jks-liu/zhihu/blob/master/ham-license-type-a.md" target="_blank" rel="noopener"
+>https://github.com/jks-liu/zhihu/blob/master/ham-license-type-a.md&lt;/a>。&lt;/p>
+&lt;p>本文力求用最简单的语言，详细介绍你需要掌握的所有内容。让你既知其然，又知其所以然。&lt;/p>
+&lt;p>最后更新时间：2022年3月8日&lt;/p>
+&lt;p>注意新版题库v20211022已经更新，本文会稍后更新到新版，敬请期待。题库下载地址&lt;a class="link" href="http://www.crac.org.cn/News/List?type=6&amp;amp;y=" target="_blank" rel="noopener"
+>http://www.crac.org.cn/News/List?type=6&amp;y=&lt;/a>，你也可以在下面提到了「智谱APP」中练习。&lt;/p>
+&lt;p>版本日志：&lt;/p>
+&lt;ul>
+&lt;li>2020年某月某日：初版&lt;/li>
+&lt;li>2021年4月21日：修订版&lt;/li>
+&lt;li>2022年3月8日：提示更新到新版题库。&lt;/li>
+&lt;li>2023年10月21日：根据最新版题库（v20211022）更新，题库具体的变更内容我在&lt;a class="link" href="https://github.com/jks-liu/zhihu/tree/master/resource/ham-quiz-bank/diff-20171031-20211022" target="_blank" rel="noopener"
+>GitHub做了详细的整理&lt;/a>。&lt;/li>
+&lt;/ul>
+&lt;h2 id="简介">简介
+&lt;/h2>&lt;p>本人这个月13号考试，下图是我的准考证。由于本人接触这个领域也不久，下文有何不妥之处，还望指出。最新消息，考试已过。虽然没有具体的分数，但应该是满分。所以我相信，每一个把这个教程看两遍（实指）的人都可以高分通过。&lt;/p>
+&lt;p>现在几乎所有地区都可以手机APP报名。APP的名字叫“智谱”。APP中点击下面的“特别入口”，选择“业余无线电”-“业余无线电爱好者”，点“进入”再选择“考试报名”就可以了。&lt;/p>
+&lt;p>简单来说，想要合法地操作业余无线电设备，需要以下几个步骤：&lt;/p>
+&lt;ol>
+&lt;li>通过考试（也就是本文所覆盖的内容）&lt;/li>
+&lt;li>购买或自制设备，当然你也可以先买设备再考试&lt;br>
+淘宝剁手之前注意先到&lt;a class="link" href="http://www.srrc.org.cn/wp_search.aspx" target="_blank" rel="noopener"
+>中国无线电管理网站&lt;/a>查询即将购买的设备有没有有效期内的核准代码，注意是针对业余业务的核准码。&lt;/li>
+&lt;li>携带设备去指定机构验机。如果你的机器是购买的并且有上条所说的针对业余业务的核准码，可以免检，跳过此步。&lt;/li>
+&lt;li>申请无线电台许可&lt;/li>
+&lt;li>申请识别码（呼号），和步骤四同时进行&lt;/li>
+&lt;/ol>
+&lt;h2 id="考试介绍">考试介绍
+&lt;/h2>&lt;p>考试分多个等级，新人只能考A类。&lt;/p>
+&lt;p>A类考试共30道单选题，时间40分钟，对25道（含）以上合格。开考十五分钟可以交卷，一半此时大部分人都会交卷。考完试一般十天内会公布结果。&lt;/p>
+&lt;p>题目从题库中随机抽取，题库可从&lt;a class="link" href="http://www.crac.org.cn/News/Detail?ID=1862" target="_blank" rel="noopener"
+>这里&lt;/a>下载。所以题目的第一个选项是正确答案，当然，真正考试的时候会打乱选项。A类题库共361题。&lt;/p>
+&lt;p>各种资料链接（最后更新于2020年12月1日）：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="http://www.crac.org.cn/News/Detail?ID=1862" target="_blank" rel="noopener"
+>题库以及考试大纲&lt;/a>，这是我们复习的重点&lt;/li>
+&lt;li>&lt;a class="link" href="http://www.crac.org.cn/News/Detail?ID=ea3df35318824cf4b956b4bcf6a0b0ab" target="_blank" rel="noopener"
+>这里可以下载到各种法律法规相关文件&lt;/a>
+&lt;ul>
+&lt;li>业余无线电台管理办法（工业和信息化部22号令）
+这一部最重要的一部法规，因为几乎里面的每一条都揉到了下面的题库里。建议每个人都读一读。&lt;/li>
+&lt;li>关于实施《业余无线电台管理办法》若干事项的通知（工信部无[2013]43号）&lt;/li>
+&lt;li>《关于进一步明确和规范业余无线电台管理有关工作的通知》(工无函[2014]24号)&lt;/li>
+&lt;li>业余无线电台操作技术能力验证暂行办法（国无协[2013]1号）&lt;/li>
+&lt;li>关于业余无线电台操作技术能力考核有关事项的通知（国无协[2013]2号）&lt;/li>
+&lt;li>《来访者业余无线电台临时操作证书》申请办法（国无协[2013]3号）&lt;/li>
+&lt;li>关于修订各类别业余无线电台操作技术能力验证考核暂行标准的通知（国无协〔2018〕13号）&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a class="link" href="http://www.srrc.org.cn/article23480.aspx" target="_blank" rel="noopener"
+>《中华人民共和国无线电频率划分规定》（工业和信息化部46号令）&lt;/a>
+这部法规定义了很多无线电相关的术语，以及很多技术相关的内容。由于很长，也没必要全看，适合做参考。&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.cqid.cn/" target="_blank" rel="noopener"
+>这是一个可以帮你刷题/模拟考试的网站&lt;/a>，这样，你就不用去读无聊的题库文件。&lt;/li>
+&lt;/ul>
+&lt;h2 id="教程安排">教程安排
+&lt;/h2>&lt;p>这里直接按照考试大纲的顺序编写本教程。所以本教程是针对本考试最系统的教程。&lt;/p>
+&lt;p>凡是题库中出现的知识点（意味着可能会考到），我会着重强调，或将对应的文字&lt;strong>加粗&lt;/strong>。注意，这些强调的内容都是题库中的，考试可能会考的内容。不求你会背诵，至少看到选项的时候你会选。&lt;/p>
+&lt;p>由于这是一个考试指南，所以里面我也会夹杂一些记忆技巧，助你通过考试。&lt;/p>
+&lt;p>想了解业余无线电其它知识的朋友，推荐童效勇、陈方的《业余无线电手册》，最新版本是第五版。这可能是大部分人的启蒙书籍吧。&lt;/p>
+&lt;h1 id="a1-无线电管理相关法规">A.1． 无线电管理相关法规
+&lt;/h1>&lt;p>法律法规粗看比较难记，但其有内在的逻辑。运用你的常识和经验，多看几遍，应该不难。&lt;/p>
+&lt;p>业余无线电的上位是无线电。&lt;/p>
+&lt;p>无线电管理的最高法律文件是&lt;a class="link" href="http://www.gov.cn/zhengce/content/2016-11/25/content_5137687.htm" target="_blank" rel="noopener"
+>《中华人民共和国无线电管理条例》&lt;/a>。其立法机关是国务院和中央军委。&lt;/p>
+&lt;p>记忆要点：无线电关系国家安全，所以需要&lt;strong>军委&lt;/strong>共同管辖。&lt;/p>
+&lt;p>无线电的主管部门是&lt;strong>各级无线电管理机构&lt;/strong>。&lt;/p>
+&lt;h2 id="a11-业余电台管理体制和政策">A.1.1 业余电台管理体制和政策
+&lt;/h2>&lt;p>业余无线电管理的最高法律文件是&lt;a class="link" href="http://www.gov.cn/flfg/2012-11/08/content_2260255.htm" target="_blank" rel="noopener"
+>《业余无线电台管理办法》&lt;/a>，其立法机关是大名鼎鼎的&lt;strong>工信部&lt;/strong>（工业和信息化部）。&lt;strong>注意&lt;/strong>：考试的时候看清楚题干中问的是无线电还是业余无线电。&lt;/p>
+&lt;p>注：若无特别说明，引用的法条默认出自《业余无线电台管理办法》。再次强调，我&lt;strong>加粗&lt;/strong>的，都是考试可能考的。&lt;/p>
+&lt;p>第三条 &lt;strong>国家无线电管理机构和省、自治区、直辖市无线电管理机构&lt;/strong>（以下简称&lt;strong>地方无线电管理机构&lt;/strong>）依法对业余无线电台实施监督管理。
+&lt;strong>国家无线电管理机构和地方无线电管理机构&lt;/strong>统称无线电管理机构。&lt;/p>
+&lt;p>考试会问你业余无线电的监管部门，当然你可以说是各级无线电管理机构。题库的答案是&lt;strong>国家无线电管理机构和地方无线电管理机构&lt;/strong>，当然啦，是一个意思。对于一个问题，答案经常会有各种不同的说法，我尽量将题库中的答案选项直接呈现给你，以求混个眼熟，毕竟通过考试是我们很重要的一个目的。考试还会问你地方无线电管理机构指的是什么，显然从上面法条可知是&lt;strong>省、自治区、直辖市无线电管理机构&lt;/strong>。&lt;/p>
+&lt;p>第四条（第三款） 依法设置的业余无线电台受国家法律保护。&lt;/p>
+&lt;h2 id="a12-业余无线电的相关定义">A.1.2 业余无线电的相关定义
+&lt;/h2>&lt;p>我国对无线电管理术语 &lt;strong>“业余业务”、“卫星业余业务”和“业余无线电台”&lt;/strong> 做出具体定义的法规文件是&lt;a class="link" href="http://www.srrc.org.cn/article23480.aspx" target="_blank" rel="noopener"
+>&lt;strong>《中华人民共和国无线电频率划分规定》&lt;/strong>&lt;/a>。&lt;/p>
+&lt;pre>&lt;code>- 业余业务 amateur service：供业余无线电爱好者进行自我训练、相互通信和技术研究的无线电通信业务。业余无线电爱好者系指经正式批准的、对无线电技术有兴趣的人，其兴趣纯系个人爱好而不涉及谋取利润。
 - 卫星业余业务 amateur-satellite service：利用地球卫星上的空间电台开展与业余业务相同目的的无线电通信业务。
 - 业余电台 amateur station：用于业余业务的电台。
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;强调业余无线电爱好者系指&lt;strong&gt;经正式批准（有证）&lt;/strong&gt; 的、对无线电技术有兴趣的人，其兴趣纯系个人爱好而不涉及谋取利润。&lt;/p&gt;
-&lt;h2 id=&#34;a13-无线电管制&#34;&gt;A.1.3 无线电管制
-&lt;/h2&gt;&lt;p&gt;无线电管制是指&lt;strong&gt;在特定时间&lt;/strong&gt;和&lt;strong&gt;特定区域内&lt;/strong&gt;依法采取的对&lt;strong&gt;无线电波的发射、辐射和传播实施的强制性管理&lt;/strong&gt;。管理措施包括：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;限制或者禁止业余无线电台（站）的使用&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;对特定的无线电频率实施技术阻断&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;决定实施无线电管制的机构为&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;在全国范围内或者跨省、自治区、直辖市实施，由国务院和中央军事委员会决定&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;在省、自治区、直辖市范围内实施，由省、自治区、直辖市人民政府和相关军区决定&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;违反无线电管制命令和无线电管制指令的由&lt;strong&gt;国家无线电管理机构或者省、自治区、直辖市无线电管理机构&lt;/strong&gt;；违反治安管理规定者由&lt;strong&gt;公安机关&lt;/strong&gt;处罚。处罚包括（需要记忆）：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;责令改正；拒不改正的，关闭、查封、暂扣或者拆除相关设备；情节严重的，吊销电台执照；违反治安管理规定的，由公安机关处罚&lt;/li&gt;
-&lt;li&gt;警告、查封或者没收设备、没收非法所得；情节严重的，可以并处一千元以上，五千元以下的罚款&lt;/li&gt;
-&lt;li&gt;责令限期改正，可以处警告或者三万元以下的罚款&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;注意：关于处罚的只有上面三个是正确选项。具体的对应关系如下，只为应付考试的话可不用记忆：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;责令改正；拒不改正的，关闭、查封、暂扣或者拆除相关设备；情节严重的，吊销电台执照；违反治安管理规定的，由公安机关处罚
-&lt;ul&gt;
-&lt;li&gt;业余电台违反无线电管制命令和无线电管制指令的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;警告、查封或者没收设备、没收非法所得；情节严重的，可以并处一千元以上，五千元以下的罚款
-&lt;ul&gt;
-&lt;li&gt;对擅自设置、使用业余无线电台的单位或个人&lt;/li&gt;
-&lt;li&gt;业余电台干扰无线电业务的&lt;/li&gt;
-&lt;li&gt;业余电台随意变更核定项目、发送和接收与业余无线电无关的信号的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;责令限期改正，可以处警告或者三万元以下的罚款
-&lt;ul&gt;
-&lt;li&gt;超出核定范围使用频率或者有其他违反频率管理有关规定的行为的&lt;/li&gt;
-&lt;li&gt;对涂改、仿制、伪造、倒卖、出租、出借业余无线电台执照，或者以其他形式非法转让业余无线电台执照的&lt;/li&gt;
-&lt;li&gt;对盗用、出租、出借、转让、私自编制或者违法使用业余无线电台呼号的&lt;/li&gt;
-&lt;li&gt;对以不正当手段取得业余无线电台执照的&lt;/li&gt;
-&lt;li&gt;对向负责监督检查的无线电管理机构隐瞒有关情况、提供虚假材料或者拒绝提供反映其活动情况的真实材料的&lt;/li&gt;
-&lt;li&gt;对违法使用业余无线电台造成严重后果的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;a14-业余电台的分类管理&#34;&gt;A.1.4 业余电台的分类管理
-&lt;/h2&gt;&lt;p&gt;不同类别业余无线电台的主要区别在于允许发射的&lt;strong&gt;频率范围&lt;/strong&gt;和&lt;strong&gt;最大发射功率&lt;/strong&gt;。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;A类业余无线电台允许发射的发射频率为&lt;strong&gt;30-3000MHz&lt;/strong&gt;范围内的各业余业务和卫星业余业务频段。&lt;/li&gt;
-&lt;li&gt;A类业余无线电台允许发射的最大发射功率为不大于&lt;strong&gt;25瓦&lt;/strong&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;业余无线电台&lt;strong&gt;专用无线电发射设备&lt;/strong&gt;的重要特征是&lt;strong&gt;发射频率不得超出业余频段&lt;/strong&gt;。&lt;/p&gt;
-&lt;h2 id=&#34;a15-设置业余电台应具备的条件&#34;&gt;A.1.5 设置业余电台应具备的条件
-&lt;/h2&gt;&lt;p&gt;第六条 申请设置业余无线电台，应当具备下列条件：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;（一）熟悉无线电管理规定；&lt;/li&gt;
-&lt;li&gt;（二）具备国家无线电管理机构规定的操作技术能力；&lt;/li&gt;
-&lt;li&gt;（三）无线电发射设备符合国家相关技术标准；&lt;/li&gt;
-&lt;li&gt;（四）法律、行政法规规定的其他条件。&lt;/li&gt;
-&lt;li&gt;单位申请设置业余无线电台的，其业余无线电台负责人应当具备前款第一项规定的条件，技术负责人应当具备前款第一项和第二项规定的条件。&lt;/li&gt;
-&lt;li&gt;个人申请设置具有发信功能的业余无线电台的，应当年满十八周岁。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;申请设置业余无线电台应当具备的条件有：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;熟悉无线电管理规定&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;具备国家规定的操作技术能力&lt;/strong&gt;&lt;br&gt;
-注意这个能力标准是国家设定的，&lt;strong&gt;不是考试机构设定的&lt;/strong&gt;&lt;br&gt;
-具备能力的标志为：&lt;strong&gt;取得《业余无线电台操作证书》&lt;/strong&gt;，即想要设台，自己得是&lt;strong&gt;业余无线电爱好者（有证）&lt;/strong&gt;，但可以是正在起步的（有证）初学者&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;发射设备符合国家技术标准&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;法律和行政法规规定的其他条件&lt;br&gt;
-其它机构（包括当地无线电管理机构委托的受理机构）不得设置其它条件&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;不需要&lt;/strong&gt;加入指定协会。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;个人申请设置具有发信功能的业余无线电台的年龄条件是&lt;strong&gt;年满十八周岁&lt;/strong&gt;。具备《业余无线电台操作证书》者&lt;strong&gt;操作业余无线电台不受年龄限制&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;这意味着（不满十八周岁的）中小学生可以考取《业余无线电台操作证书》并独立操作具有发信功能业余无线电台，但不能申请设置属于自己的电台，只能使用别人的。&lt;/p&gt;
-&lt;h2 id=&#34;a16-使用业余电台应具备的条件&#34;&gt;A.1.6 使用业余电台应具备的条件
-&lt;/h2&gt;&lt;p&gt;个人申请设置具有发信功能的业余无线电台的年龄条件是&lt;strong&gt;年满十八周岁&lt;/strong&gt;。具备《业余无线电台操作证书》者&lt;strong&gt;操作业余无线电台不受年龄限制&lt;/strong&gt;。熟悉无线电管理规定、具备国家规定的操作技术能力并取得相应操作技术能力证明就可以使用业余无线电台。&lt;/p&gt;
-&lt;h2 id=&#34;a17-业余电台操作证书&#34;&gt;A.1.7 业余电台操作证书
-&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;国家无线电管理机构和地方无线电管理机构（或其委托单位）&lt;/strong&gt; 负责组织A类和B类业余无线电台所需操作技术能力的验证。&lt;/p&gt;
-&lt;p&gt;注意“业余无线电台操作证书”的颁发机构是&lt;strong&gt;中国无线电协会&lt;/strong&gt;，不是中国无线电运动协会，也不是地方无线电协会。&lt;/p&gt;
-&lt;h2 id=&#34;a18-设置业余电台的申请流程&#34;&gt;A.1.8 设置业余电台的申请流程
-&lt;/h2&gt;&lt;p&gt;第四条（第一款） 设置业余无线电台，应当&lt;strong&gt;按照本办法的规定办理审批手续，取得业余无线电台执照&lt;/strong&gt;。&lt;br&gt;
-第四条规定了设置业余电台的&lt;strong&gt;必要步骤&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;按照《业余电台管理办法》规定，申请设置使用配备有多台业余无线电发射设备的业余无线电台，应该&lt;strong&gt;视为一个业余电台，指配一个电台呼号，但所有设备均应经过核定并将参数载入电台执照&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;个人申请设置业余无线电台应当提交的书面材料为：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;两种表格&lt;/strong&gt;（具体的表格名称可以不记）
-&lt;ul&gt;
-&lt;li&gt;（一）《业余无线电台设置（变更）申请表》；&lt;/li&gt;
-&lt;li&gt;（二）《业余无线电台技术资料申报表》；&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;身份证和操作证书的原件、复印件&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;申请设置&lt;strong&gt;中继台、信标台、空间台和技术参数需要超出管理办法规定的特殊业余电台&lt;/strong&gt;时，在《业余无线电台设置（变更）申请表》 的“台站种类”应选择 &lt;strong&gt;“特殊”&lt;/strong&gt; 类。申请设置此类特殊业余电台&lt;strong&gt;由地方无线电管理机构受理和初审后交国家无线电管理机构审批&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;负责受理设置业余无线电台&lt;strong&gt;申请&lt;/strong&gt;的机构为&lt;strong&gt;设台地地方无线电管理机构或其正式委托的代理受理服务机构&lt;/strong&gt;。&lt;strong&gt;审批&lt;/strong&gt;机构为&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;设置在省、自治区、直辖市范围内通信的业余无线电台，&lt;strong&gt;审批&lt;/strong&gt;机构为&lt;strong&gt;设台地的地方无线电管理机构&lt;/strong&gt;；&lt;/li&gt;
-&lt;li&gt;设置通信范围涉及两个以上的省、自治区、直辖市或者涉及境外的一般业余无线电台，&lt;strong&gt;审批&lt;/strong&gt;机构为&lt;strong&gt;国家无线电管理机构或其委托的设台地的地方无线电管理机构&lt;/strong&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;a19-业余电台执照核定项目的变更业余电台的注销&#34;&gt;A.1.9 业余电台执照核定项目的变更、业余电台的注销
-&lt;/h2&gt;&lt;p&gt;按照在省、自治区、直辖市范围内通信所申请设置的业余无线电台，如想要将通信范围扩大至涉及两个以上的省、自治区、直辖市或者涉及境外，或者要到设台地以外进行异地发射操作，须办理下列手续：&lt;strong&gt;事先向核发执照的无线电管理机构申请办理变更手续，按相关流程经国家无线电管理机构或其委托的设台地的地方无线电管理机构批准后，换发业余无线电台执照&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;业余无线电台执照有效期届满后需要继续使用的，应当在&lt;strong&gt;有效期届满一个月前&lt;/strong&gt;内向核发执照的无线电管理机构申请办理延续手续。&lt;strong&gt;注意，上面这个说法是不对的&lt;/strong&gt;，只是题库里是这么写的，所以为了考试的目的我记在这里。这个问题题库里还有另一个选项：有效期届满一个月之内，我看不出来这两个说法有什么不同。这里我列出法律原文《业余无线电台管理办法》&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;第十三条　业余无线电台执照由国家无线电管理机构统一印制。
+&lt;/code>&lt;/pre>
+&lt;p>强调业余无线电爱好者系指&lt;strong>经正式批准（有证）&lt;/strong> 的、对无线电技术有兴趣的人，其兴趣纯系个人爱好而不涉及谋取利润。&lt;/p>
+&lt;h2 id="a13-无线电管制">A.1.3 无线电管制
+&lt;/h2>&lt;p>无线电管制是指&lt;strong>在特定时间&lt;/strong>和&lt;strong>特定区域内&lt;/strong>依法采取的对&lt;strong>无线电波的发射、辐射和传播实施的强制性管理&lt;/strong>。管理措施包括：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>限制或者禁止业余无线电台（站）的使用&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>对特定的无线电频率实施技术阻断&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>决定实施无线电管制的机构为&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>在全国范围内或者跨省、自治区、直辖市实施，由国务院和中央军事委员会决定&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>在省、自治区、直辖市范围内实施，由省、自治区、直辖市人民政府和相关军区决定&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>违反无线电管制命令和无线电管制指令的由&lt;strong>国家无线电管理机构或者省、自治区、直辖市无线电管理机构&lt;/strong>；违反治安管理规定者由&lt;strong>公安机关&lt;/strong>处罚。处罚包括（需要记忆）：&lt;/p>
+&lt;ul>
+&lt;li>责令改正；拒不改正的，关闭、查封、暂扣或者拆除相关设备；情节严重的，吊销电台执照；违反治安管理规定的，由公安机关处罚&lt;/li>
+&lt;li>警告、查封或者没收设备、没收非法所得；情节严重的，可以并处一千元以上，五千元以下的罚款&lt;/li>
+&lt;li>责令限期改正，可以处警告或者三万元以下的罚款&lt;/li>
+&lt;/ul>
+&lt;p>注意：关于处罚的只有上面三个是正确选项。具体的对应关系如下，只为应付考试的话可不用记忆：&lt;/p>
+&lt;ul>
+&lt;li>责令改正；拒不改正的，关闭、查封、暂扣或者拆除相关设备；情节严重的，吊销电台执照；违反治安管理规定的，由公安机关处罚
+&lt;ul>
+&lt;li>业余电台违反无线电管制命令和无线电管制指令的&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>警告、查封或者没收设备、没收非法所得；情节严重的，可以并处一千元以上，五千元以下的罚款
+&lt;ul>
+&lt;li>对擅自设置、使用业余无线电台的单位或个人&lt;/li>
+&lt;li>业余电台干扰无线电业务的&lt;/li>
+&lt;li>业余电台随意变更核定项目、发送和接收与业余无线电无关的信号的&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>责令限期改正，可以处警告或者三万元以下的罚款
+&lt;ul>
+&lt;li>超出核定范围使用频率或者有其他违反频率管理有关规定的行为的&lt;/li>
+&lt;li>对涂改、仿制、伪造、倒卖、出租、出借业余无线电台执照，或者以其他形式非法转让业余无线电台执照的&lt;/li>
+&lt;li>对盗用、出租、出借、转让、私自编制或者违法使用业余无线电台呼号的&lt;/li>
+&lt;li>对以不正当手段取得业余无线电台执照的&lt;/li>
+&lt;li>对向负责监督检查的无线电管理机构隐瞒有关情况、提供虚假材料或者拒绝提供反映其活动情况的真实材料的&lt;/li>
+&lt;li>对违法使用业余无线电台造成严重后果的&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="a14-业余电台的分类管理">A.1.4 业余电台的分类管理
+&lt;/h2>&lt;p>不同类别业余无线电台的主要区别在于允许发射的&lt;strong>频率范围&lt;/strong>和&lt;strong>最大发射功率&lt;/strong>。&lt;/p>
+&lt;ul>
+&lt;li>A类业余无线电台允许发射的发射频率为&lt;strong>30-3000MHz&lt;/strong>范围内的各业余业务和卫星业余业务频段。&lt;/li>
+&lt;li>A类业余无线电台允许发射的最大发射功率为不大于&lt;strong>25瓦&lt;/strong>。&lt;/li>
+&lt;/ul>
+&lt;p>业余无线电台&lt;strong>专用无线电发射设备&lt;/strong>的重要特征是&lt;strong>发射频率不得超出业余频段&lt;/strong>。&lt;/p>
+&lt;h2 id="a15-设置业余电台应具备的条件">A.1.5 设置业余电台应具备的条件
+&lt;/h2>&lt;p>第六条 申请设置业余无线电台，应当具备下列条件：&lt;/p>
+&lt;ul>
+&lt;li>（一）熟悉无线电管理规定；&lt;/li>
+&lt;li>（二）具备国家无线电管理机构规定的操作技术能力；&lt;/li>
+&lt;li>（三）无线电发射设备符合国家相关技术标准；&lt;/li>
+&lt;li>（四）法律、行政法规规定的其他条件。&lt;/li>
+&lt;li>单位申请设置业余无线电台的，其业余无线电台负责人应当具备前款第一项规定的条件，技术负责人应当具备前款第一项和第二项规定的条件。&lt;/li>
+&lt;li>个人申请设置具有发信功能的业余无线电台的，应当年满十八周岁。&lt;/li>
+&lt;/ul>
+&lt;p>申请设置业余无线电台应当具备的条件有：&lt;/p>
+&lt;ul>
+&lt;li>熟悉无线电管理规定&lt;/li>
+&lt;li>&lt;strong>具备国家规定的操作技术能力&lt;/strong>&lt;br>
+注意这个能力标准是国家设定的，&lt;strong>不是考试机构设定的&lt;/strong>&lt;br>
+具备能力的标志为：&lt;strong>取得《业余无线电台操作证书》&lt;/strong>，即想要设台，自己得是&lt;strong>业余无线电爱好者（有证）&lt;/strong>，但可以是正在起步的（有证）初学者&lt;/li>
+&lt;li>&lt;strong>发射设备符合国家技术标准&lt;/strong>&lt;/li>
+&lt;li>法律和行政法规规定的其他条件&lt;br>
+其它机构（包括当地无线电管理机构委托的受理机构）不得设置其它条件&lt;/li>
+&lt;li>&lt;strong>不需要&lt;/strong>加入指定协会。&lt;/li>
+&lt;/ul>
+&lt;p>个人申请设置具有发信功能的业余无线电台的年龄条件是&lt;strong>年满十八周岁&lt;/strong>。具备《业余无线电台操作证书》者&lt;strong>操作业余无线电台不受年龄限制&lt;/strong>。&lt;/p>
+&lt;p>这意味着（不满十八周岁的）中小学生可以考取《业余无线电台操作证书》并独立操作具有发信功能业余无线电台，但不能申请设置属于自己的电台，只能使用别人的。&lt;/p>
+&lt;h2 id="a16-使用业余电台应具备的条件">A.1.6 使用业余电台应具备的条件
+&lt;/h2>&lt;p>个人申请设置具有发信功能的业余无线电台的年龄条件是&lt;strong>年满十八周岁&lt;/strong>。具备《业余无线电台操作证书》者&lt;strong>操作业余无线电台不受年龄限制&lt;/strong>。熟悉无线电管理规定、具备国家规定的操作技术能力并取得相应操作技术能力证明就可以使用业余无线电台。&lt;/p>
+&lt;h2 id="a17-业余电台操作证书">A.1.7 业余电台操作证书
+&lt;/h2>&lt;p>&lt;strong>国家无线电管理机构和地方无线电管理机构（或其委托单位）&lt;/strong> 负责组织A类和B类业余无线电台所需操作技术能力的验证。&lt;/p>
+&lt;p>注意“业余无线电台操作证书”的颁发机构是&lt;strong>中国无线电协会&lt;/strong>，不是中国无线电运动协会，也不是地方无线电协会。&lt;/p>
+&lt;h2 id="a18-设置业余电台的申请流程">A.1.8 设置业余电台的申请流程
+&lt;/h2>&lt;p>第四条（第一款） 设置业余无线电台，应当&lt;strong>按照本办法的规定办理审批手续，取得业余无线电台执照&lt;/strong>。&lt;br>
+第四条规定了设置业余电台的&lt;strong>必要步骤&lt;/strong>。&lt;/p>
+&lt;p>按照《业余电台管理办法》规定，申请设置使用配备有多台业余无线电发射设备的业余无线电台，应该&lt;strong>视为一个业余电台，指配一个电台呼号，但所有设备均应经过核定并将参数载入电台执照&lt;/strong>。&lt;/p>
+&lt;p>个人申请设置业余无线电台应当提交的书面材料为：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>两种表格&lt;/strong>（具体的表格名称可以不记）
+&lt;ul>
+&lt;li>（一）《业余无线电台设置（变更）申请表》；&lt;/li>
+&lt;li>（二）《业余无线电台技术资料申报表》；&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>身份证和操作证书的原件、复印件&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>申请设置&lt;strong>中继台、信标台、空间台和技术参数需要超出管理办法规定的特殊业余电台&lt;/strong>时，在《业余无线电台设置（变更）申请表》 的“台站种类”应选择 &lt;strong>“特殊”&lt;/strong> 类。申请设置此类特殊业余电台&lt;strong>由地方无线电管理机构受理和初审后交国家无线电管理机构审批&lt;/strong>。&lt;/p>
+&lt;p>负责受理设置业余无线电台&lt;strong>申请&lt;/strong>的机构为&lt;strong>设台地地方无线电管理机构或其正式委托的代理受理服务机构&lt;/strong>。&lt;strong>审批&lt;/strong>机构为&lt;/p>
+&lt;ul>
+&lt;li>设置在省、自治区、直辖市范围内通信的业余无线电台，&lt;strong>审批&lt;/strong>机构为&lt;strong>设台地的地方无线电管理机构&lt;/strong>；&lt;/li>
+&lt;li>设置通信范围涉及两个以上的省、自治区、直辖市或者涉及境外的一般业余无线电台，&lt;strong>审批&lt;/strong>机构为&lt;strong>国家无线电管理机构或其委托的设台地的地方无线电管理机构&lt;/strong>。&lt;/li>
+&lt;/ul>
+&lt;h2 id="a19-业余电台执照核定项目的变更业余电台的注销">A.1.9 业余电台执照核定项目的变更、业余电台的注销
+&lt;/h2>&lt;p>按照在省、自治区、直辖市范围内通信所申请设置的业余无线电台，如想要将通信范围扩大至涉及两个以上的省、自治区、直辖市或者涉及境外，或者要到设台地以外进行异地发射操作，须办理下列手续：&lt;strong>事先向核发执照的无线电管理机构申请办理变更手续，按相关流程经国家无线电管理机构或其委托的设台地的地方无线电管理机构批准后，换发业余无线电台执照&lt;/strong>。&lt;/p>
+&lt;p>业余无线电台执照有效期届满后需要继续使用的，应当在&lt;strong>有效期届满一个月前&lt;/strong>内向核发执照的无线电管理机构申请办理延续手续。&lt;strong>注意，上面这个说法是不对的&lt;/strong>，只是题库里是这么写的，所以为了考试的目的我记在这里。这个问题题库里还有另一个选项：有效期届满一个月之内，我看不出来这两个说法有什么不同。这里我列出法律原文《业余无线电台管理办法》&lt;/p>
+&lt;pre>&lt;code>第十三条　业余无线电台执照由国家无线电管理机构统一印制。
 业余无线电台执照的有效期不超过五年。业余无线电台执照有效期届满后需要继续使用的，应当在有效期届满前三十日以前向核发执照的无线电管理机构申请办理延续手续。
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;从这里可以看到有两个问题：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;一个是&lt;strong&gt;届满&lt;/strong&gt;，一个是&lt;strong&gt;届满前&lt;/strong&gt;，意义完全不同&lt;/li&gt;
-&lt;li&gt;三十日和一个月，算是不严谨吧&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;所以，比如你的执照是五月五号到期，那你应该在四月五号前办理延续手续。&lt;/p&gt;
-&lt;p&gt;因改进或调整业余发射设备使业余无线电台的技术参数超出其业余无线电台执照所核定的范围时应&lt;strong&gt;及时向核发执照的无线电管理机构申请办理变更手续，换发业余无线电台执照&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;终止使用业余无线电台的，应当向&lt;strong&gt;核发业余无线电台执照的无线电管理机构&lt;/strong&gt;申请注销执照。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;经&lt;strong&gt;地方无线电管理机构&lt;/strong&gt;批准设置的业余无线电台，设台地迁入其他省、自治区或者直辖市时，应当&lt;strong&gt;先到原核发执照的无线电管理机构办理申请注销原业余无线电台，再到迁入地的地方无线电管理机构办理申请设置业余无线电台的手续&lt;/strong&gt;。&lt;/li&gt;
-&lt;li&gt;经&lt;strong&gt;国家无线电管理机构&lt;/strong&gt;批准设置的业余无线电台，设台地迁入其他省、自治区或者直辖市时，应当&lt;strong&gt;先到原核发执照的无线电管理机构申请办理注销手续，缴回原电台执照，领取国家无线电管理机构已批准设台的证明，凭证明到迁入地的地方无线电管理机构完成申请变更手续，领取新电台执照&lt;/strong&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;a110-关于业余电台发射设备的规定&#34;&gt;A.1.10 关于业余电台发射设备的规定
-&lt;/h2&gt;&lt;p&gt;业余无线电发射设备的&lt;strong&gt;频率容限&lt;/strong&gt;和&lt;strong&gt;杂散域发射功率/杂散发射最大允许功率电平&lt;/strong&gt;必须符合国家的相关规定。具体要求见《中华人民共和国无线电频率划分规定》的附录1和2。一般用&lt;strong&gt;百万分之几或者赫兹&lt;/strong&gt;表示，注意是百万。杂散域发射功率通常使用下述单位表示：&lt;strong&gt;绝对功率dBm、低于载波发射功率的分贝值dBc、低于PEP发射功率的相对值dB&lt;/strong&gt;。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;分贝毫瓦 dBm&lt;/strong&gt; （decibel relative to one milliwatt）是以一毫瓦为基准的功率绝对值&lt;br&gt;
-如果功率为P毫瓦（mW），转换成dBm为：&lt;br&gt;
-$$x=10\log_{{10}}(P/(1\ {\mathrm {mW}}))$$&lt;br&gt;
+&lt;/code>&lt;/pre>
+&lt;p>从这里可以看到有两个问题：&lt;/p>
+&lt;ul>
+&lt;li>一个是&lt;strong>届满&lt;/strong>，一个是&lt;strong>届满前&lt;/strong>，意义完全不同&lt;/li>
+&lt;li>三十日和一个月，算是不严谨吧&lt;/li>
+&lt;/ul>
+&lt;p>所以，比如你的执照是五月五号到期，那你应该在四月五号前办理延续手续。&lt;/p>
+&lt;p>因改进或调整业余发射设备使业余无线电台的技术参数超出其业余无线电台执照所核定的范围时应&lt;strong>及时向核发执照的无线电管理机构申请办理变更手续，换发业余无线电台执照&lt;/strong>。&lt;/p>
+&lt;p>终止使用业余无线电台的，应当向&lt;strong>核发业余无线电台执照的无线电管理机构&lt;/strong>申请注销执照。&lt;/p>
+&lt;ul>
+&lt;li>经&lt;strong>地方无线电管理机构&lt;/strong>批准设置的业余无线电台，设台地迁入其他省、自治区或者直辖市时，应当&lt;strong>先到原核发执照的无线电管理机构办理申请注销原业余无线电台，再到迁入地的地方无线电管理机构办理申请设置业余无线电台的手续&lt;/strong>。&lt;/li>
+&lt;li>经&lt;strong>国家无线电管理机构&lt;/strong>批准设置的业余无线电台，设台地迁入其他省、自治区或者直辖市时，应当&lt;strong>先到原核发执照的无线电管理机构申请办理注销手续，缴回原电台执照，领取国家无线电管理机构已批准设台的证明，凭证明到迁入地的地方无线电管理机构完成申请变更手续，领取新电台执照&lt;/strong>。&lt;/li>
+&lt;/ul>
+&lt;h2 id="a110-关于业余电台发射设备的规定">A.1.10 关于业余电台发射设备的规定
+&lt;/h2>&lt;p>业余无线电发射设备的&lt;strong>频率容限&lt;/strong>和&lt;strong>杂散域发射功率/杂散发射最大允许功率电平&lt;/strong>必须符合国家的相关规定。具体要求见《中华人民共和国无线电频率划分规定》的附录1和2。一般用&lt;strong>百万分之几或者赫兹&lt;/strong>表示，注意是百万。杂散域发射功率通常使用下述单位表示：&lt;strong>绝对功率dBm、低于载波发射功率的分贝值dBc、低于PEP发射功率的相对值dB&lt;/strong>。&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>分贝毫瓦 dBm&lt;/strong> （decibel relative to one milliwatt）是以一毫瓦为基准的功率绝对值&lt;br>
+如果功率为P毫瓦（mW），转换成dBm为：&lt;br>
+$$x=10\log_{{10}}(P/(1\ {\mathrm {mW}}))$$&lt;br>
 反过来，如果功率是x dBm，则
-$$P=(1\ {\mathrm  {mW}})10^{{(x/10)}}\,$$&lt;/li&gt;
-&lt;li&gt;dBc和dBm是类似的，只不过基准不是1 mW，而是载波（Carrier）功率，所以是一个相对值单位。&lt;/li&gt;
-&lt;li&gt;“PEP”是指供给天线传输线的峰包功率，使用单位：W。（《中华人民共和国无线电频率划分规定》，&lt;a class=&#34;link&#34; href=&#34;https://www.itu.int/dms_pubrec/itu-r/rec/sm/R-REC-SM.329-11-201101-S!!PDF-C.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;《杂散域的无用发射》&lt;/a&gt;）。那低于PEP发射功率的相对值dB就很好理解了。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;记得&lt;strong&gt;分贝毫瓦（dBm）&lt;strong&gt;依次类推还有&lt;/strong&gt;dBμ&lt;/strong&gt;，考试是会考的，当然不考公式，会给你一个值，让你转换另一个值。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;0.1 mW = -10 dBm&lt;/li&gt;
-&lt;li&gt;1 mW = 0 dBm&lt;/li&gt;
-&lt;li&gt;10 mW = 10 dBm&lt;/li&gt;
-&lt;li&gt;100 mW = 20 dBm&lt;/li&gt;
-&lt;li&gt;1W = 30 dBm&lt;/li&gt;
-&lt;li&gt;10W = 40 dBm&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;灵活运用上面的公式。比如，问你5W是多少，显然应该是30到40之间的一个数，就选那个就行。&lt;/p&gt;
-&lt;p&gt;对于dBμ，就是以1 μW为标准的功率绝对值。如果你搞不懂上面的公式，就记住下面一点：
-&lt;/p&gt;
-$$x\ dBm = (x+30)\ dBμ$$&lt;p&gt;
+$$P=(1\ {\mathrm {mW}})10^{{(x/10)}}\,$$&lt;/li>
+&lt;li>dBc和dBm是类似的，只不过基准不是1 mW，而是载波（Carrier）功率，所以是一个相对值单位。&lt;/li>
+&lt;li>“PEP”是指供给天线传输线的峰包功率，使用单位：W。（《中华人民共和国无线电频率划分规定》，&lt;a class="link" href="https://www.itu.int/dms_pubrec/itu-r/rec/sm/R-REC-SM.329-11-201101-S!!PDF-C.pdf" target="_blank" rel="noopener"
+>《杂散域的无用发射》&lt;/a>）。那低于PEP发射功率的相对值dB就很好理解了。&lt;/li>
+&lt;/ul>
+&lt;p>记得&lt;strong>分贝毫瓦（dBm）&lt;strong>依次类推还有&lt;/strong>dBμ&lt;/strong>，考试是会考的，当然不考公式，会给你一个值，让你转换另一个值。&lt;/p>
+&lt;ul>
+&lt;li>0.1 mW = -10 dBm&lt;/li>
+&lt;li>1 mW = 0 dBm&lt;/li>
+&lt;li>10 mW = 10 dBm&lt;/li>
+&lt;li>100 mW = 20 dBm&lt;/li>
+&lt;li>1W = 30 dBm&lt;/li>
+&lt;li>10W = 40 dBm&lt;/li>
+&lt;/ul>
+&lt;p>灵活运用上面的公式。比如，问你5W是多少，显然应该是30到40之间的一个数，就选那个就行。&lt;/p>
+&lt;p>对于dBμ，就是以1 μW为标准的功率绝对值。如果你搞不懂上面的公式，就记住下面一点：
+&lt;/p>
+$$x\ dBm = (x+30)\ dBμ$$&lt;p>
 比如
-&lt;/p&gt;
-$$10\ dBm = 40\ dBμ$$&lt;p&gt;
-然后看到dBμ，就先转换为dBm在进行计算。&lt;/p&gt;
-&lt;p&gt;比如，0.25W，换算成dBm，应该是20到30间的一个数。那换算成dBμ，就加上30，应该是50到60间的一个数。&lt;/p&gt;
-&lt;p&gt;有时候有两个选项符合要求，需要计算。如果你不想计算，记得&lt;strong&gt;不要选择&lt;/strong&gt;结尾是5的那个选项，什么25、35、45都不要选，剩下的那个就是正确答案。&lt;/p&gt;
-&lt;p&gt;依次类推还有&lt;strong&gt;dBW&lt;/strong&gt;，如果你不想计算，记得一点，题库里的dBW都不是正确答案。
-&lt;/p&gt;
-$$x\ dBm = (x-30)\ dBW$$&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;指配频率 assigned frequency&lt;br&gt;
-指配给一个电台的频段的中心频率。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;频率容限 frequency tolerance&lt;br&gt;
-发射所占频段的中心频率偏离指配频率，或发射的特征频率偏离参考频率的最大容许偏差。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;杂散发射 spurious emission&lt;br&gt;
-必要带宽之外的一个或多个频率的发射，其发射电平可降低而不致影响相应信息的传输。杂散发射包括谐波发射、寄生发射、互调产物及变频产物，但带外发射除外。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;带外发射 out-of-band emission&lt;br&gt;
-由于调制过程而产生的、刚超出必要带宽的一个或多个频率的发射，但杂散发射除外。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;无用发射 unwanted emissions&lt;br&gt;
-包括杂散发射和带外发射。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;（发射的）带外域 out-of-band domain（of an emission）&lt;br&gt;
-是指刚超出必要带宽而未进入杂散域的频率范围，在此频率范围内带外发射为其主要发射产物。基于产生的源而定义的带外发射，主要产生在此带外域中，也会在杂散域中延伸一小部分。同样地，主要产生在杂散域中的杂散发射也可能在带外域中产生。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;（发射的）杂散域 spurious domain（of an emission）&lt;br&gt;
-带外域以外的频率范围，在此频率范围内杂散发射为其主要发射产物。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;杂散域发射功率通常用发射机连接天馈线的输出端的杂散发射频率的峰包功率或平均功率表示，其参考测量带宽主要取决于发射机的无线业务种类。杂散域发射功率也可以用电场强度或地球表面功率通量密度（pfd）等效表示。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed73d955bc.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed73d955bc.png&#34; alt=&#34;各种发射&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed73d955bc.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;各种发射&#34;
-	
-	
-&gt;
-图片来自聂杏春的&lt;a class=&#34;link&#34; href=&#34;http://www.cesi.cn/uploads/soft/120830/25-120S0092528.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;无线电设备杂散发射技术要求和测量方法&lt;/a&gt;，版权归原作者所有。&lt;/p&gt;
-&lt;p&gt;比如一台发射机，工作频率为145.000MHz，但在435.000MHz的频率上也有发射，显然从上图可知属于杂散发射。&lt;/p&gt;
-&lt;p&gt;业余无线电台使用的发射设备必须符合下列条件&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;商品设备应当具备《无线电发射设备型号核准证》&lt;/strong&gt;&lt;br&gt;
-型号核准的法律依据为 &lt;strong&gt;《无线电频率划分规定》中有关无线电发射设备技术指标的规定&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;自制、改装、拼装设备应通过国家相关技术标准的检测&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;业余无线电台专用无线电发射设备的发射频率必须满足&lt;strong&gt;发射频率不能超越业余业务或者卫星业余业务频段&lt;/strong&gt;，不需要包含所有业余业务或者卫星业余业务频段。&lt;/p&gt;
-&lt;p&gt;所以总结一下对发射设备的要求：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;频率容限不超过限值&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;杂散辐射不超过限值&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;发射频率不超出国家规定的业余频率&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;a111-无线电频率的管理&#34;&gt;A.1.11 无线电频率的管理
-&lt;/h2&gt;&lt;p&gt;A类业余无线电台允许发射的发射频率为&lt;strong&gt;30-3000MHz&lt;/strong&gt;范围内的各业余业务和卫星业余业务频段。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;HF（高频） &lt;strong&gt;3-30&lt;/strong&gt;MHz&lt;/li&gt;
-&lt;li&gt;VHF（甚高频） &lt;strong&gt;30-300&lt;/strong&gt;MHz&lt;/li&gt;
-&lt;li&gt;UHF（特高频） &lt;strong&gt;300-3000&lt;/strong&gt;MHz
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;家用微波炉&lt;/strong&gt;一般工作在这个频带&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;《中华人民共和国无线电频率划分规定》&lt;/strong&gt; 规定了业余无线电台使用的频率。&lt;a class=&#34;link&#34; href=&#34;http://www.npc.gov.cn/npc/c30834/202006/75ba6483b8344591abd07917e1d25cc8.shtml&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;《中华人民共和国民法典》&lt;/a&gt;将于2021年正式生效，《物权法》将同时废止。&lt;strong&gt;《中华人民共和国民法典》&lt;/strong&gt; 第二百五十二条：无线电频谱资源属于国家所有。&lt;/p&gt;
-&lt;p&gt;
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed763aa8b6.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed763aa8b6.png&#34; alt=&#34;中国无线电协会业余无线电操作证书背面&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed763aa8b6.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;中国无线电协会业余无线电操作证书背面&#34;
-	
-	
-&gt;
-注意上表中的单位。&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;#Mark&#34; &gt;//&lt;/a&gt;: # Mark&lt;/p&gt;
-&lt;p&gt;专用的频段（需要记忆），即上表粉色 Mark&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;7MHz&lt;/li&gt;
-&lt;li&gt;14MHz&lt;/li&gt;
-&lt;li&gt;21MHz&lt;/li&gt;
-&lt;li&gt;28MHz&lt;/li&gt;
-&lt;li&gt;47GHz （这个上表中没有）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;我国分配给业余业务和卫星业余业务与其他业务共用、并且业余业务和卫星业余业务作为&lt;strong&gt;主要业务&lt;/strong&gt;的频段（上表黄色）有（考试只要记得以下VHF和UHF的频段，实际上只有VHF频段）：Mark&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;50MHz，6米业余波段，50-54MHz&lt;/li&gt;
-&lt;li&gt;144MHz，2米业余波段，下面几个细节也要记得哟
-&lt;ul&gt;
-&lt;li&gt;144-146MHz为唯一主要业务&lt;/li&gt;
-&lt;li&gt;146-148MHz为与其他业务共同作为主要业务&lt;/li&gt;
-&lt;li&gt;电台在144MHz频段进行本地联络时应避免占用144-144.035MHz和145.8-146MHz&lt;/li&gt;
-&lt;li&gt;145.8MHz至146MHz业余频段留给业余卫星通信使用，话音及其他通信方式不应占用&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;144-144.035MHz频段我没有找到相关法律法规的明确规定。根据这份&lt;a class=&#34;link&#34; href=&#34;https://www.qsl.net/yu1bbv/ra_medija/ra_pravila/Band_plan.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;BAND PLAN&lt;/a&gt;，这个频段被用于月球面反射通信（EME，Earth–Moon–Earth communication）。&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;#Mark&#34; &gt;//&lt;/a&gt;: # Mark TODO&lt;/p&gt;
-&lt;p&gt;分配给业余业务和卫星业余业务与其他业务共用、并且业余业务和卫星业余业务作为&lt;strong&gt;唯一主要业务&lt;/strong&gt;的频段的个数为&lt;strong&gt;3个&lt;/strong&gt;。在3GHz以下的该类频段为&lt;strong&gt;144-146&lt;/strong&gt;MHz。&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;#Mark&#34; &gt;//&lt;/a&gt;: # Mark TODO&lt;/p&gt;
-&lt;p&gt;我国分配给业余业务和卫星业余业务与其他业务共用、并且业余业务和卫星业余业务作为&lt;strong&gt;次要业务&lt;/strong&gt;的1200MHz以下频段有（需要记忆），上表绿色&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;135.7kHz（这个上表中没有）&lt;/li&gt;
-&lt;li&gt;10.1MHz&lt;/li&gt;
-&lt;li&gt;430MHz，0.7米业余波段，430-440MHz，次要业务
-&lt;ul&gt;
-&lt;li&gt;这个频段中我国分配的主要业务是“无线电定位和航空无线电导航”。&lt;/li&gt;
-&lt;li&gt;在430MHz频段进行本地联络时应避免占用431.9-432.240MHz和435-438MHz&lt;/li&gt;
-&lt;li&gt;435MHz至438MHz业余频段留给业余卫星通信使用，话音及其他通信方式不应占用&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;431.9-432.240MHz频段，根据这份&lt;a class=&#34;link&#34; href=&#34;https://web.archive.org/web/20210427140500/https://s2p.studylib.net/store/data/018368280.pdf?k=EwAAAXkTo224AAACWCQJih6PEtzw7KzTCM07rqeGteJzEKPp9zsApEPf53ER&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;India National Spectrum Plan (INSP) for Amateur Radio Service&lt;/a&gt;，也是用于EME通信。&lt;/p&gt;
-&lt;p&gt;业余无线电台在业余业务、卫星业余业务作为次要业务使用的频率或者与其他主要业务共同使用的频率上发射操作时，应当&lt;strong&gt;遵守无线电管理机构对该频率的使用规定&lt;/strong&gt;。&lt;strong&gt;业余无线电台在无线电管理机构核准其使用的频段内，享有平等的频率使用权&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;划分、分配、指配&lt;/strong&gt;，请熟记下列定义&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;（频段的）划分：allocation（of a frequency band）&lt;br&gt;
-由国家将某个特定的频带列入频率划分表，规定该频带可在指定的条件下供业余业余业务或者卫星业余业务使用&lt;/li&gt;
-&lt;li&gt;（无线电频率或无线电频道的）分配：allotment（of a radio frequency or radio frequency channel）&lt;br&gt;
-将无线电频率或频道规定由一个或多个部门，在指定的区域内供地面或空间无线电通信业务在指定条件下使用&lt;/li&gt;
-&lt;li&gt;（无线电频率或无线电频道的）指配：assignment（of a radio frequency or radio frequency channel）&lt;br&gt;
-将无线电频率或频道批准给具体的业余无线电台在规定条件下使用&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;上面几个概念有点绕，准确注意对象可帮助记忆&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;划分业务（频率）&lt;/li&gt;
-&lt;li&gt;分配（频率）给地区、国家或部门&lt;/li&gt;
-&lt;li&gt;指配（频率）给电台&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;在频率划分表中，一个频带被标明划分给多种业务时，这些业务被分为&lt;strong&gt;主要业务&lt;/strong&gt;和&lt;strong&gt;次要业务&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;《中华人民共和国无线电频率划分规定》3.2.1（3）规定：（下面三条需要记忆）
-次要业务台站&lt;br&gt;
-a) 不得对业经指配或将来可能指配频率的主要业务电台产生有害干扰；&lt;br&gt;
-b) 不得对来自业经指配或将来可能指配频率的主要业务电台的有害干扰提出保护要求；&lt;br&gt;
-c) 可要求保护不受来自将来可能指配频率的同一业务或其他次要业务电台的有害干扰。todo typo&lt;/p&gt;
-&lt;h2 id=&#34;a112-业余电台呼号的管理&#34;&gt;A.1.12 业余电台呼号的管理
-&lt;/h2&gt;&lt;h3 id=&#34;a1121业余电台呼号的分配和指配&#34;&gt;A.1.12.1业余电台呼号的分配和指配
-&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;无线电管理机构核发业余无线电台执照时，同时指配业余无线电台呼号&lt;/strong&gt;。如业余无线电爱好者对业已指配给自己的电台呼号不满意，&lt;strong&gt;不可以&lt;/strong&gt;申请另行指配业余无线电台呼号。核发业余无线电台执照的无线电管理机构已经为申请人指配业余无线电台呼号的，不另行指配其他业余无线电台呼号。&lt;/p&gt;
-&lt;p&gt;各地业余无线电台呼号前缀字母和后缀字符的可用范围&lt;strong&gt;由国家无线电管理机构编制和分配&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;业余无线电爱好者&lt;strong&gt;不可以&lt;/strong&gt;要求设台地所在地方无线电管理机构给予指配超出业已分配给该地方的前缀字母和后缀字符可用范围的业余无线电台呼号&lt;/p&gt;
-&lt;p&gt;设台地迁入其他省、自治区或者直辖市时，&lt;strong&gt;设台人可从下面方法中二选一&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;方法一，注销原电台呼号，指配迁入地的新电台呼号&lt;/li&gt;
-&lt;li&gt;方法二，申请在迁入地继续指配原来的电台呼号&lt;br&gt;
-&lt;strong&gt;先到原核发执照的无线电管理机构申请办理注销手续，缴回原电台执照，取得由迁入地指配原业余无线电台呼号的书面同意，再到迁入地的地方无线电管理机构办理相应的手续、重新指配原电台呼号，领取新的电台执照&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;a1122-业余电台呼号的使用规则&#34;&gt;A.1.12.2 业余电台呼号的使用规则
-&lt;/h3&gt;&lt;p&gt;《业余无线电台管理办法》规定业余无线电台按以下办法（需要记忆）设置、正确使用业余无线电台呼号&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;业余无线电台应当在每次通信建立及结束时，主动报出本台呼号&lt;/li&gt;
-&lt;li&gt;在发射过程中至少每十分钟报出本台呼号一次&lt;/li&gt;
-&lt;li&gt;对于通信对方，也应使用对方电台的呼号加以标识&lt;/li&gt;
-&lt;li&gt;这里呼号指完整的电台呼号，如在设台地以外的地点进行异地发射操作，还应在前面加上字母B、操作地分区号和符号“/”。 在实际通信中，&lt;strong&gt;不可以&lt;/strong&gt;把本台呼号的地区号码加后缀视作《业余电台管理办法》所说的“本台呼号”。TODO 分区&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;业余无线电台分区表（考试应该不考）&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;第1区：北京&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;第2区：黑龙江 吉林 辽宁&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;第3区：河北 内蒙古 山西 天津&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;第4区：江苏 山东 上海&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;第5区：福建 江西 浙江&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;第6区：安徽 河南 湖北&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;第7区：广东 广西 海南 湖南&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;第8区：贵州 四川 云南 重庆&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;第9区：甘肃 宁夏 青海 陕西&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;第0区：西藏 新疆&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;例LK0079：由国家无线电管理机构批准设台的北京火腿的电台呼号为BH1AAA，把电台带到西安去使用，则本台呼号应该为&lt;strong&gt;B9/BH1AAA&lt;/strong&gt;。这种操作称为&lt;strong&gt;异地发射操作&lt;/strong&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;例LK0084：某业余无线电爱好者，自己所设置的业余无线电台呼号为BH1ZZZ。现该爱好者到业余无线电台BH9YYY做客并在该台进行发射操作。应当使用的呼号&lt;strong&gt;BH9YYY或者B9/BH1ZZZ&lt;/strong&gt;。这种操作称为&lt;strong&gt;客席发射操作&lt;/strong&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;例LK0093：BH1ZZZ由北京迁入河北省，并办妥了由河北无线电管理机构指配使用原电台呼号的全部手续，领取了新的业余无线电台执照。该台在日常通信时应使用呼号&lt;strong&gt;B3/BH1ZZZ&lt;/strong&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;a1123-业余电台迁移时的管理流程及其呼号指配&#34;&gt;A.1.12.3 业余电台迁移时的管理流程及其呼号指配
-&lt;/h3&gt;&lt;h3 id=&#34;a1124-业余电台操作人员客席操作及其呼号使用&#34;&gt;A.1.12.4 业余电台操作人员客席操作及其呼号使用
-&lt;/h3&gt;&lt;h3 id=&#34;a1125-业余电台移动和异地操作及其呼号使用&#34;&gt;A.1.12.5 业余电台移动和异地操作及其呼号使用
-&lt;/h3&gt;&lt;h2 id=&#34;a113-业余电台的使用规定&#34;&gt;A.1.13 业余电台的使用规定
-&lt;/h2&gt;&lt;h3 id=&#34;a1131-关于业余电台一般通信的规定&#34;&gt;A.1.13.1 关于业余电台一般通信的规定
-&lt;/h3&gt;&lt;p&gt;业余电台的法定用途为业余无线电爱好者进行&lt;strong&gt;自我训练、相互通信和技术研究&lt;/strong&gt;，&lt;strong&gt;严禁用于以下目的&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;娱乐、闲聊、消遣等&lt;/li&gt;
-&lt;li&gt;机动车辆行车服务性通信&lt;/li&gt;
-&lt;li&gt;普通活动（包括公益活动）的通信工具&lt;/li&gt;
-&lt;li&gt;与个人生活事务有关的通信&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;第四条（第二款） 国家鼓励和支持业余无线电通信技术的研究、普及和突发重大自然灾害等紧急情况下的应急无线电通信活动。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;业余无线电台的通信对象应当限于业余无线电台&lt;/strong&gt;，所以以下行为是&lt;strong&gt;错误&lt;/strong&gt;的：
-&lt;ul&gt;
-&lt;li&gt;某业余电台操作者听到业余专用频率上出现某种显然出自非业余电台的人为干扰发射，于是按下话筒向该发射者宣传无线电管理法规知识&lt;/li&gt;
-&lt;li&gt;在业余无线电台中转发广播电台、互联网聊天、电话通话、其他电台的联络信号&lt;/li&gt;
-&lt;li&gt;业余电台在通信中为其他人或者单位、组织转达信息&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;与公众对讲机通信&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;未经核发业余无线电台执照的无线电管理机构批准，业余无线电台不得以任何方式进行广播或者发射通播性质的信号&lt;/strong&gt;，所以以下行为是&lt;strong&gt;错误&lt;/strong&gt;的：
-&lt;ul&gt;
-&lt;li&gt;某业余无线电协会在发射操作中向其会员播发公益性通知和技术训练讲座，但未得到相应无线电管理机构的批准&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;不得发送与业余业务和卫星业余业务无关的信号&lt;/strong&gt;。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;严禁利用业余无线电台从事从事商业或者其他营利活动&lt;/strong&gt;，所以以下行为是&lt;strong&gt;错误&lt;/strong&gt;的
-&lt;ul&gt;
-&lt;li&gt;出租车安装业余电台并用来传递有关载客的信息&lt;/li&gt;
-&lt;li&gt;利用业余无线电台通信来促销业余无线电产品或者推动与业余无线电活动有关的其他商业性活动&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;严禁阻碍其他无线电台通信&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;当我说一个行为时&lt;strong&gt;错误&lt;/strong&gt;的，意味着这个行为是被&lt;strong&gt;禁止&lt;/strong&gt;的，是&lt;strong&gt;违法&lt;/strong&gt;的。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;任何时候都应当使用明语及业余无线电领域公认的缩略语和简语&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;业余无线电台实验新的编码、调制方式、数字通信协议或者交换尚未公开格式的数据文件时，应&lt;strong&gt;事先尽可能采取各种办法向信号可能覆盖范围内的业余无线电爱好者公开有关技术细节，并提交给核发其业余无线电台执照的地方无线电管理机构&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;由&lt;strong&gt;国家无线电管理机构审批&lt;/strong&gt;的业余无线电台在设台地以外的地点进行&lt;strong&gt;异地发射&lt;/strong&gt;操作时，&lt;strong&gt;既要符合业余电台执照所核定的各项参数约束，又要遵守操作所在地的地方无线电管理机构的相关规定&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;具备国家无线电管理机构规定的操作技术能力并具有法律规定有效证明文件、但还没有获准设置自己的业余电台的人&lt;strong&gt;可以&lt;/strong&gt;到业余电台进行发射操作。&lt;strong&gt;使用所操作业余电台的呼号，由该业余电台的设台人对操作不妥而造成的有害干负责&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;尚未考得《业余电台操作证书》的人在接受业余电台培训中实习发射操作&lt;strong&gt;必须已接受法规等基础培训、必须由电台负责人现场辅导、必须在执照核定范围以及国家规定的操作权限内、进行短时间体验性发射操作实习&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;业余无线电台设置人&lt;strong&gt;应当确保其无线电发射设备处于正常工作状态，避免对其他无线电业务造成有害干扰&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;业余无线电爱好者&lt;strong&gt;不得接收与业余业务和卫星业余业务无关的信号&lt;/strong&gt;。无意接收到非业余业务和卫星业余业务的信息时&lt;strong&gt;不得传播、公布&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;国家&lt;strong&gt;禁止&lt;/strong&gt;利用业余无线电台从事发布、传播违反法律或者公共道德的信息的行为。&lt;/p&gt;
-&lt;p&gt;国际电联规定的确定发射电台辐射功率的原则为&lt;strong&gt;发射电台只应辐射为保证满意服务所必要的功率&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;业余电台通信受到违法电台或者不明电台的有害干扰时，应&lt;strong&gt;不予理睬，收集有关信息并向无线电管理机构举报&lt;/strong&gt;。&lt;/p&gt;
-&lt;h3 id=&#34;a1132-关于业余无线电应急通信的规定&#34;&gt;A.1.13.2 关于业余无线电应急通信的规定
-&lt;/h3&gt;&lt;p&gt;在突发重大自然灾害等紧急情况下，业余无线电台&lt;strong&gt;才可以和非业余无线电台进行规定内容的通信&lt;/strong&gt;。内容限于&lt;strong&gt;与抢险救灾直接相关的紧急事务&lt;/strong&gt;或者&lt;strong&gt;应急救援相关部门交办的任务&lt;/strong&gt;。&lt;/p&gt;
-&lt;h3 id=&#34;a1133-业余无线电中继台管理规定和使用规范&#34;&gt;A.1.13.3 业余无线电中继台管理规定和使用规范
-&lt;/h3&gt;&lt;p&gt;业余中继台的设置和技术参数等应&lt;strong&gt;符合国家以及设台地的地方无线电管理机构的规定&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;业余中继台必须&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;设专人负责监控和管理工作，配备有效的遥控手段，保证造成有害干扰时及时停止发射&lt;/strong&gt;。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;向其覆盖区域内的所有业余无线电台提供平等的服务，并将使用业余中继台所需的各项技术参数公开&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;选择144MHz或430MHz业余模拟调频中继台同频段收发频差的原则是&lt;strong&gt;采用业余无线电标准频差，即144MHz频段600kHz，430MHz频段5MHz&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;业余中继台的使用原则是&lt;strong&gt;除必要的短暂通信外，应保持业余中继台具有足够的空闲时间，以便随时响应突发灾害应急呼叫&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;如果你知道另一个电台的呼号，想要在中继上呼叫他，你应该&lt;strong&gt;呼叫对方的呼号，并报出自己的呼号&lt;/strong&gt;。&lt;/p&gt;
-&lt;h3 id=&#34;a1134-业余电台通联卡片及电台日志&#34;&gt;A.1.13.4 业余电台通联卡片及电台日志
-&lt;/h3&gt;&lt;p&gt;法规和国际业余无线电惯例要求业余电台日志记载的必要基本内容是（英文缩写也要记忆）:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;通信时间 DATE、TIME&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;通信频率 FREQ&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;通信模式 MODE&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;对方呼号 CALL（对方）&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;双方信号报告 RST（双方）&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;迫切需要方卡回寄卡片时，应直接向对方地址邮寄卡片并附加SASE（self-addressed stamped envelope） TODO&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;不是作为联络或收听证明而交换QSL卡片时，应填上“Eye ball QSO”等有关说明，不应赠送空白卡片 TODO&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;a114-业余电台管理执法检查和违法处罚&#34;&gt;A.1.14 业余电台管理执法检查和违法处罚
-&lt;/h2&gt;&lt;h3 id=&#34;a1141-业余电台管理执法检查&#34;&gt;A.1.14.1 业余电台管理执法检查
-&lt;/h3&gt;&lt;p&gt;业余无线电台设置、使用人应当接受&lt;strong&gt;无线电管理机构或者其委托单位的监督检查&lt;/strong&gt;。&lt;/p&gt;
-&lt;h3 id=&#34;a1142-业余电台的违法处罚&#34;&gt;A.1.14.2 业余电台的违法处罚
-&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://www.npc.gov.cn/wxzl/wxzl/2000-12/17/content_4680.htm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;&lt;strong&gt;《中华人民共和国刑法》&lt;/strong&gt;&lt;/a&gt;第二百八十八条    违反国家规定，擅自设置、使用无线电台（站），或者擅自占用频率，经责令停止使用后拒不停止使用，干扰无线电通讯正常进行，造成严重后果的，处三年以下有期徒刑、拘役或者管制，并处或者单处罚金。&lt;/p&gt;
-&lt;h1 id=&#34;a2-无线电通信程序方法&#34;&gt;A.2. 无线电通信程序、方法
-&lt;/h1&gt;&lt;h2 id=&#34;a21业余无线电频率的使用规范&#34;&gt;A.2.1业余无线电频率的使用规范
-&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;任何核准的业余电台对频率享有平等的频率使用权&lt;/strong&gt;。&lt;br&gt;
-例：某俱乐部约定了一个成员业余电台之间交流技术的网络频率，当遇有其他业余电台按通信惯例要求参加通信时，应无条件欢迎加入。&lt;/p&gt;
-&lt;p&gt;业余电台在发射调试信号进行发射功率和天线驻波比等检查时必须&lt;strong&gt;先将频率设置到无人使用的空闲频率、偏离常用的热点频率&lt;/strong&gt;。&lt;/p&gt;
-&lt;h2 id=&#34;a22-业余电台通信程序&#34;&gt;A.2.2 业余电台通信程序
-&lt;/h2&gt;&lt;p&gt;业余电台在发起呼叫前应&lt;strong&gt;先守听一段时间，确保没有其他电台正在使用频率&lt;/strong&gt;。通过守听，没有听到信号还不足以确认频率空闲，因为有时听不到通信双方中的另一方，贸然呼叫会对已有的通信造成干扰。为避免这种情况，应该：&lt;strong&gt;先询问“有人使用频率吗”？确认没有应答方能发起呼叫&lt;/strong&gt;。英语表达示例（需要记忆）：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Is the frequency in use？&lt;/li&gt;
-&lt;li&gt;Is any body in the frequency？&lt;/li&gt;
-&lt;li&gt;Any body here？&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;业余电台（以BH1ZZZ为例）用话音发起CQ呼叫的正确格式为：&lt;strong&gt;CQ、CQ、CQ。BH1ZZZ呼叫。Bravo Hotel One Zulu Zulu Zulu呼叫，BH1ZZZ呼叫。听到请回答。&lt;strong&gt;或英文&lt;/strong&gt;CQ CQ CQ.This is BH1ZZZ. Bravo Hotel One Zulu Zulu Zulu, BH1ZZZ is calling. I’m standing by.&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;业余电台BH1ZZZ用话音呼叫BH8YYY的正确格式为&lt;strong&gt;BH8YYY、BH8YYY、BH8YYY。BH1ZZZ呼叫。Bravo Hotel One Zulu Zulu Zulu，BH1ZZZ呼叫。听到请回答。&lt;/strong&gt;。英文为&lt;strong&gt;Bravo Hotel Eight Yankee Yankee Yankee, Bravo Hotel Eight Yankee Yankee Yankee, Bravo Hotel Eight Yankee Yankee Yankee.This is Bravo Hotel One Zulu Zulu Zulu. Bravo Hotel One Zulu Zulu Zulu, Bravo Hotel One Zulu Zulu Zulu is calling. I’m standing by.&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;BH1ZZZ希望加入两个电台正在通信中的谈话，正确的方法为：&lt;strong&gt;在双方对话的间隙，短暂发射一次“Break in！”或“插入！”，如得到响应，再说明本台呼号 “BH1ZZZ请求插入”，等对方正式表示邀请后，方能加入&lt;/strong&gt;。以请求插入的方式加入两个电台正在通信中的谈话，应&lt;strong&gt;确认自己的加入不会影响原通信双方的乐趣&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;业余电台之间进行通信，必须相互正确发送和接收的信息为（记忆）：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;本台呼号&lt;/li&gt;
-&lt;li&gt;对方呼号&lt;/li&gt;
-&lt;li&gt;信号报告&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;当一部电台在呼叫CQ时，他的意思是&lt;strong&gt;非特指地呼叫任何一部电台&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;回答一个CQ呼叫时&lt;strong&gt;先报出对方的呼号，再报出自己的呼号&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;如果其他电台报告你在2米波段的信号刚才非常强，但是突然变弱或不可辨，这时你应当&lt;strong&gt;稍稍移动一下自己的位置，有时信号无规律反射造成的多径效应可能导致失真&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;将一个频率作为一个频道存储在电台中&lt;/strong&gt;可以让你快速切换到一个你经常使用的频率。&lt;/p&gt;
-&lt;h2 id=&#34;a23-业余电台通信常用的缩语和简语&#34;&gt;A.2.3 业余电台通信常用的缩语和简语
-&lt;/h2&gt;&lt;p&gt;Q简语是一种标准化的三字母通信简略语，因短语开头字母均为“Q”而得名。（加粗的为考试可能会考的，需重点记忆）&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Q简语 	问句含义 	答句含义 TODO mark&lt;/li&gt;
-&lt;li&gt;QRA 	你的电台名称是？ 	我的电台名称是&amp;hellip;&lt;/li&gt;
-&lt;li&gt;QRB 	你台离我台多远？ 	我们相距约为&amp;hellip;&lt;/li&gt;
-&lt;li&gt;QRG 	我的准确频率是多少？ 	你的准确频率是&amp;hellip;&lt;/li&gt;
-&lt;li&gt;QRI 	我的音调如何？ 	你的音调是(T1-T9)&lt;/li&gt;
-&lt;li&gt;QRJ 	我的信号小吗？ 	你的信号小&lt;/li&gt;
-&lt;li&gt;QRK 	我的信号可辨度是多少？ 	你的信号可辨度是(R1-R5)&lt;/li&gt;
-&lt;li&gt;QRL 	你忙吗？ 	我正忙&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;QRM 	你受到他台干扰吗？ 	我正受到他台干扰 1.无 2.稍有 3.中等 4.严重 5.极端&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;QRN 	你受到天电干扰吗？ 	我正受到天电干扰 1.无 2.稍有 3.中等 4.严重 5.极端&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;QRO 	要我增加发信功率吗？ 	请增加发信功率&lt;/li&gt;
-&lt;li&gt;QRP 	要我减低发信功率吗？ 	请减低发信功率&lt;/li&gt;
-&lt;li&gt;QRQ 	要我发得快些吗？ 	请发快些&lt;/li&gt;
-&lt;li&gt;QRS 	要我发得慢些吗？ 	请发慢些&lt;/li&gt;
-&lt;li&gt;QRT 	要我停止拍发吗？ 	请停止拍发&lt;/li&gt;
-&lt;li&gt;QRU 	你有事吗？ 	无事&lt;/li&gt;
-&lt;li&gt;QRV 	你准备好了吗？ 	我已准备好了&lt;/li&gt;
-&lt;li&gt;QRW 	需要我转告吗？ 	请转告&lt;/li&gt;
-&lt;li&gt;QRX 	要我等多长时间？ 	请等待&amp;hellip; &amp;hellip;分钟&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;QRZ 	谁在呼叫我？ 	&amp;hellip;KHz/MHz正在呼叫你&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;QSA 	我的信号强度是多少？ 	你的信号强度是&amp;hellip;&lt;/li&gt;
-&lt;li&gt;QSB 	我的信号有衰落吗？ 	你的信号强度是，1.几乎不能抄收 2.弱 3.还好 4.好 5.很好&lt;/li&gt;
-&lt;li&gt;QSD 	我的信号不完整吗? 	你的信号不完整&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;QSL 	你确认收妥／QSL卡片吗？ 	我确认收妥／QSL卡片&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;QSO 	你能否和&amp;hellip;直接（或转接）通信？ 	你能和&amp;hellip;直接（或转接）通信？&lt;/li&gt;
-&lt;li&gt;QSP 	你能中转到&amp;hellip;吗？ 	我能中转到&amp;hellip;&lt;/li&gt;
-&lt;li&gt;QSU 	能在这个频率(或某个频率)回复吗？ 	我将在此频率(或某频率)回复&lt;/li&gt;
-&lt;li&gt;QSV 	有天电干扰要我在此频率发一串 V 字吗？ 	请在此频率发一串 V 字&lt;/li&gt;
-&lt;li&gt;QSW 	你将在此频率(或某频率)发吗？ 	我将在此频率(或某频率)发&lt;/li&gt;
-&lt;li&gt;QSX 	你将在某频率收听吗？ 	我将在某频率收听&lt;/li&gt;
-&lt;li&gt;QSY 	要我改用其他频率拍发吗？ 	请改用&amp;hellip;KHz/MHz拍发&lt;/li&gt;
-&lt;li&gt;QSZ 	要我每组发两遍吗？ 	请每组发两遍&lt;/li&gt;
-&lt;li&gt;QTB 	要我查对组数吗？ 	请查对组数&lt;/li&gt;
-&lt;li&gt;QTC 	你有几份报要发？ 	我有&amp;hellip;份报要发&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;QTH 	你的地理位置是？ 	我的地理位置是&amp;hellip;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;QTR 	你的标准时间是？ 	我的标准时间是&amp;hellip;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://www.sara.org.cn/technology/detail9.htm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;业余无线电常用缩略语&lt;/a&gt;（加粗的为考试可能会考的，需重点记忆），根据题库又补充了很多 mark&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;缩略语 	原语 	含义&lt;/li&gt;
-&lt;li&gt;AA 	ALL AFTER 	在后&lt;/li&gt;
-&lt;li&gt;LSN 	LISTEN 	收听&lt;/li&gt;
-&lt;li&gt;*AB 	ALL BEFORE 	在前&lt;/li&gt;
-&lt;li&gt;N 	NO 	不&lt;/li&gt;
-&lt;li&gt;*ABT 	ABOUT 	关于、大约&lt;/li&gt;
-&lt;li&gt;NA 	NORTH AMERICA 	北美洲&lt;/li&gt;
-&lt;li&gt;ADD 	ADDITION 	增加&lt;/li&gt;
-&lt;li&gt;NCS 	NET CONTROL STATION 	网络控制电台&lt;/li&gt;
-&lt;li&gt;ADR 	ADDRESS 	地址&lt;/li&gt;
-&lt;li&gt;ND 	NOTHING DOING 	无事&lt;/li&gt;
-&lt;li&gt;AF 	AFRICA 	非洲&lt;/li&gt;
-&lt;li&gt;NR 	NUMBER 	数目&lt;/li&gt;
-&lt;li&gt;AHR 	ANOTHER 	其他、另外&lt;/li&gt;
-&lt;li&gt;*NW 	NOW 	现在&lt;/li&gt;
-&lt;li&gt;AGN 	AGAIN 	再、再一次&lt;/li&gt;
-&lt;li&gt;OB 	OLD BOY 	老弟&lt;/li&gt;
-&lt;li&gt;AM 	AMPLITUDE MODULATION 	调幅&lt;/li&gt;
-&lt;li&gt;OC 	OLD CHAP,OCEANIA 	老伙计，大洋洲&lt;/li&gt;
-&lt;li&gt;ANS 	ANSWER 	回答&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;OM 	OLD MAN 	老“火腿”&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ANT 	ANTENNA 	天线&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;OP 	OPERATOR 	操作员、报务员&lt;/li&gt;
-&lt;li&gt;AS 	ASIA 	亚洲&lt;/li&gt;
-&lt;li&gt;OSCAR 	ORBITING SATELLITE CARRYING AMATEUR RADIO 	业余卫星&lt;/li&gt;
-&lt;li&gt;BCI 	BROADCAST INTERFERENCE 	广播干扰&lt;/li&gt;
-&lt;li&gt;OT 	OLD TIME 	老前辈、老资格&lt;/li&gt;
-&lt;li&gt;BCNU 	BE SEEING YOU 	见到你&lt;/li&gt;
-&lt;li&gt;POBOX 	POST OFFICE BOX 	邮政信箱&lt;/li&gt;
-&lt;li&gt;BGN 	BEGIN 	开始&lt;/li&gt;
-&lt;li&gt;PSE 	PLEASE 	请&lt;/li&gt;
-&lt;li&gt;BUG 	SEMI-AUTOMATIC KEY 	半自动电键&lt;/li&gt;
-&lt;li&gt;PWR 	POWER 	功率&lt;/li&gt;
-&lt;li&gt;BURO 	BUREAU 	管理局&lt;/li&gt;
-&lt;li&gt;*&lt;strong&gt;R 	ROGER、RECEIVED 	收到了&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;CD 	CRD 	卡片&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;RX、RCVR 	RECEIVER 	接收机&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;*CFM 	CONFIRM 	确认、认为&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;RF RADIO FREQUENCY （各种类型的）无线电波&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;RFI 	RADIO FREQUENCY INTERFERENCE 	无线电干扰&lt;/li&gt;
-&lt;li&gt;CLBK 	CALL BOOK 	呼号手册&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;RIG 	STATION EQUPMENT 	电台设备&lt;/strong&gt; mark&lt;/li&gt;
-&lt;li&gt;CQ 	CALL ANY STATION 	普遍呼叫&lt;/li&gt;
-&lt;li&gt;RPRT 	REPORT 	报告&lt;/li&gt;
-&lt;li&gt;CRT 	CORRECTION 	改正&lt;/li&gt;
-&lt;li&gt;RTTY 	RADIO TELETYPE 	无线电传打字&lt;/li&gt;
-&lt;li&gt;*CUAGN 	SEE YOU AGAIN 	再见到你&lt;/li&gt;
-&lt;li&gt;SA 	SOUTH AMERICA 	南美洲&lt;/li&gt;
-&lt;li&gt;*CUL 	SEE YOU LATER 	再会&lt;/li&gt;
-&lt;li&gt;SK 	END 	结束符号&lt;/li&gt;
-&lt;li&gt;*CW 	CONTINUOUS WAVE 	等幅报&lt;/li&gt;
-&lt;li&gt;SKED 	SCKEDULE 	表格&lt;/li&gt;
-&lt;li&gt;CY 	COPY 	抄收&lt;/li&gt;
-&lt;li&gt;SN 	SOON 	立即、不久&lt;/li&gt;
-&lt;li&gt;*DE 	FROM 	从&lt;/li&gt;
-&lt;li&gt;SOS 	SAVE OUR SOULD 	呼救信号&lt;/li&gt;
-&lt;li&gt;*&lt;strong&gt;DF 	DIRECTION FINDING 	测向&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ARDF Amateur radio direction finding 业余无线电测向&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;SRI 	SORRY 	抱歉&lt;/li&gt;
-&lt;li&gt;*DR 	DEAR 	亲爱的&lt;/li&gt;
-&lt;li&gt;SSB 	SINGLE SIDE BAND 	单边带&lt;/li&gt;
-&lt;li&gt;DX 	LONG DISTANCE 	远距离&lt;/li&gt;
-&lt;li&gt;SSTV 	SLOW-SCAN TELEVISION 	慢扫描电视&lt;/li&gt;
-&lt;li&gt;EL、ELE 	ANTENNA ELEMENT 	天线单元&lt;/li&gt;
-&lt;li&gt;STN 	STATION 	电台&lt;/li&gt;
-&lt;li&gt;ES 	AND 	和&lt;/li&gt;
-&lt;li&gt;SW 	SHORT WAVE、SWITCH 	短波、开关&lt;/li&gt;
-&lt;li&gt;EU 	EUROPE 	欧洲&lt;/li&gt;
-&lt;li&gt;SWL 	SHORT WAVE LISTENER 	短波收听台&lt;/li&gt;
-&lt;li&gt;FB 	FINE BUSINESS 	良好的&lt;/li&gt;
-&lt;li&gt;TEMP 	TEMPERATRE 	温度&lt;/li&gt;
-&lt;li&gt;FM 	FREQUENCY MODULATION 	调频&lt;/li&gt;
-&lt;li&gt;TMW 	TOMORROW 	明天&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;FREQ、FQ 	FREQUENCY 	频率&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;TNX、TKS 	THANKS 	谢谢&lt;/li&gt;
-&lt;li&gt;GA 	GOOD AFTERNOON、GO AHEAD 	下午好、往下发&lt;/li&gt;
-&lt;li&gt;T/R 	TRANSMIT/RECEIVE 	收发信&lt;/li&gt;
-&lt;li&gt;GB 	GOOD BYE 	再见&lt;/li&gt;
-&lt;li&gt;TU 	THANKS YOU 	谢谢你&lt;/li&gt;
-&lt;li&gt;GE 	GOOD EVENING 	晚上好&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;TX、XMTR 	TRANSMITTER 	发射机&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;GL 	GOOD LUCK 	好运&lt;/li&gt;
-&lt;li&gt;U 	YOU 	你&lt;/li&gt;
-&lt;li&gt;GLD 	GLAD 	高兴&lt;/li&gt;
-&lt;li&gt;UR 	YOUR，YOUR ARE 	你的、你是&lt;/li&gt;
-&lt;li&gt;GM 	GOOD MORNING 	早上好&lt;/li&gt;
-&lt;li&gt;UTC 	UNIVERSAL COORDINATED TIME 	世界协调时&lt;/li&gt;
-&lt;li&gt;GN 	GOOD NIGHT 	晚安&lt;/li&gt;
-&lt;li&gt;VFO 	VARIABLE FREQUENCY OSEILLATOR 	可变频率振荡器&lt;/li&gt;
-&lt;li&gt;HAM 	AMATEUR TRANSMITTER 	业余无线电爱好者&lt;/li&gt;
-&lt;li&gt;VY 	VERY 	很&lt;/li&gt;
-&lt;li&gt;HR 	HERE 	这里&lt;/li&gt;
-&lt;li&gt;WW 	WORLD WIDE 	全世界&lt;/li&gt;
-&lt;li&gt;HPE 	HOPE 	希望&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;WX 	WEATHER 	天气&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;HW 	HOW 	如何&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;XCVR 	TRANSCEIVER 	收发信机&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;IARU 	INTERNATIONAL AMATEUR RADIO UNIN 	国际业余无线电联盟&lt;/li&gt;
-&lt;li&gt;XMAS 	CHRISTMAS 	圣诞节&lt;/li&gt;
-&lt;li&gt;ITU 	INTERNATIONAL TELECOMMUNICATION UNIN 	国际电讯联盟&lt;/li&gt;
-&lt;li&gt;XTAL 	ORYSTAL 	晶体&lt;/li&gt;
-&lt;li&gt;K、KU 	GO AHEAD 	请回答&lt;/li&gt;
-&lt;li&gt;XYL 	WIFE 	妻子&lt;/li&gt;
-&lt;li&gt;KNW 	KNOW 	知道&lt;/li&gt;
-&lt;li&gt;YL 	YOUNG LADY 	小姐、女报务员&lt;/li&gt;
-&lt;li&gt;LG 	LONG 	长&lt;/li&gt;
-&lt;li&gt;YM 	YOUNGMAN 	青年人（男）&lt;/li&gt;
-&lt;li&gt;LIS 	LICENSE 	执照&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;73 	BEST REGARDS 	祝愿，致意&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;LOG 	LOG BOOK 	电台日记&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;88 	LOVE AND KISSES 	爱与接吻&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;GND ground 地线，地面&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;LED light-emitting diode 发光二极管&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;LCD Liquid Crystal Display 液晶显示器&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;注：带“*”的为普通通信常用缩语&lt;/p&gt;
-&lt;p&gt;天线缩写（需要记忆）TODO mark&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;DP 偶极天线&lt;/li&gt;
-&lt;li&gt;GP 垂直接地天线&lt;/li&gt;
-&lt;li&gt;BEAM 定向天线&lt;/li&gt;
-&lt;li&gt;YAGI 八木天线&lt;/li&gt;
-&lt;li&gt;VER 垂直天线&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;a24-业余电台通信常用的地理常识&#34;&gt;A.2.4 业余电台通信常用的地理常识
-&lt;/h2&gt;&lt;p&gt;中国在东八区（UTC+8），以为这&lt;strong&gt;比UTC时间快8小时&lt;/strong&gt;。UTC时间时1点，那么北京时间就是9点；北京时间是1点，UTC时间就是前一天的下午5点。&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;#Mark&#34; &gt;//&lt;/a&gt;: #TODO mark&lt;/p&gt;
-&lt;p&gt;我国所属的CQ分区是&lt;strong&gt;23、24、27&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;“ITU分区”是IARU的活动计算通信成绩的基础。我国所属的“ITU分区”有：&lt;strong&gt;33、42、43、44、50&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;业余无线电通信梅登海德&lt;strong&gt;网格定位&lt;/strong&gt;系统（Maidenhead Grid Square Locator）是一种：&lt;strong&gt;根据经纬度坐标对地球表面进行网格划分和命名，用以标示地理位置的系统&lt;/strong&gt;。其格式为&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;2个字母和2位数字&lt;/strong&gt;，或&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;2个字母和2位数字再加2个字母&lt;/strong&gt;&lt;br&gt;
-&lt;strong&gt;两者网格大小不同，4字符网格为经度2度和纬度1度，6字符网格为经度5分和纬度2.5分&lt;/strong&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;a3无线电系统原理&#34;&gt;A.3.无线电系统原理
-&lt;/h1&gt;&lt;h2 id=&#34;a31-一般常识&#34;&gt;A.3.1 一般常识
-&lt;/h2&gt;&lt;p&gt;辐射（radiation）是指&lt;strong&gt;任何源&lt;/strong&gt;的能量流以&lt;strong&gt;无线电波&lt;/strong&gt;的形式向外发出，包括闪电产生的电磁波。&lt;strong&gt;不包括&lt;/strong&gt;导线中的各种信号/干扰，电场，磁场。&lt;/p&gt;
-&lt;p&gt;发射（emission）是指：由&lt;strong&gt;无线电发信电台&lt;/strong&gt;产生的辐射或辐射产物。发射必须是无线电台，其它的电子设备，闪电等等都不能发射。&lt;/p&gt;
-&lt;p&gt;电流的单位是&lt;strong&gt;安（培）、A&lt;/strong&gt;。电压的单位是&lt;strong&gt;伏（特）、V&lt;/strong&gt;。电阻的单位是&lt;strong&gt;欧（姆）、Ω&lt;/strong&gt;。&lt;strong&gt;功率&lt;/strong&gt;（电能消耗的速率）的单位是&lt;strong&gt;瓦（特）、W&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://zh.wikipedia.org/wiki/%E5%9B%BD%E9%99%85%E5%8D%95%E4%BD%8D%E5%88%B6%E8%AF%8D%E5%A4%B4&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;国际单位制词头&lt;/a&gt;的符号（加粗的是可能考的，全都是粗的，😂）&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;T $10^{12}$&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;G $10^{9}$&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;M $10^{6}$&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;k $10^{3}$&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;m $10^{-3}$&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;µ $10^{-6}$&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;n $10^{-9}$&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;p $10^{-12}$&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;注意上面大写的M和小写的m是不一样的。&lt;/p&gt;
-&lt;p&gt;音频所指的频率范围大致是&lt;strong&gt;16Hz - 20kHz&lt;/strong&gt;。&lt;/p&gt;
-&lt;h2 id=&#34;a32-直流电路&#34;&gt;A.3.2 直流电路
-&lt;/h2&gt;&lt;p&gt;只向一个方向流动的电流叫做&lt;strong&gt;直流&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;电源两端电压的方向为&lt;strong&gt;从电源的正极到负极&lt;/strong&gt;。电源（或信号源）内阻&lt;strong&gt;使其实际输出电压降低&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;直流电路欧姆定律是说&lt;strong&gt;流过电阻的电流I，与两端的电压U成正比，与阻值R成反比&lt;/strong&gt;。
-&lt;/p&gt;
-$$I = \frac{U}{R}$$&lt;h2 id=&#34;a33-交流电路&#34;&gt;A.3.3 交流电路
-&lt;/h2&gt;&lt;p&gt;
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed78a38a9a.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed78a38a9a.png&#34; alt=&#34;正弦交流电&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed78a38a9a.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;正弦交流电&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;如上图所示的正弦交流电&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;峰值 Peak, also amplitude&lt;/li&gt;
-&lt;li&gt;峰-峰值 Peak-to-peak&lt;/li&gt;
-&lt;li&gt;有效值 Effective value&lt;br&gt;
-约为峰值的&lt;strong&gt;70.7%&lt;/strong&gt;&lt;br&gt;
-平常我们说的220V就是有效值&lt;/li&gt;
-&lt;li&gt;周期 Period&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;正弦交流电的&lt;strong&gt;平均值为0&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;交流电&lt;strong&gt;频率&lt;/strong&gt;为其每秒改变方向的次数，值为$\frac{1}{Period}$。&lt;/p&gt;
-&lt;p&gt;相位差通常用来描述两个或多个&lt;strong&gt;同频率&lt;/strong&gt;正弦信号之间的&lt;strong&gt;时间滞后或超前&lt;/strong&gt;关系。&lt;/p&gt;
-&lt;h2 id=&#34;a34-电子元件及单元电路常识&#34;&gt;A.3.4 电子元件及单元电路常识
-&lt;/h2&gt;&lt;p&gt;电阻元件的“额定功率”参数是指该元件正常工作时所能承受的&lt;strong&gt;最大功率&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;一般&lt;strong&gt;金属&lt;/strong&gt;是导体，&lt;strong&gt;玻璃，木材，橡胶&lt;/strong&gt;是绝缘体。&lt;/p&gt;
-&lt;h2 id=&#34;a35-无线电信号的调制解调和频谱&#34;&gt;A.3.5 无线电信号的调制、解调和频谱
-&lt;/h2&gt;&lt;p&gt;用通常的调频方式进行话音通信，必要带宽约为&lt;strong&gt;6.25kHz&lt;/strong&gt;。&lt;/p&gt;
-&lt;h2 id=&#34;a36-数字信号处理基础常识&#34;&gt;A.3.6 数字信号处理基础常识
-&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;简单正弦波&lt;/strong&gt;只包含&lt;strong&gt;一个&lt;/strong&gt;频率分量。
-&lt;/p&gt;
-$$x = sin(\omega{}t+\phi)$$&lt;p&gt;&lt;strong&gt;单个无限窄脉冲&lt;/strong&gt;（数学上我们称其为&lt;a class=&#34;link&#34; href=&#34;https://zh.wikipedia.org/wiki/%E7%8B%84%E6%8B%89%E5%85%8B%CE%B4%E5%87%BD%E6%95%B0#%E5%82%85%E9%87%8C%E8%91%89%E8%AE%8A%E6%8F%9B&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;狄拉克δ函数&lt;/a&gt;）在整个频谱内具有&lt;strong&gt;连续的均匀频率分量&lt;/strong&gt;（其频谱也称为均匀谱或白色谱）。这个理解不了也没关系，记住我标粗的地方就行。
-&lt;/p&gt;
-$$\delta(x) = \begin{cases} +\infty, &amp; x = 0 \\ 0, &amp; x \ne 0 \end{cases}且\int_{-\infty}^\infty \delta(x) \, dx = 1$$&lt;p&gt;包含多个频率分量的信号通过&lt;strong&gt;滤波器&lt;/strong&gt;会发生&lt;strong&gt;频率失真&lt;/strong&gt;。&lt;/p&gt;
-&lt;h2 id=&#34;a37-业余无线电发射和接收设备原理和实用知识&#34;&gt;A.3.7 业余无线电发射和接收设备原理和实用知识
-&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;符合国家或国际上规定的干扰允许值&lt;/strong&gt;和&lt;strong&gt;共用标准的干扰&lt;/strong&gt;不属于有害干扰。&lt;/p&gt;
-&lt;p&gt;可以组成完整无线电接收系统的功能部件组合是&lt;strong&gt;接收天线、解调器、输出部件&lt;/strong&gt;。可以组成完整无线电发信系统的功能部件组合是&lt;strong&gt;射频振荡器、调制器、发射天线&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;调制是以原始信号控制射频信号的&lt;strong&gt;幅度&lt;/strong&gt;（Amplitude）、&lt;strong&gt;频率&lt;/strong&gt;（Frequency）或&lt;strong&gt;相位参数&lt;/strong&gt;（Phase）。我们分别称其为&lt;strong&gt;幅度调制（调幅AM）、频率调制（调频FM）、相位调制（调相PM）&lt;/strong&gt;，缩写需要记忆。&lt;/p&gt;
-&lt;p&gt;一个FM话音信号在频谱仪上显示为&lt;strong&gt;一条固定的垂直线，左右伴随一组对称的随语音出现和变化的垂直线&lt;/strong&gt;。下面的gif是我录制的某电台频谱。特点是对称。&lt;/p&gt;
-&lt;p&gt;所以，&lt;strong&gt;频谱图&lt;/strong&gt;最容易用来表达和解释模拟FM调制原理。对调频信号进行解调的过程称为&lt;strong&gt;鉴频&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;下面介绍FM的两个概念，&lt;strong&gt;带宽&lt;/strong&gt;和&lt;strong&gt;频偏&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;对于给定的FM发射设备，所传输信号的&lt;strong&gt;最高频率越高&lt;/strong&gt;、&lt;strong&gt;幅度越大&lt;/strong&gt;，射频输出占用带宽越宽。&lt;/li&gt;
-&lt;li&gt;频偏&lt;strong&gt;只取决于被调制信号的幅度&lt;/strong&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;选择性&lt;/strong&gt;表述了接收机区分不同信号的能力。&lt;/p&gt;
-&lt;p&gt;接收机“过载”通常是指&lt;strong&gt;输入信号过于强大，以致导致机内产生附加干扰&lt;/strong&gt;。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;SSB&lt;/strong&gt;常被用于长距离弱信号的VHF或UHF联络。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;FM&lt;/strong&gt;被VHF和UHF业余电台本地通信广泛使用。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;常用的电源有两种，一种是开关电源（DC-DC），一种是线性稳压电源（LDO）。开关电源可以做得比变压器直接降压整流的线性电源轻巧是因为&lt;strong&gt;开关电源中变压器的工作频率高得多，可以缩小磁性材料截面和减少线圈匝数&lt;/strong&gt;。关键词：工作频率。&lt;/p&gt;
-&lt;h2 id=&#34;a38-业余无线电常用的功率计算及分贝转换&#34;&gt;A.3.8 业余无线电常用的功率计算及分贝转换
-&lt;/h2&gt;&lt;p&gt;无线电发射机的效率是指&lt;strong&gt;输出到天线系统的信号功率&lt;/strong&gt;与发射机所消耗的&lt;strong&gt;电源功率&lt;/strong&gt;之比。业余无线电发射机的效率总是明显低于1。所损耗的那部分能量&lt;strong&gt;绝大部分转化为热量&lt;/strong&gt;，&lt;strong&gt;极小部分转化为无用信号的电磁辐射&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://support.huawei.com/view/contentview!getFileStream.action?mid=SUPE_DOC&amp;amp;viewNid=EDOC1000062973&amp;amp;nid=EDOC1000062973&amp;amp;partNo=j006&amp;amp;type=htm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;接收灵敏度&lt;/a&gt;是指无线设备正常工作所需的天线口最小信号接收功率。因此&lt;strong&gt;灵敏度指标数值越小，接收最小信号的能力越强&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;衰减是指&lt;strong&gt;信号通过信道或电路后功率减少&lt;/strong&gt;，衰落是指&lt;strong&gt;信号通过信道或电路后发生幅度随时间而起伏&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;载波功率&lt;/strong&gt;是指无线电发信机在无调制情况下，在一个射频周期内供给天线馈线的平均功率。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;CTCSS&lt;/strong&gt;（连续音频编码静噪系统，Continuous Tone-Coded Squelch System）是指调频发射机在发射的语音信号上附加一个人耳听不到的低频音频，用来打开接收机的静噪。记住前面的缩写。其属于模拟亚音频。当然有模拟亚音频，就有数字亚音频，这里就不展开了。
-静噪灵敏度是指&lt;strong&gt;能够使静噪电路退出静噪状态的射频信号最小输入电平&lt;/strong&gt;。&lt;/p&gt;
-&lt;h2 id=&#34;a39-业余电台的天馈线系统&#34;&gt;A.3.9 业余电台的天馈线系统
-&lt;/h2&gt;&lt;h3 id=&#34;a391-天线的基础知识&#34;&gt;A.3.9.1 天线的基础知识
-&lt;/h3&gt;&lt;p&gt;发射天线的作用是&lt;strong&gt;把无线电发射机输出的射频信号电流转换为空间的电磁波&lt;/strong&gt;。接收天线系统的作用是&lt;strong&gt;把空间的有用电磁波转换为射频电压电流信号&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;保证业余无线电通信接收机优良接收能力的主要因素是&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;良好的抗干扰能力&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;足够高的灵敏度&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;尽量低的本机噪声和信号失真&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;由半波长偶极天线和馈电电缆构成的天馈系统，理想的工作状态是&lt;strong&gt;天线上只有驻波，馈线上只有行波&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;在零仰角附近具有主辐射瓣的垂直接地天线，其振子的长度应为&lt;strong&gt;1/4波长的奇数倍&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;通常把垂直偶极天线或者垂直接地天线称为“全向天线”，是因为&lt;strong&gt;它们在水平方向没有指向性，但在立体空间有方向性&lt;/strong&gt;。振子电气长度为1/4波长的垂直接地天线的最大辐射方向为&lt;strong&gt;在水平方向没有指向性，在垂直方向指向水平面&lt;/strong&gt;。垂直接地天线（GP）的构造为电气长度为1/4波长的垂直振子加一个“接地”反射体，因其简单而被大量应用于手持和车载业余电台，但这种天线的实际工作情况往往与理论值相差较大，尤其在频率较低的频段。最常见的原因是&lt;strong&gt;缺乏有效的接地反射体&lt;/strong&gt;。改善办法是&lt;strong&gt;GP天线必须有足够大的接地反射体来形成振子镜像，否则谐振频率和阻抗都将与理论值有显著偏差，应尽量用大面积金属体与天线的接地端直接连接&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;在电缆外面套铁氧体磁环&lt;/strong&gt;（磁珠）可以减少在音频同轴电缆屏蔽层外皮中的感应射频电流。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed7bef1fb1.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed7bef1fb1.png&#34; alt=&#34;Cable end&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed7bef1fb1.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Cable end&#34;
-	
-	
-&gt;
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed7d1e63a4.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed7d1e63a4.png&#34; alt=&#34;Ferrite_clamp-on&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed7d1e63a4.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Ferrite_clamp-on&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://zh.wikipedia.org/wiki/File:Cable_end.JPG&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;左图&lt;/a&gt;作者是英语维基百科的&lt;a class=&#34;link&#34; href=&#34;https://en.wikipedia.org/wiki/User:Stwalkerster&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Stwalkerster&lt;/a&gt;，本文件采用知识共享署名-相同方式共享 3.0 未本地化版本许可协议授权。&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://zh.wikipedia.org/wiki/File:Ferrite_clamp-on.jpg&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;右图&lt;/a&gt;作者是&lt;a class=&#34;link&#34; href=&#34;https://www.flickr.com/photos/21905741@N06&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Karl-Martin Skontorp&lt;/a&gt;，本文件采用知识共享署名 2.0 通用许可协议授权。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;天线分析仪&lt;/strong&gt;可以用来测定天线当前的谐振频率。&lt;/p&gt;
-&lt;p&gt;直立天线&lt;strong&gt;发射的电磁波电场垂直于地面&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;就大多数手持电台随机附送的“橡皮天线”来说，它的劣势是&lt;strong&gt;相对于全尺寸天线，它的发射和接收效率较低&lt;/strong&gt;。&lt;/p&gt;
-&lt;h3 id=&#34;a392-天线的增益&#34;&gt;A.3.9.2 天线的增益
-&lt;/h3&gt;&lt;p&gt;天线增益是指&lt;strong&gt;天线在最大辐射方向上的辐射功率密度与相同条件下基准天线的辐射功率密度之比&lt;/strong&gt;。不同基准天线的选择，就有了不同的增益单位。题库里也有以下说法，天线的增益是&lt;strong&gt;相对于参考天线，在某一方向上信号强度的增加&lt;/strong&gt;，这里主要强调的是天线的无源现象，由于能量守恒，有一个方向信号增强了，必然就有另一个方向信号减弱了。&lt;/p&gt;
-&lt;p&gt;各种增益单位：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;dBi：&lt;strong&gt;“相对于无方向性点源天线的增益”，即最大辐射方向上的辐射功率密度与理想点源天线的辐射功率密度之比&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;dBd：&lt;strong&gt;“相对于半波长偶极子天线的增益”，即最大辐射方向上的辐射功率密度与半波长偶极振子的最大辐射功率密度之比&lt;/strong&gt;。从这个描述中我们不难推测，dBd是一个比dBi更大的单位。&lt;/li&gt;
-&lt;li&gt;dB：&lt;strong&gt;这种表达没有说清楚计算增益所采用的比较基准，缺乏实际意义&lt;/strong&gt;。它只能用于计算中表示相对大小，比如你可以说甲信号比乙信号强0.8dB。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;由于dB已经是log后的值，所以他们的计算是简单的加减法。dBi与dBd的关系是（下面的公式要背得哟）
-&lt;/p&gt;
-$$0\ dBd = 2.15\ dBi$$&lt;p&gt;例LK0932：比较4.5 dBd和5.85 dBi。解&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;$4.5\ dBd = 0\ dBd + 4.5\ dB = 2.15\ dBi + 4.5\ dB = 6.65\ dBi$&lt;/li&gt;
-&lt;li&gt;$6.65\ dBi - 5.85\ dBi = 0.8\ dB$&lt;/li&gt;
-&lt;li&gt;所以4.5 dBd比5.85 dBi强0.8 dB&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;例LK0933：比较2.9dBd和5.85dBi。5.85dBi比2.9dBd强0.8dB，计算留给读者做练习。&lt;/p&gt;
-&lt;h3 id=&#34;a393-天线的极化&#34;&gt;A.3.9.3 天线的极化
-&lt;/h3&gt;&lt;h3 id=&#34;a394-馈线基础知识&#34;&gt;A.3.9.4 馈线基础知识
-&lt;/h3&gt;&lt;p&gt;在为业余电台选购射频电缆作为天线馈线时，最重要的两项电气参数是：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;特性阻抗&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;工作频率下单位长度的传输功率损耗&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;射频同轴电缆在业余电台中的主要用处是&lt;strong&gt;将无线电信号从发射机传送到天线&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;在业余无线电通信中，“驻波比”通常用来衡量&lt;strong&gt;负载与传输线的匹配质量&lt;/strong&gt;。天线与馈线完美匹配时，在驻波表中显示的驻波比是&lt;strong&gt;1:1&lt;/strong&gt;。&lt;strong&gt;天线与馈线的连接头接触不良&lt;/strong&gt;时，可能导致驻波比不稳定读数。&lt;/p&gt;
-&lt;p&gt;馈线中的功率损耗会&lt;strong&gt;变成热量&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;使用同轴电缆连接天线时，最好有一个较低的驻波比，因为低驻波比&lt;strong&gt;使能量更有效率地传送，减少损耗&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;因为同轴电缆使用方便，与周围环境之间的相互影响小&lt;/strong&gt;，所以在业余无线电界的使用相对于其他馈线来说更多。&lt;/p&gt;
-&lt;p&gt;通过同轴电缆的信号频率越高，通常&lt;strong&gt;损耗越高&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;对于400MHz以上的信号，通常会使用的同轴电缆连接器&lt;strong&gt;N型连接器&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;导致同轴电缆损害的最常见的原因是什么&lt;strong&gt;电缆受潮&lt;/strong&gt;。因为&lt;strong&gt;紫外线能破坏电缆的外皮，使水分渗入&lt;/strong&gt;，所以要求同轴电缆的外皮能抵挡紫外线。和固体电介质同轴电缆相比，空气电介质同轴电缆的劣势是&lt;strong&gt;要采取特别的手段来防止水分进入电缆&lt;/strong&gt;。但&lt;strong&gt;空气介质同轴硬电缆&lt;/strong&gt;在VHF和UHF频段的损耗最小。&lt;/p&gt;
-&lt;h3 id=&#34;a395-天馈系统的平衡-不平衡转换&#34;&gt;A.3.9.5 天馈系统的平衡-不平衡转换
-&lt;/h3&gt;&lt;h3 id=&#34;a396-天馈系统的阻抗匹配&#34;&gt;A.3.9.6 天馈系统的阻抗匹配
-&lt;/h3&gt;&lt;p&gt;业余无线电普遍使用的同轴电缆的特性阻抗是&lt;strong&gt;50欧姆&lt;/strong&gt;。&lt;/p&gt;
-&lt;h2 id=&#34;a310-无线电波及其传播&#34;&gt;A.3.10 无线电波及其传播
-&lt;/h2&gt;&lt;h3 id=&#34;a3101-无线电波的基本性质和描述参数&#34;&gt;A.3.10.1 无线电波的基本性质和描述参数
-&lt;/h3&gt;&lt;p&gt;无线电波在真空中的速度（即&lt;strong&gt;光速&lt;/strong&gt;）299 792 458 米/秒，我们用字母，由于长度单位米时用光速，所以上面的值没有小数点。约为&lt;strong&gt;3x10^8米/秒&lt;/strong&gt;。电波在天线导线中的传播速度大约是&lt;strong&gt;真空波速的0.95倍&lt;/strong&gt;。常用业余频段的电波在同轴电缆中的传播速度大约是&lt;strong&gt;真空波速的0.65倍&lt;/strong&gt;。&lt;/p&gt;
-&lt;h3 id=&#34;a3102-无线电波的传播规律简单计算和常见现象&#34;&gt;A.3.10.2 无线电波的传播规律、简单计算和常见现象
-&lt;/h3&gt;&lt;p&gt;无线电波按传播方式可主要分为&lt;strong&gt;地面波、天波、空间波、散射波等&lt;/strong&gt;。注意虚线上面的实线和下面的实线都是空间波，一个是发射天线直接传给接受天线，一个是经地面反射。而地波（虚线）是沿着地球表面传播，也称地表波。
-
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed7f256c6e.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed7f256c6e.png&#34; alt=&#34;wave&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed7f256c6e.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;wave&#34;
-	
-	
-&gt;
-图片来自&lt;a class=&#34;link&#34; href=&#34;https://www.slideserve.com/geranium-virgil/1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;高频电子技术 第 1 章&lt;/a&gt;，版权归原作者所有。&lt;/p&gt;
-&lt;p&gt;地波的衰减因子取决于&lt;strong&gt;电波频率、地面导电率和传播距离&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;决定超短波视距传播距离极限的主要因素&lt;strong&gt;发射天线和接收天线离地面的相对高度值&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;多径传播对UHF波段或VHF波段数据通信的影响是&lt;strong&gt;可能使误码率增大&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;无线电波在自由空间中的传播路径损耗&lt;strong&gt;与距离的平方成正比，与频率的平方成正比&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;在一个周期内，电磁波走过一定的距离，这个距离叫做&lt;strong&gt;波长&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;无线电波是一种电磁波，所以其两个组成部分是&lt;strong&gt;电场和磁场&lt;/strong&gt;。一般我们把在空间中传播的电磁波叫做&lt;strong&gt;无线电波&lt;/strong&gt;。&lt;/p&gt;
-$$c = fλ$$&lt;p&gt;
-其中c是光速，f是频率，λ是波长。显然频率和波长成&lt;strong&gt;反比&lt;/strong&gt;。如果我们选择&lt;strong&gt;兆赫数（MHz）&lt;/strong&gt;，波长选择单位米，则它们的数量关系近似是
-&lt;/p&gt;
-$$波长 = \frac{300}{频率}$$&lt;p&gt;如果你收到了一个从上千公里以外的距离传播过来的VHF信号，最可能的原因是&lt;strong&gt;信号被突发E电离层反射过来&lt;/strong&gt;。&lt;/p&gt;
-&lt;h2 id=&#34;a311-业余无线电工程实践常识&#34;&gt;A.3.11 业余无线电工程实践常识
-&lt;/h2&gt;&lt;p&gt;假负载的主要作用是&lt;strong&gt;在测试设备时不让无线电信号真正地发射出去&lt;/strong&gt;。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;收发信机面板上或设置菜单中的符号VOX代表&lt;strong&gt;发信机声控，接入后将根据对话筒有无语音输入的判别自动控制收发转换&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;收发信机中的PTT是指&lt;strong&gt;按键发射，有信号（一般为对地接通）时发射机由等待转为发射&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;收发信机中的静噪控制的目的是&lt;strong&gt;在没有信号的情况下，关闭音频输出，使其不会输出噪音&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;收发信机面板上或设置菜单中的符号SQL代表&lt;strong&gt;静噪控制，检测到接收信号低于一定电平时关断音频输出&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;有些调频接收机的参数设置菜单有NFM和WFM两种选择。它们的含义是&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;NFM为窄带调频方式，适用于信道带宽25kHz/12.5kHz的通信信号&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;WFM为宽带调频方式，适用于接收信道带宽180kHz左右的广播信号&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;在WFM方式的对讲机接收NFM信号，&lt;strong&gt;可以正常听到信号，但声音比较小&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;用设置在NFM方式的对讲机接收WFM信号，&lt;strong&gt;可以听到信号，但当调制信号幅度较大、音调较高时会发生明显非线性失真&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;一些VHF/UHF业余无线电调频手持对讲机或车载台的设置菜单中有“全频偏”和“半频偏”的选择，&lt;strong&gt;分别表示信道间隔为25kHz或者12.5kHz&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;某些对讲机具有发送DTMF码的功能。缩写DTMF指的是&lt;strong&gt;双音多频编码，由8个音调频率中的两个频率组合成的控制信号，代表16种状态之一，用于遥控和传输数字等简单字符&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;某些对讲机具有发送CTCSS码的功能。缩写CTCSS指的是&lt;strong&gt;亚音调静噪，即从67-250.3Hz的38个亚音调频率中选取一个作为选通信号，代表38种状态之一，接收机没有收到特定的选通信号时自动关闭音频输出&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;不能&lt;/strong&gt;在FM话音通信时单凭接收机听到对方语音的音量大小来准确判断对方信号的强弱，因为&lt;strong&gt;鉴频输出大小只取决于射频信号的频偏，而且正常信号的幅度会被限幅电路切齐到同样大小&lt;/strong&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;调频接收机没有接收到信号时，会输出强烈的噪声。关于这种噪声&lt;strong&gt;由天线背景噪声和机内电路噪声的随机频率变化经鉴频形成，其大小与天线接收到的背景噪声幅度无关&lt;/strong&gt;，这里的重点是与天线接收到的背景噪声幅度无关&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;如果业余中继台发射机被断断续续的干扰信号所启动，夹杂着不清楚的语音，根据覆盖区内其他业余电台的监听，确定中继台上行频率并没有电台工作。则&lt;strong&gt;可能是中继台附近的两个其他发射机的强信号在中继台上行频率造成了互调干扰&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;必须反对&lt;/strong&gt;业余电台在进行业余卫星通信时使用超过常规要求的发射功率，因为&lt;strong&gt;过强的上行信号会使卫星转发器压低对其他信道的转发功率&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;直射和经地面反射等多条路径到达的电波相位不同，互相叠加或抵消造成衰落（多径效应）&lt;/strong&gt;，因此即使在空旷平地，接收到的本地VHF/UHF信号强度也可能会随着接收位置的移动而发生变化。甚至在相距不远的两点接收同一个远方信号，多径干扰也会造成信号强度发生很大差别，且差别随两点间距离的增大呈周期性变化。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;如果对方报告你的调频电台发射的信号听起来失真严重、可辨度差，可能的原因是&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;电台的电源电压不足&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;电台所处的位置不好&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;电台的发射频率不准确&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;我们经常使用万用表测量&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;电压&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;电阻&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;万用电表的电压挡&lt;/strong&gt;可大致判断一个干电池是否已经失效&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;一个新的干电池的标称电压是&lt;strong&gt;1.5伏&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;用电压表检查一节干电池两端电压，未使用时测得1.5伏左右，用旧后测得1.2伏左右。但是，&lt;strong&gt;旧干电池的电动势仍然为1.5伏&lt;/strong&gt;，只是由于内阻变大导致测量的电压变小。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;万用电表的电阻挡&lt;/strong&gt;可测量一个元件是否短路，显然短路时电阻为0&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;在电阻挡试图测量电压&lt;/strong&gt;有可能损坏万用表&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;电压表应&lt;strong&gt;并联&lt;/strong&gt;至电路中&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;电流表应&lt;strong&gt;串联&lt;/strong&gt;至电路中&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;劣质开关电源的&lt;strong&gt;开关电路的谐波辐射&lt;/strong&gt;会造成对无线电接收机的电磁干扰。&lt;/p&gt;
-&lt;p&gt;移动车载电台通常使用的电源电压是&lt;strong&gt;约12伏特&lt;/strong&gt;。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;熔断器&lt;/strong&gt;可以在电路电流严重过载时保护电路不受损坏&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;整流器&lt;/strong&gt;可以把交变电流变成变化的直流&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;变压器&lt;/strong&gt;经常被用来把220伏的市电转换成更低电压交流电&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;LED&lt;/strong&gt;能够当做指示灯使用&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;欧姆表&lt;/strong&gt;被用来测量电阻&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;保险丝&lt;/strong&gt;可在过载时切断电路
-&lt;ul&gt;
-&lt;li&gt;在需要安装5安培保险丝的地方安装一个20安培的保险丝是不可取的，因为&lt;strong&gt;过大的电流可能导致火灾&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;防止设备外壳带电危险的措施包括&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;将所有的交流供电设备全部连接至一个安全地线&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;安装漏电保护断路器&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;所有使用交流供电的设备的电源线都使用带有单独保护地线端的三线插头&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;可充电电池&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;镍镉电池&lt;/li&gt;
-&lt;li&gt;铅酸电池&lt;/li&gt;
-&lt;li&gt;锂离子电池&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;不可充电电池（需要记住）&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;碱性电池&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;将蓄电池连接与汽车的蓄电池并联，并且发动汽车&lt;/strong&gt;可以在电网停电的状况下给一个12伏的铅酸蓄电池充电。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;铅酸蓄电池的充电和放电进行得过快，&lt;strong&gt;电池可能会过热，甚至释放出可燃气体，甚至可能爆炸&lt;/strong&gt;；所以&lt;strong&gt;如果通风不良，会有有爆炸风险的气体聚集的潜在危险&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;移动车载台的直流电源负极应当接在&lt;strong&gt;电池的负极或发动机的接地带&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;无线电测向&lt;/strong&gt;可以用来定位无线电噪音源或者恶意干扰源。&lt;/p&gt;
-&lt;h1 id=&#34;a4-与业余无线电台有关的安全防护技术&#34;&gt;A.4. 与业余无线电台有关的安全防护技术；
-&lt;/h1&gt;&lt;h2 id=&#34;a41-用电安全&#34;&gt;A.4.1 用电安全
-&lt;/h2&gt;&lt;p&gt;安全电压是指不致使人直接致死或致残的电压。标准国家标准GB3805－83《安全电压》，一般环境条件下允许持续接触的“安全特低电压”为&lt;strong&gt;24V&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed80e5a657.png&#34;&gt;
-  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed80e5a657.png&#34; alt=&#34;AC&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed80e5a657.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;AC&#34;
-	
-	
-&gt;
-上图来自&lt;a class=&#34;link&#34; href=&#34;https://courses.lumenlearning.com/physics/chapter/20-6-electric-hazards-and-the-human-body/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Electric Hazards and the Human Body&lt;/a&gt;，版权归原作者所有。&lt;/p&gt;
-&lt;p&gt;上图是交流电对人体危害与频率的关系。上面的绿线表示触电电流，下面的红线表示有感觉时的电流。可以看到，当频率在70Hz左右的时候，人体对其最敏感，也就是说最危险；而在高频（包括HF，VHF，UHF）时，危险反而更小。所以，在相同电压有效值时，我们把它们按危险程度由高到低排列是&lt;strong&gt;工频（50 Hz）&amp;gt; 直流 &amp;gt; HF射频 &amp;gt; VHF射频 &amp;gt; UHF射频&lt;/strong&gt;。可以这样理解（网上是这么说的，我不保证是对的），工频（50 Hz）由于和心脏的频率比较接近，所以最危险；高频电流直接从人体表面流过，所以伤害较小（但绝不是没有伤害），但&lt;strong&gt;皮肤容易灼伤&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;如遇设备、电线或者电源引起失火，正确的处置为&lt;strong&gt;立即切断电源，使用二氧化碳灭火器灭火&lt;/strong&gt;，这里强调二氧化碳灭火器。&lt;/p&gt;
-&lt;p&gt;必须带电检修由市电供电的无线电设备时，应做到&lt;strong&gt;双脚与地绝缘，单手操作，另一只手不触摸机壳等任何与电路设备有关的金属物品&lt;/strong&gt;，这里强调双手不能形成回路。&lt;/p&gt;
-&lt;p&gt;设备电源拔掉电源线以后&lt;strong&gt;充满高电压的电容器依然可能造成电击&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;自制一台由220伏交流供电的设备，推荐在&lt;strong&gt;交流电源入口火线端串联安装保险丝&lt;/strong&gt;。&lt;/p&gt;
-&lt;h2 id=&#34;a42-防雷知识&#34;&gt;A.4.2 防雷知识
-&lt;/h2&gt;&lt;p&gt;防雷装置的作用是防止雷电危害。传统防雷装置的主要组成部分是&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;接闪器（避雷针）&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;单支避雷针的保护范围大致&lt;strong&gt;以避雷针为顶点的45度圆锥体以内空间&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;引下线&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;接地体&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;防雷接地的作用是&lt;strong&gt;把接闪器引入的雷击电流有效地泄入大地&lt;/strong&gt;。&lt;/li&gt;
-&lt;li&gt;对防雷接地基本要求是&lt;strong&gt;要有单独的接地体，接地电阻要小，接闪器到接地体之间的引下线应尽量短而粗&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;在为同轴电缆馈线安装避雷器时应当注意&lt;strong&gt;将所有避雷器的地线接到同一个金属板上，然后将这个金属板接到室外的接地极&lt;/strong&gt;。&lt;/p&gt;
-&lt;h1 id=&#34;a5-电磁兼容技术以及射频干扰的预防和消除&#34;&gt;A.5. 电磁兼容技术以及射频干扰的预防和消除
-&lt;/h1&gt;&lt;h2 id=&#34;a51-电磁辐射防护规定&#34;&gt;A.5.1 电磁辐射防护规定
-&lt;/h2&gt;&lt;p&gt;VHF和UHF信号属于&lt;strong&gt;非电离辐射&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;我国业余电台应该遵守的关于电磁辐射污染的具体管理规定文件为&lt;strong&gt;国家标准GB/T 51391《通信工程建设环境保护技术标准》&lt;/strong&gt;。其规定&lt;strong&gt;等效辐射功率在0.1-3MHz不大于300W、在3MHz-300GHz不大于100瓦的无线通信设施（设备）&lt;strong&gt;向没有屏蔽空间发射电磁场可以免于管理。《我国国家标准《电磁环境控制限值》规定公众暴露控制限值中，对环境电磁辐射场强任意连续6分钟内的方均根值要求最严格的频率范围为&lt;/strong&gt;30MHz- 3GHz&lt;/strong&gt;。由于&lt;strong&gt;人体会对某些特定频率的电磁波吸收量更大&lt;/strong&gt;，因此电磁辐射防护规定国家标准中的照射限值随着频率的变化而不同。&lt;/p&gt;
-&lt;h2 id=&#34;a52-射频干扰的预防和消除&#34;&gt;A.5.2 射频干扰的预防和消除
-&lt;/h2&gt;&lt;p&gt;假设中继台的收、发信机共用天线，上下行频率分别为F1和F2。要防止中继台发射机对接收机产生干扰，应在&lt;strong&gt;发信机与天线间串联中心频率为F1的带阻滤波器，在收信机与天线间串接中心频率为F2的带阻滤波器&lt;/strong&gt;。这里强调对于中继台而言，上行频率是收信频率（F1），所以收信机要屏蔽发信机的频率（F2）就要串联一个F2的带阻滤波器。&lt;/p&gt;
-&lt;p&gt;要防止业余HF发射机的杂散发射干扰天线附近的电话机，应该在电话机和电话线之间之间串联&lt;strong&gt;截止频率不高于1MHz的低通滤波器&lt;/strong&gt;。这强调要滤除高频（HF）干扰，需要使用低通滤波器。&lt;/p&gt;
-&lt;p&gt;对天线感兴趣的朋友推荐一本来自美国业余无线电协会的《天线手册》，最新的中文版应该是第二十二版。这是部大块头，适合当参考书，据说90%的人买了后就没看过，谨慎购买。&lt;/p&gt;
-&lt;p&gt;对讲机的话UV-5R算一代神机，但注意这是部模拟机，好多地方现在都是数字中继，比如上海，买了可能会用不了。大家买对讲机之前最好问问当地的同伴，不用盲目购买。&lt;/p&gt;
-&lt;p&gt;MMDVM可以方便大家通过网络交流，动手能力强的推荐自己动手做。&lt;/p&gt;</description>
-        </item>
-        
-    </channel>
-</rss>
+&lt;/p>
+$$10\ dBm = 40\ dBμ$$&lt;p>
+然后看到dBμ，就先转换为dBm在进行计算。&lt;/p>
+&lt;p>比如，0.25W，换算成dBm，应该是20到30间的一个数。那换算成dBμ，就加上30，应该是50到60间的一个数。&lt;/p>
+&lt;p>有时候有两个选项符合要求，需要计算。如果你不想计算，记得&lt;strong>不要选择&lt;/strong>结尾是5的那个选项，什么25、35、45都不要选，剩下的那个就是正确答案。&lt;/p>
+&lt;p>依次类推还有&lt;strong>dBW&lt;/strong>，如果你不想计算，记得一点，题库里的dBW都不是正确答案。
+&lt;/p>
+$$x\ dBm = (x-30)\ dBW$$&lt;ul>
+&lt;li>
+&lt;p>指配频率 assigned frequency&lt;br>
+指配给一个电台的频段的中心频率。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>频率容限 frequency tolerance&lt;br>
+发射所占频段的中心频率偏离指配频率，或发射的特征频率偏离参考频率的最大容许偏差。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>杂散发射 spurious emission&lt;br>
+必要带宽之外的一个或多个频率的发射，其发射电平可降低而不致影响相应信息的传输。杂散发射包括谐波发射、寄生发射、互调产物及变频产物，但带外发射除外。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>带外发射 out-of-band emission&lt;br>
+由于调制过程而产生的、刚超出必要带宽的一个或多个频率的发射，但杂散发射除外。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>无用发射 unwanted emissions&lt;br>
+包括杂散发射和带外发射。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>（发射的）带外域 out-of-band domain（of an emission）&lt;br>
+是指刚超出必要带宽而未进入杂散域的频率范围，在此频率范围内带外发射为其主要发射产物。基于产生的源而定义的带外发射，主要产生在此带外域中，也会在杂散域中延伸一小部分。同样地，主要产生在杂散域中的杂散发射也可能在带外域中产生。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>（发射的）杂散域 spurious domain（of an emission）&lt;br>
+带外域以外的频率范围，在此频率范围内杂散发射为其主要发射产物。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>杂散域发射功率通常用发射机连接天馈线的输出端的杂散发射频率的峰包功率或平均功率表示，其参考测量带宽主要取决于发射机的无线业务种类。杂散域发射功率也可以用电场强度或地球表面功率通量密度（pfd）等效表示。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/03/23/65fed73d955bc.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/03/23/65fed73d955bc.png" alt="各种发射" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/03/23/65fed73d955bc.png"
+loading="lazy"
+alt="各种发射"
+>
+图片来自聂杏春的&lt;a class="link" href="http://www.cesi.cn/uploads/soft/120830/25-120S0092528.pdf" target="_blank" rel="noopener"
+>无线电设备杂散发射技术要求和测量方法&lt;/a>，版权归原作者所有。&lt;/p>
+&lt;p>比如一台发射机，工作频率为145.000MHz，但在435.000MHz的频率上也有发射，显然从上图可知属于杂散发射。&lt;/p>
+&lt;p>业余无线电台使用的发射设备必须符合下列条件&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>商品设备应当具备《无线电发射设备型号核准证》&lt;/strong>&lt;br>
+型号核准的法律依据为 &lt;strong>《无线电频率划分规定》中有关无线电发射设备技术指标的规定&lt;/strong>&lt;/li>
+&lt;li>自制、改装、拼装设备应通过国家相关技术标准的检测&lt;/li>
+&lt;/ul>
+&lt;p>业余无线电台专用无线电发射设备的发射频率必须满足&lt;strong>发射频率不能超越业余业务或者卫星业余业务频段&lt;/strong>，不需要包含所有业余业务或者卫星业余业务频段。&lt;/p>
+&lt;p>所以总结一下对发射设备的要求：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>频率容限不超过限值&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>杂散辐射不超过限值&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>发射频率不超出国家规定的业余频率&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;h2 id="a111-无线电频率的管理">A.1.11 无线电频率的管理
+&lt;/h2>&lt;p>A类业余无线电台允许发射的发射频率为&lt;strong>30-3000MHz&lt;/strong>范围内的各业余业务和卫星业余业务频段。&lt;/p>
+&lt;ul>
+&lt;li>HF（高频） &lt;strong>3-30&lt;/strong>MHz&lt;/li>
+&lt;li>VHF（甚高频） &lt;strong>30-300&lt;/strong>MHz&lt;/li>
+&lt;li>UHF（特高频） &lt;strong>300-3000&lt;/strong>MHz
+&lt;ul>
+&lt;li>&lt;strong>家用微波炉&lt;/strong>一般工作在这个频带&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>《中华人民共和国无线电频率划分规定》&lt;/strong> 规定了业余无线电台使用的频率。&lt;a class="link" href="http://www.npc.gov.cn/npc/c30834/202006/75ba6483b8344591abd07917e1d25cc8.shtml" target="_blank" rel="noopener"
+>《中华人民共和国民法典》&lt;/a>将于2021年正式生效，《物权法》将同时废止。&lt;strong>《中华人民共和国民法典》&lt;/strong> 第二百五十二条：无线电频谱资源属于国家所有。&lt;/p>
+&lt;p>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/03/23/65fed763aa8b6.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/03/23/65fed763aa8b6.png" alt="中国无线电协会业余无线电操作证书背面" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/03/23/65fed763aa8b6.png"
+loading="lazy"
+alt="中国无线电协会业余无线电操作证书背面"
+>
+注意上表中的单位。&lt;/p>
+&lt;p>&lt;a class="link" href="#Mark" >//&lt;/a>: # Mark&lt;/p>
+&lt;p>专用的频段（需要记忆），即上表粉色 Mark&lt;/p>
+&lt;ul>
+&lt;li>7MHz&lt;/li>
+&lt;li>14MHz&lt;/li>
+&lt;li>21MHz&lt;/li>
+&lt;li>28MHz&lt;/li>
+&lt;li>47GHz （这个上表中没有）&lt;/li>
+&lt;/ul>
+&lt;p>我国分配给业余业务和卫星业余业务与其他业务共用、并且业余业务和卫星业余业务作为&lt;strong>主要业务&lt;/strong>的频段（上表黄色）有（考试只要记得以下VHF和UHF的频段，实际上只有VHF频段）：Mark&lt;/p>
+&lt;ul>
+&lt;li>50MHz，6米业余波段，50-54MHz&lt;/li>
+&lt;li>144MHz，2米业余波段，下面几个细节也要记得哟
+&lt;ul>
+&lt;li>144-146MHz为唯一主要业务&lt;/li>
+&lt;li>146-148MHz为与其他业务共同作为主要业务&lt;/li>
+&lt;li>电台在144MHz频段进行本地联络时应避免占用144-144.035MHz和145.8-146MHz&lt;/li>
+&lt;li>145.8MHz至146MHz业余频段留给业余卫星通信使用，话音及其他通信方式不应占用&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>144-144.035MHz频段我没有找到相关法律法规的明确规定。根据这份&lt;a class="link" href="https://www.qsl.net/yu1bbv/ra_medija/ra_pravila/Band_plan.pdf" target="_blank" rel="noopener"
+>BAND PLAN&lt;/a>，这个频段被用于月球面反射通信（EME，Earth–Moon–Earth communication）。&lt;/p>
+&lt;p>&lt;a class="link" href="#Mark" >//&lt;/a>: # Mark TODO&lt;/p>
+&lt;p>分配给业余业务和卫星业余业务与其他业务共用、并且业余业务和卫星业余业务作为&lt;strong>唯一主要业务&lt;/strong>的频段的个数为&lt;strong>3个&lt;/strong>。在3GHz以下的该类频段为&lt;strong>144-146&lt;/strong>MHz。&lt;/p>
+&lt;p>&lt;a class="link" href="#Mark" >//&lt;/a>: # Mark TODO&lt;/p>
+&lt;p>我国分配给业余业务和卫星业余业务与其他业务共用、并且业余业务和卫星业余业务作为&lt;strong>次要业务&lt;/strong>的1200MHz以下频段有（需要记忆），上表绿色&lt;/p>
+&lt;ul>
+&lt;li>135.7kHz（这个上表中没有）&lt;/li>
+&lt;li>10.1MHz&lt;/li>
+&lt;li>430MHz，0.7米业余波段，430-440MHz，次要业务
+&lt;ul>
+&lt;li>这个频段中我国分配的主要业务是“无线电定位和航空无线电导航”。&lt;/li>
+&lt;li>在430MHz频段进行本地联络时应避免占用431.9-432.240MHz和435-438MHz&lt;/li>
+&lt;li>435MHz至438MHz业余频段留给业余卫星通信使用，话音及其他通信方式不应占用&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>431.9-432.240MHz频段，根据这份&lt;a class="link" href="https://web.archive.org/web/20210427140500/https://s2p.studylib.net/store/data/018368280.pdf?k=EwAAAXkTo224AAACWCQJih6PEtzw7KzTCM07rqeGteJzEKPp9zsApEPf53ER" target="_blank" rel="noopener"
+>India National Spectrum Plan (INSP) for Amateur Radio Service&lt;/a>，也是用于EME通信。&lt;/p>
+&lt;p>业余无线电台在业余业务、卫星业余业务作为次要业务使用的频率或者与其他主要业务共同使用的频率上发射操作时，应当&lt;strong>遵守无线电管理机构对该频率的使用规定&lt;/strong>。&lt;strong>业余无线电台在无线电管理机构核准其使用的频段内，享有平等的频率使用权&lt;/strong>。&lt;/p>
+&lt;p>&lt;strong>划分、分配、指配&lt;/strong>，请熟记下列定义&lt;/p>
+&lt;ul>
+&lt;li>（频段的）划分：allocation（of a frequency band）&lt;br>
+由国家将某个特定的频带列入频率划分表，规定该频带可在指定的条件下供业余业余业务或者卫星业余业务使用&lt;/li>
+&lt;li>（无线电频率或无线电频道的）分配：allotment（of a radio frequency or radio frequency channel）&lt;br>
+将无线电频率或频道规定由一个或多个部门，在指定的区域内供地面或空间无线电通信业务在指定条件下使用&lt;/li>
+&lt;li>（无线电频率或无线电频道的）指配：assignment（of a radio frequency or radio frequency channel）&lt;br>
+将无线电频率或频道批准给具体的业余无线电台在规定条件下使用&lt;/li>
+&lt;/ul>
+&lt;p>上面几个概念有点绕，准确注意对象可帮助记忆&lt;/p>
+&lt;ul>
+&lt;li>划分业务（频率）&lt;/li>
+&lt;li>分配（频率）给地区、国家或部门&lt;/li>
+&lt;li>指配（频率）给电台&lt;/li>
+&lt;/ul>
+&lt;p>在频率划分表中，一个频带被标明划分给多种业务时，这些业务被分为&lt;strong>主要业务&lt;/strong>和&lt;strong>次要业务&lt;/strong>。&lt;/p>
+&lt;p>《中华人民共和国无线电频率划分规定》3.2.1（3）规定：（下面三条需要记忆）
+次要业务台站&lt;br>
+a) 不得对业经指配或将来可能指配频率的主要业务电台产生有害干扰；&lt;br>
+b) 不得对来自业经指配或将来可能指配频率的主要业务电台的有害干扰提出保护要求；&lt;br>
+c) 可要求保护不受来自将来可能指配频率的同一业务或其他次要业务电台的有害干扰。todo typo&lt;/p>
+&lt;h2 id="a112-业余电台呼号的管理">A.1.12 业余电台呼号的管理
+&lt;/h2>&lt;h3 id="a1121业余电台呼号的分配和指配">A.1.12.1业余电台呼号的分配和指配
+&lt;/h3>&lt;p>&lt;strong>无线电管理机构核发业余无线电台执照时，同时指配业余无线电台呼号&lt;/strong>。如业余无线电爱好者对业已指配给自己的电台呼号不满意，&lt;strong>不可以&lt;/strong>申请另行指配业余无线电台呼号。核发业余无线电台执照的无线电管理机构已经为申请人指配业余无线电台呼号的，不另行指配其他业余无线电台呼号。&lt;/p>
+&lt;p>各地业余无线电台呼号前缀字母和后缀字符的可用范围&lt;strong>由国家无线电管理机构编制和分配&lt;/strong>。&lt;/p>
+&lt;p>业余无线电爱好者&lt;strong>不可以&lt;/strong>要求设台地所在地方无线电管理机构给予指配超出业已分配给该地方的前缀字母和后缀字符可用范围的业余无线电台呼号&lt;/p>
+&lt;p>设台地迁入其他省、自治区或者直辖市时，&lt;strong>设台人可从下面方法中二选一&lt;/strong>：&lt;/p>
+&lt;ul>
+&lt;li>方法一，注销原电台呼号，指配迁入地的新电台呼号&lt;/li>
+&lt;li>方法二，申请在迁入地继续指配原来的电台呼号&lt;br>
+&lt;strong>先到原核发执照的无线电管理机构申请办理注销手续，缴回原电台执照，取得由迁入地指配原业余无线电台呼号的书面同意，再到迁入地的地方无线电管理机构办理相应的手续、重新指配原电台呼号，领取新的电台执照&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;h3 id="a1122-业余电台呼号的使用规则">A.1.12.2 业余电台呼号的使用规则
+&lt;/h3>&lt;p>《业余无线电台管理办法》规定业余无线电台按以下办法（需要记忆）设置、正确使用业余无线电台呼号&lt;/p>
+&lt;ul>
+&lt;li>业余无线电台应当在每次通信建立及结束时，主动报出本台呼号&lt;/li>
+&lt;li>在发射过程中至少每十分钟报出本台呼号一次&lt;/li>
+&lt;li>对于通信对方，也应使用对方电台的呼号加以标识&lt;/li>
+&lt;li>这里呼号指完整的电台呼号，如在设台地以外的地点进行异地发射操作，还应在前面加上字母B、操作地分区号和符号“/”。 在实际通信中，&lt;strong>不可以&lt;/strong>把本台呼号的地区号码加后缀视作《业余电台管理办法》所说的“本台呼号”。TODO 分区&lt;/li>
+&lt;/ul>
+&lt;p>业余无线电台分区表（考试应该不考）&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>第1区：北京&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>第2区：黑龙江 吉林 辽宁&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>第3区：河北 内蒙古 山西 天津&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>第4区：江苏 山东 上海&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>第5区：福建 江西 浙江&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>第6区：安徽 河南 湖北&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>第7区：广东 广西 海南 湖南&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>第8区：贵州 四川 云南 重庆&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>第9区：甘肃 宁夏 青海 陕西&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>第0区：西藏 新疆&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>例LK0079：由国家无线电管理机构批准设台的北京火腿的电台呼号为BH1AAA，把电台带到西安去使用，则本台呼号应该为&lt;strong>B9/BH1AAA&lt;/strong>。这种操作称为&lt;strong>异地发射操作&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>例LK0084：某业余无线电爱好者，自己所设置的业余无线电台呼号为BH1ZZZ。现该爱好者到业余无线电台BH9YYY做客并在该台进行发射操作。应当使用的呼号&lt;strong>BH9YYY或者B9/BH1ZZZ&lt;/strong>。这种操作称为&lt;strong>客席发射操作&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>例LK0093：BH1ZZZ由北京迁入河北省，并办妥了由河北无线电管理机构指配使用原电台呼号的全部手续，领取了新的业余无线电台执照。该台在日常通信时应使用呼号&lt;strong>B3/BH1ZZZ&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="a1123-业余电台迁移时的管理流程及其呼号指配">A.1.12.3 业余电台迁移时的管理流程及其呼号指配
+&lt;/h3>&lt;h3 id="a1124-业余电台操作人员客席操作及其呼号使用">A.1.12.4 业余电台操作人员客席操作及其呼号使用
+&lt;/h3>&lt;h3 id="a1125-业余电台移动和异地操作及其呼号使用">A.1.12.5 业余电台移动和异地操作及其呼号使用
+&lt;/h3>&lt;h2 id="a113-业余电台的使用规定">A.1.13 业余电台的使用规定
+&lt;/h2>&lt;h3 id="a1131-关于业余电台一般通信的规定">A.1.13.1 关于业余电台一般通信的规定
+&lt;/h3>&lt;p>业余电台的法定用途为业余无线电爱好者进行&lt;strong>自我训练、相互通信和技术研究&lt;/strong>，&lt;strong>严禁用于以下目的&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>娱乐、闲聊、消遣等&lt;/li>
+&lt;li>机动车辆行车服务性通信&lt;/li>
+&lt;li>普通活动（包括公益活动）的通信工具&lt;/li>
+&lt;li>与个人生活事务有关的通信&lt;/li>
+&lt;/ul>
+&lt;p>第四条（第二款） 国家鼓励和支持业余无线电通信技术的研究、普及和突发重大自然灾害等紧急情况下的应急无线电通信活动。&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>业余无线电台的通信对象应当限于业余无线电台&lt;/strong>，所以以下行为是&lt;strong>错误&lt;/strong>的：
+&lt;ul>
+&lt;li>某业余电台操作者听到业余专用频率上出现某种显然出自非业余电台的人为干扰发射，于是按下话筒向该发射者宣传无线电管理法规知识&lt;/li>
+&lt;li>在业余无线电台中转发广播电台、互联网聊天、电话通话、其他电台的联络信号&lt;/li>
+&lt;li>业余电台在通信中为其他人或者单位、组织转达信息&lt;/li>
+&lt;li>&lt;strong>与公众对讲机通信&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>未经核发业余无线电台执照的无线电管理机构批准，业余无线电台不得以任何方式进行广播或者发射通播性质的信号&lt;/strong>，所以以下行为是&lt;strong>错误&lt;/strong>的：
+&lt;ul>
+&lt;li>某业余无线电协会在发射操作中向其会员播发公益性通知和技术训练讲座，但未得到相应无线电管理机构的批准&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>不得发送与业余业务和卫星业余业务无关的信号&lt;/strong>。&lt;/li>
+&lt;li>&lt;strong>严禁利用业余无线电台从事从事商业或者其他营利活动&lt;/strong>，所以以下行为是&lt;strong>错误&lt;/strong>的
+&lt;ul>
+&lt;li>出租车安装业余电台并用来传递有关载客的信息&lt;/li>
+&lt;li>利用业余无线电台通信来促销业余无线电产品或者推动与业余无线电活动有关的其他商业性活动&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>严禁阻碍其他无线电台通信&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>当我说一个行为时&lt;strong>错误&lt;/strong>的，意味着这个行为是被&lt;strong>禁止&lt;/strong>的，是&lt;strong>违法&lt;/strong>的。&lt;/p>
+&lt;p>&lt;strong>任何时候都应当使用明语及业余无线电领域公认的缩略语和简语&lt;/strong>。&lt;/p>
+&lt;p>业余无线电台实验新的编码、调制方式、数字通信协议或者交换尚未公开格式的数据文件时，应&lt;strong>事先尽可能采取各种办法向信号可能覆盖范围内的业余无线电爱好者公开有关技术细节，并提交给核发其业余无线电台执照的地方无线电管理机构&lt;/strong>。&lt;/p>
+&lt;p>由&lt;strong>国家无线电管理机构审批&lt;/strong>的业余无线电台在设台地以外的地点进行&lt;strong>异地发射&lt;/strong>操作时，&lt;strong>既要符合业余电台执照所核定的各项参数约束，又要遵守操作所在地的地方无线电管理机构的相关规定&lt;/strong>。&lt;/p>
+&lt;p>具备国家无线电管理机构规定的操作技术能力并具有法律规定有效证明文件、但还没有获准设置自己的业余电台的人&lt;strong>可以&lt;/strong>到业余电台进行发射操作。&lt;strong>使用所操作业余电台的呼号，由该业余电台的设台人对操作不妥而造成的有害干负责&lt;/strong>。&lt;/p>
+&lt;p>尚未考得《业余电台操作证书》的人在接受业余电台培训中实习发射操作&lt;strong>必须已接受法规等基础培训、必须由电台负责人现场辅导、必须在执照核定范围以及国家规定的操作权限内、进行短时间体验性发射操作实习&lt;/strong>。&lt;/p>
+&lt;p>业余无线电台设置人&lt;strong>应当确保其无线电发射设备处于正常工作状态，避免对其他无线电业务造成有害干扰&lt;/strong>。&lt;/p>
+&lt;p>业余无线电爱好者&lt;strong>不得接收与业余业务和卫星业余业务无关的信号&lt;/strong>。无意接收到非业余业务和卫星业余业务的信息时&lt;strong>不得传播、公布&lt;/strong>。&lt;/p>
+&lt;p>国家&lt;strong>禁止&lt;/strong>利用业余无线电台从事发布、传播违反法律或者公共道德的信息的行为。&lt;/p>
+&lt;p>国际电联规定的确定发射电台辐射功率的原则为&lt;strong>发射电台只应辐射为保证满意服务所必要的功率&lt;/strong>。&lt;/p>
+&lt;p>业余电台通信受到违法电台或者不明电台的有害干扰时，应&lt;strong>不予理睬，收集有关信息并向无线电管理机构举报&lt;/strong>。&lt;/p>
+&lt;h3 id="a1132-关于业余无线电应急通信的规定">A.1.13.2 关于业余无线电应急通信的规定
+&lt;/h3>&lt;p>在突发重大自然灾害等紧急情况下，业余无线电台&lt;strong>才可以和非业余无线电台进行规定内容的通信&lt;/strong>。内容限于&lt;strong>与抢险救灾直接相关的紧急事务&lt;/strong>或者&lt;strong>应急救援相关部门交办的任务&lt;/strong>。&lt;/p>
+&lt;h3 id="a1133-业余无线电中继台管理规定和使用规范">A.1.13.3 业余无线电中继台管理规定和使用规范
+&lt;/h3>&lt;p>业余中继台的设置和技术参数等应&lt;strong>符合国家以及设台地的地方无线电管理机构的规定&lt;/strong>。&lt;/p>
+&lt;p>业余中继台必须&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>设专人负责监控和管理工作，配备有效的遥控手段，保证造成有害干扰时及时停止发射&lt;/strong>。&lt;/li>
+&lt;li>&lt;strong>向其覆盖区域内的所有业余无线电台提供平等的服务，并将使用业余中继台所需的各项技术参数公开&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>选择144MHz或430MHz业余模拟调频中继台同频段收发频差的原则是&lt;strong>采用业余无线电标准频差，即144MHz频段600kHz，430MHz频段5MHz&lt;/strong>。&lt;/p>
+&lt;p>业余中继台的使用原则是&lt;strong>除必要的短暂通信外，应保持业余中继台具有足够的空闲时间，以便随时响应突发灾害应急呼叫&lt;/strong>。&lt;/p>
+&lt;p>如果你知道另一个电台的呼号，想要在中继上呼叫他，你应该&lt;strong>呼叫对方的呼号，并报出自己的呼号&lt;/strong>。&lt;/p>
+&lt;h3 id="a1134-业余电台通联卡片及电台日志">A.1.13.4 业余电台通联卡片及电台日志
+&lt;/h3>&lt;p>法规和国际业余无线电惯例要求业余电台日志记载的必要基本内容是（英文缩写也要记忆）:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>通信时间 DATE、TIME&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>通信频率 FREQ&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>通信模式 MODE&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>对方呼号 CALL（对方）&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>双方信号报告 RST（双方）&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>迫切需要方卡回寄卡片时，应直接向对方地址邮寄卡片并附加SASE（self-addressed stamped envelope） TODO&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>不是作为联络或收听证明而交换QSL卡片时，应填上“Eye ball QSO”等有关说明，不应赠送空白卡片 TODO&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="a114-业余电台管理执法检查和违法处罚">A.1.14 业余电台管理执法检查和违法处罚
+&lt;/h2>&lt;h3 id="a1141-业余电台管理执法检查">A.1.14.1 业余电台管理执法检查
+&lt;/h3>&lt;p>业余无线电台设置、使用人应当接受&lt;strong>无线电管理机构或者其委托单位的监督检查&lt;/strong>。&lt;/p>
+&lt;h3 id="a1142-业余电台的违法处罚">A.1.14.2 业余电台的违法处罚
+&lt;/h3>&lt;p>&lt;a class="link" href="http://www.npc.gov.cn/wxzl/wxzl/2000-12/17/content_4680.htm" target="_blank" rel="noopener"
+>&lt;strong>《中华人民共和国刑法》&lt;/strong>&lt;/a>第二百八十八条 违反国家规定，擅自设置、使用无线电台（站），或者擅自占用频率，经责令停止使用后拒不停止使用，干扰无线电通讯正常进行，造成严重后果的，处三年以下有期徒刑、拘役或者管制，并处或者单处罚金。&lt;/p>
+&lt;h1 id="a2-无线电通信程序方法">A.2. 无线电通信程序、方法
+&lt;/h1>&lt;h2 id="a21业余无线电频率的使用规范">A.2.1业余无线电频率的使用规范
+&lt;/h2>&lt;p>&lt;strong>任何核准的业余电台对频率享有平等的频率使用权&lt;/strong>。&lt;br>
+例：某俱乐部约定了一个成员业余电台之间交流技术的网络频率，当遇有其他业余电台按通信惯例要求参加通信时，应无条件欢迎加入。&lt;/p>
+&lt;p>业余电台在发射调试信号进行发射功率和天线驻波比等检查时必须&lt;strong>先将频率设置到无人使用的空闲频率、偏离常用的热点频率&lt;/strong>。&lt;/p>
+&lt;h2 id="a22-业余电台通信程序">A.2.2 业余电台通信程序
+&lt;/h2>&lt;p>业余电台在发起呼叫前应&lt;strong>先守听一段时间，确保没有其他电台正在使用频率&lt;/strong>。通过守听，没有听到信号还不足以确认频率空闲，因为有时听不到通信双方中的另一方，贸然呼叫会对已有的通信造成干扰。为避免这种情况，应该：&lt;strong>先询问“有人使用频率吗”？确认没有应答方能发起呼叫&lt;/strong>。英语表达示例（需要记忆）：&lt;/p>
+&lt;ul>
+&lt;li>Is the frequency in use？&lt;/li>
+&lt;li>Is any body in the frequency？&lt;/li>
+&lt;li>Any body here？&lt;/li>
+&lt;/ul>
+&lt;p>业余电台（以BH1ZZZ为例）用话音发起CQ呼叫的正确格式为：&lt;strong>CQ、CQ、CQ。BH1ZZZ呼叫。Bravo Hotel One Zulu Zulu Zulu呼叫，BH1ZZZ呼叫。听到请回答。&lt;strong>或英文&lt;/strong>CQ CQ CQ.This is BH1ZZZ. Bravo Hotel One Zulu Zulu Zulu, BH1ZZZ is calling. I’m standing by.&lt;/strong>。&lt;/p>
+&lt;p>业余电台BH1ZZZ用话音呼叫BH8YYY的正确格式为&lt;strong>BH8YYY、BH8YYY、BH8YYY。BH1ZZZ呼叫。Bravo Hotel One Zulu Zulu Zulu，BH1ZZZ呼叫。听到请回答。&lt;/strong>。英文为&lt;strong>Bravo Hotel Eight Yankee Yankee Yankee, Bravo Hotel Eight Yankee Yankee Yankee, Bravo Hotel Eight Yankee Yankee Yankee.This is Bravo Hotel One Zulu Zulu Zulu. Bravo Hotel One Zulu Zulu Zulu, Bravo Hotel One Zulu Zulu Zulu is calling. I’m standing by.&lt;/strong>。&lt;/p>
+&lt;p>BH1ZZZ希望加入两个电台正在通信中的谈话，正确的方法为：&lt;strong>在双方对话的间隙，短暂发射一次“Break in！”或“插入！”，如得到响应，再说明本台呼号 “BH1ZZZ请求插入”，等对方正式表示邀请后，方能加入&lt;/strong>。以请求插入的方式加入两个电台正在通信中的谈话，应&lt;strong>确认自己的加入不会影响原通信双方的乐趣&lt;/strong>。&lt;/p>
+&lt;p>业余电台之间进行通信，必须相互正确发送和接收的信息为（记忆）：&lt;/p>
+&lt;ul>
+&lt;li>本台呼号&lt;/li>
+&lt;li>对方呼号&lt;/li>
+&lt;li>信号报告&lt;/li>
+&lt;/ul>
+&lt;p>当一部电台在呼叫CQ时，他的意思是&lt;strong>非特指地呼叫任何一部电台&lt;/strong>。&lt;/p>
+&lt;p>回答一个CQ呼叫时&lt;strong>先报出对方的呼号，再报出自己的呼号&lt;/strong>。&lt;/p>
+&lt;p>如果其他电台报告你在2米波段的信号刚才非常强，但是突然变弱或不可辨，这时你应当&lt;strong>稍稍移动一下自己的位置，有时信号无规律反射造成的多径效应可能导致失真&lt;/strong>。&lt;/p>
+&lt;p>&lt;strong>将一个频率作为一个频道存储在电台中&lt;/strong>可以让你快速切换到一个你经常使用的频率。&lt;/p>
+&lt;h2 id="a23-业余电台通信常用的缩语和简语">A.2.3 业余电台通信常用的缩语和简语
+&lt;/h2>&lt;p>Q简语是一种标准化的三字母通信简略语，因短语开头字母均为“Q”而得名。（加粗的为考试可能会考的，需重点记忆）&lt;/p>
+&lt;ul>
+&lt;li>Q简语 问句含义 答句含义 TODO mark&lt;/li>
+&lt;li>QRA 你的电台名称是？ 我的电台名称是&amp;hellip;&lt;/li>
+&lt;li>QRB 你台离我台多远？ 我们相距约为&amp;hellip;&lt;/li>
+&lt;li>QRG 我的准确频率是多少？ 你的准确频率是&amp;hellip;&lt;/li>
+&lt;li>QRI 我的音调如何？ 你的音调是(T1-T9)&lt;/li>
+&lt;li>QRJ 我的信号小吗？ 你的信号小&lt;/li>
+&lt;li>QRK 我的信号可辨度是多少？ 你的信号可辨度是(R1-R5)&lt;/li>
+&lt;li>QRL 你忙吗？ 我正忙&lt;/li>
+&lt;li>&lt;strong>QRM 你受到他台干扰吗？ 我正受到他台干扰 1.无 2.稍有 3.中等 4.严重 5.极端&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>QRN 你受到天电干扰吗？ 我正受到天电干扰 1.无 2.稍有 3.中等 4.严重 5.极端&lt;/strong>&lt;/li>
+&lt;li>QRO 要我增加发信功率吗？ 请增加发信功率&lt;/li>
+&lt;li>QRP 要我减低发信功率吗？ 请减低发信功率&lt;/li>
+&lt;li>QRQ 要我发得快些吗？ 请发快些&lt;/li>
+&lt;li>QRS 要我发得慢些吗？ 请发慢些&lt;/li>
+&lt;li>QRT 要我停止拍发吗？ 请停止拍发&lt;/li>
+&lt;li>QRU 你有事吗？ 无事&lt;/li>
+&lt;li>QRV 你准备好了吗？ 我已准备好了&lt;/li>
+&lt;li>QRW 需要我转告吗？ 请转告&lt;/li>
+&lt;li>QRX 要我等多长时间？ 请等待&amp;hellip; &amp;hellip;分钟&lt;/li>
+&lt;li>&lt;strong>QRZ 谁在呼叫我？ &amp;hellip;KHz/MHz正在呼叫你&lt;/strong>&lt;/li>
+&lt;li>QSA 我的信号强度是多少？ 你的信号强度是&amp;hellip;&lt;/li>
+&lt;li>QSB 我的信号有衰落吗？ 你的信号强度是，1.几乎不能抄收 2.弱 3.还好 4.好 5.很好&lt;/li>
+&lt;li>QSD 我的信号不完整吗? 你的信号不完整&lt;/li>
+&lt;li>&lt;strong>QSL 你确认收妥／QSL卡片吗？ 我确认收妥／QSL卡片&lt;/strong>&lt;/li>
+&lt;li>QSO 你能否和&amp;hellip;直接（或转接）通信？ 你能和&amp;hellip;直接（或转接）通信？&lt;/li>
+&lt;li>QSP 你能中转到&amp;hellip;吗？ 我能中转到&amp;hellip;&lt;/li>
+&lt;li>QSU 能在这个频率(或某个频率)回复吗？ 我将在此频率(或某频率)回复&lt;/li>
+&lt;li>QSV 有天电干扰要我在此频率发一串 V 字吗？ 请在此频率发一串 V 字&lt;/li>
+&lt;li>QSW 你将在此频率(或某频率)发吗？ 我将在此频率(或某频率)发&lt;/li>
+&lt;li>QSX 你将在某频率收听吗？ 我将在某频率收听&lt;/li>
+&lt;li>QSY 要我改用其他频率拍发吗？ 请改用&amp;hellip;KHz/MHz拍发&lt;/li>
+&lt;li>QSZ 要我每组发两遍吗？ 请每组发两遍&lt;/li>
+&lt;li>QTB 要我查对组数吗？ 请查对组数&lt;/li>
+&lt;li>QTC 你有几份报要发？ 我有&amp;hellip;份报要发&lt;/li>
+&lt;li>&lt;strong>QTH 你的地理位置是？ 我的地理位置是&amp;hellip;&lt;/strong>&lt;/li>
+&lt;li>QTR 你的标准时间是？ 我的标准时间是&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a class="link" href="http://www.sara.org.cn/technology/detail9.htm" target="_blank" rel="noopener"
+>业余无线电常用缩略语&lt;/a>（加粗的为考试可能会考的，需重点记忆），根据题库又补充了很多 mark&lt;/p>
+&lt;ul>
+&lt;li>缩略语 原语 含义&lt;/li>
+&lt;li>AA ALL AFTER 在后&lt;/li>
+&lt;li>LSN LISTEN 收听&lt;/li>
+&lt;li>*AB ALL BEFORE 在前&lt;/li>
+&lt;li>N NO 不&lt;/li>
+&lt;li>*ABT ABOUT 关于、大约&lt;/li>
+&lt;li>NA NORTH AMERICA 北美洲&lt;/li>
+&lt;li>ADD ADDITION 增加&lt;/li>
+&lt;li>NCS NET CONTROL STATION 网络控制电台&lt;/li>
+&lt;li>ADR ADDRESS 地址&lt;/li>
+&lt;li>ND NOTHING DOING 无事&lt;/li>
+&lt;li>AF AFRICA 非洲&lt;/li>
+&lt;li>NR NUMBER 数目&lt;/li>
+&lt;li>AHR ANOTHER 其他、另外&lt;/li>
+&lt;li>*NW NOW 现在&lt;/li>
+&lt;li>AGN AGAIN 再、再一次&lt;/li>
+&lt;li>OB OLD BOY 老弟&lt;/li>
+&lt;li>AM AMPLITUDE MODULATION 调幅&lt;/li>
+&lt;li>OC OLD CHAP,OCEANIA 老伙计，大洋洲&lt;/li>
+&lt;li>ANS ANSWER 回答&lt;/li>
+&lt;li>&lt;strong>OM OLD MAN 老“火腿”&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>ANT ANTENNA 天线&lt;/strong>&lt;/li>
+&lt;li>OP OPERATOR 操作员、报务员&lt;/li>
+&lt;li>AS ASIA 亚洲&lt;/li>
+&lt;li>OSCAR ORBITING SATELLITE CARRYING AMATEUR RADIO 业余卫星&lt;/li>
+&lt;li>BCI BROADCAST INTERFERENCE 广播干扰&lt;/li>
+&lt;li>OT OLD TIME 老前辈、老资格&lt;/li>
+&lt;li>BCNU BE SEEING YOU 见到你&lt;/li>
+&lt;li>POBOX POST OFFICE BOX 邮政信箱&lt;/li>
+&lt;li>BGN BEGIN 开始&lt;/li>
+&lt;li>PSE PLEASE 请&lt;/li>
+&lt;li>BUG SEMI-AUTOMATIC KEY 半自动电键&lt;/li>
+&lt;li>PWR POWER 功率&lt;/li>
+&lt;li>BURO BUREAU 管理局&lt;/li>
+&lt;li>*&lt;strong>R ROGER、RECEIVED 收到了&lt;/strong>&lt;/li>
+&lt;li>CD CRD 卡片&lt;/li>
+&lt;li>&lt;strong>RX、RCVR RECEIVER 接收机&lt;/strong>&lt;/li>
+&lt;li>*CFM CONFIRM 确认、认为&lt;/li>
+&lt;li>&lt;strong>RF RADIO FREQUENCY （各种类型的）无线电波&lt;/strong>&lt;/li>
+&lt;li>RFI RADIO FREQUENCY INTERFERENCE 无线电干扰&lt;/li>
+&lt;li>CLBK CALL BOOK 呼号手册&lt;/li>
+&lt;li>&lt;strong>RIG STATION EQUPMENT 电台设备&lt;/strong> mark&lt;/li>
+&lt;li>CQ CALL ANY STATION 普遍呼叫&lt;/li>
+&lt;li>RPRT REPORT 报告&lt;/li>
+&lt;li>CRT CORRECTION 改正&lt;/li>
+&lt;li>RTTY RADIO TELETYPE 无线电传打字&lt;/li>
+&lt;li>*CUAGN SEE YOU AGAIN 再见到你&lt;/li>
+&lt;li>SA SOUTH AMERICA 南美洲&lt;/li>
+&lt;li>*CUL SEE YOU LATER 再会&lt;/li>
+&lt;li>SK END 结束符号&lt;/li>
+&lt;li>*CW CONTINUOUS WAVE 等幅报&lt;/li>
+&lt;li>SKED SCKEDULE 表格&lt;/li>
+&lt;li>CY COPY 抄收&lt;/li>
+&lt;li>SN SOON 立即、不久&lt;/li>
+&lt;li>*DE FROM 从&lt;/li>
+&lt;li>SOS SAVE OUR SOULD 呼救信号&lt;/li>
+&lt;li>*&lt;strong>DF DIRECTION FINDING 测向&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>ARDF Amateur radio direction finding 业余无线电测向&lt;/strong>&lt;/li>
+&lt;li>SRI SORRY 抱歉&lt;/li>
+&lt;li>*DR DEAR 亲爱的&lt;/li>
+&lt;li>SSB SINGLE SIDE BAND 单边带&lt;/li>
+&lt;li>DX LONG DISTANCE 远距离&lt;/li>
+&lt;li>SSTV SLOW-SCAN TELEVISION 慢扫描电视&lt;/li>
+&lt;li>EL、ELE ANTENNA ELEMENT 天线单元&lt;/li>
+&lt;li>STN STATION 电台&lt;/li>
+&lt;li>ES AND 和&lt;/li>
+&lt;li>SW SHORT WAVE、SWITCH 短波、开关&lt;/li>
+&lt;li>EU EUROPE 欧洲&lt;/li>
+&lt;li>SWL SHORT WAVE LISTENER 短波收听台&lt;/li>
+&lt;li>FB FINE BUSINESS 良好的&lt;/li>
+&lt;li>TEMP TEMPERATRE 温度&lt;/li>
+&lt;li>FM FREQUENCY MODULATION 调频&lt;/li>
+&lt;li>TMW TOMORROW 明天&lt;/li>
+&lt;li>&lt;strong>FREQ、FQ FREQUENCY 频率&lt;/strong>&lt;/li>
+&lt;li>TNX、TKS THANKS 谢谢&lt;/li>
+&lt;li>GA GOOD AFTERNOON、GO AHEAD 下午好、往下发&lt;/li>
+&lt;li>T/R TRANSMIT/RECEIVE 收发信&lt;/li>
+&lt;li>GB GOOD BYE 再见&lt;/li>
+&lt;li>TU THANKS YOU 谢谢你&lt;/li>
+&lt;li>GE GOOD EVENING 晚上好&lt;/li>
+&lt;li>&lt;strong>TX、XMTR TRANSMITTER 发射机&lt;/strong>&lt;/li>
+&lt;li>GL GOOD LUCK 好运&lt;/li>
+&lt;li>U YOU 你&lt;/li>
+&lt;li>GLD GLAD 高兴&lt;/li>
+&lt;li>UR YOUR，YOUR ARE 你的、你是&lt;/li>
+&lt;li>GM GOOD MORNING 早上好&lt;/li>
+&lt;li>UTC UNIVERSAL COORDINATED TIME 世界协调时&lt;/li>
+&lt;li>GN GOOD NIGHT 晚安&lt;/li>
+&lt;li>VFO VARIABLE FREQUENCY OSEILLATOR 可变频率振荡器&lt;/li>
+&lt;li>HAM AMATEUR TRANSMITTER 业余无线电爱好者&lt;/li>
+&lt;li>VY VERY 很&lt;/li>
+&lt;li>HR HERE 这里&lt;/li>
+&lt;li>WW WORLD WIDE 全世界&lt;/li>
+&lt;li>HPE HOPE 希望&lt;/li>
+&lt;li>&lt;strong>WX WEATHER 天气&lt;/strong>&lt;/li>
+&lt;li>HW HOW 如何&lt;/li>
+&lt;li>&lt;strong>XCVR TRANSCEIVER 收发信机&lt;/strong>&lt;/li>
+&lt;li>IARU INTERNATIONAL AMATEUR RADIO UNIN 国际业余无线电联盟&lt;/li>
+&lt;li>XMAS CHRISTMAS 圣诞节&lt;/li>
+&lt;li>ITU INTERNATIONAL TELECOMMUNICATION UNIN 国际电讯联盟&lt;/li>
+&lt;li>XTAL ORYSTAL 晶体&lt;/li>
+&lt;li>K、KU GO AHEAD 请回答&lt;/li>
+&lt;li>XYL WIFE 妻子&lt;/li>
+&lt;li>KNW KNOW 知道&lt;/li>
+&lt;li>YL YOUNG LADY 小姐、女报务员&lt;/li>
+&lt;li>LG LONG 长&lt;/li>
+&lt;li>YM YOUNGMAN 青年人（男）&lt;/li>
+&lt;li>LIS LICENSE 执照&lt;/li>
+&lt;li>&lt;strong>73 BEST REGARDS 祝愿，致意&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>LOG LOG BOOK 电台日记&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>88 LOVE AND KISSES 爱与接吻&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>GND ground 地线，地面&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>LED light-emitting diode 发光二极管&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>LCD Liquid Crystal Display 液晶显示器&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>注：带“*”的为普通通信常用缩语&lt;/p>
+&lt;p>天线缩写（需要记忆）TODO mark&lt;/p>
+&lt;ul>
+&lt;li>DP 偶极天线&lt;/li>
+&lt;li>GP 垂直接地天线&lt;/li>
+&lt;li>BEAM 定向天线&lt;/li>
+&lt;li>YAGI 八木天线&lt;/li>
+&lt;li>VER 垂直天线&lt;/li>
+&lt;/ul>
+&lt;h2 id="a24-业余电台通信常用的地理常识">A.2.4 业余电台通信常用的地理常识
+&lt;/h2>&lt;p>中国在东八区（UTC+8），以为这&lt;strong>比UTC时间快8小时&lt;/strong>。UTC时间时1点，那么北京时间就是9点；北京时间是1点，UTC时间就是前一天的下午5点。&lt;/p>
+&lt;p>&lt;a class="link" href="#Mark" >//&lt;/a>: #TODO mark&lt;/p>
+&lt;p>我国所属的CQ分区是&lt;strong>23、24、27&lt;/strong>。&lt;/p>
+&lt;p>“ITU分区”是IARU的活动计算通信成绩的基础。我国所属的“ITU分区”有：&lt;strong>33、42、43、44、50&lt;/strong>。&lt;/p>
+&lt;p>业余无线电通信梅登海德&lt;strong>网格定位&lt;/strong>系统（Maidenhead Grid Square Locator）是一种：&lt;strong>根据经纬度坐标对地球表面进行网格划分和命名，用以标示地理位置的系统&lt;/strong>。其格式为&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>2个字母和2位数字&lt;/strong>，或&lt;/li>
+&lt;li>&lt;strong>2个字母和2位数字再加2个字母&lt;/strong>&lt;br>
+&lt;strong>两者网格大小不同，4字符网格为经度2度和纬度1度，6字符网格为经度5分和纬度2.5分&lt;/strong>。&lt;/li>
+&lt;/ul>
+&lt;h1 id="a3无线电系统原理">A.3.无线电系统原理
+&lt;/h1>&lt;h2 id="a31-一般常识">A.3.1 一般常识
+&lt;/h2>&lt;p>辐射（radiation）是指&lt;strong>任何源&lt;/strong>的能量流以&lt;strong>无线电波&lt;/strong>的形式向外发出，包括闪电产生的电磁波。&lt;strong>不包括&lt;/strong>导线中的各种信号/干扰，电场，磁场。&lt;/p>
+&lt;p>发射（emission）是指：由&lt;strong>无线电发信电台&lt;/strong>产生的辐射或辐射产物。发射必须是无线电台，其它的电子设备，闪电等等都不能发射。&lt;/p>
+&lt;p>电流的单位是&lt;strong>安（培）、A&lt;/strong>。电压的单位是&lt;strong>伏（特）、V&lt;/strong>。电阻的单位是&lt;strong>欧（姆）、Ω&lt;/strong>。&lt;strong>功率&lt;/strong>（电能消耗的速率）的单位是&lt;strong>瓦（特）、W&lt;/strong>。&lt;/p>
+&lt;p>&lt;a class="link" href="https://zh.wikipedia.org/wiki/%E5%9B%BD%E9%99%85%E5%8D%95%E4%BD%8D%E5%88%B6%E8%AF%8D%E5%A4%B4" target="_blank" rel="noopener"
+>国际单位制词头&lt;/a>的符号（加粗的是可能考的，全都是粗的，😂）&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>T $10^{12}$&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>G $10^{9}$&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>M $10^{6}$&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>k $10^{3}$&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>m $10^{-3}$&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>µ $10^{-6}$&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>n $10^{-9}$&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>p $10^{-12}$&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>注意上面大写的M和小写的m是不一样的。&lt;/p>
+&lt;p>音频所指的频率范围大致是&lt;strong>16Hz - 20kHz&lt;/strong>。&lt;/p>
+&lt;h2 id="a32-直流电路">A.3.2 直流电路
+&lt;/h2>&lt;p>只向一个方向流动的电流叫做&lt;strong>直流&lt;/strong>。&lt;/p>
+&lt;p>电源两端电压的方向为&lt;strong>从电源的正极到负极&lt;/strong>。电源（或信号源）内阻&lt;strong>使其实际输出电压降低&lt;/strong>。&lt;/p>
+&lt;p>直流电路欧姆定律是说&lt;strong>流过电阻的电流I，与两端的电压U成正比，与阻值R成反比&lt;/strong>。
+&lt;/p>
+$$I = \frac{U}{R}$$&lt;h2 id="a33-交流电路">A.3.3 交流电路
+&lt;/h2>&lt;p>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/03/23/65fed78a38a9a.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/03/23/65fed78a38a9a.png" alt="正弦交流电" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/03/23/65fed78a38a9a.png"
+loading="lazy"
+alt="正弦交流电"
+>&lt;/p>
+&lt;p>如上图所示的正弦交流电&lt;/p>
+&lt;ol>
+&lt;li>峰值 Peak, also amplitude&lt;/li>
+&lt;li>峰-峰值 Peak-to-peak&lt;/li>
+&lt;li>有效值 Effective value&lt;br>
+约为峰值的&lt;strong>70.7%&lt;/strong>&lt;br>
+平常我们说的220V就是有效值&lt;/li>
+&lt;li>周期 Period&lt;/li>
+&lt;/ol>
+&lt;p>正弦交流电的&lt;strong>平均值为0&lt;/strong>.&lt;/p>
+&lt;p>交流电&lt;strong>频率&lt;/strong>为其每秒改变方向的次数，值为$\frac{1}{Period}$。&lt;/p>
+&lt;p>相位差通常用来描述两个或多个&lt;strong>同频率&lt;/strong>正弦信号之间的&lt;strong>时间滞后或超前&lt;/strong>关系。&lt;/p>
+&lt;h2 id="a34-电子元件及单元电路常识">A.3.4 电子元件及单元电路常识
+&lt;/h2>&lt;p>电阻元件的“额定功率”参数是指该元件正常工作时所能承受的&lt;strong>最大功率&lt;/strong>。&lt;/p>
+&lt;p>一般&lt;strong>金属&lt;/strong>是导体，&lt;strong>玻璃，木材，橡胶&lt;/strong>是绝缘体。&lt;/p>
+&lt;h2 id="a35-无线电信号的调制解调和频谱">A.3.5 无线电信号的调制、解调和频谱
+&lt;/h2>&lt;p>用通常的调频方式进行话音通信，必要带宽约为&lt;strong>6.25kHz&lt;/strong>。&lt;/p>
+&lt;h2 id="a36-数字信号处理基础常识">A.3.6 数字信号处理基础常识
+&lt;/h2>&lt;p>&lt;strong>简单正弦波&lt;/strong>只包含&lt;strong>一个&lt;/strong>频率分量。
+&lt;/p>
+$$x = sin(\omega{}t+\phi)$$&lt;p>&lt;strong>单个无限窄脉冲&lt;/strong>（数学上我们称其为&lt;a class="link" href="https://zh.wikipedia.org/wiki/%E7%8B%84%E6%8B%89%E5%85%8B%CE%B4%E5%87%BD%E6%95%B0#%E5%82%85%E9%87%8C%E8%91%89%E8%AE%8A%E6%8F%9B" target="_blank" rel="noopener"
+>狄拉克δ函数&lt;/a>）在整个频谱内具有&lt;strong>连续的均匀频率分量&lt;/strong>（其频谱也称为均匀谱或白色谱）。这个理解不了也没关系，记住我标粗的地方就行。
+&lt;/p>
+$$\delta(x) = \begin{cases} +\infty, &amp; x = 0 \\ 0, &amp; x \ne 0 \end{cases}且\int_{-\infty}^\infty \delta(x) \, dx = 1$$&lt;p>包含多个频率分量的信号通过&lt;strong>滤波器&lt;/strong>会发生&lt;strong>频率失真&lt;/strong>。&lt;/p>
+&lt;h2 id="a37-业余无线电发射和接收设备原理和实用知识">A.3.7 业余无线电发射和接收设备原理和实用知识
+&lt;/h2>&lt;p>&lt;strong>符合国家或国际上规定的干扰允许值&lt;/strong>和&lt;strong>共用标准的干扰&lt;/strong>不属于有害干扰。&lt;/p>
+&lt;p>可以组成完整无线电接收系统的功能部件组合是&lt;strong>接收天线、解调器、输出部件&lt;/strong>。可以组成完整无线电发信系统的功能部件组合是&lt;strong>射频振荡器、调制器、发射天线&lt;/strong>。&lt;/p>
+&lt;p>调制是以原始信号控制射频信号的&lt;strong>幅度&lt;/strong>（Amplitude）、&lt;strong>频率&lt;/strong>（Frequency）或&lt;strong>相位参数&lt;/strong>（Phase）。我们分别称其为&lt;strong>幅度调制（调幅AM）、频率调制（调频FM）、相位调制（调相PM）&lt;/strong>，缩写需要记忆。&lt;/p>
+&lt;p>一个FM话音信号在频谱仪上显示为&lt;strong>一条固定的垂直线，左右伴随一组对称的随语音出现和变化的垂直线&lt;/strong>。下面的gif是我录制的某电台频谱。特点是对称。&lt;/p>
+&lt;p>所以，&lt;strong>频谱图&lt;/strong>最容易用来表达和解释模拟FM调制原理。对调频信号进行解调的过程称为&lt;strong>鉴频&lt;/strong>。&lt;/p>
+&lt;p>下面介绍FM的两个概念，&lt;strong>带宽&lt;/strong>和&lt;strong>频偏&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>对于给定的FM发射设备，所传输信号的&lt;strong>最高频率越高&lt;/strong>、&lt;strong>幅度越大&lt;/strong>，射频输出占用带宽越宽。&lt;/li>
+&lt;li>频偏&lt;strong>只取决于被调制信号的幅度&lt;/strong>。&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>选择性&lt;/strong>表述了接收机区分不同信号的能力。&lt;/p>
+&lt;p>接收机“过载”通常是指&lt;strong>输入信号过于强大，以致导致机内产生附加干扰&lt;/strong>。&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>SSB&lt;/strong>常被用于长距离弱信号的VHF或UHF联络。&lt;/li>
+&lt;li>&lt;strong>FM&lt;/strong>被VHF和UHF业余电台本地通信广泛使用。&lt;/li>
+&lt;/ul>
+&lt;p>常用的电源有两种，一种是开关电源（DC-DC），一种是线性稳压电源（LDO）。开关电源可以做得比变压器直接降压整流的线性电源轻巧是因为&lt;strong>开关电源中变压器的工作频率高得多，可以缩小磁性材料截面和减少线圈匝数&lt;/strong>。关键词：工作频率。&lt;/p>
+&lt;h2 id="a38-业余无线电常用的功率计算及分贝转换">A.3.8 业余无线电常用的功率计算及分贝转换
+&lt;/h2>&lt;p>无线电发射机的效率是指&lt;strong>输出到天线系统的信号功率&lt;/strong>与发射机所消耗的&lt;strong>电源功率&lt;/strong>之比。业余无线电发射机的效率总是明显低于1。所损耗的那部分能量&lt;strong>绝大部分转化为热量&lt;/strong>，&lt;strong>极小部分转化为无用信号的电磁辐射&lt;/strong>。&lt;/p>
+&lt;p>&lt;a class="link" href="https://support.huawei.com/view/contentview!getFileStream.action?mid=SUPE_DOC&amp;amp;viewNid=EDOC1000062973&amp;amp;nid=EDOC1000062973&amp;amp;partNo=j006&amp;amp;type=htm" target="_blank" rel="noopener"
+>接收灵敏度&lt;/a>是指无线设备正常工作所需的天线口最小信号接收功率。因此&lt;strong>灵敏度指标数值越小，接收最小信号的能力越强&lt;/strong>。&lt;/p>
+&lt;p>衰减是指&lt;strong>信号通过信道或电路后功率减少&lt;/strong>，衰落是指&lt;strong>信号通过信道或电路后发生幅度随时间而起伏&lt;/strong>。&lt;/p>
+&lt;p>&lt;strong>载波功率&lt;/strong>是指无线电发信机在无调制情况下，在一个射频周期内供给天线馈线的平均功率。&lt;/p>
+&lt;p>&lt;strong>CTCSS&lt;/strong>（连续音频编码静噪系统，Continuous Tone-Coded Squelch System）是指调频发射机在发射的语音信号上附加一个人耳听不到的低频音频，用来打开接收机的静噪。记住前面的缩写。其属于模拟亚音频。当然有模拟亚音频，就有数字亚音频，这里就不展开了。
+静噪灵敏度是指&lt;strong>能够使静噪电路退出静噪状态的射频信号最小输入电平&lt;/strong>。&lt;/p>
+&lt;h2 id="a39-业余电台的天馈线系统">A.3.9 业余电台的天馈线系统
+&lt;/h2>&lt;h3 id="a391-天线的基础知识">A.3.9.1 天线的基础知识
+&lt;/h3>&lt;p>发射天线的作用是&lt;strong>把无线电发射机输出的射频信号电流转换为空间的电磁波&lt;/strong>。接收天线系统的作用是&lt;strong>把空间的有用电磁波转换为射频电压电流信号&lt;/strong>。&lt;/p>
+&lt;p>保证业余无线电通信接收机优良接收能力的主要因素是&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>良好的抗干扰能力&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>足够高的灵敏度&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>尽量低的本机噪声和信号失真&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>由半波长偶极天线和馈电电缆构成的天馈系统，理想的工作状态是&lt;strong>天线上只有驻波，馈线上只有行波&lt;/strong>。&lt;/p>
+&lt;p>在零仰角附近具有主辐射瓣的垂直接地天线，其振子的长度应为&lt;strong>1/4波长的奇数倍&lt;/strong>。&lt;/p>
+&lt;p>通常把垂直偶极天线或者垂直接地天线称为“全向天线”，是因为&lt;strong>它们在水平方向没有指向性，但在立体空间有方向性&lt;/strong>。振子电气长度为1/4波长的垂直接地天线的最大辐射方向为&lt;strong>在水平方向没有指向性，在垂直方向指向水平面&lt;/strong>。垂直接地天线（GP）的构造为电气长度为1/4波长的垂直振子加一个“接地”反射体，因其简单而被大量应用于手持和车载业余电台，但这种天线的实际工作情况往往与理论值相差较大，尤其在频率较低的频段。最常见的原因是&lt;strong>缺乏有效的接地反射体&lt;/strong>。改善办法是&lt;strong>GP天线必须有足够大的接地反射体来形成振子镜像，否则谐振频率和阻抗都将与理论值有显著偏差，应尽量用大面积金属体与天线的接地端直接连接&lt;/strong>。&lt;/p>
+&lt;p>&lt;strong>在电缆外面套铁氧体磁环&lt;/strong>（磁珠）可以减少在音频同轴电缆屏蔽层外皮中的感应射频电流。
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/03/23/65fed7bef1fb1.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/03/23/65fed7bef1fb1.png" alt="Cable end" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/03/23/65fed7bef1fb1.png"
+loading="lazy"
+alt="Cable end"
+>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/03/23/65fed7d1e63a4.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/03/23/65fed7d1e63a4.png" alt="Ferrite_clamp-on" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/03/23/65fed7d1e63a4.png"
+loading="lazy"
+alt="Ferrite_clamp-on"
+>&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://zh.wikipedia.org/wiki/File:Cable_end.JPG" target="_blank" rel="noopener"
+>左图&lt;/a>作者是英语维基百科的&lt;a class="link" href="https://en.wikipedia.org/wiki/User:Stwalkerster" target="_blank" rel="noopener"
+>Stwalkerster&lt;/a>，本文件采用知识共享署名-相同方式共享 3.0 未本地化版本许可协议授权。&lt;/li>
+&lt;li>&lt;a class="link" href="https://zh.wikipedia.org/wiki/File:Ferrite_clamp-on.jpg" target="_blank" rel="noopener"
+>右图&lt;/a>作者是&lt;a class="link" href="https://www.flickr.com/photos/21905741@N06" target="_blank" rel="noopener"
+>Karl-Martin Skontorp&lt;/a>，本文件采用知识共享署名 2.0 通用许可协议授权。&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>天线分析仪&lt;/strong>可以用来测定天线当前的谐振频率。&lt;/p>
+&lt;p>直立天线&lt;strong>发射的电磁波电场垂直于地面&lt;/strong>。&lt;/p>
+&lt;p>就大多数手持电台随机附送的“橡皮天线”来说，它的劣势是&lt;strong>相对于全尺寸天线，它的发射和接收效率较低&lt;/strong>。&lt;/p>
+&lt;h3 id="a392-天线的增益">A.3.9.2 天线的增益
+&lt;/h3>&lt;p>天线增益是指&lt;strong>天线在最大辐射方向上的辐射功率密度与相同条件下基准天线的辐射功率密度之比&lt;/strong>。不同基准天线的选择，就有了不同的增益单位。题库里也有以下说法，天线的增益是&lt;strong>相对于参考天线，在某一方向上信号强度的增加&lt;/strong>，这里主要强调的是天线的无源现象，由于能量守恒，有一个方向信号增强了，必然就有另一个方向信号减弱了。&lt;/p>
+&lt;p>各种增益单位：&lt;/p>
+&lt;ul>
+&lt;li>dBi：&lt;strong>“相对于无方向性点源天线的增益”，即最大辐射方向上的辐射功率密度与理想点源天线的辐射功率密度之比&lt;/strong>&lt;/li>
+&lt;li>dBd：&lt;strong>“相对于半波长偶极子天线的增益”，即最大辐射方向上的辐射功率密度与半波长偶极振子的最大辐射功率密度之比&lt;/strong>。从这个描述中我们不难推测，dBd是一个比dBi更大的单位。&lt;/li>
+&lt;li>dB：&lt;strong>这种表达没有说清楚计算增益所采用的比较基准，缺乏实际意义&lt;/strong>。它只能用于计算中表示相对大小，比如你可以说甲信号比乙信号强0.8dB。&lt;/li>
+&lt;/ul>
+&lt;p>由于dB已经是log后的值，所以他们的计算是简单的加减法。dBi与dBd的关系是（下面的公式要背得哟）
+&lt;/p>
+$$0\ dBd = 2.15\ dBi$$&lt;p>例LK0932：比较4.5 dBd和5.85 dBi。解&lt;/p>
+&lt;ul>
+&lt;li>$4.5\ dBd = 0\ dBd + 4.5\ dB = 2.15\ dBi + 4.5\ dB = 6.65\ dBi$&lt;/li>
+&lt;li>$6.65\ dBi - 5.85\ dBi = 0.8\ dB$&lt;/li>
+&lt;li>所以4.5 dBd比5.85 dBi强0.8 dB&lt;/li>
+&lt;/ul>
+&lt;p>例LK0933：比较2.9dBd和5.85dBi。5.85dBi比2.9dBd强0.8dB，计算留给读者做练习。&lt;/p>
+&lt;h3 id="a393-天线的极化">A.3.9.3 天线的极化
+&lt;/h3>&lt;h3 id="a394-馈线基础知识">A.3.9.4 馈线基础知识
+&lt;/h3>&lt;p>在为业余电台选购射频电缆作为天线馈线时，最重要的两项电气参数是：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>特性阻抗&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>工作频率下单位长度的传输功率损耗&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>射频同轴电缆在业余电台中的主要用处是&lt;strong>将无线电信号从发射机传送到天线&lt;/strong>。&lt;/p>
+&lt;p>在业余无线电通信中，“驻波比”通常用来衡量&lt;strong>负载与传输线的匹配质量&lt;/strong>。天线与馈线完美匹配时，在驻波表中显示的驻波比是&lt;strong>1:1&lt;/strong>。&lt;strong>天线与馈线的连接头接触不良&lt;/strong>时，可能导致驻波比不稳定读数。&lt;/p>
+&lt;p>馈线中的功率损耗会&lt;strong>变成热量&lt;/strong>。&lt;/p>
+&lt;p>使用同轴电缆连接天线时，最好有一个较低的驻波比，因为低驻波比&lt;strong>使能量更有效率地传送，减少损耗&lt;/strong>。&lt;/p>
+&lt;p>&lt;strong>因为同轴电缆使用方便，与周围环境之间的相互影响小&lt;/strong>，所以在业余无线电界的使用相对于其他馈线来说更多。&lt;/p>
+&lt;p>通过同轴电缆的信号频率越高，通常&lt;strong>损耗越高&lt;/strong>。&lt;/p>
+&lt;p>对于400MHz以上的信号，通常会使用的同轴电缆连接器&lt;strong>N型连接器&lt;/strong>。&lt;/p>
+&lt;p>导致同轴电缆损害的最常见的原因是什么&lt;strong>电缆受潮&lt;/strong>。因为&lt;strong>紫外线能破坏电缆的外皮，使水分渗入&lt;/strong>，所以要求同轴电缆的外皮能抵挡紫外线。和固体电介质同轴电缆相比，空气电介质同轴电缆的劣势是&lt;strong>要采取特别的手段来防止水分进入电缆&lt;/strong>。但&lt;strong>空气介质同轴硬电缆&lt;/strong>在VHF和UHF频段的损耗最小。&lt;/p>
+&lt;h3 id="a395-天馈系统的平衡-不平衡转换">A.3.9.5 天馈系统的平衡-不平衡转换
+&lt;/h3>&lt;h3 id="a396-天馈系统的阻抗匹配">A.3.9.6 天馈系统的阻抗匹配
+&lt;/h3>&lt;p>业余无线电普遍使用的同轴电缆的特性阻抗是&lt;strong>50欧姆&lt;/strong>。&lt;/p>
+&lt;h2 id="a310-无线电波及其传播">A.3.10 无线电波及其传播
+&lt;/h2>&lt;h3 id="a3101-无线电波的基本性质和描述参数">A.3.10.1 无线电波的基本性质和描述参数
+&lt;/h3>&lt;p>无线电波在真空中的速度（即&lt;strong>光速&lt;/strong>）299 792 458 米/秒，我们用字母，由于长度单位米时用光速，所以上面的值没有小数点。约为&lt;strong>3x10^8米/秒&lt;/strong>。电波在天线导线中的传播速度大约是&lt;strong>真空波速的0.95倍&lt;/strong>。常用业余频段的电波在同轴电缆中的传播速度大约是&lt;strong>真空波速的0.65倍&lt;/strong>。&lt;/p>
+&lt;h3 id="a3102-无线电波的传播规律简单计算和常见现象">A.3.10.2 无线电波的传播规律、简单计算和常见现象
+&lt;/h3>&lt;p>无线电波按传播方式可主要分为&lt;strong>地面波、天波、空间波、散射波等&lt;/strong>。注意虚线上面的实线和下面的实线都是空间波，一个是发射天线直接传给接受天线，一个是经地面反射。而地波（虚线）是沿着地球表面传播，也称地表波。
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/03/23/65fed7f256c6e.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/03/23/65fed7f256c6e.png" alt="wave" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/03/23/65fed7f256c6e.png"
+loading="lazy"
+alt="wave"
+>
+图片来自&lt;a class="link" href="https://www.slideserve.com/geranium-virgil/1" target="_blank" rel="noopener"
+>高频电子技术 第 1 章&lt;/a>，版权归原作者所有。&lt;/p>
+&lt;p>地波的衰减因子取决于&lt;strong>电波频率、地面导电率和传播距离&lt;/strong>。&lt;/p>
+&lt;p>决定超短波视距传播距离极限的主要因素&lt;strong>发射天线和接收天线离地面的相对高度值&lt;/strong>。&lt;/p>
+&lt;p>多径传播对UHF波段或VHF波段数据通信的影响是&lt;strong>可能使误码率增大&lt;/strong>。&lt;/p>
+&lt;p>无线电波在自由空间中的传播路径损耗&lt;strong>与距离的平方成正比，与频率的平方成正比&lt;/strong>。&lt;/p>
+&lt;p>在一个周期内，电磁波走过一定的距离，这个距离叫做&lt;strong>波长&lt;/strong>。&lt;/p>
+&lt;p>无线电波是一种电磁波，所以其两个组成部分是&lt;strong>电场和磁场&lt;/strong>。一般我们把在空间中传播的电磁波叫做&lt;strong>无线电波&lt;/strong>。&lt;/p>
+$$c = fλ$$&lt;p>
+其中c是光速，f是频率，λ是波长。显然频率和波长成&lt;strong>反比&lt;/strong>。如果我们选择&lt;strong>兆赫数（MHz）&lt;/strong>，波长选择单位米，则它们的数量关系近似是
+&lt;/p>
+$$波长 = \frac{300}{频率}$$&lt;p>如果你收到了一个从上千公里以外的距离传播过来的VHF信号，最可能的原因是&lt;strong>信号被突发E电离层反射过来&lt;/strong>。&lt;/p>
+&lt;h2 id="a311-业余无线电工程实践常识">A.3.11 业余无线电工程实践常识
+&lt;/h2>&lt;p>假负载的主要作用是&lt;strong>在测试设备时不让无线电信号真正地发射出去&lt;/strong>。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>收发信机面板上或设置菜单中的符号VOX代表&lt;strong>发信机声控，接入后将根据对话筒有无语音输入的判别自动控制收发转换&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>收发信机中的PTT是指&lt;strong>按键发射，有信号（一般为对地接通）时发射机由等待转为发射&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>收发信机中的静噪控制的目的是&lt;strong>在没有信号的情况下，关闭音频输出，使其不会输出噪音&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>收发信机面板上或设置菜单中的符号SQL代表&lt;strong>静噪控制，检测到接收信号低于一定电平时关断音频输出&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>有些调频接收机的参数设置菜单有NFM和WFM两种选择。它们的含义是&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>NFM为窄带调频方式，适用于信道带宽25kHz/12.5kHz的通信信号&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>WFM为宽带调频方式，适用于接收信道带宽180kHz左右的广播信号&lt;/strong>&lt;/li>
+&lt;li>在WFM方式的对讲机接收NFM信号，&lt;strong>可以正常听到信号，但声音比较小&lt;/strong>&lt;/li>
+&lt;li>用设置在NFM方式的对讲机接收WFM信号，&lt;strong>可以听到信号，但当调制信号幅度较大、音调较高时会发生明显非线性失真&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>一些VHF/UHF业余无线电调频手持对讲机或车载台的设置菜单中有“全频偏”和“半频偏”的选择，&lt;strong>分别表示信道间隔为25kHz或者12.5kHz&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>某些对讲机具有发送DTMF码的功能。缩写DTMF指的是&lt;strong>双音多频编码，由8个音调频率中的两个频率组合成的控制信号，代表16种状态之一，用于遥控和传输数字等简单字符&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>某些对讲机具有发送CTCSS码的功能。缩写CTCSS指的是&lt;strong>亚音调静噪，即从67-250.3Hz的38个亚音调频率中选取一个作为选通信号，代表38种状态之一，接收机没有收到特定的选通信号时自动关闭音频输出&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>不能&lt;/strong>在FM话音通信时单凭接收机听到对方语音的音量大小来准确判断对方信号的强弱，因为&lt;strong>鉴频输出大小只取决于射频信号的频偏，而且正常信号的幅度会被限幅电路切齐到同样大小&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>调频接收机没有接收到信号时，会输出强烈的噪声。关于这种噪声&lt;strong>由天线背景噪声和机内电路噪声的随机频率变化经鉴频形成，其大小与天线接收到的背景噪声幅度无关&lt;/strong>，这里的重点是与天线接收到的背景噪声幅度无关&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如果业余中继台发射机被断断续续的干扰信号所启动，夹杂着不清楚的语音，根据覆盖区内其他业余电台的监听，确定中继台上行频率并没有电台工作。则&lt;strong>可能是中继台附近的两个其他发射机的强信号在中继台上行频率造成了互调干扰&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>必须反对&lt;/strong>业余电台在进行业余卫星通信时使用超过常规要求的发射功率，因为&lt;strong>过强的上行信号会使卫星转发器压低对其他信道的转发功率&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>直射和经地面反射等多条路径到达的电波相位不同，互相叠加或抵消造成衰落（多径效应）&lt;/strong>，因此即使在空旷平地，接收到的本地VHF/UHF信号强度也可能会随着接收位置的移动而发生变化。甚至在相距不远的两点接收同一个远方信号，多径干扰也会造成信号强度发生很大差别，且差别随两点间距离的增大呈周期性变化。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如果对方报告你的调频电台发射的信号听起来失真严重、可辨度差，可能的原因是&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>电台的电源电压不足&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>电台所处的位置不好&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>电台的发射频率不准确&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>我们经常使用万用表测量&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>电压&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>电阻&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>万用电表的电压挡&lt;/strong>可大致判断一个干电池是否已经失效&lt;/p>
+&lt;ul>
+&lt;li>一个新的干电池的标称电压是&lt;strong>1.5伏&lt;/strong>&lt;/li>
+&lt;li>用电压表检查一节干电池两端电压，未使用时测得1.5伏左右，用旧后测得1.2伏左右。但是，&lt;strong>旧干电池的电动势仍然为1.5伏&lt;/strong>，只是由于内阻变大导致测量的电压变小。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>万用电表的电阻挡&lt;/strong>可测量一个元件是否短路，显然短路时电阻为0&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>在电阻挡试图测量电压&lt;/strong>有可能损坏万用表&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>电压表应&lt;strong>并联&lt;/strong>至电路中&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>电流表应&lt;strong>串联&lt;/strong>至电路中&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>劣质开关电源的&lt;strong>开关电路的谐波辐射&lt;/strong>会造成对无线电接收机的电磁干扰。&lt;/p>
+&lt;p>移动车载电台通常使用的电源电压是&lt;strong>约12伏特&lt;/strong>。&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>熔断器&lt;/strong>可以在电路电流严重过载时保护电路不受损坏&lt;/li>
+&lt;li>&lt;strong>整流器&lt;/strong>可以把交变电流变成变化的直流&lt;/li>
+&lt;li>&lt;strong>变压器&lt;/strong>经常被用来把220伏的市电转换成更低电压交流电&lt;/li>
+&lt;li>&lt;strong>LED&lt;/strong>能够当做指示灯使用&lt;/li>
+&lt;li>&lt;strong>欧姆表&lt;/strong>被用来测量电阻&lt;/li>
+&lt;li>&lt;strong>保险丝&lt;/strong>可在过载时切断电路
+&lt;ul>
+&lt;li>在需要安装5安培保险丝的地方安装一个20安培的保险丝是不可取的，因为&lt;strong>过大的电流可能导致火灾&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>防止设备外壳带电危险的措施包括&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>将所有的交流供电设备全部连接至一个安全地线&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>安装漏电保护断路器&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>所有使用交流供电的设备的电源线都使用带有单独保护地线端的三线插头&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>可充电电池&lt;/p>
+&lt;ul>
+&lt;li>镍镉电池&lt;/li>
+&lt;li>铅酸电池&lt;/li>
+&lt;li>锂离子电池&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>不可充电电池（需要记住）&lt;/p>
+&lt;ul>
+&lt;li>碱性电池&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>将蓄电池连接与汽车的蓄电池并联，并且发动汽车&lt;/strong>可以在电网停电的状况下给一个12伏的铅酸蓄电池充电。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>铅酸蓄电池的充电和放电进行得过快，&lt;strong>电池可能会过热，甚至释放出可燃气体，甚至可能爆炸&lt;/strong>；所以&lt;strong>如果通风不良，会有有爆炸风险的气体聚集的潜在危险&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>移动车载台的直流电源负极应当接在&lt;strong>电池的负极或发动机的接地带&lt;/strong>。&lt;/p>
+&lt;p>&lt;strong>无线电测向&lt;/strong>可以用来定位无线电噪音源或者恶意干扰源。&lt;/p>
+&lt;h1 id="a4-与业余无线电台有关的安全防护技术">A.4. 与业余无线电台有关的安全防护技术；
+&lt;/h1>&lt;h2 id="a41-用电安全">A.4.1 用电安全
+&lt;/h2>&lt;p>安全电压是指不致使人直接致死或致残的电压。标准国家标准GB3805－83《安全电压》，一般环境条件下允许持续接触的“安全特低电压”为&lt;strong>24V&lt;/strong>。&lt;/p>
+&lt;p>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/03/23/65fed80e5a657.png">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/03/23/65fed80e5a657.png" alt="AC" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/03/23/65fed80e5a657.png"
+loading="lazy"
+alt="AC"
+>
+上图来自&lt;a class="link" href="https://courses.lumenlearning.com/physics/chapter/20-6-electric-hazards-and-the-human-body/" target="_blank" rel="noopener"
+>Electric Hazards and the Human Body&lt;/a>，版权归原作者所有。&lt;/p>
+&lt;p>上图是交流电对人体危害与频率的关系。上面的绿线表示触电电流，下面的红线表示有感觉时的电流。可以看到，当频率在70Hz左右的时候，人体对其最敏感，也就是说最危险；而在高频（包括HF，VHF，UHF）时，危险反而更小。所以，在相同电压有效值时，我们把它们按危险程度由高到低排列是&lt;strong>工频（50 Hz）&amp;gt; 直流 &amp;gt; HF射频 &amp;gt; VHF射频 &amp;gt; UHF射频&lt;/strong>。可以这样理解（网上是这么说的，我不保证是对的），工频（50 Hz）由于和心脏的频率比较接近，所以最危险；高频电流直接从人体表面流过，所以伤害较小（但绝不是没有伤害），但&lt;strong>皮肤容易灼伤&lt;/strong>。&lt;/p>
+&lt;p>如遇设备、电线或者电源引起失火，正确的处置为&lt;strong>立即切断电源，使用二氧化碳灭火器灭火&lt;/strong>，这里强调二氧化碳灭火器。&lt;/p>
+&lt;p>必须带电检修由市电供电的无线电设备时，应做到&lt;strong>双脚与地绝缘，单手操作，另一只手不触摸机壳等任何与电路设备有关的金属物品&lt;/strong>，这里强调双手不能形成回路。&lt;/p>
+&lt;p>设备电源拔掉电源线以后&lt;strong>充满高电压的电容器依然可能造成电击&lt;/strong>。&lt;/p>
+&lt;p>自制一台由220伏交流供电的设备，推荐在&lt;strong>交流电源入口火线端串联安装保险丝&lt;/strong>。&lt;/p>
+&lt;h2 id="a42-防雷知识">A.4.2 防雷知识
+&lt;/h2>&lt;p>防雷装置的作用是防止雷电危害。传统防雷装置的主要组成部分是&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>接闪器（避雷针）&lt;/strong>
+&lt;ul>
+&lt;li>单支避雷针的保护范围大致&lt;strong>以避雷针为顶点的45度圆锥体以内空间&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>引下线&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>接地体&lt;/strong>
+&lt;ul>
+&lt;li>防雷接地的作用是&lt;strong>把接闪器引入的雷击电流有效地泄入大地&lt;/strong>。&lt;/li>
+&lt;li>对防雷接地基本要求是&lt;strong>要有单独的接地体，接地电阻要小，接闪器到接地体之间的引下线应尽量短而粗&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>在为同轴电缆馈线安装避雷器时应当注意&lt;strong>将所有避雷器的地线接到同一个金属板上，然后将这个金属板接到室外的接地极&lt;/strong>。&lt;/p>
+&lt;h1 id="a5-电磁兼容技术以及射频干扰的预防和消除">A.5. 电磁兼容技术以及射频干扰的预防和消除
+&lt;/h1>&lt;h2 id="a51-电磁辐射防护规定">A.5.1 电磁辐射防护规定
+&lt;/h2>&lt;p>VHF和UHF信号属于&lt;strong>非电离辐射&lt;/strong>。&lt;/p>
+&lt;p>我国业余电台应该遵守的关于电磁辐射污染的具体管理规定文件为&lt;strong>国家标准GB/T 51391《通信工程建设环境保护技术标准》&lt;/strong>。其规定&lt;strong>等效辐射功率在0.1-3MHz不大于300W、在3MHz-300GHz不大于100瓦的无线通信设施（设备）&lt;strong>向没有屏蔽空间发射电磁场可以免于管理。《我国国家标准《电磁环境控制限值》规定公众暴露控制限值中，对环境电磁辐射场强任意连续6分钟内的方均根值要求最严格的频率范围为&lt;/strong>30MHz- 3GHz&lt;/strong>。由于&lt;strong>人体会对某些特定频率的电磁波吸收量更大&lt;/strong>，因此电磁辐射防护规定国家标准中的照射限值随着频率的变化而不同。&lt;/p>
+&lt;h2 id="a52-射频干扰的预防和消除">A.5.2 射频干扰的预防和消除
+&lt;/h2>&lt;p>假设中继台的收、发信机共用天线，上下行频率分别为F1和F2。要防止中继台发射机对接收机产生干扰，应在&lt;strong>发信机与天线间串联中心频率为F1的带阻滤波器，在收信机与天线间串接中心频率为F2的带阻滤波器&lt;/strong>。这里强调对于中继台而言，上行频率是收信频率（F1），所以收信机要屏蔽发信机的频率（F2）就要串联一个F2的带阻滤波器。&lt;/p>
+&lt;p>要防止业余HF发射机的杂散发射干扰天线附近的电话机，应该在电话机和电话线之间之间串联&lt;strong>截止频率不高于1MHz的低通滤波器&lt;/strong>。这强调要滤除高频（HF）干扰，需要使用低通滤波器。&lt;/p>
+&lt;p>对天线感兴趣的朋友推荐一本来自美国业余无线电协会的《天线手册》，最新的中文版应该是第二十二版。这是部大块头，适合当参考书，据说90%的人买了后就没看过，谨慎购买。&lt;/p>
+&lt;p>对讲机的话UV-5R算一代神机，但注意这是部模拟机，好多地方现在都是数字中继，比如上海，买了可能会用不了。大家买对讲机之前最好问问当地的同伴，不用盲目购买。&lt;/p>
+&lt;p>MMDVM可以方便大家通过网络交流，动手能力强的推荐自己动手做。&lt;/p></description></item></channel></rss>

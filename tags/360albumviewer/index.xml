@@ -1,58 +1,38 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>360albumviewer on 狼的公告板 ver.Hugo</title>
-        <link>https://blog.tama.guru/tags/360albumviewer.html</link>
-        <description>Recent content in 360albumviewer on 狼的公告板 ver.Hugo</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/360albumviewer/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>如何避免大数字自动安装大数字看图(360AlbumViewer)</title>
-        <link>https://blog.tama.guru/record/anti-360albumviewer.html</link>
-        <pubDate>Fri, 25 Apr 2025 14:52:00 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/record/anti-360albumviewer.html</guid>
-        <description>&lt;p&gt;单位电脑上强制要使用大数字，自从某数字推出了极速版，相比起原版的臃肿倒是简洁了不少，把一些选项关掉后还真就老老实实干活基本上没出现过什么问题。但是从上个月开始，右键菜单就多了个&amp;quot;360看图&amp;quot;的选项，可真是恶心人。而且这玩意不会出现在开始菜单里面，需要到控制面板里面找出来卸载掉，问题是卸载了下次不知道啥时候就会突然冒出来（至今我也没找到到底是点了什么地方导致的），只能先按照对付其他流氓软件的方法处理了。&lt;/p&gt;
-&lt;p&gt;软件的安装目录位于&lt;code&gt;C:\Program Files (x86)\360AlbumViewer&lt;/code&gt;，使用控制面板卸载该软件后会残留一个垃圾文件，卸载完后软件是无法直接删除这个文件夹的，会显示被占用，需要手动重启（普通模式或者安全模式都可以）后会自动删除。&lt;/p&gt;
-&lt;p&gt;然后我们需要在原位置下新建一个&lt;code&gt;360AlbumViewer&lt;/code&gt;文件夹，右键属性切换安全选项卡，点击高级，把所有者修改为你当前的用户名（找不到就点高级-立即查找），把文件夹及其继承全部修改掉再应用确认。此时安全选项卡下得组或用户名应该只剩下当前用户名这一个选项，点击编辑，把所有权限给拒绝掉，然后保存，现在这个文件夹的读写权限就都没了。&lt;/p&gt;
-&lt;p&gt;目前还没死灰复燃，如果有情况再更新。&lt;/p&gt;
-&lt;p&gt;需要注意的是以下路径会有一些残余垃圾，建议手动删除:
-&lt;code&gt;C:\Program Files (x86)\360\360Safe\Utils\360AlbumViewer&lt;/code&gt;
-&lt;code&gt;C:\Users\admin\AppData\Roaming\360Safe\360AlbumViewer64Ex&lt;/code&gt;
-注册表里就算卸载了还有很多不干净的东西，查找&lt;code&gt;360AlbumViewer&lt;/code&gt;都删掉吧。&lt;/p&gt;
-&lt;p&gt;也顺便记录一下大数字极速版一些该关掉的东西：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;软件设置内
-&lt;ol&gt;
-&lt;li&gt;基本设置-&lt;code&gt;用户体验改善计划&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;弹窗设置-&lt;code&gt;网购安全提示&lt;/code&gt;、&lt;code&gt;邮件安全提示&lt;/code&gt;、&lt;code&gt;聊天安全提示&lt;/code&gt;、&lt;code&gt;下载安全提示（可选）&lt;/code&gt;、&lt;code&gt;WIFI安全提示&lt;/code&gt;、&lt;code&gt;垃圾清理提示（空闲提醒、软件卸载残留提醒）&lt;/code&gt;、&lt;code&gt;硬件驱动提示&lt;/code&gt;、&lt;code&gt;游戏优化结果提醒&lt;/code&gt;、&lt;code&gt;性能模式&lt;/code&gt;、&lt;code&gt;资讯推荐&lt;/code&gt;、&lt;code&gt;AI办公推荐&lt;/code&gt;。基本上这里都要关掉，除非有需求的功能再单个开启。&lt;/li&gt;
-&lt;li&gt;开机小助手-&lt;code&gt;取消所有勾选&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;安全防护中心-&lt;code&gt;看片安全防护&lt;/code&gt;、&lt;code&gt;搜索安全防护&lt;/code&gt;，应用防护-&lt;code&gt;文档图片防护&lt;/code&gt;（可能是这个东西导致&lt;code&gt;360AlbumViewer&lt;/code&gt;被安装？待核实）&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;软件管家设置内
-&lt;ol&gt;
-&lt;li&gt;安装升级-升级设置-&lt;code&gt;开启智能升级提醒功能&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;卸载设置-&lt;code&gt;强力卸载-根据需求该关的关&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;快捷设置-快捷方式-关掉“&lt;code&gt;在桌面上添加大数字软件管家的快捷方式&lt;/code&gt;和&lt;code&gt;定期修复大数字软件管家的桌面快捷方式&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;其他设置-未知文件设置-&lt;code&gt;当您打开位置文件时，为您推荐适合软件&lt;/code&gt;和&lt;code&gt;智能推荐设置-通过智能分析，为您提供问题解决方案和产品功能&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;还有浏览器极速版，现在也变得乱七八糟的了，也写一下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;选项内
-&lt;ol&gt;
-&lt;li&gt;基本选项-搜索-&lt;code&gt;在被选中文本的右上角显示“划词搜索工具条”&lt;/code&gt;、&lt;code&gt;启用搜索栏的热搜词推荐功能&lt;/code&gt;和&lt;code&gt;地址栏搜索展示联想词&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;界面设置-工具栏-显示头像&lt;/li&gt;
-&lt;li&gt;高级设置-后台应用-&lt;code&gt;最小化浏览器到系统托盘&lt;/code&gt;、&lt;code&gt;关闭浏览器后最小化到系统托盘&lt;/code&gt;、&lt;code&gt;保护您和您的设备不受危险网站的侵害&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;实验室-AI大会员-&lt;code&gt;在浏览器工具栏显示“360AI大会员”按钮&lt;/code&gt;，后台加速-&lt;code&gt;关闭浏览器后，后台最少进程运行，实现加速启动浏览器&lt;/code&gt;。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        
-    </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>360albumviewer on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/360albumviewer.html</link><description>Recent content in 360albumviewer on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 14 Aug 2025 03:33:47 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/360albumviewer/index.xml" rel="self" type="application/rss+xml"/><item><title>如何避免大数字自动安装大数字看图(360AlbumViewer)</title><link>https://blog.tama.guru/record/anti-360albumviewer.html</link><pubDate>Fri, 25 Apr 2025 14:52:00 +0800</pubDate><guid>https://blog.tama.guru/record/anti-360albumviewer.html</guid><description>&lt;p>单位电脑上强制要使用大数字，自从某数字推出了极速版，相比起原版的臃肿倒是简洁了不少，把一些选项关掉后还真就老老实实干活基本上没出现过什么问题。但是从上个月开始，右键菜单就多了个&amp;quot;360看图&amp;quot;的选项，可真是恶心人。而且这玩意不会出现在开始菜单里面，需要到控制面板里面找出来卸载掉，问题是卸载了下次不知道啥时候就会突然冒出来（至今我也没找到到底是点了什么地方导致的），只能先按照对付其他流氓软件的方法处理了。&lt;/p>
+&lt;p>软件的安装目录位于&lt;code>C:\Program Files (x86)\360AlbumViewer&lt;/code>，使用控制面板卸载该软件后会残留一个垃圾文件，卸载完后软件是无法直接删除这个文件夹的，会显示被占用，需要手动重启（普通模式或者安全模式都可以）后会自动删除。&lt;/p>
+&lt;p>然后我们需要在原位置下新建一个&lt;code>360AlbumViewer&lt;/code>文件夹，右键属性切换安全选项卡，点击高级，把所有者修改为你当前的用户名（找不到就点高级-立即查找），把文件夹及其继承全部修改掉再应用确认。此时安全选项卡下得组或用户名应该只剩下当前用户名这一个选项，点击编辑，把所有权限给拒绝掉，然后保存，现在这个文件夹的读写权限就都没了。&lt;/p>
+&lt;p>目前还没死灰复燃，如果有情况再更新。&lt;/p>
+&lt;p>需要注意的是以下路径会有一些残余垃圾，建议手动删除:
+&lt;code>C:\Program Files (x86)\360\360Safe\Utils\360AlbumViewer&lt;/code>
+&lt;code>C:\Users\admin\AppData\Roaming\360Safe\360AlbumViewer64Ex&lt;/code>
+注册表里就算卸载了还有很多不干净的东西，查找&lt;code>360AlbumViewer&lt;/code>都删掉吧。&lt;/p>
+&lt;p>也顺便记录一下大数字极速版一些该关掉的东西：&lt;/p>
+&lt;ul>
+&lt;li>软件设置内
+&lt;ol>
+&lt;li>基本设置-&lt;code>用户体验改善计划&lt;/code>&lt;/li>
+&lt;li>弹窗设置-&lt;code>网购安全提示&lt;/code>、&lt;code>邮件安全提示&lt;/code>、&lt;code>聊天安全提示&lt;/code>、&lt;code>下载安全提示（可选）&lt;/code>、&lt;code>WIFI安全提示&lt;/code>、&lt;code>垃圾清理提示（空闲提醒、软件卸载残留提醒）&lt;/code>、&lt;code>硬件驱动提示&lt;/code>、&lt;code>游戏优化结果提醒&lt;/code>、&lt;code>性能模式&lt;/code>、&lt;code>资讯推荐&lt;/code>、&lt;code>AI办公推荐&lt;/code>。基本上这里都要关掉，除非有需求的功能再单个开启。&lt;/li>
+&lt;li>开机小助手-&lt;code>取消所有勾选&lt;/code>&lt;/li>
+&lt;li>安全防护中心-&lt;code>看片安全防护&lt;/code>、&lt;code>搜索安全防护&lt;/code>，应用防护-&lt;code>文档图片防护&lt;/code>（可能是这个东西导致&lt;code>360AlbumViewer&lt;/code>被安装？待核实）&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>软件管家设置内
+&lt;ol>
+&lt;li>安装升级-升级设置-&lt;code>开启智能升级提醒功能&lt;/code>&lt;/li>
+&lt;li>卸载设置-&lt;code>强力卸载-根据需求该关的关&lt;/code>&lt;/li>
+&lt;li>快捷设置-快捷方式-关掉“&lt;code>在桌面上添加大数字软件管家的快捷方式&lt;/code>和&lt;code>定期修复大数字软件管家的桌面快捷方式&lt;/code>&lt;/li>
+&lt;li>其他设置-未知文件设置-&lt;code>当您打开位置文件时，为您推荐适合软件&lt;/code>和&lt;code>智能推荐设置-通过智能分析，为您提供问题解决方案和产品功能&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ul>
+&lt;p>还有浏览器极速版，现在也变得乱七八糟的了，也写一下：&lt;/p>
+&lt;ul>
+&lt;li>选项内
+&lt;ol>
+&lt;li>基本选项-搜索-&lt;code>在被选中文本的右上角显示“划词搜索工具条”&lt;/code>、&lt;code>启用搜索栏的热搜词推荐功能&lt;/code>和&lt;code>地址栏搜索展示联想词&lt;/code>。&lt;/li>
+&lt;li>界面设置-工具栏-显示头像&lt;/li>
+&lt;li>高级设置-后台应用-&lt;code>最小化浏览器到系统托盘&lt;/code>、&lt;code>关闭浏览器后最小化到系统托盘&lt;/code>、&lt;code>保护您和您的设备不受危险网站的侵害&lt;/code>。&lt;/li>
+&lt;li>实验室-AI大会员-&lt;code>在浏览器工具栏显示“360AI大会员”按钮&lt;/code>，后台加速-&lt;code>关闭浏览器后，后台最少进程运行，实现加速启动浏览器&lt;/code>。&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>

@@ -1,21 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>修仙 on 狼的公告板 ver.Hugo</title>
-        <link>https://blog.tama.guru/tags/%E4%BF%AE%E4%BB%99.html</link>
-        <description>Recent content in 修仙 on 狼的公告板 ver.Hugo</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E4%BF%AE%E4%BB%99/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>[nonebot插件]修仙2.0框架的帮助合辑</title>
-        <link>https://blog.tama.guru/record/xiuxian2-0.html</link>
-        <pubDate>Tue, 15 Aug 2023 00:28:41 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/record/xiuxian2-0.html</guid>
-        <description>&lt;p&gt;这玩意的内容是真的多&amp;hellip;光是帮助就好长，看都看不过来，这里做个汇总。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;###帮助内容整合：
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>修仙 on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/%E4%BF%AE%E4%BB%99.html</link><description>Recent content in 修仙 on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 14 Aug 2025 03:33:47 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E4%BF%AE%E4%BB%99/index.xml" rel="self" type="application/rss+xml"/><item><title>[nonebot插件]修仙2.0框架的帮助合辑</title><link>https://blog.tama.guru/record/xiuxian2-0.html</link><pubDate>Tue, 15 Aug 2023 00:28:41 +0800</pubDate><guid>https://blog.tama.guru/record/xiuxian2-0.html</guid><description>&lt;p>这玩意的内容是真的多&amp;hellip;光是帮助就好长，看都看不过来，这里做个汇总。&lt;/p>
+&lt;hr>
+&lt;p>###帮助内容整合：
 ####1、我要修仙:进入修仙模式
 ####2、我的修仙信息:获取修仙数据
 ####3、修仙签到:获取灵石及修为
@@ -111,7 +96,7 @@
 ######1、炼丹需要主药、药引、辅药
 ######2、主药和药引控制炼丹时的冷热调和,冷热失和则炼不出丹药
 ######3、草药的类型控制产出丹药的类型
-######4、工具网址 &lt;code&gt;https://huggingface.co/spaces/chewing/liandan&lt;/code&gt;
+######4、工具网址 &lt;code>https://huggingface.co/spaces/chewing/liandan&lt;/code>
 ####20、传承系统:发送&amp;quot;传承帮助/虚神界帮助&amp;quot;获取
 #####20.1、传承抽卡:花费10颗思恋结晶获取一次传承卡片
 #####20.2、传承信息:获取传承主要信息
@@ -129,9 +114,4 @@
 #####20.a.4、虚神界修炼:加入对应的修炼时间,即可在虚神界修炼&amp;quot;
 ####21、修仙适配:将1的境界适配到2
 ####22、启用/禁用修仙功能:当前群开启或关闭修仙功能
-####23、更新记录:获取插件最新内容&lt;/p&gt;
-</description>
-        </item>
-        
-    </channel>
-</rss>
+####23、更新记录:获取插件最新内容&lt;/p></description></item></channel></rss>

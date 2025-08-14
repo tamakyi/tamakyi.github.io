@@ -1,84 +1,56 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Videoshare on 狼的公告板 ver.Hugo</title>
-        <link>https://blog.tama.guru/categories/videoshare.html</link>
-        <description>Recent content in Videoshare on 狼的公告板 ver.Hugo</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/categories/videoshare/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>[金曲鉴赏]丁真：I Got Smoke</title>
-        <link>https://blog.tama.guru/videoshare/igotsmoke.html</link>
-        <pubDate>Wed, 14 Sep 2022 23:34:00 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/videoshare/igotsmoke.html</guid>
-        <description>&lt;p&gt;真的超神了
-[vplayer url=&amp;ldquo;https://share.tama.guru/d/AliDisk/%E5%88%86%E4%BA%AB/%E8%A7%86%E9%A2%91/I%20got%20somke%20%E5%BD%95%E5%B1%8F%E7%89%88.mp4&amp;rdquo;  /]&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>记录一下15周年的录播</title>
-        <link>https://blog.tama.guru/videoshare/23.html</link>
-        <pubDate>Sun, 03 Jul 2022 01:13:00 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/videoshare/23.html</guid>
-        <description>&lt;p&gt;记录一下15周年的录播&lt;/p&gt;
-&lt;iframe style=&#34;min-width: 720px;min-height: 480px&#34; src=&#34;https://www.acfun.cn/player/ac35443632&#34; id=&#34;ACPlayer-re&#34; scrolling=&#34;no&#34; border=&#34;0&#34; frameborder=&#34;no&#34; framespacing=&#34;0&#34; allowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;
-&lt;p&gt;实现步骤：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;在自定义css中添加如下内容：&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/*视频挂载*/
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;.iframe_video {
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    position: relative;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    width: 100%;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@media only screen and (max-width: 767px) {
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    .iframe_video {
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        height: 15em;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    }
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@media only screen and (min-width: 768px) and (max-width: 991px) {
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    .iframe_video {
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        height: 20em;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    }
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@media only screen and (min-width: 992px) and (max-width: 1199px) {
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    .iframe_video {
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        height: 30em;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    }
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@media only screen and (min-width: 1200px) {
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    .iframe_video {
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        height: 40em;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    }
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;.iframe_cross {
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    position: relative;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    width: 100%;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    height: 0;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    padding-bottom: 75%
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;.iframe_cross iframe {
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    position: absolute;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    width: 100%;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    height: 100%;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    left: 0;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    top: 0
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;插入代码（直接在编辑器中）：&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;iframe style=&amp;#34;min-width: 720px;min-height: 480px&amp;#34; src=&amp;#34;https://www.acfun.cn/player/ac35443632&amp;#34; id=&amp;#34;ACPlayer-re&amp;#34; scrolling=&amp;#34;no&amp;#34; border=&amp;#34;0&amp;#34; frameborder=&amp;#34;no&amp;#34; framespacing=&amp;#34;0&amp;#34; allowfullscreen=&amp;#34;true&amp;#34;&amp;gt;&amp;lt;/iframe&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-        </item>
-        
-    </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Videoshare on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/categories/videoshare.html</link><description>Recent content in Videoshare on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 14 Aug 2025 03:33:47 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/categories/videoshare/index.xml" rel="self" type="application/rss+xml"/><item><title>[金曲鉴赏]丁真：I Got Smoke</title><link>https://blog.tama.guru/videoshare/igotsmoke.html</link><pubDate>Wed, 14 Sep 2022 23:34:00 +0800</pubDate><guid>https://blog.tama.guru/videoshare/igotsmoke.html</guid><description>&lt;p>真的超神了
+[vplayer url=&amp;ldquo;https://share.tama.guru/d/AliDisk/%E5%88%86%E4%BA%AB/%E8%A7%86%E9%A2%91/I%20got%20somke%20%E5%BD%95%E5%B1%8F%E7%89%88.mp4&amp;rdquo; /]&lt;/p></description></item><item><title>记录一下15周年的录播</title><link>https://blog.tama.guru/videoshare/23.html</link><pubDate>Sun, 03 Jul 2022 01:13:00 +0800</pubDate><guid>https://blog.tama.guru/videoshare/23.html</guid><description>&lt;p>记录一下15周年的录播&lt;/p>
+&lt;iframe style="min-width: 720px;min-height: 480px" src="https://www.acfun.cn/player/ac35443632" id="ACPlayer-re" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true">&lt;/iframe>
+&lt;p>实现步骤：&lt;/p>
+&lt;ol>
+&lt;li>在自定义css中添加如下内容：&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">/*视频挂载*/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">.iframe_video {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> position: relative;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> width: 100%;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">@media only screen and (max-width: 767px) {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .iframe_video {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> height: 15em;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> }
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">@media only screen and (min-width: 768px) and (max-width: 991px) {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .iframe_video {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> height: 20em;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> }
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">@media only screen and (min-width: 992px) and (max-width: 1199px) {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .iframe_video {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> height: 30em;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> }
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">@media only screen and (min-width: 1200px) {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .iframe_video {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> height: 40em;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> }
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">.iframe_cross {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> position: relative;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> width: 100%;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> height: 0;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> padding-bottom: 75%
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">.iframe_cross iframe {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> position: absolute;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> width: 100%;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> height: 100%;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> left: 0;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> top: 0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>插入代码（直接在编辑器中）：&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">&amp;lt;iframe style=&amp;#34;min-width: 720px;min-height: 480px&amp;#34; src=&amp;#34;https://www.acfun.cn/player/ac35443632&amp;#34; id=&amp;#34;ACPlayer-re&amp;#34; scrolling=&amp;#34;no&amp;#34; border=&amp;#34;0&amp;#34; frameborder=&amp;#34;no&amp;#34; framespacing=&amp;#34;0&amp;#34; allowfullscreen=&amp;#34;true&amp;#34;&amp;gt;&amp;lt;/iframe&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

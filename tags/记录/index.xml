@@ -1,41 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>记录 on 狼的公告板 ver.Hugo</title>
-        <link>https://blog.tama.guru/tags/%E8%AE%B0%E5%BD%95.html</link>
-        <description>Recent content in 记录 on 狼的公告板 ver.Hugo</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>一些链接的备份</title>
-        <link>https://blog.tama.guru/record/somelinks.html</link>
-        <pubDate>Tue, 05 Jul 2022 02:00:00 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/record/somelinks.html</guid>
-        <description>&lt;p&gt;慢慢完善&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;资源类：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;nyaa:&lt;a class=&#34;link&#34; href=&#34;https://www.nyaa.eu/?page=search&amp;amp;cats=0_0&amp;amp;filter=0&amp;amp;term=VR&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Home - Nyaa.se Torrents Proxy&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;trackerlist:&lt;a class=&#34;link&#34; href=&#34;https://trackerslist.com/#/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;XIU2/TrackersListCollection&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;mox.moe(&lt;a class=&#34;link&#34; href=&#34;https://volmoe.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Mox.moe [Kindle漫畫|Kobo漫畫|epub漫畫] [volmoe.com]&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;在线解析：&lt;a class=&#34;link&#34; href=&#34;https://www.ahhhhfs.com/13620/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;影视软件VIP视频解析接口集合 | ahhhhfs - A姐分享&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;游戏相关：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;steam游戏价格查询:https://steamdb.info/&lt;/li&gt;
-&lt;li&gt;雀魂网页版：&lt;a class=&#34;link&#34; href=&#34;https://game.maj-soul.net/1/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;雀魂麻將&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        
-    </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>记录 on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/%E8%AE%B0%E5%BD%95.html</link><description>Recent content in 记录 on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 14 Aug 2025 03:33:47 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml"/><item><title>一些链接的备份</title><link>https://blog.tama.guru/record/somelinks.html</link><pubDate>Tue, 05 Jul 2022 02:00:00 +0800</pubDate><guid>https://blog.tama.guru/record/somelinks.html</guid><description>&lt;p>慢慢完善&lt;/p>
+&lt;hr>
+&lt;p>资源类：&lt;/p>
+&lt;ul>
+&lt;li>nyaa:&lt;a class="link" href="https://www.nyaa.eu/?page=search&amp;amp;cats=0_0&amp;amp;filter=0&amp;amp;term=VR" target="_blank" rel="noopener"
+>Home - Nyaa.se Torrents Proxy&lt;/a>&lt;/li>
+&lt;li>trackerlist:&lt;a class="link" href="https://trackerslist.com/#/" target="_blank" rel="noopener"
+>XIU2/TrackersListCollection&lt;/a>&lt;/li>
+&lt;li>mox.moe(&lt;a class="link" href="https://volmoe.com/" target="_blank" rel="noopener"
+>Mox.moe [Kindle漫畫|Kobo漫畫|epub漫畫] [volmoe.com]&lt;/a>&lt;/li>
+&lt;li>在线解析：&lt;a class="link" href="https://www.ahhhhfs.com/13620/" target="_blank" rel="noopener"
+>影视软件VIP视频解析接口集合 | ahhhhfs - A姐分享&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>游戏相关：&lt;/p>
+&lt;ul>
+&lt;li>steam游戏价格查询:https://steamdb.info/&lt;/li>
+&lt;li>雀魂网页版：&lt;a class="link" href="https://game.maj-soul.net/1/" target="_blank" rel="noopener"
+>雀魂麻將&lt;/a>&lt;/li>
+&lt;li>&lt;/li>
+&lt;/ul></description></item></channel></rss>

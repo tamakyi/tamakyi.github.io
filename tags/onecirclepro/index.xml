@@ -1,57 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>OneCirclePro on 狼的公告板 ver.Hugo</title>
-        <link>https://blog.tama.guru/tags/onecirclepro.html</link>
-        <description>Recent content in OneCirclePro on 狼的公告板 ver.Hugo</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/onecirclepro/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>OneCirclePro插件和handsome静态资源切换到国内服务器</title>
-        <link>https://blog.tama.guru/record/OneCirclePro-jscss.html</link>
-        <pubDate>Mon, 11 Jul 2022 22:52:00 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/record/OneCirclePro-jscss.html</guid>
-        <description>&lt;p&gt;体验了几天这个主题，发现资源加载是真的离谱，动不动10s+：&lt;/p&gt;
-&lt;p&gt;
-  &lt;div class=&#34;post-img-view&#34;&gt;
-  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://pic.tama.guru/i/2022/07/11/62cc370ea8a47.png&#34;&gt;
-  &lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc370ea8a47.png&#34; alt=&#34;请输入图片描述&#34;  /&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-&lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc370ea8a47.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;请输入图片描述&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;于是就想着把部分静态资源扔国内来了。&lt;/p&gt;
-&lt;p&gt;直接把包内&lt;code&gt;themeCore\themes\default\statics&lt;/code&gt;打包上传到国内服务器搭建的网站目录下，最好和其他资源间隔开来，比如&lt;code&gt;https://hostname/cdn/OneCircle/&lt;/code&gt;，然后修改&lt;code&gt;themeCore/themes/default/apps/main/content.phtml&lt;/code&gt;和&lt;code&gt;themeCore/themes/default/apps/cpanel/content_nosidebar.phtml&lt;/code&gt;把&lt;code&gt;{%config theme_url%}&lt;/code&gt;替换成&lt;code&gt;https://hostname/cdn/OneCircle/&lt;/code&gt;，再刷新即可。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;[scode type=&amp;quot;yellow&amp;quot;]注意！部分资源位于&lt;/code&gt;themeCore\themes\default\apps\cpanel\statics&lt;code&gt;下，此部分资源和上面的不一样，也需要提取到国内服务器上并进行替换。（说的就是你！&lt;/code&gt;themeCore/themes/default/apps/cpanel/content_nosidebar.phtml&lt;code&gt; 你mua的！）[/scode]&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;对于部分资源会得到&lt;code&gt;has been blocked by CORS policy: No &#39;Access-Control-Allow-Origin&#39;&lt;/code&gt;的跨域警告，是因为&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://hostname/cdn/OneCircle/statics/scss/master.styles.min.css?v={%config version%}&amp;#34;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里的&lt;code&gt;master.styles.min.js&lt;/code&gt;会请求几个woff文件，初步解决方案是只把这里修改回去，即：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;{%config theme_url%}/statics/scss/master.styles.min.css?v={%config version%}&amp;#34;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;后面有好方法再说。。。&lt;/p&gt;
-&lt;p&gt;PS:解决方案：如果使用宝塔面板，在目标服务器（国内服务器）要关闭&lt;code&gt;防跨站攻击(open_basedir)&lt;/code&gt;功能，并在配置文件的location添加以下两句即可：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    location / {
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        add_header Access-Control-Allow-Origin *;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        add_header Access-Control-Allow-Methods &amp;#39;GET, POST, OPTIONS&amp;#39;;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      }
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
-&lt;p&gt;handsome主题内置了自定义cdn加速的功能，在主题设置的&lt;code&gt;速度优化-主题本地静态资源自定义cdn加速&lt;/code&gt;下，填写加速地址：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;你需要把asset目录上传到你的cdn服务器上，比如CDN服务器的 handsome目录里，地址即为 &lt;code&gt;https://cdn.ihewro.com/handsome/assets/&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;在当前框中就填入该地址，主题就会引用你搭建的cdn上面的资源，而不再引用当前服务器上的资源&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
-</description>
-        </item>
-        
-    </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OneCirclePro on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/onecirclepro.html</link><description>Recent content in OneCirclePro on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 14 Aug 2025 03:33:47 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/onecirclepro/index.xml" rel="self" type="application/rss+xml"/><item><title>OneCirclePro插件和handsome静态资源切换到国内服务器</title><link>https://blog.tama.guru/record/OneCirclePro-jscss.html</link><pubDate>Mon, 11 Jul 2022 22:52:00 +0800</pubDate><guid>https://blog.tama.guru/record/OneCirclePro-jscss.html</guid><description>&lt;p>体验了几天这个主题，发现资源加载是真的离谱，动不动10s+：&lt;/p>
+&lt;p>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://pic.tama.guru/i/2022/07/11/62cc370ea8a47.png">
+&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc370ea8a47.png" alt="请输入图片描述" />
+&lt;/a>
+&lt;/div>
+&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc370ea8a47.png"
+loading="lazy"
+alt="请输入图片描述"
+>&lt;/p>
+&lt;p>于是就想着把部分静态资源扔国内来了。&lt;/p>
+&lt;p>直接把包内&lt;code>themeCore\themes\default\statics&lt;/code>打包上传到国内服务器搭建的网站目录下，最好和其他资源间隔开来，比如&lt;code>https://hostname/cdn/OneCircle/&lt;/code>，然后修改&lt;code>themeCore/themes/default/apps/main/content.phtml&lt;/code>和&lt;code>themeCore/themes/default/apps/cpanel/content_nosidebar.phtml&lt;/code>把&lt;code>{%config theme_url%}&lt;/code>替换成&lt;code>https://hostname/cdn/OneCircle/&lt;/code>，再刷新即可。&lt;/p>
+&lt;p>&lt;code>[scode type=&amp;quot;yellow&amp;quot;]注意！部分资源位于&lt;/code>themeCore\themes\default\apps\cpanel\statics&lt;code>下，此部分资源和上面的不一样，也需要提取到国内服务器上并进行替换。（说的就是你！&lt;/code>themeCore/themes/default/apps/cpanel/content_nosidebar.phtml&lt;code> 你mua的！）[/scode]&lt;/code>&lt;/p>
+&lt;p>对于部分资源会得到&lt;code>has been blocked by CORS policy: No 'Access-Control-Allow-Origin'&lt;/code>的跨域警告，是因为&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://hostname/cdn/OneCircle/statics/scss/master.styles.min.css?v={%config version%}&amp;#34;&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这里的&lt;code>master.styles.min.js&lt;/code>会请求几个woff文件，初步解决方案是只把这里修改回去，即：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;{%config theme_url%}/statics/scss/master.styles.min.css?v={%config version%}&amp;#34;&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>后面有好方法再说。。。&lt;/p>
+&lt;p>PS:解决方案：如果使用宝塔面板，在目标服务器（国内服务器）要关闭&lt;code>防跨站攻击(open_basedir)&lt;/code>功能，并在配置文件的location添加以下两句即可：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl"> location / {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> add_header Access-Control-Allow-Origin *;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> add_header Access-Control-Allow-Methods &amp;#39;GET, POST, OPTIONS&amp;#39;;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> }
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;p>handsome主题内置了自定义cdn加速的功能，在主题设置的&lt;code>速度优化-主题本地静态资源自定义cdn加速&lt;/code>下，填写加速地址：&lt;/p>
+&lt;blockquote>
+&lt;ul>
+&lt;li>你需要把asset目录上传到你的cdn服务器上，比如CDN服务器的 handsome目录里，地址即为 &lt;code>https://cdn.ihewro.com/handsome/assets/&lt;/code>&lt;/li>
+&lt;li>在当前框中就填入该地址，主题就会引用你搭建的cdn上面的资源，而不再引用当前服务器上的资源&lt;/li>
+&lt;/ul>&lt;/blockquote></description></item></channel></rss>

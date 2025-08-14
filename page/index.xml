@@ -1,109 +1,47 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Pages on 狼的公告板 ver.Hugo</title>
-        <link>https://blog.tama.guru/page/index.html</link>
-        <description>Recent content in Pages on 狼的公告板 ver.Hugo</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <copyright>tamakyi</copyright>
-        <lastBuildDate>Tue, 12 Aug 2025 10:42:19 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/page/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Archives | 档案</title>
-        <link>https://blog.tama.guru/archives.html</link>
-        <pubDate>Tue, 28 May 2019 00:00:00 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/archives.html</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>About | 关于</title>
-        <link>https://blog.tama.guru/about-%E5%85%B3%E4%BA%8E.html</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://blog.tama.guru/about-%E5%85%B3%E4%BA%8E.html</guid>
-        <description>&lt;p&gt;This is a test page for i18n support.&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>Links | 链接</title>
-        <link>https://blog.tama.guru/links-%E9%93%BE%E6%8E%A5.html</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://blog.tama.guru/links-%E9%93%BE%E6%8E%A5.html</guid>
-        <description>&lt;p&gt;To use this feature, add &lt;code&gt;links&lt;/code&gt; section to frontmatter.&lt;/p&gt;
-&lt;p&gt;This page&amp;rsquo;s frontmatter:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;links&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;GitHub&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;description&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;GitHub is the world&amp;#39;s largest software development platform.&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;website&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://github.com&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;TypeScript&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;description&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;website&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://www.typescriptlang.org&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;ts-logo-128.jpg&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;image&lt;/code&gt; field accepts both local and external images.&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>Search | 搜索</title>
-        <link>https://blog.tama.guru/search.html</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://blog.tama.guru/search.html</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Server | 自建服务</title>
-        <link>https://blog.tama.guru/server-%E8%87%AA%E5%BB%BA%E6%9C%8D%E5%8A%A1.html</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://blog.tama.guru/server-%E8%87%AA%E5%BB%BA%E6%9C%8D%E5%8A%A1.html</guid>
-        <description>&lt;p&gt;因Stack主题无二级菜单显示，为简化菜单显示，大多数自建服务移至此处。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>travel | 旅行记录</title>
-        <link>https://blog.tama.guru/travel-%E6%97%85%E8%A1%8C%E8%AE%B0%E5%BD%95.html</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://blog.tama.guru/travel-%E6%97%85%E8%A1%8C%E8%AE%B0%E5%BD%95.html</guid>
-        <description>&lt;p&gt;关于我出去玩的那些流水账就不放进时间线里污染大家眼睛了，整合在这为的是自己留个念想。按省份进行分类汇总？虽然大概率没机会出省就是了。&lt;/p&gt;
-&lt;center&gt;&lt;b&gt;广西&lt;/b&gt;&lt;/center&gt;
-&lt;style&gt;
-  td, th {
-    display: flex;
-    justify-content: center; /* 水平 */
-    align-items: center;     /* 垂直 */
-    height: 100px;
-  }
-&lt;/style&gt;
-&lt;table&gt;
-    &lt;tr&gt;
-        &lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://blog.tama.guru/travel/guangxi/nanning.html&#34;&gt;南宁&lt;/a&gt;&lt;/td&gt;
-        &lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://blog.tama.guru/travel/guangxi/liuzhou.html&#34;&gt;柳州&lt;/a&gt;&lt;/td&gt;
-        &lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://blog.tama.guru/travel/guangxi/guilin.html&#34;&gt;桂林&lt;/a&gt;&lt;/td&gt;
-        &lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://blog.tama.guru/travel/guangxi/beihai.html&#34;&gt;北海&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://blog.tama.guru/travel/guangxi/yulin.html&#34;&gt;玉林&lt;/a&gt;&lt;/td&gt;
-        &lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://blog.tama.guru/travel/guangxi/wuzhou.html&#34;&gt;梧州&lt;/a&gt;&lt;/td&gt;
-        &lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://blog.tama.guru/travel/guangxi/qinzou.html&#34;&gt;钦州&lt;/a&gt;&lt;/td&gt;
-        &lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://blog.tama.guru/travel/guangxi/baise.html&#34;&gt;百色&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://blog.tama.guru/travel/guangxi/hezhou.html&#34;&gt;贺州&lt;/a&gt;&lt;/td&gt;
-        &lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://blog.tama.guru/travel/guangxi/guigang.html&#34;&gt;贵港&lt;/a&gt;&lt;/td&gt;
-        &lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://blog.tama.guru/travel/guangxi/hechi.html&#34;&gt;河池&lt;/a&gt;&lt;/td&gt;
-        &lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://blog.tama.guru/travel/guangxi/fangchenggang.html&#34;&gt;防城港&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://blog.tama.guru/travel/guangxi/laibin.html&#34;&gt;来宾&lt;/a&gt;&lt;/td&gt;
-        &lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://blog.tama.guru/travel/guangxi/chongzuo.html&#34;&gt;崇左&lt;/a&gt;&lt;/td&gt;
-        &lt;td&gt;&lt;/td&gt;
-        &lt;td&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-&lt;/table&gt;</description>
-        </item>
-        
-    </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pages on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/page/index.html</link><description>Recent content in Pages on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Tue, 12 Aug 2025 10:42:19 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/page/index.xml" rel="self" type="application/rss+xml"/><item><title>Archives | 档案</title><link>https://blog.tama.guru/archives.html</link><pubDate>Tue, 28 May 2019 00:00:00 +0800</pubDate><guid>https://blog.tama.guru/archives.html</guid><description/></item><item><title>About | 关于</title><link>https://blog.tama.guru/about-%E5%85%B3%E4%BA%8E.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.tama.guru/about-%E5%85%B3%E4%BA%8E.html</guid><description>&lt;p>This is a test page for i18n support.&lt;/p></description></item><item><title>Links | 链接</title><link>https://blog.tama.guru/links-%E9%93%BE%E6%8E%A5.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.tama.guru/links-%E9%93%BE%E6%8E%A5.html</guid><description>&lt;p>To use this feature, add &lt;code>links&lt;/code> section to frontmatter.&lt;/p>
+&lt;p>This page&amp;rsquo;s frontmatter:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">links&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">title&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">GitHub&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">description&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">GitHub is the world&amp;#39;s largest software development platform.&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">website&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">https://github.com&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">image&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">title&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">TypeScript&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">description&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">website&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">https://www.typescriptlang.org&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">image&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">ts-logo-128.jpg&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>image&lt;/code> field accepts both local and external images.&lt;/p></description></item><item><title>Search | 搜索</title><link>https://blog.tama.guru/search.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.tama.guru/search.html</guid><description/></item><item><title>Server | 自建服务</title><link>https://blog.tama.guru/server-%E8%87%AA%E5%BB%BA%E6%9C%8D%E5%8A%A1.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.tama.guru/server-%E8%87%AA%E5%BB%BA%E6%9C%8D%E5%8A%A1.html</guid><description>&lt;p>因Stack主题无二级菜单显示，为简化菜单显示，大多数自建服务移至此处。&lt;/p></description></item><item><title>travel | 旅行记录</title><link>https://blog.tama.guru/travel-%E6%97%85%E8%A1%8C%E8%AE%B0%E5%BD%95.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.tama.guru/travel-%E6%97%85%E8%A1%8C%E8%AE%B0%E5%BD%95.html</guid><description>&lt;p>关于我出去玩的那些流水账就不放进时间线里污染大家眼睛了，整合在这为的是自己留个念想。按省份进行分类汇总？虽然大概率没机会出省就是了。&lt;/p>
+&lt;center>&lt;b>广西&lt;/b>&lt;/center>
+&lt;style>
+td, th {
+display: flex;
+justify-content: center; /* 水平 */
+align-items: center; /* 垂直 */
+height: 100px;
+}
+&lt;/style>
+&lt;table>
+&lt;tr>
+&lt;td align="center">&lt;a href="https://blog.tama.guru/travel/guangxi/nanning.html">南宁&lt;/a>&lt;/td>
+&lt;td align="center">&lt;a href="https://blog.tama.guru/travel/guangxi/liuzhou.html">柳州&lt;/a>&lt;/td>
+&lt;td align="center">&lt;a href="https://blog.tama.guru/travel/guangxi/guilin.html">桂林&lt;/a>&lt;/td>
+&lt;td align="center">&lt;a href="https://blog.tama.guru/travel/guangxi/beihai.html">北海&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center">&lt;a href="https://blog.tama.guru/travel/guangxi/yulin.html">玉林&lt;/a>&lt;/td>
+&lt;td align="center">&lt;a href="https://blog.tama.guru/travel/guangxi/wuzhou.html">梧州&lt;/a>&lt;/td>
+&lt;td align="center">&lt;a href="https://blog.tama.guru/travel/guangxi/qinzou.html">钦州&lt;/a>&lt;/td>
+&lt;td align="center">&lt;a href="https://blog.tama.guru/travel/guangxi/baise.html">百色&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center">&lt;a href="https://blog.tama.guru/travel/guangxi/hezhou.html">贺州&lt;/a>&lt;/td>
+&lt;td align="center">&lt;a href="https://blog.tama.guru/travel/guangxi/guigang.html">贵港&lt;/a>&lt;/td>
+&lt;td align="center">&lt;a href="https://blog.tama.guru/travel/guangxi/hechi.html">河池&lt;/a>&lt;/td>
+&lt;td align="center">&lt;a href="https://blog.tama.guru/travel/guangxi/fangchenggang.html">防城港&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center">&lt;a href="https://blog.tama.guru/travel/guangxi/laibin.html">来宾&lt;/a>&lt;/td>
+&lt;td align="center">&lt;a href="https://blog.tama.guru/travel/guangxi/chongzuo.html">崇左&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/table></description></item></channel></rss>

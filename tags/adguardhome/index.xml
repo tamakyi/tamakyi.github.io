@@ -1,178 +1,153 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Adguardhome on 狼的公告板 ver.Hugo</title>
-        <link>https://blog.tama.guru/tags/adguardhome.html</link>
-        <description>Recent content in Adguardhome on 狼的公告板 ver.Hugo</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/adguardhome/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>在局域网内安装去广告插件的几种方法(pihole和adguardhome)</title>
-        <link>https://blog.tama.guru/record/ad-plugin.html</link>
-        <pubDate>Sat, 13 Apr 2024 23:37:00 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/record/ad-plugin.html</guid>
-        <description>&lt;p&gt;这东西我主要是放在家里给老人用的，最开始是他们手机碰上七七八八的问题找我解决，然后点开一个个浏览器和应用，卧槽，这能用的下去？横幅的横幅，弹窗的弹窗，真的看不下去，正好家里整了一个24小时开机的J1900双网口软路由，于是想了想在上面安装个插件算了，怎样都比原来好。&lt;/p&gt;
-&lt;h3 id=&#34;pihole-on-docker&#34;&gt;PiHole on Docker
-&lt;/h3&gt;&lt;h4 id=&#34;安装之前&#34;&gt;安装之前
-&lt;/h4&gt;&lt;p&gt;首先需要打开主机的ssh，执行
-&lt;code&gt;ip link set eth0 promisc on&lt;/code&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Adguardhome on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/adguardhome.html</link><description>Recent content in Adguardhome on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 14 Aug 2025 03:33:47 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/adguardhome/index.xml" rel="self" type="application/rss+xml"/><item><title>在局域网内安装去广告插件的几种方法(pihole和adguardhome)</title><link>https://blog.tama.guru/record/ad-plugin.html</link><pubDate>Sat, 13 Apr 2024 23:37:00 +0800</pubDate><guid>https://blog.tama.guru/record/ad-plugin.html</guid><description>&lt;p>这东西我主要是放在家里给老人用的，最开始是他们手机碰上七七八八的问题找我解决，然后点开一个个浏览器和应用，卧槽，这能用的下去？横幅的横幅，弹窗的弹窗，真的看不下去，正好家里整了一个24小时开机的J1900双网口软路由，于是想了想在上面安装个插件算了，怎样都比原来好。&lt;/p>
+&lt;h3 id="pihole-on-docker">PiHole on Docker
+&lt;/h3>&lt;h4 id="安装之前">安装之前
+&lt;/h4>&lt;p>首先需要打开主机的ssh，执行
+&lt;code>ip link set eth0 promisc on&lt;/code>
 打开网卡混杂模式，这个步骤是必须的，不然不能接收到域名解析请求。
-然后新建一个网络，网段和网关要和主机所在的网段一致。比如说宿主机的IP是&lt;code&gt;192.168.101.232&lt;/code&gt;，那么新建的网络子网则为&lt;code&gt;192.168.101.0/24&lt;/code&gt;，网关为&lt;code&gt;192.168.101.1&lt;/code&gt;，还需要把驱动器切换成&lt;code&gt;MAC VLAN&lt;/code&gt;，基设备修改成&lt;code&gt;br-lan&lt;/code&gt;，其它可以不变，&lt;code&gt;IPV6&lt;/code&gt;打不打开都可以，打开之后需要配置和宿主机同级的IPV6的网段和网关。
-创建好网络之后下一步就是下载镜像和新建容器，镜像直接拉取&lt;code&gt;pihole/pihole&lt;/code&gt;，最新的。
-然后在主机上随便一个目标下新建&lt;code&gt;config&lt;/code&gt;和&lt;code&gt;data&lt;/code&gt;文件夹，用于存储pihole的相关数据。比如&lt;code&gt;/opt/pihole/data&lt;/code&gt;和&lt;code&gt;/opt/pihole/config&lt;/code&gt;。
-接下来新建容器，选择pihole的镜像和前面新建的网络，分配一个网段内不冲突的地址，比如&lt;code&gt;192.168.101.102&lt;/code&gt;，并添加如下绑定挂载：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;/opt/pihole/config:/etc/pihole
+然后新建一个网络，网段和网关要和主机所在的网段一致。比如说宿主机的IP是&lt;code>192.168.101.232&lt;/code>，那么新建的网络子网则为&lt;code>192.168.101.0/24&lt;/code>，网关为&lt;code>192.168.101.1&lt;/code>，还需要把驱动器切换成&lt;code>MAC VLAN&lt;/code>，基设备修改成&lt;code>br-lan&lt;/code>，其它可以不变，&lt;code>IPV6&lt;/code>打不打开都可以，打开之后需要配置和宿主机同级的IPV6的网段和网关。
+创建好网络之后下一步就是下载镜像和新建容器，镜像直接拉取&lt;code>pihole/pihole&lt;/code>，最新的。
+然后在主机上随便一个目标下新建&lt;code>config&lt;/code>和&lt;code>data&lt;/code>文件夹，用于存储pihole的相关数据。比如&lt;code>/opt/pihole/data&lt;/code>和&lt;code>/opt/pihole/config&lt;/code>。
+接下来新建容器，选择pihole的镜像和前面新建的网络，分配一个网段内不冲突的地址，比如&lt;code>192.168.101.102&lt;/code>，并添加如下绑定挂载：&lt;/p>
+&lt;pre>&lt;code>/opt/pihole/config:/etc/pihole
 /opt/pihole/data:/etc/dnsmasq.d
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;然后提交并启动。
-点击容器后面的编辑-&amp;gt;控制台-&amp;gt;连接，输入&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo pihole -a -p
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;给pihole配置密码，然后访问&lt;code&gt;192.168.101.103/admin&lt;/code&gt;看看是否能访问。&lt;/p&gt;
-&lt;h4 id=&#34;配置pi-hole&#34;&gt;配置Pi-Hole
-&lt;/h4&gt;&lt;p&gt;一般情况下这里要做的就是三件事：&lt;/p&gt;
-&lt;h5 id=&#34;修改上游dns&#34;&gt;修改上游DNS
-&lt;/h5&gt;&lt;p&gt;位于&lt;code&gt;settings/dns&lt;/code&gt;下的&lt;code&gt;Upstream DNS Servers Custom 1 (IPv4)&lt;/code&gt;和&lt;code&gt;Custom 2 (IPv4)&lt;/code&gt;，一般填写光猫获取到的运营商DNS，也可以写&lt;code&gt;8.8.8.8&lt;/code&gt;这类，只要访问快就行，改完记得滑到底部点击&lt;code&gt;save&lt;/code&gt;。&lt;/p&gt;
-&lt;h5 id=&#34;添加拦截规则&#34;&gt;添加拦截规则
-&lt;/h5&gt;&lt;p&gt;位于&lt;code&gt;adlists&lt;/code&gt;下，直接把拦截规则放进&lt;code&gt;address&lt;/code&gt;下点击&lt;code&gt;add&lt;/code&gt;即可。一般推荐&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;https://anti-ad.net/domains.txt
+&lt;/code>&lt;/pre>
+&lt;p>然后提交并启动。
+点击容器后面的编辑-&amp;gt;控制台-&amp;gt;连接，输入&lt;/p>
+&lt;pre>&lt;code>sudo pihole -a -p
+&lt;/code>&lt;/pre>
+&lt;p>给pihole配置密码，然后访问&lt;code>192.168.101.103/admin&lt;/code>看看是否能访问。&lt;/p>
+&lt;h4 id="配置pi-hole">配置Pi-Hole
+&lt;/h4>&lt;p>一般情况下这里要做的就是三件事：&lt;/p>
+&lt;h5 id="修改上游dns">修改上游DNS
+&lt;/h5>&lt;p>位于&lt;code>settings/dns&lt;/code>下的&lt;code>Upstream DNS Servers Custom 1 (IPv4)&lt;/code>和&lt;code>Custom 2 (IPv4)&lt;/code>，一般填写光猫获取到的运营商DNS，也可以写&lt;code>8.8.8.8&lt;/code>这类，只要访问快就行，改完记得滑到底部点击&lt;code>save&lt;/code>。&lt;/p>
+&lt;h5 id="添加拦截规则">添加拦截规则
+&lt;/h5>&lt;p>位于&lt;code>adlists&lt;/code>下，直接把拦截规则放进&lt;code>address&lt;/code>下点击&lt;code>add&lt;/code>即可。一般推荐&lt;/p>
+&lt;pre>&lt;code>https://anti-ad.net/domains.txt
 https://raw.githubusercontents.com/StevenBlack/hosts/master/hosts
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;这两个，第二个是pihole自带的，但是github部分地区无法访问，建议删掉原来的，再把上面这个镜像地址添加进去。添加完之后不会自动下载，需要到&lt;code&gt;tools/update gravity&lt;/code&gt;下点击&lt;code&gt;update&lt;/code&gt;手动更新一次。&lt;/p&gt;
-&lt;h5 id=&#34;导入解析&#34;&gt;导入解析
-&lt;/h5&gt;&lt;p&gt;如果是单个设备，直接到对应的连接选项从DHCP改成静态再把下面把DNS改成&lt;code&gt;192.168.101.103&lt;/code&gt;即可。
-如果是路由器（我的网络是光猫-软路由-硬路由），我用的是梅林，直接在内部网络(lan)下的	基本设置改成静态IP，配置好IP地址和网关，DNS服务器则修改成&lt;code&gt;192.168.101.103&lt;/code&gt;保存即可。
-如果成功了，Dashboard和Query Log应该能看到解析记录。&lt;/p&gt;
-&lt;h4 id=&#34;这样做有什么好处&#34;&gt;这样做有什么好处
-&lt;/h4&gt;&lt;p&gt;docker环境相对于直接在硬路由/软路由上搭建最大的好处就是不用担心53端口冲突，这点就够了&lt;/p&gt;
-&lt;h3 id=&#34;pi-hole-hardware&#34;&gt;Pi-hole Hardware
-&lt;/h3&gt;&lt;h4 id=&#34;安装之前-1&#34;&gt;安装之前
-&lt;/h4&gt;&lt;p&gt;我的测试环境是安装过宝塔php8.1+8.2的64位树莓派raspios。如果是全新安装的可能有些步骤是不必要的。
-安装前一定要确保机器能够访问到Github，如果不能请配置好代理。例如我在&lt;code&gt;192.168.118.214&lt;/code&gt;上搭建了3proxy建议代理服务，端口分别是： &lt;code&gt;1079: http/https 1080:socks5&lt;/code&gt;，因此需要配置临时代理：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;export https_proxy=http://192.168.118.214:1079 http_proxy=http://192.168.118.214:1079 all_proxy=socks5://192.168.118.214:1080
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;然后就可以执行安装了：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;curl -sSL https://install.pi-hole.net | sudo bash
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;脚本执行时会安装一系列的依赖，需要注意像php这类的软件包部分源只提供了最新版本，比如原来我只安装有8.1，结果在安装：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;[i] Checking for php8.1-common (will be installed)
+&lt;/code>&lt;/pre>
+&lt;p>这两个，第二个是pihole自带的，但是github部分地区无法访问，建议删掉原来的，再把上面这个镜像地址添加进去。添加完之后不会自动下载，需要到&lt;code>tools/update gravity&lt;/code>下点击&lt;code>update&lt;/code>手动更新一次。&lt;/p>
+&lt;h5 id="导入解析">导入解析
+&lt;/h5>&lt;p>如果是单个设备，直接到对应的连接选项从DHCP改成静态再把下面把DNS改成&lt;code>192.168.101.103&lt;/code>即可。
+如果是路由器（我的网络是光猫-软路由-硬路由），我用的是梅林，直接在内部网络(lan)下的 基本设置改成静态IP，配置好IP地址和网关，DNS服务器则修改成&lt;code>192.168.101.103&lt;/code>保存即可。
+如果成功了，Dashboard和Query Log应该能看到解析记录。&lt;/p>
+&lt;h4 id="这样做有什么好处">这样做有什么好处
+&lt;/h4>&lt;p>docker环境相对于直接在硬路由/软路由上搭建最大的好处就是不用担心53端口冲突，这点就够了&lt;/p>
+&lt;h3 id="pi-hole-hardware">Pi-hole Hardware
+&lt;/h3>&lt;h4 id="安装之前-1">安装之前
+&lt;/h4>&lt;p>我的测试环境是安装过宝塔php8.1+8.2的64位树莓派raspios。如果是全新安装的可能有些步骤是不必要的。
+安装前一定要确保机器能够访问到Github，如果不能请配置好代理。例如我在&lt;code>192.168.118.214&lt;/code>上搭建了3proxy建议代理服务，端口分别是： &lt;code>1079: http/https 1080:socks5&lt;/code>，因此需要配置临时代理：&lt;/p>
+&lt;pre>&lt;code>export https_proxy=http://192.168.118.214:1079 http_proxy=http://192.168.118.214:1079 all_proxy=socks5://192.168.118.214:1080
+&lt;/code>&lt;/pre>
+&lt;p>然后就可以执行安装了：&lt;/p>
+&lt;pre>&lt;code>curl -sSL https://install.pi-hole.net | sudo bash
+&lt;/code>&lt;/pre>
+&lt;p>脚本执行时会安装一系列的依赖，需要注意像php这类的软件包部分源只提供了最新版本，比如原来我只安装有8.1，结果在安装：&lt;/p>
+&lt;pre>&lt;code>[i] Checking for php8.1-common (will be installed)
 [i] Checking for php8.1-cgi (will be installed)
 [i] Checking for php8.1-sqlite3 (will be installed)
 [i] Checking for php8.1-xml (will be installed)
 [i] Checking for php8.1-intl (will be installed)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;的时候全部都找不到，然后脚本就退出了&amp;hellip;执行&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo apt search php8.*
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;可以看到很多都是8.2的包了&amp;hellip;灰溜溜的去宝塔重新编译安装一个再重新执行脚本：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;php8.2/stable,stable,stable-security,stable-security 8.2.7-1~deb12u1 all
-  server-side, HTML-embedded scripting language (metapackage)
-
+&lt;/code>&lt;/pre>
+&lt;p>的时候全部都找不到，然后脚本就退出了&amp;hellip;执行&lt;/p>
+&lt;pre>&lt;code>sudo apt search php8.*
+&lt;/code>&lt;/pre>
+&lt;p>可以看到很多都是8.2的包了&amp;hellip;灰溜溜的去宝塔重新编译安装一个再重新执行脚本：&lt;/p>
+&lt;pre>&lt;code>php8.2/stable,stable,stable-security,stable-security 8.2.7-1~deb12u1 all
+server-side, HTML-embedded scripting language (metapackage)
 php8.2-amqp/stable 1.11.0-5 arm64
-  AMQP extension for PHP
-
+AMQP extension for PHP
 php8.2-apcu/stable 5.1.22+4.0.11-2 arm64
-  APC User Cache for PHP
+APC User Cache for PHP
 ...
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;安装过程有个简单的交互，无非就是问你是不是真的要安装，使用哪个网卡，使用哪个DNS，要不要装个lighthttp实现网页端管理这类的，基本上全部选是就对了。安装完成后会提示管理网页地址和默认密码，可以使用&lt;code&gt;pihole -a -p&lt;/code&gt;命令更改：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;  [i] Pi-hole blocking will be enabled
-  [i] Enabling blocking
-  [✓] Reloading DNS lists
-  [✓] Pi-hole Enabled
-  [i] Web Interface password: CPlutkpL
-  [i] This can be changed using &#39;pihole -a -p&#39;    
-
-  [i] View the web interface at http://pi.hole/admin or http://192.168.118.164/admin    
-
-  [i] You may now configure your devices to use the Pi-hole as their DNS server
-  [i] Pi-hole DNS (IPv4): 192.168.118.164
-  [i] Pi-hole DNS (IPv6): 2***********34
-  [i] If you have not done so already, the above IP should be set to static.    
-
-  [i] The install log is located at: /etc/pihole/install.log
-  [✓] Installation complete! 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;到这里就算安装完成了。&lt;/p&gt;
-&lt;h4 id=&#34;一些问题&#34;&gt;一些问题
-&lt;/h4&gt;&lt;p&gt;一般情况下现在就可以直接访问pihole了，但是你可能会发现管理页面报错404，如果你有安装过lnmp环境，这可能是80端口冲突导致lighthttp无法启动：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;root@akarinbot:~# systemctl status lighttpd.service 
+&lt;/code>&lt;/pre>
+&lt;p>安装过程有个简单的交互，无非就是问你是不是真的要安装，使用哪个网卡，使用哪个DNS，要不要装个lighthttp实现网页端管理这类的，基本上全部选是就对了。安装完成后会提示管理网页地址和默认密码，可以使用&lt;code>pihole -a -p&lt;/code>命令更改：&lt;/p>
+&lt;pre>&lt;code> [i] Pi-hole blocking will be enabled
+[i] Enabling blocking
+[✓] Reloading DNS lists
+[✓] Pi-hole Enabled
+[i] Web Interface password: CPlutkpL
+[i] This can be changed using 'pihole -a -p'
+[i] View the web interface at http://pi.hole/admin or http://192.168.118.164/admin
+[i] You may now configure your devices to use the Pi-hole as their DNS server
+[i] Pi-hole DNS (IPv4): 192.168.118.164
+[i] Pi-hole DNS (IPv6): 2***********34
+[i] If you have not done so already, the above IP should be set to static.
+[i] The install log is located at: /etc/pihole/install.log
+[✓] Installation complete!
+&lt;/code>&lt;/pre>
+&lt;p>到这里就算安装完成了。&lt;/p>
+&lt;h4 id="一些问题">一些问题
+&lt;/h4>&lt;p>一般情况下现在就可以直接访问pihole了，但是你可能会发现管理页面报错404，如果你有安装过lnmp环境，这可能是80端口冲突导致lighthttp无法启动：&lt;/p>
+&lt;pre>&lt;code>root@akarinbot:~# systemctl status lighttpd.service
 × lighttpd.service - Lighttpd Daemon
-     Loaded: loaded (/lib/systemd/system/lighttpd.service; enabled; preset: enabled)
-     Active: failed (Result: exit-code) since Mon 2024-04-15 23:09:25 CST; 5min ago
-   Duration: 476ms
-    Process: 173339 ExecStartPre=/usr/sbin/lighttpd -tt -f /etc/lighttpd/lighttpd.conf (code=exited, status=0/SUCCESS)
-    Process: 173342 ExecStart=/usr/sbin/lighttpd -D -f /etc/lighttpd/lighttpd.conf (code=exited, status=255/EXCEPTION)
-   Main PID: 173342 (code=exited, status=255/EXCEPTION)
-        CPU: 886ms    
-
+Loaded: loaded (/lib/systemd/system/lighttpd.service; enabled; preset: enabled)
+Active: failed (Result: exit-code) since Mon 2024-04-15 23:09:25 CST; 5min ago
+Duration: 476ms
+Process: 173339 ExecStartPre=/usr/sbin/lighttpd -tt -f /etc/lighttpd/lighttpd.conf (code=exited, status=0/SUCCESS)
+Process: 173342 ExecStart=/usr/sbin/lighttpd -D -f /etc/lighttpd/lighttpd.conf (code=exited, status=255/EXCEPTION)
+Main PID: 173342 (code=exited, status=255/EXCEPTION)
+CPU: 886ms
 4月 15 23:09:25 akarinbot systemd[1]: lighttpd.service: Scheduled restart job, restart counter is at 7.
 4月 15 23:09:25 akarinbot systemd[1]: Stopped lighttpd.service - Lighttpd Daemon.
 4月 15 23:09:25 akarinbot systemd[1]: lighttpd.service: Start request repeated too quickly.
-4月 15 23:09:25 akarinbot systemd[1]: lighttpd.service: Failed with result &#39;exit-code&#39;.
+4月 15 23:09:25 akarinbot systemd[1]: lighttpd.service: Failed with result 'exit-code'.
 4月 15 23:09:25 akarinbot systemd[1]: Failed to start lighttpd.service - Lighttpd Daemon.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;所以我们需要手动修改lighthttp的配置文件：
+&lt;/code>&lt;/pre>
+&lt;p>所以我们需要手动修改lighthttp的配置文件：
 root@akarinbot:~# nano /etc/lighttpd/lighttpd.conf
 &amp;hellip;
-#server.port                 = 80
-server.port                 = 88 #这里改成80外的其他端口
-&amp;hellip;&lt;/p&gt;
-&lt;p&gt;然后重启lighthttp服务：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;root@akarinbot:~# systemctl restart lighttpd.service
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;检查服务状态：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;root@akarinbot:~# systemctl status lighttpd.service
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;如果提示active (running)此时应该就完成了。如果timeout了，建议检查防火墙配置，要注意53端口的TCP/UDP都要打开哦。&lt;/p&gt;
-&lt;h3 id=&#34;adguardhome-on-hardware&#34;&gt;AdGuardHome on Hardware
-&lt;/h3&gt;&lt;h4 id=&#34;安装之前-2&#34;&gt;安装之前
-&lt;/h4&gt;&lt;p&gt;需要注意的是，这个方法适用于使用openwrt的系统，并且支持安装luci软件包。
-下载：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;https://github.com/rufengsuixing/luci-app-adguardhome/releases/download/1.8-11/luci-app-adguardhome_1.8-11_all.ipk
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;到本地，在openwrt内的&lt;code&gt;系统-软件包&lt;/code&gt;下选择上传该软件包，无视警告并安装，然后刷新页面。
-到：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;https://github.com/AdguardTeam/AdGuardHome/releases
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;下载适合自己系统版本的软件包。比如X86架构linux的：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;https://github.com/AdguardTeam/AdGuardHome/releases/download/v0.107.48/AdGuardHome_linux_amd64.tar.gz
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;下载后解压到任意目录，解压并增加相关工作目录：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cd ~
+#server.port = 80
+server.port = 88 #这里改成80外的其他端口
+&amp;hellip;&lt;/p>
+&lt;p>然后重启lighthttp服务：&lt;/p>
+&lt;pre>&lt;code>root@akarinbot:~# systemctl restart lighttpd.service
+&lt;/code>&lt;/pre>
+&lt;p>检查服务状态：&lt;/p>
+&lt;pre>&lt;code>root@akarinbot:~# systemctl status lighttpd.service
+&lt;/code>&lt;/pre>
+&lt;p>如果提示active (running)此时应该就完成了。如果timeout了，建议检查防火墙配置，要注意53端口的TCP/UDP都要打开哦。&lt;/p>
+&lt;h3 id="adguardhome-on-hardware">AdGuardHome on Hardware
+&lt;/h3>&lt;h4 id="安装之前-2">安装之前
+&lt;/h4>&lt;p>需要注意的是，这个方法适用于使用openwrt的系统，并且支持安装luci软件包。
+下载：&lt;/p>
+&lt;pre>&lt;code>https://github.com/rufengsuixing/luci-app-adguardhome/releases/download/1.8-11/luci-app-adguardhome_1.8-11_all.ipk
+&lt;/code>&lt;/pre>
+&lt;p>到本地，在openwrt内的&lt;code>系统-软件包&lt;/code>下选择上传该软件包，无视警告并安装，然后刷新页面。
+到：&lt;/p>
+&lt;pre>&lt;code>https://github.com/AdguardTeam/AdGuardHome/releases
+&lt;/code>&lt;/pre>
+&lt;p>下载适合自己系统版本的软件包。比如X86架构linux的：&lt;/p>
+&lt;pre>&lt;code>https://github.com/AdguardTeam/AdGuardHome/releases/download/v0.107.48/AdGuardHome_linux_amd64.tar.gz
+&lt;/code>&lt;/pre>
+&lt;p>下载后解压到任意目录，解压并增加相关工作目录：&lt;/p>
+&lt;pre>&lt;code>cd ~
 wget https://github.com/AdguardTeam/AdGuardHome/releases/download/v0.107.48/AdGuardHome_linux_amd64.tar.gz
 tar zxvf AdGuardHome_linux_amd64.tar.gz
 mkdir conf &amp;amp;&amp;amp; mkdir data
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;此时Adguard的路径应该为&lt;code&gt;/root/AdGuardHome&lt;/code&gt;。&lt;/p&gt;
-&lt;h4 id=&#34;配置adguardhome-luci和adguardhome&#34;&gt;配置AdguardHome luci和AdguardHome
-&lt;/h4&gt;&lt;p&gt;管理界面下的&lt;code&gt;服务-AdGuard Home&lt;/code&gt;，把以下项目修改：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;6060重定向--&amp;gt;作为dnsmasq的上游服务器
+&lt;/code>&lt;/pre>
+&lt;p>此时Adguard的路径应该为&lt;code>/root/AdGuardHome&lt;/code>。&lt;/p>
+&lt;h4 id="配置adguardhome-luci和adguardhome">配置AdguardHome luci和AdguardHome
+&lt;/h4>&lt;p>管理界面下的&lt;code>服务-AdGuard Home&lt;/code>，把以下项目修改：&lt;/p>
+&lt;pre>&lt;code>6060重定向--&amp;gt;作为dnsmasq的上游服务器
 执行文件路径-&amp;gt;/root/AdGuardHome/AdGuardHome
 配置文件路径-&amp;gt;/root/AdGuardHome/conf/AdGuardHome.yaml
 工作目录-&amp;gt;/root/AdGuardHome
 运行日志-&amp;gt;/root/AdGuardHome/data
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;然后保存并应用，再勾选启用，再次保存，进入路由器IP:3000，配置AdGuardHome。
+&lt;/code>&lt;/pre>
+&lt;p>然后保存并应用，再勾选启用，再次保存，进入路由器IP:3000，配置AdGuardHome。
 需要注意的是一般情况下53端口是被占用了，建议修改成5553。
-进入AdGuardHome之后在&lt;code&gt;设置-DNS设置&lt;/code&gt;下面把上游DNS服务器修改成：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;https://dns.alidns.com/dns-query
+进入AdGuardHome之后在&lt;code>设置-DNS设置&lt;/code>下面把上游DNS服务器修改成：&lt;/p>
+&lt;pre>&lt;code>https://dns.alidns.com/dns-query
 tls://dns.alidns.com
 223.5.5.5
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;以上都是阿里云的DNS，实测我的网络解析速度还行。
-Bootstrap DNS 服务器则修改为：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;223.5.5.5
+&lt;/code>&lt;/pre>
+&lt;p>以上都是阿里云的DNS，实测我的网络解析速度还行。
+Bootstrap DNS 服务器则修改为：&lt;/p>
+&lt;pre>&lt;code>223.5.5.5
 223.6.6.6
 114.114.114.114
 8.8.8.8
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;保存之后再去&lt;code&gt;过滤器-DNS黑名单&lt;/code&gt;下启用需要的规则就行了，自带的几个都不错，打勾就能下载。&lt;/p&gt;
-&lt;h5 id=&#34;导入解析-1&#34;&gt;导入解析
-&lt;/h5&gt;&lt;p&gt;此步骤和使用PiHole一模一样。&lt;/p&gt;</description>
-        </item>
-        
-    </channel>
-</rss>
+&lt;/code>&lt;/pre>
+&lt;p>保存之后再去&lt;code>过滤器-DNS黑名单&lt;/code>下启用需要的规则就行了，自带的几个都不错，打勾就能下载。&lt;/p>
+&lt;h5 id="导入解析-1">导入解析
+&lt;/h5>&lt;p>此步骤和使用PiHole一模一样。&lt;/p></description></item></channel></rss>

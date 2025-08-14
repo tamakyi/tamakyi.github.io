@@ -1,112 +1,92 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Neno on 狼的公告板 ver.Hugo</title>
-        <link>https://blog.tama.guru/tags/neno.html</link>
-        <description>Recent content in Neno on 狼的公告板 ver.Hugo</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/neno/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>使用vercel&#43;neon方案搭建无需服务器的umami统计服务</title>
-        <link>https://blog.tama.guru/record/umami.html</link>
-        <pubDate>Wed, 26 Mar 2025 12:23:06 +0800</pubDate>
-        
-        <guid>https://blog.tama.guru/record/umami.html</guid>
-        <description>&lt;h5 id=&#34;为什么要用umami&#34;&gt;为什么要用umami
-&lt;/h5&gt;&lt;p&gt;在此之前，本站及相关网站服务需要用到统计的地方，都用的是自建的matomo，这是个非常强大的网页统计服务，强大到有些臃肿，这次大搬家我就在想，我真的有必要耗费有限的服务器资源来实现到头来可能一次都用不到的功能吗？答案当然是不，经过一番对比，最终我决定换用ackee或者umami。这两个统计工具都支持无服务器部署，但我还是选择了umami。以下是umami和matomo的一些区别：&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;对比项目&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;matomo&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;umami&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;项目大小&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;26MB（5.3.1）&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;1.83MB（github仓库）&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;JS文件大小&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;67460 bytes&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;2,713 bytes&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;支持serverless&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;理论上支持&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;支持&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;支持2FA&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;是&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;否&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;可定制化JS名称&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;否&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;是&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;使用数据库&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;mysql&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;mysql/PostgreSQL&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;API丰富程度&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;非常丰富&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;无&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;从文件大小上来看umami真的是轻量化了很多，对网站速度都有很大优化。不支持2FA是个扣分项，但服务和数据库都在云端，不需要登录服务器使用，算是没太大影响。数据库这方面使用neon提供的免费Postgre套餐可以满足项目使用需求，所以理论上是不需要投入任何费用的。至于API，仅有官方服务的会提供，自建的版本是没有的。&lt;/p&gt;
-&lt;h5 id=&#34;vercel部署和neon数据库&#34;&gt;vercel部署和neon数据库
-&lt;/h5&gt;&lt;p&gt;先去&lt;a class=&#34;link&#34; href=&#34;https://console.neon.tech&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;neon&lt;/a&gt;使用github或者google账号登录，首次登录会要求新建项目(&lt;code&gt;Create Project&lt;/code&gt;)，只需要输入项目名称(&lt;code&gt;Project Name&lt;/code&gt;)、数据库名称(&lt;code&gt;Database name&lt;/code&gt;)并选择地域(&lt;code&gt;Region&lt;/code&gt;)，前两项根据自己需求填写，地域根据vercel分配一般选择AWS US三个中的一个即可。&lt;/p&gt;
-&lt;p&gt;新建完先要点进项目，左侧&lt;code&gt;Project&lt;/code&gt;下有个&lt;code&gt;Branches&lt;/code&gt;，点击&lt;code&gt;Primary compute&lt;/code&gt;下方的蓝字，默认是0.25-2CU，点进去把&lt;code&gt;Configure the autoscaling range&lt;/code&gt;拖动到只有0.25，并点击&lt;code&gt;SAVE&lt;/code&gt;。之所以要这么做，是因为neon的免费套餐包含0.5G的存储、0.5G的每月数据传输、10个项目和每个项目10个分支、10000的最大并发数，&lt;strong&gt;190的计算时长&lt;/strong&gt;。这里的计算时长(compute hours)关联的是运行的CPU数据、服务器运行时长，比如CU是2，每天运行24小时，一个月的计算时长=2x24x30=1440，这对190来说显然是超出太多了，而调整成0.25则=0.25x24*30=180，正好够用。虽然他支持0.25-2之间的动态调整，谁知道什么情况下突然拉起来，这个情况下数据库就被停了，所以最好调整下。&lt;/p&gt;
-&lt;p&gt;然后回到项目页面，找到&lt;code&gt;Connect&lt;/code&gt;，点进去把左下角的&lt;code&gt;Show Passowrd&lt;/code&gt;点开，然后复制&lt;code&gt;Connect to your database&lt;/code&gt;的内容备用。&lt;/p&gt;
-&lt;p&gt;注册vercel账号并使用github登录，按照官方文档&lt;a class=&#34;link&#34; href=&#34;https://umami.is/docs/guides/running-on-vercel&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;官方文档&lt;/a&gt;直接把项目仓库Fork到自己的github并登录vercel导入这个仓库，或者直接&lt;a class=&#34;link&#34; href=&#34;https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fumami-software%2Fumami&amp;amp;env=DATABASE_URL&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;一键Deploy&lt;/a&gt;。在&lt;code&gt;New Project&lt;/code&gt;页面输入&lt;code&gt;Private Repository Name&lt;/code&gt;，随意即可，再点&lt;code&gt;Create&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;然后配置环境变量，一般只需要三个：&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;变量名称&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;含义&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;必须&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;DATABASE_URL&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;数据库地址，即上面使用neon拿到的&lt;code&gt;Connect to your database&lt;/code&gt;的内容。如果是mysql格式为:mysql://username:mypassword@localhost:3306/数据库名称&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;是&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;HASH_SALT&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;一串随机字符串&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;否&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;TRACKER_SCRIPT_NAME&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;追踪JS文件的名称，不设置默认是umami.js&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;否&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;再点击&lt;code&gt;Deploy&lt;/code&gt;，等待2~3分钟即完成部署。&lt;/p&gt;
-&lt;p&gt;因为vercel提供的vercel.app域名在国内无法解析，部署完成后点进项目的&lt;code&gt;Settings&lt;/code&gt;下的&lt;code&gt;Domains&lt;/code&gt;，选择&lt;code&gt;Add&lt;/code&gt;，在&lt;code&gt;Domain&lt;/code&gt;输入你自己的域名，点&lt;code&gt;Add Domain&lt;/code&gt;保存。至于域名从哪来，可以去一些提供免费二级域名的服务商获取。然后去服务商CNAME解析域名到cname.vercel-dns.com保存，一两分钟后会自动申请好SSL证书，就可以通过自己的域名访问了。&lt;/p&gt;
-&lt;h5 id=&#34;umami设置&#34;&gt;umami设置
-&lt;/h5&gt;&lt;p&gt;umami部署后默认的用户名密码是admin/umami，登录进去在个人资料可以修改语言成中文，在设置下的用户可以修改和添加用户名和密码。&lt;/p&gt;
-&lt;p&gt;在网站页面点击添加网站，输入名称和域名，完成后点击域名的设置，在跟踪代码下可以找到那串script，放到网页的**&lt;/head&gt;**之前即可。&lt;/p&gt;
-&lt;p&gt;完成之后刷新一下访问统计就出来了。&lt;/p&gt;
-&lt;h5 id=&#34;感觉&#34;&gt;感觉
-&lt;/h5&gt;&lt;p&gt;因为直接使用vercel的cdn，访问速度真的很快，而且也没有什么多余的东西。使用matomo的时候不知道是不是我的配置问题访问来源一直出不来，现在也能显示了。虽然没有独立app，直接使用网页访问也是非常顺滑的，而且他没有办法显示访客的具体机型、浏览器版本、系统版本等信息，比如matomo下会显示为&lt;code&gt;Xiaomi 15, Chrome 117.xx.xx, Android 15&lt;/code&gt;，umami就只有&lt;code&gt;Android, Chrome&lt;/code&gt;这种信息，对我来说意义不大。&lt;/p&gt;
-</description>
-        </item>
-        
-    </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Neno on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/neno.html</link><description>Recent content in Neno on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 14 Aug 2025 03:33:47 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/neno/index.xml" rel="self" type="application/rss+xml"/><item><title>使用vercel+neon方案搭建无需服务器的umami统计服务</title><link>https://blog.tama.guru/record/umami.html</link><pubDate>Wed, 26 Mar 2025 12:23:06 +0800</pubDate><guid>https://blog.tama.guru/record/umami.html</guid><description>&lt;h5 id="为什么要用umami">为什么要用umami
+&lt;/h5>&lt;p>在此之前，本站及相关网站服务需要用到统计的地方，都用的是自建的matomo，这是个非常强大的网页统计服务，强大到有些臃肿，这次大搬家我就在想，我真的有必要耗费有限的服务器资源来实现到头来可能一次都用不到的功能吗？答案当然是不，经过一番对比，最终我决定换用ackee或者umami。这两个统计工具都支持无服务器部署，但我还是选择了umami。以下是umami和matomo的一些区别：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">对比项目&lt;/th>
+&lt;th style="text-align: center">matomo&lt;/th>
+&lt;th style="text-align: center">umami&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">项目大小&lt;/td>
+&lt;td style="text-align: center">26MB（5.3.1）&lt;/td>
+&lt;td style="text-align: center">1.83MB（github仓库）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">JS文件大小&lt;/td>
+&lt;td style="text-align: center">67460 bytes&lt;/td>
+&lt;td style="text-align: center">2,713 bytes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">支持serverless&lt;/td>
+&lt;td style="text-align: center">理论上支持&lt;/td>
+&lt;td style="text-align: center">支持&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">支持2FA&lt;/td>
+&lt;td style="text-align: center">是&lt;/td>
+&lt;td style="text-align: center">否&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">可定制化JS名称&lt;/td>
+&lt;td style="text-align: center">否&lt;/td>
+&lt;td style="text-align: center">是&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">使用数据库&lt;/td>
+&lt;td style="text-align: center">mysql&lt;/td>
+&lt;td style="text-align: center">mysql/PostgreSQL&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">API丰富程度&lt;/td>
+&lt;td style="text-align: center">非常丰富&lt;/td>
+&lt;td style="text-align: center">无&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>从文件大小上来看umami真的是轻量化了很多，对网站速度都有很大优化。不支持2FA是个扣分项，但服务和数据库都在云端，不需要登录服务器使用，算是没太大影响。数据库这方面使用neon提供的免费Postgre套餐可以满足项目使用需求，所以理论上是不需要投入任何费用的。至于API，仅有官方服务的会提供，自建的版本是没有的。&lt;/p>
+&lt;h5 id="vercel部署和neon数据库">vercel部署和neon数据库
+&lt;/h5>&lt;p>先去&lt;a class="link" href="https://console.neon.tech" target="_blank" rel="noopener"
+>neon&lt;/a>使用github或者google账号登录，首次登录会要求新建项目(&lt;code>Create Project&lt;/code>)，只需要输入项目名称(&lt;code>Project Name&lt;/code>)、数据库名称(&lt;code>Database name&lt;/code>)并选择地域(&lt;code>Region&lt;/code>)，前两项根据自己需求填写，地域根据vercel分配一般选择AWS US三个中的一个即可。&lt;/p>
+&lt;p>新建完先要点进项目，左侧&lt;code>Project&lt;/code>下有个&lt;code>Branches&lt;/code>，点击&lt;code>Primary compute&lt;/code>下方的蓝字，默认是0.25-2CU，点进去把&lt;code>Configure the autoscaling range&lt;/code>拖动到只有0.25，并点击&lt;code>SAVE&lt;/code>。之所以要这么做，是因为neon的免费套餐包含0.5G的存储、0.5G的每月数据传输、10个项目和每个项目10个分支、10000的最大并发数，&lt;strong>190的计算时长&lt;/strong>。这里的计算时长(compute hours)关联的是运行的CPU数据、服务器运行时长，比如CU是2，每天运行24小时，一个月的计算时长=2x24x30=1440，这对190来说显然是超出太多了，而调整成0.25则=0.25x24*30=180，正好够用。虽然他支持0.25-2之间的动态调整，谁知道什么情况下突然拉起来，这个情况下数据库就被停了，所以最好调整下。&lt;/p>
+&lt;p>然后回到项目页面，找到&lt;code>Connect&lt;/code>，点进去把左下角的&lt;code>Show Passowrd&lt;/code>点开，然后复制&lt;code>Connect to your database&lt;/code>的内容备用。&lt;/p>
+&lt;p>注册vercel账号并使用github登录，按照官方文档&lt;a class="link" href="https://umami.is/docs/guides/running-on-vercel" target="_blank" rel="noopener"
+>官方文档&lt;/a>直接把项目仓库Fork到自己的github并登录vercel导入这个仓库，或者直接&lt;a class="link" href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fumami-software%2Fumami&amp;amp;env=DATABASE_URL" target="_blank" rel="noopener"
+>一键Deploy&lt;/a>。在&lt;code>New Project&lt;/code>页面输入&lt;code>Private Repository Name&lt;/code>，随意即可，再点&lt;code>Create&lt;/code>。&lt;/p>
+&lt;p>然后配置环境变量，一般只需要三个：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">变量名称&lt;/th>
+&lt;th style="text-align: center">含义&lt;/th>
+&lt;th style="text-align: center">必须&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">DATABASE_URL&lt;/td>
+&lt;td style="text-align: center">数据库地址，即上面使用neon拿到的&lt;code>Connect to your database&lt;/code>的内容。如果是mysql格式为:mysql://username:mypassword@localhost:3306/数据库名称&lt;/td>
+&lt;td style="text-align: center">是&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">HASH_SALT&lt;/td>
+&lt;td style="text-align: center">一串随机字符串&lt;/td>
+&lt;td style="text-align: center">否&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">TRACKER_SCRIPT_NAME&lt;/td>
+&lt;td style="text-align: center">追踪JS文件的名称，不设置默认是umami.js&lt;/td>
+&lt;td style="text-align: center">否&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>再点击&lt;code>Deploy&lt;/code>，等待2~3分钟即完成部署。&lt;/p>
+&lt;p>因为vercel提供的vercel.app域名在国内无法解析，部署完成后点进项目的&lt;code>Settings&lt;/code>下的&lt;code>Domains&lt;/code>，选择&lt;code>Add&lt;/code>，在&lt;code>Domain&lt;/code>输入你自己的域名，点&lt;code>Add Domain&lt;/code>保存。至于域名从哪来，可以去一些提供免费二级域名的服务商获取。然后去服务商CNAME解析域名到cname.vercel-dns.com保存，一两分钟后会自动申请好SSL证书，就可以通过自己的域名访问了。&lt;/p>
+&lt;h5 id="umami设置">umami设置
+&lt;/h5>&lt;p>umami部署后默认的用户名密码是admin/umami，登录进去在个人资料可以修改语言成中文，在设置下的用户可以修改和添加用户名和密码。&lt;/p>
+&lt;p>在网站页面点击添加网站，输入名称和域名，完成后点击域名的设置，在跟踪代码下可以找到那串script，放到网页的**&lt;/head>**之前即可。&lt;/p>
+&lt;p>完成之后刷新一下访问统计就出来了。&lt;/p>
+&lt;h5 id="感觉">感觉
+&lt;/h5>&lt;p>因为直接使用vercel的cdn，访问速度真的很快，而且也没有什么多余的东西。使用matomo的时候不知道是不是我的配置问题访问来源一直出不来，现在也能显示了。虽然没有独立app，直接使用网页访问也是非常顺滑的，而且他没有办法显示访客的具体机型、浏览器版本、系统版本等信息，比如matomo下会显示为&lt;code>Xiaomi 15, Chrome 117.xx.xx, Android 15&lt;/code>，umami就只有&lt;code>Android, Chrome&lt;/code>这种信息，对我来说意义不大。&lt;/p></description></item></channel></rss>
