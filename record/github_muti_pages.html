@@ -10,7 +10,7 @@
 <meta property='og:description' content="因为有时候需要部署一些静态网站，但是自己的服务器上网站实在太乱了，部署在github便是我最好的选择。 默认情况下是只能部署一个网站的，如果需要部署多个就需要自己动手操作一下。\n">
 <meta property='og:url' content='https://blog.tama.guru/record/github_muti_pages.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-10-25T23:16:29&#43;08:00'/><meta property='article:modified_time' content='2025-08-14T01:59:24&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-10-25T23:16:29&#43;08:00'/><meta property='article:modified_time' content='2025-08-14T02:54:19&#43;00:00'/>
 <meta name="twitter:title" content="使用github部署多个静态网站">
 <meta name="twitter:description" content="因为有时候需要部署一些静态网站，但是自己的服务器上网站实在太乱了，部署在github便是我最好的选择。 默认情况下是只能部署一个网站的，如果需要部署多个就需要自己动手操作一下。\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
@@ -481,6 +481,12 @@ unicode: "ea9a"
     >tamakyi.github.io</a>。
 之后再创建一个repository，此处的名称就会是之后的二级域名，例如我的Repository name是index，之后这个网站的地址就是<a class="link" href="https://tamakyi.github.io/index"  target="_blank" rel="noopener"
     >https://tamakyi.github.io/index</a>。除了Repository name之外，其他都可以保留默认，然后选择Create repository.
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/10/25/65392cc5cab91.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/10/25/65392cc5cab91.png" alt="repository setting"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/10/25/65392cc5cab91.png"
 	
 	
@@ -492,6 +498,12 @@ unicode: "ea9a"
 	
 >
 然后要做的就是把本地的网页文件部署上去，因为在Windows环境ixa，为了直观的体现，此处我安装了Github Desktop，在创建完repository之后点击Set up in Desktop跳转到Github Desktop。
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/10/25/65392d9a9dbb4.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/10/25/65392d9a9dbb4.png" alt="Set up in Desktop"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/10/25/65392d9a9dbb4.png"
 	
 	
@@ -503,6 +515,12 @@ unicode: "ea9a"
 	
 >
 然后Locale path选择要clone到本地的目录，例如C:/wwwroot/。
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/10/25/65392e2d140da.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/10/25/65392e2d140da.png" alt="Locale path"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/10/25/65392e2d140da.png"
 	
 	
@@ -515,6 +533,12 @@ unicode: "ea9a"
 >
 之后该目录下会形成一个index文件夹，然后把静态网站所有文件全部扔上去（注意如果有引用文件记得修改），一定要确保该目录下有index.html文件，能且仅能用html格式。
 此处我只放了一个index.html文件，然后在Github Desktop上选择Commit to main并点击Publish branch。
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/10/25/65392fe60742f.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/10/25/65392fe60742f.png" alt="选择Commit to main并点击Publish branch"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/10/25/65392fe60742f.png"
 	
 	
@@ -526,6 +550,12 @@ unicode: "ea9a"
 	
 >
 然后在网页端打开仓库，进入setting。
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/10/25/6539303c29146.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/10/25/6539303c29146.png" alt="Open repository"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/10/25/6539303c29146.png"
 	
 	
@@ -537,6 +567,12 @@ unicode: "ea9a"
 	
 >
 在Pages页面把Branch的None切换到main，然后点击save。
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/10/25/6539309bc201e.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/10/25/6539309bc201e.png" alt="Pages setting 1"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/10/25/6539309bc201e.png"
 	
 	
@@ -547,6 +583,12 @@ unicode: "ea9a"
 	
 	
 >
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/10/25/653930ac32fdb.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/10/25/653930ac32fdb.png" alt="Pages setting 2"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/10/25/653930ac32fdb.png"
 	
 	
@@ -558,6 +600,12 @@ unicode: "ea9a"
 	
 >
 等待几分钟，然后Pages页面就出现网址了。
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/10/25/653931096978e.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/10/25/653931096978e.png" alt="Create success"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/10/25/653931096978e.png"
 	
 	
@@ -569,6 +617,12 @@ unicode: "ea9a"
 	
 >
 也能正常打开了。
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/10/25/653931279ab72.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/10/25/653931279ab72.png" alt="正常打开"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/10/25/653931279ab72.png"
 	
 	
@@ -606,7 +660,7 @@ unicode: "ea9a"
 
 
         <span>
-            最后更新于 2025年08月14日 01:59
+            最后更新于 2025年08月14日 02:54
         </span>
     </section></footer>
 
@@ -722,7 +776,12 @@ unicode: "ea9a"
 
     
 
-    <script defer src="https://mami.tama.guru/tamami.js" data-website-id="b7b72f5c-977d-4d23-8ec8-be46d93bd8d5"></script>
+    
+  <script src="https://cdnjs.snrat.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.snrat.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+  <script src="https://cdnjs.snrat.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+<script defer src="https://mami.tama.guru/tamami.js" data-website-id="b7b72f5c-977d-4d23-8ec8-be46d93bd8d5"></script>
 <script>
     (function(u, c) {
       var d = document, t = 'script', o = d.createElement(t),

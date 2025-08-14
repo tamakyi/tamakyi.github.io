@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 01:59:24 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E5%9B%BE%E5%BA%8A/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E5%9B%BE%E5%BA%8A/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>在兰空图床配置并使用Cloudflare R2 存储桶</title>
         <link>https://blog.tama.guru/record/r2_on_lskypro.html</link>
         <pubDate>Mon, 08 Jan 2024 16:00:00 +0800</pubDate>
@@ -215,7 +215,13 @@
 &lt;p&gt;如无问题，即可进入账户设置和服务器链接的界面。&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;安装完成后默认是所有人都能上传的，这可能会导致一些问题，因此最好是设置一个管理员群组：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc175c060a8.png&#34;
+&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://pic.tama.guru/i/2022/07/11/62cc175c060a8.png&#34;&gt;
+  &lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc175c060a8.png&#34; alt=&#34;请输入图片描述&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc175c060a8.png&#34;
 	
 	
 	
@@ -226,7 +232,13 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;在设置中关闭游客上传和注册功能：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc17b76b256.png&#34;
+&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://pic.tama.guru/i/2022/07/11/62cc17b76b256.png&#34;&gt;
+  &lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc17b76b256.png&#34; alt=&#34;请输入图片描述&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc17b76b256.png&#34;
 	
 	
 	
@@ -242,7 +254,13 @@
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.coldyun.cn/archives/140.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;typecho兰空（LskyPro）图床插件 - Cold&#39; Blog (coldyun.cn)&lt;/a&gt;在莫言的1.0版本插件基础上新增了对lskypro2.0版本的支持，直接到他的博客下载附件上传到typecho下的plugin安装即可。插件需要填写&lt;code&gt;Api&lt;/code&gt;和&lt;code&gt;Token&lt;/code&gt;两项，其中&lt;code&gt;Token&lt;/code&gt;与上面的接口有关，我们需要通过post的方式获得&lt;code&gt;token&lt;/code&gt;：此处使用&lt;a class=&#34;link&#34; href=&#34;https://www.postman.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Postman&lt;/a&gt;：&lt;/p&gt;
-&lt;p&gt;注册成功后在左侧的collections点击加号，在New Collection点击&lt;code&gt;GET New Request&lt;/code&gt;&lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc19d910ed0.png&#34;
+&lt;p&gt;注册成功后在左侧的collections点击加号，在New Collection点击&lt;code&gt;GET New Request&lt;/code&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://pic.tama.guru/i/2022/07/11/62cc19d910ed0.png&#34;&gt;
+  &lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc19d910ed0.png&#34; alt=&#34;请输入图片描述&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc19d910ed0.png&#34;
 	
 	
 	
@@ -253,7 +271,13 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;接下来在右侧把GET切换成POST：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc1a8d574f8.png&#34;
+&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://pic.tama.guru/i/2022/07/11/62cc1a8d574f8.png&#34;&gt;
+  &lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc1a8d574f8.png&#34; alt=&#34;请输入图片描述&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc1a8d574f8.png&#34;
 	
 	
 	
@@ -264,7 +288,13 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;其中链接填写&lt;code&gt;https://hostname/api/v1/tokens&lt;/code&gt;  hostname是你的lskypro服务安装域名。&lt;/p&gt;
-&lt;p&gt;key填写&lt;code&gt;email&lt;/code&gt;和&lt;code&gt;password&lt;/code&gt;后面的value为lskypro安装注册时填写的管理员邮箱和密码，之后点击Send，下方会提示：&lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc1b5f8d671.png&#34;
+&lt;p&gt;key填写&lt;code&gt;email&lt;/code&gt;和&lt;code&gt;password&lt;/code&gt;后面的value为lskypro安装注册时填写的管理员邮箱和密码，之后点击Send，下方会提示：
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://pic.tama.guru/i/2022/07/11/62cc1b5f8d671.png&#34;&gt;
+  &lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc1b5f8d671.png&#34; alt=&#34;请输入图片描述&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc1b5f8d671.png&#34;
 	
 	
 	

@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 01:59:24 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/docker/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/docker/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>在docker里运行火狐浏览器</title>
         <link>https://blog.tama.guru/record/firefox-on-docker.html</link>
         <pubDate>Fri, 26 Apr 2024 15:53:00 +0800</pubDate>
@@ -352,6 +352,12 @@ firewall-cmd --reload
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;会进到安卓界面，先打开shizuku，会提示要启用，我们回退到adb窗口，执行：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./adb shell sh /storage/emulated/0/Android/data/moe.shizuku.privileged.api/start.sh
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后shizuku提示&lt;code&gt;shizuku is running&lt;/code&gt;。然后把&lt;code&gt;Authorized 0 applications&lt;/code&gt;点开，勾选LSPatch，再打开LSPatch，到Manager&amp;ndash;Apps点击加号，选择New Patch-Select apk(s) from storage 找到QQ安装包，点击start patch
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d331552e6.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d331552e6.png&#34; alt=&#34;shizuku&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d331552e6.png&#34;
 	
 	
@@ -362,6 +368,12 @@ firewall-cmd --reload
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d3ce0b407.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d3ce0b407.png&#34; alt=&#34;lsp-patch&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d3ce0b407.png&#34;
 	
 	
@@ -372,6 +384,12 @@ firewall-cmd --reload
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d3edd100b.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d3edd100b.png&#34; alt=&#34;start patch&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d3edd100b.png&#34;
 	
 	
@@ -383,6 +401,12 @@ firewall-cmd --reload
 	
 &gt;
 等待打补丁完成，然后点击Install。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d43075df2.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d43075df2.png&#34; alt=&#34;patch done&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d43075df2.png&#34;
 	
 	
@@ -411,6 +435,12 @@ firewall-cmd --reload
         
         <guid>https://blog.tama.guru/record/homeassistant-hacs-debian12.html</guid>
         <description>&lt;p&gt;HACS即&lt;code&gt;Home Assistant Community Store&lt;/code&gt;，整合了很多homeassistant的第三方集成，比如说米家的相关设备，如果使用官方自带的集成，一般只能识别出几个传感器，而且无法控制，如果想要把米家的设备完全接入就需要安装HACS下面的Xiaomi Miot Auto这个集成，安装之后效果如图所示，基本上能实现HASS管理全部米家设备的想法。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/25/64e820b842fb5.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/25/64e820b842fb5.png&#34; alt=&#34;安装集成之后的页面&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/25/64e820b842fb5.png&#34;
 	
 	

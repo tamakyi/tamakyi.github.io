@@ -7,13 +7,19 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 01:59:24 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/supervised/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/supervised/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Debian12下通过docker安装homeassistant-hacs</title>
         <link>https://blog.tama.guru/record/homeassistant-hacs-debian12.html</link>
         <pubDate>Fri, 25 Aug 2023 11:58:39 +0800</pubDate>
         
         <guid>https://blog.tama.guru/record/homeassistant-hacs-debian12.html</guid>
         <description>&lt;p&gt;HACS即&lt;code&gt;Home Assistant Community Store&lt;/code&gt;，整合了很多homeassistant的第三方集成，比如说米家的相关设备，如果使用官方自带的集成，一般只能识别出几个传感器，而且无法控制，如果想要把米家的设备完全接入就需要安装HACS下面的Xiaomi Miot Auto这个集成，安装之后效果如图所示，基本上能实现HASS管理全部米家设备的想法。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/25/64e820b842fb5.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/25/64e820b842fb5.png&#34; alt=&#34;安装集成之后的页面&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/25/64e820b842fb5.png&#34;
 	
 	

@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 01:59:24 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/s3/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/s3/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>使用S3 Browser管理Cloudflare R2存储桶</title>
         <link>https://blog.tama.guru/record/s3browser_r2_manager.html</link>
         <pubDate>Sat, 13 Jan 2024 22:53:02 +0800</pubDate>
@@ -24,6 +24,12 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xxxxxxxxxxxxxxxxxxx.r2.cloudflarestorage.com
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;AK&lt;/code&gt;和&lt;code&gt;SK&lt;/code&gt;是创建桶的时候提供的，如果忘记了就没救了，重新弄个桶吧。
 &lt;code&gt;Encrypt Access Keys with a password&lt;/code&gt;和&lt;code&gt;Use secure transfer(SSL/TSL)&lt;/code&gt;选项保留默认即可。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/01/13/65a2a0bdc8b8c.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/13/65a2a0bdc8b8c.png&#34; alt=&#34;add account info 1&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/13/65a2a0bdc8b8c.png&#34;
 	
 	

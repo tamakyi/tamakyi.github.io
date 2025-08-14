@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 01:59:24 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/categories/software/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/categories/software/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>[软件推荐]Windows下grep命令的替代品</title>
         <link>https://blog.tama.guru/software/grep-on-windows.html</link>
         <pubDate>Wed, 11 Sep 2024 21:51:00 +0800</pubDate>
@@ -118,7 +118,13 @@
 &lt;p&gt;这是一个GUI化的grep，能够实现使用文本、正则表达式、XPath等查询搜索文本文件、Word 和 Excel 文档、PDF 和存档。dnGrep 包括搜索和替换、整个文件预览、文件资源管理器中的右键单击搜索等等。&lt;/p&gt;
 &lt;p&gt;使用方法：到&lt;a class=&#34;link&#34; href=&#34;https://github.com/dnGrep/dnGrep/releases/latest&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Github项目页面&lt;/a&gt;下载对应版本的安装包安装即可，项目自带中文，安装完成后可以到设置里面配置。使用方法也很简单，无非就是选择查找范围，选择搜索方式和搜索条件，搜索结果会高亮展现：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/09/11/66e1a05b4dd4f.png&#34;
+&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/09/11/66e1a05b4dd4f.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/09/11/66e1a05b4dd4f.png&#34; alt=&#34;dngrep&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/09/11/66e1a05b4dd4f.png&#34;
 	
 	
 	
@@ -143,7 +149,13 @@
     &gt;Git - Downloads (git-scm.com)&lt;/a&gt;&lt;/p&gt;
 &lt;h5 id=&#34;使用方法-1&#34;&gt;使用方法
 &lt;/h5&gt;&lt;p&gt;下载安装对应版本即可，也提供了便携版(PortableGit)，解压即用。安装之后右键菜单会多出一个&lt;code&gt;git bash&lt;/code&gt;，在指定目录下点开会进入一个bash终端，在这里就直接能执行grep了。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/09/11/66e1a0404ca95.png&#34;
+&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/09/11/66e1a0404ca95.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/09/11/66e1a0404ca95.png&#34; alt=&#34;git-scm&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/09/11/66e1a0404ca95.png&#34;
 	
 	
 	
@@ -177,6 +189,12 @@ P427L-9Y552-5433E-8DSR3-58Z68（MAC版）
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;软件是好软件，有能力的话还是支持正版吧。
 打开之后点开菜单的&lt;code&gt;Profile&lt;/code&gt;下的&lt;code&gt;Proxy Servers&lt;/code&gt;进行代理服务器的配置：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a44c2c4a43.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a44c2c4a43.png&#34; alt=&#34;菜单&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a44c2c4a43.png&#34;
 	
 	
@@ -186,7 +204,13 @@ P427L-9Y552-5433E-8DSR3-58Z68（MAC版）
 		alt=&#34;菜单&#34;
 	
 	
-&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a44cfc52dc.png&#34;
+&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a44cfc52dc.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a44cfc52dc.png&#34; alt=&#34;代理服务器设置&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a44cfc52dc.png&#34;
 	
 	
 	
@@ -195,7 +219,13 @@ P427L-9Y552-5433E-8DSR3-58Z68（MAC版）
 		alt=&#34;代理服务器设置&#34;
 	
 	
-&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a44e78cf82.png&#34;
+&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a44e78cf82.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a44e78cf82.png&#34; alt=&#34;代理服务器详细设置&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a44e78cf82.png&#34;
 	
 	
 	
@@ -207,6 +237,12 @@ P427L-9Y552-5433E-8DSR3-58Z68（MAC版）
 &gt;
 输入好地址 IP 协议 认证等参数即可。
 也可以先点击这个Proxy Checker检查代理服务器联通是否正常。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a455faaf9e.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a455faaf9e.png&#34; alt=&#34;Proxy Checker&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a455faaf9e.png&#34;
 	
 	
@@ -218,6 +254,12 @@ P427L-9Y552-5433E-8DSR3-58Z68（MAC版）
 	
 &gt;
 测试无误后，我们进入这个&lt;code&gt;Proxification Rules&lt;/code&gt;配置代理规则：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a45aa5a338.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a45aa5a338.png&#34; alt=&#34;Proxification Rules&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a45aa5a338.png&#34;
 	
 	
@@ -228,6 +270,12 @@ P427L-9Y552-5433E-8DSR3-58Z68（MAC版）
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a45ee3562e.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a45ee3562e.png&#34; alt=&#34;规则设置&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a45ee3562e.png&#34;
 	
 	
@@ -241,6 +289,12 @@ P427L-9Y552-5433E-8DSR3-58Z68（MAC版）
 点击&lt;code&gt;Add&lt;/code&gt;之后会跳出配置界面，&lt;code&gt;Applications&lt;/code&gt;即要代理的软件，支持&lt;code&gt;xx.exe&lt;/code&gt; &lt;code&gt;C:\*.exe&lt;/code&gt; &lt;code&gt;xx*.exe&lt;/code&gt; &lt;code&gt;*.exe&lt;/code&gt;等方式，即对应着单个exe、某目录下的所有exe、名字带xx的exe及所有exe等多种匹配方式。&lt;code&gt;Target hosts&lt;/code&gt;和&lt;code&gt;Target ports&lt;/code&gt;即代理的目标IP和端口。如果前面配置好了&lt;code&gt;Proxy Servers&lt;/code&gt;直接在下面的&lt;code&gt;Action&lt;/code&gt;选择即可。
 此时&lt;code&gt;Proxification Rules&lt;/code&gt;配置框会新增一个配置项，注意要把Default的Action改成Direct，不然他会默认选择使用代理服务器全局访问。
 保存好之后现在直接打开应用可以看到指定软件已经走代理了。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a484fadeb2.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a484fadeb2.png&#34; alt=&#34;代理成功&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a484fadeb2.png&#34;
 	
 	
@@ -264,7 +318,13 @@ P427L-9Y552-5433E-8DSR3-58Z68（MAC版）
 &lt;p&gt;这APP应该是想打造成和米家那类一样的智能家庭中枢，但是背靠移动，国企作风，无论是审美还是功能都给你塞得满满的，着实臃肿&amp;hellip;
 但也就是这样的APP，我发现了它一个奇特的地方：它支持免费给手机游戏加速。&lt;/p&gt;
 &lt;h3 id=&#34;使用方法&#34;&gt;使用方法
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/28/662df9cba3d41.png&#34;
+&lt;/h3&gt;&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/04/28/662df9cba3d41.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/28/662df9cba3d41.png&#34; alt=&#34;路径&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/28/662df9cba3d41.png&#34;
 	
 	
 	
@@ -275,6 +335,12 @@ P427L-9Y552-5433E-8DSR3-58Z68（MAC版）
 	
 &gt;
 这个功能位于服务&amp;ndash;宽带服务&amp;ndash;家宽优选这个位置下的电竞宽带，点进去之后会进入一个手机游戏加速的页面，建议这个地方右上角三个点添加快捷方式到桌面，省得每次都要点进去这么深的地方。点击“添加游戏”，然后切换到外服，这里有一个搜索，常见的手游这里都能找得到（就连nikke这种奇怪的游戏都能加速），添加之后回到主界面点开始加速就可以了。测试了下使用还是挺稳定的，但是下载速度不到1MB，如果要把这个当做下载加速需要慎重考虑。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/04/28/662df9e0623e1.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/28/662df9e0623e1.png&#34; alt=&#34;界面&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/28/662df9e0623e1.png&#34;
 	
 	
@@ -284,7 +350,13 @@ P427L-9Y552-5433E-8DSR3-58Z68（MAC版）
 		alt=&#34;界面&#34;
 	
 	
-&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/28/662df9eb6025d.png&#34;
+&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/04/28/662df9eb6025d.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/28/662df9eb6025d.png&#34; alt=&#34;添加游戏&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/28/662df9eb6025d.png&#34;
 	
 	
 	
@@ -321,6 +393,12 @@ A：看样子只有手机端加速是免费的，PC有办法绑定但是需要�
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dinnerNames&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;xxx&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;效果图：
 使用前：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/02/17/65d0b99ac2876.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/02/17/65d0b99ac2876.png&#34; alt=&#34;使用前&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/02/17/65d0b99ac2876.png&#34;
 	
 	
@@ -332,6 +410,12 @@ A：看样子只有手机端加速是免费的，PC有办法绑定但是需要�
 	
 &gt;
 使用后：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/02/17/65d0bc62d9eb2.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/02/17/65d0bc62d9eb2.png&#34; alt=&#34;使用后&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/02/17/65d0bc62d9eb2.png&#34;
 	
 	
@@ -439,6 +523,12 @@ A：看样子只有手机端加速是免费的，PC有办法绑定但是需要�
 5.显卡驱动分为LLVMpipe(Software) Turnip+Zink和VirGL三种，按网上的说法Vrigl版兼容性更好，Turnip+Zink版速度快（但是turnip只支持部分高通gpu6的手机），LLVMpipe使用软件编解码，貌似占用资源更高，新手机建议用Vrigl减少兼容性问题。
 6.Box版本保留默认即可。
 7.处理器核心开关根据自己的手机选择，麒麟9000s默认只开CPU4-7，我保留这个配置使用无异常。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/65505f763eeec.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/65505f763eeec.png&#34; alt=&#34;创建新容器&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/65505f763eeec.png&#34;
 	
 	
@@ -450,6 +540,12 @@ A：看样子只有手机端加速是免费的，PC有办法绑定但是需要�
 	
 &gt;
 8.WINE注册表项和DX组件基本上只需要保留默认。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/6550648240862.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/6550648240862.png&#34; alt=&#34;WINE注册表项&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/6550648240862.png&#34;
 	
 	
@@ -460,6 +556,12 @@ A：看样子只有手机端加速是免费的，PC有办法绑定但是需要�
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655064bc36369.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655064bc36369.png&#34; alt=&#34;DX组件&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655064bc36369.png&#34;
 	
 	
@@ -471,6 +573,12 @@ A：看样子只有手机端加速是免费的，PC有办法绑定但是需要�
 	
 &gt;
 9.环境变量这里如果游戏乱码可以设置LC_all这一项，也可以在容器内设置，其他保留默认即可。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655064dc4f24e.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655064dc4f24e.png&#34; alt=&#34;环境变量&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655064dc4f24e.png&#34;
 	
 	
@@ -482,6 +590,12 @@ A：看样子只有手机端加速是免费的，PC有办法绑定但是需要�
 	
 &gt;
 10.盘符默认把存储器下的Download文件夹（即下载默认目录）设置成D:，建议新建个文件夹来专门放置游戏并配置盘符。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655065379f824.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655065379f824.png&#34; alt=&#34;驱动器（盘符）&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655065379f824.png&#34;
 	
 	
@@ -493,6 +607,12 @@ A：看样子只有手机端加速是免费的，PC有办法绑定但是需要�
 	
 &gt;
 11.高级设置也只需要保持默认即可。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655065916c6c0.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655065916c6c0.png&#34; alt=&#34;高级&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655065916c6c0.png&#34;
 	
 	
@@ -509,6 +629,12 @@ A：看样子只有手机端加速是免费的，PC有办法绑定但是需要�
 &lt;li&gt;建议配置完成后安装&lt;a class=&#34;link&#34; href=&#34;https://share.tama.guru/AliDisk/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/Winlator/setup.exe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;常见运行库包&lt;/a&gt;以及&lt;a class=&#34;link&#34; href=&#34;https://share.tama.guru/d/AliDisk/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/Winlator/Chs%20Fonts%28zh_CN%29.exe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;中文字体补丁&lt;/a&gt;，安装运行库需要10分钟左右时间，安装中文字体补丁时可能会提示需要安装Wine Geckc，按要求点击安装即可，如果WiFi下载慢建议用流量下载。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655066d472356.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655066d472356.png&#34; alt=&#34;运行库和字体补丁安装&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655066d472356.png&#34;
 	
 	
@@ -521,7 +647,13 @@ A：看样子只有手机端加速是免费的，PC有办法绑定但是需要�
 &gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;使用截图&#34;&gt;使用截图
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655067b1d3705.png&#34;
+&lt;/h3&gt;&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655067b1d3705.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655067b1d3705.png&#34; alt=&#34;截图1&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655067b1d3705.png&#34;
 	
 	
 	
@@ -531,6 +663,12 @@ A：看样子只有手机端加速是免费的，PC有办法绑定但是需要�
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655067bee434d.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655067bee434d.png&#34; alt=&#34;截图2&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655067bee434d.png&#34;
 	
 	

@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 01:59:24 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/sizebar/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/sizebar/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>记一次VBios的升级和resizebar的开启</title>
         <link>https://blog.tama.guru/record/3060ti_vbiosupdate_sizebar.html</link>
         <pubDate>Sun, 07 May 2023 23:28:00 +0800</pubDate>
@@ -19,6 +19,12 @@
     &gt;Nvidia官网&lt;/a&gt;)&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;这不是今天刚买了DG1嘛，有说到什么Resizebar什么新功能巴拉巴拉的，之前听都没听过，查了下资料发现好像是有点用处的嗷，又看了下30系确实是能用的，于是喜滋滋的去&lt;a class=&#34;link&#34; href=&#34;https://nvidia.custhelp.com/app/answers/detail/a_id/5165/~/nvidia-resizable-bar-firmware-update-tool&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;这里&lt;/a&gt;看如何操作（这里的七彩虹链接404了，后面是去官网找的）。我的卡是七彩虹的iGame GeForce RTX 3060 Ti Ultra W OC-V，去官网上找到对应的驱动页面，找到BIOS看到一个3060Ti Resizable BAR Support，哟还是今年三月更新的，赶紧下载了。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457ba25bbd51.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457ba25bbd51.png&#34; alt=&#34;显示更新时间还挺近的&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457ba25bbd51.png&#34;
 	
 	
@@ -30,6 +36,12 @@
 	
 &gt;
 打开压缩包之后打开&lt;code&gt;3060tiRZBARupdaterV2.exe&lt;/code&gt;（这里显示修改时间2021/4/9，怪）
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457ba8cdc288.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457ba8cdc288.png&#34; alt=&#34;3060tiRZBARupdaterV2.exe&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457ba8cdc288.png&#34;
 	
 	
@@ -47,6 +59,12 @@
 &lt;li&gt;一张30系显卡&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;然后我就走了一遍流程把上面都打开了（顺便还把BIOS给升级了一遍）。重启后发现还是显示&lt;code&gt;Resize Bar Disable&lt;/code&gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bc5cdc0f7.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bc5cdc0f7.png&#34; alt=&#34;这是最后处理好了的图，原来这里是显示Disable的&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bc5cdc0f7.png&#34;
 	
 	
@@ -58,6 +76,12 @@
 	
 &gt;
 然后在GPU-Z的Advanced-PCIe Resizable BAR下面的Resizable BAR enabled in BIOS显示是NO ::acfun:19::
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bcba7a168.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bcba7a168.png&#34; alt=&#34;这里原来一直都是NO&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bcba7a168.png&#34;
 	
 	
@@ -77,6 +101,12 @@
 [button color=&amp;ldquo;danger&amp;rdquo;]风险警告！刷写VBIOS操作不当可能会导致显卡变砖！[/button]
 简单来说，就是到&lt;a class=&#34;link&#34; href=&#34;https://www.techpowerup.com/vgabios&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;这个网站&lt;/a&gt;搜索到自己型号的显卡，找到之后下载到一个rom后缀的文件，这个就是vbios了。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457be6670682.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457be6670682.png&#34; alt=&#34;我对应的型号是这个&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457be6670682.png&#34;
 	
 	
@@ -89,6 +119,12 @@
 &gt;
 文件有了，还需要工具，也是到这个网站找到NVIDIA NVFlash这个页面:&lt;a class=&#34;link&#34; href=&#34;https://www.techpowerup.com/download/nvidia-nvflash/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://www.techpowerup.com/download/nvidia-nvflash/&lt;/a&gt;按自己机器的型号下载到压缩包之后，把文件解压，并把rom文件放在同一个文件夹。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bf0d1451d.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bf0d1451d.png&#34; alt=&#34;如果怕ROM文件混淆可以自己重命名&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bf0d1451d.png&#34;
 	
 	
@@ -100,6 +136,12 @@
 	
 &gt;
 以管理员身份运行CMD，并进入此文件夹。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bf5d1318d.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bf5d1318d.png&#34; alt=&#34;CMD进入文件夹&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bf5d1318d.png&#34;
 	
 	
@@ -111,6 +153,12 @@
 	
 &gt;
 先执行&lt;code&gt;nvflash.exe --list&lt;/code&gt;查询是否识别到显卡并且判断显卡vbios版本
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bfafd2aa7.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bfafd2aa7.png&#34; alt=&#34;此处的10DE,2486,7377,1501便是我的vbios版本，当然，这已经是升级后的了&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bfafd2aa7.png&#34;
 	
 	
@@ -122,6 +170,12 @@
 	
 &gt;
 然后执行&lt;code&gt;nvflash.exe -6 Colorful.RTX3060Ti.8192.201112.rom&lt;/code&gt;这里选择要升级的rom文件，&lt;code&gt;-6&lt;/code&gt;参数是强制升级。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457c038e046c.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457c038e046c.png&#34; alt=&#34;升级过程，没截图，手机拍屏幕&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457c038e046c.png&#34;
 	
 	
@@ -135,6 +189,12 @@
 上图中现有版本是94.04.27.80.EC，要升级的版本是94.04.27.80.ED，看上去确实是差了一个版本。
 如果顺利的话这里直接一路y过去，最后会提示你要重启，重启就是了。
 然后再次打开上面那个&lt;code&gt;3060tiRZBARupdaterV2.exe&lt;/code&gt;，哦豁。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457c1b0845eb.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457c1b0845eb.png&#34; alt=&#34;已经提示支持升级了&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457c1b0845eb.png&#34;
 	
 	
@@ -146,6 +206,12 @@
 	
 &gt;
 &lt;code&gt;Update supported, will be applied&lt;/code&gt; 我直接一个y。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457c15f8e864.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457c15f8e864.png&#34; alt=&#34;升级成功了&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457c15f8e864.png&#34;
 	
 	
@@ -158,6 +224,12 @@
 &gt;
 提示&lt;code&gt;Update successful&lt;/code&gt;，它要求重启，那我直接一个重启。
 最后就是喜闻乐见的开启成功了，果然是vbios的问题。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457c23aed0ea.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457c23aed0ea.png&#34; alt=&#34;BAR1原来只有256，现在变成8192，即全卡显存大小&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457c23aed0ea.png&#34;
 	
 	

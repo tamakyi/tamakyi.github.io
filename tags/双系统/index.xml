@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 01:59:24 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E5%8F%8C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E5%8F%8C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>捣鼓SteamDeck的那些事</title>
         <link>https://blog.tama.guru/record/steamdeck.html</link>
         <pubDate>Thu, 02 Feb 2023 09:47:00 +0800</pubDate>
@@ -19,7 +19,13 @@
 基本上是国内专属问题了，归根结底就是网络原因和&amp;quot;steam.cloud&amp;quot;连接有问题导致更新无法进行，而更新又是必须的就导致了这个死循环。
 有网友说我有科技，直接开科技不就行了？如果是在路由的话这必须要设置全局代理，因为SteamDeck的WIFI连接界面不能手动设置代理。用手机开热点或许也是一个好办法，但是实测我的流量根本没走，可能是我的姿势不对吧。
 还有网友说在安装界面直接长按电源键硬重启，多几次就能跳过，我试了四五次也不行。其中一次关机重启后进入到一个有LOGO+进度条及网速的界面，也在提示install update，但是更新完自动重启之后还是问题依旧。
-目前我唯一测试通过的方法就是手机挂UU加速器（亲测雷神无效）加速steam（仅加速商店是免费的），然后开热点，SteamDeck这边开机的时候要设置为英文+UTC-8时区（即默认设置）再连接热点更新，大概率等待半小时就能通过了，手机这边如果开了流量监控，就会发现流量基本1.5m/s这个速度走（峰值4-5m/s），如果没动的话，建议重启加速器或是点击SteamDeck上的Back返回上一步重新开始，直到流量正常出去。大概也就花费1-2G。（下图是我更新了两次）&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/02/02/63db0743c8f68.png&#34;
+目前我唯一测试通过的方法就是手机挂UU加速器（亲测雷神无效）加速steam（仅加速商店是免费的），然后开热点，SteamDeck这边开机的时候要设置为英文+UTC-8时区（即默认设置）再连接热点更新，大概率等待半小时就能通过了，手机这边如果开了流量监控，就会发现流量基本1.5m/s这个速度走（峰值4-5m/s），如果没动的话，建议重启加速器或是点击SteamDeck上的Back返回上一步重新开始，直到流量正常出去。大概也就花费1-2G。（下图是我更新了两次）
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/02/02/63db0743c8f68.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/02/02/63db0743c8f68.png&#34; alt=&#34;2023-02-02T00:43:46.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/02/02/63db0743c8f68.png&#34;
 	
 	
 	

@@ -7,13 +7,19 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 01:59:24 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/dg1/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/dg1/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>在技嘉B550M上成功点亮并使用（但不完美）DG1教程</title>
         <link>https://blog.tama.guru/record/dg1_with_b550m.html</link>
         <pubDate>Wed, 10 May 2023 23:24:00 +0800</pubDate>
         
         <guid>https://blog.tama.guru/record/dg1_with_b550m.html</guid>
         <description>&lt;p&gt;先上结果：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bafc914fe4.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bafc914fe4.png&#34; alt=&#34;image0&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bafc914fe4.png&#34;
 	
 	
@@ -30,6 +36,12 @@
 大前提肯定是把ResizeBAR打开了，详情看之前的文章：[post cid=&amp;ldquo;239&amp;rdquo; /]
 首先我是插在A320M+2200G平台上的（这是NAS机，之前我想把这做推流机），插上去之后显示无输出，但是PiKVM能看到硬盘灯在闪烁，判断系统是正常运行了，于是从远程桌面进去发现能正常，安装驱动之后能够正确识别型号（设备管理器中有一个PCI设备一直显示无驱动且找不到驱动），发现NDI推流延迟较高，故放弃，转战主机。
 主机上主显卡是3060TI，这玩意非常的大，大到把主板底部的大多数接口都盖住了。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bb1d9637ac.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bb1d9637ac.png&#34; alt=&#34;image1&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bb1d9637ac.png&#34;
 	
 	
@@ -47,7 +59,13 @@
 &lt;li&gt;接下来我用3060TI接上延长线连接PCIe4.0接口，DG1直插PCIe3.0接口，显示器能反应，能进BIOS，但是进入系统的启动过程中会提示无法启动，无论切换到Win10 LTSC2021 Server2022 Win11均无法正常启动，这里就是我最疑惑的地方了。&lt;/li&gt;
 &lt;li&gt;最后我改变了想法，把3060TI接上延长线连接PCIe3.0接口，DG1直插PCIe4.0接口，却发现是能正常进入系统了！我的两台显示器分别插在两张卡上，进入系统之后只有插在3060TI上的卡的显示器是亮的，插在DG1的显示器黑屏。安装Xe驱动后，双屏正常工作了。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bb463d2912.png&#34;
+&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bb463d2912.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bb463d2912.png&#34; alt=&#34;image2&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bb463d2912.png&#34;
 	
 	
 	
@@ -58,6 +76,12 @@
 	
 &gt;
 但是这样对性能的损耗有些大，3060TI在PCIe3.0上无法发挥其最大效用，而DG1占着PCIe4.0接口，但它最多也只能跑到4.0 x8
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bb523b9976.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bb523b9976.png&#34; alt=&#34;image3&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bb523b9976.png&#34;
 	
 	
@@ -68,6 +92,12 @@
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bb5a7f26ea.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bb5a7f26ea.png&#34; alt=&#34;image4&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bb5a7f26ea.png&#34;
 	
 	
@@ -80,6 +110,12 @@
 &gt;
 而且我发现这样接上之后，鼠标的拖动会偶尔发生卡顿，这个情况现在也是无解。
 接下来我想再买一根PCIe4.0的延长线，看看这样插能不能把性能跑满，后续再继续测试视频和直播的编解码能力。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bbb5982d69.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bbb5982d69.png&#34; alt=&#34;image5&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bbb5982d69.png&#34;
 	
 	
@@ -90,6 +126,12 @@
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bbb49660ed.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bbb49660ed.png&#34; alt=&#34;image6&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bbb49660ed.png&#34;
 	
 	

@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 01:59:24 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/headscale/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/headscale/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>在debian下安装headscale的记录</title>
         <link>https://blog.tama.guru/record/headscale.html</link>
         <pubDate>Thu, 14 Sep 2023 00:36:00 +0800</pubDate>
@@ -122,7 +122,13 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;To authenticate, visit:
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	http://SERVERIP:PORT1/register/nodekey:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e2bfd7452.png&#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e2bfd7452.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e2bfd7452.png&#34; alt=&#34;hs-in&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e2bfd7452.png&#34;
 	
 	
 	
@@ -162,6 +168,12 @@
     &gt;https://github.com/juanfont/headscale&lt;/a&gt;。
 官方tailscale在1.30.0之后的版本基本都实现了自定义url。
 以安卓为例，打开应用程序后，必须反复打开和关闭右侧顶部栏上的烤肉串菜单图标（三个点），直到菜单中出现“更改服务器”选项。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8393b827.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8393b827.png&#34; alt=&#34;狂点三个点&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8393b827.png&#34;
 	
 	
@@ -172,6 +184,12 @@
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e854095bb.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e854095bb.png&#34; alt=&#34;出现Change server&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e854095bb.png&#34;
 	
 	
@@ -183,6 +201,12 @@
 	
 &gt;
 可以在此处输入&lt;code&gt;http://SERVERIP:PORT1&lt;/code&gt;。保存返回上一步，然后选择&lt;code&gt;Sign in with other&lt;/code&gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8897db77.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8897db77.png&#34; alt=&#34;Sign in with other&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8897db77.png&#34;
 	
 	
@@ -194,6 +218,12 @@
 	
 &gt;
 然后就一如既往的404了，使用浏览器打开这个网页，添加端口到IP后面再访问。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8cc39e42.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8cc39e42.png&#34; alt=&#34;404了&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8cc39e42.png&#34;
 	
 	
@@ -204,6 +234,12 @@
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8f3822db.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8f3822db.png&#34; alt=&#34;不404了&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8f3822db.png&#34;
 	
 	
@@ -215,6 +251,12 @@
 	
 &gt;
 然后按照上面把那窜命令修改后复制到服务端执行，显示成功后安卓端杀掉tailscale进程，再重新进去之后就可以正常使用了。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e959e894c.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e959e894c.png&#34; alt=&#34;正常使用了&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e959e894c.png&#34;
 	
 	

@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 01:59:24 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>丂渐云性能测试</title>
         <link>https://blog.tama.guru/record/idc-rbt.html</link>
         <pubDate>Mon, 01 Jan 2024 13:28:44 +0800</pubDate>
@@ -67,6 +67,12 @@
 &lt;/ul&gt;
 &lt;p&gt;0.5G内存可能是小了点，但是免费的，跑个Debian应该还行。
 申请之后一段时间会收到这个提示：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2ceba25477.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2ceba25477.png&#34; alt=&#34;2023-07-15T16:52:09.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2ceba25477.png&#34;
 	
 	
@@ -82,7 +88,13 @@
 &lt;ol&gt;
 &lt;li&gt;选择Cloud Compute&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2cf27838d7.png&#34;
+&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2cf27838d7.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2cf27838d7.png&#34; alt=&#34;D1&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2cf27838d7.png&#34;
 	
 	
 	
@@ -95,6 +107,12 @@
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;选择Regular Performance
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2cf6e27c7a.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2cf6e27c7a.png&#34; alt=&#34;D2&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2cf6e27c7a.png&#34;
 	
 	
@@ -108,6 +126,12 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;选择Server Location。需要注意的是，免费计划只适用于美国西雅图、迈阿密和德国法兰克福，选择其他地方是不会在Server Size出现&amp;quot;Free Tier&amp;quot;这个选项的。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2d0139c2d4.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2d0139c2d4.png&#34; alt=&#34;D3&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2d0139c2d4.png&#34;
 	
 	
@@ -117,7 +141,13 @@
 		alt=&#34;D3&#34;
 	
 	
-&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2d0213b511.png&#34;
+&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2d0213b511.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2d0213b511.png&#34; alt=&#34;D4&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2d0213b511.png&#34;
 	
 	
 	

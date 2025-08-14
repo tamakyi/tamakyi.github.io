@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 01:59:24 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/nas/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/nas/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>PVE安装后续优化</title>
         <link>https://blog.tama.guru/record/pve_install.html</link>
         <pubDate>Sun, 12 Mar 2023 01:43:00 +0800</pubDate>
@@ -16,7 +16,13 @@
         <description>&lt;p&gt;安装PVE并不复杂，相关操作网上一抓一大把此处不再赘述。
 此处主要记录一些安装后碰上的问题以及对应的解决方案。
 #####&lt;center&gt;开启硬件直通&lt;/center&gt;#####
-1.首先确保CPU带有虚拟化能力。对于AMD平台，在&lt;code&gt;BIOS的高级&amp;gt;CPU设置&lt;/code&gt;查看是否有能开启&lt;code&gt;SVM Mode&lt;/code&gt;。&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640cb997ec1de.png&#34;
+1.首先确保CPU带有虚拟化能力。对于AMD平台，在&lt;code&gt;BIOS的高级&amp;gt;CPU设置&lt;/code&gt;查看是否有能开启&lt;code&gt;SVM Mode&lt;/code&gt;。
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640cb997ec1de.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640cb997ec1de.png&#34; alt=&#34;2023-03-11T17:25:44.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640cb997ec1de.png&#34;
 	
 	
 	
@@ -25,7 +31,13 @@
 		alt=&#34;2023-03-11T17:25:44.png&#34;
 	
 	
-&gt;确认能打开后，到&lt;code&gt;高级&amp;gt;AMD CBS&amp;gt;NBIO Common Options&amp;gt;NB Configuration&lt;/code&gt;下把&lt;code&gt;IOMMU&lt;/code&gt;打开。&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640cba128c724.png&#34;
+&gt;确认能打开后，到&lt;code&gt;高级&amp;gt;AMD CBS&amp;gt;NBIO Common Options&amp;gt;NB Configuration&lt;/code&gt;下把&lt;code&gt;IOMMU&lt;/code&gt;打开。
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640cba128c724.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640cba128c724.png&#34; alt=&#34;2023-03-11T17:27:47.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640cba128c724.png&#34;
 	
 	
 	
@@ -71,6 +83,12 @@
 修改文件：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;usr&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;share&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;javascript&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;proxmox&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;widget&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;toolkit&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;proxmoxlib&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;js&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;搜索 &lt;code&gt;data.status.toLowerCase&lt;/code&gt;，并将框中内容删除：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640cbd6c8417c.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640cbd6c8417c.png&#34; alt=&#34;2023-03-11T17:42:05.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640cbd6c8417c.png&#34;
 	
 	
@@ -82,6 +100,12 @@
 	
 &gt;
 再次搜索 &lt;code&gt;data.status.toLowerCase&lt;/code&gt;，并将框中内容删除：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640cbda27355a.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640cbda27355a.png&#34; alt=&#34;2023-03-11T17:42:59.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640cbda27355a.png&#34;
 	
 	
@@ -113,7 +137,13 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;cp&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;usr&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;share&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;perl5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;PVE&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;APLInfo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pm&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;usr&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;share&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;perl5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;PVE&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;APLInfo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pm_back&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;sed&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;s|http://download.proxmox.com|https://mirrors.tuna.tsinghua.edu.cn/proxmox|g&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;usr&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;share&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;perl5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;PVE&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;APLInfo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pm&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;更换完成后重启pve。
-2、接下来进入PVE网页端，按如下操作安装debian软件包。（选择的目录应有CT镜像功能）&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d92828b077.png&#34;
+2、接下来进入PVE网页端，按如下操作安装debian软件包。（选择的目录应有CT镜像功能）
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d92828b077.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d92828b077.png&#34; alt=&#34;2023-03-12T08:51:14.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d92828b077.png&#34;
 	
 	
 	
@@ -123,7 +153,13 @@
 	
 	
 &gt;之后等待窗口提示&lt;code&gt;TASK OK&lt;/code&gt;。
-3、点击右上角的&lt;code&gt;创建CT&lt;/code&gt;，配置常规选项：特别要记住&lt;code&gt;CT ID&lt;/code&gt;，并把&lt;code&gt;无特权的容器&lt;/code&gt;的勾取消掉。&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d93a5acf5c.png&#34;
+3、点击右上角的&lt;code&gt;创建CT&lt;/code&gt;，配置常规选项：特别要记住&lt;code&gt;CT ID&lt;/code&gt;，并把&lt;code&gt;无特权的容器&lt;/code&gt;的勾取消掉。
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d93a5acf5c.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d93a5acf5c.png&#34; alt=&#34;2023-03-12T08:56:05.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d93a5acf5c.png&#34;
 	
 	
 	
@@ -134,6 +170,12 @@
 	
 &gt;
 模板刚才下载的目录位置以及模板。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d93cd17138.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d93cd17138.png&#34; alt=&#34;2023-03-12T08:56:45.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d93cd17138.png&#34;
 	
 	
@@ -145,6 +187,12 @@
 	
 &gt;
 磁盘空间根据实际情况给，建议20G以上。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d93f8bccc7.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d93f8bccc7.png&#34; alt=&#34;2023-03-12T08:57:28.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d93f8bccc7.png&#34;
 	
 	
@@ -156,6 +204,12 @@
 	
 &gt;
 核心数分配根据机器的实际情况配置。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d9413db27b.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d9413db27b.png&#34; alt=&#34;2023-03-12T08:57:56.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d9413db27b.png&#34;
 	
 	
@@ -167,6 +221,12 @@
 	
 &gt;
 内存设置考虑到后期我需要运行的Docker内容较多，我设置为1024，如果配置较低或者使用负载较小可以设置512，Swap同理。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d9459ae6d2.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d9459ae6d2.png&#34; alt=&#34;2023-03-12T08:59:05.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d9459ae6d2.png&#34;
 	
 	
@@ -178,6 +238,12 @@
 	
 &gt;
 网络选项根据自己内网路由情况进行编辑，不建议使用DHCP，因为我经常找不到IP。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d94b3dfa2c.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d94b3dfa2c.png&#34; alt=&#34;2023-03-12T09:00:35.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d94b3dfa2c.png&#34;
 	
 	
@@ -189,6 +255,12 @@
 	
 &gt;
 DNS设置使用默认即可。然后确认信息无误点击完成，等待&lt;code&gt;TASK OK&lt;/code&gt;。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d94e514dbc.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d94e514dbc.png&#34; alt=&#34;2023-03-12T09:01:25.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d94e514dbc.png&#34;
 	
 	
@@ -200,6 +272,12 @@ DNS设置使用默认即可。然后确认信息无误点击完成，等待&lt;c
 	
 &gt;
 然后进入Docker的容器选项设置，把功能中以下内容勾选。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d953d9bdd1.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d953d9bdd1.png&#34; alt=&#34;2023-03-12T09:02:53.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d953d9bdd1.png&#34;
 	
 	
@@ -221,6 +299,12 @@ DNS设置使用默认即可。然后确认信息无误点击完成，等待&lt;c
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;lxc.cgroup2.devices.allow: c 10:200 rwm  
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;lxc.mount.entry: /dev/net/tun dev/net/tun none bind,create=file
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;修改后整个文件应该看起来像：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d960b5a827.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d960b5a827.png&#34; alt=&#34;2023-03-12T09:06:19.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d960b5a827.png&#34;
 	
 	

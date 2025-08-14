@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 01:59:24 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/atmosphere/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/atmosphere/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Switch15.0.1大气层系统升级的记录（整合包）-更新到17.0.1</title>
         <link>https://blog.tama.guru/record/switch_Atmosphere.html</link>
         <pubDate>Sun, 27 Nov 2022 01:15:00 +0800</pubDate>
@@ -29,6 +29,12 @@
 &lt;p&gt;下面开始升级。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;取出Switch上的SD卡，删除除了&lt;code&gt;emmMMC&lt;/code&gt; &lt;code&gt;Nintendo&lt;/code&gt; 和你保存游戏的文件夹之外的其他所有文件。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638241260e32a.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638241260e32a.png&#34; alt=&#34;2022-11-26T16:39:02.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638241260e32a.png&#34;
 	
 	
@@ -40,6 +46,12 @@
 	
 &gt;&lt;/li&gt;
 &lt;li&gt;把ShallowSea整合包&lt;code&gt;ShallowSea-ams.zip&lt;/code&gt;解压覆盖到SD卡上。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/6382414d42649.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/6382414d42649.png&#34; alt=&#34;2022-11-26T16:39:41.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/6382414d42649.png&#34;
 	
 	
@@ -51,6 +63,12 @@
 	
 &gt;&lt;/li&gt;
 &lt;li&gt;在SD卡上新建一个&lt;code&gt;firmware&lt;/code&gt;文件夹（或者其他英文文件夹），把Switch固件解压其中。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/11/26/6382365a2312d.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/26/6382365a2312d.png&#34; alt=&#34;2022-11-26T16:09:39.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/26/6382365a2312d.png&#34;
 	
 	
@@ -64,6 +82,12 @@
 &lt;li&gt;确认文件完整后弹出SD并插入Switch上。&lt;/li&gt;
 &lt;li&gt;插入注入器和短路器，&amp;quot;+&amp;ldquo;与电源键蓝灯进入引导
 正常进入系统，设置里的主机-更新主机的Atmosphere版本已经升级到了最新1.4.0
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638247fc998d5.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638247fc998d5.png&#34; alt=&#34;2022-11-26T17:08:12.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638247fc998d5.png&#34;
 	
 	
@@ -75,6 +99,12 @@
 	
 &gt;&lt;/li&gt;
 &lt;li&gt;接下来升级系统，进入相册-Daybreak
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/6382483aa25e9.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/6382483aa25e9.png&#34; alt=&#34;2022-11-26T17:09:14.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/6382483aa25e9.png&#34;
 	
 	
@@ -86,6 +116,12 @@
 	
 &gt;&lt;/li&gt;
 &lt;li&gt;选择Install，并进入之前下载了15.0.1固件的文件夹&lt;code&gt;Firmware&lt;/code&gt;，弹出Update infomation等待验证完成后选择&lt;code&gt;Continue&lt;/code&gt;,Select driver variant选择&lt;code&gt;Install(FAT32+exFAT)&lt;/code&gt;,等待升级完成后选择&lt;code&gt;Reboot&lt;/code&gt;重启。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638248ab215ba.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638248ab215ba.png&#34; alt=&#34;2022-11-26T17:11:07.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638248ab215ba.png&#34;
 	
 	
@@ -96,6 +132,12 @@
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638248c432267.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638248c432267.png&#34; alt=&#34;2022-11-26T17:11:32.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638248c432267.png&#34;
 	
 	
@@ -106,6 +148,12 @@
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638249433066c.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638249433066c.png&#34; alt=&#34;2022-11-26T17:13:39.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638249433066c.png&#34;
 	
 	
@@ -117,6 +165,12 @@
 	
 &gt;
 可以看到系统版本也更新了。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638249951880a.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638249951880a.png&#34; alt=&#34;2022-11-26T17:15:01.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638249951880a.png&#34;
 	
 	

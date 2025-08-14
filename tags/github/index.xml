@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 01:59:24 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/github/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/github/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>[好软推荐] Cloudpaste-开源在线文本/文件分享平台</title>
         <link>https://blog.tama.guru/record/cloudpaste.html</link>
         <pubDate>Fri, 18 Jul 2025 10:21:11 +0800</pubDate>
@@ -82,6 +82,12 @@ D1和R2都有免费额度，可以大胆使用。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dinnerNames&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;xxx&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;效果图：
 使用前：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/02/17/65d0b99ac2876.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/02/17/65d0b99ac2876.png&#34; alt=&#34;使用前&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/02/17/65d0b99ac2876.png&#34;
 	
 	
@@ -93,6 +99,12 @@ D1和R2都有免费额度，可以大胆使用。&lt;/p&gt;
 	
 &gt;
 使用后：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/02/17/65d0bc62d9eb2.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/02/17/65d0bc62d9eb2.png&#34; alt=&#34;使用后&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/02/17/65d0bc62d9eb2.png&#34;
 	
 	

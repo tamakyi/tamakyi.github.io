@@ -7,13 +7,19 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 01:59:24 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E7%BA%AF%E7%BD%91%E9%A1%B5/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E7%BA%AF%E7%BD%91%E9%A1%B5/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>狼的日记本 上线了</title>
         <link>https://blog.tama.guru/record/dairy.html</link>
         <pubDate>Mon, 30 Dec 2024 22:29:00 +0800</pubDate>
         
         <guid>https://blog.tama.guru/record/dairy.html</guid>
-        <description>&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772ae9f88f02.png&#34;
+        <description>&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772ae9f88f02.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772ae9f88f02.png&#34; alt=&#34;主界面&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772ae9f88f02.png&#34;
 	
 	
 	
@@ -41,6 +47,12 @@
 功能基本上能满足我的要求：&lt;/p&gt;
 &lt;h4 id=&#34;日记撰写&#34;&gt;日记撰写
 &lt;/h4&gt;&lt;p&gt;默认提供了很多分类和时间天气等信息的记录，而且支持MD格式写作。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a4d7d791b.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a4d7d791b.png&#34; alt=&#34;选项&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a4d7d791b.png&#34;
 	
 	
@@ -52,6 +64,12 @@
 	
 &gt;
 虽然不支持直接上传图片，但是借助第三方图床工具也能实现图片显示。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a5ac4353b.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a5ac4353b.png&#34; alt=&#34;支持MD和HTML格式&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a5ac4353b.png&#34;
 	
 	
@@ -61,7 +79,13 @@
 		alt=&#34;支持MD和HTML格式&#34;
 	
 	
-&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a5c87b729.png&#34;
+&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a5c87b729.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a5c87b729.png&#34; alt=&#34;显示效果&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a5c87b729.png&#34;
 	
 	
 	
@@ -94,7 +118,13 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;额度：20000
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;验证码：123/4
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;到期日：2029-08-10
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772aa5a7de36.png&#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772aa5a7de36.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772aa5a7de36.png&#34; alt=&#34;银行卡&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772aa5a7de36.png&#34;
 	
 	
 	
@@ -108,7 +138,13 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Markdown&#34; data-lang=&#34;Markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;买菜 -330
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;吃饭 -120
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;敲诈勒索 +200
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a70da04f4.png&#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a70da04f4.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a70da04f4.png&#34; alt=&#34;账单信息汇总&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a70da04f4.png&#34;
 	
 	
 	
@@ -123,6 +159,12 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;= 买大疆 Mavic Classic 3 #￥9000
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;= 坐飞机
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;即可获得这样的效果：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a9b331b9b.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a9b331b9b.png&#34; alt=&#34;待办事项&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a9b331b9b.png&#34;
 	
 	
@@ -137,6 +179,12 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2024-12-20, 2024-12-26
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2024-11-22, 2024-11-28
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;即可在日历界面生成&lt;del&gt;不安全的日子&lt;/del&gt;：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772ac1d5223a.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772ac1d5223a.png&#34; alt=&#34;经期记录&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772ac1d5223a.png&#34;
 	
 	

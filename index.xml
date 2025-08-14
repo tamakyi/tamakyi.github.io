@@ -108,6 +108,12 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 目前是免费的，不知道啥时候会收费。&lt;/p&gt;
 &lt;h4 id=&#34;软件使用&#34;&gt;软件使用
 &lt;/h4&gt;&lt;p&gt;安装完就是我们熟悉的注册登录环节了。。。没错，这玩意要注册才能用，但也就只需要手机号验证而已，目前不知道有什么必要，但是国产软件嘛。。。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b0317d.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b0317d.jpg&#34; alt=&#34;主界面&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b0317d.jpg&#34;
 	
 	
@@ -119,6 +125,12 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 	
 &gt;
 主界面不算花里胡哨，基本上都是些串流的游戏，感兴趣可以自己试，我就主要说兼容层等的安装。点击左上角头像的位置（那个流汗黄豆），找到游戏库，然后到PC游戏这个地方，有个运行时，这里可以选择兼容层、转译器、GPU驱动、DXVK、VKD3D等内容的安装。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b98007.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b98007.jpg&#34; alt=&#34;运行时维护&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b98007.jpg&#34;
 	
 	
@@ -128,7 +140,13 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 		alt=&#34;运行时维护&#34;
 	
 	
-&gt;&lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724bce214.jpg&#34;
+&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724bce214.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724bce214.jpg&#34; alt=&#34;兼容层&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724bce214.jpg&#34;
 	
 	
 	
@@ -140,6 +158,12 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 &gt;
 以兼容层举例，截至2025年5月6日能够支持wine9.5-10以及proton x64和arm64，这就是重点的地方了，我们跑游戏如果闪退或者碰到奇奇怪怪的地方，可以直接在这里切换兼容层、GPU驱动等内容，相比winlator要到处找包好多了，毕竟手机推galgame真的是需要多次尝试。
 接下来我就拿saga的花之天使的夏日恋歌举例，把所有文件移动到手机上后，在游戏库的PC游戏这里有个加号，直接选中游戏的运行文件，即&lt;code&gt;SiglusEngineCHS.exe&lt;/code&gt;，之后会在PC游戏这里生成一个快捷方式，运气好的话直接点击立即游戏就能跑起来了。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724bdfc98.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724bdfc98.jpg&#34; alt=&#34;花之天使的夏日恋歌&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724bdfc98.jpg&#34;
 	
 	
@@ -149,7 +173,13 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 		alt=&#34;花之天使的夏日恋歌&#34;
 	
 	
-&gt;&lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b4db06.jpg&#34;
+&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b4db06.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b4db06.jpg&#34; alt=&#34;游戏运行主界面&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b4db06.jpg&#34;
 	
 	
 	
@@ -160,6 +190,12 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 	
 &gt;
 有时候碰到闪退，或是花屏等问题，这就需要手动调整运行参数，具体就是点击立即游戏旁边的小齿轮，找到游戏设置。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c18507.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c18507.jpg&#34; alt=&#34;兼容性设置&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c18507.jpg&#34;
 	
 	
@@ -169,7 +205,13 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 		alt=&#34;兼容性设置&#34;
 	
 	
-&gt;&lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c18daf.jpg&#34;
+&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c18daf.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c18daf.jpg&#34; alt=&#34;组件设置1&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c18daf.jpg&#34;
 	
 	
 	
@@ -178,7 +220,13 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 		alt=&#34;组件设置1&#34;
 	
 	
-&gt;&lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b202f3.jpg&#34;
+&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b202f3.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b202f3.jpg&#34; alt=&#34;组件设置2&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b202f3.jpg&#34;
 	
 	
 	
@@ -190,6 +238,12 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 &gt;
 需要动的基本就是兼容性设置和组件设置这两个位置，其中兼容性设置选择就是上面我们配置运行时维护安装的兼容层等配置的组合。比如说wine9.5+box64_0.32.1跑不动，就切换到proton兼容层试试，还不行？那试试换个GPU驱动。而如果进入游戏的时候提示缺少xxx组件（比如说dx组件），那就要到组件依赖这里，通过安装新组件的方式手动给当前兼容层环境打组件补丁。（注意组件依赖貌似服务器在国外，部分组件下载极度缓慢，建议尝试多个网络或者干脆挂个梯子）在多次尝试之后，游戏基本都能跑起来。
 经过尝试，我使用OnePlus13+ColorOS15，在8e CPU+24G运存下目前玩的几款游戏都能完美运行：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c49f99.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c49f99.jpg&#34; alt=&#34;花天使&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c49f99.jpg&#34;
 	
 	
@@ -200,6 +254,12 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c66488.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c66488.jpg&#34; alt=&#34;战国兰斯&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c66488.jpg&#34;
 	
 	
@@ -210,6 +270,12 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724e4fc72.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724e4fc72.jpg&#34; alt=&#34;你的眼眸命中我心头&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724e4fc72.jpg&#34;
 	
 	
@@ -473,6 +539,12 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
         <description>&lt;p&gt;说说一直在用的这个堡垒机软件，官网是：&lt;a class=&#34;link&#34; href=&#34;https://docs.next-terminal.typesafe.cn/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://docs.next-terminal.typesafe.cn/&lt;/a&gt;，提供了开源和付费两个版本，开源版本完全够用，但是在此基础上有更高需求的可以考虑专业版，之前我都是白嫖，但今天我看了下单用户专业版永久限时只要177，马上就买了。
 先上点图：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2025/04/14/67fd024ba4c24.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2025/04/14/67fd024ba4c24.png&#34; alt=&#34;主界面&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2025/04/14/67fd024ba4c24.png&#34;
 	
 	
@@ -483,6 +555,12 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2025/04/14/67fd027c2a792.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2025/04/14/67fd027c2a792.png&#34; alt=&#34;资产管理&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2025/04/14/67fd027c2a792.png&#34;
 	
 	
@@ -1073,7 +1151,13 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
         <pubDate>Mon, 30 Dec 2024 22:29:00 +0800</pubDate>
         
         <guid>https://blog.tama.guru/record/dairy.html</guid>
-        <description>&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772ae9f88f02.png&#34;
+        <description>&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772ae9f88f02.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772ae9f88f02.png&#34; alt=&#34;主界面&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772ae9f88f02.png&#34;
 	
 	
 	
@@ -1101,6 +1185,12 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 功能基本上能满足我的要求：&lt;/p&gt;
 &lt;h4 id=&#34;日记撰写&#34;&gt;日记撰写
 &lt;/h4&gt;&lt;p&gt;默认提供了很多分类和时间天气等信息的记录，而且支持MD格式写作。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a4d7d791b.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a4d7d791b.png&#34; alt=&#34;选项&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a4d7d791b.png&#34;
 	
 	
@@ -1112,6 +1202,12 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 	
 &gt;
 虽然不支持直接上传图片，但是借助第三方图床工具也能实现图片显示。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a5ac4353b.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a5ac4353b.png&#34; alt=&#34;支持MD和HTML格式&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a5ac4353b.png&#34;
 	
 	
@@ -1121,7 +1217,13 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 		alt=&#34;支持MD和HTML格式&#34;
 	
 	
-&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a5c87b729.png&#34;
+&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a5c87b729.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a5c87b729.png&#34; alt=&#34;显示效果&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a5c87b729.png&#34;
 	
 	
 	
@@ -1154,7 +1256,13 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;额度：20000
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;验证码：123/4
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;到期日：2029-08-10
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772aa5a7de36.png&#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772aa5a7de36.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772aa5a7de36.png&#34; alt=&#34;银行卡&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772aa5a7de36.png&#34;
 	
 	
 	
@@ -1168,7 +1276,13 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Markdown&#34; data-lang=&#34;Markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;买菜 -330
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;吃饭 -120
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;敲诈勒索 +200
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a70da04f4.png&#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a70da04f4.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a70da04f4.png&#34; alt=&#34;账单信息汇总&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a70da04f4.png&#34;
 	
 	
 	
@@ -1183,6 +1297,12 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;= 买大疆 Mavic Classic 3 #￥9000
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;= 坐飞机
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;即可获得这样的效果：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a9b331b9b.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a9b331b9b.png&#34; alt=&#34;待办事项&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772a9b331b9b.png&#34;
 	
 	
@@ -1197,6 +1317,12 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2024-12-20, 2024-12-26
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2024-11-22, 2024-11-28
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;即可在日历界面生成&lt;del&gt;不安全的日子&lt;/del&gt;：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772ac1d5223a.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772ac1d5223a.png&#34; alt=&#34;经期记录&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/30/6772ac1d5223a.png&#34;
 	
 	
@@ -1230,6 +1356,12 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
         <description>&lt;p&gt;昨天，有消息称Next的应用商店上架了出境易，用过华子的都知道这玩意可以用过某些&lt;del&gt;不可告人&lt;/del&gt;的方式来实现对某些国外应用的安装和使用，所以这次上架就有意思了,因为这上面的几乎所有应用目前基本上不会为Next做适配，那就说明它会通过某种方法来兼容安卓应用来实现运行如上应用的能力。&lt;/p&gt;
 &lt;h4 id=&#34;出境易&#34;&gt;出境易
 &lt;/h4&gt;&lt;p&gt;安装过程就不介绍了，首次运行的时候需要下载将近600M的数据并且重启系统，一开始我也以为是个虚拟机，但后面tg上有人放出一张截图，疑似是通过lxc来跑安卓容器实现的。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f145f185fa.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f145f185fa.png&#34; alt=&#34;疑似容器&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f145f185fa.png&#34;
 	
 	
@@ -1242,6 +1374,12 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 &gt;
 出境易内置了一个microG套件，G家软件基本上都可以使用了，如果是市场里没有的应用可以从GPlay检索获取，但是有一些不是很正规的应用很明显是没办法直接在市场里面找到的。
 市场内可以找到edge浏览器，安装后基本上能够正常使用（存在一些小问题，比如掉帧和莫名的黑屏），然后我去找到个clash的安装包，edge下载之后会调用出境易安装，居然成功了&amp;hellip;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f16631ec7d.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f16631ec7d.png&#34; alt=&#34;clash安装成功&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f16631ec7d.png&#34;
 	
 	
@@ -1253,6 +1391,12 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 	
 &gt;
 然后我再试着安装其他应用，却显示&amp;quot;该应用未与出境易达成合作，暂不支持安装&amp;quot;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f16966d219.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f16966d219.png&#34; alt=&#34;其他应用却无法安装&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f16966d219.png&#34;
 	
 	
@@ -1268,6 +1412,12 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 &lt;/h4&gt;&lt;p&gt;安装出境易之后还带了另一个叫卓易通的应用，这东西默认是隐藏的，需要手动启用。
 具体操作是使用出境易下载程序管理类应用来手动启用。
 比如我是出境易日区的市场，可以找到一个设备信息的应用：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f1909ea64e.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f1909ea64e.png&#34; alt=&#34;Device Info&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f1909ea64e.png&#34;
 	
 	
@@ -1279,6 +1429,12 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 	
 &gt;
 安装之后切换到应用程序页面的系统菜单项，找到卓易通和文件共享，点开之后点开右上角的小齿轮，选择启用即可。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f19687820e.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f19687820e.png&#34; alt=&#34;激活应用&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f19687820e.png&#34;
 	
 	
@@ -1288,7 +1444,13 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 		alt=&#34;激活应用&#34;
 	
 	
-&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f198a1881e.png&#34;
+&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f198a1881e.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f198a1881e.png&#34; alt=&#34;激活应用2&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f198a1881e.png&#34;
 	
 	
 	
@@ -1301,6 +1463,12 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 然后我们回到Device Info，找到文件共享这个应用，点开选择发动，就会进入一个类似文件管理器的界面，再这个地方可以选择下载好的apk调用卓易通安装了。
 如果上面的界面无法显示应用，也没有弹窗申请授权获取应用列表的话，需要手动到出境易里面找到Device Info授权。
 卓易通可以安装大部分的应用，但不是全部，因为卓易通和出境易恰恰相反，卓易通采用的是黑名单机制，在黑名单上的应用都无法安装，除此之外一些盗版应用和涩涩应用也无法安装，比如eh&amp;hellip;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f1b7540bf0.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f1b7540bf0.png&#34; alt=&#34;ehviewer&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/12/03/674f1b7540bf0.png&#34;
 	
 	
@@ -1511,7 +1679,13 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 &lt;p&gt;这是一个GUI化的grep，能够实现使用文本、正则表达式、XPath等查询搜索文本文件、Word 和 Excel 文档、PDF 和存档。dnGrep 包括搜索和替换、整个文件预览、文件资源管理器中的右键单击搜索等等。&lt;/p&gt;
 &lt;p&gt;使用方法：到&lt;a class=&#34;link&#34; href=&#34;https://github.com/dnGrep/dnGrep/releases/latest&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Github项目页面&lt;/a&gt;下载对应版本的安装包安装即可，项目自带中文，安装完成后可以到设置里面配置。使用方法也很简单，无非就是选择查找范围，选择搜索方式和搜索条件，搜索结果会高亮展现：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/09/11/66e1a05b4dd4f.png&#34;
+&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/09/11/66e1a05b4dd4f.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/09/11/66e1a05b4dd4f.png&#34; alt=&#34;dngrep&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/09/11/66e1a05b4dd4f.png&#34;
 	
 	
 	
@@ -1536,7 +1710,13 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
     &gt;Git - Downloads (git-scm.com)&lt;/a&gt;&lt;/p&gt;
 &lt;h5 id=&#34;使用方法-1&#34;&gt;使用方法
 &lt;/h5&gt;&lt;p&gt;下载安装对应版本即可，也提供了便携版(PortableGit)，解压即用。安装之后右键菜单会多出一个&lt;code&gt;git bash&lt;/code&gt;，在指定目录下点开会进入一个bash终端，在这里就直接能执行grep了。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/09/11/66e1a0404ca95.png&#34;
+&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/09/11/66e1a0404ca95.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/09/11/66e1a0404ca95.png&#34; alt=&#34;git-scm&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/09/11/66e1a0404ca95.png&#34;
 	
 	
 	
@@ -1563,6 +1743,12 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 &lt;h4 id=&#34;缓存&#34;&gt;缓存
 &lt;/h4&gt;&lt;p&gt;对于资源的缓存配置好可以避免直接访问到桶里的数据，我看了下能配置的入口有两个：
 一是在存储桶内的设置项配置&lt;code&gt;CORS策略&lt;/code&gt;，主要是添加&lt;code&gt;&amp;quot;MaxAgeSeconds&amp;quot;: 43200&lt;/code&gt;这一项，在官方文档里的解释是：指定允许浏览器缓存 CORS 预检响应的时间（以秒为单位），最大值是43200，此举可能有一定帮助但不是很确定。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c38c20c94af.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c38c20c94af.png&#34; alt=&#34;CORS策略&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c38c20c94af.png&#34;
 	
 	
@@ -1574,6 +1760,12 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 	
 &gt;
 二是利用Cloudflare的页面规则功能，为R2域名添加缓存设置项：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c38d1e83739.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c38d1e83739.png&#34; alt=&#34;缓存设置项&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c38d1e83739.png&#34;
 	
 	
@@ -1585,6 +1777,12 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 	
 &gt;
 因为我的资源都放在&lt;code&gt;r2.****.***&lt;/code&gt;下，所以我配置的域名是&lt;code&gt;r2.****.***/*&lt;/code&gt;，缓存基本都拉到最大值，经过测试开启后确实也是从本地读取资源了。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c38dad3b00a.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c38dad3b00a.png&#34; alt=&#34;资源测试&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c38dad3b00a.png&#34;
 	
 	
@@ -1598,6 +1796,12 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 另外缓存配置下也有个Cache Rules，不知道和上面有没有冲突，我是一并配置了。&lt;/p&gt;
 &lt;h4 id=&#34;防盗链可选&#34;&gt;防盗链（可选）
 &lt;/h4&gt;&lt;p&gt;防盗链一般使用的是安全性下的WAF-自定义功能，配置的规则方式为：字段：&lt;code&gt;引用方 不包含 允许的域名1&lt;/code&gt; Or &lt;code&gt;引用方 不包含 允许的域名2&lt;/code&gt;&amp;hellip; And &lt;code&gt;主机名 包含 r2地址&lt;/code&gt; 时采取 &lt;code&gt;阻止&lt;/code&gt; 的措施，比如我图中的配置：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c38f9d3e332.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c38f9d3e332.png&#34; alt=&#34;防盗链配置&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c38f9d3e332.png&#34;
 	
 	
@@ -1609,6 +1813,12 @@ hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝
 	
 &gt;
 这样就是当不包含blog.tama.guru或tama.host的引用方去访问我的r2域名时，进行阻止，此时直接访问桶内资源已经是提示被ban了。这里的https://可以不要。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c3900eaa9ce.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c3900eaa9ce.png&#34; alt=&#34;被阻止了&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/08/20/66c3900eaa9ce.png&#34;
 	
 	
@@ -1643,6 +1853,12 @@ P427L-9Y552-5433E-8DSR3-58Z68（MAC版）
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;软件是好软件，有能力的话还是支持正版吧。
 打开之后点开菜单的&lt;code&gt;Profile&lt;/code&gt;下的&lt;code&gt;Proxy Servers&lt;/code&gt;进行代理服务器的配置：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a44c2c4a43.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a44c2c4a43.png&#34; alt=&#34;菜单&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a44c2c4a43.png&#34;
 	
 	
@@ -1652,7 +1868,13 @@ P427L-9Y552-5433E-8DSR3-58Z68（MAC版）
 		alt=&#34;菜单&#34;
 	
 	
-&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a44cfc52dc.png&#34;
+&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a44cfc52dc.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a44cfc52dc.png&#34; alt=&#34;代理服务器设置&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a44cfc52dc.png&#34;
 	
 	
 	
@@ -1661,7 +1883,13 @@ P427L-9Y552-5433E-8DSR3-58Z68（MAC版）
 		alt=&#34;代理服务器设置&#34;
 	
 	
-&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a44e78cf82.png&#34;
+&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a44e78cf82.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a44e78cf82.png&#34; alt=&#34;代理服务器详细设置&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a44e78cf82.png&#34;
 	
 	
 	
@@ -1673,6 +1901,12 @@ P427L-9Y552-5433E-8DSR3-58Z68（MAC版）
 &gt;
 输入好地址 IP 协议 认证等参数即可。
 也可以先点击这个Proxy Checker检查代理服务器联通是否正常。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a455faaf9e.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a455faaf9e.png&#34; alt=&#34;Proxy Checker&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a455faaf9e.png&#34;
 	
 	
@@ -1684,6 +1918,12 @@ P427L-9Y552-5433E-8DSR3-58Z68（MAC版）
 	
 &gt;
 测试无误后，我们进入这个&lt;code&gt;Proxification Rules&lt;/code&gt;配置代理规则：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a45aa5a338.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a45aa5a338.png&#34; alt=&#34;Proxification Rules&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a45aa5a338.png&#34;
 	
 	
@@ -1694,6 +1934,12 @@ P427L-9Y552-5433E-8DSR3-58Z68（MAC版）
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a45ee3562e.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a45ee3562e.png&#34; alt=&#34;规则设置&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a45ee3562e.png&#34;
 	
 	
@@ -1707,6 +1953,12 @@ P427L-9Y552-5433E-8DSR3-58Z68（MAC版）
 点击&lt;code&gt;Add&lt;/code&gt;之后会跳出配置界面，&lt;code&gt;Applications&lt;/code&gt;即要代理的软件，支持&lt;code&gt;xx.exe&lt;/code&gt; &lt;code&gt;C:\*.exe&lt;/code&gt; &lt;code&gt;xx*.exe&lt;/code&gt; &lt;code&gt;*.exe&lt;/code&gt;等方式，即对应着单个exe、某目录下的所有exe、名字带xx的exe及所有exe等多种匹配方式。&lt;code&gt;Target hosts&lt;/code&gt;和&lt;code&gt;Target ports&lt;/code&gt;即代理的目标IP和端口。如果前面配置好了&lt;code&gt;Proxy Servers&lt;/code&gt;直接在下面的&lt;code&gt;Action&lt;/code&gt;选择即可。
 此时&lt;code&gt;Proxification Rules&lt;/code&gt;配置框会新增一个配置项，注意要把Default的Action改成Direct，不然他会默认选择使用代理服务器全局访问。
 保存好之后现在直接打开应用可以看到指定软件已经走代理了。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a484fadeb2.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a484fadeb2.png&#34; alt=&#34;代理成功&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/07/07/668a484fadeb2.png&#34;
 	
 	
@@ -1731,6 +1983,12 @@ P427L-9Y552-5433E-8DSR3-58Z68（MAC版）
     &gt;这篇文章&lt;/a&gt;记录了A证考试的主要知识点，也可以针对性的记忆。
 然后就是刷题了，推荐使用&lt;a class=&#34;link&#34; href=&#34;http://www.allspectrum.cn/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;智谱&lt;/a&gt;，该应用在各大应用商店都有提供，除了刷题，还能用来报名考试、使用一些自带的小工具等等。刷题只要按模拟实战的模式多刷几遍再重点记忆错题就没啥问题了。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/06/15/666d0831d6e0d.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/06/15/666d0831d6e0d.png&#34; alt=&#34;刷题模块&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/06/15/666d0831d6e0d.png&#34;
 	
 	
@@ -1769,6 +2027,12 @@ P427L-9Y552-5433E-8DSR3-58Z68（MAC版）
 无论使用的是手台、固定台，&lt;code&gt;固定台天线馈电点海拔高度&lt;/code&gt;这个都是必填选项，填写住处大致海拔高度和经纬度信息即可。
 确认信息无误后到网上搜索所在省/直辖市/自治区工信厅网站，找到&lt;code&gt;无线电台（站）设置、使用许可办事指南&lt;/code&gt;，我这边会在&lt;code&gt;新设业余无线电台&lt;/code&gt;的子模块内，根据要求准备的材料除了以上两表之外，还需要一个&lt;code&gt;申请人基本情况&lt;/code&gt;，这里只需要提供身份证正反面扫描图片、待核验机器的正反面图片（要能看得到核准代码）放到一个文档内就行了。
 可以选择网办或者预约线下办理，我选择的是网办，事前准备好材料之后按要求提交到指定位置再提交就行了。事项的办结时限是20天，各地实际承诺的办理实现会有所不同，我这里显示承诺8个工作日办结，但其实材料提交当天预审就结束了，进入受理环节，再过两天我上去看的时候显示已办结了&amp;hellip;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/06/15/666d104ae306b.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/06/15/666d104ae306b.png&#34; alt=&#34;网办流程&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/06/15/666d104ae306b.png&#34;
 	
 	
@@ -1876,6 +2140,12 @@ A2.都是随机的题目，只要多刷题就没啥问题的。&lt;/p&gt;
 &lt;li&gt;接下来就是实现优选IP的最重要一步：在&lt;code&gt;a.com&lt;/code&gt;下的记录管理添加一或两个记录，可以是A，也可以是CNAME，两个主机记录都是&lt;code&gt;new&lt;/code&gt;，一个线路是境内，一个线路放境外（如果只加一个这里留默认就行了，主要是针对不同线路有不同优化需求的，如果还希望针对不同运营商进行优化，这里还可以细化）。境外随便一个CF的IP基本上都能正常访问，建议放个&lt;code&gt;1.0.0.5&lt;/code&gt;。
 境内这里就要留心了，这里优选域名/ip选不好就很容易一片红。自用线路建议使用&lt;code&gt;[CloudflareST][2]&lt;/code&gt;测试速度最优的IP，也可以用&lt;a class=&#34;link&#34; href=&#34;https://vps789.com/hostmonitor/?hostProvider=CF%E4%BC%98%E9%80%89IP&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;CF优选IP&lt;/a&gt;这样的网站查看一些CF域名/IP的运营商访问速度。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f0e45bb4e.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f0e45bb4e.png&#34; alt=&#34;像第一个三网都还行，第三个移动访问就经常挂了。&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f0e45bb4e.png&#34;
 	
 	
@@ -1889,6 +2159,12 @@ A2.都是随机的题目，只要多刷题就没啥问题的。&lt;/p&gt;
 我们可以使用CNAME套在这些域名上来实现“借用”他们的解析来优化我们的访问。
 我们可以使用&lt;a class=&#34;link&#34; href=&#34;https://ping.cn&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;ping.cn&lt;/a&gt;来测试速度：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f22dee158.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f22dee158.png&#34; alt=&#34;国内速度，看起来还行&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f22dee158.png&#34;
 	
 	
@@ -1899,6 +2175,12 @@ A2.都是随机的题目，只要多刷题就没啥问题的。&lt;/p&gt;
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f24ba9923.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f24ba9923.png&#34; alt=&#34;境外速度，没什么好说的&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f24ba9923.png&#34;
 	
 	
@@ -2020,7 +2302,13 @@ A：它只支持Let&amp;rsquo;s encrypt证书。&lt;/p&gt;</description>
 &lt;p&gt;这APP应该是想打造成和米家那类一样的智能家庭中枢，但是背靠移动，国企作风，无论是审美还是功能都给你塞得满满的，着实臃肿&amp;hellip;
 但也就是这样的APP，我发现了它一个奇特的地方：它支持免费给手机游戏加速。&lt;/p&gt;
 &lt;h3 id=&#34;使用方法&#34;&gt;使用方法
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/28/662df9cba3d41.png&#34;
+&lt;/h3&gt;&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/04/28/662df9cba3d41.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/28/662df9cba3d41.png&#34; alt=&#34;路径&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/28/662df9cba3d41.png&#34;
 	
 	
 	
@@ -2031,6 +2319,12 @@ A：它只支持Let&amp;rsquo;s encrypt证书。&lt;/p&gt;</description>
 	
 &gt;
 这个功能位于服务&amp;ndash;宽带服务&amp;ndash;家宽优选这个位置下的电竞宽带，点进去之后会进入一个手机游戏加速的页面，建议这个地方右上角三个点添加快捷方式到桌面，省得每次都要点进去这么深的地方。点击“添加游戏”，然后切换到外服，这里有一个搜索，常见的手游这里都能找得到（就连nikke这种奇怪的游戏都能加速），添加之后回到主界面点开始加速就可以了。测试了下使用还是挺稳定的，但是下载速度不到1MB，如果要把这个当做下载加速需要慎重考虑。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/04/28/662df9e0623e1.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/28/662df9e0623e1.png&#34; alt=&#34;界面&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/28/662df9e0623e1.png&#34;
 	
 	
@@ -2040,7 +2334,13 @@ A：它只支持Let&amp;rsquo;s encrypt证书。&lt;/p&gt;</description>
 		alt=&#34;界面&#34;
 	
 	
-&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/28/662df9eb6025d.png&#34;
+&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/04/28/662df9eb6025d.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/28/662df9eb6025d.png&#34; alt=&#34;添加游戏&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/28/662df9eb6025d.png&#34;
 	
 	
 	
@@ -2375,6 +2675,12 @@ Bootstrap DNS 服务器则修改为：&lt;/p&gt;
 稳定的网络环境（指能连接外面的世界）。
 下载好文中所需的文件。
 安装好adb套件并事前做好认证。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/04/11/6617f95f42316.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/11/6617f95f42316.png&#34; alt=&#34;我已事前做好授权，因此可能部分步骤与文中不一致。&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/11/6617f95f42316.png&#34;
 	
 	
@@ -2392,6 +2698,12 @@ Bootstrap DNS 服务器则修改为：&lt;/p&gt;
 &amp;ldquo;设置-应用和服务-应用分身&amp;rdquo;:关闭应用分身
 &lt;strong&gt;以上功能我均没有使用，因此跳过了。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;解压压缩包,将Backup文件夹复制到手机存储空间里的/Huawei 的目录里,压缩包里目录里的软件对应接下来的步骤,按步骤安装!
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/04/11/6617faf43512f.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/11/6617faf43512f.png&#34; alt=&#34;文件复制好的话在/内部存储&amp;gt;backup&amp;gt;backupFiles&amp;gt;2019-12-07_02-08-38-841文件夹应该能看到以下文件&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/11/6617faf43512f.png&#34;
 	
 	
@@ -2445,6 +2757,12 @@ SharedLibrary
 &lt;strong&gt;符合预期&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id=&#34;8-安装play服务&#34;&gt;8. 安装Play服务
 &lt;/h4&gt;&lt;p&gt;安装Play服务,安装完之后,十秒左右状态栏便会报错(&amp;ldquo;此设备未获得Play保护机制认证&amp;rdquo;),不用管.（&lt;strong&gt;如果不弹窗，请检查网络是否正常，这个很重要！&lt;/strong&gt;）
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/04/12/661809d6e3525.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/12/661809d6e3525.png&#34; alt=&#34;弹窗了说明操作正确&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/12/661809d6e3525.png&#34;
 	
 	
@@ -2480,6 +2798,12 @@ SharedLibrary
 5.1ADB终端内输入命令：adb shell pm disable-user &amp;ndash;user 0 com.google.android.gsf  &lt;strong&gt;注意！不要回车执行操作！只是粘贴上去好准备。&lt;/strong&gt;
 5.2手机安装第八步的 8.play商店 。
 5.3安装完打开后,会提示&amp;quot;我们正在为您更新Google Play&amp;rdquo;,当跳出可以前往google商店的选项后，直接前往商店，取消更新。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/04/12/66180a07754c1.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/12/66180a07754c1.png&#34; alt=&#34;直接进入商店即可&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/12/66180a07754c1.png&#34;
 	
 	
@@ -2496,6 +2820,12 @@ SharedLibrary
     &gt;https://play.google.com/store/apps/details?id=com.google.android.gms&lt;/a&gt; 到 Edge 打开。
 5.5.2下方提示 外部应用打开，打开paly商店开应用详情页。
 5.5.3点击更新，要注意下载的进度条，当进度条超过50%以后，立马用 搞机工具箱 禁用。忽略提示信息，继续卸载。（注意：如果下载卡在等待中，建议去应用管理把Google Play服务和Play Store后台进程都杀掉，然后换用其它梯子，重新回到5.5.1，又或者直接把梯子关了等一段时间再打开，然后重新下载即可。）
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/04/12/66180a36b8cbb.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/12/66180a36b8cbb.png&#34; alt=&#34;网很快的话这个过程可能就几秒，因此提前要做好准备。&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/12/66180a36b8cbb.png&#34;
 	
 	
@@ -2506,6 +2836,12 @@ SharedLibrary
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/04/12/66180a71cf920.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/12/66180a71cf920.png&#34; alt=&#34;下载进度超50后电脑上同时执行预先准备好的这个指令。&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/04/12/66180a71cf920.png&#34;
 	
 	
@@ -2805,7 +3141,13 @@ $$x\ dBm = (x-30)\ dBW$$&lt;ul&gt;
 &lt;p&gt;杂散域发射功率通常用发射机连接天馈线的输出端的杂散发射频率的峰包功率或平均功率表示，其参考测量带宽主要取决于发射机的无线业务种类。杂散域发射功率也可以用电场强度或地球表面功率通量密度（pfd）等效表示。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed73d955bc.png&#34;
+&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed73d955bc.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed73d955bc.png&#34; alt=&#34;各种发射&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed73d955bc.png&#34;
 	
 	
 	
@@ -2844,7 +3186,13 @@ $$x\ dBm = (x-30)\ dBW$$&lt;ul&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;《中华人民共和国无线电频率划分规定》&lt;/strong&gt; 规定了业余无线电台使用的频率。&lt;a class=&#34;link&#34; href=&#34;http://www.npc.gov.cn/npc/c30834/202006/75ba6483b8344591abd07917e1d25cc8.shtml&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;《中华人民共和国民法典》&lt;/a&gt;将于2021年正式生效，《物权法》将同时废止。&lt;strong&gt;《中华人民共和国民法典》&lt;/strong&gt; 第二百五十二条：无线电频谱资源属于国家所有。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed763aa8b6.png&#34;
+&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed763aa8b6.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed763aa8b6.png&#34; alt=&#34;中国无线电协会业余无线电操作证书背面&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed763aa8b6.png&#34;
 	
 	
 	
@@ -3296,7 +3644,13 @@ c) 可要求保护不受来自将来可能指配频率的同一业务或其他�
 &lt;p&gt;直流电路欧姆定律是说&lt;strong&gt;流过电阻的电流I，与两端的电压U成正比，与阻值R成反比&lt;/strong&gt;。
 &lt;/p&gt;
 $$I = \frac{U}{R}$$&lt;h2 id=&#34;a33-交流电路&#34;&gt;A.3.3 交流电路
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed78a38a9a.png&#34;
+&lt;/h2&gt;&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed78a38a9a.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed78a38a9a.png&#34; alt=&#34;正弦交流电&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed78a38a9a.png&#34;
 	
 	
 	
@@ -3369,6 +3723,12 @@ $$\delta(x) = \begin{cases} +\infty, &amp; x = 0 \\ 0, &amp; x \ne 0 \end{cases}
 &lt;p&gt;在零仰角附近具有主辐射瓣的垂直接地天线，其振子的长度应为&lt;strong&gt;1/4波长的奇数倍&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;通常把垂直偶极天线或者垂直接地天线称为“全向天线”，是因为&lt;strong&gt;它们在水平方向没有指向性，但在立体空间有方向性&lt;/strong&gt;。振子电气长度为1/4波长的垂直接地天线的最大辐射方向为&lt;strong&gt;在水平方向没有指向性，在垂直方向指向水平面&lt;/strong&gt;。垂直接地天线（GP）的构造为电气长度为1/4波长的垂直振子加一个“接地”反射体，因其简单而被大量应用于手持和车载业余电台，但这种天线的实际工作情况往往与理论值相差较大，尤其在频率较低的频段。最常见的原因是&lt;strong&gt;缺乏有效的接地反射体&lt;/strong&gt;。改善办法是&lt;strong&gt;GP天线必须有足够大的接地反射体来形成振子镜像，否则谐振频率和阻抗都将与理论值有显著偏差，应尽量用大面积金属体与天线的接地端直接连接&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;在电缆外面套铁氧体磁环&lt;/strong&gt;（磁珠）可以减少在音频同轴电缆屏蔽层外皮中的感应射频电流。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed7bef1fb1.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed7bef1fb1.png&#34; alt=&#34;Cable end&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed7bef1fb1.png&#34;
 	
 	
@@ -3379,6 +3739,12 @@ $$\delta(x) = \begin{cases} +\infty, &amp; x = 0 \\ 0, &amp; x \ne 0 \end{cases}
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed7d1e63a4.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed7d1e63a4.png&#34; alt=&#34;Ferrite_clamp-on&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed7d1e63a4.png&#34;
 	
 	
@@ -3440,6 +3806,12 @@ $$0\ dBd = 2.15\ dBi$$&lt;p&gt;例LK0932：比较4.5 dBd和5.85 dBi。解&lt;/p&
 &lt;/h3&gt;&lt;p&gt;无线电波在真空中的速度（即&lt;strong&gt;光速&lt;/strong&gt;）299 792 458 米/秒，我们用字母，由于长度单位米时用光速，所以上面的值没有小数点。约为&lt;strong&gt;3x10^8米/秒&lt;/strong&gt;。电波在天线导线中的传播速度大约是&lt;strong&gt;真空波速的0.95倍&lt;/strong&gt;。常用业余频段的电波在同轴电缆中的传播速度大约是&lt;strong&gt;真空波速的0.65倍&lt;/strong&gt;。&lt;/p&gt;
 &lt;h3 id=&#34;a3102-无线电波的传播规律简单计算和常见现象&#34;&gt;A.3.10.2 无线电波的传播规律、简单计算和常见现象
 &lt;/h3&gt;&lt;p&gt;无线电波按传播方式可主要分为&lt;strong&gt;地面波、天波、空间波、散射波等&lt;/strong&gt;。注意虚线上面的实线和下面的实线都是空间波，一个是发射天线直接传给接受天线，一个是经地面反射。而地波（虚线）是沿着地球表面传播，也称地表波。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed7f256c6e.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed7f256c6e.png&#34; alt=&#34;wave&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed7f256c6e.png&#34;
 	
 	
@@ -3596,7 +3968,13 @@ $$波长 = \frac{300}{频率}$$&lt;p&gt;如果你收到了一个从上千公里�
 &lt;h1 id=&#34;a4-与业余无线电台有关的安全防护技术&#34;&gt;A.4. 与业余无线电台有关的安全防护技术；
 &lt;/h1&gt;&lt;h2 id=&#34;a41-用电安全&#34;&gt;A.4.1 用电安全
 &lt;/h2&gt;&lt;p&gt;安全电压是指不致使人直接致死或致残的电压。标准国家标准GB3805－83《安全电压》，一般环境条件下允许持续接触的“安全特低电压”为&lt;strong&gt;24V&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed80e5a657.png&#34;
+&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed80e5a657.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed80e5a657.png&#34; alt=&#34;AC&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/23/65fed80e5a657.png&#34;
 	
 	
 	
@@ -3652,6 +4030,12 @@ $$波长 = \frac{300}{频率}$$&lt;p&gt;如果你收到了一个从上千公里�
 &lt;p&gt;[scode type=&amp;ldquo;yellow&amp;rdquo;]请注意，在蓝戟官网并没有半高这个版本。[/scode]
 [scode type=&amp;ldquo;red&amp;rdquo;]无论是蓝戟官网驱动还是蓝厂官方驱动，安装完后均无法打开面板，貌似是通病。而且在安装后期程序会卡死，如果直接关掉会发现安装程序会还占着几十的CPU。[/scode]
 20240331更新：使用最新版DDU卸载原驱动并安装Intel官方提供的最新驱动，目前已经能安装成功了。如果使用的是Windows自带的安全软件，DDU卸载过程中&lt;code&gt;Antimalware Service Executable&lt;/code&gt;会持续占用CPU并造成卸载过程卡住，需要到安全中心把&lt;code&gt;病毒和威胁防护设置&lt;/code&gt;下的&lt;code&gt;实时保护&lt;/code&gt;等全部关闭，等待卸载完成后再手动开启。驱动安装过程也是如此，全部关闭了之后貌似没有再出现什么问题。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/03/31/6608fe9d84571.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/31/6608fe9d84571.png&#34; alt=&#34;病毒防护设置&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/31/6608fe9d84571.png&#34;
 	
 	
@@ -3675,6 +4059,12 @@ PCI® Express4.0 支持 1 x
 3 x DisplayPort™ 2.0 with DSC / 1 x HDMI™ 2.0b
 条纹轴流扇 0dB静酷技术 超合金显卡技术 8K分辨率支持&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;在GPU-Z下的信息：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/03/21/65fc4dd9cd1da.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/21/65fc4dd9cd1da.png&#34; alt=&#34;GPU-Z&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/21/65fc4dd9cd1da.png&#34;
 	
 	
@@ -3690,6 +4080,12 @@ PCI® Express4.0 支持 1 x
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;NEAV1E
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/03/21/65fc50a11d4dc.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/21/65fc50a11d4dc.png&#34; alt=&#34;NEAV1E1&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/21/65fc50a11d4dc.png&#34;
 	
 	
@@ -3700,6 +4096,12 @@ PCI® Express4.0 支持 1 x
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/03/21/65fc50c19deb8.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/21/65fc50c19deb8.png&#34; alt=&#34;NEAV1E2&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/21/65fc50c19deb8.png&#34;
 	
 	
@@ -3714,6 +4116,12 @@ PCI® Express4.0 支持 1 x
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;HandBrake
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/03/21/65fc522e5fcd0.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/21/65fc522e5fcd0.png&#34; alt=&#34;HandBrake&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/03/21/65fc522e5fcd0.png&#34;
 	
 	
@@ -4476,6 +4884,12 @@ PCI® Express4.0 支持 1 x
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dinnerNames&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;xxx&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;效果图：
 使用前：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/02/17/65d0b99ac2876.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/02/17/65d0b99ac2876.png&#34; alt=&#34;使用前&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/02/17/65d0b99ac2876.png&#34;
 	
 	
@@ -4487,6 +4901,12 @@ PCI® Express4.0 支持 1 x
 	
 &gt;
 使用后：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/02/17/65d0bc62d9eb2.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/02/17/65d0bc62d9eb2.png&#34; alt=&#34;使用后&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/02/17/65d0bc62d9eb2.png&#34;
 	
 	
@@ -4597,6 +5017,12 @@ i3w / dwm:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;看起来需要先保证必须在恢复分区中具有 250 MB 的可用空间才能成功应用此更新。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;用DG看了下我的分区结构，发现根本没有Winre这个分区，笑死。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/01/31/65b9a73b0cd30.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/31/65b9a73b0cd30.png&#34; alt=&#34;我的分区结构，其中分区3-4是给debian用的&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/31/65b9a73b0cd30.png&#34;
 	
 	
@@ -4888,6 +5314,12 @@ i3w / dwm:&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;会进到安卓界面，先打开shizuku，会提示要启用，我们回退到adb窗口，执行：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./adb shell sh /storage/emulated/0/Android/data/moe.shizuku.privileged.api/start.sh
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后shizuku提示&lt;code&gt;shizuku is running&lt;/code&gt;。然后把&lt;code&gt;Authorized 0 applications&lt;/code&gt;点开，勾选LSPatch，再打开LSPatch，到Manager&amp;ndash;Apps点击加号，选择New Patch-Select apk(s) from storage 找到QQ安装包，点击start patch
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d331552e6.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d331552e6.png&#34; alt=&#34;shizuku&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d331552e6.png&#34;
 	
 	
@@ -4898,6 +5330,12 @@ i3w / dwm:&lt;/p&gt;
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d3ce0b407.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d3ce0b407.png&#34; alt=&#34;lsp-patch&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d3ce0b407.png&#34;
 	
 	
@@ -4908,6 +5346,12 @@ i3w / dwm:&lt;/p&gt;
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d3edd100b.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d3edd100b.png&#34; alt=&#34;start patch&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d3edd100b.png&#34;
 	
 	
@@ -4919,6 +5363,12 @@ i3w / dwm:&lt;/p&gt;
 	
 &gt;
 等待打补丁完成，然后点击Install。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d43075df2.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d43075df2.png&#34; alt=&#34;patch done&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/24/65b0d43075df2.png&#34;
 	
 	
@@ -4957,6 +5407,12 @@ i3w / dwm:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xxxxxxxxxxxxxxxxxxx.r2.cloudflarestorage.com
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;AK&lt;/code&gt;和&lt;code&gt;SK&lt;/code&gt;是创建桶的时候提供的，如果忘记了就没救了，重新弄个桶吧。
 &lt;code&gt;Encrypt Access Keys with a password&lt;/code&gt;和&lt;code&gt;Use secure transfer(SSL/TSL)&lt;/code&gt;选项保留默认即可。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/01/13/65a2a0bdc8b8c.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/13/65a2a0bdc8b8c.png&#34; alt=&#34;add account info 1&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/13/65a2a0bdc8b8c.png&#34;
 	
 	
@@ -5279,6 +5735,12 @@ i3w / dwm:&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;--&amp;gt; QUIT
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;-- 221 Bye
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;得到类似以上的信息，可以判定配置配置无误了。如果收件箱并没有看到邮件，需要到寄件邮箱查询是否被当成垃圾邮件拒收了。当然这并不影响后续使用，因为这本身就是一封只有英文标题无任何内容的邮件，很容易被ban掉。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/12/26/658adb8d00c1a.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/12/26/658adb8d00c1a.png&#34; alt=&#34;被拦截了&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/12/26/658adb8d00c1a.png&#34;
 	
 	
@@ -5340,6 +5802,12 @@ i3w / dwm:&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;保存后执行：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bash /etc/ssh/ssh_alarm.sh
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;执行完毕不会有任何回显，但是收件端&lt;code&gt;收件地址@qq.com&lt;/code&gt;应该会收到邮件：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/12/26/658addbc2a019.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/12/26/658addbc2a019.png&#34; alt=&#34;成功收到邮件&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/12/26/658addbc2a019.png&#34;
 	
 	
@@ -5379,6 +5847,12 @@ i3w / dwm:&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后重启nginx：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl retstart nginx
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;就不会报错了，访问也没问题。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/30/6567f220cd216.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/30/6567f220cd216.png&#34; alt=&#34;Nginx页面&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/30/6567f220cd216.png&#34;
 	
 	
@@ -5420,6 +5894,12 @@ i3w / dwm:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cd /usr/share/nginx/html
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://raw.githubusercontent.com/582033/monitor/master/monitor.php
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后访问ip/monitor.php：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/30/6567f6f37060a.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/30/6567f6f37060a.png&#34; alt=&#34;php访问测试&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/30/6567f6f37060a.png&#34;
 	
 	
@@ -5671,7 +6151,13 @@ i3w / dwm:&lt;/p&gt;
 &lt;h3 id=&#34;介绍&#34;&gt;介绍
 &lt;/h3&gt;&lt;p&gt;RuleApi，基于typecho正式版数据库，使用JAVA语言Springboot框架，整合redis缓存数据库，COS、OSS对象存储，是目前typecho程序功能最全，接口最完善，用户体验最好，且性能最佳的API程序。集成了用户模块（登陆，注册，邮箱验证，用户查询，用户修改），文章模块，评论模块，分类模块，和上传模块（三合一上传方式，OSS，COS，本地上传均可），在安装完成后，可以进一步扩展typecho网站的功能，并实现更强大的性能，更全面的应用范围。&lt;/p&gt;
 &lt;h3 id=&#34;截图&#34;&gt;截图
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65576a92ee3f8.png&#34;
+&lt;/h3&gt;&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65576a92ee3f8.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65576a92ee3f8.png&#34; alt=&#34;安卓端安装&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65576a92ee3f8.png&#34;
 	
 	
 	
@@ -5681,6 +6167,12 @@ i3w / dwm:&lt;/p&gt;
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65576aa82e79e.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65576aa82e79e.png&#34; alt=&#34;内容&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65576aa82e79e.png&#34;
 	
 	
@@ -5791,6 +6283,12 @@ i3w / dwm:&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    proxy_set_header REMOTE-HOST $remote_addr;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;注意修改端口。之后访问https://rule.tama.host可以进入可视化管理页面。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65577208c1bb8.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65577208c1bb8.png&#34; alt=&#34;可视化界面&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65577208c1bb8.png&#34;
 	
 	
@@ -5802,6 +6300,12 @@ i3w / dwm:&lt;/p&gt;
 	
 &gt;
 首次进去先点击安装及更新，每次更新之后都要点这个。此处需要填写&lt;code&gt;webinfo.key&lt;/code&gt;中配置的key。更新完成后关闭界面可以进入管理中心。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/6557722f7f421.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/6557722f7f421.png&#34; alt=&#34;安装及更新&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/6557722f7f421.png&#34;
 	
 	
@@ -5816,6 +6320,12 @@ i3w / dwm:&lt;/p&gt;
 &lt;/h4&gt;&lt;p&gt;这里的参数很多，我的修改只为了保证程序的运行，其他细项可以自行修改。
 &lt;code&gt;安全设置&lt;/code&gt;建议打开机器人限制模式。
 &lt;code&gt;应用模块-应用管理&lt;/code&gt;是重要的步骤，内容可以按自己的设置添加修改：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/6557734790de7.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/6557734790de7.png&#34; alt=&#34;应用设置1&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/6557734790de7.png&#34;
 	
 	
@@ -5825,7 +6335,13 @@ i3w / dwm:&lt;/p&gt;
 		alt=&#34;应用设置1&#34;
 	
 	
-&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/655773783661e.png&#34;
+&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/655773783661e.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/655773783661e.png&#34; alt=&#34;应用设置2&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/655773783661e.png&#34;
 	
 	
 	
@@ -5836,6 +6352,12 @@ i3w / dwm:&lt;/p&gt;
 	
 &gt;
 之后会得到一个&lt;code&gt;应用key&lt;/code&gt;。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/655773af8f48f.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/655773af8f48f.png&#34; alt=&#34;应用key&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/655773af8f48f.png&#34;
 	
 	
@@ -5848,6 +6370,12 @@ i3w / dwm:&lt;/p&gt;
 &gt;
 之后还需要到存储模块设置一个上传文件/视频的方式，可以选择OSS/COS/FTP/本地上传。如果使用本地上传，需要把本地&amp;amp;FTP图片访问地址修改为：&lt;code&gt;https://rule.tama.host/images/&lt;/code&gt;，rule.tama.host修改成你ruleapi的地址。（来自：&lt;a class=&#34;link&#34; href=&#34;https://www.ijkxs.com/9955.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://www.ijkxs.com/9955.html&lt;/a&gt;）
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65577452b2529.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65577452b2529.png&#34; alt=&#34;本地访问图片&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65577452b2529.png&#34;
 	
 	
@@ -5870,6 +6398,12 @@ i3w / dwm:&lt;/p&gt;
 Github:&lt;a class=&#34;link&#34; href=&#34;https://github.com/buxia97/RuleApi&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/buxia97/RuleApp&lt;/a&gt;
 假设下载的目录是C:\Files\RuleApp，打开HBulderX，并执行&lt;code&gt;文件&amp;gt;导入&amp;gt;从本地目录导入&lt;/code&gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/6557762f65a2d.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/6557762f65a2d.png&#34; alt=&#34;导入项目&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/6557762f65a2d.png&#34;
 	
 	
@@ -5895,6 +6429,12 @@ Github:&lt;a class=&#34;link&#34; href=&#34;https://github.com/buxia97/RuleApi&#
 3.app模块配置中根据需要选择Oauth如果没有配置的话把勾取消掉。
 如果不选择Push的话，每次启动app都会有弹窗提示，建议配置，配置需要到&lt;a class=&#34;link&#34; href=&#34;https://dev.dcloud.net.cn/pages/app/detail&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://dev.dcloud.net.cn/pages/app/detail&lt;/a&gt;中&lt;code&gt;我的应用&amp;gt; 应用名称&amp;gt;Android云端证书&lt;/code&gt;中查看证书详情，并记录sha1 sha256和md5值。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/655778cf37399.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/655778cf37399.png&#34; alt=&#34;证书指纹&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/655778cf37399.png&#34;
 	
 	
@@ -5907,6 +6447,12 @@ Github:&lt;a class=&#34;link&#34; href=&#34;https://github.com/buxia97/RuleApi&#
 &gt;
 然后到&lt;code&gt;各平台信息&lt;/code&gt;中填写对应值，包名也要一并填写。
 然后把数值填写到&lt;code&gt;uniPush&amp;gt;1.0&amp;gt;应用信息&lt;/code&gt;选择APPID，填写应用名称和包名、选择平台并选择Android应用签名。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/6557798cb22be.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/6557798cb22be.png&#34; alt=&#34;应用信息配置&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/6557798cb22be.png&#34;
 	
 	
@@ -5918,6 +6464,12 @@ Github:&lt;a class=&#34;link&#34; href=&#34;https://github.com/buxia97/RuleApi&#
 	
 &gt;
 保存成功后进入&lt;code&gt;uniPush&amp;gt;1.0&amp;gt;消息推送&amp;gt;配置管理&amp;gt;应用配置&lt;/code&gt;下，把Appid Appkey MasterSectrt值填写到ruleapi的&lt;code&gt;通知模块&amp;gt;UniPush配置&lt;/code&gt;中。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65577a0903248.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65577a0903248.png&#34; alt=&#34;应用配置&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65577a0903248.png&#34;
 	
 	
@@ -5928,6 +6480,12 @@ Github:&lt;a class=&#34;link&#34; href=&#34;https://github.com/buxia97/RuleApi&#
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65577a30b67f8.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65577a30b67f8.png&#34; alt=&#34;UniPushRuleapi端&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65577a30b67f8.png&#34;
 	
 	
@@ -5940,6 +6498,12 @@ Github:&lt;a class=&#34;link&#34; href=&#34;https://github.com/buxia97/RuleApi&#
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;调试&#34;&gt;调试
 &lt;/h4&gt;&lt;p&gt;到HBulderX的运行中选择运行到浏览器，等几分钟会跳转到浏览器并打开页面，可以查看是否有误。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65577acb6c90f.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65577acb6c90f.png&#34; alt=&#34;调试&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65577acb6c90f.png&#34;
 	
 	
@@ -5952,6 +6516,12 @@ Github:&lt;a class=&#34;link&#34; href=&#34;https://github.com/buxia97/RuleApi&#
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;编译&#34;&gt;编译
 &lt;/h4&gt;&lt;p&gt;执行HBulderX的的发行&amp;gt;原生App-云打包。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65577b174db42.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65577b174db42.png&#34; alt=&#34;发行&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65577b174db42.png&#34;
 	
 	
@@ -5963,6 +6533,12 @@ Github:&lt;a class=&#34;link&#34; href=&#34;https://github.com/buxia97/RuleApi&#
 	
 &gt;
 填写包名并选择使用云端证书，点击打包，会提示下载相关依赖，下载完成后会自动启动打包，如果没有配置错误一般三到五分钟后就能生成apk包。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65577b62916d8.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65577b62916d8.png&#34; alt=&#34;打包&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/17/65577b62916d8.png&#34;
 	
 	
@@ -6038,6 +6614,12 @@ Github:&lt;a class=&#34;link&#34; href=&#34;https://github.com/buxia97/RuleApi&#
 5.显卡驱动分为LLVMpipe(Software) Turnip+Zink和VirGL三种，按网上的说法Vrigl版兼容性更好，Turnip+Zink版速度快（但是turnip只支持部分高通gpu6的手机），LLVMpipe使用软件编解码，貌似占用资源更高，新手机建议用Vrigl减少兼容性问题。
 6.Box版本保留默认即可。
 7.处理器核心开关根据自己的手机选择，麒麟9000s默认只开CPU4-7，我保留这个配置使用无异常。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/65505f763eeec.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/65505f763eeec.png&#34; alt=&#34;创建新容器&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/65505f763eeec.png&#34;
 	
 	
@@ -6049,6 +6631,12 @@ Github:&lt;a class=&#34;link&#34; href=&#34;https://github.com/buxia97/RuleApi&#
 	
 &gt;
 8.WINE注册表项和DX组件基本上只需要保留默认。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/6550648240862.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/6550648240862.png&#34; alt=&#34;WINE注册表项&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/6550648240862.png&#34;
 	
 	
@@ -6059,6 +6647,12 @@ Github:&lt;a class=&#34;link&#34; href=&#34;https://github.com/buxia97/RuleApi&#
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655064bc36369.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655064bc36369.png&#34; alt=&#34;DX组件&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655064bc36369.png&#34;
 	
 	
@@ -6070,6 +6664,12 @@ Github:&lt;a class=&#34;link&#34; href=&#34;https://github.com/buxia97/RuleApi&#
 	
 &gt;
 9.环境变量这里如果游戏乱码可以设置LC_all这一项，也可以在容器内设置，其他保留默认即可。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655064dc4f24e.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655064dc4f24e.png&#34; alt=&#34;环境变量&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655064dc4f24e.png&#34;
 	
 	
@@ -6081,6 +6681,12 @@ Github:&lt;a class=&#34;link&#34; href=&#34;https://github.com/buxia97/RuleApi&#
 	
 &gt;
 10.盘符默认把存储器下的Download文件夹（即下载默认目录）设置成D:，建议新建个文件夹来专门放置游戏并配置盘符。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655065379f824.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655065379f824.png&#34; alt=&#34;驱动器（盘符）&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655065379f824.png&#34;
 	
 	
@@ -6092,6 +6698,12 @@ Github:&lt;a class=&#34;link&#34; href=&#34;https://github.com/buxia97/RuleApi&#
 	
 &gt;
 11.高级设置也只需要保持默认即可。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655065916c6c0.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655065916c6c0.png&#34; alt=&#34;高级&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655065916c6c0.png&#34;
 	
 	
@@ -6108,6 +6720,12 @@ Github:&lt;a class=&#34;link&#34; href=&#34;https://github.com/buxia97/RuleApi&#
 &lt;li&gt;建议配置完成后安装&lt;a class=&#34;link&#34; href=&#34;https://share.tama.guru/AliDisk/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/Winlator/setup.exe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;常见运行库包&lt;/a&gt;以及&lt;a class=&#34;link&#34; href=&#34;https://share.tama.guru/d/AliDisk/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/Winlator/Chs%20Fonts%28zh_CN%29.exe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;中文字体补丁&lt;/a&gt;，安装运行库需要10分钟左右时间，安装中文字体补丁时可能会提示需要安装Wine Geckc，按要求点击安装即可，如果WiFi下载慢建议用流量下载。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655066d472356.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655066d472356.png&#34; alt=&#34;运行库和字体补丁安装&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655066d472356.png&#34;
 	
 	
@@ -6120,7 +6738,13 @@ Github:&lt;a class=&#34;link&#34; href=&#34;https://github.com/buxia97/RuleApi&#
 &gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;使用截图&#34;&gt;使用截图
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655067b1d3705.png&#34;
+&lt;/h3&gt;&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655067b1d3705.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655067b1d3705.png&#34; alt=&#34;截图1&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655067b1d3705.png&#34;
 	
 	
 	
@@ -6130,6 +6754,12 @@ Github:&lt;a class=&#34;link&#34; href=&#34;https://github.com/buxia97/RuleApi&#
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655067bee434d.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655067bee434d.png&#34; alt=&#34;截图2&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655067bee434d.png&#34;
 	
 	
@@ -6254,6 +6884,12 @@ KPW2（5.12.2.2）
     &gt;https://tama.host/&lt;/a&gt;，只不过原来的版本就只有一个搜索框（其实右侧可以打开导航列表，但是不明显），而且当时脑子一抽用了黄黑做网站logo，我在外面打开自己的网站都脸红！
 而新的导航页基于&lt;a class=&#34;link&#34; href=&#34;https://github.com/ch3nnn/webstack-go&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;webstack-go项目&lt;/a&gt;，界面简洁干净，且可以选择后台添加内容（纯静态版本就需要手动修改html，上班时间我是打开一个小小的窗口一点点的改，里面天量的div一不小心就错删）。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/10/28/653beb5662d21.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/10/28/653beb5662d21.png&#34; alt=&#34;首页&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/10/28/653beb5662d21.png&#34;
 	
 	
@@ -6284,6 +6920,12 @@ KPW2（5.12.2.2）
     &gt;tamakyi.github.io&lt;/a&gt;。
 之后再创建一个repository，此处的名称就会是之后的二级域名，例如我的Repository name是index，之后这个网站的地址就是&lt;a class=&#34;link&#34; href=&#34;https://tamakyi.github.io/index&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://tamakyi.github.io/index&lt;/a&gt;。除了Repository name之外，其他都可以保留默认，然后选择Create repository.
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/10/25/65392cc5cab91.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/10/25/65392cc5cab91.png&#34; alt=&#34;repository setting&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/10/25/65392cc5cab91.png&#34;
 	
 	
@@ -6295,6 +6937,12 @@ KPW2（5.12.2.2）
 	
 &gt;
 然后要做的就是把本地的网页文件部署上去，因为在Windows环境ixa，为了直观的体现，此处我安装了Github Desktop，在创建完repository之后点击Set up in Desktop跳转到Github Desktop。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/10/25/65392d9a9dbb4.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/10/25/65392d9a9dbb4.png&#34; alt=&#34;Set up in Desktop&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/10/25/65392d9a9dbb4.png&#34;
 	
 	
@@ -6306,6 +6954,12 @@ KPW2（5.12.2.2）
 	
 &gt;
 然后Locale path选择要clone到本地的目录，例如C:/wwwroot/。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/10/25/65392e2d140da.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/10/25/65392e2d140da.png&#34; alt=&#34;Locale path&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/10/25/65392e2d140da.png&#34;
 	
 	
@@ -6318,6 +6972,12 @@ KPW2（5.12.2.2）
 &gt;
 之后该目录下会形成一个index文件夹，然后把静态网站所有文件全部扔上去（注意如果有引用文件记得修改），一定要确保该目录下有index.html文件，能且仅能用html格式。
 此处我只放了一个index.html文件，然后在Github Desktop上选择Commit to main并点击Publish branch。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/10/25/65392fe60742f.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/10/25/65392fe60742f.png&#34; alt=&#34;选择Commit to main并点击Publish branch&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/10/25/65392fe60742f.png&#34;
 	
 	
@@ -6329,6 +6989,12 @@ KPW2（5.12.2.2）
 	
 &gt;
 然后在网页端打开仓库，进入setting。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/10/25/6539303c29146.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/10/25/6539303c29146.png&#34; alt=&#34;Open repository&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/10/25/6539303c29146.png&#34;
 	
 	
@@ -6340,6 +7006,12 @@ KPW2（5.12.2.2）
 	
 &gt;
 在Pages页面把Branch的None切换到main，然后点击save。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/10/25/6539309bc201e.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/10/25/6539309bc201e.png&#34; alt=&#34;Pages setting 1&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/10/25/6539309bc201e.png&#34;
 	
 	
@@ -6350,6 +7022,12 @@ KPW2（5.12.2.2）
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/10/25/653930ac32fdb.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/10/25/653930ac32fdb.png&#34; alt=&#34;Pages setting 2&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/10/25/653930ac32fdb.png&#34;
 	
 	
@@ -6361,6 +7039,12 @@ KPW2（5.12.2.2）
 	
 &gt;
 等待几分钟，然后Pages页面就出现网址了。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/10/25/653931096978e.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/10/25/653931096978e.png&#34; alt=&#34;Create success&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/10/25/653931096978e.png&#34;
 	
 	
@@ -6372,6 +7056,12 @@ KPW2（5.12.2.2）
 	
 &gt;
 也能正常打开了。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/10/25/653931279ab72.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/10/25/653931279ab72.png&#34; alt=&#34;正常打开&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/10/25/653931279ab72.png&#34;
 	
 	
@@ -6498,7 +7188,13 @@ KPW2（5.12.2.2）
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;To authenticate, visit:
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	http://SERVERIP:PORT1/register/nodekey:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e2bfd7452.png&#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e2bfd7452.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e2bfd7452.png&#34; alt=&#34;hs-in&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e2bfd7452.png&#34;
 	
 	
 	
@@ -6538,6 +7234,12 @@ KPW2（5.12.2.2）
     &gt;https://github.com/juanfont/headscale&lt;/a&gt;。
 官方tailscale在1.30.0之后的版本基本都实现了自定义url。
 以安卓为例，打开应用程序后，必须反复打开和关闭右侧顶部栏上的烤肉串菜单图标（三个点），直到菜单中出现“更改服务器”选项。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8393b827.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8393b827.png&#34; alt=&#34;狂点三个点&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8393b827.png&#34;
 	
 	
@@ -6548,6 +7250,12 @@ KPW2（5.12.2.2）
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e854095bb.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e854095bb.png&#34; alt=&#34;出现Change server&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e854095bb.png&#34;
 	
 	
@@ -6559,6 +7267,12 @@ KPW2（5.12.2.2）
 	
 &gt;
 可以在此处输入&lt;code&gt;http://SERVERIP:PORT1&lt;/code&gt;。保存返回上一步，然后选择&lt;code&gt;Sign in with other&lt;/code&gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8897db77.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8897db77.png&#34; alt=&#34;Sign in with other&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8897db77.png&#34;
 	
 	
@@ -6570,6 +7284,12 @@ KPW2（5.12.2.2）
 	
 &gt;
 然后就一如既往的404了，使用浏览器打开这个网页，添加端口到IP后面再访问。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8cc39e42.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8cc39e42.png&#34; alt=&#34;404了&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8cc39e42.png&#34;
 	
 	
@@ -6580,6 +7300,12 @@ KPW2（5.12.2.2）
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8f3822db.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8f3822db.png&#34; alt=&#34;不404了&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e8f3822db.png&#34;
 	
 	
@@ -6591,6 +7317,12 @@ KPW2（5.12.2.2）
 	
 &gt;
 然后按照上面把那窜命令修改后复制到服务端执行，显示成功后安卓端杀掉tailscale进程，再重新进去之后就可以正常使用了。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e959e894c.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e959e894c.png&#34; alt=&#34;正常使用了&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/09/14/6501e959e894c.png&#34;
 	
 	
@@ -6638,6 +7370,12 @@ KPW2（5.12.2.2）
         
         <guid>https://blog.tama.guru/record/homeassistant-hacs-debian12.html</guid>
         <description>&lt;p&gt;HACS即&lt;code&gt;Home Assistant Community Store&lt;/code&gt;，整合了很多homeassistant的第三方集成，比如说米家的相关设备，如果使用官方自带的集成，一般只能识别出几个传感器，而且无法控制，如果想要把米家的设备完全接入就需要安装HACS下面的Xiaomi Miot Auto这个集成，安装之后效果如图所示，基本上能实现HASS管理全部米家设备的想法。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/25/64e820b842fb5.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/25/64e820b842fb5.png&#34; alt=&#34;安装集成之后的页面&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/25/64e820b842fb5.png&#34;
 	
 	
@@ -7336,6 +8074,12 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
     &gt;https://github.com/fbelavenuto/arpl/releases&lt;/a&gt;），其特点是引导式安装，不需要手工提取&lt;code&gt;grup.cfg&lt;/code&gt;修改相关文件，相对较为简单。
 ###1.下载和安装
 去上面的网站下载对应版本的zip包，解压并使用Win32DiskImager之类的工具写入U盘。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d732efe98f4.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d732efe98f4.png&#34; alt=&#34;arpl&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d732efe98f4.png&#34;
 	
 	
@@ -7350,6 +8094,12 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
 写完之后把U盘安装到需要安装群晖的主板上并在BIOS中设置好UEFI启动，因各主板步骤不一致此处不赘述。
 ###2.进入和初步配置arpl
 开启群晖主板电源等待1分钟之后，在路由器界面找到主板网卡IP,浏览器输入&lt;code&gt;http://ip:7681&lt;/code&gt;即可进入arpl界面。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d733a862a8d.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d733a862a8d.png&#34; alt=&#34;IP&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d733a862a8d.png&#34;
 	
 	
@@ -7359,7 +8109,13 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
 		alt=&#34;IP&#34;
 	
 	
-&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d733df70ec6.png&#34;
+&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d733df70ec6.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d733df70ec6.png&#34; alt=&#34;arpl界面&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d733df70ec6.png&#34;
 	
 	
 	
@@ -7370,6 +8126,12 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
 	
 &gt;
 进去之后先选择&lt;code&gt;x Cmdline menu&lt;/code&gt;，然后进入&lt;code&gt;c Define a custom MAC&lt;/code&gt;，此步骤用于修改mac1的数据，如果需要洗白建议先做这一步，修改MAC后需要重新进入路由器界面找到主板网卡IP，因为IP会重新分配。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d7346458918.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d7346458918.png&#34; alt=&#34;修改MAC&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d7346458918.png&#34;
 	
 	
@@ -7383,6 +8145,12 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
 ###3.配置arpl
 ####首先是&lt;code&gt;m Choose a model&lt;/code&gt;
 即选择安装的群晖型号，此处我以DS918+为例。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d734f031a5b.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d734f031a5b.png&#34; alt=&#34;DS918&amp;#43;&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d734f031a5b.png&#34;
 	
 	
@@ -7395,6 +8163,12 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
 &gt;
 ####第二步,&lt;code&gt;n Choose a Build Number&lt;/code&gt;
 即选择安装的版本，当前我要安装的是7.1.1，即版本号42962.
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d735383187c.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d735383187c.png&#34; alt=&#34;42962&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d735383187c.png&#34;
 	
 	
@@ -7407,6 +8181,12 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
 &gt;
 ####第三步，&lt;code&gt;s Choose a serial number&lt;/code&gt;
 即输入序列号，进去之后会有两个选项，一个是&lt;code&gt;a Generate a random serial number&lt;/code&gt;，即随机生成一个SN，如果玩黑的直接选这个即可。如果有SN码则选择第二个&lt;code&gt;m Enter a serial number&lt;/code&gt;，输入后回车会提示&lt;code&gt;Invalid serial, continue?&lt;/code&gt;，不理，确认即可。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d735fb61ff8.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d735fb61ff8.png&#34; alt=&#34;Invalid serial&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d735fb61ff8.png&#34;
 	
 	
@@ -7419,6 +8199,12 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
 &gt;
 ####第四步，&lt;code&gt;Addone&lt;/code&gt;
 即插件安装，默认会安装&lt;code&gt;misc&lt;/code&gt;和&lt;code&gt;acpid&lt;/code&gt;这两个插件，其他可以手动选择，好像对我都没用，所以就保留默认了。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d7365373041.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d7365373041.png&#34; alt=&#34;addons install&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d7365373041.png&#34;
 	
 	
@@ -7432,6 +8218,12 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
 ####第五步，&lt;code&gt;x Cmdline menu&lt;/code&gt;
 这个界面可以对一些详细的配置进行修改，比如有两个网口，想设置第二个网口的mac，则可以在&lt;code&gt;a Add/edit a cmdline item&lt;/code&gt;中输入&lt;code&gt;mac2&lt;/code&gt;并回车，然后输入MAC2的地址即可，其他例如U盘的PID和VID也可以通过这个方式修改。其他选项如字面意思理解，此处不赘述。（更正：不需要设置PID和VID，见&lt;a class=&#34;link&#34; href=&#34;https://github.com/fbelavenuto/arpl/blob/main/README-Zh.md&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/fbelavenuto/arpl/blob/main/README-Zh.md&lt;/a&gt;）
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d736c8d7f49.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d736c8d7f49.png&#34; alt=&#34;Cmdline menu&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d736c8d7f49.png&#34;
 	
 	
@@ -7442,6 +8234,12 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d737ff28aa9.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d737ff28aa9.png&#34; alt=&#34;修改PID&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d737ff28aa9.png&#34;
 	
 	
@@ -7454,6 +8252,12 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
 &gt;
 ####第六步，&lt;code&gt;i Synoinfo menu&lt;/code&gt;
 展示和修改群晖的相关信息，一般不用修改。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d73782ec5b5.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d73782ec5b5.png&#34; alt=&#34;Synoinfo&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d73782ec5b5.png&#34;
 	
 	
@@ -7466,6 +8270,12 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
 &gt;
 ####第七步，&lt;code&gt;v Advanced menu&lt;/code&gt;
 高级菜单，内容包含&lt;code&gt;切换LKM版本&lt;/code&gt;、&lt;code&gt;模块&lt;/code&gt;、&lt;code&gt;手动编辑配置文件&lt;/code&gt;、&lt;code&gt;尝试恢复DSM启动盘&lt;/code&gt;以及&lt;code&gt;展示SATA端口和设备&lt;/code&gt;，一般只用看看最后一项检查SATA是否安装正常即可。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d738622c42c.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d738622c42c.png&#34; alt=&#34;高级菜单&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d738622c42c.png&#34;
 	
 	
@@ -7477,6 +8287,12 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
 	
 &gt;
 我的主板有两个SATA控制器，一共四个端口，因为我只安装一块硬盘，所以&lt;code&gt;Port 1&lt;/code&gt;是亮的。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d7392c59480.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d7392c59480.png&#34; alt=&#34;SATA信息&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d7392c59480.png&#34;
 	
 	
@@ -7489,6 +8305,12 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
 &gt;
 ####第八步，&lt;code&gt;Build the loader&lt;/code&gt;
 即编译启动器，它会自动下载所需文件并进行编译，直到提示&lt;code&gt;Ready&lt;/code&gt;会自动退出。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d739dd66108.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d739dd66108.png&#34; alt=&#34;编译过程&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d739dd66108.png&#34;
 	
 	
@@ -7501,6 +8323,12 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
 &gt;
 ####第九步，&lt;code&gt;b Boot the loader&lt;/code&gt;
 此处即可开始启动了。此步骤会受U盘读写速度影响，（如果U盘带灯能看到狂闪）选择之后会卡一段时间直到显示&lt;code&gt;Booting...&lt;/code&gt;，需要等待。如果有接显示器，此时会看到关机了，需要手动启动。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d73a4103d18.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d73a4103d18.png&#34; alt=&#34;booting&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d73a4103d18.png&#34;
 	
 	
@@ -7513,6 +8341,12 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
 &gt;
 ###4.安装固件
 浏览器登陆https://find.synology.com会查找到刚才安装的群晖。不知道为什么，群晖助手一直都显示不到，只有通过浏览器查找才可以。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d73fb7a7d36.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d73fb7a7d36.png&#34; alt=&#34;找到服务器&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d73fb7a7d36.png&#34;
 	
 	
@@ -7523,6 +8357,12 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d73ffacb153.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d73ffacb153.png&#34; alt=&#34;安装&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d73ffacb153.png&#34;
 	
 	
@@ -7533,6 +8373,12 @@ dolphin = 文件管理器、ark = 压缩工具、kwrite = 文本编辑器、gwen
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d74024b8445.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d74024b8445.png&#34; alt=&#34;选择固件&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/12/64d74024b8445.png&#34;
 	
 	
@@ -7567,7 +8413,13 @@ PiKVM was born as a pet project, and the founder likes Arch the most.
 However, we plan to provide an alternative OS image based on Raspbian in the future - now it is quite stable.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;大概意思就是pikvm起步早，当时raspbian还没成型，且raspbian的库中不能满足pikvm的依赖。&lt;strong&gt;但是官方正在计划做基于raspbian的固件&lt;/strong&gt;，简而言之就是现在没有。
 但对我来说，arch系的系统确实难用（&lt;strong&gt;我是debian的狗&lt;/strong&gt;），另一方面我个人觉得，32位系统并不能发挥4B的全部实力。于是今天在逛pikvm的github的时候发现了这么一个issus：&lt;a class=&#34;link&#34; href=&#34;https://github.com/pikvm/pikvm/issues/374&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Running pikvm on top of another OS&lt;/a&gt;下有个评论：&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/10/64d4a19558178.png&#34;
+    &gt;Running pikvm on top of another OS&lt;/a&gt;下有个评论：
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/10/64d4a19558178.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/10/64d4a19558178.png&#34; alt=&#34;github issus&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/10/64d4a19558178.png&#34;
 	
 	
 	
@@ -7580,7 +8432,13 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 &lt;a class=&#34;link&#34; href=&#34;https://kvmnerds.com/RPiKVM/How_to_Install_PiKVM_onRaspbian_32-bit_OS.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;第一个PDF&lt;/a&gt;介绍了用树莓派官方镜像刷写工具写入32位的raspios并安装pikvm的过程，为什么一定要32位？我不明白。因此决定刷个64位的系统按他的步骤试试看。
 ###刷个RaspiOS
-系统方面我选择的是基于debian 11于20230503更新的当前最新系统。 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/10/64d4a2b421570.png&#34;
+系统方面我选择的是基于debian 11于20230503更新的当前最新系统。 
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/10/64d4a2b421570.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/10/64d4a2b421570.png&#34; alt=&#34;raspbian system flash&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/10/64d4a2b421570.png&#34;
 	
 	
 	
@@ -8129,7 +8987,13 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;If it doesn&amp;#39;&lt;/span&gt;t work, &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt; reboot one last time.
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Please make sure kvmd services are running after reboot.
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Raspbian pikvm installer script completed on Thu &lt;span class=&#34;m&#34;&gt;10&lt;/span&gt; Aug 17:18:18 CST &lt;span class=&#34;m&#34;&gt;2023&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;好像是受上面的配置影响，字面上理解是OTG这部分出问题了，但是不管了，先进&lt;code&gt;https://tama&lt;/code&gt;看看 ： &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/10/64d4ac937ca7b.png&#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;好像是受上面的配置影响，字面上理解是OTG这部分出问题了，但是不管了，先进&lt;code&gt;https://tama&lt;/code&gt;看看 ： 
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/10/64d4ac937ca7b.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/10/64d4ac937ca7b.png&#34; alt=&#34;500报错&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/10/64d4ac937ca7b.png&#34;
 	
 	
 	
@@ -8182,6 +9046,12 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 &lt;code&gt;# 5.6   05/24/23 - added override entry to fix the Invalid value &#39;&#39; for key &#39;kvmd/server/unix&#39;: None argument error&lt;/code&gt;
 (|||ﾟДﾟ)?server报错是没有，但是还有个streamer报错啊？
 我上discord翻了下，发现有人也报过这个错误：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/10/64d4b8cc9513b.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/10/64d4b8cc9513b.png&#34; alt=&#34;discord&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/10/64d4b8cc9513b.png&#34;
 	
 	
@@ -8273,7 +9143,13 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
         
         <guid>https://blog.tama.guru/agkey/DOKSURI_JJJ.html</guid>
         <description>&lt;p&gt;2023年7月28日9时55分，2305号台风“杜苏芮”在福建省晋江市沿海登陆，登陆时最大风力15级（强台风级），为1949年以来登陆福建第二强台风。在给福建、浙江等地带来强降水之后，7月29日上午，“杜苏芮”在安徽省安庆市宿松县境内减弱为热带低压，中央气象台于29日11时对其停止编号。然而，其剩余环流对京津冀地区带来的影响才刚刚开始。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/03/64ca94fa4723c.jpg&#34;
+&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/03/64ca94fa4723c.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/03/64ca94fa4723c.jpg&#34; alt=&#34;降水累计.jpg&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/03/64ca94fa4723c.jpg&#34;
 	
 	
 	
@@ -8284,7 +9160,13 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 	
 &gt;
 7月29日上午开始，“杜苏芮”外围环流北上，河北省由南向北开始出现降水天气。7月29日8时至8月2日7时，河北省平均降水量前三的地区为保定（325.5毫米），石家庄（314.5毫米），雄安新区（306毫米），临城赵庄梁家庄降水量最大为1003.4毫米。上述几个地区的年均降雨量均在500毫米左右，这四天下了往年半年多的雨，给海河流域带来了很大的防汛压力。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/03/64ca94f9ab1f1.jpg&#34;
+&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/08/03/64ca94f9ab1f1.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/03/64ca94f9ab1f1.jpg&#34; alt=&#34;海河流域水系图.jpg&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/08/03/64ca94f9ab1f1.jpg&#34;
 	
 	
 	
@@ -8322,6 +9204,12 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 &lt;li&gt;SecureCRT&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;拆机过程不再赘述网上一抓一大把，拿出主板的时候注意从顶部抠开。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd38ff776cb.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd38ff776cb.png&#34; alt=&#34;底部的充电口和电源会有卡槽，因此选择顶部拆除主板&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd38ff776cb.png&#34;
 	
 	
@@ -8333,6 +9221,12 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 	
 &gt;
 安装好TTL的驱动并确定好COM端口号，配置SecureCRT如下图所示。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd39ced253e.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd39ced253e.png&#34; alt=&#34;我的端口是COM4，SecureCRT配置一定要如图所示设置&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd39ced253e.png&#34;
 	
 	
@@ -8344,6 +9238,12 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 	
 &gt;
 接下来进行硬件连接，需要切换成3.3V模式，然后划出三根线，GND连接主板上任意部位，我连接到充电口；DEBUG接口左边为RX，连接到TTL的TX，中间为TX，连接到TTL的RX，最终如下图所示。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3b5343c36.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3b5343c36.png&#34; alt=&#34;接线方式&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3b5343c36.png&#34;
 	
 	
@@ -8356,6 +9256,12 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 &gt;
 *正式刷写时此处应用烙铁飞出RX TX这两根线并固定好，否则刷到半断开了容易GG。
 此时重启KPW3，SecureCRT上应该会显示出一些信息，证明是连接成功了。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3c4f9ca10.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3c4f9ca10.png&#34; alt=&#34;SecureCRT信息&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3c4f9ca10.png&#34;
 	
 	
@@ -8371,6 +9277,12 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 &lt;p&gt;焊点太小了焊不上，此贴终结。&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;买了个J焊头，这次焊上去了，继续更新。因为触点实在太小了，拉了两坨锡把触点搞大，好在没有连锡。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c64da366c22.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c64da366c22.png&#34; alt=&#34;2023-07-30T11:46:40.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c64da366c22.png&#34;
 	
 	
@@ -8382,6 +9294,12 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 	
 &gt;
 长按电源10S重启，直到SecureCRT信息跳动，疯狂的按Enter（其实只要在&lt;code&gt;Hit any key to stop autoboot:0&lt;/code&gt;之前按住就行了，不然会进入正常启动流程。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c64dfb2e960.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c64dfb2e960.png&#34; alt=&#34;2023-07-30T11:48:09.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c64dfb2e960.png&#34;
 	
 	
@@ -8394,6 +9312,12 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 &gt;
 然后电脑安装这个&lt;a class=&#34;link&#34; href=&#34;https://359303267.github.io/files/kindle-02/Zadig.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;驱动&lt;/a&gt;，驱动选择&lt;code&gt;libsub-win32&lt;/code&gt;即可。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c654fdd287a.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c654fdd287a.png&#34; alt=&#34;驱动安装&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c654fdd287a.png&#34;
 	
 	
@@ -8405,6 +9329,12 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 	
 &gt;
 驱动安装完成后回到SecureCRT,在&lt;code&gt;uboot&amp;gt;&lt;/code&gt;后输入&lt;code&gt;run bootcmd_diags&lt;/code&gt;回车，然后再次疯狂回车，避免程序跑完后系统正常启动。注意，&lt;em&gt;此时要把USB数据线与电脑连接。&lt;/em&gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c655b86b3a3.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c655b86b3a3.png&#34; alt=&#34;进入Recovery模式&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c655b86b3a3.png&#34;
 	
 	
@@ -8416,6 +9346,12 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 	
 &gt;
 如果成功了，会弹出一个Menu菜单，这个菜单会有倒计时，10秒没有反应就正常启动，因此要快点按住&lt;code&gt;e&lt;/code&gt;，此时电脑会弹出一个Kindle的分区，把&lt;code&gt;update_pw3_factory_5.8.9.0.1.bin&lt;/code&gt;这个固件放进去，复制完成后按住&lt;code&gt;1&lt;/code&gt;，系统会进入恢复模式并自动升级。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c656bd55ca9.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c656bd55ca9.png&#34; alt=&#34;复制到kindle&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c656bd55ca9.png&#34;
 	
 	
@@ -8425,7 +9361,13 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 		alt=&#34;复制到kindle&#34;
 	
 	
-&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c656d7ad5cd.png&#34;
+&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c656d7ad5cd.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c656d7ad5cd.png&#34; alt=&#34;复制到Kindle2&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c656d7ad5cd.png&#34;
 	
 	
 	
@@ -8434,7 +9376,13 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 		alt=&#34;复制到Kindle2&#34;
 	
 	
-&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c657074ccc8.png&#34;
+&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c657074ccc8.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c657074ccc8.png&#34; alt=&#34;开始升级&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c657074ccc8.png&#34;
 	
 	
 	
@@ -8445,6 +9393,12 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 	
 &gt;
 在Kindle上可以看到显示正在安装更新。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c6575d5d9ee.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c6575d5d9ee.png&#34; alt=&#34;正在安装更新&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c6575d5d9ee.png&#34;
 	
 	
@@ -8457,6 +9411,12 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 &gt;
 这个时间是比较久的，而且线路松动的话设备很容易寄，因此焊接必须要做好，保证线路不能松动。
 等大约二十分钟后系统自动重启，可以看到系统版本已经降下来了。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c65790d27fa.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c65790d27fa.png&#34; alt=&#34;降级成功&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c65790d27fa.png&#34;
 	
 	
@@ -8489,6 +9449,12 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 &lt;/ul&gt;
 &lt;p&gt;0.5G内存可能是小了点，但是免费的，跑个Debian应该还行。
 申请之后一段时间会收到这个提示：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2ceba25477.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2ceba25477.png&#34; alt=&#34;2023-07-15T16:52:09.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2ceba25477.png&#34;
 	
 	
@@ -8504,7 +9470,13 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 &lt;ol&gt;
 &lt;li&gt;选择Cloud Compute&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2cf27838d7.png&#34;
+&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2cf27838d7.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2cf27838d7.png&#34; alt=&#34;D1&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2cf27838d7.png&#34;
 	
 	
 	
@@ -8517,6 +9489,12 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;选择Regular Performance
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2cf6e27c7a.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2cf6e27c7a.png&#34; alt=&#34;D2&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2cf6e27c7a.png&#34;
 	
 	
@@ -8530,6 +9508,12 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;选择Server Location。需要注意的是，免费计划只适用于美国西雅图、迈阿密和德国法兰克福，选择其他地方是不会在Server Size出现&amp;quot;Free Tier&amp;quot;这个选项的。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2d0139c2d4.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2d0139c2d4.png&#34; alt=&#34;D3&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2d0139c2d4.png&#34;
 	
 	
@@ -8539,7 +9523,13 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 		alt=&#34;D3&#34;
 	
 	
-&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2d0213b511.png&#34;
+&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2d0213b511.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2d0213b511.png&#34; alt=&#34;D4&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/16/64b2d0213b511.png&#34;
 	
 	
 	
@@ -8616,7 +9606,13 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
         
         <guid>https://blog.tama.guru/record/tamabox.html</guid>
         <description>&lt;p&gt;之前接触过NekoBox这个匿名提问箱，非常小巧，界面简洁不花哨，非常有好感。但是因为一些不方便说明的原因，作者把原站关闭了（&lt;strong&gt;更正，作者已经重新开放原站了&lt;/strong&gt;），实在可惜。好在他有把源码放到github（引路：https://github.com/NekoWheel/NekoBox)，虽然基本上相当于没有教程，而且使用过程中有好多报错。经过搭建之后半天摸索，现在功能基本上都正常了。
-在此基础上，我引入并魔改了几个js实现了页面二维码以及自定义前景色背景色等小功能，另一方面则是尽量把可以部署的资源都部署到OSS上以实现更快速的访问。&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/27/65b4051a4908d.jpg&#34;
+在此基础上，我引入并魔改了几个js实现了页面二维码以及自定义前景色背景色等小功能，另一方面则是尽量把可以部署的资源都部署到OSS上以实现更快速的访问。
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/01/27/65b4051a4908d.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/27/65b4051a4908d.jpg&#34; alt=&#34;一些修改&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/27/65b4051a4908d.jpg&#34;
 	
 	
 	
@@ -8625,7 +9621,13 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 		alt=&#34;一些修改&#34;
 	
 	
-&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/27/65b4063f2a0ce.jpg&#34;
+&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/01/27/65b4063f2a0ce.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/27/65b4063f2a0ce.jpg&#34; alt=&#34;二维码自定义颜色&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/27/65b4063f2a0ce.jpg&#34;
 	
 	
 	
@@ -8640,6 +9642,12 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
     &gt;狼的提问箱&lt;/a&gt; 欢迎访问和体验！&lt;/p&gt;
 &lt;p&gt;界面很简洁，很干净。&lt;/p&gt;
 &lt;p&gt;正如作者所说的“一个究极简洁的匿名问答箱。没有多余的社交元素，只是一问一答。不提醒，不打扰。你不需要下载 App，不需要绑定社交账号，甚至连邮箱都不需要是真的。”
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/06/03/647aded8a9a91.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/06/03/647aded8a9a91.png&#34; alt=&#34;2023-06-03T06:33:59.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/06/03/647aded8a9a91.png&#34;
 	
 	
@@ -8651,6 +9659,12 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 	
 &gt;
 提问也不需要注册，如果是需要收到提醒就填个接收邮箱就行了：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/06/03/647adef1ce54b.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/06/03/647adef1ce54b.png&#34; alt=&#34;2023-06-03T06:34:24.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/06/03/647adef1ce54b.png&#34;
 	
 	
@@ -8661,7 +9675,13 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 	
 	
 &gt;
-再最近一次更新中也实现了图片评论回答功能，一般提问箱的功能基本上能够实现了（用的R2作为图床，别问为什么）:&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/27/65b4070845834.jpg&#34;
+再最近一次更新中也实现了图片评论回答功能，一般提问箱的功能基本上能够实现了（用的R2作为图床，别问为什么）:
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/01/27/65b4070845834.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/27/65b4070845834.jpg&#34; alt=&#34;图片问答&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/27/65b4070845834.jpg&#34;
 	
 	
 	
@@ -8672,6 +9692,12 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 	
 &gt;
 可以自定义提问箱的背景和个人头像，怕被骚扰？也可惜设置仅允许注册用户向我提问，也可以把所有关于你的信息导出，如果想销号也是直接停用：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/06/03/647adf02a5ac4.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/06/03/647adf02a5ac4.png&#34; alt=&#34;2023-06-03T06:34:41.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/06/03/647adf02a5ac4.png&#34;
 	
 	
@@ -8694,6 +9720,12 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
         
         <guid>https://blog.tama.guru/record/dg1_with_b550m.html</guid>
         <description>&lt;p&gt;先上结果：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bafc914fe4.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bafc914fe4.png&#34; alt=&#34;image0&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bafc914fe4.png&#34;
 	
 	
@@ -8710,6 +9742,12 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 大前提肯定是把ResizeBAR打开了，详情看之前的文章：[post cid=&amp;ldquo;239&amp;rdquo; /]
 首先我是插在A320M+2200G平台上的（这是NAS机，之前我想把这做推流机），插上去之后显示无输出，但是PiKVM能看到硬盘灯在闪烁，判断系统是正常运行了，于是从远程桌面进去发现能正常，安装驱动之后能够正确识别型号（设备管理器中有一个PCI设备一直显示无驱动且找不到驱动），发现NDI推流延迟较高，故放弃，转战主机。
 主机上主显卡是3060TI，这玩意非常的大，大到把主板底部的大多数接口都盖住了。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bb1d9637ac.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bb1d9637ac.png&#34; alt=&#34;image1&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bb1d9637ac.png&#34;
 	
 	
@@ -8727,7 +9765,13 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 &lt;li&gt;接下来我用3060TI接上延长线连接PCIe4.0接口，DG1直插PCIe3.0接口，显示器能反应，能进BIOS，但是进入系统的启动过程中会提示无法启动，无论切换到Win10 LTSC2021 Server2022 Win11均无法正常启动，这里就是我最疑惑的地方了。&lt;/li&gt;
 &lt;li&gt;最后我改变了想法，把3060TI接上延长线连接PCIe3.0接口，DG1直插PCIe4.0接口，却发现是能正常进入系统了！我的两台显示器分别插在两张卡上，进入系统之后只有插在3060TI上的卡的显示器是亮的，插在DG1的显示器黑屏。安装Xe驱动后，双屏正常工作了。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bb463d2912.png&#34;
+&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bb463d2912.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bb463d2912.png&#34; alt=&#34;image2&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bb463d2912.png&#34;
 	
 	
 	
@@ -8738,6 +9782,12 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 	
 &gt;
 但是这样对性能的损耗有些大，3060TI在PCIe3.0上无法发挥其最大效用，而DG1占着PCIe4.0接口，但它最多也只能跑到4.0 x8
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bb523b9976.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bb523b9976.png&#34; alt=&#34;image3&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bb523b9976.png&#34;
 	
 	
@@ -8748,6 +9798,12 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bb5a7f26ea.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bb5a7f26ea.png&#34; alt=&#34;image4&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bb5a7f26ea.png&#34;
 	
 	
@@ -8760,6 +9816,12 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 &gt;
 而且我发现这样接上之后，鼠标的拖动会偶尔发生卡顿，这个情况现在也是无解。
 接下来我想再买一根PCIe4.0的延长线，看看这样插能不能把性能跑满，后续再继续测试视频和直播的编解码能力。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bbb5982d69.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bbb5982d69.png&#34; alt=&#34;image5&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bbb5982d69.png&#34;
 	
 	
@@ -8770,6 +9832,12 @@ However, we plan to provide an alternative OS image based on Raspbian in the fut
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bbb49660ed.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bbb49660ed.png&#34; alt=&#34;image6&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/10/645bbb49660ed.png&#34;
 	
 	
@@ -8799,6 +9867,12 @@ PS5:在微星H510M爆破弹上开启UEFI resizebar above 4g和安全启动，关
     &gt;Nvidia官网&lt;/a&gt;)&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;这不是今天刚买了DG1嘛，有说到什么Resizebar什么新功能巴拉巴拉的，之前听都没听过，查了下资料发现好像是有点用处的嗷，又看了下30系确实是能用的，于是喜滋滋的去&lt;a class=&#34;link&#34; href=&#34;https://nvidia.custhelp.com/app/answers/detail/a_id/5165/~/nvidia-resizable-bar-firmware-update-tool&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;这里&lt;/a&gt;看如何操作（这里的七彩虹链接404了，后面是去官网找的）。我的卡是七彩虹的iGame GeForce RTX 3060 Ti Ultra W OC-V，去官网上找到对应的驱动页面，找到BIOS看到一个3060Ti Resizable BAR Support，哟还是今年三月更新的，赶紧下载了。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457ba25bbd51.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457ba25bbd51.png&#34; alt=&#34;显示更新时间还挺近的&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457ba25bbd51.png&#34;
 	
 	
@@ -8810,6 +9884,12 @@ PS5:在微星H510M爆破弹上开启UEFI resizebar above 4g和安全启动，关
 	
 &gt;
 打开压缩包之后打开&lt;code&gt;3060tiRZBARupdaterV2.exe&lt;/code&gt;（这里显示修改时间2021/4/9，怪）
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457ba8cdc288.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457ba8cdc288.png&#34; alt=&#34;3060tiRZBARupdaterV2.exe&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457ba8cdc288.png&#34;
 	
 	
@@ -8827,6 +9907,12 @@ PS5:在微星H510M爆破弹上开启UEFI resizebar above 4g和安全启动，关
 &lt;li&gt;一张30系显卡&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;然后我就走了一遍流程把上面都打开了（顺便还把BIOS给升级了一遍）。重启后发现还是显示&lt;code&gt;Resize Bar Disable&lt;/code&gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bc5cdc0f7.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bc5cdc0f7.png&#34; alt=&#34;这是最后处理好了的图，原来这里是显示Disable的&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bc5cdc0f7.png&#34;
 	
 	
@@ -8838,6 +9924,12 @@ PS5:在微星H510M爆破弹上开启UEFI resizebar above 4g和安全启动，关
 	
 &gt;
 然后在GPU-Z的Advanced-PCIe Resizable BAR下面的Resizable BAR enabled in BIOS显示是NO ::acfun:19::
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bcba7a168.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bcba7a168.png&#34; alt=&#34;这里原来一直都是NO&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bcba7a168.png&#34;
 	
 	
@@ -8857,6 +9949,12 @@ PS5:在微星H510M爆破弹上开启UEFI resizebar above 4g和安全启动，关
 [button color=&amp;ldquo;danger&amp;rdquo;]风险警告！刷写VBIOS操作不当可能会导致显卡变砖！[/button]
 简单来说，就是到&lt;a class=&#34;link&#34; href=&#34;https://www.techpowerup.com/vgabios&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;这个网站&lt;/a&gt;搜索到自己型号的显卡，找到之后下载到一个rom后缀的文件，这个就是vbios了。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457be6670682.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457be6670682.png&#34; alt=&#34;我对应的型号是这个&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457be6670682.png&#34;
 	
 	
@@ -8869,6 +9967,12 @@ PS5:在微星H510M爆破弹上开启UEFI resizebar above 4g和安全启动，关
 &gt;
 文件有了，还需要工具，也是到这个网站找到NVIDIA NVFlash这个页面:&lt;a class=&#34;link&#34; href=&#34;https://www.techpowerup.com/download/nvidia-nvflash/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://www.techpowerup.com/download/nvidia-nvflash/&lt;/a&gt;按自己机器的型号下载到压缩包之后，把文件解压，并把rom文件放在同一个文件夹。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bf0d1451d.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bf0d1451d.png&#34; alt=&#34;如果怕ROM文件混淆可以自己重命名&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bf0d1451d.png&#34;
 	
 	
@@ -8880,6 +9984,12 @@ PS5:在微星H510M爆破弹上开启UEFI resizebar above 4g和安全启动，关
 	
 &gt;
 以管理员身份运行CMD，并进入此文件夹。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bf5d1318d.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bf5d1318d.png&#34; alt=&#34;CMD进入文件夹&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bf5d1318d.png&#34;
 	
 	
@@ -8891,6 +10001,12 @@ PS5:在微星H510M爆破弹上开启UEFI resizebar above 4g和安全启动，关
 	
 &gt;
 先执行&lt;code&gt;nvflash.exe --list&lt;/code&gt;查询是否识别到显卡并且判断显卡vbios版本
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bfafd2aa7.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bfafd2aa7.png&#34; alt=&#34;此处的10DE,2486,7377,1501便是我的vbios版本，当然，这已经是升级后的了&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457bfafd2aa7.png&#34;
 	
 	
@@ -8902,6 +10018,12 @@ PS5:在微星H510M爆破弹上开启UEFI resizebar above 4g和安全启动，关
 	
 &gt;
 然后执行&lt;code&gt;nvflash.exe -6 Colorful.RTX3060Ti.8192.201112.rom&lt;/code&gt;这里选择要升级的rom文件，&lt;code&gt;-6&lt;/code&gt;参数是强制升级。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457c038e046c.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457c038e046c.png&#34; alt=&#34;升级过程，没截图，手机拍屏幕&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457c038e046c.png&#34;
 	
 	
@@ -8915,6 +10037,12 @@ PS5:在微星H510M爆破弹上开启UEFI resizebar above 4g和安全启动，关
 上图中现有版本是94.04.27.80.EC，要升级的版本是94.04.27.80.ED，看上去确实是差了一个版本。
 如果顺利的话这里直接一路y过去，最后会提示你要重启，重启就是了。
 然后再次打开上面那个&lt;code&gt;3060tiRZBARupdaterV2.exe&lt;/code&gt;，哦豁。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457c1b0845eb.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457c1b0845eb.png&#34; alt=&#34;已经提示支持升级了&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457c1b0845eb.png&#34;
 	
 	
@@ -8926,6 +10054,12 @@ PS5:在微星H510M爆破弹上开启UEFI resizebar above 4g和安全启动，关
 	
 &gt;
 &lt;code&gt;Update supported, will be applied&lt;/code&gt; 我直接一个y。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457c15f8e864.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457c15f8e864.png&#34; alt=&#34;升级成功了&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457c15f8e864.png&#34;
 	
 	
@@ -8938,6 +10072,12 @@ PS5:在微星H510M爆破弹上开启UEFI resizebar above 4g和安全启动，关
 &gt;
 提示&lt;code&gt;Update successful&lt;/code&gt;，它要求重启，那我直接一个重启。
 最后就是喜闻乐见的开启成功了，果然是vbios的问题。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457c23aed0ea.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457c23aed0ea.png&#34; alt=&#34;BAR1原来只有256，现在变成8192，即全卡显存大小&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/6457c23aed0ea.png&#34;
 	
 	
@@ -9009,6 +10149,12 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
 &lt;li&gt;再加个核显
 也是偶然看到有&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/617531197&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://zhuanlan.zhihu.com/p/617531197&lt;/a&gt;这个文章，第一次知道有外置核显这种玩意 ::acfun:02::
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/645766a9cb0b8.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/645766a9cb0b8.png&#34; alt=&#34;DG1外观&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/07/645766a9cb0b8.png&#34;
 	
 	
@@ -9200,6 +10346,12 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
 &lt;li&gt;下载并配置go-cqhttp
 到官网下载当前环境配置版本的go-cqhttp，此处我是windows，直接下载&lt;a class=&#34;link&#34; href=&#34;https://github.com/Mrs4s/go-cqhttp/releases/download/v1.0.1/go-cqhttp_windows_amd64.exe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;windows_x64&lt;/a&gt;版本。下载后双击运行exe，提示无法直接运行，之后生成一个bat文件，双击&lt;code&gt;go-cqhttp.bat&lt;/code&gt;文件运行，然后输入1回车，提示&lt;code&gt;默认配置文件已生成，请修改 config.yml 后重新启动!&lt;/code&gt;后关闭窗口。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/05/64551e91cd25b.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/05/64551e91cd25b.png&#34; alt=&#34;2023-05-05T15:19:44.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/05/64551e91cd25b.png&#34;
 	
 	
@@ -9211,6 +10363,12 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
 	
 &gt;
 修改&lt;code&gt;config.yml&lt;/code&gt;，主要是修改uin这一项，其他不用管（因为之后使用的是watch协议登录，所以不需要填密码），修改后保存文件。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/05/64551f1085317.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/05/64551f1085317.png&#34; alt=&#34;2023-05-05T15:21:51.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/05/64551f1085317.png&#34;
 	
 	
@@ -9222,6 +10380,12 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
 	
 &gt;
 再次双击&lt;code&gt;go-cqhttp.bat&lt;/code&gt;文件运行，在提示&lt;code&gt;Bot将在5秒后登录并开始信息处理, 按 Ctrl+C 取消.&lt;/code&gt;后按Ctrl+C中断程序运行。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/05/64551fac3c9af.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/05/64551fac3c9af.png&#34; alt=&#34;2023-05-05T15:24:27.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/05/64551fac3c9af.png&#34;
 	
 	
@@ -9233,6 +10397,12 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
 	
 &gt;
 然后目录下会生成一个&lt;code&gt;device.json&lt;/code&gt;文件，打开并将&lt;code&gt;&amp;quot;protocol&amp;quot;:6&lt;/code&gt;的值修改成&lt;code&gt;2&lt;/code&gt;，保存。然后再次双击&lt;code&gt;go-cqhttp.bat&lt;/code&gt;文件运行，一段时间后他会提示你扫码登录，使用登录了同一个账号的手机扫码会提示是一个手表设备，确认登录。等出现如下内容时可以关闭程序。并看到目录下生成了&lt;code&gt;sesssion.token&lt;/code&gt;这个文件。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/05/645520dc60a55.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/05/645520dc60a55.png&#34; alt=&#34;2023-05-05T15:29:31.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/05/645520dc60a55.png&#34;
 	
 	
@@ -9245,6 +10415,12 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
 &gt;&lt;/li&gt;
 &lt;li&gt;修改acfunlive配置
 把gocqhttp目录下的&lt;code&gt;sesssion.token&lt;/code&gt;和&lt;code&gt;device.json&lt;/code&gt;复制到acfunlive目录（保险起见可以全部复制过去），然后将其重命名为&lt;code&gt;qqsesssion.token&lt;/code&gt;和&lt;code&gt;qqdevice.json&lt;/code&gt;，此时目录结构如下所示。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/05/6455217dd9f5c.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/05/6455217dd9f5c.png&#34; alt=&#34;2023-05-05T15:32:12.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/05/6455217dd9f5c.png&#34;
 	
 	
@@ -9256,6 +10432,12 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
 	
 &gt;
 此时在powershell下执行&lt;code&gt;.\acfunlive.exe -mirai&lt;/code&gt;或者正常启动到&lt;code&gt;http://localhost:51880/startmirai&lt;/code&gt;再打开&lt;code&gt;http://localhost:51880/log&lt;/code&gt;可以看到已经登录成功了。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/05/05/64552211c7de8.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/05/64552211c7de8.png&#34; alt=&#34;2023-05-05T15:34:40.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/05/05/64552211c7de8.png&#34;
 	
 	
@@ -9277,6 +10459,12 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
         <guid>https://blog.tama.guru/record/EC200A-CN.html</guid>
         <description>&lt;p&gt;本来是想买个随身WIFI，以便家里突然断网/断电的时候能够用手头上多余的一张SIM卡开个应急热点，但是去淘宝搜了一圈，成品随身WIFI要么说经常断网，要么就是无法使用自己的卡，要么就是能插自己的卡，但是只能插物联网卡或是插一张之后就不能插别的卡了（卡和机器绑定了），可玩性极差。然后想想家里还有一坨树莓派，用充电宝供电，能不能在这个基础上整些模块。
 于是，在搜索了相关材料之后，选择了移远的EC200A-CN。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/04/19/643ffc0ca404b.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/04/19/643ffc0ca404b.png&#34; alt=&#34;2023-04-19T14:34:51.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/04/19/643ffc0ca404b.png&#34;
 	
 	
@@ -9295,6 +10483,12 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
 插上去之后，灯开始闪，但是执行
 &lt;code&gt;ifconfig&lt;/code&gt;
 之后：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/04/19/643ffe20059da.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/04/19/643ffe20059da.png&#34; alt=&#34;2023-04-19T14:43:43.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/04/19/643ffe20059da.png&#34;
 	
 	
@@ -9307,6 +10501,12 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
 &gt;
 你妈的，我USB0呢？
 吓得我赶紧看看是不是给我搞坏了或者根本没识别。 ::acfun:02::
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/04/19/643ffe7cdbef4.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/04/19/643ffe7cdbef4.png&#34; alt=&#34;2023-04-19T14:45:16.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/04/19/643ffe7cdbef4.png&#34;
 	
 	
@@ -9319,6 +10519,12 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
 &gt;
 还好还好，东西还在。 ::acfun:03::
 那么这是怎么个回事呢？我看店铺上明明写着linux免驱啊！于是在问一通客服之后 给了我个tgz包。 ::acfun:01:: 不问不给是吧。解压之后内容如下：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/04/19/643fff1dcc0a8.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/04/19/643fff1dcc0a8.png&#34; alt=&#34;2023-04-19T14:47:57.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/04/19/643fff1dcc0a8.png&#34;
 	
 	
@@ -9344,6 +10550,12 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
 再执行一次上面的命令，就算是成功完成驱动安装了。可以通过执行
 &lt;code&gt;dmesg | grep ttyUSB*&lt;/code&gt;
 验证是否安装完成，我这个板子只有3个TTY，5G的卡好像是有5个TTY的。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/04/19/64400113e27f2.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/04/19/64400113e27f2.png&#34; alt=&#34;2023-04-19T14:56:19.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/04/19/64400113e27f2.png&#34;
 	
 	
@@ -9392,6 +10604,12 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
 &lt;code&gt;screen -S dial&lt;/code&gt;
 执行：
 &lt;code&gt;wvdial lan1&lt;/code&gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/04/19/644002b020efb.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/04/19/644002b020efb.png&#34; alt=&#34;2023-04-19T15:03:11.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/04/19/644002b020efb.png&#34;
 	
 	
@@ -9404,6 +10622,12 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
 &gt;
 会根据配置文件进行PPP拨号，并生成一个ppp0的网卡。然后把screen放到后台，执行以下命令实验是否成功联网：
 &lt;code&gt;ping www.baidu.com -I ppp0&lt;/code&gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/04/19/6440033f0c2b1.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/04/19/6440033f0c2b1.png&#34; alt=&#34;2023-04-19T15:05:34.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/04/19/6440033f0c2b1.png&#34;
 	
 	
@@ -9426,7 +10650,13 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
         <description>&lt;p&gt;安装PVE并不复杂，相关操作网上一抓一大把此处不再赘述。
 此处主要记录一些安装后碰上的问题以及对应的解决方案。
 #####&lt;center&gt;开启硬件直通&lt;/center&gt;#####
-1.首先确保CPU带有虚拟化能力。对于AMD平台，在&lt;code&gt;BIOS的高级&amp;gt;CPU设置&lt;/code&gt;查看是否有能开启&lt;code&gt;SVM Mode&lt;/code&gt;。&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640cb997ec1de.png&#34;
+1.首先确保CPU带有虚拟化能力。对于AMD平台，在&lt;code&gt;BIOS的高级&amp;gt;CPU设置&lt;/code&gt;查看是否有能开启&lt;code&gt;SVM Mode&lt;/code&gt;。
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640cb997ec1de.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640cb997ec1de.png&#34; alt=&#34;2023-03-11T17:25:44.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640cb997ec1de.png&#34;
 	
 	
 	
@@ -9435,7 +10665,13 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
 		alt=&#34;2023-03-11T17:25:44.png&#34;
 	
 	
-&gt;确认能打开后，到&lt;code&gt;高级&amp;gt;AMD CBS&amp;gt;NBIO Common Options&amp;gt;NB Configuration&lt;/code&gt;下把&lt;code&gt;IOMMU&lt;/code&gt;打开。&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640cba128c724.png&#34;
+&gt;确认能打开后，到&lt;code&gt;高级&amp;gt;AMD CBS&amp;gt;NBIO Common Options&amp;gt;NB Configuration&lt;/code&gt;下把&lt;code&gt;IOMMU&lt;/code&gt;打开。
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640cba128c724.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640cba128c724.png&#34; alt=&#34;2023-03-11T17:27:47.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640cba128c724.png&#34;
 	
 	
 	
@@ -9481,6 +10717,12 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
 修改文件：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;usr&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;share&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;javascript&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;proxmox&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;widget&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;toolkit&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;proxmoxlib&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;js&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;搜索 &lt;code&gt;data.status.toLowerCase&lt;/code&gt;，并将框中内容删除：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640cbd6c8417c.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640cbd6c8417c.png&#34; alt=&#34;2023-03-11T17:42:05.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640cbd6c8417c.png&#34;
 	
 	
@@ -9492,6 +10734,12 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
 	
 &gt;
 再次搜索 &lt;code&gt;data.status.toLowerCase&lt;/code&gt;，并将框中内容删除：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640cbda27355a.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640cbda27355a.png&#34; alt=&#34;2023-03-11T17:42:59.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640cbda27355a.png&#34;
 	
 	
@@ -9523,7 +10771,13 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;cp&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;usr&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;share&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;perl5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;PVE&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;APLInfo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pm&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;usr&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;share&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;perl5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;PVE&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;APLInfo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pm_back&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;sed&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;s|http://download.proxmox.com|https://mirrors.tuna.tsinghua.edu.cn/proxmox|g&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;usr&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;share&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;perl5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;PVE&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;APLInfo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pm&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;更换完成后重启pve。
-2、接下来进入PVE网页端，按如下操作安装debian软件包。（选择的目录应有CT镜像功能）&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d92828b077.png&#34;
+2、接下来进入PVE网页端，按如下操作安装debian软件包。（选择的目录应有CT镜像功能）
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d92828b077.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d92828b077.png&#34; alt=&#34;2023-03-12T08:51:14.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d92828b077.png&#34;
 	
 	
 	
@@ -9533,7 +10787,13 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
 	
 	
 &gt;之后等待窗口提示&lt;code&gt;TASK OK&lt;/code&gt;。
-3、点击右上角的&lt;code&gt;创建CT&lt;/code&gt;，配置常规选项：特别要记住&lt;code&gt;CT ID&lt;/code&gt;，并把&lt;code&gt;无特权的容器&lt;/code&gt;的勾取消掉。&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d93a5acf5c.png&#34;
+3、点击右上角的&lt;code&gt;创建CT&lt;/code&gt;，配置常规选项：特别要记住&lt;code&gt;CT ID&lt;/code&gt;，并把&lt;code&gt;无特权的容器&lt;/code&gt;的勾取消掉。
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d93a5acf5c.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d93a5acf5c.png&#34; alt=&#34;2023-03-12T08:56:05.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d93a5acf5c.png&#34;
 	
 	
 	
@@ -9544,6 +10804,12 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
 	
 &gt;
 模板刚才下载的目录位置以及模板。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d93cd17138.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d93cd17138.png&#34; alt=&#34;2023-03-12T08:56:45.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d93cd17138.png&#34;
 	
 	
@@ -9555,6 +10821,12 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
 	
 &gt;
 磁盘空间根据实际情况给，建议20G以上。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d93f8bccc7.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d93f8bccc7.png&#34; alt=&#34;2023-03-12T08:57:28.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d93f8bccc7.png&#34;
 	
 	
@@ -9566,6 +10838,12 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
 	
 &gt;
 核心数分配根据机器的实际情况配置。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d9413db27b.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d9413db27b.png&#34; alt=&#34;2023-03-12T08:57:56.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d9413db27b.png&#34;
 	
 	
@@ -9577,6 +10855,12 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
 	
 &gt;
 内存设置考虑到后期我需要运行的Docker内容较多，我设置为1024，如果配置较低或者使用负载较小可以设置512，Swap同理。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d9459ae6d2.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d9459ae6d2.png&#34; alt=&#34;2023-03-12T08:59:05.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d9459ae6d2.png&#34;
 	
 	
@@ -9588,6 +10872,12 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
 	
 &gt;
 网络选项根据自己内网路由情况进行编辑，不建议使用DHCP，因为我经常找不到IP。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d94b3dfa2c.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d94b3dfa2c.png&#34; alt=&#34;2023-03-12T09:00:35.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d94b3dfa2c.png&#34;
 	
 	
@@ -9599,6 +10889,12 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
 	
 &gt;
 DNS设置使用默认即可。然后确认信息无误点击完成，等待&lt;code&gt;TASK OK&lt;/code&gt;。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d94e514dbc.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d94e514dbc.png&#34; alt=&#34;2023-03-12T09:01:25.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d94e514dbc.png&#34;
 	
 	
@@ -9610,6 +10906,12 @@ DNS设置使用默认即可。然后确认信息无误点击完成，等待&lt;c
 	
 &gt;
 然后进入Docker的容器选项设置，把功能中以下内容勾选。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d953d9bdd1.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d953d9bdd1.png&#34; alt=&#34;2023-03-12T09:02:53.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d953d9bdd1.png&#34;
 	
 	
@@ -9631,6 +10933,12 @@ DNS设置使用默认即可。然后确认信息无误点击完成，等待&lt;c
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;lxc.cgroup2.devices.allow: c 10:200 rwm  
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;lxc.mount.entry: /dev/net/tun dev/net/tun none bind,create=file
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;修改后整个文件应该看起来像：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d960b5a827.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d960b5a827.png&#34; alt=&#34;2023-03-12T09:06:19.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/03/12/640d960b5a827.png&#34;
 	
 	
@@ -9767,7 +11075,13 @@ DNS设置使用默认即可。然后确认信息无误点击完成，等待&lt;c
 基本上是国内专属问题了，归根结底就是网络原因和&amp;quot;steam.cloud&amp;quot;连接有问题导致更新无法进行，而更新又是必须的就导致了这个死循环。
 有网友说我有科技，直接开科技不就行了？如果是在路由的话这必须要设置全局代理，因为SteamDeck的WIFI连接界面不能手动设置代理。用手机开热点或许也是一个好办法，但是实测我的流量根本没走，可能是我的姿势不对吧。
 还有网友说在安装界面直接长按电源键硬重启，多几次就能跳过，我试了四五次也不行。其中一次关机重启后进入到一个有LOGO+进度条及网速的界面，也在提示install update，但是更新完自动重启之后还是问题依旧。
-目前我唯一测试通过的方法就是手机挂UU加速器（亲测雷神无效）加速steam（仅加速商店是免费的），然后开热点，SteamDeck这边开机的时候要设置为英文+UTC-8时区（即默认设置）再连接热点更新，大概率等待半小时就能通过了，手机这边如果开了流量监控，就会发现流量基本1.5m/s这个速度走（峰值4-5m/s），如果没动的话，建议重启加速器或是点击SteamDeck上的Back返回上一步重新开始，直到流量正常出去。大概也就花费1-2G。（下图是我更新了两次）&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/02/02/63db0743c8f68.png&#34;
+目前我唯一测试通过的方法就是手机挂UU加速器（亲测雷神无效）加速steam（仅加速商店是免费的），然后开热点，SteamDeck这边开机的时候要设置为英文+UTC-8时区（即默认设置）再连接热点更新，大概率等待半小时就能通过了，手机这边如果开了流量监控，就会发现流量基本1.5m/s这个速度走（峰值4-5m/s），如果没动的话，建议重启加速器或是点击SteamDeck上的Back返回上一步重新开始，直到流量正常出去。大概也就花费1-2G。（下图是我更新了两次）
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/02/02/63db0743c8f68.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/02/02/63db0743c8f68.png&#34; alt=&#34;2023-02-02T00:43:46.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/02/02/63db0743c8f68.png&#34;
 	
 	
 	
@@ -9963,6 +11277,12 @@ v19.3.0
 &lt;p&gt;下面开始升级。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;取出Switch上的SD卡，删除除了&lt;code&gt;emmMMC&lt;/code&gt; &lt;code&gt;Nintendo&lt;/code&gt; 和你保存游戏的文件夹之外的其他所有文件。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638241260e32a.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638241260e32a.png&#34; alt=&#34;2022-11-26T16:39:02.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638241260e32a.png&#34;
 	
 	
@@ -9974,6 +11294,12 @@ v19.3.0
 	
 &gt;&lt;/li&gt;
 &lt;li&gt;把ShallowSea整合包&lt;code&gt;ShallowSea-ams.zip&lt;/code&gt;解压覆盖到SD卡上。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/6382414d42649.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/6382414d42649.png&#34; alt=&#34;2022-11-26T16:39:41.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/6382414d42649.png&#34;
 	
 	
@@ -9985,6 +11311,12 @@ v19.3.0
 	
 &gt;&lt;/li&gt;
 &lt;li&gt;在SD卡上新建一个&lt;code&gt;firmware&lt;/code&gt;文件夹（或者其他英文文件夹），把Switch固件解压其中。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/11/26/6382365a2312d.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/26/6382365a2312d.png&#34; alt=&#34;2022-11-26T16:09:39.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/26/6382365a2312d.png&#34;
 	
 	
@@ -9998,6 +11330,12 @@ v19.3.0
 &lt;li&gt;确认文件完整后弹出SD并插入Switch上。&lt;/li&gt;
 &lt;li&gt;插入注入器和短路器，&amp;quot;+&amp;ldquo;与电源键蓝灯进入引导
 正常进入系统，设置里的主机-更新主机的Atmosphere版本已经升级到了最新1.4.0
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638247fc998d5.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638247fc998d5.png&#34; alt=&#34;2022-11-26T17:08:12.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638247fc998d5.png&#34;
 	
 	
@@ -10009,6 +11347,12 @@ v19.3.0
 	
 &gt;&lt;/li&gt;
 &lt;li&gt;接下来升级系统，进入相册-Daybreak
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/6382483aa25e9.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/6382483aa25e9.png&#34; alt=&#34;2022-11-26T17:09:14.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/6382483aa25e9.png&#34;
 	
 	
@@ -10020,6 +11364,12 @@ v19.3.0
 	
 &gt;&lt;/li&gt;
 &lt;li&gt;选择Install，并进入之前下载了15.0.1固件的文件夹&lt;code&gt;Firmware&lt;/code&gt;，弹出Update infomation等待验证完成后选择&lt;code&gt;Continue&lt;/code&gt;,Select driver variant选择&lt;code&gt;Install(FAT32+exFAT)&lt;/code&gt;,等待升级完成后选择&lt;code&gt;Reboot&lt;/code&gt;重启。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638248ab215ba.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638248ab215ba.png&#34; alt=&#34;2022-11-26T17:11:07.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638248ab215ba.png&#34;
 	
 	
@@ -10030,6 +11380,12 @@ v19.3.0
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638248c432267.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638248c432267.png&#34; alt=&#34;2022-11-26T17:11:32.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638248c432267.png&#34;
 	
 	
@@ -10040,6 +11396,12 @@ v19.3.0
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638249433066c.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638249433066c.png&#34; alt=&#34;2022-11-26T17:13:39.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638249433066c.png&#34;
 	
 	
@@ -10051,6 +11413,12 @@ v19.3.0
 	
 &gt;
 可以看到系统版本也更新了。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638249951880a.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638249951880a.png&#34; alt=&#34;2022-11-26T17:15:01.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/27/638249951880a.png&#34;
 	
 	
@@ -10082,7 +11450,13 @@ v19.3.0
 激活还是老样子，可以用KMS激活，或者直接使用&lt;a class=&#34;link&#34; href=&#34;https://www.nite07.com/aact/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;AAct&lt;/a&gt;进行激活。
 [scode type=&amp;ldquo;yellow&amp;rdquo;]激活注意事项[/scode]
-下载AAct之前需要把Windows安全中心的“病毒和威胁防护”相关设定先关闭，否则会被删除。卡巴斯基反病毒会检测到&lt;code&gt;HEUR:HackTool.Win32.KMSAuto.gen&lt;/code&gt;，反正看你个人。&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/06/6367cba685a30.png&#34;
+下载AAct之前需要把Windows安全中心的“病毒和威胁防护”相关设定先关闭，否则会被删除。卡巴斯基反病毒会检测到&lt;code&gt;HEUR:HackTool.Win32.KMSAuto.gen&lt;/code&gt;，反正看你个人。
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/11/06/6367cba685a30.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/06/6367cba685a30.png&#34; alt=&#34;2022-11-06T14:58:45.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/06/6367cba685a30.png&#34;
 	
 	
 	
@@ -10094,6 +11468,12 @@ v19.3.0
 &gt;&lt;/p&gt;
 &lt;p&gt;[scode type=&amp;ldquo;lblue&amp;rdquo;]让任务栏左对齐，使“开始按钮居左[/scode]
 右键任务栏，选择任务栏设置，在”任务栏行为&amp;gt;任务栏对其方式选择“靠左”。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/11/06/6367cce4d538e.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/06/6367cce4d538e.png&#34; alt=&#34;2022-11-06T15:04:03.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/06/6367cce4d538e.png&#34;
 	
 	
@@ -10109,6 +11489,12 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
 以管理员方式运行cmd，并输入
 &lt;code&gt;reg add HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32 /ve&lt;/code&gt;
 回车后重启资源管理器即可。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/11/06/6367cda9357d0.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/06/6367cda9357d0.png&#34; alt=&#34;2022-11-06T15:07:20.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/06/6367cda9357d0.png&#34;
 	
 	
@@ -10120,6 +11506,12 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;以下是目前做到的效果，后续有变动再更新。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/11/06/6367cdebb7be8.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/06/6367cdebb7be8.png&#34; alt=&#34;2022-11-06T15:08:26.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/06/6367cdebb7be8.png&#34;
 	
 	
@@ -10143,6 +11535,12 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
 [tag type=&amp;ldquo;info&amp;rdquo;]我该如何注册？是否需要实名？[/tag]
 只需要到&lt;a class=&#34;link&#34; href=&#34;https://blog.tama.guru/guest?auth=signup&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;这里&lt;/a&gt;像一般网站那样填写信息就行了，请确认电子邮箱是正确的，因为涉及到消息提醒、账号找回都需要通过注册时使用的邮箱。本站不需要填写任何关于实名的信息，如果有，那么你可能碰到骗子了。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/63539c332a3a0.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/63539c332a3a0.png&#34; alt=&#34;2022-10-22T07:30:59.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/63539c332a3a0.png&#34;
 	
 	
@@ -10154,6 +11552,12 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
 	
 &gt;
 或者在主界面点击小企鹅可以使用第三方登陆。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/63539c6c244ee.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/63539c6c244ee.png&#34; alt=&#34;2022-10-22T07:31:56.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/63539c6c244ee.png&#34;
 	
 	
@@ -10166,6 +11570,12 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
 &gt;&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;p&gt;以下是关于使用的部分说明，按图中顺序进行：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/63539d552ddcf.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/63539d552ddcf.png&#34; alt=&#34;2022-10-22T07:35:49.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/63539d552ddcf.png&#34;
 	
 	
@@ -10181,7 +11591,13 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
 [scode type=&amp;ldquo;lblue&amp;rdquo;]2、动态[/scode]
 这里显示的是你自己以及你所关注的人的帖子，就类似于“粉丝可见”。
 [scode type=&amp;ldquo;lblue&amp;rdquo;]3、探索[/scode]
-探索包含的是全站内容，包括你没关注的人发的消息。探索包含[tag type=&amp;ldquo;info&amp;rdquo;]话题[/tag][tag type=&amp;ldquo;info&amp;rdquo;]用户[/tag][tag type=&amp;ldquo;info&amp;rdquo;]帖子[/tag]三个子页面；话题就是&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/63539e7920e7c.png&#34;
+探索包含的是全站内容，包括你没关注的人发的消息。探索包含[tag type=&amp;ldquo;info&amp;rdquo;]话题[/tag][tag type=&amp;ldquo;info&amp;rdquo;]用户[/tag][tag type=&amp;ldquo;info&amp;rdquo;]帖子[/tag]三个子页面；话题就是
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/63539e7920e7c.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/63539e7920e7c.png&#34; alt=&#34;2022-10-22T07:40:41.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/63539e7920e7c.png&#34;
 	
 	
 	
@@ -10192,6 +11608,12 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
 	
 &gt;类似这样的给帖子添加tag的效果，可以方便分类和查找；用户页面显示了本站所有注册的用户；帖子就是类似于“广场”的功能了。
 [scode type=&amp;ldquo;lblue&amp;rdquo;]4、通知[/scode]
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/63539f0b31536.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/63539f0b31536.png&#34; alt=&#34;2022-10-22T07:43:07.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/63539f0b31536.png&#34;
 	
 	
@@ -10205,7 +11627,13 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
 [scode type=&amp;ldquo;lblue&amp;rdquo;]5、话题[/scode]
 与“探索”中的话题效果一致。
 [scode type=&amp;ldquo;lblue&amp;rdquo;]6、消息[/scode]
-就是私信，这里可以给用户发消息。点击进入个人页面的这个蓝色按钮就能发消息了。有怪人轰炸你？截图发我我给你铲咯。&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/63539fd983ca8.png&#34;
+就是私信，这里可以给用户发消息。点击进入个人页面的这个蓝色按钮就能发消息了。有怪人轰炸你？截图发我我给你铲咯。
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/63539fd983ca8.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/63539fd983ca8.png&#34; alt=&#34;2022-10-22T07:46:33.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/63539fd983ca8.png&#34;
 	
 	
 	
@@ -10218,7 +11646,13 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
 [scode type=&amp;ldquo;lblue&amp;rdquo;]7、沸点[/scode]
 就是一个rss资源集合，目前整合了知乎日报精选、机核网以及动漫花园三个源。
 [scode type=&amp;ldquo;lblue&amp;rdquo;]8、收藏[/scode]
-简而言之，就是你收藏的帖子，点击帖子右下角的三个点选择收藏就会在这里显示。&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/6353a07293024.png&#34;
+简而言之，就是你收藏的帖子，点击帖子右下角的三个点选择收藏就会在这里显示。
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/6353a07293024.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/6353a07293024.png&#34; alt=&#34;2022-10-22T07:49:07.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/6353a07293024.png&#34;
 	
 	
 	
@@ -10236,7 +11670,13 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
 [scode type=&amp;ldquo;lblue&amp;rdquo;]11、设置[/scode]
 此处包含的是关于账户的一些设置，比如用户名、邮箱地址、简介、关联QQ等。这里还可以设置通知和邮件提醒的类型，这里不勾选的消息是不会推送的。如果你想给账号后面增加蓝标，可以选择“验证我的账户”，如果你想退站了，请点击“删除配置文件”。
 [scode type=&amp;ldquo;lblue&amp;rdquo;]12、风格[/scode]
-这里可以选择圈子的配色方案和背景颜色。&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/6353a1dc9d6ee.png&#34;
+这里可以选择圈子的配色方案和背景颜色。
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/6353a1dc9d6ee.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/6353a1dc9d6ee.png&#34; alt=&#34;2022-10-22T07:55:09.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/6353a1dc9d6ee.png&#34;
 	
 	
 	
@@ -10247,7 +11687,13 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;[scode type=&amp;ldquo;lblue&amp;rdquo;]废话这么多，那我该如何发帖？[/scode]
-在你的主页顶端可以找到发帖的对话框。&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/6353a23818aeb.png&#34;
+在你的主页顶端可以找到发帖的对话框。
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/6353a23818aeb.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/6353a23818aeb.png&#34; alt=&#34;2022-10-22T07:56:40.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/22/6353a23818aeb.png&#34;
 	
 	
 	
@@ -10333,7 +11779,13 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         
         <guid>https://blog.tama.guru/record/miuiflashing.html</guid>
         <description>&lt;p&gt;[scode type=&amp;ldquo;red&amp;rdquo;]&amp;ldquo;this MIUI version can’t be installed on this device&amp;rdquo;[/scode]
-这个报错是MIUI12+版本在跨区刷包的时候出现的，电脑上使用MiFlasher进行跨区线刷时，&lt;code&gt;务必保证选择了“全部删除/保留用户数据”，而非“全部删除并lock”&lt;/code&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5ac38399f.png&#34;
+这个报错是MIUI12+版本在跨区刷包的时候出现的，电脑上使用MiFlasher进行跨区线刷时，&lt;code&gt;务必保证选择了“全部删除/保留用户数据”，而非“全部删除并lock”&lt;/code&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5ac38399f.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5ac38399f.png&#34; alt=&#34;image.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5ac38399f.png&#34;
 	
 	
 	
@@ -10345,7 +11797,13 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
 &gt;
 ，目前跨区刷机已经被小米官方限制成仅解bl锁的用户使用，所以当你勾选了“全部删除并lock”的时候，系统会直接无法启动。如果之前手机有绑定账号并且能解锁bl，那么只需要下载小米官方的解锁软件重新再解锁一次就能正常使用了。如果你没绑定账号，那么就去找售后吧。
 [scode type=&amp;ldquo;lblue&amp;rdquo;]&amp;ldquo;error:Not catch chinkpoint($fastboot -s .* lock), flash is not done&amp;rdquo;[/scode]
-这个报错出现在线刷不回锁的时候，字面意思就是在MiFlash软件的Configuration中有一个&amp;quot;Checkpoint&amp;quot;的选项，用于判断刷机脚本是否完成，默认情况下这里是&lt;code&gt;\$fastboot -s .* lock&lt;/code&gt;，但是如果我们刷机的时候选择“全部删除/保留用户数据”，就不会涉及到上锁的命令，所以会触发这个错误，但其实刷机过程已经完成了，不会对使用有影响，如果觉得碍眼可以把&lt;code&gt;Checkpoint&lt;/code&gt;给清空，就不会提示了。&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5af10a251.png&#34;
+这个报错出现在线刷不回锁的时候，字面意思就是在MiFlash软件的Configuration中有一个&amp;quot;Checkpoint&amp;quot;的选项，用于判断刷机脚本是否完成，默认情况下这里是&lt;code&gt;\$fastboot -s .* lock&lt;/code&gt;，但是如果我们刷机的时候选择“全部删除/保留用户数据”，就不会涉及到上锁的命令，所以会触发这个错误，但其实刷机过程已经完成了，不会对使用有影响，如果觉得碍眼可以把&lt;code&gt;Checkpoint&lt;/code&gt;给清空，就不会提示了。
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5af10a251.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5af10a251.png&#34; alt=&#34;image.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5af10a251.png&#34;
 	
 	
 	
@@ -10424,6 +11882,12 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         <description>&lt;p&gt;和大多数人一样，过去的一晚我同样怀着沉郁的心情，久久难以入眠。看到佩洛西降落在台北松山机场之后，我决心写一篇文章，分析一下台海局势，以下是正文。（本文写于8月3日）
 我想把一些话放在前面，这将作为这篇文章的一个大前提。相信大家都一定认同这句话“台湾问题的本质是中美关系”，但是我们需要对这句话有更深入的理解。它的意思并非明面上看到的那样，中美关系决定了台湾问题如何解决——恰恰相反，台湾问题的解决，将揭开中美竞争的序幕，这也是我一直以来的看法。如果你理解了我的论述，你会发现“台湾问题纯属中国内政”和“台湾问题本质是中美关系”这两句表面冲突的话，前者意味着在台湾问题上主动权始终在我，而后者解释了我们将如何利用主动权取得对美优势最大化，这二者说的恰是一件事情。在这个大前提之下，你会发现，某种意义上台湾人，甚至于台湾岛，已经完全不重要了，因为我们的一切行动都应以有利于中美竞争为目的。并且反过来，对美的优势都将转化为台湾的民心，以及永远也游不走的台湾岛。
 带着上面这些大前提，我们回到现实。（需要再次强调的是，本文写于8月3日，此时事件仍未结束，目前的观点仅对当前现状进行评论。）现在网上充斥着两种声音，一种声音认为大陆怂了，只会张嘴抗议，而另一种声音认为，这是中国政府的计划，我们需要相信政府、静观其变。甚至认为我们是故意放走佩洛西的，这样我们就可以顺势收回台湾了。这两种声音源于大众最朴素的情感，虽然只是下意识的反应，但内中包含着更深层次的逻辑，即使可能民众自己也未意识到。我这里尝试分析一下。如果说仅仅把视角放在台湾并忽略美国，事情会是这样的：某国三号人物访问台湾，我军立即反应，在台海周边开展军事行动。行动区域环岛一周，深入领海，最近处仅有9海里。我想对于这种事实的描述，大多数群众绝不会有如此大的反应。但是如果将这段话加上一段“并未阻拦该国窜访，仅在其离台之后开展军事行动”，这么大的反应就很好理解了。民众愤怒的根源其实并非来自对台软弱，而是对美软弱。要知道军事实力并不完全取决于装备的数量和质量，作战意志同样是军事实力重要的组成部分。此次事件最严重的一点在于，这次释放出来的信号表现出对美的作战意志不足。这一后果非常严重，会加重美国的战略误判，反而增加了未来中美开战的几率。要知道，打得一拳开，免得百拳来。打不得一拳开，百拳就免不得都要来试试了。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c1768575.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c1768575.png&#34; alt=&#34;军事演训地点示意图&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c1768575.png&#34;
 	
 	
@@ -10447,6 +11911,12 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         <description>&lt;p&gt;文前声明：作者非相关专业人士，部分内容仅代表本人猜测，杠就是你对。&lt;/p&gt;
 &lt;p&gt;7月25日到26日，华北、华中、华东地区迎来了新一轮大规模降雨，前后波及十余省份，历时三十余小时。&lt;/p&gt;
 &lt;p&gt;近两天总能在某音上刷到有关一张气象雷达图的视频，文案经常被配上什么“道家斗法破阵”，评论区也大都是“道长出山了”“一个坚定的唯物主义者陷入了沉思”“科学两个字卡在喉咙里”这种画风。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c889b873.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c889b873.jpg&#34; alt=&#34;62e0b8fa1840e.jpg&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c889b873.jpg&#34;
 	
 	
@@ -10458,6 +11928,12 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;首先，气象多普勒雷达的探测区域本来就是一个以雷达为圆心的圆，探测边界外没有数据，和探测区域内形成对比就会有圆形的轮廓。其次，经常关注气象的话，会发现环形的雷达回波图并不罕见，这通常是因为雷达受到了干扰，或雷达站输出的数据错误。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88781a4.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88781a4.jpg&#34; alt=&#34;62e0b92a80d43.jpg&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88781a4.jpg&#34;
 	
 	
@@ -10469,6 +11945,12 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;根据视频截图大致定位，“怪圈”的圆心位置大约位于湖北省随州市。翻阅随州市7月26日01:00到05:00的气象雷达回波图可以发现，在7月26日04:12分后，雷达没有了数据。而在04:12分的回波图中，雷达所在地正是高雷达反射率的区域，这代表该片区域当时很可能正在遭遇强对流天气。随州市气象台于26日晨发布的暴雨橙色预警也证实了这一点。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c888b229.gif&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c888b229.gif&#34; alt=&#34;62e0bb29d63be.gif&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c888b229.gif&#34;
 	
 	
@@ -10479,6 +11961,12 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88ac981.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88ac981.jpg&#34; alt=&#34;62e0bb3d17678.jpg&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88ac981.jpg&#34;
 	
 	
@@ -10491,6 +11979,12 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
 &gt;&lt;/p&gt;
 &lt;p&gt;因此我猜测，是强降雨干扰了雷达正常工作，没有数据输出，而某天气APP也出现了BUG，在对雷达回波图进行拼图时使用了错误的数据，导致这个奇怪的红圈出现。&lt;/p&gt;
 &lt;p&gt;其实本来一张错误的雷达回波图根本算不了什么，但时间又恰巧赶上了南京“夏日祭”这事，就有人将这张图联想到宗教的方向，说是“道长出山施法破日本的阵”，我相信不少人是抱着开玩笑的态度说的这种话，但评论里的某些神棍言论让人不禁感叹基础教育任重道远。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88781a4.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88781a4.jpg&#34; alt=&#34;62e0bb5c76bd9.jpg&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5c88781a4.jpg&#34;
 	
 	
@@ -10503,6 +11997,12 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
 &gt;&lt;/p&gt;
 &lt;p&gt;这种舆论是不正常也是不应当鼓励的，他们今天能说异常天气是道长作法，明天就可以说是宗教带领抗战胜利。在这个无数抗战先烈用血肉之躯解放得来的国家，容不得封建迷信来指手画脚。&lt;/p&gt;
 &lt;p&gt;最后还是来看看这场历时三十余小时，波及十余省份的大规模降雨吧。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://s3.bmp.ovh/imgs/2022/07/27/fdee4efd835831d8.gif&#34;&gt;
+  &lt;img src=&#34;https://s3.bmp.ovh/imgs/2022/07/27/fdee4efd835831d8.gif&#34; alt=&#34;0726全国雷达拼图&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://s3.bmp.ovh/imgs/2022/07/27/fdee4efd835831d8.gif&#34;
 	
 	
@@ -10689,7 +12189,13 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
         <pubDate>Fri, 22 Jul 2022 21:30:00 +0800</pubDate>
         
         <guid>https://blog.tama.guru/aerospace/space_00.html</guid>
-        <description>&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5d761841f.jpg&#34;
+        <description>&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5d761841f.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5d761841f.jpg&#34; alt=&#34;62db7057ae6f8.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5d761841f.jpg&#34;
 	
 	
 	
@@ -10993,7 +12499,13 @@ cover：（选填）外链网站的介绍图片地址&lt;/p&gt;
         
         <guid>https://blog.tama.guru/record/OneCirclePro-jscss.html</guid>
         <description>&lt;p&gt;体验了几天这个主题，发现资源加载是真的离谱，动不动10s+：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc370ea8a47.png&#34;
+&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://pic.tama.guru/i/2022/07/11/62cc370ea8a47.png&#34;&gt;
+  &lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc370ea8a47.png&#34; alt=&#34;请输入图片描述&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc370ea8a47.png&#34;
 	
 	
 	
@@ -11074,7 +12586,13 @@ cover：（选填）外链网站的介绍图片地址&lt;/p&gt;
 &lt;p&gt;如无问题，即可进入账户设置和服务器链接的界面。&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;安装完成后默认是所有人都能上传的，这可能会导致一些问题，因此最好是设置一个管理员群组：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc175c060a8.png&#34;
+&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://pic.tama.guru/i/2022/07/11/62cc175c060a8.png&#34;&gt;
+  &lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc175c060a8.png&#34; alt=&#34;请输入图片描述&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc175c060a8.png&#34;
 	
 	
 	
@@ -11085,7 +12603,13 @@ cover：（选填）外链网站的介绍图片地址&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;在设置中关闭游客上传和注册功能：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc17b76b256.png&#34;
+&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://pic.tama.guru/i/2022/07/11/62cc17b76b256.png&#34;&gt;
+  &lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc17b76b256.png&#34; alt=&#34;请输入图片描述&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc17b76b256.png&#34;
 	
 	
 	
@@ -11101,7 +12625,13 @@ cover：（选填）外链网站的介绍图片地址&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.coldyun.cn/archives/140.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;typecho兰空（LskyPro）图床插件 - Cold&#39; Blog (coldyun.cn)&lt;/a&gt;在莫言的1.0版本插件基础上新增了对lskypro2.0版本的支持，直接到他的博客下载附件上传到typecho下的plugin安装即可。插件需要填写&lt;code&gt;Api&lt;/code&gt;和&lt;code&gt;Token&lt;/code&gt;两项，其中&lt;code&gt;Token&lt;/code&gt;与上面的接口有关，我们需要通过post的方式获得&lt;code&gt;token&lt;/code&gt;：此处使用&lt;a class=&#34;link&#34; href=&#34;https://www.postman.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Postman&lt;/a&gt;：&lt;/p&gt;
-&lt;p&gt;注册成功后在左侧的collections点击加号，在New Collection点击&lt;code&gt;GET New Request&lt;/code&gt;&lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc19d910ed0.png&#34;
+&lt;p&gt;注册成功后在左侧的collections点击加号，在New Collection点击&lt;code&gt;GET New Request&lt;/code&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://pic.tama.guru/i/2022/07/11/62cc19d910ed0.png&#34;&gt;
+  &lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc19d910ed0.png&#34; alt=&#34;请输入图片描述&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc19d910ed0.png&#34;
 	
 	
 	
@@ -11112,7 +12642,13 @@ cover：（选填）外链网站的介绍图片地址&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;接下来在右侧把GET切换成POST：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc1a8d574f8.png&#34;
+&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://pic.tama.guru/i/2022/07/11/62cc1a8d574f8.png&#34;&gt;
+  &lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc1a8d574f8.png&#34; alt=&#34;请输入图片描述&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc1a8d574f8.png&#34;
 	
 	
 	
@@ -11123,7 +12659,13 @@ cover：（选填）外链网站的介绍图片地址&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;其中链接填写&lt;code&gt;https://hostname/api/v1/tokens&lt;/code&gt;  hostname是你的lskypro服务安装域名。&lt;/p&gt;
-&lt;p&gt;key填写&lt;code&gt;email&lt;/code&gt;和&lt;code&gt;password&lt;/code&gt;后面的value为lskypro安装注册时填写的管理员邮箱和密码，之后点击Send，下方会提示：&lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc1b5f8d671.png&#34;
+&lt;p&gt;key填写&lt;code&gt;email&lt;/code&gt;和&lt;code&gt;password&lt;/code&gt;后面的value为lskypro安装注册时填写的管理员邮箱和密码，之后点击Send，下方会提示：
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://pic.tama.guru/i/2022/07/11/62cc1b5f8d671.png&#34;&gt;
+  &lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc1b5f8d671.png&#34; alt=&#34;请输入图片描述&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://pic.tama.guru/i/2022/07/11/62cc1b5f8d671.png&#34;
 	
 	
 	
@@ -11303,7 +12845,13 @@ PS： linux大同小异。&lt;/li&gt;
         <pubDate>Sun, 03 Jul 2022 23:28:00 +0800</pubDate>
         
         <guid>https://blog.tama.guru/method/witch_in_gleamgarden.html</guid>
-        <description>&lt;p&gt;&lt;img src=&#34;https://blog.tama.guru/usr/uploads/2022/07/1590256436.png&#34;
+        <description>&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://blog.tama.guru/usr/uploads/2022/07/1590256436.png&#34;&gt;
+  &lt;img src=&#34;https://blog.tama.guru/usr/uploads/2022/07/1590256436.png&#34; alt=&#34;l55i4qo1.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://blog.tama.guru/usr/uploads/2022/07/1590256436.png&#34;
 	
 	
 	

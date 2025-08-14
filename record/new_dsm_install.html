@@ -10,7 +10,7 @@
 <meta property='og:description' content="这个方法需要一个叫做&quot;arpl&quot;的固件（链接：https://github.com/fbelavenuto/arpl/releases），其特点是引导式安装，不需要手工提取grup.cfg修改相关文件，相对较为简单。 ###1.下载和安装 去上面的网站下载对应版本的zip包，解压并使用Win32DiskImager之类的工具写入U盘。 一般下载最新版即可，我是在物理机安装因此选择第一个。 写完之后把U盘安装到需要安装群晖的主板上并在BIOS中设置好UEFI启动，因各主板步骤不一致此处不赘述。 ###2.进入和初步配置arpl 开启群晖主板电源等待1分钟之后，在路由器界面找到主板网卡IP,浏览器输入http://ip:7681即可进入arpl界面。 进去之后先选择x Cmdline menu，然后进入c Define a custom MAC，此步骤用于修改mac1的数据，如果需要洗白建议先做这一步，修改MAC后需要重新进入路由器界面找到主板网卡IP，因为IP会重新分配。 ###3.配置arpl ####首先是m Choose a model 即选择安装的群晖型号，此处我以DS918+为例。 ####第二步,n Choose a Build Number 即选择安装的版本，当前我要安装的是7.1.1，即版本号42962. ####第三步，s Choose a serial number 即输入序列号，进去之后会有两个选项，一个是a Generate a random serial number，即随机生成一个SN，如果玩黑的直接选这个即可。如果有SN码则选择第二个m Enter a serial number，输入后回车会提示Invalid serial, continue?，不理，确认即可。 ####第四步，Addone 即插件安装，默认会安装misc和acpid这两个插件，其他可以手动选择，好像对我都没用，所以就保留默认了。 ####第五步，x Cmdline menu 这个界面可以对一些详细的配置进行修改，比如有两个网口，想设置第二个网口的mac，则可以在a Add/edit a cmdline item中输入mac2并回车，然后输入MAC2的地址即可，其他例如U盘的PID和VID也可以通过这个方式修改。其他选项如字面意思理解，此处不赘述。（更正：不需要设置PID和VID，见https://github.com/fbelavenuto/arpl/blob/main/README-Zh.md） ####第六步，i Synoinfo menu 展示和修改群晖的相关信息，一般不用修改。 ####第七步，v Advanced menu 高级菜单，内容包含切换LKM版本、模块、手动编辑配置文件、尝试恢复DSM启动盘以及展示SATA端口和设备，一般只用看看最后一项检查SATA是否安装正常即可。 我的主板有两个SATA控制器，一共四个端口，因为我只安装一块硬盘，所以Port 1是亮的。 ####第八步，Build the loader 即编译启动器，它会自动下载所需文件并进行编译，直到提示Ready会自动退出。 ####第九步，b Boot the loader 此处即可开始启动了。此步骤会受U盘读写速度影响，（如果U盘带灯能看到狂闪）选择之后会卡一段时间直到显示Booting...，需要等待。如果有接显示器，此时会看到关机了，需要手动启动。 ###4.安装固件 浏览器登陆https://find.synology.com会查找到刚才安装的群晖。不知道为什么，群晖助手一直都显示不到，只有通过浏览器查找才可以。 ">
 <meta property='og:url' content='https://blog.tama.guru/record/new_dsm_install.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='群晖' /><meta property='article:tag' content='arpl' /><meta property='article:published_time' content='2023-08-12T16:26:00&#43;08:00'/><meta property='article:modified_time' content='2025-08-14T01:59:24&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='群晖' /><meta property='article:tag' content='arpl' /><meta property='article:published_time' content='2023-08-12T16:26:00&#43;08:00'/><meta property='article:modified_time' content='2025-08-14T02:54:19&#43;00:00'/>
 <meta name="twitter:title" content="一种很新的群晖安装方法">
 <meta name="twitter:description" content="这个方法需要一个叫做&quot;arpl&quot;的固件（链接：https://github.com/fbelavenuto/arpl/releases），其特点是引导式安装，不需要手工提取grup.cfg修改相关文件，相对较为简单。 ###1.下载和安装 去上面的网站下载对应版本的zip包，解压并使用Win32DiskImager之类的工具写入U盘。 一般下载最新版即可，我是在物理机安装因此选择第一个。 写完之后把U盘安装到需要安装群晖的主板上并在BIOS中设置好UEFI启动，因各主板步骤不一致此处不赘述。 ###2.进入和初步配置arpl 开启群晖主板电源等待1分钟之后，在路由器界面找到主板网卡IP,浏览器输入http://ip:7681即可进入arpl界面。 进去之后先选择x Cmdline menu，然后进入c Define a custom MAC，此步骤用于修改mac1的数据，如果需要洗白建议先做这一步，修改MAC后需要重新进入路由器界面找到主板网卡IP，因为IP会重新分配。 ###3.配置arpl ####首先是m Choose a model 即选择安装的群晖型号，此处我以DS918+为例。 ####第二步,n Choose a Build Number 即选择安装的版本，当前我要安装的是7.1.1，即版本号42962. ####第三步，s Choose a serial number 即输入序列号，进去之后会有两个选项，一个是a Generate a random serial number，即随机生成一个SN，如果玩黑的直接选这个即可。如果有SN码则选择第二个m Enter a serial number，输入后回车会提示Invalid serial, continue?，不理，确认即可。 ####第四步，Addone 即插件安装，默认会安装misc和acpid这两个插件，其他可以手动选择，好像对我都没用，所以就保留默认了。 ####第五步，x Cmdline menu 这个界面可以对一些详细的配置进行修改，比如有两个网口，想设置第二个网口的mac，则可以在a Add/edit a cmdline item中输入mac2并回车，然后输入MAC2的地址即可，其他例如U盘的PID和VID也可以通过这个方式修改。其他选项如字面意思理解，此处不赘述。（更正：不需要设置PID和VID，见https://github.com/fbelavenuto/arpl/blob/main/README-Zh.md） ####第六步，i Synoinfo menu 展示和修改群晖的相关信息，一般不用修改。 ####第七步，v Advanced menu 高级菜单，内容包含切换LKM版本、模块、手动编辑配置文件、尝试恢复DSM启动盘以及展示SATA端口和设备，一般只用看看最后一项检查SATA是否安装正常即可。 我的主板有两个SATA控制器，一共四个端口，因为我只安装一块硬盘，所以Port 1是亮的。 ####第八步，Build the loader 即编译启动器，它会自动下载所需文件并进行编译，直到提示Ready会自动退出。 ####第九步，b Boot the loader 此处即可开始启动了。此步骤会受U盘读写速度影响，（如果U盘带灯能看到狂闪）选择之后会卡一段时间直到显示Booting...，需要等待。如果有接显示器，此时会看到关机了，需要手动启动。 ###4.安装固件 浏览器登陆https://find.synology.com会查找到刚才安装的群晖。不知道为什么，群晖助手一直都显示不到，只有通过浏览器查找才可以。 ">
     <link rel="shortcut icon" href="/static/favicon.ico" />
@@ -479,6 +479,12 @@ unicode: "ea9a"
     >https://github.com/fbelavenuto/arpl/releases</a>），其特点是引导式安装，不需要手工提取<code>grup.cfg</code>修改相关文件，相对较为简单。
 ###1.下载和安装
 去上面的网站下载对应版本的zip包，解压并使用Win32DiskImager之类的工具写入U盘。
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d732efe98f4.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d732efe98f4.png" alt="arpl"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d732efe98f4.png"
 	
 	
@@ -493,6 +499,12 @@ unicode: "ea9a"
 写完之后把U盘安装到需要安装群晖的主板上并在BIOS中设置好UEFI启动，因各主板步骤不一致此处不赘述。
 ###2.进入和初步配置arpl
 开启群晖主板电源等待1分钟之后，在路由器界面找到主板网卡IP,浏览器输入<code>http://ip:7681</code>即可进入arpl界面。
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d733a862a8d.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d733a862a8d.png" alt="IP"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d733a862a8d.png"
 	
 	
@@ -502,7 +514,13 @@ unicode: "ea9a"
 		alt="IP"
 	
 	
-><img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d733df70ec6.png"
+>
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d733df70ec6.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d733df70ec6.png" alt="arpl界面"  />
+  </a>
+  </div>
+<img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d733df70ec6.png"
 	
 	
 	
@@ -513,6 +531,12 @@ unicode: "ea9a"
 	
 >
 进去之后先选择<code>x Cmdline menu</code>，然后进入<code>c Define a custom MAC</code>，此步骤用于修改mac1的数据，如果需要洗白建议先做这一步，修改MAC后需要重新进入路由器界面找到主板网卡IP，因为IP会重新分配。
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d7346458918.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d7346458918.png" alt="修改MAC"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d7346458918.png"
 	
 	
@@ -526,6 +550,12 @@ unicode: "ea9a"
 ###3.配置arpl
 ####首先是<code>m Choose a model</code>
 即选择安装的群晖型号，此处我以DS918+为例。
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d734f031a5b.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d734f031a5b.png" alt="DS918&#43;"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d734f031a5b.png"
 	
 	
@@ -538,6 +568,12 @@ unicode: "ea9a"
 >
 ####第二步,<code>n Choose a Build Number</code>
 即选择安装的版本，当前我要安装的是7.1.1，即版本号42962.
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d735383187c.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d735383187c.png" alt="42962"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d735383187c.png"
 	
 	
@@ -550,6 +586,12 @@ unicode: "ea9a"
 >
 ####第三步，<code>s Choose a serial number</code>
 即输入序列号，进去之后会有两个选项，一个是<code>a Generate a random serial number</code>，即随机生成一个SN，如果玩黑的直接选这个即可。如果有SN码则选择第二个<code>m Enter a serial number</code>，输入后回车会提示<code>Invalid serial, continue?</code>，不理，确认即可。
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d735fb61ff8.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d735fb61ff8.png" alt="Invalid serial"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d735fb61ff8.png"
 	
 	
@@ -562,6 +604,12 @@ unicode: "ea9a"
 >
 ####第四步，<code>Addone</code>
 即插件安装，默认会安装<code>misc</code>和<code>acpid</code>这两个插件，其他可以手动选择，好像对我都没用，所以就保留默认了。
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d7365373041.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d7365373041.png" alt="addons install"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d7365373041.png"
 	
 	
@@ -575,6 +623,12 @@ unicode: "ea9a"
 ####第五步，<code>x Cmdline menu</code>
 这个界面可以对一些详细的配置进行修改，比如有两个网口，想设置第二个网口的mac，则可以在<code>a Add/edit a cmdline item</code>中输入<code>mac2</code>并回车，然后输入MAC2的地址即可，其他例如U盘的PID和VID也可以通过这个方式修改。其他选项如字面意思理解，此处不赘述。（更正：不需要设置PID和VID，见<a class="link" href="https://github.com/fbelavenuto/arpl/blob/main/README-Zh.md"  target="_blank" rel="noopener"
     >https://github.com/fbelavenuto/arpl/blob/main/README-Zh.md</a>）
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d736c8d7f49.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d736c8d7f49.png" alt="Cmdline menu"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d736c8d7f49.png"
 	
 	
@@ -585,6 +639,12 @@ unicode: "ea9a"
 	
 	
 >
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d737ff28aa9.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d737ff28aa9.png" alt="修改PID"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d737ff28aa9.png"
 	
 	
@@ -597,6 +657,12 @@ unicode: "ea9a"
 >
 ####第六步，<code>i Synoinfo menu</code>
 展示和修改群晖的相关信息，一般不用修改。
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d73782ec5b5.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d73782ec5b5.png" alt="Synoinfo"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d73782ec5b5.png"
 	
 	
@@ -609,6 +675,12 @@ unicode: "ea9a"
 >
 ####第七步，<code>v Advanced menu</code>
 高级菜单，内容包含<code>切换LKM版本</code>、<code>模块</code>、<code>手动编辑配置文件</code>、<code>尝试恢复DSM启动盘</code>以及<code>展示SATA端口和设备</code>，一般只用看看最后一项检查SATA是否安装正常即可。
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d738622c42c.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d738622c42c.png" alt="高级菜单"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d738622c42c.png"
 	
 	
@@ -620,6 +692,12 @@ unicode: "ea9a"
 	
 >
 我的主板有两个SATA控制器，一共四个端口，因为我只安装一块硬盘，所以<code>Port 1</code>是亮的。
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d7392c59480.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d7392c59480.png" alt="SATA信息"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d7392c59480.png"
 	
 	
@@ -632,6 +710,12 @@ unicode: "ea9a"
 >
 ####第八步，<code>Build the loader</code>
 即编译启动器，它会自动下载所需文件并进行编译，直到提示<code>Ready</code>会自动退出。
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d739dd66108.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d739dd66108.png" alt="编译过程"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d739dd66108.png"
 	
 	
@@ -644,6 +728,12 @@ unicode: "ea9a"
 >
 ####第九步，<code>b Boot the loader</code>
 此处即可开始启动了。此步骤会受U盘读写速度影响，（如果U盘带灯能看到狂闪）选择之后会卡一段时间直到显示<code>Booting...</code>，需要等待。如果有接显示器，此时会看到关机了，需要手动启动。
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d73a4103d18.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d73a4103d18.png" alt="booting"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d73a4103d18.png"
 	
 	
@@ -656,6 +746,12 @@ unicode: "ea9a"
 >
 ###4.安装固件
 浏览器登陆https://find.synology.com会查找到刚才安装的群晖。不知道为什么，群晖助手一直都显示不到，只有通过浏览器查找才可以。
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d73fb7a7d36.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d73fb7a7d36.png" alt="找到服务器"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d73fb7a7d36.png"
 	
 	
@@ -666,6 +762,12 @@ unicode: "ea9a"
 	
 	
 >
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d73ffacb153.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d73ffacb153.png" alt="安装"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d73ffacb153.png"
 	
 	
@@ -676,6 +778,12 @@ unicode: "ea9a"
 	
 	
 >
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/08/12/64d74024b8445.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d74024b8445.png" alt="选择固件"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/08/12/64d74024b8445.png"
 	
 	
@@ -728,7 +836,7 @@ unicode: "ea9a"
 
 
         <span>
-            最后更新于 2025年08月14日 01:59
+            最后更新于 2025年08月14日 02:54
         </span>
     </section></footer>
 
@@ -844,7 +952,12 @@ unicode: "ea9a"
 
     
 
-    <script defer src="https://mami.tama.guru/tamami.js" data-website-id="b7b72f5c-977d-4d23-8ec8-be46d93bd8d5"></script>
+    
+  <script src="https://cdnjs.snrat.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.snrat.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+  <script src="https://cdnjs.snrat.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+<script defer src="https://mami.tama.guru/tamami.js" data-website-id="b7b72f5c-977d-4d23-8ec8-be46d93bd8d5"></script>
 <script>
     (function(u, c) {
       var d = document, t = 'script', o = d.createElement(t),

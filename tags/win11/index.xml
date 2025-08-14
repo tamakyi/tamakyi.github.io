@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 01:59:24 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/win11/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/win11/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Win11安装优化那些事</title>
         <link>https://blog.tama.guru/record/win11_new_setup.html</link>
         <pubDate>Sun, 06 Nov 2022 23:08:00 +0800</pubDate>
@@ -21,7 +21,13 @@
 激活还是老样子，可以用KMS激活，或者直接使用&lt;a class=&#34;link&#34; href=&#34;https://www.nite07.com/aact/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;AAct&lt;/a&gt;进行激活。
 [scode type=&amp;ldquo;yellow&amp;rdquo;]激活注意事项[/scode]
-下载AAct之前需要把Windows安全中心的“病毒和威胁防护”相关设定先关闭，否则会被删除。卡巴斯基反病毒会检测到&lt;code&gt;HEUR:HackTool.Win32.KMSAuto.gen&lt;/code&gt;，反正看你个人。&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/06/6367cba685a30.png&#34;
+下载AAct之前需要把Windows安全中心的“病毒和威胁防护”相关设定先关闭，否则会被删除。卡巴斯基反病毒会检测到&lt;code&gt;HEUR:HackTool.Win32.KMSAuto.gen&lt;/code&gt;，反正看你个人。
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/11/06/6367cba685a30.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/06/6367cba685a30.png&#34; alt=&#34;2022-11-06T14:58:45.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/06/6367cba685a30.png&#34;
 	
 	
 	
@@ -33,6 +39,12 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;[scode type=&amp;ldquo;lblue&amp;rdquo;]让任务栏左对齐，使“开始按钮居左[/scode]
 右键任务栏，选择任务栏设置，在”任务栏行为&amp;gt;任务栏对其方式选择“靠左”。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/11/06/6367cce4d538e.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/06/6367cce4d538e.png&#34; alt=&#34;2022-11-06T15:04:03.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/06/6367cce4d538e.png&#34;
 	
 	
@@ -48,6 +60,12 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
 以管理员方式运行cmd，并输入
 &lt;code&gt;reg add HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32 /ve&lt;/code&gt;
 回车后重启资源管理器即可。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/11/06/6367cda9357d0.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/06/6367cda9357d0.png&#34; alt=&#34;2022-11-06T15:07:20.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/06/6367cda9357d0.png&#34;
 	
 	
@@ -59,6 +77,12 @@ Win11最影响体验的改变就是把右键菜单放到第二层，非常浪费
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;以下是目前做到的效果，后续有变动再更新。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/11/06/6367cdebb7be8.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/06/6367cdebb7be8.png&#34; alt=&#34;2022-11-06T15:08:26.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/11/06/6367cdebb7be8.png&#34;
 	
 	

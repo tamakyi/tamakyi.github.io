@@ -10,7 +10,7 @@
 <meta property='og:description' content=" &ldquo;亚马逊将于一年之后即2023年6月30日，在中国停止Kindle电子书店的运营。在此之后，您将不能购买新的电子书。对于已经购买的电子书，您可以在2024年6月30日之前下载，并且可以在此后继续阅读。&rdquo;\n">
 <meta property='og:url' content='https://blog.tama.guru/record/264.html'>
 <meta property='og:site_name' content='狼的公告板 ver.Hugo'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='kindle' /><meta property='article:tag' content='KPW3' /><meta property='article:tag' content='越狱' /><meta property='article:published_time' content='2023-07-23T22:40:00&#43;08:00'/><meta property='article:modified_time' content='2025-08-14T01:59:24&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='kindle' /><meta property='article:tag' content='KPW3' /><meta property='article:tag' content='越狱' /><meta property='article:published_time' content='2023-07-23T22:40:00&#43;08:00'/><meta property='article:modified_time' content='2025-08-14T02:54:19&#43;00:00'/>
 <meta name="twitter:title" content="记一次KPW3拆机降级">
 <meta name="twitter:description" content=" &ldquo;亚马逊将于一年之后即2023年6月30日，在中国停止Kindle电子书店的运营。在此之后，您将不能购买新的电子书。对于已经购买的电子书，您可以在2024年6月30日之前下载，并且可以在此后继续阅读。&rdquo;\n">
     <link rel="shortcut icon" href="/static/favicon.ico" />
@@ -489,6 +489,12 @@ unicode: "ea9a"
 <li>SecureCRT</li>
 </ul>
 <p>拆机过程不再赘述网上一抓一大把，拿出主板的时候注意从顶部抠开。
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/07/23/64bd38ff776cb.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/07/23/64bd38ff776cb.png" alt="底部的充电口和电源会有卡槽，因此选择顶部拆除主板"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/07/23/64bd38ff776cb.png"
 	
 	
@@ -500,6 +506,12 @@ unicode: "ea9a"
 	
 >
 安装好TTL的驱动并确定好COM端口号，配置SecureCRT如下图所示。
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/07/23/64bd39ced253e.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/07/23/64bd39ced253e.png" alt="我的端口是COM4，SecureCRT配置一定要如图所示设置"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/07/23/64bd39ced253e.png"
 	
 	
@@ -511,6 +523,12 @@ unicode: "ea9a"
 	
 >
 接下来进行硬件连接，需要切换成3.3V模式，然后划出三根线，GND连接主板上任意部位，我连接到充电口；DEBUG接口左边为RX，连接到TTL的TX，中间为TX，连接到TTL的RX，最终如下图所示。
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3b5343c36.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3b5343c36.png" alt="接线方式"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3b5343c36.png"
 	
 	
@@ -523,6 +541,12 @@ unicode: "ea9a"
 >
 *正式刷写时此处应用烙铁飞出RX TX这两根线并固定好，否则刷到半断开了容易GG。
 此时重启KPW3，SecureCRT上应该会显示出一些信息，证明是连接成功了。
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3c4f9ca10.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3c4f9ca10.png" alt="SecureCRT信息"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3c4f9ca10.png"
 	
 	
@@ -538,6 +562,12 @@ unicode: "ea9a"
 <p>焊点太小了焊不上，此贴终结。</p>
 <hr>
 <p>买了个J焊头，这次焊上去了，继续更新。因为触点实在太小了，拉了两坨锡把触点搞大，好在没有连锡。
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/07/30/64c64da366c22.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c64da366c22.png" alt="2023-07-30T11:46:40.png"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c64da366c22.png"
 	
 	
@@ -549,6 +579,12 @@ unicode: "ea9a"
 	
 >
 长按电源10S重启，直到SecureCRT信息跳动，疯狂的按Enter（其实只要在<code>Hit any key to stop autoboot:0</code>之前按住就行了，不然会进入正常启动流程。
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/07/30/64c64dfb2e960.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c64dfb2e960.png" alt="2023-07-30T11:48:09.png"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c64dfb2e960.png"
 	
 	
@@ -561,6 +597,12 @@ unicode: "ea9a"
 >
 然后电脑安装这个<a class="link" href="https://359303267.github.io/files/kindle-02/Zadig.zip"  target="_blank" rel="noopener"
     >驱动</a>，驱动选择<code>libsub-win32</code>即可。
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/07/30/64c654fdd287a.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c654fdd287a.png" alt="驱动安装"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c654fdd287a.png"
 	
 	
@@ -572,6 +614,12 @@ unicode: "ea9a"
 	
 >
 驱动安装完成后回到SecureCRT,在<code>uboot&gt;</code>后输入<code>run bootcmd_diags</code>回车，然后再次疯狂回车，避免程序跑完后系统正常启动。注意，<em>此时要把USB数据线与电脑连接。</em>
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/07/30/64c655b86b3a3.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c655b86b3a3.png" alt="进入Recovery模式"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c655b86b3a3.png"
 	
 	
@@ -583,6 +631,12 @@ unicode: "ea9a"
 	
 >
 如果成功了，会弹出一个Menu菜单，这个菜单会有倒计时，10秒没有反应就正常启动，因此要快点按住<code>e</code>，此时电脑会弹出一个Kindle的分区，把<code>update_pw3_factory_5.8.9.0.1.bin</code>这个固件放进去，复制完成后按住<code>1</code>，系统会进入恢复模式并自动升级。
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/07/30/64c656bd55ca9.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c656bd55ca9.png" alt="复制到kindle"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c656bd55ca9.png"
 	
 	
@@ -592,7 +646,13 @@ unicode: "ea9a"
 		alt="复制到kindle"
 	
 	
-><img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c656d7ad5cd.png"
+>
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/07/30/64c656d7ad5cd.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c656d7ad5cd.png" alt="复制到Kindle2"  />
+  </a>
+  </div>
+<img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c656d7ad5cd.png"
 	
 	
 	
@@ -601,7 +661,13 @@ unicode: "ea9a"
 		alt="复制到Kindle2"
 	
 	
-><img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c657074ccc8.png"
+>
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/07/30/64c657074ccc8.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c657074ccc8.png" alt="开始升级"  />
+  </a>
+  </div>
+<img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c657074ccc8.png"
 	
 	
 	
@@ -612,6 +678,12 @@ unicode: "ea9a"
 	
 >
 在Kindle上可以看到显示正在安装更新。
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/07/30/64c6575d5d9ee.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c6575d5d9ee.png" alt="正在安装更新"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c6575d5d9ee.png"
 	
 	
@@ -624,6 +696,12 @@ unicode: "ea9a"
 >
 这个时间是比较久的，而且线路松动的话设备很容易寄，因此焊接必须要做好，保证线路不能松动。
 等大约二十分钟后系统自动重启，可以看到系统版本已经降下来了。
+
+  <div class="post-img-view">
+  <a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/07/30/64c65790d27fa.png">
+  <img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c65790d27fa.png" alt="降级成功"  />
+  </a>
+  </div>
 <img src="https://r2.337845818.best/oss-to-r2/2023/07/30/64c65790d27fa.png"
 	
 	
@@ -672,7 +750,7 @@ unicode: "ea9a"
 
 
         <span>
-            最后更新于 2025年08月14日 01:59
+            最后更新于 2025年08月14日 02:54
         </span>
     </section></footer>
 
@@ -788,7 +866,12 @@ unicode: "ea9a"
 
     
 
-    <script defer src="https://mami.tama.guru/tamami.js" data-website-id="b7b72f5c-977d-4d23-8ec8-be46d93bd8d5"></script>
+    
+  <script src="https://cdnjs.snrat.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.snrat.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+  <script src="https://cdnjs.snrat.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+<script defer src="https://mami.tama.guru/tamami.js" data-website-id="b7b72f5c-977d-4d23-8ec8-be46d93bd8d5"></script>
 <script>
     (function(u, c) {
       var d = document, t = 'script', o = d.createElement(t),

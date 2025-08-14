@@ -7,14 +7,20 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 01:59:24 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/miui/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/miui/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>MIUI刷机那些破事（持续更新）</title>
         <link>https://blog.tama.guru/record/miuiflashing.html</link>
         <pubDate>Wed, 05 Oct 2022 17:23:00 +0800</pubDate>
         
         <guid>https://blog.tama.guru/record/miuiflashing.html</guid>
         <description>&lt;p&gt;[scode type=&amp;ldquo;red&amp;rdquo;]&amp;ldquo;this MIUI version can’t be installed on this device&amp;rdquo;[/scode]
-这个报错是MIUI12+版本在跨区刷包的时候出现的，电脑上使用MiFlasher进行跨区线刷时，&lt;code&gt;务必保证选择了“全部删除/保留用户数据”，而非“全部删除并lock”&lt;/code&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5ac38399f.png&#34;
+这个报错是MIUI12+版本在跨区刷包的时候出现的，电脑上使用MiFlasher进行跨区线刷时，&lt;code&gt;务必保证选择了“全部删除/保留用户数据”，而非“全部删除并lock”&lt;/code&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5ac38399f.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5ac38399f.png&#34; alt=&#34;image.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5ac38399f.png&#34;
 	
 	
 	
@@ -26,7 +32,13 @@
 &gt;
 ，目前跨区刷机已经被小米官方限制成仅解bl锁的用户使用，所以当你勾选了“全部删除并lock”的时候，系统会直接无法启动。如果之前手机有绑定账号并且能解锁bl，那么只需要下载小米官方的解锁软件重新再解锁一次就能正常使用了。如果你没绑定账号，那么就去找售后吧。
 [scode type=&amp;ldquo;lblue&amp;rdquo;]&amp;ldquo;error:Not catch chinkpoint($fastboot -s .* lock), flash is not done&amp;rdquo;[/scode]
-这个报错出现在线刷不回锁的时候，字面意思就是在MiFlash软件的Configuration中有一个&amp;quot;Checkpoint&amp;quot;的选项，用于判断刷机脚本是否完成，默认情况下这里是&lt;code&gt;\$fastboot -s .* lock&lt;/code&gt;，但是如果我们刷机的时候选择“全部删除/保留用户数据”，就不会涉及到上锁的命令，所以会触发这个错误，但其实刷机过程已经完成了，不会对使用有影响，如果觉得碍眼可以把&lt;code&gt;Checkpoint&lt;/code&gt;给清空，就不会提示了。&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5af10a251.png&#34;
+这个报错出现在线刷不回锁的时候，字面意思就是在MiFlash软件的Configuration中有一个&amp;quot;Checkpoint&amp;quot;的选项，用于判断刷机脚本是否完成，默认情况下这里是&lt;code&gt;\$fastboot -s .* lock&lt;/code&gt;，但是如果我们刷机的时候选择“全部删除/保留用户数据”，就不会涉及到上锁的命令，所以会触发这个错误，但其实刷机过程已经完成了，不会对使用有影响，如果觉得碍眼可以把&lt;code&gt;Checkpoint&lt;/code&gt;给清空，就不会提示了。
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5af10a251.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5af10a251.png&#34; alt=&#34;image.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2022/10/15/634a5af10a251.png&#34;
 	
 	
 	

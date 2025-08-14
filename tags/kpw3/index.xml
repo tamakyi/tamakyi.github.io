@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 01:59:24 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/kpw3/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/kpw3/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>记一次KPW3拆机降级</title>
         <link>https://blog.tama.guru/record/264.html</link>
         <pubDate>Sun, 23 Jul 2023 22:40:00 +0800</pubDate>
@@ -27,6 +27,12 @@
 &lt;li&gt;SecureCRT&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;拆机过程不再赘述网上一抓一大把，拿出主板的时候注意从顶部抠开。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd38ff776cb.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd38ff776cb.png&#34; alt=&#34;底部的充电口和电源会有卡槽，因此选择顶部拆除主板&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd38ff776cb.png&#34;
 	
 	
@@ -38,6 +44,12 @@
 	
 &gt;
 安装好TTL的驱动并确定好COM端口号，配置SecureCRT如下图所示。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd39ced253e.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd39ced253e.png&#34; alt=&#34;我的端口是COM4，SecureCRT配置一定要如图所示设置&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd39ced253e.png&#34;
 	
 	
@@ -49,6 +61,12 @@
 	
 &gt;
 接下来进行硬件连接，需要切换成3.3V模式，然后划出三根线，GND连接主板上任意部位，我连接到充电口；DEBUG接口左边为RX，连接到TTL的TX，中间为TX，连接到TTL的RX，最终如下图所示。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3b5343c36.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3b5343c36.png&#34; alt=&#34;接线方式&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3b5343c36.png&#34;
 	
 	
@@ -61,6 +79,12 @@
 &gt;
 *正式刷写时此处应用烙铁飞出RX TX这两根线并固定好，否则刷到半断开了容易GG。
 此时重启KPW3，SecureCRT上应该会显示出一些信息，证明是连接成功了。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3c4f9ca10.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3c4f9ca10.png&#34; alt=&#34;SecureCRT信息&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/23/64bd3c4f9ca10.png&#34;
 	
 	
@@ -76,6 +100,12 @@
 &lt;p&gt;焊点太小了焊不上，此贴终结。&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;买了个J焊头，这次焊上去了，继续更新。因为触点实在太小了，拉了两坨锡把触点搞大，好在没有连锡。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c64da366c22.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c64da366c22.png&#34; alt=&#34;2023-07-30T11:46:40.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c64da366c22.png&#34;
 	
 	
@@ -87,6 +117,12 @@
 	
 &gt;
 长按电源10S重启，直到SecureCRT信息跳动，疯狂的按Enter（其实只要在&lt;code&gt;Hit any key to stop autoboot:0&lt;/code&gt;之前按住就行了，不然会进入正常启动流程。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c64dfb2e960.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c64dfb2e960.png&#34; alt=&#34;2023-07-30T11:48:09.png&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c64dfb2e960.png&#34;
 	
 	
@@ -99,6 +135,12 @@
 &gt;
 然后电脑安装这个&lt;a class=&#34;link&#34; href=&#34;https://359303267.github.io/files/kindle-02/Zadig.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;驱动&lt;/a&gt;，驱动选择&lt;code&gt;libsub-win32&lt;/code&gt;即可。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c654fdd287a.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c654fdd287a.png&#34; alt=&#34;驱动安装&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c654fdd287a.png&#34;
 	
 	
@@ -110,6 +152,12 @@
 	
 &gt;
 驱动安装完成后回到SecureCRT,在&lt;code&gt;uboot&amp;gt;&lt;/code&gt;后输入&lt;code&gt;run bootcmd_diags&lt;/code&gt;回车，然后再次疯狂回车，避免程序跑完后系统正常启动。注意，&lt;em&gt;此时要把USB数据线与电脑连接。&lt;/em&gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c655b86b3a3.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c655b86b3a3.png&#34; alt=&#34;进入Recovery模式&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c655b86b3a3.png&#34;
 	
 	
@@ -121,6 +169,12 @@
 	
 &gt;
 如果成功了，会弹出一个Menu菜单，这个菜单会有倒计时，10秒没有反应就正常启动，因此要快点按住&lt;code&gt;e&lt;/code&gt;，此时电脑会弹出一个Kindle的分区，把&lt;code&gt;update_pw3_factory_5.8.9.0.1.bin&lt;/code&gt;这个固件放进去，复制完成后按住&lt;code&gt;1&lt;/code&gt;，系统会进入恢复模式并自动升级。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c656bd55ca9.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c656bd55ca9.png&#34; alt=&#34;复制到kindle&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c656bd55ca9.png&#34;
 	
 	
@@ -130,7 +184,13 @@
 		alt=&#34;复制到kindle&#34;
 	
 	
-&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c656d7ad5cd.png&#34;
+&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c656d7ad5cd.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c656d7ad5cd.png&#34; alt=&#34;复制到Kindle2&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c656d7ad5cd.png&#34;
 	
 	
 	
@@ -139,7 +199,13 @@
 		alt=&#34;复制到Kindle2&#34;
 	
 	
-&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c657074ccc8.png&#34;
+&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c657074ccc8.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c657074ccc8.png&#34; alt=&#34;开始升级&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c657074ccc8.png&#34;
 	
 	
 	
@@ -150,6 +216,12 @@
 	
 &gt;
 在Kindle上可以看到显示正在安装更新。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c6575d5d9ee.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c6575d5d9ee.png&#34; alt=&#34;正在安装更新&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c6575d5d9ee.png&#34;
 	
 	
@@ -162,6 +234,12 @@
 &gt;
 这个时间是比较久的，而且线路松动的话设备很容易寄，因此焊接必须要做好，保证线路不能松动。
 等大约二十分钟后系统自动重启，可以看到系统版本已经降下来了。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c65790d27fa.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c65790d27fa.png&#34; alt=&#34;降级成功&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/07/30/64c65790d27fa.png&#34;
 	
 	

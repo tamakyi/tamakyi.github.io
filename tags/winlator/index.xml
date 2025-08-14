@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 01:59:24 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/winlator/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/winlator/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>[好软推荐] 盖世游戏-意外好用的windows游戏模拟器</title>
         <link>https://blog.tama.guru/record/gamehub.html</link>
         <pubDate>Wed, 07 May 2025 00:26:00 +0800</pubDate>
@@ -26,6 +26,12 @@
 目前是免费的，不知道啥时候会收费。&lt;/p&gt;
 &lt;h4 id=&#34;软件使用&#34;&gt;软件使用
 &lt;/h4&gt;&lt;p&gt;安装完就是我们熟悉的注册登录环节了。。。没错，这玩意要注册才能用，但也就只需要手机号验证而已，目前不知道有什么必要，但是国产软件嘛。。。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b0317d.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b0317d.jpg&#34; alt=&#34;主界面&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b0317d.jpg&#34;
 	
 	
@@ -37,6 +43,12 @@
 	
 &gt;
 主界面不算花里胡哨，基本上都是些串流的游戏，感兴趣可以自己试，我就主要说兼容层等的安装。点击左上角头像的位置（那个流汗黄豆），找到游戏库，然后到PC游戏这个地方，有个运行时，这里可以选择兼容层、转译器、GPU驱动、DXVK、VKD3D等内容的安装。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b98007.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b98007.jpg&#34; alt=&#34;运行时维护&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b98007.jpg&#34;
 	
 	
@@ -46,7 +58,13 @@
 		alt=&#34;运行时维护&#34;
 	
 	
-&gt;&lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724bce214.jpg&#34;
+&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724bce214.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724bce214.jpg&#34; alt=&#34;兼容层&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724bce214.jpg&#34;
 	
 	
 	
@@ -58,6 +76,12 @@
 &gt;
 以兼容层举例，截至2025年5月6日能够支持wine9.5-10以及proton x64和arm64，这就是重点的地方了，我们跑游戏如果闪退或者碰到奇奇怪怪的地方，可以直接在这里切换兼容层、GPU驱动等内容，相比winlator要到处找包好多了，毕竟手机推galgame真的是需要多次尝试。
 接下来我就拿saga的花之天使的夏日恋歌举例，把所有文件移动到手机上后，在游戏库的PC游戏这里有个加号，直接选中游戏的运行文件，即&lt;code&gt;SiglusEngineCHS.exe&lt;/code&gt;，之后会在PC游戏这里生成一个快捷方式，运气好的话直接点击立即游戏就能跑起来了。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724bdfc98.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724bdfc98.jpg&#34; alt=&#34;花之天使的夏日恋歌&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724bdfc98.jpg&#34;
 	
 	
@@ -67,7 +91,13 @@
 		alt=&#34;花之天使的夏日恋歌&#34;
 	
 	
-&gt;&lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b4db06.jpg&#34;
+&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b4db06.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b4db06.jpg&#34; alt=&#34;游戏运行主界面&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b4db06.jpg&#34;
 	
 	
 	
@@ -78,6 +108,12 @@
 	
 &gt;
 有时候碰到闪退，或是花屏等问题，这就需要手动调整运行参数，具体就是点击立即游戏旁边的小齿轮，找到游戏设置。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c18507.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c18507.jpg&#34; alt=&#34;兼容性设置&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c18507.jpg&#34;
 	
 	
@@ -87,7 +123,13 @@
 		alt=&#34;兼容性设置&#34;
 	
 	
-&gt;&lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c18daf.jpg&#34;
+&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c18daf.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c18daf.jpg&#34; alt=&#34;组件设置1&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c18daf.jpg&#34;
 	
 	
 	
@@ -96,7 +138,13 @@
 		alt=&#34;组件设置1&#34;
 	
 	
-&gt;&lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b202f3.jpg&#34;
+&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b202f3.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b202f3.jpg&#34; alt=&#34;组件设置2&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724b202f3.jpg&#34;
 	
 	
 	
@@ -108,6 +156,12 @@
 &gt;
 需要动的基本就是兼容性设置和组件设置这两个位置，其中兼容性设置选择就是上面我们配置运行时维护安装的兼容层等配置的组合。比如说wine9.5+box64_0.32.1跑不动，就切换到proton兼容层试试，还不行？那试试换个GPU驱动。而如果进入游戏的时候提示缺少xxx组件（比如说dx组件），那就要到组件依赖这里，通过安装新组件的方式手动给当前兼容层环境打组件补丁。（注意组件依赖貌似服务器在国外，部分组件下载极度缓慢，建议尝试多个网络或者干脆挂个梯子）在多次尝试之后，游戏基本都能跑起来。
 经过尝试，我使用OnePlus13+ColorOS15，在8e CPU+24G运存下目前玩的几款游戏都能完美运行：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c49f99.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c49f99.jpg&#34; alt=&#34;花天使&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c49f99.jpg&#34;
 	
 	
@@ -118,6 +172,12 @@
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c66488.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c66488.jpg&#34; alt=&#34;战国兰斯&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724c66488.jpg&#34;
 	
 	
@@ -128,6 +188,12 @@
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724e4fc72.jpg&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724e4fc72.jpg&#34; alt=&#34;你的眼眸命中我心头&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/tamabox/2025/05/07/681b724e4fc72.jpg&#34;
 	
 	
@@ -187,6 +253,12 @@
 5.显卡驱动分为LLVMpipe(Software) Turnip+Zink和VirGL三种，按网上的说法Vrigl版兼容性更好，Turnip+Zink版速度快（但是turnip只支持部分高通gpu6的手机），LLVMpipe使用软件编解码，貌似占用资源更高，新手机建议用Vrigl减少兼容性问题。
 6.Box版本保留默认即可。
 7.处理器核心开关根据自己的手机选择，麒麟9000s默认只开CPU4-7，我保留这个配置使用无异常。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/65505f763eeec.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/65505f763eeec.png&#34; alt=&#34;创建新容器&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/65505f763eeec.png&#34;
 	
 	
@@ -198,6 +270,12 @@
 	
 &gt;
 8.WINE注册表项和DX组件基本上只需要保留默认。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/6550648240862.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/6550648240862.png&#34; alt=&#34;WINE注册表项&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/6550648240862.png&#34;
 	
 	
@@ -208,6 +286,12 @@
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655064bc36369.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655064bc36369.png&#34; alt=&#34;DX组件&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655064bc36369.png&#34;
 	
 	
@@ -219,6 +303,12 @@
 	
 &gt;
 9.环境变量这里如果游戏乱码可以设置LC_all这一项，也可以在容器内设置，其他保留默认即可。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655064dc4f24e.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655064dc4f24e.png&#34; alt=&#34;环境变量&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655064dc4f24e.png&#34;
 	
 	
@@ -230,6 +320,12 @@
 	
 &gt;
 10.盘符默认把存储器下的Download文件夹（即下载默认目录）设置成D:，建议新建个文件夹来专门放置游戏并配置盘符。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655065379f824.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655065379f824.png&#34; alt=&#34;驱动器（盘符）&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655065379f824.png&#34;
 	
 	
@@ -241,6 +337,12 @@
 	
 &gt;
 11.高级设置也只需要保持默认即可。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655065916c6c0.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655065916c6c0.png&#34; alt=&#34;高级&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655065916c6c0.png&#34;
 	
 	
@@ -257,6 +359,12 @@
 &lt;li&gt;建议配置完成后安装&lt;a class=&#34;link&#34; href=&#34;https://share.tama.guru/AliDisk/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/Winlator/setup.exe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;常见运行库包&lt;/a&gt;以及&lt;a class=&#34;link&#34; href=&#34;https://share.tama.guru/d/AliDisk/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/Winlator/Chs%20Fonts%28zh_CN%29.exe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;中文字体补丁&lt;/a&gt;，安装运行库需要10分钟左右时间，安装中文字体补丁时可能会提示需要安装Wine Geckc，按要求点击安装即可，如果WiFi下载慢建议用流量下载。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655066d472356.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655066d472356.png&#34; alt=&#34;运行库和字体补丁安装&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655066d472356.png&#34;
 	
 	
@@ -269,7 +377,13 @@
 &gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;使用截图&#34;&gt;使用截图
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655067b1d3705.png&#34;
+&lt;/h3&gt;&lt;p&gt;
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655067b1d3705.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655067b1d3705.png&#34; alt=&#34;截图1&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
+&lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655067b1d3705.png&#34;
 	
 	
 	
@@ -279,6 +393,12 @@
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655067bee434d.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655067bee434d.png&#34; alt=&#34;截图2&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2023/11/12/655067bee434d.png&#34;
 	
 	

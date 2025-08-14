@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>tamakyi</copyright>
-        <lastBuildDate>Thu, 14 Aug 2025 01:59:24 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/cloudflare/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 14 Aug 2025 02:54:19 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/cloudflare/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>[好软推荐] Cloudpaste-开源在线文本/文件分享平台</title>
         <link>https://blog.tama.guru/record/cloudpaste.html</link>
         <pubDate>Fri, 18 Jul 2025 10:21:11 +0800</pubDate>
@@ -91,6 +91,12 @@ D1和R2都有免费额度，可以大胆使用。&lt;/p&gt;
 &lt;li&gt;接下来就是实现优选IP的最重要一步：在&lt;code&gt;a.com&lt;/code&gt;下的记录管理添加一或两个记录，可以是A，也可以是CNAME，两个主机记录都是&lt;code&gt;new&lt;/code&gt;，一个线路是境内，一个线路放境外（如果只加一个这里留默认就行了，主要是针对不同线路有不同优化需求的，如果还希望针对不同运营商进行优化，这里还可以细化）。境外随便一个CF的IP基本上都能正常访问，建议放个&lt;code&gt;1.0.0.5&lt;/code&gt;。
 境内这里就要留心了，这里优选域名/ip选不好就很容易一片红。自用线路建议使用&lt;code&gt;[CloudflareST][2]&lt;/code&gt;测试速度最优的IP，也可以用&lt;a class=&#34;link&#34; href=&#34;https://vps789.com/hostmonitor/?hostProvider=CF%E4%BC%98%E9%80%89IP&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;CF优选IP&lt;/a&gt;这样的网站查看一些CF域名/IP的运营商访问速度。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f0e45bb4e.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f0e45bb4e.png&#34; alt=&#34;像第一个三网都还行，第三个移动访问就经常挂了。&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f0e45bb4e.png&#34;
 	
 	
@@ -104,6 +110,12 @@ D1和R2都有免费额度，可以大胆使用。&lt;/p&gt;
 我们可以使用CNAME套在这些域名上来实现“借用”他们的解析来优化我们的访问。
 我们可以使用&lt;a class=&#34;link&#34; href=&#34;https://ping.cn&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;ping.cn&lt;/a&gt;来测试速度：
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f22dee158.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f22dee158.png&#34; alt=&#34;国内速度，看起来还行&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f22dee158.png&#34;
 	
 	
@@ -114,6 +126,12 @@ D1和R2都有免费额度，可以大胆使用。&lt;/p&gt;
 	
 	
 &gt;
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f24ba9923.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f24ba9923.png&#34; alt=&#34;境外速度，没什么好说的&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/05/31/6659f24ba9923.png&#34;
 	
 	
@@ -146,6 +164,12 @@ D1和R2都有免费额度，可以大胆使用。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xxxxxxxxxxxxxxxxxxx.r2.cloudflarestorage.com
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;AK&lt;/code&gt;和&lt;code&gt;SK&lt;/code&gt;是创建桶的时候提供的，如果忘记了就没救了，重新弄个桶吧。
 &lt;code&gt;Encrypt Access Keys with a password&lt;/code&gt;和&lt;code&gt;Use secure transfer(SSL/TSL)&lt;/code&gt;选项保留默认即可。
+
+  &lt;div class=&#34;post-img-view&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://r2.337845818.best/oss-to-r2/2024/01/13/65a2a0bdc8b8c.png&#34;&gt;
+  &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/13/65a2a0bdc8b8c.png&#34; alt=&#34;add account info 1&#34;  /&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 &lt;img src=&#34;https://r2.337845818.best/oss-to-r2/2024/01/13/65a2a0bdc8b8c.png&#34;
 	
 	
