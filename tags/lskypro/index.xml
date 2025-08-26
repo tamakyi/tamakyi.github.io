@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lskypro on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/lskypro.html</link><description>Recent content in Lskypro on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Tue, 26 Aug 2025 04:02:41 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/lskypro/index.xml" rel="self" type="application/rss+xml"/><item><title>在兰空图床配置并使用Cloudflare R2 存储桶</title><link>https://blog.tama.guru/record/r2_on_lskypro.html</link><pubDate>Mon, 08 Jan 2024 16:00:00 +0800</pubDate><guid>https://blog.tama.guru/record/r2_on_lskypro.html</guid><description>&lt;h3 id="什么是r2为什么用r2">什么是R2，为什么用R2
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lskypro on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/lskypro.html</link><description>Recent content in Lskypro on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Tue, 26 Aug 2025 04:13:37 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/lskypro/index.xml" rel="self" type="application/rss+xml"/><item><title>在兰空图床配置并使用Cloudflare R2 存储桶</title><link>https://blog.tama.guru/record/r2_on_lskypro.html</link><pubDate>Mon, 08 Jan 2024 16:00:00 +0800</pubDate><guid>https://blog.tama.guru/record/r2_on_lskypro.html</guid><description>&lt;h3 id="什么是r2为什么用r2">什么是R2，为什么用R2
 &lt;/h3>&lt;p>R2是由Cloudflare推出的对象存储，接口兼容AWS S3且有免费套餐，套餐内容如下：&lt;/p>
 &lt;table>
 &lt;thead>
@@ -191,64 +191,19 @@
 &lt;p>如无问题，即可进入账户设置和服务器链接的界面。&lt;/p>
 &lt;hr>
 &lt;p>安装完成后默认是所有人都能上传的，这可能会导致一些问题，因此最好是设置一个管理员群组：&lt;/p>
-&lt;p>
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://pic.tama.guru/i/2022/07/11/62cc175c060a8.png">
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc175c060a8.png" alt="请输入图片描述" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc175c060a8.png"
-loading="lazy"
-alt="请输入图片描述"
->&lt;/p>
+&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc175c060a8.png" alt="请输入图片描述" loading="lazy" style="max-width: 100%; height: auto;">
 &lt;p>在设置中关闭游客上传和注册功能：&lt;/p>
-&lt;p>
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://pic.tama.guru/i/2022/07/11/62cc17b76b256.png">
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc17b76b256.png" alt="请输入图片描述" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc17b76b256.png"
-loading="lazy"
-alt="请输入图片描述"
->&lt;/p>
+&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc17b76b256.png" alt="请输入图片描述" loading="lazy" style="max-width: 100%; height: auto;">
 &lt;p>接口打开留着以便后面使用。&lt;/p>
 &lt;hr>
 &lt;p>接入typecho：&lt;/p>
 &lt;p>&lt;a class="link" href="https://www.coldyun.cn/archives/140.html" target="_blank" rel="noopener"
 >typecho兰空（LskyPro）图床插件 - Cold' Blog (coldyun.cn)&lt;/a>在莫言的1.0版本插件基础上新增了对lskypro2.0版本的支持，直接到他的博客下载附件上传到typecho下的plugin安装即可。插件需要填写&lt;code>Api&lt;/code>和&lt;code>Token&lt;/code>两项，其中&lt;code>Token&lt;/code>与上面的接口有关，我们需要通过post的方式获得&lt;code>token&lt;/code>：此处使用&lt;a class="link" href="https://www.postman.com/" target="_blank" rel="noopener"
 >Postman&lt;/a>：&lt;/p>
-&lt;p>注册成功后在左侧的collections点击加号，在New Collection点击&lt;code>GET New Request&lt;/code>
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://pic.tama.guru/i/2022/07/11/62cc19d910ed0.png">
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc19d910ed0.png" alt="请输入图片描述" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc19d910ed0.png"
-loading="lazy"
-alt="请输入图片描述"
->&lt;/p>
+&lt;p>注册成功后在左侧的collections点击加号，在New Collection点击&lt;code>GET New Request&lt;/code>&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc19d910ed0.png" alt="请输入图片描述" loading="lazy" style="max-width: 100%; height: auto;">&lt;/p>
 &lt;p>接下来在右侧把GET切换成POST：&lt;/p>
-&lt;p>
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://pic.tama.guru/i/2022/07/11/62cc1a8d574f8.png">
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc1a8d574f8.png" alt="请输入图片描述" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc1a8d574f8.png"
-loading="lazy"
-alt="请输入图片描述"
->&lt;/p>
+&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc1a8d574f8.png" alt="请输入图片描述" loading="lazy" style="max-width: 100%; height: auto;">
 &lt;p>其中链接填写&lt;code>https://hostname/api/v1/tokens&lt;/code> hostname是你的lskypro服务安装域名。&lt;/p>
-&lt;p>key填写&lt;code>email&lt;/code>和&lt;code>password&lt;/code>后面的value为lskypro安装注册时填写的管理员邮箱和密码，之后点击Send，下方会提示：
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://pic.tama.guru/i/2022/07/11/62cc1b5f8d671.png">
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc1b5f8d671.png" alt="请输入图片描述" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc1b5f8d671.png"
-loading="lazy"
-alt="请输入图片描述"
->&lt;/p>
+&lt;p>key填写&lt;code>email&lt;/code>和&lt;code>password&lt;/code>后面的value为lskypro安装注册时填写的管理员邮箱和密码，之后点击Send，下方会提示：&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc1b5f8d671.png" alt="请输入图片描述" loading="lazy" style="max-width: 100%; height: auto;">&lt;/p>
 &lt;p>此处即我们需要的token，填写进插件即可，后面就能正常使用了。&lt;/p>
 &lt;p>&lt;code>[scode type=&amp;quot;yellow&amp;quot;]注意！如果提示500错误，极有可能是跨域设置问题，对于宝塔面板需要关掉防跨站攻击，对于lnmp需要进入&lt;/code>lnmp/tools&lt;code>目录执行&lt;/code>remove_open_basedir_restriction.sh&lt;code>，并输入图床源代码所在的目录，保存并执行&lt;/code>lnmp restart即可&lt;code>[/scode]&lt;/code>&lt;/p></description></item></channel></rss>

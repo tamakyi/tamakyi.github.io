@@ -8112,30 +8112,14 @@ alt="2023-06-03T06:34:41.png"
 如果你正好需要这样一个提问箱，不妨试试，有需要的话也可以自己搭建，最后，欢迎大家向我提问 ::acfun:1001::
 &lt;a class="link" href="https://box.tama.guru/_/tamakyi" target="_blank" rel="noopener"
 >小狼的提问箱 - 狼的提问箱&lt;/a>&lt;/p></description></item><item><title>在技嘉B550M上成功点亮并使用（但不完美）DG1教程</title><link>https://blog.tama.guru/record/dg1_with_b550m.html</link><pubDate>Wed, 10 May 2023 23:24:00 +0800</pubDate><guid>https://blog.tama.guru/record/dg1_with_b550m.html</guid><description>&lt;p>先上结果：
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/05/10/645bafc914fe4.png">
-&lt;img src="https://r2.337845818.best/oss-to-r2/2023/05/10/645bafc914fe4.png" alt="image0" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://r2.337845818.best/oss-to-r2/2023/05/10/645bafc914fe4.png"
-loading="lazy"
-alt="image0"
->
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/05/10/645bafc914fe4.png" alt="image0" loading="lazy" style="max-width: 100%; height: auto;">
 所以网上关于这张卡无法在AMD的平台上跑这个说法基本上宣告破产了。
 但是在我B550M这个平台上安装上这卡并不容易，不仅是兼容性层面，还有物理层面问题（我的主卡3060ti实在是太大，直接把两个PCIe口占据了。。。而直接用PCIe延长线也是因为底座过高而无法安装。
 接下来说说装这张卡碰到的坑。
 大前提肯定是把ResizeBAR打开了，详情看之前的文章：[post cid=&amp;ldquo;239&amp;rdquo; /]
 首先我是插在A320M+2200G平台上的（这是NAS机，之前我想把这做推流机），插上去之后显示无输出，但是PiKVM能看到硬盘灯在闪烁，判断系统是正常运行了，于是从远程桌面进去发现能正常，安装驱动之后能够正确识别型号（设备管理器中有一个PCI设备一直显示无驱动且找不到驱动），发现NDI推流延迟较高，故放弃，转战主机。
 主机上主显卡是3060TI，这玩意非常的大，大到把主板底部的大多数接口都盖住了。
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/05/10/645bb1d9637ac.png">
-&lt;img src="https://r2.337845818.best/oss-to-r2/2023/05/10/645bb1d9637ac.png" alt="image1" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://r2.337845818.best/oss-to-r2/2023/05/10/645bb1d9637ac.png"
-loading="lazy"
-alt="image1"
->&lt;/p>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/05/10/645bb1d9637ac.png" alt="image1" loading="lazy" style="max-width: 100%; height: auto;">&lt;/p>
 &lt;ol>
 &lt;li>首先我是DG1+PCIe延长线（延长线只支持到PCIe3.0）接到PCIe3.0接口上，主显卡不变，插在直通CPU的PCIe4.0接口，结果就如前文所述，延长线底座太高，3060TI插不进去了&amp;hellip;&lt;/li>
 &lt;li>然后我试着单独把DG1插到PCIe3.0接口上，结果是硬盘灯闪，显示器无信号。&lt;/li>
@@ -8143,55 +8127,14 @@ alt="image1"
 &lt;li>接下来我用3060TI接上延长线连接PCIe4.0接口，DG1直插PCIe3.0接口，显示器能反应，能进BIOS，但是进入系统的启动过程中会提示无法启动，无论切换到Win10 LTSC2021 Server2022 Win11均无法正常启动，这里就是我最疑惑的地方了。&lt;/li>
 &lt;li>最后我改变了想法，把3060TI接上延长线连接PCIe3.0接口，DG1直插PCIe4.0接口，却发现是能正常进入系统了！我的两台显示器分别插在两张卡上，进入系统之后只有插在3060TI上的卡的显示器是亮的，插在DG1的显示器黑屏。安装Xe驱动后，双屏正常工作了。&lt;/li>
 &lt;/ol>
-&lt;p>
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/05/10/645bb463d2912.png">
-&lt;img src="https://r2.337845818.best/oss-to-r2/2023/05/10/645bb463d2912.png" alt="image2" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://r2.337845818.best/oss-to-r2/2023/05/10/645bb463d2912.png"
-loading="lazy"
-alt="image2"
->
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/05/10/645bb463d2912.png" alt="image2" loading="lazy" style="max-width: 100%; height: auto;">
 但是这样对性能的损耗有些大，3060TI在PCIe3.0上无法发挥其最大效用，而DG1占着PCIe4.0接口，但它最多也只能跑到4.0 x8
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/05/10/645bb523b9976.png">
-&lt;img src="https://r2.337845818.best/oss-to-r2/2023/05/10/645bb523b9976.png" alt="image3" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://r2.337845818.best/oss-to-r2/2023/05/10/645bb523b9976.png"
-loading="lazy"
-alt="image3"
->
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/05/10/645bb5a7f26ea.png">
-&lt;img src="https://r2.337845818.best/oss-to-r2/2023/05/10/645bb5a7f26ea.png" alt="image4" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://r2.337845818.best/oss-to-r2/2023/05/10/645bb5a7f26ea.png"
-loading="lazy"
-alt="image4"
->
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/05/10/645bb523b9976.png" alt="image3" loading="lazy" style="max-width: 100%; height: auto;">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/05/10/645bb5a7f26ea.png" alt="image4" loading="lazy" style="max-width: 100%; height: auto;">
 而且我发现这样接上之后，鼠标的拖动会偶尔发生卡顿，这个情况现在也是无解。
 接下来我想再买一根PCIe4.0的延长线，看看这样插能不能把性能跑满，后续再继续测试视频和直播的编解码能力。
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/05/10/645bbb5982d69.png">
-&lt;img src="https://r2.337845818.best/oss-to-r2/2023/05/10/645bbb5982d69.png" alt="image5" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://r2.337845818.best/oss-to-r2/2023/05/10/645bbb5982d69.png"
-loading="lazy"
-alt="image5"
->
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2023/05/10/645bbb49660ed.png">
-&lt;img src="https://r2.337845818.best/oss-to-r2/2023/05/10/645bbb49660ed.png" alt="image6" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://r2.337845818.best/oss-to-r2/2023/05/10/645bbb49660ed.png"
-loading="lazy"
-alt="image6"
->&lt;/p>
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/05/10/645bbb5982d69.png" alt="image5" loading="lazy" style="max-width: 100%; height: auto;">
+&lt;img src="https://r2.337845818.best/oss-to-r2/2023/05/10/645bbb49660ed.png" alt="image6" loading="lazy" style="max-width: 100%; height: auto;">
 &lt;p>PS1:发现在启动浏览器的情况下鼠标拖动会有卡顿，如果桌面无任何程序时则很流畅。
 PS2:点亮后如果把3060TI拔了（即单卡启动）仍然无法显示，在3060TI上插上HDMI后就都正常显示了。
 PS3:把DG1上的线都插到3060TI上之后卡顿问题有所缓解但仍有发生。
@@ -9548,28 +9491,10 @@ alt="2022-10-22T07:56:40.png"
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">rm -rf /usr/local/aegis*
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>未完待续 ::acfun:2003::&lt;/p></description></item><item><title>MIUI刷机那些破事（持续更新）</title><link>https://blog.tama.guru/record/miuiflashing.html</link><pubDate>Wed, 05 Oct 2022 17:23:00 +0800</pubDate><guid>https://blog.tama.guru/record/miuiflashing.html</guid><description>&lt;p>[scode type=&amp;ldquo;red&amp;rdquo;]&amp;ldquo;this MIUI version can’t be installed on this device&amp;rdquo;[/scode]
-这个报错是MIUI12+版本在跨区刷包的时候出现的，电脑上使用MiFlasher进行跨区线刷时，&lt;code>务必保证选择了“全部删除/保留用户数据”，而非“全部删除并lock”&lt;/code>
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2022/10/15/634a5ac38399f.png">
-&lt;img src="https://r2.337845818.best/oss-to-r2/2022/10/15/634a5ac38399f.png" alt="image.png" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://r2.337845818.best/oss-to-r2/2022/10/15/634a5ac38399f.png"
-loading="lazy"
-alt="image.png"
->
+这个报错是MIUI12+版本在跨区刷包的时候出现的，电脑上使用MiFlasher进行跨区线刷时，&lt;code>务必保证选择了“全部删除/保留用户数据”，而非“全部删除并lock”&lt;/code>&lt;img src="https://r2.337845818.best/oss-to-r2/2022/10/15/634a5ac38399f.png" alt="image.png" loading="lazy" style="max-width: 100%; height: auto;">
 ，目前跨区刷机已经被小米官方限制成仅解bl锁的用户使用，所以当你勾选了“全部删除并lock”的时候，系统会直接无法启动。如果之前手机有绑定账号并且能解锁bl，那么只需要下载小米官方的解锁软件重新再解锁一次就能正常使用了。如果你没绑定账号，那么就去找售后吧。
 [scode type=&amp;ldquo;lblue&amp;rdquo;]&amp;ldquo;error:Not catch chinkpoint($fastboot -s .* lock), flash is not done&amp;rdquo;[/scode]
-这个报错出现在线刷不回锁的时候，字面意思就是在MiFlash软件的Configuration中有一个&amp;quot;Checkpoint&amp;quot;的选项，用于判断刷机脚本是否完成，默认情况下这里是&lt;code>\$fastboot -s .* lock&lt;/code>，但是如果我们刷机的时候选择“全部删除/保留用户数据”，就不会涉及到上锁的命令，所以会触发这个错误，但其实刷机过程已经完成了，不会对使用有影响，如果觉得碍眼可以把&lt;code>Checkpoint&lt;/code>给清空，就不会提示了。
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2022/10/15/634a5af10a251.png">
-&lt;img src="https://r2.337845818.best/oss-to-r2/2022/10/15/634a5af10a251.png" alt="image.png" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://r2.337845818.best/oss-to-r2/2022/10/15/634a5af10a251.png"
-loading="lazy"
-alt="image.png"
->
+这个报错出现在线刷不回锁的时候，字面意思就是在MiFlash软件的Configuration中有一个&amp;quot;Checkpoint&amp;quot;的选项，用于判断刷机脚本是否完成，默认情况下这里是&lt;code>\$fastboot -s .* lock&lt;/code>，但是如果我们刷机的时候选择“全部删除/保留用户数据”，就不会涉及到上锁的命令，所以会触发这个错误，但其实刷机过程已经完成了，不会对使用有影响，如果觉得碍眼可以把&lt;code>Checkpoint&lt;/code>给清空，就不会提示了。&lt;img src="https://r2.337845818.best/oss-to-r2/2022/10/15/634a5af10a251.png" alt="image.png" loading="lazy" style="max-width: 100%; height: auto;">
 [scode type=&amp;ldquo;red&amp;rdquo;]&amp;ldquo;我是电信卡，我在欧版上发不出短信&amp;rdquo;[/scode]
 恭喜你刷到的是正版的欧版MIUI。如果非要用这个版本，需要先刷回国内版本的MIUI，进入短信应用用电信卡发一条短信，如果正常能发出再刷欧版，大概率能够解决这个问题。&lt;/p></description></item><item><title>关于MIUI升级到开发版的方法</title><link>https://blog.tama.guru/record/miuidev.html</link><pubDate>Tue, 04 Oct 2022 19:47:00 +0800</pubDate><guid>https://blog.tama.guru/record/miuidev.html</guid><description>&lt;p>不知道从哪个版本的miui开始，开发版的miui便不能直接从稳定版通过简单的卡刷进行转换，需要在官方论坛申请“公测”或者“内测”权限之后才能进行安装，而申请资格需要在官方论坛达到4级以上的等级并且要完成所谓的“答题”，如果等级不够或者“答题”分数不及格均无法获得权限，就算通过其他方法搞到了卡刷包，在刷写的时候也会被提示“该账号非内测权限”然后就停住了。
 在这种背景之下，出现了几种方法来强行升级到开发版：
@@ -10097,16 +10022,7 @@ cover：（选填）外链网站的介绍图片地址&lt;/p>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[/block]
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[/column]
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>OneCirclePro插件和handsome静态资源切换到国内服务器</title><link>https://blog.tama.guru/record/OneCirclePro-jscss.html</link><pubDate>Mon, 11 Jul 2022 22:52:00 +0800</pubDate><guid>https://blog.tama.guru/record/OneCirclePro-jscss.html</guid><description>&lt;p>体验了几天这个主题，发现资源加载是真的离谱，动不动10s+：&lt;/p>
-&lt;p>
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://pic.tama.guru/i/2022/07/11/62cc370ea8a47.png">
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc370ea8a47.png" alt="请输入图片描述" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc370ea8a47.png"
-loading="lazy"
-alt="请输入图片描述"
->&lt;/p>
+&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc370ea8a47.png" alt="请输入图片描述" loading="lazy" style="max-width: 100%; height: auto;">
 &lt;p>于是就想着把部分静态资源扔国内来了。&lt;/p>
 &lt;p>直接把包内&lt;code>themeCore\themes\default\statics&lt;/code>打包上传到国内服务器搭建的网站目录下，最好和其他资源间隔开来，比如&lt;code>https://hostname/cdn/OneCircle/&lt;/code>，然后修改&lt;code>themeCore/themes/default/apps/main/content.phtml&lt;/code>和&lt;code>themeCore/themes/default/apps/cpanel/content_nosidebar.phtml&lt;/code>把&lt;code>{%config theme_url%}&lt;/code>替换成&lt;code>https://hostname/cdn/OneCircle/&lt;/code>，再刷新即可。&lt;/p>
 &lt;p>&lt;code>[scode type=&amp;quot;yellow&amp;quot;]注意！部分资源位于&lt;/code>themeCore\themes\default\apps\cpanel\statics&lt;code>下，此部分资源和上面的不一样，也需要提取到国内服务器上并进行替换。（说的就是你！&lt;/code>themeCore/themes/default/apps/cpanel/content_nosidebar.phtml&lt;code> 你mua的！）[/scode]&lt;/code>&lt;/p>
@@ -10169,65 +10085,20 @@ alt="请输入图片描述"
 &lt;p>如无问题，即可进入账户设置和服务器链接的界面。&lt;/p>
 &lt;hr>
 &lt;p>安装完成后默认是所有人都能上传的，这可能会导致一些问题，因此最好是设置一个管理员群组：&lt;/p>
-&lt;p>
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://pic.tama.guru/i/2022/07/11/62cc175c060a8.png">
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc175c060a8.png" alt="请输入图片描述" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc175c060a8.png"
-loading="lazy"
-alt="请输入图片描述"
->&lt;/p>
+&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc175c060a8.png" alt="请输入图片描述" loading="lazy" style="max-width: 100%; height: auto;">
 &lt;p>在设置中关闭游客上传和注册功能：&lt;/p>
-&lt;p>
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://pic.tama.guru/i/2022/07/11/62cc17b76b256.png">
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc17b76b256.png" alt="请输入图片描述" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc17b76b256.png"
-loading="lazy"
-alt="请输入图片描述"
->&lt;/p>
+&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc17b76b256.png" alt="请输入图片描述" loading="lazy" style="max-width: 100%; height: auto;">
 &lt;p>接口打开留着以便后面使用。&lt;/p>
 &lt;hr>
 &lt;p>接入typecho：&lt;/p>
 &lt;p>&lt;a class="link" href="https://www.coldyun.cn/archives/140.html" target="_blank" rel="noopener"
 >typecho兰空（LskyPro）图床插件 - Cold' Blog (coldyun.cn)&lt;/a>在莫言的1.0版本插件基础上新增了对lskypro2.0版本的支持，直接到他的博客下载附件上传到typecho下的plugin安装即可。插件需要填写&lt;code>Api&lt;/code>和&lt;code>Token&lt;/code>两项，其中&lt;code>Token&lt;/code>与上面的接口有关，我们需要通过post的方式获得&lt;code>token&lt;/code>：此处使用&lt;a class="link" href="https://www.postman.com/" target="_blank" rel="noopener"
 >Postman&lt;/a>：&lt;/p>
-&lt;p>注册成功后在左侧的collections点击加号，在New Collection点击&lt;code>GET New Request&lt;/code>
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://pic.tama.guru/i/2022/07/11/62cc19d910ed0.png">
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc19d910ed0.png" alt="请输入图片描述" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc19d910ed0.png"
-loading="lazy"
-alt="请输入图片描述"
->&lt;/p>
+&lt;p>注册成功后在左侧的collections点击加号，在New Collection点击&lt;code>GET New Request&lt;/code>&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc19d910ed0.png" alt="请输入图片描述" loading="lazy" style="max-width: 100%; height: auto;">&lt;/p>
 &lt;p>接下来在右侧把GET切换成POST：&lt;/p>
-&lt;p>
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://pic.tama.guru/i/2022/07/11/62cc1a8d574f8.png">
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc1a8d574f8.png" alt="请输入图片描述" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc1a8d574f8.png"
-loading="lazy"
-alt="请输入图片描述"
->&lt;/p>
+&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc1a8d574f8.png" alt="请输入图片描述" loading="lazy" style="max-width: 100%; height: auto;">
 &lt;p>其中链接填写&lt;code>https://hostname/api/v1/tokens&lt;/code> hostname是你的lskypro服务安装域名。&lt;/p>
-&lt;p>key填写&lt;code>email&lt;/code>和&lt;code>password&lt;/code>后面的value为lskypro安装注册时填写的管理员邮箱和密码，之后点击Send，下方会提示：
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://pic.tama.guru/i/2022/07/11/62cc1b5f8d671.png">
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc1b5f8d671.png" alt="请输入图片描述" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc1b5f8d671.png"
-loading="lazy"
-alt="请输入图片描述"
->&lt;/p>
+&lt;p>key填写&lt;code>email&lt;/code>和&lt;code>password&lt;/code>后面的value为lskypro安装注册时填写的管理员邮箱和密码，之后点击Send，下方会提示：&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc1b5f8d671.png" alt="请输入图片描述" loading="lazy" style="max-width: 100%; height: auto;">&lt;/p>
 &lt;p>此处即我们需要的token，填写进插件即可，后面就能正常使用了。&lt;/p>
 &lt;p>&lt;code>[scode type=&amp;quot;yellow&amp;quot;]注意！如果提示500错误，极有可能是跨域设置问题，对于宝塔面板需要关掉防跨站攻击，对于lnmp需要进入&lt;/code>lnmp/tools&lt;code>目录执行&lt;/code>remove_open_basedir_restriction.sh&lt;code>，并输入图床源代码所在的目录，保存并执行&lt;/code>lnmp restart即可&lt;code>[/scode]&lt;/code>&lt;/p></description></item><item><title>handsome美化记录</title><link>https://blog.tama.guru/record/handsome-modify.html</link><pubDate>Sun, 10 Jul 2022 20:20:00 +0800</pubDate><guid>https://blog.tama.guru/record/handsome-modify.html</guid><description>&lt;p>&lt;code>[scode type=&amp;quot;yellow&amp;quot;]此处备份handsome主题一些自定义的教程：[/scode]&lt;/code>&lt;/p>
 &lt;ul>
@@ -10336,16 +10207,7 @@ PS： linux大同小异。&lt;/li>
 &lt;li>雀魂网页版：&lt;a class="link" href="https://game.maj-soul.net/1/" target="_blank" rel="noopener"
 >雀魂麻將&lt;/a>&lt;/li>
 &lt;li>&lt;/li>
-&lt;/ul></description></item><item><title>格林花园的魔女-攻略-20220703</title><link>https://blog.tama.guru/method/witch_in_gleamgarden.html</link><pubDate>Sun, 03 Jul 2022 23:28:00 +0800</pubDate><guid>https://blog.tama.guru/method/witch_in_gleamgarden.html</guid><description>&lt;p>
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://blog.tama.guru/usr/uploads/2022/07/1590256436.png">
-&lt;img src="https://blog.tama.guru/usr/uploads/2022/07/1590256436.png" alt="l55i4qo1.png" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://blog.tama.guru/usr/uploads/2022/07/1590256436.png"
-loading="lazy"
-alt="l55i4qo1.png"
->&lt;/p>
+&lt;/ul></description></item><item><title>格林花园的魔女-攻略-20220703</title><link>https://blog.tama.guru/method/witch_in_gleamgarden.html</link><pubDate>Sun, 03 Jul 2022 23:28:00 +0800</pubDate><guid>https://blog.tama.guru/method/witch_in_gleamgarden.html</guid><description>&lt;img src="https://blog.tama.guru/usr/uploads/2022/07/1590256436.png" alt="l55i4qo1.png" loading="lazy" style="max-width: 100%; height: auto;">
 &lt;p>kr版本已出，记录下攻略&lt;/p>
 &lt;p>游戏下载链接：{cloud title=&amp;ldquo;格林花园的魔女krkr&amp;rdquo; type=&amp;ldquo;bd&amp;rdquo; url=&amp;ldquo;&lt;a class="link" href="https://pan.baidu.com/share/init?surl=Gok0LLjkBfEo-QS8-BtQiA%22" target="_blank" rel="noopener"
 >https://pan.baidu.com/share/init?surl=Gok0LLjkBfEo-QS8-BtQiA"&lt;/a> password=&amp;ldquo;hsly&amp;rdquo;/}&lt;/p>

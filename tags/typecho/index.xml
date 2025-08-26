@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Typecho on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/typecho.html</link><description>Recent content in Typecho on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Tue, 26 Aug 2025 04:02:41 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/typecho/index.xml" rel="self" type="application/rss+xml"/><item><title>再见了 TypeCho</title><link>https://blog.tama.guru/new-record/typecho.html</link><pubDate>Tue, 01 Jul 2025 21:46:00 +0800</pubDate><guid>https://blog.tama.guru/new-record/typecho.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 再见了 TypeCho" />&lt;p>在经历过wordpress、zblog等一系列重型动态博客后，我切换到typecho并持续使用了很长一段时间。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Typecho on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/typecho.html</link><description>Recent content in Typecho on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Tue, 26 Aug 2025 04:13:37 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/typecho/index.xml" rel="self" type="application/rss+xml"/><item><title>再见了 TypeCho</title><link>https://blog.tama.guru/new-record/typecho.html</link><pubDate>Tue, 01 Jul 2025 21:46:00 +0800</pubDate><guid>https://blog.tama.guru/new-record/typecho.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 再见了 TypeCho" />&lt;p>在经历过wordpress、zblog等一系列重型动态博客后，我切换到typecho并持续使用了很长一段时间。
 typecho很好，它很轻量，超棒的插件和主题到处都是，我甚至入正了handsome主题。&lt;br>
 但是，typecho更新实在太慢，属于是没有重大BUG几年不见更新一次那种，在我升级到php8.x之后经常冒出莫名其妙的错误，再加上驱动typecho需要nginx+php+mysql环境，对我的小鸡来说负担太重了，而且网站的访问量并不大，没必要占用这么大服务器资源，如果只是为了时不时写点东西，那还不如用静态博客好了。&lt;br>
 hexo用过一段时间，现在的导航页就是基于hexo搭建的，这次尝试一下hugo。&lt;br>
@@ -373,64 +373,19 @@ alt="打包"
 &lt;p>如无问题，即可进入账户设置和服务器链接的界面。&lt;/p>
 &lt;hr>
 &lt;p>安装完成后默认是所有人都能上传的，这可能会导致一些问题，因此最好是设置一个管理员群组：&lt;/p>
-&lt;p>
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://pic.tama.guru/i/2022/07/11/62cc175c060a8.png">
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc175c060a8.png" alt="请输入图片描述" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc175c060a8.png"
-loading="lazy"
-alt="请输入图片描述"
->&lt;/p>
+&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc175c060a8.png" alt="请输入图片描述" loading="lazy" style="max-width: 100%; height: auto;">
 &lt;p>在设置中关闭游客上传和注册功能：&lt;/p>
-&lt;p>
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://pic.tama.guru/i/2022/07/11/62cc17b76b256.png">
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc17b76b256.png" alt="请输入图片描述" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc17b76b256.png"
-loading="lazy"
-alt="请输入图片描述"
->&lt;/p>
+&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc17b76b256.png" alt="请输入图片描述" loading="lazy" style="max-width: 100%; height: auto;">
 &lt;p>接口打开留着以便后面使用。&lt;/p>
 &lt;hr>
 &lt;p>接入typecho：&lt;/p>
 &lt;p>&lt;a class="link" href="https://www.coldyun.cn/archives/140.html" target="_blank" rel="noopener"
 >typecho兰空（LskyPro）图床插件 - Cold' Blog (coldyun.cn)&lt;/a>在莫言的1.0版本插件基础上新增了对lskypro2.0版本的支持，直接到他的博客下载附件上传到typecho下的plugin安装即可。插件需要填写&lt;code>Api&lt;/code>和&lt;code>Token&lt;/code>两项，其中&lt;code>Token&lt;/code>与上面的接口有关，我们需要通过post的方式获得&lt;code>token&lt;/code>：此处使用&lt;a class="link" href="https://www.postman.com/" target="_blank" rel="noopener"
 >Postman&lt;/a>：&lt;/p>
-&lt;p>注册成功后在左侧的collections点击加号，在New Collection点击&lt;code>GET New Request&lt;/code>
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://pic.tama.guru/i/2022/07/11/62cc19d910ed0.png">
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc19d910ed0.png" alt="请输入图片描述" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc19d910ed0.png"
-loading="lazy"
-alt="请输入图片描述"
->&lt;/p>
+&lt;p>注册成功后在左侧的collections点击加号，在New Collection点击&lt;code>GET New Request&lt;/code>&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc19d910ed0.png" alt="请输入图片描述" loading="lazy" style="max-width: 100%; height: auto;">&lt;/p>
 &lt;p>接下来在右侧把GET切换成POST：&lt;/p>
-&lt;p>
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://pic.tama.guru/i/2022/07/11/62cc1a8d574f8.png">
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc1a8d574f8.png" alt="请输入图片描述" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc1a8d574f8.png"
-loading="lazy"
-alt="请输入图片描述"
->&lt;/p>
+&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc1a8d574f8.png" alt="请输入图片描述" loading="lazy" style="max-width: 100%; height: auto;">
 &lt;p>其中链接填写&lt;code>https://hostname/api/v1/tokens&lt;/code> hostname是你的lskypro服务安装域名。&lt;/p>
-&lt;p>key填写&lt;code>email&lt;/code>和&lt;code>password&lt;/code>后面的value为lskypro安装注册时填写的管理员邮箱和密码，之后点击Send，下方会提示：
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://pic.tama.guru/i/2022/07/11/62cc1b5f8d671.png">
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc1b5f8d671.png" alt="请输入图片描述" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc1b5f8d671.png"
-loading="lazy"
-alt="请输入图片描述"
->&lt;/p>
+&lt;p>key填写&lt;code>email&lt;/code>和&lt;code>password&lt;/code>后面的value为lskypro安装注册时填写的管理员邮箱和密码，之后点击Send，下方会提示：&lt;img src="https://pic.tama.guru/i/2022/07/11/62cc1b5f8d671.png" alt="请输入图片描述" loading="lazy" style="max-width: 100%; height: auto;">&lt;/p>
 &lt;p>此处即我们需要的token，填写进插件即可，后面就能正常使用了。&lt;/p>
 &lt;p>&lt;code>[scode type=&amp;quot;yellow&amp;quot;]注意！如果提示500错误，极有可能是跨域设置问题，对于宝塔面板需要关掉防跨站攻击，对于lnmp需要进入&lt;/code>lnmp/tools&lt;code>目录执行&lt;/code>remove_open_basedir_restriction.sh&lt;code>，并输入图床源代码所在的目录，保存并执行&lt;/code>lnmp restart即可&lt;code>[/scode]&lt;/code>&lt;/p></description></item></channel></rss>
