@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>旅行记录 on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/categories/%E6%97%85%E8%A1%8C%E8%AE%B0%E5%BD%95.html</link><description>Recent content in 旅行记录 on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Tue, 26 Aug 2025 11:41:55 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/categories/%E6%97%85%E8%A1%8C%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml"/><item><title>行程记录类软件分享 - 那些记录旅行和日常点点滴滴的小工具</title><link>https://blog.tama.guru/travel/travel-record-tools.html</link><pubDate>Mon, 25 Aug 2025 10:19:11 +0800</pubDate><guid>https://blog.tama.guru/travel/travel-record-tools.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 行程记录类软件分享 - 那些记录旅行和日常点点滴滴的小工具" />&lt;h4 id="前言">前言
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>旅行记录 on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/categories/%E6%97%85%E8%A1%8C%E8%AE%B0%E5%BD%95.html</link><description>Recent content in 旅行记录 on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Tue, 26 Aug 2025 12:01:06 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/categories/%E6%97%85%E8%A1%8C%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml"/><item><title>行程记录类软件分享 - 那些记录旅行和日常点点滴滴的小工具</title><link>https://blog.tama.guru/travel/travel-record-tools.html</link><pubDate>Mon, 25 Aug 2025 10:19:11 +0800</pubDate><guid>https://blog.tama.guru/travel/travel-record-tools.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 行程记录类软件分享 - 那些记录旅行和日常点点滴滴的小工具" />&lt;h4 id="前言">前言
 &lt;/h4>&lt;p>&lt;strong>注意：以下软件均在iOS环境下使用，如使用其他平台相同软件也可能有功能上的差异。&lt;/strong>
-其实我很久之前就想到处走走，就是感觉走完什么都没能留下，也许像之前那样每到一个地方到处拍拍照回来的时候记下笔记写到博客里是个好办法，但基本都是对着照片回想，很容易疏忽一些琐碎的事情，所以我很需要一个软件来辅助记录行程。
+其实我很久之前就想到处走走，就是感觉走完什么都没能留下，也许像之前那样每到一个地方到处拍拍照回来的时候记下笔记写到博客里是个好办法，但基本都是对着照片回想，很容易疏忽一些琐碎的事情，所以我很需要一个软件来辅助记录行程。&lt;br>
 对于软件的功能要求，主要有以下几点：&lt;/p>
 &lt;ul>
 &lt;li>省电，一直用最大精度定位的话出门都要挂尿袋了。&lt;/li>
@@ -15,70 +15,30 @@
 &lt;li>地图不友好，内置的几款地图要么没使用火星坐标系导致偏差很大，要么就是地图数据极老，网上倒是有办法修改源码实现转化为火星坐标，但每次升级都要改。&lt;/li>
 &lt;/ul>
 &lt;h4 id="最后选了什么软件">最后选了什么软件
-&lt;/h4>&lt;p>结合网上的推荐，我购买了rond和世界迷雾两个软件。目前Rond只支持ios系统，世界迷雾支持安卓和苹果但不能通用，也就是说如果双持党想都用的话得买两份。
-rond可以直接在国区购买，日常价就是128，我等了很久都没降价所以原价入的。
+&lt;/h4>&lt;p>结合网上的推荐，我购买了rond和世界迷雾两个软件。目前Rond只支持ios系统，世界迷雾支持安卓和苹果但不能通用，也就是说如果双持党想都用的话得买两份。&lt;br>
+rond可以直接在国区购买，日常价就是128，我等了很久都没降价所以原价入的。&lt;br>
 &lt;strong>世界迷雾不建议在国区买！我在日区买日常价只要3000JPY（折合人民币145.77元），但是国区买需要198元&amp;hellip;&lt;/strong>
 这两个都是同类型软件中常年下载量靠前的，体验一番后感觉确实都不错，两个应用应对的情景不一致，但互补使用效果更好。&lt;/p>
 &lt;h4 id="世界迷雾">世界迷雾
 &lt;/h4>&lt;h5 id="基本介绍">基本介绍
 &lt;/h5>&lt;p>关于世界迷雾(&lt;a class="link" href="https://fogofworld.app/zh-hans/" target="_blank" rel="noopener"
 >https://fogofworld.app/zh-hans/&lt;/a>)这个软件的介绍网上已经很多了（注意，虽然软件支持苹果和安卓双端，但目前只推荐评估用户使用），它主要的界面包括地图、成就、备份几个，其中地图界面类似于塞尔达这样的游戏地图，一开始整个世界地图都是淡淡的白色（也就是迷雾），当你打开定位到处闲逛的时候，迷雾便会消除，这就是它的基础逻辑。
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://images.337845818.best/20250825/43e0eb3e6ab2b34be97bd24439752239.webp">
-&lt;img src="https://images.337845818.best/20250825/43e0eb3e6ab2b34be97bd24439752239.webp" alt="webp-1 (2)" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://images.337845818.best/20250825/43e0eb3e6ab2b34be97bd24439752239.webp"
-loading="lazy"
-alt="webp-1 (2)"
->
+&lt;img src="https://images.337845818.best/20250825/43e0eb3e6ab2b34be97bd24439752239.webp" alt="webp_image" style="width: 100%; heigth: auto;">
 它还带了个成就系统，很据地图迷雾被消除区域的面积、到达过的国家、大洲等内容来提升经验值，玩一个月现在已经65级了（这段时间基本都是各个城市乱晃，所以提升挺快的），但是这个成就系统基本上都是以国家/地区作为单位的，还有一些比如造访10个亚洲国家或地区、造访3个赢得过世界杯的国家、造访过南极洲所有的国家和地区、探索全世界1%的面积这样刁钻的成就，估计这辈子都很难完成。&lt;/p>
 &lt;h5 id="数据存储">数据存储
-&lt;/h5>&lt;p>对于数据，默认情况下只留存在本地，但也支持iCloud、Dropbox、Google Drive、OneDrive和坚果云几种云端存储模式，其中坚果云貌似已经用不了了，一般就用iCloud、OneDrive这两个。
+&lt;/h5>&lt;p>对于数据，默认情况下只留存在本地，但也支持iCloud、Dropbox、Google Drive、OneDrive和坚果云几种云端存储模式，其中坚果云貌似已经用不了了，一般就用iCloud、OneDrive这两个。&lt;br>
 软件使用fwss这个格式作为数据库快照，可以导入导出并使用迷雾资料库(&lt;a class="link" href="https://fog.vicc.wang/" target="_blank" rel="noopener"
 >https://fog.vicc.wang/&lt;/a>)这样的软件进行读写，也可以直接在其他软件上生成GPX、KML这样的通用格式导入到软件内实现手工解锁迷雾，这种情形主要针对于忘记打开迷雾解锁开关或是身处地铁或高铁上难以定位的时候手工补全，如果为了成就甚至可以自己到处乱画，但那就没意思了。
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://images.337845818.best/20250825/491ce964bf3c21b9508590ccb85f09b4.webp">
-&lt;img src="https://images.337845818.best/20250825/491ce964bf3c21b9508590ccb85f09b4.webp" alt="webp-4 (2)" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://images.337845818.best/20250825/491ce964bf3c21b9508590ccb85f09b4.webp"
-loading="lazy"
-alt="webp-4 (2)"
->&lt;/p>
+&lt;img src="https://images.337845818.best/20250825/491ce964bf3c21b9508590ccb85f09b4.webp" alt="webp_image" style="width: 100%; heigth: auto;">&lt;/p>
 &lt;h5 id="定位不到的地方怎么办">定位不到的地方怎么办
 &lt;/h5>&lt;p>正如前面所说，当身处地下或是在高速移动时，极大概率是无法完成定位的，即使设置里有定位精度的选项（即通用中的高精度定位开关）打开也无济于事，所以这种时候就需要第三方工具来补救。基本用法是在软件内生成一个快照并&lt;strong>做好备份&lt;/strong>，导出到电脑后使用迷雾资料库(&lt;a class="link" href="https://fog.vicc.wang/" target="_blank" rel="noopener"
->https://fog.vicc.wang/&lt;/a>)这样的网页端工具进行再编辑，主要用到的有两种，一个是编辑软件生成的fwss快照，另一个是铁路线路导出。前者就很好理解，可以手工添加、删除线段实现对文件的修改，对于高铁线路可以到铁路线路导出选定路线、起点和终点生成kml文件，然后使用编辑工具直接导入。需要注意的是，这个网站的数据并不全，有一些较新的线路或是比较偏远的线路资料库里是没有的，这种情况就只能借助Google Earth Map之类的软件绘制GPX或者手工去一点一点的画了。
+>https://fog.vicc.wang/&lt;/a>)这样的网页端工具进行再编辑，主要用到的有两种，一个是编辑软件生成的fwss快照，另一个是铁路线路导出。前者就很好理解，可以手工添加、删除线段实现对文件的修改，对于高铁线路可以到铁路线路导出选定路线、起点和终点生成kml文件，然后使用编辑工具直接导入。需要注意的是，这个网站的数据并不全，有一些较新的线路或是比较偏远的线路资料库里是没有的，这种情况就只能借助Google Earth Map之类的软件绘制GPX或者手工去一点一点的画了。&lt;br>
 修改后的fwss按原来的方式命名，修改一下时间，导入到手机的快照文件夹重新同步就行了。
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://images.337845818.best/20250825/c23fe2a94b65872c65bbb52f329a4702.webp">
-&lt;img src="https://images.337845818.best/20250825/c23fe2a94b65872c65bbb52f329a4702.webp" alt="webp-wechat_2025-08-25_171015_119" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://images.337845818.best/20250825/c23fe2a94b65872c65bbb52f329a4702.webp"
-loading="lazy"
-alt="webp-wechat_2025-08-25_171015_119"
->&lt;/p>
+&lt;img src="https://images.337845818.best/20250825/c23fe2a94b65872c65bbb52f329a4702.webp" alt="webp_image" style="width: 100%; heigth: auto;">&lt;/p>
 &lt;h5 id="类似软件">类似软件
 &lt;/h5>&lt;p>其实这样的系统在高德地图上是有类似的实现，但是高德是只要你到达某个区域并打开APP，它会把这一整块行政区域都”点亮“，把整块区域的面积都纳入”到过“的记录中，而世界迷雾则更细化，它只会根据在设置中设置的迷雾路径粗细估算实际走过的面积，基本上就是看到过的地方他才记录，所以高德记录我某个城市已探索的面积已经有几千平方公里，世界迷雾记录的则十分之一都不到。如果只是记录到过什么城市我个人认为是不需要花钱去买世界迷雾的，这软件只适合那些对每个城市的每一条街道都有探索欲的人，或者说花点小钱逼自己出去走走也挺好的。
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://images.337845818.best/20250825/c44e45883cda4f116985cfd1ee1d25f7.webp">
-&lt;img src="https://images.337845818.best/20250825/c44e45883cda4f116985cfd1ee1d25f7.webp" alt="webp-2 (2)" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://images.337845818.best/20250825/c44e45883cda4f116985cfd1ee1d25f7.webp"
-loading="lazy"
-alt="webp-2 (2)"
->&lt;br>
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://images.337845818.best/20250825/d2eefa6362be0807824450fcd2d07567.webp">
-&lt;img src="https://images.337845818.best/20250825/d2eefa6362be0807824450fcd2d07567.webp" alt="webp-3 (2)" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://images.337845818.best/20250825/d2eefa6362be0807824450fcd2d07567.webp"
-loading="lazy"
-alt="webp-3 (2)"
->&lt;/p>
+&lt;img src="https://images.337845818.best/20250825/c44e45883cda4f116985cfd1ee1d25f7.webp" alt="webp_image" style="width: 100%; heigth: auto;">&lt;br>
+&lt;img src="https://images.337845818.best/20250825/d2eefa6362be0807824450fcd2d07567.webp" alt="webp_image" style="width: 100%; heigth: auto;">&lt;/p>
 &lt;h5 id="有什么问题">有什么问题
 &lt;/h5>&lt;p>使用过一段时间之后还是想吐槽点东西：&lt;/p>
 &lt;ul>
@@ -89,40 +49,16 @@ alt="webp-3 (2)"
 &lt;h4 id="rond">Rond
 &lt;/h4>&lt;h5 id="基本介绍-1">基本介绍
 &lt;/h5>&lt;p>Rond和世界迷雾偏重的内容不一样，而且基础功能是不用花钱的。如果世界迷雾注重“线”，Rond则注重的是“点”。它直接调用iOS系统的定位（貌似iOS自身会经常获取位置信息，而Rond直接调用这些信息不重复去定位，因此软件本身耗电极小），获取设备本身所在的点的位置，因此它的主界面显示的是一条条的位置信息，而不是以地图的形式去展现。它的逻辑就是根据你在设置中配置的停留时长，当你在某处停留超过这个时长后把这个位置的点记录下来，比如下面这样的：
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://images.337845818.best/20250825/94c7de4864d41acda1686e6034bedf2b.webp">
-&lt;img src="https://images.337845818.best/20250825/94c7de4864d41acda1686e6034bedf2b.webp" alt="webp-2-1" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://images.337845818.best/20250825/94c7de4864d41acda1686e6034bedf2b.webp"
-loading="lazy"
-alt="webp-2-1"
->
-对于世界迷雾而言，Rond需要动手维护的地方多很多，但它就像是一个毛坯房，维护好之后可以装修得漂漂亮亮的。
-使用这个软件需要提前设置好活动类型、交通方式等信息，比如说定位到的地点属于医院，对应的活动可以标注为”看病“，然后后面每次到达定位为”医院“的建筑附近时会在时间轴上自动标注为”看病“。或者可以在设置内配置关键词，比如配置关键词规则检测到”喵“，活动添加一个”撸猫馆“也可以实现自动匹配。
-当然更多的情况是那些奇奇怪怪的店名和地名，这种情况下就只能手工匹配了。
-交通工具的维护也是非常重要的，因为软件定位方式的特殊型，其无法获取很高精度的速度信息，只有对于步行这样的慢速移动能够精确识别，使用自行车、电动车、汽车乃至地铁公交高铁都是难以识别，因此需要在交通工具中维护一个默认的交通方式，再手动调整。
-还需要对通勤和家的信息做维护，设置好家和单位的位置后，对于通勤的信息也能记录下来。
+&lt;img src="https://images.337845818.best/20250825/94c7de4864d41acda1686e6034bedf2b.webp" alt="webp_image" style="width: 100%; heigth: auto;">
+对于世界迷雾而言，Rond需要动手维护的地方多很多，但它就像是一个毛坯房，维护好之后可以装修得漂漂亮亮的。&lt;br>
+使用这个软件需要提前设置好活动类型、交通方式等信息，比如说定位到的地点属于医院，对应的活动可以标注为”看病“，然后后面每次到达定位为”医院“的建筑附近时会在时间轴上自动标注为”看病“。或者可以在设置内配置关键词，比如配置关键词规则检测到”喵“，活动添加一个”撸猫馆“也可以实现自动匹配。&lt;br>
+当然更多的情况是那些奇奇怪怪的店名和地名，这种情况下就只能手工匹配了。&lt;br>
+交通工具的维护也是非常重要的，因为软件定位方式的特殊型，其无法获取很高精度的速度信息，只有对于步行这样的慢速移动能够精确识别，使用自行车、电动车、汽车乃至地铁公交高铁都是难以识别，因此需要在交通工具中维护一个默认的交通方式，再手动调整。&lt;br>
+还需要对通勤和家的信息做维护，设置好家和单位的位置后，对于通勤的信息也能记录下来。&lt;br>
 维护好一切后，每天软件都能生成图表，了解自己一天下来在每种活动上花了多少时间。
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://images.337845818.best/20250825/de653eab57a59f559e9a5bf571e77671.webp">
-&lt;img src="https://images.337845818.best/20250825/de653eab57a59f559e9a5bf571e77671.webp" alt="webp-2-2" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://images.337845818.best/20250825/de653eab57a59f559e9a5bf571e77671.webp"
-loading="lazy"
-alt="webp-2-2"
->
+&lt;img src="https://images.337845818.best/20250825/de653eab57a59f559e9a5bf571e77671.webp" alt="webp_image" style="width: 100%; heigth: auto;">
 也能根据城市、地点信息记录简短的游记，写下自己旅行中的奇思妙想，软件会自动获取天气等信息，算是个简单的日记。
-&lt;div class="post-img-view">
-&lt;a data-fancybox="gallery" href="https://images.337845818.best/20250825/2d124819d87b3fcd8e3060bccb31c814.webp">
-&lt;img src="https://images.337845818.best/20250825/2d124819d87b3fcd8e3060bccb31c814.webp" alt="webp-2-3" />
-&lt;/a>
-&lt;/div>
-&lt;img src="https://images.337845818.best/20250825/2d124819d87b3fcd8e3060bccb31c814.webp"
-loading="lazy"
-alt="webp-2-3"
->&lt;/p>
+&lt;img src="https://images.337845818.best/20250825/2d124819d87b3fcd8e3060bccb31c814.webp" alt="webp_image" style="width: 100%; heigth: auto;">&lt;/p>
 &lt;h5 id="数据存储-1">数据存储
 &lt;/h5>&lt;p>Rond只支持icloud备份和本地导入导出两种模式，本地导出的文件是csv格式的数据表，包含字段有”活动 位置 抵达时刻 离开时刻 时区 经纬度 标签 备注“这些内容，非常方便修改，但是一些时间和经纬度信息要手工补充就得手工查询了。&lt;/p>
 &lt;h5 id="类似软件-1">类似软件
