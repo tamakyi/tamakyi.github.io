@@ -1,4 +1,82 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/post.html</link><description>Recent content in Posts on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Tue, 09 Sep 2025 10:18:49 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/post/index.xml" rel="self" type="application/rss+xml"/><item><title>使用Alpine linux在爱快中作为虚拟机运行Docker</title><link>https://blog.tama.guru/record/alpine_docker_on_ikuai.html</link><pubDate>Tue, 09 Sep 2025 15:09:11 +0800</pubDate><guid>https://blog.tama.guru/record/alpine_docker_on_ikuai.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 使用Alpine linux在爱快中作为虚拟机运行Docker" />&lt;p>[TOC]&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/post.html</link><description>Recent content in Posts on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Fri, 19 Sep 2025 13:57:05 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/post/index.xml" rel="self" type="application/rss+xml"/><item><title>狼的小卖部 - 基于 Flask + Jinja2 的进销存与销售管理系统</title><link>https://blog.tama.guru/record/simple_sales_system.html</link><pubDate>Fri, 19 Sep 2025 15:09:11 +0800</pubDate><guid>https://blog.tama.guru/record/simple_sales_system.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 狼的小卖部 - 基于 Flask + Jinja2 的进销存与销售管理系统" />&lt;p>[TOC]&lt;/p>
+&lt;h2 id="简介">简介
+&lt;/h2>&lt;p>我就是感觉这样一个东西应该会有，但是一直找不到，所以干脆自己写个&amp;hellip;一个使用Python的简约销售管理系统，支持商品、分类、库存、销售流水、用户权限、批量导入、统计报表、仪表盘等功能。适合小规模使用，数据支持sqlite或mysql存储，可能会在某些情况下有用处。
+项目地址：https://github.com/tamakyi/simple-sales-system&lt;/p>
+&lt;h2 id="一些截图">一些截图
+&lt;/h2>&lt;ul>
+&lt;li>仪表盘
+&lt;img src="https://bgithub.xyz/tamakyi/simple-sales-system/raw/main/screenshot/dashboard.png" alt="image" />&lt;br>&lt;/li>
+&lt;li>商品管理
+&lt;img src="https://bgithub.xyz/tamakyi/simple-sales-system/raw/main/screenshot/products.png" alt="image" />&lt;br>&lt;/li>
+&lt;li>商品导入
+&lt;img src="https://bgithub.xyz/tamakyi/simple-sales-system/raw/main/screenshot/products-import.png" alt="image" />&lt;br>&lt;/li>
+&lt;li>进销存
+&lt;img src="https://bgithub.xyz/tamakyi/simple-sales-system/raw/main/screenshot/sales.png" alt="image" />&lt;br>&lt;/li>
+&lt;li>移动端进销存
+&lt;img src="https://bgithub.xyz/tamakyi/simple-sales-system/raw/main/screenshot/sales-simple.png" alt="image" />&lt;br>&lt;/li>
+&lt;li>商品分类
+&lt;img src="https://bgithub.xyz/tamakyi/simple-sales-system/raw/main/screenshot/categories.png" alt="image" />&lt;br>&lt;/li>
+&lt;li>用户管理
+&lt;img src="https://bgithub.xyz/tamakyi/simple-sales-system/raw/main/screenshot/users.png" alt="image" />&lt;br>&lt;/li>
+&lt;li>操作记录
+&lt;img src="https://bgithub.xyz/tamakyi/simple-sales-system/raw/main/screenshot/logs.png" alt="image" />&lt;/li>
+&lt;/ul>
+&lt;h2 id="功能特色">功能特色
+&lt;/h2>&lt;ul>
+&lt;li>商品管理（增删改查，支持图片、批量导入）&lt;/li>
+&lt;li>分类管理&lt;/li>
+&lt;li>进销存：商品表格展示，直接在行内录入进货/销售（针对移动端单独做优化）&lt;/li>
+&lt;li>销售流水、历史/今日销售、库存统计&lt;/li>
+&lt;li>销售排行榜、分类饼图、销售数据卡片&lt;/li>
+&lt;li>用户权限（管理员/普通用户/审核）&lt;/li>
+&lt;li>操作日志&lt;/li>
+&lt;li>导出销售报表（Excel）&lt;/li>
+&lt;li>支持分页、搜索、图片外链或本地上传&lt;/li>
+&lt;li>可选使用sql轻量化存储数据或使用mysql存储&lt;/li>
+&lt;li>网页公告&lt;/li>
+&lt;li>背景图片&lt;/li>
+&lt;li>网页跟踪脚本&lt;/li>
+&lt;/ul>
+&lt;h2 id="快速开始">快速开始
+&lt;/h2>&lt;h3 id="1-安装依赖">1. 安装依赖
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">pip install -r requirements.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="2复制envsample为env并编辑">2.复制.env.sample为.env并编辑
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="n">UPLOAD_FOLDER&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;static/uploads&amp;#39;&lt;/span> &lt;span class="c1">#图片上传路径&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">SECRET_KEY&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">mysecretkey&lt;/span> &lt;span class="c1">#安全密钥，建议替换&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">SQLALCHEMY_DATABASE_URI&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;sqlite:///sales.db&amp;#39;&lt;/span> &lt;span class="c1"># 使用SQLITE作为数据库时使用&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">SQLALCHEMY_DATABASE_URI&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">mysql&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="n">pymysql&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">//&lt;/span>&lt;span class="n">root&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="n">password&lt;/span>&lt;span class="err">@&lt;/span>&lt;span class="n">localhost&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">3306&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">test_sale&lt;/span> &lt;span class="c1"># 使用MYSQL作为数据库时使用&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">MAX_CONTENT_LENGTH&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">2097152&lt;/span> &lt;span class="c1">#最大上传大小，默认2M，即2*1024*1024&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">PER_PAGE&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">10&lt;/span> &lt;span class="c1"># 商品页面每页体现的商品数量&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">BACKGROUND_IMAGE_URL&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">https&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">//&lt;/span>&lt;span class="n">xxx&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">com&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">xxx&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">png&lt;/span> &lt;span class="c1"># 默认背景图片地址&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">BACKGROUND_OPACITY&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="mf">0.1&lt;/span> &lt;span class="c1"># 背景图片不透明度，范围0-1，越接近0越透明。&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">BACKGROUND_SIZE&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">cover&lt;/span> &lt;span class="c1">#背景图片尺寸，默认cover即可，详情查看web css中关于background_size的参数说明。&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">DASHBOARD_ANNOUNCEMENT&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;请注意：系统将于本周五晚进行维护，届时可能无法访问。&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">ANNOUNCEMENT_ENABLED&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">True&lt;/span> &lt;span class="c1"># 控制公告是否显示&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">ANALYZE_SCRIPT&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;&amp;#34;&lt;/span> &lt;span class="c1">#分析脚本，建议使用umami&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">ANALYZE_ENABLE&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">True&lt;/span> &lt;span class="c1">#开启分析脚本功能&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="2-启动项目">2. 启动项目
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">python app-mysql.py &lt;span class="c1">#使用mysql存储数据&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">python app-sqlite.py &lt;span class="c1">#使用sqlite存储数据&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="3-访问地址">3. 访问地址
+&lt;/h3>&lt;p>浏览器打开 &lt;a class="link" href="http://localhost:5000/" target="_blank" rel="noopener"
+>http://localhost:5000/&lt;/a>&lt;/p>
+&lt;h3 id="4-初始管理员">4. 初始管理员
+&lt;/h3>&lt;ul>
+&lt;li>用户名：admin&lt;/li>
+&lt;li>密码：admin&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="批量导入商品">批量导入商品
+&lt;/h2>&lt;p>支持 CSV 批量导入，&lt;strong>需包含下列列名：&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>商品名、单价、库存、分类&lt;/li>
+&lt;/ul>
+&lt;p>示例见 &lt;code>sample_products.csv&lt;/code>。
+网页内支持直接导出模板文件，修改好导入即可实现批量导入。&lt;/p>
+&lt;h2 id="测试">测试
+&lt;/h2>&lt;ul>
+&lt;li>当前已在Debian12 + conda python 3.11 下测试通过。&lt;/li>
+&lt;/ul></description></item><item><title>使用Alpine linux在爱快中作为虚拟机运行Docker</title><link>https://blog.tama.guru/record/alpine_docker_on_ikuai.html</link><pubDate>Tue, 09 Sep 2025 15:09:11 +0800</pubDate><guid>https://blog.tama.guru/record/alpine_docker_on_ikuai.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 使用Alpine linux在爱快中作为虚拟机运行Docker" />&lt;p>[TOC]&lt;/p>
 &lt;h4 id="前言">前言
 &lt;/h4>&lt;p>  自从爱快添加Docker插件之后我有第一时间就安装，使用一段时间后感觉这玩意问题蛮多的，首先就是功能残废，系统提供的界面只能实现修改镜像源、配置存储位置这些基础功能（修改镜像源还是最近几个版本才添加，原来直连官方国内已经无法访问）；然后就是访问异常，我使用Chromium内核的浏览器（包括但不限于Chrome、Edge）访问Docker的管理页面，总是会莫名其妙的跳出来，每点一下就跳一次，拉个镜像配置完参数硬是要花我几分钟时间。而且Docker功能需要到云服务端去手动开启，一直搞不懂为什么要这样。&lt;br>
   但是现在多个路子，就是通过自带的虚拟机虚拟linux环境专门来跑docker，听说它自带的虚拟机也有一些问题，长期使用会影响到宿主系统的性能，但是我使用一段时间之后并没有感觉，日常使用占用CPU最多也就跑到40%，内存我限制了1G，感觉基本够用了。
