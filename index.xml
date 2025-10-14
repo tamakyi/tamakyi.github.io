@@ -1,4 +1,54 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/</link><description>Recent content on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><atom:link href="https://blog.tama.guru/index.xml" rel="self" type="application/rss+xml"/><item><title>狼的小卖部 - 基于 Flask + Jinja2 的进销存与销售管理系统</title><link>https://blog.tama.guru/record/simple_sales_system.html</link><pubDate>Fri, 19 Sep 2025 15:09:11 +0800</pubDate><guid>https://blog.tama.guru/record/simple_sales_system.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 狼的小卖部 - 基于 Flask + Jinja2 的进销存与销售管理系统" />&lt;p>[TOC]&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/</link><description>Recent content on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><atom:link href="https://blog.tama.guru/index.xml" rel="self" type="application/rss+xml"/><item><title>在GPD Win2上装Win11和archlinux双系统的那些事</title><link>https://blog.tama.guru/record/multi-system-on-win2.html</link><pubDate>Tue, 14 Oct 2025 11:09:11 +0800</pubDate><guid>https://blog.tama.guru/record/multi-system-on-win2.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 在GPD Win2上装Win11和archlinux双系统的那些事" />&lt;p>[TOC]&lt;/p>
+&lt;h4 id="前言">前言
+&lt;/h4>&lt;p>我一直很想找个足够小且带屏幕、满足基本输入方式的X86设备，最早的时候是因为接触到诺基亚的N900，这玩意能够跑linux且自带侧滑键盘，是我理想的形态，但无奈的是硬件性能实在跟不上，且很多软件已经没有维护，最终也只能当个玩具。在这之后，我接触到Steamdeck、N305带屏小主机甚至是刷WIN10改运存的小米平板2，但每个都有不满意的地方，steamdeck屏幕不大但是整体体积很大，而且是为游戏设计的，操作对我来说有点别扭；带屏小主机算是一段时间内我带出门的主力设备，机身接口丰富且整体尺寸控制不错，但是缺少触屏之外的输入方式，也就是真要干活就得自带鼠标键盘；至于小米平板2，小是够小而且可以加装超薄的键盘皮套，但是atom的性能摆在那里，就只能当个玩具玩玩。所以在我发现win2屏幕只有6寸的时候是真的震惊了，而且是翻盖全功能键盘，cpu也是8100y而不是那一众atom，还能加装固态，唯一的问题就是价格离谱，去年前年刚看到的时候一个要千五千八，最近刚看已经降到千元出头，最后找到个九百多乱改过散热和电池导致有点鼓包的。&lt;/p>
+&lt;h4 id="上手">上手
+&lt;/h4>&lt;p>刚上手的时候是用个小袋子装的，确实小很多，基本上就比手机宽一些，两倍厚度；机身IO相比N305主机少很多，就一个USB3.0+一个TypeC（兼容供电）+外星科技3.5mm接口+MicroHDMI。6寸屏幕在720P分辨率下显示尚可接受，但是操作起来就有点麻烦（主要是系统UI太小了），手柄部分可以切换成鼠标模式，用摇杆模拟滚动，肩键模拟左右键，但是摇杆的灵敏度很低，只能说够应急但是绝对不能说得上用的爽。&lt;br>
+姑且跑个分，CPU144150 显卡57990，内存86582，硬盘53269，合计341991，对于这么小尺寸的设备我觉得还是可以接受。&lt;br>
+这系统原机主连重置都懒得重置一下，很多个人资料在里面，卖二手设备要注意信息安全啊&amp;hellip;&lt;/p>
+&lt;h4 id="换硬盘装win11">换硬盘装WIN11
+&lt;/h4>&lt;p>机身带的硬盘只有256G，装个系统剩下也不够干啥了，但这机子固态用的是2242长度，手头上最大的也只有512G，姑且先换一个上去装系统。
+我用的是win11的官方ltsb镜像，使用ventoy安装，安装过程中如果使用新版安装器在硬盘检测步骤必定会出现&lt;code>Windows安装遇到错误。错误代码：0x8007001-0x4002F&lt;/code>的问题，必须要切换到旧版安装器。&lt;br>
+**注意！在所有驱动安装完成之前先不要联网！**安装完成后进入系统很多硬件都是没有驱动的，特别是触屏，官方虽然发布了触屏修复补丁，但是如果安装那玩意轻则只是触屏错位，重则完全失灵。查一些资料之后在一个帖子（https://tieba.baidu.com/p/7675530378#)下发现类似状况和解决方案，我在这个方案的基础上做一些调整，实现WIN下所有设备驱动正常：&lt;/p>
+&lt;p>先修复触屏驱动：&lt;/p>
+&lt;ol>
+&lt;li>去官网下载V6驱动包、4.4.2.4923版本的触屏驱动和贴吧提供的未签名版本特定驱动到U盘或SD卡上，解压好备用。&lt;/li>
+&lt;li>去高级启动中修改启动配置为禁用驱动程序强制签名（F7 / 7），重启进入系统后到解压后的未签名版本特定驱动文件夹下找到.inf文件右键安装，安装过程中会弹出驱动未签名的红色警告，继续安装。安装完此时触摸是正常的，也没有漂移。到设备管理器中检查&lt;code>GoodixTouchDriver Device&lt;/code>版本为14.47.23.751，然后重启。&lt;/li>
+&lt;li>重启后触屏再次时效，设备管理器中检查&lt;code>GoodixTouchDriver Device&lt;/code>装填变为无法验证此设备所需的驱动程序的数字签名，再次回到解压后的未签名版本特定驱动文件夹，找到关闭测试模式.bat，运行并重启。（关闭测试模式这一步是否有必要有待考究，也许重启之后就自动关闭了，但原文如此，且不影响我操作，暂且保留）&lt;/li>
+&lt;li>进入设备管理器，右键&lt;code>GoodixTouchDriver Device&lt;/code>并选择更新驱动程序，来源选择浏览我的电脑以查找驱动程序，选择官方提供的4.4.2.4923版本的触屏驱动文件夹，等待安装完成，此时触屏已恢复且重启后不会掉驱动，至此触屏驱动修复完成。&lt;/li>
+&lt;/ol>
+&lt;p>解决其他驱动问题：&lt;/p>
+&lt;p>修复完触屏后还剩下10个感叹号，我们需要按照上面的第四点这样操作，手动从电脑中更新驱动，驱动的文件夹选择V6驱动包的解压路径。需要注意显示适配器默认只是Microsoft基本显示适配器，也需要在V6驱动包中安装UHD615的驱动。&lt;/p>
+&lt;p>需要注意：&lt;/p>
+&lt;p>如果安装完后系统运行正常，还是不要联网，先去&lt;strong>把自动安装硬件驱动更新给关掉&lt;/strong>，参考：&lt;a class="link" href="https://www.sysgeek.cn/disable-driver-updates-in-windows/" target="_blank" rel="noopener"
+>如何禁止 Windows 11 自动安装或更新驱动程序 - 系统极客&lt;/a>&lt;/p>
+&lt;p>方法 1：禁止 Windows 11 自动安装驱动程序：按&lt;code>Windows + R&lt;/code>快捷键打开「运行」对话框，执行&lt;code>systempropertiesadvanced&lt;/code>打开「系统属性」窗口；切换到「硬件」选项卡，点击「设备安装设置」按钮；在新弹出的窗口中，选择「否」，关闭驱动自动安装功能；最后，点击「保存更改」，让设置生效。&lt;/p>
+&lt;p>方法 2：通过组策略阻止「Windows 更新」提供驱动程序 （不建议，会连正常驱动都无法安装）：按Windows + R快捷键打开「运行」对话框，执行gpedit.msc打开组策略编辑器；依次展开「计算机配置」&amp;gt;「管理模板」&amp;gt;「Windows 组件」&amp;gt;「Windows 更新」&amp;gt;「管理从 Windows 更新提供的更新」；双击「Windows 更新不包括驱动程序」策略，将它设置为「已启动」。&lt;/p>
+&lt;p>方法 3：通过注册表禁止从「Windows 更新」搜索驱动程序：按Windows + R快捷键打开「运行」对话框，执行regedit打开注册表编辑器，导航到&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>找到名为SearchOrderConfig的 DWORD (32 位) 值，并将其设置为：2 ，即不搜索 Windows 更新。&lt;/p>
+&lt;p>之所以这么做，是因为机子自带的无线网卡在通过windows更新驱动时，&lt;strong>100%会导致蓝屏并循环！&lt;/strong>（关键文件：ndis.sys，错误代码： SYSTEM THREAD EXCEPTION NOT HANDLED），如果你不小心联网了，手动重启到安全模式，把&lt;code>C:\Windows\SoftwareDistribution\Download&lt;/code>下的文件全部删除，特别是&lt;code>install&lt;/code>文件夹内的文件，存放的就是系统下载并解压后的网卡驱动。&lt;/p>
+&lt;p>当你做完这一切，Win11 on GPD win2算是完全正常运行了，后续的激活和优化根据自己的要求即可。&lt;/p>
+&lt;h4 id="双系统安装准确来说是安装archlinux">双系统安装，准确来说是安装archlinux
+&lt;/h4>&lt;p>以下是一些注意事项的记录，并不涉及到系统的安装。&lt;/p>
+&lt;p>因为这台机器我打算就玩些小游戏，512G也基本够用（实在不够扔内存卡也不是不行），我就把100G空间划出来给linux用。 ，安装前需要先进PE系统用diskgenius把ESP分区文件备份，然后把ESP和MSR都删掉再重建，ESP分区要大于500M。&lt;/p>
+&lt;p>一样使用ventoy安装archlinux，需要注意的是安装时选择的是grub安装而不是正常安装（不知道是不是我设备的问题，正常安装会直接显示USB电涌然后找不到init，根本安装不下去）。&lt;/p>
+&lt;p>在grub界面时不要直接点install archlinux，先按e调整下参数，具体是找到linux开头的那行的末位添加以下内容：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">modprobe.blacklist&lt;span class="o">=&lt;/span>sdhci_pci sdhci.debug_quirks&lt;span class="o">=&lt;/span>0x8000
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这也可能是我机器的问题，因为在安装时终端会一直报错：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">mmc0: Timeout waiting &lt;span class="k">for&lt;/span> hardware cmd interrupt.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>查资料后有说是SD卡控制器的问题，我尝试过插拔内存卡都没有效果，只能通过这个方式屏蔽，不然安装过程中会不停报错甚至卡死只能长按电源关机。&lt;/p>
+&lt;p>还要注意的是，安装系统时并没有办法直接调用无线网络连接WIFI（iw直接检测不到设备，也扫不出来任何SSID），需要用手机连接上设备共享网络。&lt;/p>
+&lt;p>正常安装后触屏、显示、WIFI都是正常的，但是在终端执行&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">dmesg &lt;span class="p">|&lt;/span> grep sd
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>发现还是会报一样的错：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">mmc0: Timeout waiting &lt;span class="k">for&lt;/span> hardware cmd interrupt.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>我的建议是添加&lt;code>/etc/modprobe.d/blacklist.conf&lt;/code>文件，文件内容是：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">blacklist sdhci
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">blacklist sdhci_pci
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>保存并执行&lt;code>sudo update-initramfs -u&lt;/code>命令生成内核初始化文件。&lt;/p>
+&lt;p>安装完后可以用refind之类的做引导或者用grub做引导器。&lt;/p></description></item><item><title>狼的小卖部 - 基于 Flask + Jinja2 的进销存与销售管理系统</title><link>https://blog.tama.guru/record/simple_sales_system.html</link><pubDate>Fri, 19 Sep 2025 15:09:11 +0800</pubDate><guid>https://blog.tama.guru/record/simple_sales_system.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 狼的小卖部 - 基于 Flask + Jinja2 的进销存与销售管理系统" />&lt;p>[TOC]&lt;/p>
 &lt;h2 id="简介">简介
 &lt;/h2>&lt;p>我就是感觉这样一个东西应该会有，但是一直找不到，所以干脆自己写个&amp;hellip;一个使用Python的简约销售管理系统，支持商品、分类、库存、销售流水、用户权限、批量导入、统计报表、仪表盘等功能。适合小规模使用，数据支持sqlite或mysql存储，可能会在某些情况下有用处。
 项目地址：https://github.com/tamakyi/simple-sales-system&lt;/p>
