@@ -1,4 +1,167 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Archlinux on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/archlinux.html</link><description>Recent content in Archlinux on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Fri, 31 Oct 2025 10:22:43 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/archlinux/index.xml" rel="self" type="application/rss+xml"/><item><title>在GPD Win2上装Win11和archlinux双系统的那些事</title><link>https://blog.tama.guru/record/multi-system-on-win2.html</link><pubDate>Tue, 14 Oct 2025 11:09:11 +0800</pubDate><guid>https://blog.tama.guru/record/multi-system-on-win2.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 在GPD Win2上装Win11和archlinux双系统的那些事" />&lt;p>[TOC]&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Archlinux on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/archlinux.html</link><description>Recent content in Archlinux on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Tue, 11 Nov 2025 08:03:32 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/archlinux/index.xml" rel="self" type="application/rss+xml"/><item><title>自用的windows+archlinux双系统安装过程（在gpd win mini 2024上验证通过）</title><link>https://blog.tama.guru/record/dual-system-on-gpd-win-mini.html</link><pubDate>Tue, 11 Nov 2025 11:11:11 +0800</pubDate><guid>https://blog.tama.guru/record/dual-system-on-gpd-win-mini.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 自用的windows+archlinux双系统安装过程（在gpd win mini 2024上验证通过）" />&lt;p>如果是全新安装双系统，个人建议还是先安装linux部分再安装windows，因为这样可以直接调整efi分区大小，如果先安装windows系统就会出现efi分区只有100M的情况，对于动辄几十兆的linux内核来说属实是不够的，还需要进PE系统使用diskgeniues之类的工具重建efi，有可能会导致无法启动。&lt;/p>
+&lt;h4 id="archlinux安装">Archlinux安装
+&lt;/h4>&lt;p>首先是使用rufus刻录到U盘，直接使用默认的配置dd写入即可，如果使用ventoy的方式安装的话可能会出现找不到init导致安装无法进行。&lt;/p>
+&lt;h5 id="连接网络并同步时间">连接网络并同步时间
+&lt;/h5>&lt;p>输入&lt;code>iwctl&lt;/code>进入 iwd 的控制台, 然后依次键入如下命令:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">device list &lt;span class="c1"># 列出可用无线网卡, 我这里输出的是 wlan0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">station wlan0 scan &lt;span class="c1"># 扫描附近的无线网络&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">station wlan0 get-networks &lt;span class="c1"># 列出扫描到的网络&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">station wlan0 connect &lt;span class="o">{&lt;/span>SSID&lt;span class="o">}&lt;/span> &lt;span class="c1"># 连接指定网络, 这里我连的是手机热点&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">exit&lt;/span> &lt;span class="c1"># 退出 iwd 控制台&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后, 输入 &lt;code>ping www.baidu.com&lt;/code> 测试是否成功联网.&lt;/p>
+&lt;p>联网后, 输入如下命令设置时间为 UTC 并完成 NTP 时间同步:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">hwclock --systohc --utc &lt;span class="c1"># 设置时间为 UTC &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">timedatectl set-ntp &lt;span class="nb">true&lt;/span> &lt;span class="c1"># 完成 NTP 时间同步&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="使用ssh执行安装">使用SSH执行安装
+&lt;/h5>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">ip -brief address &lt;span class="c1"># 查询IP地址&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">passwd &lt;span class="c1"># 修改密码&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>之后就在其他电脑上用ssh客户端连接&lt;code>root@ip:22&lt;/code>，密码就是passwd的密码。因为gpd win mini的键盘实在太小了，避免误操作~~（其实是方便ctrl+c和ctrl+v）~~。&lt;/p>
+&lt;h5 id="分区">分区
+&lt;/h5>&lt;p>我仅保证基础的系统运行需求，只配置了：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">EFI 600M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">SWAP 8G
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ROOT Linux root &lt;span class="o">(&lt;/span>x86-64&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果有把home单独分开的习惯另行建立一个linuxfilesystem的分区就行了，但我不需要。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">fdisk -l &lt;span class="c1"># 查看硬盘和分区目录，机器上配置单块nvme，显示为nvme0n1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cfdisk /dev/nvme0n1 &lt;span class="c1"># 使用cfdisk进行分区操作，操作简单&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">fdisk -l &lt;span class="c1"># 查看硬盘和分区目录是否配置生效&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Device Start End Sectors Size Type
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">/dev/nvme0n1p1 &lt;span class="m">2048&lt;/span> &lt;span class="m">1230847&lt;/span> &lt;span class="m">1228800&lt;/span> 600M EFI System
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">/dev/nvme0n1p2 &lt;span class="m">1230848&lt;/span> &lt;span class="m">18008063&lt;/span> &lt;span class="m">16777216&lt;/span> 8G Linux swap
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">/dev/nvme0n1p3 &lt;span class="m">18008064&lt;/span> &lt;span class="m">353552383&lt;/span> &lt;span class="m">335544320&lt;/span> 160G Linux root &lt;span class="o">(&lt;/span>x86-64&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mkfs.vfat -F32 /dev/nvme0n1p1 &lt;span class="c1"># 格式化efi分区为fat32&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mkswap /dev/nvme0n1p2 &lt;span class="c1"># 配置swap分区&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mkfs.ext4 /dev/nvme0n1p3 &lt;span class="c1"># 格式化root为ext4，如果使用其他格式另说&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mount /dev/nvme0n1p3 /mnt &lt;span class="c1"># 挂载root分区到/mnt&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mkdir -p /mnt/boot &lt;span class="c1"># 在root分区下新建boot文件夹用于挂载efi分区&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mount /dev/nvme0n1p1 /mnt/boot &lt;span class="c1"># 挂载efi分区到/boot目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">swapon /dev/nvme0n1p2 &lt;span class="c1"># 启用swap分区&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="安装基本系统">安装基本系统
+&lt;/h5>&lt;p>安装基础软件并配置fstab挂载&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">curl -L -o /etc/pacman.d/mirrorlist &lt;span class="s2">&amp;#34;https://archlinux.org/mirrorlist/?country=CN&amp;#34;&lt;/span> &lt;span class="c1"># 抓取archlinux.org上的mirrorlist文件保存本地&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">nano /etc/pacman.d/mirrorlist &lt;span class="c1"># 该文件包含基本上国内所有活跃的源，删掉前面的#即可，一般留个三四个https开头的就行了&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pacman -Syy &lt;span class="c1"># 更新索引&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">export&lt;/span> &lt;span class="nv">LANG&lt;/span>&lt;span class="o">=&lt;/span>C &lt;span class="c1">#避免乱码&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pacstrap /mnt base linux linux-firmware bash-completion e2fsprogs nano networkmanager pacman-contrib sudo amd-ucode intel-ucode sof-firmware &lt;span class="c1">#安装基础软件，实体机器安装时根据cpu安装 amd-ucode或intel-ucode，一起安装也没事就是了&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">genfstab -U /mnt &amp;gt;&amp;gt; /mnt/etc/fstab &lt;span class="c1"># 生成fstab文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">arch-chroot /mnt &lt;span class="c1"># 切换到新系统&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="系统初始化设置">系统初始化设置
+&lt;/h5>&lt;p>主要是一些时区、hostname、语言、新建用户等基础设置&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &lt;span class="c1"># 修改时区为上海&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hwclock --systohc &lt;span class="c1"># 系统时间同步到硬件时钟&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> miniarch &amp;gt; /etc/hostname &lt;span class="c1"># 修改hostname，这里和下一步相关联&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">nano /etc/hosts &lt;span class="c1">#编 辑host解析&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">127.0.0.1 localhost
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">::1 localhost
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">127.0.0.1 miniarch &lt;span class="c1"># 添加ipv4解析到hostname&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">::1 miniarch &lt;span class="c1"># 添加ipv6解析到hostname&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">nano /etc/locale.gen &lt;span class="c1"># 修改多语言设置，建议使用en_US.UTF-8和zh_CN.UTF-8&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">locale-gen &lt;span class="c1"># 使多语言设置文件生效&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="nv">LANG&lt;/span>&lt;span class="o">=&lt;/span>en_US.UTF-8 &amp;gt; /etc/locale.conf &lt;span class="c1"># 设置默认语言，使用en_US.UTF-8是避免显示乱码&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">SUDO_EDITOR&lt;/span>&lt;span class="o">=&lt;/span>nano visudo &lt;span class="c1"># 修改sudo设置，把%wheel ALL=(ALL) ALL前面的#删掉&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">useradd -m -G wheel -s /bin/bash admin &lt;span class="c1"># 增加新用户并添加到wheel组&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">passwd admin &lt;span class="c1"># 修改新用户密码&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pacman -S grub &lt;span class="c1"># 安装grub&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pacman -S grub efibootmgr os-prober &lt;span class="c1"># 安装用于多系统的配套软件&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">grub-install --target&lt;span class="o">=&lt;/span>x86_64-efi --efi-directory&lt;span class="o">=&lt;/span>/boot --bootloader-id&lt;span class="o">=&lt;/span>grub --recheck &lt;span class="c1"># 在grub增加一个efi分区指向boot目录的启动项&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;GRUB_DISABLE_OS_PROBER=false&amp;#34;&lt;/span> &amp;gt;&amp;gt; /etc/default/grub &lt;span class="c1"># 启用os-prober&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">grub-mkconfig -o /boot/grub/grub.cfg &lt;span class="c1"># 生成grub配置&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="配置基础功能">配置基础功能
+&lt;/h5>&lt;p>图形化界面和字体、基础软件的安装和配套设置&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">pacman -S --noconfirm plasma sddm konsole noto-fonts noto-fonts-cjk noto-fonts-emoji openssh dhcpcd &lt;span class="c1"># 安装kde+plasma+基础字体+openssh+dhcp&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pacman -S --asdeps gst-plugins-good power-profiles-daemon &lt;span class="c1"># 补齐配套软件，power-profiles-daemon用于管理电源配置&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">systemctl &lt;span class="nb">enable&lt;/span> NetworkManager &lt;span class="c1"># 启用NetworkManager&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">systemctl &lt;span class="nb">enable&lt;/span> sddm &lt;span class="c1"># 启用sddm&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">systemctl &lt;span class="nb">enable&lt;/span> sshd &lt;span class="c1"># 启用ssh&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">systemctl disable NetworkManager-wait-online &lt;span class="c1"># 服务用于确保网络连接在启动过程中达到“在线”状态后，才允许依赖网络的其他服务启动，没必要使用。&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">timedatectl set-ntp &lt;span class="nb">true&lt;/span> &lt;span class="c1"># 启用ntp&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">systemctl &lt;span class="nb">enable&lt;/span> systemd-resolved &lt;span class="c1"># 启用本地解析&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">systemctl &lt;span class="nb">enable&lt;/span> dhcpcd &lt;span class="c1"># 启用dhcp&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf &lt;span class="c1"># 可能会提示已经做过链接了&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">exit&lt;/span> &lt;span class="c1"># 退出当前环境&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">umount -R /mnt &lt;span class="c1"># 卸载/mnt和/mnt/boot&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">reboot &lt;span class="c1"># 重启系统&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>重启后就可以使用图形界面登录了。&lt;/p>
+&lt;h5 id="进入系统后一些设置">进入系统后一些设置
+&lt;/h5>&lt;p>安装完系统后依旧可以使用ssh远程操作，如果需要修改ssh配置就修改&lt;code>/etc/ssh/sshd_config&lt;/code>。&lt;/p>
+&lt;h6 id="安装输入法">安装输入法
+&lt;/h6>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo pacman -S fcitx5-im fcitx5-chinese-addons &lt;span class="c1"># 安装输入法&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo nano /etc/environment &lt;span class="c1">#配置使用输入法，把下面&amp;gt;&amp;gt;&amp;gt;之间的内容添加到这个文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;gt;&amp;gt;&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">GTK_IM_MODULE&lt;/span>&lt;span class="o">=&lt;/span>fcitx
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">QT_IM_MODULE&lt;/span>&lt;span class="o">=&lt;/span>fcitx
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">XMODIFIERS&lt;/span>&lt;span class="o">=&lt;/span>@im&lt;span class="o">=&lt;/span>fcitx
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">SDL_IM_MODULE&lt;/span>&lt;span class="o">=&lt;/span>fcitx
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;gt;&amp;gt;&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h6 id="修改启动界面语言">修改启动界面语言
+&lt;/h6>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo &lt;span class="nv">SYSTEMD_EDITOR&lt;/span>&lt;span class="o">=&lt;/span>nano systemctl edit sddm &lt;span class="c1"># 修改启动界面语言，把&amp;gt;&amp;gt;&amp;gt;之间的内容添加到第三行起的空行中。&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;gt;&amp;gt;&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>Service&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">Environment&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nv">LANG&lt;/span>&lt;span class="o">=&lt;/span>zh_CN.UTF-8
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;gt;&amp;gt;&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h6 id="安装rust并换源">安装rust并换源
+&lt;/h6>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo pacman -S rustup &lt;span class="c1">#使用rustup安装rust&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">nano ~/.cargo/config.toml &lt;span class="c1"># 修改默认索引源为中科大的，速度快很多，编辑这个文件把&amp;gt;&amp;gt;&amp;gt;之间的内容添加进去，.cargo目录默认也是没有的，要自己新建&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;gt;&amp;gt;&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>source.crates-io&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">replace-with &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;ustc&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>source.ustc&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">registry&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;git://mirrors.ustc.edu.cn/crates.io-index&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>net&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git-fetch-with-cli &lt;span class="o">=&lt;/span> &lt;span class="nb">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;gt;&amp;gt;&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">nano ~/.bashrc &lt;span class="c1"># 添加环境变量，&amp;gt;&amp;gt;之间的内容添加到最后即可&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;gt;&amp;gt;&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">export&lt;/span> &lt;span class="nv">RUSTUP_DIST_SERVER&lt;/span>&lt;span class="o">=&lt;/span>https://mirrors.ustc.edu.cn/rust-static
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">export&lt;/span> &lt;span class="nv">RUSTUP_UPDATE_ROOT&lt;/span>&lt;span class="o">=&lt;/span>https://mirrors.ustc.edu.cn/rust-static/rustup
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;gt;&amp;gt;&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">source&lt;/span> ~/.bashrc &lt;span class="c1"># 使环境变量生效&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">rustup default stable &lt;span class="c1"># 安装rust&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h6 id="安装paru">安装paru
+&lt;/h6>&lt;p>yay还是paru都可以，个人更习惯paru，上面安装rust主要也是因为paru是用rust写的，不换源安装会非常的久。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo pacman -S --needed base-devel git &lt;span class="c1"># 安装编译所需套件&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git clone https://aur.archlinux.org/paru.git &lt;span class="c1"># 拉取源码到本地&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> paru &lt;span class="c1"># 进入源码目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">makepkg -si &lt;span class="c1"># 开始编译安装&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h6 id="安装golang并配置代理">安装golang并配置代理
+&lt;/h6>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo pacman -S go &lt;span class="c1"># 安装go&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">go env -w &lt;span class="nv">GO111MODULE&lt;/span>&lt;span class="o">=&lt;/span>on &lt;span class="c1"># 启用 Go Modules 功能&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">go env -w &lt;span class="nv">GOPROXY&lt;/span>&lt;span class="o">=&lt;/span>https://goproxy.cn,direct &lt;span class="c1">#切换使用七牛云做代理源&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="安装steam">安装steam
+&lt;/h5>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo nano /etc/pacman.conf &lt;span class="c1">#启用multilib支持，删除掉[multilib]部分前面的#&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;gt;&amp;gt;&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">...
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>multilib&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">Include&lt;/span> &lt;span class="o">=&lt;/span> /etc/pacman.d/mirrorlist
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">...
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;gt;&amp;gt;&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo pacman -S steam &lt;span class="c1"># 安装steam&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">steam &lt;span class="c1">#安装完执行一次steam来拉取安装包，安装过程中使用ssh还是本地终端都行，但是使用ssh安装完会提示找不到x环境，不影响&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>至此，基本的archlinux环境已经安装完成。&lt;/p>
+&lt;h4 id="安装windows-11-ltsc">安装Windows 11 LTSC
+&lt;/h4>&lt;p>其实安装啥版本都行，使用ltsc是因为没有那些杂七杂八的功能，更新也少一些，使用rufus或者ventoy安装都可以，这里主要讲安装完成后的一些必要操作。正常安装进入系统后先不要急着联网，首先进设备管理器可以看到一堆感叹号，但是&lt;strong>千万不要把驱动全部安装，不然大概率会在后续重启后死循环！&lt;/strong>&lt;/p>
+&lt;h6 id="注意amd-drtm-boot-driver驱动问题">注意AMD DRTM Boot Driver驱动问题
+&lt;/h6>&lt;p>未安装驱动中有一项（一般是最后一项）显示是未知设备的，详细信息中设备实例路径是&lt;code>ACPI\DRTM00001\0&lt;/code>，实际是叫&lt;code>AMD DRTM Boot Driver&lt;/code>的东西，如果使用AMD Chipset Drivers安装驱动会默认把这一项一起安装，千万要记得到设备管理器里面卸载这一项的驱动并且停用这个设备。&lt;br>
+这个驱动貌似和安全启动相关，但是无论我开启安全启动还是关闭安全启动，只要安装这个就会在下次重启无法进入系统，具体症状就是开机后使用Windows Boot Manager不能进入系统加载（就是转圈圈），然后黑屏自动重启，多次之后掉到自动修复但是修复提示失败；如果使用refind或者grub的启动项进去会提示&lt;code>0xc0000001&lt;/code>启动失败，具体原因目前我也找不到资料，所以建议是千万不要去动这个东西。一开始我还以为是系统问题，但是无论是官方的固件还是最新WIN11、LTSC都有复现，所以从更新的角度去考虑，我进PE用dism++把安装的驱动一项项排除发现只要把系统设备下的amddrtm.inf删掉问题就解决了，所以很明显就是这个&lt;code>AMD DRTM Boot Driver&lt;/code>的问题。&lt;br>
+所以在安装好系统后，一是停用设备，二是避免安装这个驱动。最好就是针对性的屏蔽这个设备的驱动安装，先在设备管理器里右键这个设备找到详细信息&amp;gt;类Guid，这是一个用{}包括起来的值，右键复制，然后到组策略的&lt;code>计算机配置&amp;gt;管理模版&amp;gt;系统&amp;gt;设备安装&amp;gt;设备安装限制&lt;/code>，找到&lt;code>阻止使用与下列设备安装程序类相匹配的驱动程序安装设备&lt;/code>，切换到已启用，并在下方的显示中把上面的类Guid复制进去并应用，之后应用即可，之后再安装这个设备驱动就会报错提示系统策略禁止安装。目前这么操作几天之后没有发现其他问题。&lt;/p></description></item><item><title>在GPD Win2上装Win11和archlinux双系统的那些事</title><link>https://blog.tama.guru/record/multi-system-on-win2.html</link><pubDate>Tue, 14 Oct 2025 11:09:11 +0800</pubDate><guid>https://blog.tama.guru/record/multi-system-on-win2.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 在GPD Win2上装Win11和archlinux双系统的那些事" />&lt;p>[TOC]&lt;/p>
 &lt;h4 id="前言">前言
 &lt;/h4>&lt;p>我一直很想找个足够小且带屏幕、满足基本输入方式的X86设备，最早的时候是因为接触到诺基亚的N900，这玩意能够跑linux且自带侧滑键盘，是我理想的形态，但无奈的是硬件性能实在跟不上，且很多软件已经没有维护，最终也只能当个玩具。在这之后，我接触到Steamdeck、N305带屏小主机甚至是刷WIN10改运存的小米平板2，但每个都有不满意的地方，steamdeck屏幕不大但是整体体积很大，而且是为游戏设计的，操作对我来说有点别扭；带屏小主机算是一段时间内我带出门的主力设备，机身接口丰富且整体尺寸控制不错，但是缺少触屏之外的输入方式，也就是真要干活就得自带鼠标键盘；至于小米平板2，小是够小而且可以加装超薄的键盘皮套，但是atom的性能摆在那里，就只能当个玩具玩玩。所以在我发现win2屏幕只有6寸的时候是真的震惊了，而且是翻盖全功能键盘，cpu也是8100y而不是那一众atom，还能加装固态，唯一的问题就是价格离谱，去年前年刚看到的时候一个要千五千八，最近刚看已经降到千元出头，最后找到个九百多乱改过散热和电池导致有点鼓包的。&lt;/p>
 &lt;h4 id="上手">上手
