@@ -1,4 +1,75 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cloudflare on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/cloudflare.html</link><description>Recent content in Cloudflare on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Fri, 21 Nov 2025 07:41:47 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/cloudflare/index.xml" rel="self" type="application/rss+xml"/><item><title>[好软推荐] Cloudpaste-开源在线文本/文件分享平台</title><link>https://blog.tama.guru/record/cloudpaste.html</link><pubDate>Fri, 18 Jul 2025 10:21:11 +0800</pubDate><guid>https://blog.tama.guru/record/cloudpaste.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post [好软推荐] Cloudpaste-开源在线文本/文件分享平台" />&lt;p>之前看到有人推荐了&lt;a class="link" href="https://github.com/ling-drag0n/CloudPaste" target="_blank" rel="noopener"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CloudFlare on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/cloudflare.html</link><description>Recent content in CloudFlare on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Fri, 21 Nov 2025 07:48:30 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/cloudflare/index.xml" rel="self" type="application/rss+xml"/><item><title>记录一些使用CloudFlare CNAME优选加速碰到的问题</title><link>https://blog.tama.guru/record/cloudflare-cname-issus.html</link><pubDate>Fri, 21 Nov 2025 15:35:11 +0800</pubDate><guid>https://blog.tama.guru/record/cloudflare-cname-issus.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 记录一些使用CloudFlare CNAME优选加速碰到的问题" />&lt;p>本站多数服务都是通过CloudFlare提供的CDN服务实现加&lt;del>减&lt;/del>速，默认配置在多数情况下对于我提供的轻量服务也基本够用，一些比较重的资源比如自建图床、静态资源挂在阿里云OSS上，但前几天CloudFlare全球大面积崩溃导致部分服务无法使用（控制台都上不去，想切出来都切不了），在服务恢复后我对现存的几个服务做比较分析，发现之前使用CNAME优选加速的提问箱整体速度要比公告板和分享盘要快很多，而后两者一个是通过CloudFlare Pages的默认CNAME，一个是直接点开小云朵加速，于是我决定花点时间将所有的服务都切换使用CNAME优选加速，在过程中碰到的些许问题在此记录。&lt;/p>
+&lt;h4 id="通用加速前提">通用加速前提
+&lt;/h4>&lt;p>前提就是要有两个域名，一个需要绑定在CloudFlare上，另一个可以放在其他类似腾讯云的平台，方便做分线路解析。以我自己为例，我绑定在CloudFlare上的域名是337845818.best，先在域名下的&lt;code>DNS &amp;gt; 记录&lt;/code>下新增一个用作回退源的解析，比如我设置如下：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="nv">类型&lt;/span>&lt;span class="o">=&lt;/span>A
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">名称&lt;/span>&lt;span class="o">=&lt;/span>origin
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">内容&lt;/span>&lt;span class="o">=&lt;/span>服务器IP
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">代理状态&lt;/span>&lt;span class="o">=&lt;/span>已代理
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">TTL&lt;/span>&lt;span class="o">=&lt;/span>自动
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这样就添加了一个指向服务器IP的源&lt;code>origin.337845818.best&lt;/code>。
+然后在&lt;code>SSL/TLS &amp;gt; 自定义主机名&lt;/code>中设置回退源为&lt;code>origin.337845818.best&lt;/code>，刷新等待回退源状态变为&lt;code>有效&lt;/code>。
+这种情况下就可以通过&lt;code>SSL/TLS &amp;gt; 自定义主机名&lt;/code>中的&lt;code>添加自定义主机名&lt;/code>实现解析到服务器IP上的服务。比如添加一个提问箱的自定义服务，首先需要在&lt;code>DNS &amp;gt; 记录&lt;/code>中新增一个解析，比如&lt;code>box.337845818.best&lt;/code>，这个A记录直接指向服务器并点开小黄云，然后在&lt;code>SSL/TLS &amp;gt; 自定义主机名&lt;/code>中的&lt;code>添加自定义主机名&lt;/code>内设置：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="nv">自定义主机名&lt;/span>&lt;span class="o">=&lt;/span>box.tama.guru
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">最低TLS版本&lt;/span>&lt;span class="o">=&lt;/span>TLS1.0（默认）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">证书类型&lt;/span>&lt;span class="o">=&lt;/span>由CloudFlare提供
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">证书验证方法&lt;/span>&lt;span class="o">=&lt;/span>TXT验证（推荐）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">自定义源服务器&lt;/span>&lt;span class="o">=&lt;/span>box.337845818.best
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后会得到两组TXT用于域名核验，我的&lt;code>tama.guru&lt;/code>域名绑定的是DNSPOD，所以需要在DNSPOD上把这两组TXT添加到解析，并等待刷新提示证书状态为有效且主机名状态为有效，然后就可以在DNSPOD添加两组CNAME解析：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="nv">主机记录&lt;/span>&lt;span class="o">=&lt;/span>box
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">记录类型&lt;/span>&lt;span class="o">=&lt;/span>CNAME
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">线路类型&lt;/span>&lt;span class="o">=&lt;/span>默认
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">记录值&lt;/span>&lt;span class="o">=&lt;/span>box.337845818.best
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">TTL&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">600&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">主机记录&lt;/span>&lt;span class="o">=&lt;/span>box
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">记录类型&lt;/span>&lt;span class="o">=&lt;/span>CNAME
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">线路类型&lt;/span>&lt;span class="o">=&lt;/span>境内
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">记录值&lt;/span>&lt;span class="o">=&lt;/span>tamabox.cloudflare.182682.xyz
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">TTL&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">600&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这里的&lt;code>visa.cn&lt;/code>即为优选域名，网上有很多可以自己找找适合自己的。这样设置之后一段时间后可以通过dig命令查询是否生效：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">~$ dig box.tama.guru
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">;&lt;/span> &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG 9.18.33-1~deb12u2-Debian &amp;lt;&amp;lt;&amp;gt;&amp;gt; box.tama.guru
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">;;&lt;/span> global options: +cmd
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">;;&lt;/span> Got answer:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">;;&lt;/span> -&amp;gt;&amp;gt;HEADER&lt;span class="s">&amp;lt;&amp;lt;- opco&lt;/span>de: QUERY, status: NOERROR, id: &lt;span class="m">48864&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">;;&lt;/span> flags: qr rd ra&lt;span class="p">;&lt;/span> QUERY: 1, ANSWER: 7, AUTHORITY: 0, ADDITIONAL: &lt;span class="m">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">;;&lt;/span> OPT PSEUDOSECTION:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">;&lt;/span> EDNS: version: 0, flags:&lt;span class="p">;&lt;/span> udp: &lt;span class="m">1232&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">;;&lt;/span> QUESTION SECTION:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">;&lt;/span>box.tama.guru. IN A
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">;;&lt;/span> ANSWER SECTION:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">box.tama.guru. &lt;span class="m">539&lt;/span> IN CNAME tamabox.cloudflare.182682.xyz.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">tamabox.cloudflare.182682.xyz. &lt;span class="m">9&lt;/span> IN CNAME 我爱学习壹.cloudflare.182682.xyz.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">...
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">...
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">;;&lt;/span> Query time: &lt;span class="m">63&lt;/span> msec
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">;;&lt;/span> SERVER: 223.5.5.5#53&lt;span class="o">(&lt;/span>223.5.5.5&lt;span class="o">)&lt;/span> &lt;span class="o">(&lt;/span>UDP&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">;;&lt;/span> WHEN: Fri Nov &lt;span class="m">21&lt;/span> 10:51:58 CST &lt;span class="m">2025&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">;;&lt;/span> MSG SIZE rcvd: &lt;span class="m">410&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>可以看到应答结果叽里咕噜叽里咕噜添加一堆东西，然后通过&lt;code>ping.cn&lt;/code>之类的工具查询域名&lt;code>box.tama.guru&lt;/code>，全国都很绿了。&lt;/p>
+&lt;h4 id="pages加速">Pages加速
+&lt;/h4>&lt;p>在设置好的Pages下找到自定义域，比如我把公告板服务解析到&lt;code>blog.tama.guru&lt;/code>，然后到DNSPOD一样添加两组CNAME解析，一组指向默认的&lt;code>***.pages.dev&lt;/code>，另一组设置区域为境内，指向优选CNAME，这样就实现了分流。&lt;/p>
+&lt;h4 id="worker加速">Worker加速
+&lt;/h4>&lt;p>比如我有一个worker名称设定为60S，先在域名下的&lt;code>DNS &amp;gt; 记录&lt;/code>下新增一个CNAME解析，指向优选域名，比如：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="nv">类型&lt;/span>&lt;span class="o">=&lt;/span>CNAME
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">名称&lt;/span>&lt;span class="o">=&lt;/span>60s-cname
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">内容&lt;/span>&lt;span class="o">=&lt;/span>cloudflare-proxy.cloudflare.182682.xyz
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">代理状态&lt;/span>&lt;span class="o">=&lt;/span>**仅DNS**
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">TTL&lt;/span>&lt;span class="o">=&lt;/span>自动
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>注意代理状态是仅DNS，这样可以得到一个&lt;code>60s-cname.337845818.best&lt;/code>的加速域名。然后在域名下的&lt;code>Workers路由&lt;/code>新增一条&lt;code>HTTP路由&lt;/code> ，路由为&lt;code>60s-cname.337845818.best/*&lt;/code>，worker选择&lt;code>60S&lt;/code>，保存生效后就可以通过&lt;code>60s-cname.337845818.best&lt;/code>这个域名加速访问到这个Worker。当然，这样只适用于域名绑定在CloudFlare上的情况。&lt;/p>
+&lt;h4 id="qa">QA
+&lt;/h4>&lt;p>Q：通用加速可以让多个服务器使用吗？
+A：不能，因为只有一个回退源，而这个源指向的是单独的IP，就算添加了自定义主机名也只能指向这个服务器IP提供的服务，如果有多个服务器IP就要有多个CloudFlare账号来操作。&lt;/p>
+&lt;p>Q：自定义主机名提示&lt;code>custom hostname does not CNAME to this zone.&lt;/code>
+A：到DNSPOD检查一下是否有增加目标域名解析，比如自定义主机名设置了&lt;code>share.tama.guru&lt;/code>-&amp;gt;&lt;code>share.337845818.best&lt;/code>，则在DNSPOD添加名为&lt;code>share&lt;/code>指向&lt;code>share.337845818.best&lt;/code>的CNAME解析。&lt;/p>
+&lt;p>Q：自定义主机名提示&lt;code>The custom origin hostname you specified is a gray clouded DNS record. Please update the record to be proxied.&lt;/code>
+A:CloudFlare不支持没有代理的目标域名做自定义主机源，需要到CloudFlare的DNS解析中找到对应的域名把&lt;code>仅DNS&lt;/code>改成&lt;code>代理&lt;/code>。&lt;/p>
+&lt;p>Q：访问代理网站提示&lt;code>ERR_TOO_MANY_REDIRECTS&lt;/code>
+A：检查CloudFlare上域名的&lt;code>SSL/TLS &amp;gt; 概览&lt;/code>中SSL/TLS加密方式，确保为自动SSL/TLS（默认）或者完全模式。&lt;/p></description></item><item><title>[好软推荐] Cloudpaste-开源在线文本/文件分享平台</title><link>https://blog.tama.guru/record/cloudpaste.html</link><pubDate>Fri, 18 Jul 2025 10:21:11 +0800</pubDate><guid>https://blog.tama.guru/record/cloudpaste.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post [好软推荐] Cloudpaste-开源在线文本/文件分享平台" />&lt;p>之前看到有人推荐了&lt;a class="link" href="https://github.com/ling-drag0n/CloudPaste" target="_blank" rel="noopener"
 >cloudpaste&lt;/a>这个项目，主要作用是能够提供简单的文本及文件分享服务，前后端部分使用GitHub Action+Cloudflare Worker，存储桶部分使用Cloudflare R2等免费服务，即可实现免费使用。除了在国内因为众所周知的原因Worker域名无法访问，需要自行配置域名。&lt;/p>
 &lt;p>前后端配置基本可以直接参照项目内文档：&lt;/p>
 &lt;h5 id="github-仓库fork和后端配置">GitHub 仓库fork和后端配置
