@@ -62,13 +62,13 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">TTL&lt;/span>&lt;span class="o">=&lt;/span>自动
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>注意代理状态是仅DNS，这样可以得到一个&lt;code>60s-cname.337845818.best&lt;/code>的加速域名。然后在域名下的&lt;code>Workers路由&lt;/code>新增一条&lt;code>HTTP路由&lt;/code> ，路由为&lt;code>60s-cname.337845818.best/*&lt;/code>，worker选择&lt;code>60S&lt;/code>，保存生效后就可以通过&lt;code>60s-cname.337845818.best&lt;/code>这个域名加速访问到这个Worker。当然，这样只适用于域名绑定在CloudFlare上的情况。&lt;/p>
 &lt;h4 id="qa">QA
-&lt;/h4>&lt;p>Q：通用加速可以让多个服务器使用吗？
+&lt;/h4>&lt;p>Q：通用加速可以让多个服务器使用吗？&lt;br>
 A：不能，因为只有一个回退源，而这个源指向的是单独的IP，就算添加了自定义主机名也只能指向这个服务器IP提供的服务，如果有多个服务器IP就要有多个CloudFlare账号来操作。&lt;/p>
-&lt;p>Q：自定义主机名提示&lt;code>custom hostname does not CNAME to this zone.&lt;/code>
+&lt;p>Q：自定义主机名提示&lt;code>custom hostname does not CNAME to this zone.&lt;/code>&lt;br>
 A：到DNSPOD检查一下是否有增加目标域名解析，比如自定义主机名设置了&lt;code>share.tama.guru&lt;/code>-&amp;gt;&lt;code>share.337845818.best&lt;/code>，则在DNSPOD添加名为&lt;code>share&lt;/code>指向&lt;code>share.337845818.best&lt;/code>的CNAME解析。&lt;/p>
-&lt;p>Q：自定义主机名提示&lt;code>The custom origin hostname you specified is a gray clouded DNS record. Please update the record to be proxied.&lt;/code>
+&lt;p>Q：自定义主机名提示&lt;code>The custom origin hostname you specified is a gray clouded DNS record. Please update the record to be proxied.&lt;/code>&lt;br>
 A:CloudFlare不支持没有代理的目标域名做自定义主机源，需要到CloudFlare的DNS解析中找到对应的域名把&lt;code>仅DNS&lt;/code>改成&lt;code>代理&lt;/code>。&lt;/p>
-&lt;p>Q：访问代理网站提示&lt;code>ERR_TOO_MANY_REDIRECTS&lt;/code>
+&lt;p>Q：访问代理网站提示&lt;code>ERR_TOO_MANY_REDIRECTS&lt;/code>&lt;br>
 A：检查CloudFlare上域名的&lt;code>SSL/TLS &amp;gt; 概览&lt;/code>中SSL/TLS加密方式，确保为自动SSL/TLS（默认）或者完全模式。&lt;/p></description></item><item><title>自用的windows+archlinux双系统安装过程（在gpd win mini 2024上验证通过）</title><link>https://blog.tama.guru/record/dual-system-on-gpd-win-mini.html</link><pubDate>Tue, 11 Nov 2025 11:11:11 +0800</pubDate><guid>https://blog.tama.guru/record/dual-system-on-gpd-win-mini.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 自用的windows+archlinux双系统安装过程（在gpd win mini 2024上验证通过）" />&lt;p>如果是全新安装双系统，个人建议还是先安装linux部分再安装windows，因为这样可以直接调整efi分区大小，如果先安装windows系统就会出现efi分区只有100M的情况，对于动辄几十兆的linux内核来说属实是不够的，还需要进PE系统使用diskgeniues之类的工具重建efi，有可能会导致无法启动。&lt;/p>
 &lt;h4 id="archlinux安装">Archlinux安装
 &lt;/h4>&lt;p>首先是使用rufus刻录到U盘，直接使用默认的配置dd写入即可，如果使用ventoy的方式安装的话可能会出现找不到init导致安装无法进行。&lt;/p>
