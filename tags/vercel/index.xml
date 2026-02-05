@@ -1,48 +1,48 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vercel on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/vercel.html</link><description>Recent content in Vercel on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 05 Feb 2026 03:24:33 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/vercel/index.xml" rel="self" type="application/rss+xml"/><item><title>使用vercel+neon方案搭建无需服务器的umami统计服务</title><link>https://blog.tama.guru/record/umami.html</link><pubDate>Wed, 26 Mar 2025 12:23:06 +0800</pubDate><guid>https://blog.tama.guru/record/umami.html</guid><description>&lt;h5 id="为什么要用umami">为什么要用umami
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vercel on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/vercel.html</link><description>Recent content in Vercel on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 05 Feb 2026 04:19:04 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/vercel/index.xml" rel="self" type="application/rss+xml"/><item><title>使用vercel+neon方案搭建无需服务器的umami统计服务</title><link>https://blog.tama.guru/record/umami.html</link><pubDate>Wed, 26 Mar 2025 12:23:06 +0800</pubDate><guid>https://blog.tama.guru/record/umami.html</guid><description>&lt;h5 id="为什么要用umami">为什么要用umami
 &lt;/h5>&lt;p>在此之前，本站及相关网站服务需要用到统计的地方，都用的是自建的matomo，这是个非常强大的网页统计服务，强大到有些臃肿，这次大搬家我就在想，我真的有必要耗费有限的服务器资源来实现到头来可能一次都用不到的功能吗？答案当然是不，经过一番对比，最终我决定换用ackee或者umami。这两个统计工具都支持无服务器部署，但我还是选择了umami。以下是umami和matomo的一些区别：&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: center">对比项目&lt;/th>
-&lt;th style="text-align: center">matomo&lt;/th>
-&lt;th style="text-align: center">umami&lt;/th>
+&lt;th style="text-align:center">对比项目&lt;/th>
+&lt;th style="text-align:center">matomo&lt;/th>
+&lt;th style="text-align:center">umami&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: center">项目大小&lt;/td>
-&lt;td style="text-align: center">26MB（5.3.1）&lt;/td>
-&lt;td style="text-align: center">1.83MB（github仓库）&lt;/td>
+&lt;td style="text-align:center">项目大小&lt;/td>
+&lt;td style="text-align:center">26MB（5.3.1）&lt;/td>
+&lt;td style="text-align:center">1.83MB（github仓库）&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: center">JS文件大小&lt;/td>
-&lt;td style="text-align: center">67460 bytes&lt;/td>
-&lt;td style="text-align: center">2,713 bytes&lt;/td>
+&lt;td style="text-align:center">JS文件大小&lt;/td>
+&lt;td style="text-align:center">67460 bytes&lt;/td>
+&lt;td style="text-align:center">2,713 bytes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: center">支持serverless&lt;/td>
-&lt;td style="text-align: center">理论上支持&lt;/td>
-&lt;td style="text-align: center">支持&lt;/td>
+&lt;td style="text-align:center">支持serverless&lt;/td>
+&lt;td style="text-align:center">理论上支持&lt;/td>
+&lt;td style="text-align:center">支持&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: center">支持2FA&lt;/td>
-&lt;td style="text-align: center">是&lt;/td>
-&lt;td style="text-align: center">否&lt;/td>
+&lt;td style="text-align:center">支持2FA&lt;/td>
+&lt;td style="text-align:center">是&lt;/td>
+&lt;td style="text-align:center">否&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: center">可定制化JS名称&lt;/td>
-&lt;td style="text-align: center">否&lt;/td>
-&lt;td style="text-align: center">是&lt;/td>
+&lt;td style="text-align:center">可定制化JS名称&lt;/td>
+&lt;td style="text-align:center">否&lt;/td>
+&lt;td style="text-align:center">是&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: center">使用数据库&lt;/td>
-&lt;td style="text-align: center">mysql&lt;/td>
-&lt;td style="text-align: center">mysql/PostgreSQL&lt;/td>
+&lt;td style="text-align:center">使用数据库&lt;/td>
+&lt;td style="text-align:center">mysql&lt;/td>
+&lt;td style="text-align:center">mysql/PostgreSQL&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: center">API丰富程度&lt;/td>
-&lt;td style="text-align: center">非常丰富&lt;/td>
-&lt;td style="text-align: center">无&lt;/td>
+&lt;td style="text-align:center">API丰富程度&lt;/td>
+&lt;td style="text-align:center">非常丰富&lt;/td>
+&lt;td style="text-align:center">无&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -59,26 +59,26 @@
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: center">变量名称&lt;/th>
-&lt;th style="text-align: center">含义&lt;/th>
-&lt;th style="text-align: center">必须&lt;/th>
+&lt;th style="text-align:center">变量名称&lt;/th>
+&lt;th style="text-align:center">含义&lt;/th>
+&lt;th style="text-align:center">必须&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: center">DATABASE_URL&lt;/td>
-&lt;td style="text-align: center">数据库地址，即上面使用neon拿到的&lt;code>Connect to your database&lt;/code>的内容。如果是mysql格式为:mysql://username:mypassword@localhost:3306/数据库名称&lt;/td>
-&lt;td style="text-align: center">是&lt;/td>
+&lt;td style="text-align:center">DATABASE_URL&lt;/td>
+&lt;td style="text-align:center">数据库地址，即上面使用neon拿到的&lt;code>Connect to your database&lt;/code>的内容。如果是mysql格式为:mysql://username:mypassword@localhost:3306/数据库名称&lt;/td>
+&lt;td style="text-align:center">是&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: center">HASH_SALT&lt;/td>
-&lt;td style="text-align: center">一串随机字符串&lt;/td>
-&lt;td style="text-align: center">否&lt;/td>
+&lt;td style="text-align:center">HASH_SALT&lt;/td>
+&lt;td style="text-align:center">一串随机字符串&lt;/td>
+&lt;td style="text-align:center">否&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: center">TRACKER_SCRIPT_NAME&lt;/td>
-&lt;td style="text-align: center">追踪JS文件的名称，不设置默认是umami.js&lt;/td>
-&lt;td style="text-align: center">否&lt;/td>
+&lt;td style="text-align:center">TRACKER_SCRIPT_NAME&lt;/td>
+&lt;td style="text-align:center">追踪JS文件的名称，不设置默认是umami.js&lt;/td>
+&lt;td style="text-align:center">否&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
