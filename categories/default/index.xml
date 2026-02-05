@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Default on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/categories/default.html</link><description>Recent content in Default on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 05 Feb 2026 01:48:01 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/categories/default/index.xml" rel="self" type="application/rss+xml"/><item><title>r2的安全性配置（主要是缓存）</title><link>https://blog.tama.guru/post/r2_waf_rules.html.html</link><pubDate>Tue, 20 Aug 2024 02:36:00 +0800</pubDate><guid>https://blog.tama.guru/post/r2_waf_rules.html.html</guid><description>&lt;p>因为本站使用的R2资源比较少，整个桶不过50M，一个月下来B类访问量也不足4W，之前基本上没考虑过什么盗刷的问题，昨天在文章下面有用户提到他的资源访问量比较大，一天下来就有我的数量级了，这种情况下一不小心可能就有机会给Cloudflare打钱。之前本站大部分资源都是仍在OSS上的，从上个月开始访问速度就非常不正常，试着把东西都扔到R2上整体访问速度居然还提升了&amp;hellip;阿里云的防盗刷配置还是比较简单的，R2就没那么直观，可以从以下几个方面入手：&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Default on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/categories/default.html</link><description>Recent content in Default on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 05 Feb 2026 01:48:02 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/categories/default/index.xml" rel="self" type="application/rss+xml"/><item><title>r2的安全性配置（主要是缓存）</title><link>https://blog.tama.guru/post/r2_waf_rules.html.html</link><pubDate>Tue, 20 Aug 2024 02:36:00 +0800</pubDate><guid>https://blog.tama.guru/post/r2_waf_rules.html.html</guid><description>&lt;p>因为本站使用的R2资源比较少，整个桶不过50M，一个月下来B类访问量也不足4W，之前基本上没考虑过什么盗刷的问题，昨天在文章下面有用户提到他的资源访问量比较大，一天下来就有我的数量级了，这种情况下一不小心可能就有机会给Cloudflare打钱。之前本站大部分资源都是仍在OSS上的，从上个月开始访问速度就非常不正常，试着把东西都扔到R2上整体访问速度居然还提升了&amp;hellip;阿里云的防盗刷配置还是比较简单的，R2就没那么直观，可以从以下几个方面入手：&lt;/p>
 &lt;h4 id="缓存">缓存
 &lt;/h4>&lt;p>对于资源的缓存配置好可以避免直接访问到桶里的数据，我看了下能配置的入口有两个：
 一是在存储桶内的设置项配置&lt;code>CORS策略&lt;/code>，主要是添加&lt;code>&amp;quot;MaxAgeSeconds&amp;quot;: 43200&lt;/code>这一项，在官方文档里的解释是：指定允许浏览器缓存 CORS 预检响应的时间（以秒为单位），最大值是43200，此举可能有一定帮助但不是很确定。
@@ -82,7 +82,8 @@ DirectX® 12 Ultimate
 PCI® Express4.0 支持 1 x
 8針 电源接头
 3 x DisplayPort™ 2.0 with DSC / 1 x HDMI™ 2.0b
-条纹轴流扇 0dB静酷技术 超合金显卡技术 8K分辨率支持&lt;/p>&lt;/blockquote>
+条纹轴流扇 0dB静酷技术 超合金显卡技术 8K分辨率支持&lt;/p>
+&lt;/blockquote>
 &lt;p>在GPU-Z下的信息：
 &lt;div class="post-img-view">
 &lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/03/21/65fc4dd9cd1da.png">
@@ -194,7 +195,8 @@ AMD有这么拉吗？我平台都换了，总不能再换回去吧...
 >https://zhuanlan.zhihu.com/p/49187146&lt;/a>&lt;/li>
 &lt;/ol>
 &lt;blockquote>
-&lt;p>游戏机只负责玩游戏，由于游戏机通过显卡连了根线到采集卡，所以他把采集卡当做一块显示器，采集卡便采集这块“显示器”的视频数据，并因为装在直播主机上，使得该数据可以被直播机（OBS）捕获（直播主机把采集卡当做一个视频输入源，就像直播机外接了一个摄像头一样）。这样一来，游戏机借由另一台电脑来直播，自身无需承担任何直播相关的性能压力。&lt;/p>&lt;/blockquote>
+&lt;p>游戏机只负责玩游戏，由于游戏机通过显卡连了根线到采集卡，所以他把采集卡当做一块显示器，采集卡便采集这块“显示器”的视频数据，并因为装在直播主机上，使得该数据可以被直播机（OBS）捕获（直播主机把采集卡当做一个视频输入源，就像直播机外接了一个摄像头一样）。这样一来，游戏机借由另一台电脑来直播，自身无需承担任何直播相关的性能压力。&lt;/p>
+&lt;/blockquote>
 &lt;p>这个情况和我现在的需求倒是挺像的，也确实有一台可以用作直播主机的机器，问题就是采集卡，好像也有办法直接通过软件推流到另一台电脑上而不需要通过采集卡，还有就是VEGA8能不能应付这个情况？稍微搜索了一下，发现如果要用采集卡的话对卡的质量要求挺高的（也挺贵的），而且我的备胎机是在另一个房间里，那么长的距离传输对延迟和各方面是不是都有一些影响？
 由于备胎平时还要用作NAS，本身机箱空间就小，平时温度挺高的，说实话我不是很想用这个方式，怕的是再加上编码这个活儿稳定性会大幅降低。&lt;/p>
 &lt;ol start="2">
