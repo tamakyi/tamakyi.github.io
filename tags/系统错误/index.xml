@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>系统错误 on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/%E7%B3%BB%E7%BB%9F%E9%94%99%E8%AF%AF.html</link><description>Recent content in 系统错误 on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 05 Feb 2026 02:02:46 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E7%B3%BB%E7%BB%9F%E9%94%99%E8%AF%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>记录windows各类错误及尝试进行解决的流程</title><link>https://blog.tama.guru/record/windows-error-fix.html</link><pubDate>Wed, 31 Jan 2024 09:51:00 +0800</pubDate><guid>https://blog.tama.guru/record/windows-error-fix.html</guid><description>&lt;p>在基本上尝试了各类Windows系统我得出一个结论，那就是没有完美的Windows系统，除了Win7、Win10 LTSC、Win Server 2022这几个屁事比较少之外，其他总能碰到奇奇怪怪的事情，在此做个文章记录发生过的问题以及记录一些尝试解决处理过程中碰到的事情，免得后面又忘了又翻一遍材料。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>系统错误 on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/%E7%B3%BB%E7%BB%9F%E9%94%99%E8%AF%AF.html</link><description>Recent content in 系统错误 on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 05 Feb 2026 02:14:12 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E7%B3%BB%E7%BB%9F%E9%94%99%E8%AF%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>记录windows各类错误及尝试进行解决的流程</title><link>https://blog.tama.guru/record/windows-error-fix.html</link><pubDate>Wed, 31 Jan 2024 09:51:00 +0800</pubDate><guid>https://blog.tama.guru/record/windows-error-fix.html</guid><description>&lt;p>在基本上尝试了各类Windows系统我得出一个结论，那就是没有完美的Windows系统，除了Win7、Win10 LTSC、Win Server 2022这几个屁事比较少之外，其他总能碰到奇奇怪怪的事情，在此做个文章记录发生过的问题以及记录一些尝试解决处理过程中碰到的事情，免得后面又忘了又翻一遍材料。&lt;/p>
 &lt;h3 id="系统更新类">系统更新类
 &lt;/h3>&lt;h4 id="0x80070643---0x8024200b">0x80070643 - 0x8024200B
 &lt;/h4>&lt;p>在什么系统出现：Windows 10 企业版 LTSC（21H2，19044.3930）
@@ -13,20 +13,15 @@
 >关于&lt;code>KB5034441&lt;/code>的信息&lt;/a>，找到前面的这条记录提到如下内容：&lt;/li>
 &lt;/ul>
 &lt;blockquote>
-&lt;p>IMPORTANT&lt;/p>
-&lt;/blockquote>
+&lt;p>IMPORTANT&lt;/p>&lt;/blockquote>
 &lt;blockquote>
-&lt;p>This update requires 250 MB of free space in the recovery partition to install successfully. If the recovery partition does not have sufficient free space, this update will fail. In this case, you will receive the following error message:&lt;/p>
-&lt;/blockquote>
+&lt;p>This update requires 250 MB of free space in the recovery partition to install successfully. If the recovery partition does not have sufficient free space, this update will fail. In this case, you will receive the following error message:&lt;/p>&lt;/blockquote>
 &lt;blockquote>
-&lt;p>0x80070643 - ERROR_INSTALL_FAILURE&lt;/p>
-&lt;/blockquote>
+&lt;p>0x80070643 - ERROR_INSTALL_FAILURE&lt;/p>&lt;/blockquote>
 &lt;blockquote>
-&lt;p>To avoid this error or recover from this failure, please follow the Instructions to manually resize your partition to install the WinRE update and then try installing this update.&lt;/p>
-&lt;/blockquote>
+&lt;p>To avoid this error or recover from this failure, please follow the Instructions to manually resize your partition to install the WinRE update and then try installing this update.&lt;/p>&lt;/blockquote>
 &lt;blockquote>
-&lt;p>看起来需要先保证必须在恢复分区中具有 250 MB 的可用空间才能成功应用此更新。&lt;/p>
-&lt;/blockquote>
+&lt;p>看起来需要先保证必须在恢复分区中具有 250 MB 的可用空间才能成功应用此更新。&lt;/p>&lt;/blockquote>
 &lt;p>用DG看了下我的分区结构，发现根本没有Winre这个分区，笑死。
 &lt;div class="post-img-view">
 &lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/01/31/65b9a73b0cd30.png">
@@ -39,8 +34,7 @@ alt="我的分区结构，其中分区3-4是给debian用的"
 >
 但上面也有提到：&lt;/p>
 &lt;blockquote>
-&lt;p>如果 PC 没有恢复分区，则不需要此更新。在这种情况下，可以安全地忽略该错误。&lt;/p>
-&lt;/blockquote>
+&lt;p>如果 PC 没有恢复分区，则不需要此更新。在这种情况下，可以安全地忽略该错误。&lt;/p>&lt;/blockquote>
 &lt;p>那就只能当这个问题不存在了。&lt;/p>
 &lt;h3 id="内部错误状态类">内部错误状态类
 &lt;/h3>&lt;h4 id="10013">10013
