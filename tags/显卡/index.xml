@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>显卡 on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/%E6%98%BE%E5%8D%A1.html</link><description>Recent content in 显卡 on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 05 Feb 2026 08:52:06 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E6%98%BE%E5%8D%A1/index.xml" rel="self" type="application/rss+xml"/><item><title>简评A380（显卡 不是飞机）</title><link>https://blog.tama.guru/default/a380-evaluation.html</link><pubDate>Thu, 21 Mar 2024 23:32:00 +0800</pubDate><guid>https://blog.tama.guru/default/a380-evaluation.html</guid><description>&lt;p>NAS换成2U服务器之后机箱空间剩了好多，本来想旧物利用，把&lt;del>从哥布林手里抢回来的失明女骑士&lt;/del>P106接上去玩点AI作图，或者是把百来块整的DG1接上做转码卡。结果根本装不进去&amp;hellip;而且DG1的兼容性问题很奇怪，只有第一次装驱动的时候会出现，后面就再也没出现过了&amp;hellip;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>显卡 on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/%E6%98%BE%E5%8D%A1.html</link><description>Recent content in 显卡 on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 05 Feb 2026 09:00:51 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E6%98%BE%E5%8D%A1/index.xml" rel="self" type="application/rss+xml"/><item><title>简评A380（显卡 不是飞机）</title><link>https://blog.tama.guru/default/a380-evaluation.html</link><pubDate>Thu, 21 Mar 2024 23:32:00 +0800</pubDate><guid>https://blog.tama.guru/default/a380-evaluation.html</guid><description>&lt;p>NAS换成2U服务器之后机箱空间剩了好多，本来想旧物利用，把&lt;del>从哥布林手里抢回来的失明女骑士&lt;/del>P106接上去玩点AI作图，或者是把百来块整的DG1接上做转码卡。结果根本装不进去&amp;hellip;而且DG1的兼容性问题很奇怪，只有第一次装驱动的时候会出现，后面就再也没出现过了&amp;hellip;
 考虑到现在硬盘的价格和后续有转码的需求，于是去某鱼上搞了一张蓝戟半高A380（或者叫DG2）。&lt;/p>
 &lt;p>[scode type=&amp;ldquo;yellow&amp;rdquo;]请注意，在蓝戟官网并没有半高这个版本。[/scode]
 [scode type=&amp;ldquo;red&amp;rdquo;]无论是蓝戟官网驱动还是蓝厂官方驱动，安装完后均无法打开面板，貌似是通病。而且在安装后期程序会卡死，如果直接关掉会发现安装程序会还占着几十的CPU。[/scode]
@@ -23,8 +23,7 @@ DirectX® 12 Ultimate
 PCI® Express4.0 支持 1 x
 8針 电源接头
 3 x DisplayPort™ 2.0 with DSC / 1 x HDMI™ 2.0b
-条纹轴流扇 0dB静酷技术 超合金显卡技术 8K分辨率支持&lt;/p>
-&lt;/blockquote>
+条纹轴流扇 0dB静酷技术 超合金显卡技术 8K分辨率支持&lt;/p>&lt;/blockquote>
 &lt;p>在GPU-Z下的信息：
 &lt;div class="post-img-view">
 &lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/03/21/65fc4dd9cd1da.png">
