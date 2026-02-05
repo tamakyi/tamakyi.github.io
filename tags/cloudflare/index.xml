@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CloudFlare on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/cloudflare.html</link><description>Recent content in CloudFlare on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 05 Feb 2026 01:44:48 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/cloudflare/index.xml" rel="self" type="application/rss+xml"/><item><title>记录一些使用CloudFlare CNAME优选加速碰到的问题</title><link>https://blog.tama.guru/record/cloudflare-cname-issus.html</link><pubDate>Fri, 21 Nov 2025 15:35:11 +0800</pubDate><guid>https://blog.tama.guru/record/cloudflare-cname-issus.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 记录一些使用CloudFlare CNAME优选加速碰到的问题" />&lt;p>本站多数服务都是通过CloudFlare提供的CDN服务实现加&lt;del>减&lt;/del>速，默认配置在多数情况下对于我提供的轻量服务也基本够用，一些比较重的资源比如自建图床、静态资源挂在阿里云OSS上，但前几天CloudFlare全球大面积崩溃导致部分服务无法使用（控制台都上不去，想切出来都切不了），在服务恢复后我对现存的几个服务做比较分析，发现之前使用CNAME优选加速的提问箱整体速度要比公告板和分享盘要快很多，而后两者一个是通过CloudFlare Pages的默认CNAME，一个是直接点开小云朵加速，于是我决定花点时间将所有的服务都切换使用CNAME优选加速，在过程中碰到的些许问题在此记录。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CloudFlare on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/cloudflare.html</link><description>Recent content in CloudFlare on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 05 Feb 2026 01:48:01 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/cloudflare/index.xml" rel="self" type="application/rss+xml"/><item><title>记录一些使用CloudFlare CNAME优选加速碰到的问题</title><link>https://blog.tama.guru/record/cloudflare-cname-issus.html</link><pubDate>Fri, 21 Nov 2025 15:35:11 +0800</pubDate><guid>https://blog.tama.guru/record/cloudflare-cname-issus.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 记录一些使用CloudFlare CNAME优选加速碰到的问题" />&lt;p>本站多数服务都是通过CloudFlare提供的CDN服务实现加&lt;del>减&lt;/del>速，默认配置在多数情况下对于我提供的轻量服务也基本够用，一些比较重的资源比如自建图床、静态资源挂在阿里云OSS上，但前几天CloudFlare全球大面积崩溃导致部分服务无法使用（控制台都上不去，想切出来都切不了），在服务恢复后我对现存的几个服务做比较分析，发现之前使用CNAME优选加速的提问箱整体速度要比公告板和分享盘要快很多，而后两者一个是通过CloudFlare Pages的默认CNAME，一个是直接点开小云朵加速，于是我决定花点时间将所有的服务都切换使用CNAME优选加速，在过程中碰到的些许问题在此记录。&lt;/p>
 &lt;h4 id="通用加速前提">通用加速前提
 &lt;/h4>&lt;p>前提就是要有两个域名，一个需要绑定在CloudFlare上，另一个可以放在其他类似腾讯云的平台，方便做分线路解析。以我自己为例，我绑定在CloudFlare上的域名是337845818.best，先在域名下的&lt;code>DNS &amp;gt; 记录&lt;/code>下新增一个用作回退源的解析，比如我设置如下：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="nv">类型&lt;/span>&lt;span class="o">=&lt;/span>A
@@ -200,26 +200,26 @@ alt="add account info 1"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">类别&lt;/th>
-&lt;th style="text-align:center">永远免费&lt;/th>
-&lt;th style="text-align:center">按月收费&lt;/th>
+&lt;th style="text-align: center">类别&lt;/th>
+&lt;th style="text-align: center">永远免费&lt;/th>
+&lt;th style="text-align: center">按月收费&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">存储&lt;/td>
-&lt;td style="text-align:center">10GB/月&lt;/td>
-&lt;td style="text-align:center">0.015 美元/GB 存储&lt;/td>
+&lt;td style="text-align: center">存储&lt;/td>
+&lt;td style="text-align: center">10GB/月&lt;/td>
+&lt;td style="text-align: center">0.015 美元/GB 存储&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">A类操作:状态改变&lt;/td>
-&lt;td style="text-align:center">100 万次/月&lt;/td>
-&lt;td style="text-align:center">4.50 美元/百万次&lt;/td>
+&lt;td style="text-align: center">A类操作:状态改变&lt;/td>
+&lt;td style="text-align: center">100 万次/月&lt;/td>
+&lt;td style="text-align: center">4.50 美元/百万次&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">B类操作:读取状态&lt;/td>
-&lt;td style="text-align:center">1000 万次/月&lt;/td>
-&lt;td style="text-align:center">0.36 美元/百万次&lt;/td>
+&lt;td style="text-align: center">B类操作:读取状态&lt;/td>
+&lt;td style="text-align: center">1000 万次/月&lt;/td>
+&lt;td style="text-align: center">0.36 美元/百万次&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -228,66 +228,66 @@ alt="add account info 1"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">操作名称&lt;/th>
-&lt;th style="text-align:center">操作含义&lt;/th>
+&lt;th style="text-align: center">操作名称&lt;/th>
+&lt;th style="text-align: center">操作含义&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">ListBuckets&lt;/td>
-&lt;td style="text-align:center">列出的存储桶及其所有者&lt;/td>
+&lt;td style="text-align: center">ListBuckets&lt;/td>
+&lt;td style="text-align: center">列出的存储桶及其所有者&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">PutBucket&lt;/td>
-&lt;td style="text-align:center">创建存储桶&lt;/td>
+&lt;td style="text-align: center">PutBucket&lt;/td>
+&lt;td style="text-align: center">创建存储桶&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">ListObjects&lt;/td>
-&lt;td style="text-align:center">返回存储桶中的对象&lt;/td>
+&lt;td style="text-align: center">ListObjects&lt;/td>
+&lt;td style="text-align: center">返回存储桶中的对象&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">PutObject&lt;/td>
-&lt;td style="text-align:center">创建对象&lt;/td>
+&lt;td style="text-align: center">PutObject&lt;/td>
+&lt;td style="text-align: center">创建对象&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">CopyObject&lt;/td>
-&lt;td style="text-align:center">复制对象&lt;/td>
+&lt;td style="text-align: center">CopyObject&lt;/td>
+&lt;td style="text-align: center">复制对象&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">CompleteMultipartUpload&lt;/td>
-&lt;td style="text-align:center">完成分片上传&lt;/td>
+&lt;td style="text-align: center">CompleteMultipartUpload&lt;/td>
+&lt;td style="text-align: center">完成分片上传&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">CreateMultipartUpload&lt;/td>
-&lt;td style="text-align:center">创建分片上传任务&lt;/td>
+&lt;td style="text-align: center">CreateMultipartUpload&lt;/td>
+&lt;td style="text-align: center">创建分片上传任务&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">ListMultipartUploads&lt;/td>
-&lt;td style="text-align:center">列出分片上传（进度）&lt;/td>
+&lt;td style="text-align: center">ListMultipartUploads&lt;/td>
+&lt;td style="text-align: center">列出分片上传（进度）&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">UploadPart&lt;/td>
-&lt;td style="text-align:center">分片上传&lt;/td>
+&lt;td style="text-align: center">UploadPart&lt;/td>
+&lt;td style="text-align: center">分片上传&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">UploadPartCopy&lt;/td>
-&lt;td style="text-align:center">从一个已存在的Object中拷贝数据来上传一个分片&lt;/td>
+&lt;td style="text-align: center">UploadPartCopy&lt;/td>
+&lt;td style="text-align: center">从一个已存在的Object中拷贝数据来上传一个分片&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">ListParts&lt;/td>
-&lt;td style="text-align:center">列出分片&lt;/td>
+&lt;td style="text-align: center">ListParts&lt;/td>
+&lt;td style="text-align: center">列出分片&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">PutBucketEncryption&lt;/td>
-&lt;td style="text-align:center">存储桶加密&lt;/td>
+&lt;td style="text-align: center">PutBucketEncryption&lt;/td>
+&lt;td style="text-align: center">存储桶加密&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">PutBucketCors&lt;/td>
-&lt;td style="text-align:center">为指定的存储桶设置跨域资源共享CORS规则&lt;/td>
+&lt;td style="text-align: center">PutBucketCors&lt;/td>
+&lt;td style="text-align: center">为指定的存储桶设置跨域资源共享CORS规则&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">PutBucketLifecycleConfiguration&lt;/td>
-&lt;td style="text-align:center">设置对象生命周期规则&lt;/td>
+&lt;td style="text-align: center">PutBucketLifecycleConfiguration&lt;/td>
+&lt;td style="text-align: center">设置对象生命周期规则&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
