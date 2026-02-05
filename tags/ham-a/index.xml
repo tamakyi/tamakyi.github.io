@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>HAM-A on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/ham-a.html</link><description>Recent content in HAM-A on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 05 Feb 2026 01:48:02 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/ham-a/index.xml" rel="self" type="application/rss+xml"/><item><title>业余无线电（HAM）A类操作证考试教程(转载记录用）</title><link>https://blog.tama.guru/reproduced/ham-a.html</link><pubDate>Sat, 23 Mar 2024 21:25:00 +0800</pubDate><guid>https://blog.tama.guru/reproduced/ham-a.html</guid><description>&lt;p>最近想考个Ham证，转载一下作为材料记录。能不能过靠你了！&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>HAM-A on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/ham-a.html</link><description>Recent content in HAM-A on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 05 Feb 2026 02:02:44 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/ham-a/index.xml" rel="self" type="application/rss+xml"/><item><title>业余无线电（HAM）A类操作证考试教程(转载记录用）</title><link>https://blog.tama.guru/reproduced/ham-a.html</link><pubDate>Sat, 23 Mar 2024 21:25:00 +0800</pubDate><guid>https://blog.tama.guru/reproduced/ham-a.html</guid><description>&lt;p>最近想考个Ham证，转载一下作为材料记录。能不能过靠你了！&lt;/p>
 &lt;p>本文GitHub地址是&lt;a class="link" href="https://github.com/jks-liu/zhihu/blob/master/ham-license-type-a.md" target="_blank" rel="noopener"
 >https://github.com/jks-liu/zhihu/blob/master/ham-license-type-a.md&lt;/a>。&lt;/p>
 &lt;p>本文力求用最简单的语言，详细介绍你需要掌握的所有内容。让你既知其然，又知其所以然。&lt;/p>
@@ -221,19 +221,16 @@ $$P=(1\ {\mathrm {mW}})10^{{(x/10)}}\,$$&lt;/li>
 &lt;p>灵活运用上面的公式。比如，问你5W是多少，显然应该是30到40之间的一个数，就选那个就行。&lt;/p>
 &lt;p>对于dBμ，就是以1 μW为标准的功率绝对值。如果你搞不懂上面的公式，就记住下面一点：
 &lt;/p>
-$$x\ dBm = (x+30)\ dBμ$$
-&lt;p>
+$$x\ dBm = (x+30)\ dBμ$$&lt;p>
 比如
 &lt;/p>
-$$10\ dBm = 40\ dBμ$$
-&lt;p>
+$$10\ dBm = 40\ dBμ$$&lt;p>
 然后看到dBμ，就先转换为dBm在进行计算。&lt;/p>
 &lt;p>比如，0.25W，换算成dBm，应该是20到30间的一个数。那换算成dBμ，就加上30，应该是50到60间的一个数。&lt;/p>
 &lt;p>有时候有两个选项符合要求，需要计算。如果你不想计算，记得&lt;strong>不要选择&lt;/strong>结尾是5的那个选项，什么25、35、45都不要选，剩下的那个就是正确答案。&lt;/p>
 &lt;p>依次类推还有&lt;strong>dBW&lt;/strong>，如果你不想计算，记得一点，题库里的dBW都不是正确答案。
 &lt;/p>
-$$x\ dBm = (x-30)\ dBW$$
-&lt;ul>
+$$x\ dBm = (x-30)\ dBW$$&lt;ul>
 &lt;li>
 &lt;p>指配频率 assigned frequency&lt;br>
 指配给一个电台的频段的中心频率。&lt;/p>
@@ -756,8 +753,7 @@ c) 可要求保护不受来自将来可能指配频率的同一业务或其他�
 &lt;p>电源两端电压的方向为&lt;strong>从电源的正极到负极&lt;/strong>。电源（或信号源）内阻&lt;strong>使其实际输出电压降低&lt;/strong>。&lt;/p>
 &lt;p>直流电路欧姆定律是说&lt;strong>流过电阻的电流I，与两端的电压U成正比，与阻值R成反比&lt;/strong>。
 &lt;/p>
-$$I = \frac{U}{R}$$
-&lt;h2 id="a33-交流电路">A.3.3 交流电路
+$$I = \frac{U}{R}$$&lt;h2 id="a33-交流电路">A.3.3 交流电路
 &lt;/h2>&lt;p>
 &lt;div class="post-img-view">
 &lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/03/23/65fed78a38a9a.png">
@@ -788,12 +784,10 @@ alt="正弦交流电"
 &lt;h2 id="a36-数字信号处理基础常识">A.3.6 数字信号处理基础常识
 &lt;/h2>&lt;p>&lt;strong>简单正弦波&lt;/strong>只包含&lt;strong>一个&lt;/strong>频率分量。
 &lt;/p>
-$$x = sin(\omega{}t+\phi)$$
-&lt;p>&lt;strong>单个无限窄脉冲&lt;/strong>（数学上我们称其为&lt;a class="link" href="https://zh.wikipedia.org/wiki/%E7%8B%84%E6%8B%89%E5%85%8B%CE%B4%E5%87%BD%E6%95%B0#%E5%82%85%E9%87%8C%E8%91%89%E8%AE%8A%E6%8F%9B" target="_blank" rel="noopener"
+$$x = sin(\omega{}t+\phi)$$&lt;p>&lt;strong>单个无限窄脉冲&lt;/strong>（数学上我们称其为&lt;a class="link" href="https://zh.wikipedia.org/wiki/%E7%8B%84%E6%8B%89%E5%85%8B%CE%B4%E5%87%BD%E6%95%B0#%E5%82%85%E9%87%8C%E8%91%89%E8%AE%8A%E6%8F%9B" target="_blank" rel="noopener"
 >狄拉克δ函数&lt;/a>）在整个频谱内具有&lt;strong>连续的均匀频率分量&lt;/strong>（其频谱也称为均匀谱或白色谱）。这个理解不了也没关系，记住我标粗的地方就行。
 &lt;/p>
-$$\delta(x) = \begin{cases} +\infty, &amp; x = 0 \\ 0, &amp; x \ne 0 \end{cases}且\int_{-\infty}^\infty \delta(x) \, dx = 1$$
-&lt;p>包含多个频率分量的信号通过&lt;strong>滤波器&lt;/strong>会发生&lt;strong>频率失真&lt;/strong>。&lt;/p>
+$$\delta(x) = \begin{cases} +\infty, &amp; x = 0 \\ 0, &amp; x \ne 0 \end{cases}且\int_{-\infty}^\infty \delta(x) \, dx = 1$$&lt;p>包含多个频率分量的信号通过&lt;strong>滤波器&lt;/strong>会发生&lt;strong>频率失真&lt;/strong>。&lt;/p>
 &lt;h2 id="a37-业余无线电发射和接收设备原理和实用知识">A.3.7 业余无线电发射和接收设备原理和实用知识
 &lt;/h2>&lt;p>&lt;strong>符合国家或国际上规定的干扰允许值&lt;/strong>和&lt;strong>共用标准的干扰&lt;/strong>不属于有害干扰。&lt;/p>
 &lt;p>可以组成完整无线电接收系统的功能部件组合是&lt;strong>接收天线、解调器、输出部件&lt;/strong>。可以组成完整无线电发信系统的功能部件组合是&lt;strong>射频振荡器、调制器、发射天线&lt;/strong>。&lt;/p>
@@ -872,8 +866,7 @@ alt="Ferrite_clamp-on"
 &lt;/ul>
 &lt;p>由于dB已经是log后的值，所以他们的计算是简单的加减法。dBi与dBd的关系是（下面的公式要背得哟）
 &lt;/p>
-$$0\ dBd = 2.15\ dBi$$
-&lt;p>例LK0932：比较4.5 dBd和5.85 dBi。解&lt;/p>
+$$0\ dBd = 2.15\ dBi$$&lt;p>例LK0932：比较4.5 dBd和5.85 dBi。解&lt;/p>
 &lt;ul>
 &lt;li>$4.5\ dBd = 0\ dBd + 4.5\ dB = 2.15\ dBi + 4.5\ dB = 6.65\ dBi$&lt;/li>
 &lt;li>$6.65\ dBi - 5.85\ dBi = 0.8\ dB$&lt;/li>
@@ -920,12 +913,10 @@ alt="wave"
 &lt;p>无线电波在自由空间中的传播路径损耗&lt;strong>与距离的平方成正比，与频率的平方成正比&lt;/strong>。&lt;/p>
 &lt;p>在一个周期内，电磁波走过一定的距离，这个距离叫做&lt;strong>波长&lt;/strong>。&lt;/p>
 &lt;p>无线电波是一种电磁波，所以其两个组成部分是&lt;strong>电场和磁场&lt;/strong>。一般我们把在空间中传播的电磁波叫做&lt;strong>无线电波&lt;/strong>。&lt;/p>
-$$c = fλ$$
-&lt;p>
+$$c = fλ$$&lt;p>
 其中c是光速，f是频率，λ是波长。显然频率和波长成&lt;strong>反比&lt;/strong>。如果我们选择&lt;strong>兆赫数（MHz）&lt;/strong>，波长选择单位米，则它们的数量关系近似是
 &lt;/p>
-$$波长 = \frac{300}{频率}$$
-&lt;p>如果你收到了一个从上千公里以外的距离传播过来的VHF信号，最可能的原因是&lt;strong>信号被突发E电离层反射过来&lt;/strong>。&lt;/p>
+$$波长 = \frac{300}{频率}$$&lt;p>如果你收到了一个从上千公里以外的距离传播过来的VHF信号，最可能的原因是&lt;strong>信号被突发E电离层反射过来&lt;/strong>。&lt;/p>
 &lt;h2 id="a311-业余无线电工程实践常识">A.3.11 业余无线电工程实践常识
 &lt;/h2>&lt;p>假负载的主要作用是&lt;strong>在测试设备时不让无线电信号真正地发射出去&lt;/strong>。&lt;/p>
 &lt;ul>
