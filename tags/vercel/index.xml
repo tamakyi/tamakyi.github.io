@@ -3,46 +3,46 @@
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: center">对比项目&lt;/th>
-&lt;th style="text-align: center">matomo&lt;/th>
-&lt;th style="text-align: center">umami&lt;/th>
+&lt;th style="text-align:center">对比项目&lt;/th>
+&lt;th style="text-align:center">matomo&lt;/th>
+&lt;th style="text-align:center">umami&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: center">项目大小&lt;/td>
-&lt;td style="text-align: center">26MB（5.3.1）&lt;/td>
-&lt;td style="text-align: center">1.83MB（github仓库）&lt;/td>
+&lt;td style="text-align:center">项目大小&lt;/td>
+&lt;td style="text-align:center">26MB（5.3.1）&lt;/td>
+&lt;td style="text-align:center">1.83MB（github仓库）&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: center">JS文件大小&lt;/td>
-&lt;td style="text-align: center">67460 bytes&lt;/td>
-&lt;td style="text-align: center">2,713 bytes&lt;/td>
+&lt;td style="text-align:center">JS文件大小&lt;/td>
+&lt;td style="text-align:center">67460 bytes&lt;/td>
+&lt;td style="text-align:center">2,713 bytes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: center">支持serverless&lt;/td>
-&lt;td style="text-align: center">理论上支持&lt;/td>
-&lt;td style="text-align: center">支持&lt;/td>
+&lt;td style="text-align:center">支持serverless&lt;/td>
+&lt;td style="text-align:center">理论上支持&lt;/td>
+&lt;td style="text-align:center">支持&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: center">支持2FA&lt;/td>
-&lt;td style="text-align: center">是&lt;/td>
-&lt;td style="text-align: center">否&lt;/td>
+&lt;td style="text-align:center">支持2FA&lt;/td>
+&lt;td style="text-align:center">是&lt;/td>
+&lt;td style="text-align:center">否&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: center">可定制化JS名称&lt;/td>
-&lt;td style="text-align: center">否&lt;/td>
-&lt;td style="text-align: center">是&lt;/td>
+&lt;td style="text-align:center">可定制化JS名称&lt;/td>
+&lt;td style="text-align:center">否&lt;/td>
+&lt;td style="text-align:center">是&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: center">使用数据库&lt;/td>
-&lt;td style="text-align: center">mysql&lt;/td>
-&lt;td style="text-align: center">mysql/PostgreSQL&lt;/td>
+&lt;td style="text-align:center">使用数据库&lt;/td>
+&lt;td style="text-align:center">mysql&lt;/td>
+&lt;td style="text-align:center">mysql/PostgreSQL&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: center">API丰富程度&lt;/td>
-&lt;td style="text-align: center">非常丰富&lt;/td>
-&lt;td style="text-align: center">无&lt;/td>
+&lt;td style="text-align:center">API丰富程度&lt;/td>
+&lt;td style="text-align:center">非常丰富&lt;/td>
+&lt;td style="text-align:center">无&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -59,26 +59,26 @@
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: center">变量名称&lt;/th>
-&lt;th style="text-align: center">含义&lt;/th>
-&lt;th style="text-align: center">必须&lt;/th>
+&lt;th style="text-align:center">变量名称&lt;/th>
+&lt;th style="text-align:center">含义&lt;/th>
+&lt;th style="text-align:center">必须&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: center">DATABASE_URL&lt;/td>
-&lt;td style="text-align: center">数据库地址，即上面使用neon拿到的&lt;code>Connect to your database&lt;/code>的内容。如果是mysql格式为:mysql://username:mypassword@localhost:3306/数据库名称&lt;/td>
-&lt;td style="text-align: center">是&lt;/td>
+&lt;td style="text-align:center">DATABASE_URL&lt;/td>
+&lt;td style="text-align:center">数据库地址，即上面使用neon拿到的&lt;code>Connect to your database&lt;/code>的内容。如果是mysql格式为:mysql://username:mypassword@localhost:3306/数据库名称&lt;/td>
+&lt;td style="text-align:center">是&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: center">HASH_SALT&lt;/td>
-&lt;td style="text-align: center">一串随机字符串&lt;/td>
-&lt;td style="text-align: center">否&lt;/td>
+&lt;td style="text-align:center">HASH_SALT&lt;/td>
+&lt;td style="text-align:center">一串随机字符串&lt;/td>
+&lt;td style="text-align:center">否&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: center">TRACKER_SCRIPT_NAME&lt;/td>
-&lt;td style="text-align: center">追踪JS文件的名称，不设置默认是umami.js&lt;/td>
-&lt;td style="text-align: center">否&lt;/td>
+&lt;td style="text-align:center">TRACKER_SCRIPT_NAME&lt;/td>
+&lt;td style="text-align:center">追踪JS文件的名称，不设置默认是umami.js&lt;/td>
+&lt;td style="text-align:center">否&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>

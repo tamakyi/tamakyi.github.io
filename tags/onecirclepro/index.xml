@@ -19,4 +19,5 @@
 &lt;ul>
 &lt;li>你需要把asset目录上传到你的cdn服务器上，比如CDN服务器的 handsome目录里，地址即为 &lt;code>https://cdn.ihewro.com/handsome/assets/&lt;/code>&lt;/li>
 &lt;li>在当前框中就填入该地址，主题就会引用你搭建的cdn上面的资源，而不再引用当前服务器上的资源&lt;/li>
-&lt;/ul>&lt;/blockquote></description></item></channel></rss>
+&lt;/ul>
+&lt;/blockquote></description></item></channel></rss>

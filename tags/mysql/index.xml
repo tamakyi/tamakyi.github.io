@@ -267,7 +267,8 @@ alt="php访问测试"
 &lt;p>[scode type=&amp;ldquo;lblue&amp;rdquo;]No.2 AliyunDun（阿里云盾）[/scode]&lt;/p>
 &lt;p>这玩意是预装在系统里的，平时啥也不干也会吃掉5到6个点的内存，在官方的介绍页上，对这个产品的表述是：&lt;/p>
 &lt;blockquote>
-&lt;p>云盾是阿里巴巴集团多年来安全技术研究积累的成果，结合阿里云云计算平台强大的数据分析能力。为中小网站提供如安全漏洞检测、网页木马检测以及面向云服务器用户提供的主机入侵检测、防DDOS等一站式安全服务。&lt;/p>&lt;/blockquote>
+&lt;p>云盾是阿里巴巴集团多年来安全技术研究积累的成果，结合阿里云云计算平台强大的数据分析能力。为中小网站提供如安全漏洞检测、网页木马检测以及面向云服务器用户提供的主机入侵检测、防DDOS等一站式安全服务。&lt;/p>
+&lt;/blockquote>
 &lt;p>其实平时不乱开端口，不乱往主机上塞文件问题就不大，至于DDoS，真要打我这小破站你这盾也不够用啊。。。&lt;/p>
 &lt;p>以下是卸载步骤：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">wget http://update.aegis.aliyun.com/download/uninstall.sh

@@ -215,7 +215,8 @@
 &lt;p>Why is PiKVM OS based on Arch Linux ARM and not Raspbian / Raspberry Pi OS? &amp;amp;gt; There are several reasons:
 Several years ago, when PiKVM was just starting out, Raspbian didn‘t have a minimalistic image and the transition to systemd was in full swing, which is why the distribution was not too stable. Raspbian did not have all the necessary packages in the repositories to satisfy most software dependencies.
 PiKVM was born as a pet project, and the founder likes Arch the most.
-However, we plan to provide an alternative OS image based on Raspbian in the future - now it is quite stable.&lt;/p>&lt;/blockquote>
+However, we plan to provide an alternative OS image based on Raspbian in the future - now it is quite stable.&lt;/p>
+&lt;/blockquote>
 &lt;p>大概意思就是pikvm起步早，当时raspbian还没成型，且raspbian的库中不能满足pikvm的依赖。&lt;strong>但是官方正在计划做基于raspbian的固件&lt;/strong>，简而言之就是现在没有。
 但对我来说，arch系的系统确实难用（&lt;strong>我是debian的狗&lt;/strong>），另一方面我个人觉得，32位系统并不能发挥4B的全部实力。于是今天在逛pikvm的github的时候发现了这么一个issus：&lt;a class="link" href="https://github.com/pikvm/pikvm/issues/374" target="_blank" rel="noopener"
 >Running pikvm on top of another OS&lt;/a>下有个评论：
