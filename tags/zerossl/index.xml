@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Zerossl on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/zerossl.html</link><description>Recent content in Zerossl on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 05 Feb 2026 07:28:34 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/zerossl/index.xml" rel="self" type="application/rss+xml"/><item><title>使用acme.sh申请通配ssl证书</title><link>https://blog.tama.guru/record/acme-sh_zerossl.html</link><pubDate>Mon, 20 May 2024 21:04:00 +0800</pubDate><guid>https://blog.tama.guru/record/acme-sh_zerossl.html</guid><description>&lt;p>从今年3-4月起，国内主流的域名平台都开始把原来一年期的免费证书调整成三个月（参见：&lt;a class="link" href="https://help.aliyun.com/zh/ssl-certificate/user-guide/upgrade-a-free-certificate-upgrade-a-free-certificate" target="_blank" rel="noopener"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Zerossl on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/zerossl.html</link><description>Recent content in Zerossl on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 05 Feb 2026 07:55:38 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/zerossl/index.xml" rel="self" type="application/rss+xml"/><item><title>使用acme.sh申请通配ssl证书</title><link>https://blog.tama.guru/record/acme-sh_zerossl.html</link><pubDate>Mon, 20 May 2024 21:04:00 +0800</pubDate><guid>https://blog.tama.guru/record/acme-sh_zerossl.html</guid><description>&lt;p>从今年3-4月起，国内主流的域名平台都开始把原来一年期的免费证书调整成三个月（参见：&lt;a class="link" href="https://help.aliyun.com/zh/ssl-certificate/user-guide/upgrade-a-free-certificate-upgrade-a-free-certificate" target="_blank" rel="noopener"
 >免费版SSL证书升级指南&lt;/a>），但是阿里另外给了个解决方案，单域名一年缴68元可以获得原来一样的一年证书。&lt;/p>
 &lt;blockquote>
 &lt;p>尊敬的阿里云用户：
 接收到厂商关于免费证书服务收费策略调整的通知，我们将在2023年11月14号开始生效厂商策略。在策略生效后，免费证书规则如下：
-对于免费领取的SSL证书，签发后的证书有效期统一变更为3个月。如果您希望继续使用12个月有效期的免费证书，则需收取相关服务费，费用为68元/张/年。&lt;/p>&lt;/blockquote>
+对于免费领取的SSL证书，签发后的证书有效期统一变更为3个月。如果您希望继续使用12个月有效期的免费证书，则需收取相关服务费，费用为68元/张/年。&lt;/p>
+&lt;/blockquote>
 &lt;p>对于我们这些白嫖用户来说这就非常难搞了，证书时间大幅缩短意味着一年要申请四次，而且如果域名很多的话每个还需要单独申请，想想都很酸爽&amp;hellip;但是花钱是不可能的，单个证书68对我们来说也是一笔不小的开销，对我们这种小站站长确实不值得。&lt;/p>
 &lt;p>那么现在摆在我们面前的有两条路：
 &lt;del>1.关站跑路&lt;/del>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>越狱 on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/%E8%B6%8A%E7%8B%B1.html</link><description>Recent content in 越狱 on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 05 Feb 2026 07:28:34 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E8%B6%8A%E7%8B%B1/index.xml" rel="self" type="application/rss+xml"/><item><title>一个新的kindle越狱方案（适用于5.16.2.1.1以下）</title><link>https://blog.tama.guru/record/LanguageBreak.html</link><pubDate>Mon, 30 Oct 2023 11:56:00 +0800</pubDate><guid>https://blog.tama.guru/record/LanguageBreak.html</guid><description>&lt;p>10月29日，Github用户&lt;a class="link" href="https://github.com/notmarek" target="_blank" rel="noopener"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>越狱 on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/%E8%B6%8A%E7%8B%B1.html</link><description>Recent content in 越狱 on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 05 Feb 2026 07:55:38 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E8%B6%8A%E7%8B%B1/index.xml" rel="self" type="application/rss+xml"/><item><title>一个新的kindle越狱方案（适用于5.16.2.1.1以下）</title><link>https://blog.tama.guru/record/LanguageBreak.html</link><pubDate>Mon, 30 Oct 2023 11:56:00 +0800</pubDate><guid>https://blog.tama.guru/record/LanguageBreak.html</guid><description>&lt;p>10月29日，Github用户&lt;a class="link" href="https://github.com/notmarek" target="_blank" rel="noopener"
 >notmarek&lt;/a>发布了一个仓库&lt;a class="link" href="https://github.com/notmarek/LanguageBreak" target="_blank" rel="noopener"
 >LanguageBreak&lt;/a>，内容是版本号&amp;lt;=5.16.2.1.1的kindle设备的越狱（截至10月30日官网最新版本号为5.16.4），而在此之前仅5.14.2及以下的版本才有机会越狱。&lt;/p>
 &lt;p>作者对此项目的介绍在：&lt;a class="link" href="https://www.mobileread.com/forums/showthread.php?t=356872" target="_blank" rel="noopener"
@@ -55,7 +55,8 @@ actionsInactive = false;
 booklet) and not Javascript (language_picker.js).&lt;/p>
 &lt;p>So, the exploit path seems to be: Create a file in
 documents/dictionaries with Shell injection to run something Use
-&amp;lsquo;mesquito&amp;rsquo; to call the LIPC function changeLocale&lt;/p>&lt;/blockquote>
+&amp;lsquo;mesquito&amp;rsquo; to call the LIPC function changeLocale&lt;/p>
+&lt;/blockquote>
 &lt;p>在原文下面有很多用户表示通过这个方法已经成功实现越狱了。
 包括但不限于：
 Kindle 第 10 代（5.14.3.2）
@@ -84,17 +85,20 @@ KPW2（5.12.2.2）
 16.按照屏幕上的指示按住电源按钮
 17.几秒钟后，你将进入语言选择菜单
 18.选择 &amp;ldquo;中文&amp;rdquo;（在 &amp;ldquo;奇特的伪托语言 &amp;ldquo;上面的那个）。
-19.你的 kindle 应该会重启，屏幕上会出现一些日志信息.&lt;/p>&lt;/blockquote>
+19.你的 kindle 应该会重启，屏幕上会出现一些日志信息.&lt;/p>
+&lt;/blockquote>
 &lt;p>越狱后的操作：&lt;/p>
 &lt;blockquote>
 &lt;p>1.设备重启后，在搜索栏中输入 ;uzb
 2.将设备连接到 PC，然后将 update_hotfix_languagebreak.bin 复制到 Kindle 存储根目录下。
 3.弹出设备，输入 ;dsts 或向下滑动并选择设置图标，进入设备设置菜单
 4.选择 &amp;ldquo;更新你的 Kindle&amp;rdquo;，安装自定义修复程序
-5.这将使您的设备退出演示模式，并清理不需要的越狱文件。&lt;/p>&lt;/blockquote>
+5.这将使您的设备退出演示模式，并清理不需要的越狱文件。&lt;/p>
+&lt;/blockquote>
 &lt;hr>
 &lt;p>过段时间我拿自己的KPW3试试（反正我有TTL线，随时跑路）&lt;/p></description></item><item><title>记一次KPW3拆机降级</title><link>https://blog.tama.guru/record/264.html</link><pubDate>Sun, 23 Jul 2023 22:40:00 +0800</pubDate><guid>https://blog.tama.guru/record/264.html</guid><description>&lt;blockquote>
-&lt;p>&amp;ldquo;亚马逊将于一年之后即2023年6月30日，在中国停止Kindle电子书店的运营。在此之后，您将不能购买新的电子书。对于已经购买的电子书，您可以在2024年6月30日之前下载，并且可以在此后继续阅读。&amp;rdquo;&lt;/p>&lt;/blockquote>
+&lt;p>&amp;ldquo;亚马逊将于一年之后即2023年6月30日，在中国停止Kindle电子书店的运营。在此之后，您将不能购买新的电子书。对于已经购买的电子书，您可以在2024年6月30日之前下载，并且可以在此后继续阅读。&amp;rdquo;&lt;/p>
+&lt;/blockquote>
 &lt;p>以上公告来自亚马逊。这意味着6月30日起Kindle的国内线上服务将不再完整，需要完整的服务需要申请一个其他地区的亚马逊账号，但是国外的亚马逊商城中文书籍极少甚至有些地区没有，趁这个机会我就想把手头的KPW3越个狱。
 之所以要拆机是因为KPW3当前免拆机越狱的最后一个版本是5.14.2（来源：&lt;a class="link" href="https://bookfere.com/post/406.html" target="_blank" rel="noopener"
 >Kindle 越狱支持一览：检查 Kindle 设备能否越狱&lt;/a>），而我的设备已经升级到5.15.1.1,想要降级越狱必须拆机。&lt;/p>

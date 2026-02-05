@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Acfun礼物统计 on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/acfun%E7%A4%BC%E7%89%A9%E7%BB%9F%E8%AE%A1.html</link><description>Recent content in Acfun礼物统计 on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 05 Feb 2026 07:28:34 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/acfun%E7%A4%BC%E7%89%A9%E7%BB%9F%E8%AE%A1/index.xml" rel="self" type="application/rss+xml"/><item><title>关于AcFun礼物统计网页的说明</title><link>https://blog.tama.guru/record/acfun-gift-count.html</link><pubDate>Sun, 04 May 2025 04:11:00 +0800</pubDate><guid>https://blog.tama.guru/record/acfun-gift-count.html</guid><description>&lt;p>服务地址：&lt;a class="link" href="http://acfun.tama.guru/acfun-tools/acfun-gift.html" target="_blank" rel="noopener"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Acfun礼物统计 on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/acfun%E7%A4%BC%E7%89%A9%E7%BB%9F%E8%AE%A1.html</link><description>Recent content in Acfun礼物统计 on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 05 Feb 2026 07:55:38 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/acfun%E7%A4%BC%E7%89%A9%E7%BB%9F%E8%AE%A1/index.xml" rel="self" type="application/rss+xml"/><item><title>关于AcFun礼物统计网页的说明</title><link>https://blog.tama.guru/record/acfun-gift-count.html</link><pubDate>Sun, 04 May 2025 04:11:00 +0800</pubDate><guid>https://blog.tama.guru/record/acfun-gift-count.html</guid><description>&lt;p>服务地址：&lt;a class="link" href="http://acfun.tama.guru/acfun-tools/acfun-gift.html" target="_blank" rel="noopener"
 >AcFun礼物统计&lt;/a>&lt;/p>
 &lt;p>注意！！！网站不需要你提供账号密码或cookie等隐私信息，网站也不存储用户提供的任何信息，请做好个人隐私保护！！！&lt;/p>
 &lt;h4 id="前言">前言
@@ -14,7 +14,7 @@
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="cl">/rest/apph5-direct/pay/reward/giveRecords
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">/rest/apph5-direct/pay/reward/receiveRecords
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>经过访问发现API没换，能正常访问，那只能说明是插件端的问题，希望作者修修了。&lt;/p>
-&lt;h4 id="教程部分">&lt;span id="main">教程部分&lt;/span>
+&lt;h4 id="span-idmain教程部分span">&lt;span id="main">教程部分&lt;/span>
 &lt;/h4>&lt;p>目前做了个网页，目的是让用户自己复制礼物数据提交给网站处理输出内容，虽然只是临时方案，&lt;del>有总比没有好&lt;/del>。
 前提只要确保：&lt;/p>
 &lt;ul>
@@ -39,20 +39,20 @@
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: center">UID&lt;/th>
-&lt;th style="text-align: center">用户名&lt;/th>
-&lt;th style="text-align: center">总礼物数&lt;/th>
-&lt;th style="text-align: center">总钻石数&lt;/th>
-&lt;th style="text-align: center">打赏金额（元）&lt;/th>
+&lt;th style="text-align:center">UID&lt;/th>
+&lt;th style="text-align:center">用户名&lt;/th>
+&lt;th style="text-align:center">总礼物数&lt;/th>
+&lt;th style="text-align:center">总钻石数&lt;/th>
+&lt;th style="text-align:center">打赏金额（元）&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: center">46213698&lt;/td>
-&lt;td style="text-align: center">七耳兔软糖72two&lt;/td>
-&lt;td style="text-align: center">7&lt;/td>
-&lt;td style="text-align: center">560&lt;/td>
-&lt;td style="text-align: center">0.70&lt;/td>
+&lt;td style="text-align:center">46213698&lt;/td>
+&lt;td style="text-align:center">七耳兔软糖72two&lt;/td>
+&lt;td style="text-align:center">7&lt;/td>
+&lt;td style="text-align:center">560&lt;/td>
+&lt;td style="text-align:center">0.70&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -60,33 +60,33 @@
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: center">UID&lt;/th>
-&lt;th style="text-align: center">用户名&lt;/th>
-&lt;th style="text-align: center">礼物名称&lt;/th>
-&lt;th style="text-align: center">数量&lt;/th>
-&lt;th style="text-align: center">时间&lt;/th>
-&lt;th style="text-align: center">钻石数&lt;/th>
-&lt;th style="text-align: center">打赏金额（元）&lt;/th>
+&lt;th style="text-align:center">UID&lt;/th>
+&lt;th style="text-align:center">用户名&lt;/th>
+&lt;th style="text-align:center">礼物名称&lt;/th>
+&lt;th style="text-align:center">数量&lt;/th>
+&lt;th style="text-align:center">时间&lt;/th>
+&lt;th style="text-align:center">钻石数&lt;/th>
+&lt;th style="text-align:center">打赏金额（元）&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: center">46213698&lt;/td>
-&lt;td style="text-align: center">七耳兔软糖72two&lt;/td>
-&lt;td style="text-align: center">桃子&lt;/td>
-&lt;td style="text-align: center">1&lt;/td>
-&lt;td style="text-align: center">2024/4/1 23:48:10&lt;/td>
-&lt;td style="text-align: center">80&lt;/td>
-&lt;td style="text-align: center">0.10&lt;/td>
+&lt;td style="text-align:center">46213698&lt;/td>
+&lt;td style="text-align:center">七耳兔软糖72two&lt;/td>
+&lt;td style="text-align:center">桃子&lt;/td>
+&lt;td style="text-align:center">1&lt;/td>
+&lt;td style="text-align:center">2024/4/1 23:48:10&lt;/td>
+&lt;td style="text-align:center">80&lt;/td>
+&lt;td style="text-align:center">0.10&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: center">46213698&lt;/td>
-&lt;td style="text-align: center">七耳兔软糖72two&lt;/td>
-&lt;td style="text-align: center">桃子&lt;/td>
-&lt;td style="text-align: center">6&lt;/td>
-&lt;td style="text-align: center">2024/4/1 23:48:06&lt;/td>
-&lt;td style="text-align: center">480&lt;/td>
-&lt;td style="text-align: center">0.60&lt;/td>
+&lt;td style="text-align:center">46213698&lt;/td>
+&lt;td style="text-align:center">七耳兔软糖72two&lt;/td>
+&lt;td style="text-align:center">桃子&lt;/td>
+&lt;td style="text-align:center">6&lt;/td>
+&lt;td style="text-align:center">2024/4/1 23:48:06&lt;/td>
+&lt;td style="text-align:center">480&lt;/td>
+&lt;td style="text-align:center">0.60&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table></description></item></channel></rss>
