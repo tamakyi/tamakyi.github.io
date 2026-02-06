@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>华为 on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/%E5%8D%8E%E4%B8%BA.html</link><description>Recent content in 华为 on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Fri, 06 Feb 2026 07:10:03 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E5%8D%8E%E4%B8%BA/index.xml" rel="self" type="application/rss+xml"/><item><title>鸿蒙Next居然兼容安卓了？</title><link>https://blog.tama.guru/record/android-on-harmony.html</link><pubDate>Tue, 03 Dec 2024 23:03:56 +0800</pubDate><guid>https://blog.tama.guru/record/android-on-harmony.html</guid><description>&lt;p>昨天，有消息称Next的应用商店上架了出境易，用过华子的都知道这玩意可以用过某些&lt;del>不可告人&lt;/del>的方式来实现对某些国外应用的安装和使用，所以这次上架就有意思了,因为这上面的几乎所有应用目前基本上不会为Next做适配，那就说明它会通过某种方法来兼容安卓应用来实现运行如上应用的能力。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>华为 on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/%E5%8D%8E%E4%B8%BA.html</link><description>Recent content in 华为 on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Fri, 06 Feb 2026 07:30:52 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E5%8D%8E%E4%B8%BA/index.xml" rel="self" type="application/rss+xml"/><item><title>鸿蒙Next居然兼容安卓了？</title><link>https://blog.tama.guru/record/android-on-harmony.html</link><pubDate>Tue, 03 Dec 2024 23:03:56 +0800</pubDate><guid>https://blog.tama.guru/record/android-on-harmony.html</guid><description>&lt;p>昨天，有消息称Next的应用商店上架了出境易，用过华子的都知道这玩意可以用过某些&lt;del>不可告人&lt;/del>的方式来实现对某些国外应用的安装和使用，所以这次上架就有意思了,因为这上面的几乎所有应用目前基本上不会为Next做适配，那就说明它会通过某种方法来兼容安卓应用来实现运行如上应用的能力。&lt;/p>
 &lt;h4 id="出境易">出境易
 &lt;/h4>&lt;p>安装过程就不介绍了，首次运行的时候需要下载将近600M的数据并且重启系统，一开始我也以为是个虚拟机，但后面tg上有人放出一张截图，疑似是通过lxc来跑安卓容器实现的。
 &lt;div class="post-img-view">
@@ -110,7 +110,7 @@ alt="我已事前做好授权，因此可能部分步骤与文中不一致。"
 &lt;p>解压压缩包,将Backup文件夹复制到手机存储空间里的/Huawei 的目录里,压缩包里目录里的软件对应接下来的步骤,按步骤安装!
 &lt;div class="post-img-view">
 &lt;a data-fancybox="gallery" href="https://r2.337845818.best/oss-to-r2/2024/04/11/6617faf43512f.png">
-&lt;img src="https://r2.337845818.best/oss-to-r2/2024/04/11/6617faf43512f.png" alt="文件复制好的话在/内部存储&amp;amp;gt;backup&amp;amp;gt;backupFiles&amp;amp;gt;2019-12-07_02-08-38-841文件夹应该能看到以下文件" />
+&lt;img src="https://r2.337845818.best/oss-to-r2/2024/04/11/6617faf43512f.png" alt="文件复制好的话在/内部存储&amp;gt;backup&amp;gt;backupFiles&amp;gt;2019-12-07_02-08-38-841文件夹应该能看到以下文件" />
 &lt;/a>
 &lt;/div>
 &lt;img src="https://r2.337845818.best/oss-to-r2/2024/04/11/6617faf43512f.png"
@@ -127,8 +127,7 @@ Google服务框架
 Google账户管理程序
 com.google.android.gms.policy_sidecar_aps
 SharedLibrary
-谷歌服务助手&lt;/p>
-&lt;/blockquote>
+谷歌服务助手&lt;/p>&lt;/blockquote>
 &lt;p>打开”设置”-“应用和服务”-“应用管理”,点击右上角四个点,点击显示系统程序,然后搜索手机里是否有以上软件,若有则删除.
 &lt;strong>因为我之前没有安装过，此步骤省略。&lt;/strong>&lt;/p>
 &lt;h3 id="2-修改系统时间到2019年12月7日">2. 修改系统时间到2019年12月7日
@@ -139,15 +138,13 @@ SharedLibrary
 &lt;p>右上角四个点选择”从内部存储恢复”,选择 toalan.com 备份,输入密码恢复(如果没有,就是backup导入没有成功)&lt;/p>
 &lt;blockquote>
 &lt;p>如果这里没有”从内部存储恢复”，点击从“外部存储”，然后把权限全部打开。返回重新进入，就会有了。
-&lt;strong>符合预期&lt;/strong>&lt;/p>
-&lt;/blockquote>
+&lt;strong>符合预期&lt;/strong>&lt;/p>&lt;/blockquote>
 &lt;h3 id="4-激活谷歌服务助手">4. 激活谷歌服务助手
 &lt;/h3>&lt;p>“设置”-“系统和更新”-“日期和时间”-将自动设置打开
 从桌面打开谷歌服务助手,点击激活,并给权限
 激活后不需要点击”开始下载”,直接返回桌面&lt;/p>
 &lt;blockquote>
-&lt;p>🚨如果打开提示“当前设备不支持”，那就可以放弃治疗了&lt;/p>
-&lt;/blockquote>
+&lt;p>🚨如果打开提示“当前设备不支持”，那就可以放弃治疗了&lt;/p>&lt;/blockquote>
 &lt;p>&lt;strong>注意：此时我已经连接到了国际互联网，并且为了保证稳定，我使用的是移动网络+V*N的方式，而不是在路由搭建全局网络。&lt;/strong>&lt;/p>
 &lt;h3 id="5-安装microg且登录谷歌账号此处对应文件夹的第五步">5. 安装MicroG,且登录谷歌账号（此处对应文件夹的“第五步”）
 &lt;/h3>&lt;p>安装MicroG,打开后点击”Account”,点击右下角”sign in”,登录自己的谷歌账号(此过程可能会闪退一两次, 重试即可)
