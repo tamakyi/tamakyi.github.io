@@ -1,5 +1,168 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>记录 on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/categories/%E8%AE%B0%E5%BD%95.html</link><description>Recent content in 记录 on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 26 Feb 2026 18:32:00 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/categories/%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml"/><item><title>狼的公告板功能更新：探索和标签</title><link>https://blog.tama.guru/record/tamabox-tags.html</link><pubDate>Thu, 26 Feb 2026 18:00:00 +0800</pubDate><guid>https://blog.tama.guru/record/tamabox-tags.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 狼的公告板功能更新：探索和标签" />&lt;p>[TOC]&lt;/p>
-&lt;h4 id="前言">前言
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>记录 on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/categories/%E8%AE%B0%E5%BD%95.html</link><description>Recent content in 记录 on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Fri, 27 Feb 2026 16:56:35 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/categories/%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml"/><item><title>自托管密码柜 - 自建vaultwarden密码管理服务</title><link>https://blog.tama.guru/record/vaultwarden-selfhost.html</link><pubDate>Fri, 27 Feb 2026 16:55:00 +0800</pubDate><guid>https://blog.tama.guru/record/vaultwarden-selfhost.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 自托管密码柜 - 自建vaultwarden密码管理服务" />&lt;h3 id="前言">前言
+&lt;/h3>&lt;p>原来我好多两步验证服务都是托管在微软的Authenticator上，一开始我以为这玩意带云同步功能，就算换手机了只要重新登入微软账号就能把两步验证也同步过去，但实践之后的惨痛的代价告诉我这样行不通（现在还有几个设置了两步验证的网站上不去，人工客服也爱理不理，感觉要凉），但看看同类的软件无非就是谷歌验证器之类那几个，以下是D老师做的对比：&lt;/p>
+&lt;h4 id="同类软件对比">同类软件对比
+&lt;/h4>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: left">软件名称&lt;/th>
+&lt;th style="text-align: left">主要功能&lt;/th>
+&lt;th style="text-align: left">优点&lt;/th>
+&lt;th style="text-align: left">缺点&lt;/th>
+&lt;th style="text-align: left">平台支持&lt;/th>
+&lt;th style="text-align: left">价格模型&lt;/th>
+&lt;th style="text-align: left">是否开源&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>微软 Authenticator&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">双因素认证 (2FA)，特别集成微软账户&lt;/td>
+&lt;td style="text-align: left">1. 与微软生态系统无缝集成&lt;br>2. 支持便捷的推送通知验证&lt;br>3. 提供云备份和跨设备同步&lt;/td>
+&lt;td style="text-align: left">1. 功能主要围绕微软账户优化&lt;br>2. 推送验证需网络连接&lt;br>3. 备份数据存储在微软云，存在隐私顾虑&lt;/td>
+&lt;td style="text-align: left">iOS, Android&lt;/td>
+&lt;td style="text-align: left">免费&lt;/td>
+&lt;td style="text-align: left">否&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>谷歌验证器 (Google Authenticator)&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">基于TOTP/HOTP标准的2FA验证器&lt;/td>
+&lt;td style="text-align: left">1. 轻量、简洁、启动快&lt;br>2. 完全开源，代码透明&lt;br>3. 完全离线工作，无需网络&lt;br>4. 支持账户导出/导入 (较新版本)&lt;/td>
+&lt;td style="text-align: left">1. 功能单一，仅限2FA&lt;br>2. 无官方云备份，设备丢失可能导致账户锁定&lt;br>3. 用户需自行管理密钥备份&lt;/td>
+&lt;td style="text-align: left">iOS, Android&lt;/td>
+&lt;td style="text-align: left">免费&lt;/td>
+&lt;td style="text-align: left">是&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>Bitwarden&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">综合性密码管理器，内置2FA验证器&lt;/td>
+&lt;td style="text-align: left">1. 开源且经过安全审计&lt;br>2. 集密码管理与2FA于一体，一站式安全&lt;br>3. 强大的跨平台客户端和浏览器扩展&lt;br>4. 支持自托管 (需付费订阅)&lt;/td>
+&lt;td style="text-align: left">1. 使用官方服务器需信任其基础设施&lt;br>2. 高级功能 (如自托管、紧急访问) 需付费订阅&lt;br>3. 作为密码管理器，功能比纯验证器复杂&lt;/td>
+&lt;td style="text-align: left">Web, Windows, macOS, Linux, iOS, Android， 主流浏览器扩展&lt;/td>
+&lt;td style="text-align: left">免费版功能完整；高级功能需付费订阅&lt;/td>
+&lt;td style="text-align: left">是&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>Vaultwarden&lt;/strong> (原 Bitwarden_rs)&lt;/td>
+&lt;td style="text-align: left">Bitwarden 密码管理服务器的自托管替代方案&lt;/td>
+&lt;td style="text-align: left">1. &lt;strong>完全掌控数据&lt;/strong>，服务器私有化部署&lt;br>2. 兼容所有官方 Bitwarden 客户端，无需修改&lt;br>3. 资源占用低，对硬件要求友好&lt;br>4. 可免费使用 Bitwarden 付费版的大部分功能&lt;/td>
+&lt;td style="text-align: left">1. &lt;strong>需要一定的技术能力&lt;/strong>进行部署、维护、更新和备份&lt;br>2. 安全责任由用户自己承担&lt;br>3. 非官方服务器，尽管社区活跃且受信任&lt;/td>
+&lt;td style="text-align: left">任何可部署 Docker 或二进制文件的服务器；通过 Bitwarden 客户端访问&lt;/td>
+&lt;td style="text-align: left">软件免费；需自行承担服务器成本&lt;/td>
+&lt;td style="text-align: left">是&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>考虑到这类软件的安全敏感性，最终还是选择自己部署Vaultwarden。&lt;/p>
+&lt;p>如果服务器资源充裕可以直接使用docker进行部署，而我为了节约成本选择自己编译二进制文件。&lt;/p>
+&lt;h3 id="前期准备">前期准备
+&lt;/h3>&lt;h4 id="docker方式">Docker方式
+&lt;/h4>&lt;p>一般来说使用Docker构建是最快的，直接编辑&lt;code>docker-compose.yml&lt;/code>：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-dockerfile" data-lang="dockerfile">&lt;span class="line">&lt;span class="cl">version: &lt;span class="s1">&amp;#39;3.7&amp;#39;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>services:&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>vaultwarden:&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>image: vaultwarden/server:latest&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>container_name: vaultwarden&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>restart: unless-stopped&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>&lt;span class="k">expose&lt;/span>&lt;span class="s">:&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>- &lt;span class="s2">&amp;#34;80&amp;#34;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>volumes:&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>- ./vw-data:/data&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>&lt;span class="k">env&lt;/span>ironment:&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>- &lt;span class="nv">SIGNUPS_ALLOWED&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nb">true&lt;/span> &lt;span class="c1"># 首次运行允许注册&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>- &lt;span class="nv">WEBSOCKET_ENABLED&lt;/span>&lt;span class="o">=&lt;/span>true&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>- &lt;span class="nv">ADMIN_TOKEN&lt;/span>&lt;span class="o">=&lt;/span>your_admin_token_here &lt;span class="c1"># 管理员界面访问令牌&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>- &lt;span class="nv">DOMAIN&lt;/span>&lt;span class="o">=&lt;/span>https://your-domain.com&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>networks:&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>- nginx-reverse-proxy&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>networks:&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>nginx-reverse-proxy:&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>external: true&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这样就会构建一个使用SQLite+Nginx的vaultwarden环境，再配置一下反代即可：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="line">&lt;span class="cl">&lt;span class="k">server&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">listen&lt;/span> &lt;span class="mi">443&lt;/span> &lt;span class="s">ssl&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">server_name&lt;/span> &lt;span class="s">your-domain.com&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">ssl_certificate&lt;/span> &lt;span class="s">/etc/nginx/certs/fullchain.pem&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">ssl_certificate_key&lt;/span> &lt;span class="s">/etc/nginx/certs/privkey.pem&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">location&lt;/span> &lt;span class="s">/&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">proxy_pass&lt;/span> &lt;span class="s">http://vaultwarden:80&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">proxy_set_header&lt;/span> &lt;span class="s">Host&lt;/span> &lt;span class="nv">$host&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">proxy_set_header&lt;/span> &lt;span class="s">X-Real-IP&lt;/span> &lt;span class="nv">$remote_addr&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">proxy_set_header&lt;/span> &lt;span class="s">X-Forwarded-For&lt;/span> &lt;span class="nv">$proxy_add_x_forwarded_for&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">proxy_set_header&lt;/span> &lt;span class="s">X-Forwarded-Proto&lt;/span> &lt;span class="nv">$scheme&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">location&lt;/span> &lt;span class="s">/notifications/hub&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">proxy_pass&lt;/span> &lt;span class="s">http://vaultwarden:3012&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">proxy_set_header&lt;/span> &lt;span class="s">Upgrade&lt;/span> &lt;span class="nv">$http_upgrade&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">proxy_set_header&lt;/span> &lt;span class="s">Connection&lt;/span> &lt;span class="s">&amp;#34;upgrade&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>必须要配置ssl才能访问。&lt;/p>
+&lt;h4 id="二进制直接运行">二进制直接运行
+&lt;/h4>&lt;p>因为我机器上已经有Postgresql+Nginx，加上docker本身会有一些开销，vaultwarden本身就是rust编译的，运行内存很小，套上docker之后优势就不存在了。&lt;/p>
+&lt;p>编译的过程非常痛苦，本地机器4c8g都能被干到卡死，所以干脆用Github Action编译，如果使用postgres作为数据库的可以直接用我这个项目：&lt;a class="link" href="https://github.com/tamakyi/vaultwarden" target="_blank" rel="noopener"
+>tamakyi/vaultwarden&lt;/a>。&lt;/p>
+&lt;p>新建一个文件夹把内容解压其中：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">wget https://github.com/tamakyi/vaultwarden/releases/download/1.35.4/vaultwarden-1.35.4-linux.tar.gz
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">tar zxvf vaultwarden-1.35.4-linux.tar.gz
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>会获得二进制文件&lt;code>vaultwarden_linux&lt;/code>和文件夹&lt;code>web-vault&lt;/code>，配置文件和目录&lt;/p>
+&lt;h5 id="编写初始配置文件etcvaultwardenenv">编写初始配置文件&lt;code>/etc/vaultwarden.env&lt;/code>
+&lt;/h5>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="nv">DATA_FOLDER&lt;/span>&lt;span class="o">=&lt;/span>/var/lib/vaultwarden/data/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">DATABASE_URL&lt;/span>&lt;span class="o">=&lt;/span>postgresql://&lt;span class="o">[&lt;/span>数据库用户名&lt;span class="o">]&lt;/span>:&lt;span class="o">[&lt;/span>数据库密码&lt;span class="o">]&lt;/span>@127.0.0.1:5432/&lt;span class="o">[&lt;/span>数据库名&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">IP_HEADER&lt;/span>&lt;span class="o">=&lt;/span>X-Real-IP
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">WEB_VAULT_FOLDER&lt;/span>&lt;span class="o">=&lt;/span>/var/lib/vaultwarden/web-vault/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">WEB_VAULT_ENABLED&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nb">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">ADMIN_TOKEN&lt;/span>&lt;span class="o">=[&lt;/span>base64码&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">DOMAIN&lt;/span>&lt;span class="o">=&lt;/span>https://vaultwarden.tama.guru
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>数据库需要提前创建，ADMIN_TOKEN可以通过执行：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">openssl rand -base64 &lt;span class="m">48&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>获取，这属于明文密码，官方不推荐，建议配置完关掉admin页面访问权限。&lt;/p>
+&lt;h5 id="使用systemctl管理vaultwarden">使用systemctl管理vaultwarden
+&lt;/h5>&lt;p>新建&lt;code>/etc/systemd/system/vaultwarden.service&lt;/code>并编辑内容：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>Unit&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">Description&lt;/span>&lt;span class="o">=&lt;/span>Vaultwarden Server
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">Documentation&lt;/span>&lt;span class="o">=&lt;/span>https://github.com/tamakyi/vaultwarden
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">After&lt;/span>&lt;span class="o">=&lt;/span>network.target postgresql.service
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">Requires&lt;/span>&lt;span class="o">=&lt;/span>postgresql.service
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>Service&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">User&lt;/span>&lt;span class="o">=&lt;/span>vaultwarden
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">Group&lt;/span>&lt;span class="o">=&lt;/span>vaultwarden
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">EnvironmentFile&lt;/span>&lt;span class="o">=&lt;/span>/etc/vaultwarden.env
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">ExecStart&lt;/span>&lt;span class="o">=&lt;/span>/usr/bin/vaultwarden
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">LimitNOFILE&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">1048576&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">LimitNPROC&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">64&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">PrivateTmp&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nb">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">PrivateDevices&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nb">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">ProtectHome&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nb">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">ProtectSystem&lt;/span>&lt;span class="o">=&lt;/span>strict
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">WorkingDirectory&lt;/span>&lt;span class="o">=&lt;/span>/var/lib/vaultwarden
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">ReadWriteDirectories&lt;/span>&lt;span class="o">=&lt;/span>/var/lib/vaultwarden
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">AmbientCapabilities&lt;/span>&lt;span class="o">=&lt;/span>CAP_NET_BIND_SERVICE
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>Install&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">WantedBy&lt;/span>&lt;span class="o">=&lt;/span>multi-user.target
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后可以尝试启动vaultwarden了：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">systemctl daemon-reload
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">systemctl &lt;span class="nb">enable&lt;/span> vaultwarden
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">systemctl start vaultwarden
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果提示：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">Rocket has launched from http://127.0.0.1:8000
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>则表明服务已经正常启动了。&lt;/p>
+&lt;h5 id="配置cloudflare-tunnle访问">配置cloudflare tunnle访问
+&lt;/h5>&lt;p>虽然可以用nginx反代，但我还是更喜欢用tunnle的方式，因为我的域名已经绑定了cloudflare，直接把我的目标域名&lt;code>https://vaultwarden.tama.guru&lt;/code>引导到&lt;code>http://127.0.0.1:8000&lt;/code>即可，现在就可以通过&lt;code>https://vaultwarden.tama.guru&lt;/code>访问vaultwarden了。&lt;/p>
+&lt;h4 id="其他">其他
+&lt;/h4>&lt;p>登录后新建完用户，一般来说是要把注册权限关掉的，可以登录&lt;code>https://vaultwarden.tama.guru/admin&lt;/code>，&lt;code>admin_token&lt;/code>即时之前我们配置的&lt;code>vaultwarden.env&lt;/code>中的&lt;code>ADMIN_TOKEN&lt;/code>。登录进去之后找到&lt;code>SIGNUPS_ALLOWED&lt;/code>的配置项，默认是打勾的，取消掉保存即可。&lt;/p>
+&lt;p>然后我们需要关掉管理面板的访问，去&lt;code>/var/lib/vaultwarden/data/config.conf&lt;/code>找到&lt;code>admin_token&lt;/code>这一行，直接删掉整行保存，再执行&lt;code>systemctl restart vaultwarden&lt;/code>即可。&lt;/p>
+&lt;p>因为我使用的编译环境是Ubuntu22.04，glibc版本是2.35，如果系统glibc版本低于2.35的就建议自己编译吧，不然是执行不了的。查询系统glibc版本：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">$ ldd --version
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ldd &lt;span class="o">(&lt;/span>GNU libc&lt;span class="o">)&lt;/span> 2.36
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>狼的公告板功能更新：探索和标签</title><link>https://blog.tama.guru/record/tamabox-tags.html</link><pubDate>Thu, 26 Feb 2026 18:00:00 +0800</pubDate><guid>https://blog.tama.guru/record/tamabox-tags.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 狼的公告板功能更新：探索和标签" />&lt;h4 id="前言">前言
 &lt;/h4>&lt;p>新年好！2026年给提问箱加了点小功能，最开始是我想起来曾经有一位水友在群里问我，我开通了提问箱，为啥没有人给我提问？对于NekoBox这个项目来说，最开始的时候往外分享出去的方式只有链接，再后来我结合现有资源弄了个二维码并不断优化。（但是对于大多数人来说，扫码工具无非就是微信和QQ，而这俩东西是带白名单机制的，本站域名因为不在白名单内，经常是需要扫码完再手动复制链接到浏览器访问，还是有点复杂。）而无论是链接访问还是扫码访问，这都需要提问箱的箱主主动去分享，上面这个水友则是想要一种被动得到提问的形式，所以我选择添加这个探索的功能。&lt;/p>
 &lt;h4 id="如何使用">如何使用
 &lt;/h4>&lt;p>登录后在用户设置页面底部的标签设置模块，目前我设置的是允许给自己写下五个标签，每个标签五个字之内，可以写任何东西，这里可以写一些希望大家知道你特长的板块，这样你的主页就会在探索页面展现出来。当然这个功能是默认关闭的，如果不开启“在首页展示我的标签”则不会显示。探索页面位于：&lt;a href="https://box.tama.guru/explore">探索用户&lt;/a>。&lt;/p>
