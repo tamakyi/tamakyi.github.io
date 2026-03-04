@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/post.html</link><description>Recent content in Posts on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Fri, 27 Feb 2026 08:56:52 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/post/index.xml" rel="self" type="application/rss+xml"/><item><title>自托管密码柜 - 自建vaultwarden密码管理服务</title><link>https://blog.tama.guru/record/vaultwarden-selfhost.html</link><pubDate>Fri, 27 Feb 2026 16:55:00 +0800</pubDate><guid>https://blog.tama.guru/record/vaultwarden-selfhost.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 自托管密码柜 - 自建vaultwarden密码管理服务" />&lt;h3 id="前言">前言
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/post.html</link><description>Recent content in Posts on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Wed, 04 Mar 2026 03:23:39 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/post/index.xml" rel="self" type="application/rss+xml"/><item><title>自托管密码柜 - 自建vaultwarden密码管理服务</title><link>https://blog.tama.guru/record/vaultwarden-selfhost.html</link><pubDate>Fri, 27 Feb 2026 16:55:00 +0800</pubDate><guid>https://blog.tama.guru/record/vaultwarden-selfhost.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 自托管密码柜 - 自建vaultwarden密码管理服务" />&lt;h3 id="前言">前言
 &lt;/h3>&lt;p>原来我好多两步验证服务都是托管在微软的Authenticator上，一开始我以为这玩意带云同步功能，就算换手机了只要重新登入微软账号就能把两步验证也同步过去，但实践之后的惨痛的代价告诉我这样行不通（现在还有几个设置了两步验证的网站上不去，人工客服也爱理不理，感觉要凉），但看看同类的软件无非就是谷歌验证器之类那几个，以下是D老师做的对比：&lt;/p>
 &lt;h4 id="同类软件对比">同类软件对比
 &lt;/h4>&lt;table>
@@ -6003,7 +6003,34 @@ alt="php访问测试"
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>直接把这里修改成：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">users /etc/3proxy/conf/passwd
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后重启程序即可。&lt;/p>
-&lt;p>如果无法连接到该端口，建议看一下是否打开了防火墙并有放行端口。&lt;/p></description></item><item><title>使用ruleproject搭建自己的typecho程序客户端</title><link>https://blog.tama.guru/record/ruleproject.html</link><pubDate>Fri, 17 Nov 2023 23:12:00 +0800</pubDate><guid>https://blog.tama.guru/record/ruleproject.html</guid><description>&lt;p>卧槽牛皮，这东西牛啊！通过这个教程已经成功弄出了安卓端apk并正常使用！
+&lt;p>如果无法连接到该端口，建议看一下是否打开了防火墙并有放行端口。&lt;/p>
+&lt;p>更新：在https://bgithub.xyz/3proxy/3proxy/issues/374中有提到：&amp;ldquo;Remove pidfile /var/run/3proxy/3proxy.pid it&amp;rsquo;s not required with systemd, current master fixes it already.&amp;ldquo;也就是说3proxy.pid对于systemd并不是必须的，所以如果提示：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">Failed to open pid file /var/run/3proxy/3proxy.pid
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>可以尝试删掉或注释掉&lt;code>/etc/3proxy/3proxy.conf&lt;/code>内的:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">pidfile /var/run/3proxy/3proxy.pid
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这一行。修改后的&lt;code>3proxy.conf&lt;/code>应该像：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">#!/bin/3proxy
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">&lt;/span>&lt;span class="c1">#daemon&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#pidfile /var/run/3proxy/3proxy.pid&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">chroot /usr/local/3proxy proxy proxy
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">include /conf/3proxy.cfg
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后重启3proxy服务：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">systemctl restart 3proxy
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>此时程序应该能够正常运行了：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>root@shell conf&lt;span class="o">]&lt;/span>&lt;span class="c1"># systemctl status 3proxy&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">● 3proxy.service - 3proxy tiny proxy server
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Loaded: loaded &lt;span class="o">(&lt;/span>/usr/lib/systemd/system/3proxy.service&lt;span class="p">;&lt;/span> enabled&lt;span class="p">;&lt;/span> preset: disabled&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Active: active &lt;span class="o">(&lt;/span>running&lt;span class="o">)&lt;/span> since Wed 2026-03-04 11:05:40 CST&lt;span class="p">;&lt;/span> 6s ago
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Docs: man:3proxy&lt;span class="o">(&lt;/span>1&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Main PID: &lt;span class="m">2591424&lt;/span> &lt;span class="o">(&lt;/span>3proxy&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Tasks: &lt;span class="m">5&lt;/span> &lt;span class="o">(&lt;/span>limit: 2271&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Memory: 3.1M &lt;span class="o">(&lt;/span>peak: 3.4M&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> CPU: 7ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> CGroup: /system.slice/3proxy.service
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> └─2591424 /bin/3proxy /etc/3proxy/3proxy.cfg
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Mar &lt;span class="m">04&lt;/span> 11:05:40 VM-0-11-opencloudos systemd&lt;span class="o">[&lt;/span>1&lt;span class="o">]&lt;/span>: Started 3proxy.service - 3proxy tiny proxy server.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>使用ruleproject搭建自己的typecho程序客户端</title><link>https://blog.tama.guru/record/ruleproject.html</link><pubDate>Fri, 17 Nov 2023 23:12:00 +0800</pubDate><guid>https://blog.tama.guru/record/ruleproject.html</guid><description>&lt;p>卧槽牛皮，这东西牛啊！通过这个教程已经成功弄出了安卓端apk并正常使用！
 本站安卓客户端：&lt;a class="link" href="https://share.tama.guru/d/App/Android/latest_release.apk" target="_blank" rel="noopener"
 >https://share.tama.guru/d/App/Android/latest_release.apk&lt;/a>
 &lt;/br>本站自签证iOS端：&lt;a class="link" href="https://share.tama.guru/d/App/iOS/%E7%8B%BC%E7%9A%84%E5%85%AC%E5%91%8A%E6%9D%BF.mobileconfig" target="_blank" rel="noopener"
