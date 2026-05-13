@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>私聊 on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/%E7%A7%81%E8%81%8A.html</link><description>Recent content in 私聊 on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 14 May 2026 00:06:12 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E7%A7%81%E8%81%8A/index.xml" rel="self" type="application/rss+xml"/><item><title>狼的提问箱新增功能：私聊和提问箱分享</title><link>https://blog.tama.guru/record/tamabox-update-20260513.html</link><pubDate>Wed, 13 May 2026 23:13:11 +0800</pubDate><guid>https://blog.tama.guru/record/tamabox-update-20260513.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 狼的提问箱新增功能：私聊和提问箱分享" />&lt;p>各位好，狼的提问箱断断续续运营至今已将近三年，并获得将近三百位用户,也算是有了一些流量。我也会时不时根据用户的反馈对提问箱进行调整和改进。近期一位用户反馈“可不可以实现提问后继续回复被提问者的功能，就像在同一层聊天一样；”其实这类建议并不是第一次被提到，趁着这两天有空，我姑且把功能的雏形做了出来。&lt;br>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>私聊 on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/%E7%A7%81%E8%81%8A.html</link><description>Recent content in 私聊 on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 14 May 2026 00:15:48 +0800</lastBuildDate><atom:link href="https://blog.tama.guru/tags/%E7%A7%81%E8%81%8A/index.xml" rel="self" type="application/rss+xml"/><item><title>狼的提问箱新增功能：私聊和提问箱分享</title><link>https://blog.tama.guru/record/tamabox-update-20260513.html</link><pubDate>Wed, 13 May 2026 23:13:11 +0800</pubDate><guid>https://blog.tama.guru/record/tamabox-update-20260513.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 狼的提问箱新增功能：私聊和提问箱分享" />&lt;p>各位好，狼的提问箱断断续续运营至今已将近三年，并获得将近三百位用户,也算是有了一些流量。我也会时不时根据用户的反馈对提问箱进行调整和改进。近期一位用户反馈“可不可以实现提问后继续回复被提问者的功能，就像在同一层聊天一样；”其实这类建议并不是第一次被提到，趁着这两天有空，我姑且把功能的雏形做了出来。&lt;br>
 首先说一下提问箱分享，就是在个人主页会有一个“分享提问箱”的按钮，执行会生成一张1280*720大小的图片，图上包含头像、签名、社交信息以及访问二维码和链接，个人感觉比直接截图好看，且图片尺寸也更适合分享。&lt;br>
 接下来重点说一下私聊功能：&lt;br>
-功能介绍：&lt;br>
+&lt;strong>功能介绍&lt;/strong>&lt;br>
 本功能的实现实际类似于“私聊”，本功能需要被提问者手动开启。提问者在发出问题时，可以选择使用一般的匿名提问或是发送“私聊”，如选择私聊则需要注册登录提交。提交私聊后提问者会在后台的“提问”页面看到“我发送的私聊”卡片，在此可进行私聊管理。&lt;br>
 私聊发出后，将会出现在被提问者的“我收到的私聊”提问页面，且被提问者将收到一封包含私聊内容和链接的邮件，此链接仅有提问者和被提问者两方的账号能够查看内容，点击链接之后可以进行一对一的私聊，私聊状态下被提问者用户名不可见。&lt;br>
-注意事项：
-1、被提问者可以设置单个私聊的对话轮数上限以及单个提问者一天内允许发送的私聊个数。
-2、私聊请求发出后，被提问者可以对私聊进行管理（如删除、拉黑），提问者无权操作发出的私聊，被提问者操作拉黑后该提问者账号所有的提问都会被打上“已拉黑”的标签。&lt;/p>
-&lt;p>目前存在的功能缺陷：&lt;br>
-1、邮箱发送的邮件不能正确显示私聊内容；&lt;br>
-2、一些文字上表述的错乱，后期再进行优化。&lt;/p>
-&lt;p>下一步改进计划：&lt;br>
+&lt;strong>注意事项&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>被提问者可以设置单个私聊的对话轮数上限以及单个提问者一天内允许发送的私聊个数。&lt;/li>
+&lt;li>私聊请求发出后，被提问者可以对私聊进行管理（如删除、拉黑），提问者无权操作发出的私聊，被提问者操作拉黑后该提问者账号所有的提问都会被打上“已拉黑”的标签。&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>目前存在的功能缺陷&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>邮箱发送的邮件不能正确显示私聊内容；&lt;/li>
+&lt;li>一些文字上表述的错乱，后期再进行优化。&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>下一步改进计划&lt;/strong>&lt;br>
 增加私聊中的图片回复功能。&lt;/p></description></item></channel></rss>
