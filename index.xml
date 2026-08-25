@@ -1,4 +1,235 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/</link><description>Recent content on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><atom:link href="https://blog.tama.guru/index.xml" rel="self" type="application/rss+xml"/><item><title>狼的提问箱新增功能：私聊和提问箱分享</title><link>https://blog.tama.guru/record/tamabox-update-20260513.html</link><pubDate>Wed, 13 May 2026 23:13:11 +0800</pubDate><guid>https://blog.tama.guru/record/tamabox-update-20260513.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 狼的提问箱新增功能：私聊和提问箱分享" />&lt;p>各位好，狼的提问箱断断续续运营至今已将近三年，并获得将近三百位用户,也算是有了一些流量。我也会时不时根据用户的反馈对提问箱进行调整和改进。近期一位用户反馈“可不可以实现提问后继续回复被提问者的功能，就像在同一层聊天一样；”其实这类建议并不是第一次被提到，趁着这两天有空，我姑且把功能的雏形做了出来。&lt;br>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/</link><description>Recent content on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><atom:link href="https://blog.tama.guru/index.xml" rel="self" type="application/rss+xml"/><item><title>狼的提问箱 新增投票功能 20260825</title><link>https://blog.tama.guru/record/tamabox_changelog_20260825.html</link><pubDate>Tue, 25 Aug 2026 18:40:54 +0800</pubDate><guid>https://blog.tama.guru/record/tamabox_changelog_20260825.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 狼的提问箱 新增投票功能 20260825" />&lt;hr>
+&lt;h2 id="一投票功能能做什么">一、投票功能能做什么
+&lt;/h2>&lt;p>TamaBox 投票让你在自己的提问箱里发起各种投票或问卷，参与者打开链接就能投，完全不需要注册（也可以设置仅注册用户可投）。从简单的&amp;quot;大家更喜欢哪个选项&amp;quot;，到一份多题的结构化问卷，都能做。&lt;/p>
+&lt;p>适合的场景举例：&lt;/p>
+&lt;ul>
+&lt;li>让粉丝 / 朋友帮你做选择：新头像二选一、周末活动定在哪天&lt;/li>
+&lt;li>收集意见：产品功能投票、内容选题调查&lt;/li>
+&lt;li>做一份完整问卷：既能打分、又能排顺序、还能自由填写&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="二六种投票类型怎么选">二、六种投票类型，怎么选
+&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>类型&lt;/th>
+&lt;th>用在哪里&lt;/th>
+&lt;th>例子&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>单选&lt;/td>
+&lt;td>只能选一个答案&lt;/td>
+&lt;td>新头像二选一&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>多选&lt;/td>
+&lt;td>可以选多个答案，可设最多选几个&lt;/td>
+&lt;td>最想看哪几个栏目（最多选 3 个）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>评分&lt;/td>
+&lt;td>打 1–10 分&lt;/td>
+&lt;td>给今天的活动体验打分&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>排序&lt;/td>
+&lt;td>把几个选项排出先后&lt;/td>
+&lt;td>功能优先级：把 5 个功能按最想要到最不想要排序&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>表单收集&lt;/td>
+&lt;td>一份多题问卷，题型随便混搭&lt;/td>
+&lt;td>报名表 + 满意度调查：填空、单选、多选、评分、排序全放一起&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>其中「表单收集」最灵活——一份问卷里的每一道题都可以是不同题型，就像用工具搭问卷一样。&lt;/p>
+&lt;hr>
+&lt;h2 id="三本次更新三个新亮点">三、本次更新，三个新亮点
+&lt;/h2>&lt;h3 id="1-每道题都能单独开放补充答案">1. 每道题都能单独开放&amp;quot;补充答案&amp;quot;
+&lt;/h3>&lt;p>以前&amp;quot;允许参与者补充自定义选项&amp;quot;是对整个投票统一开关的，而且表单问卷里根本用不了。现在：&lt;strong>在表单问卷里，每一道选择题都可以单独决定要不要开放自由补充&lt;/strong>。&lt;/p>
+&lt;ul>
+&lt;li>想开放的题：参与者除了选预置选项，还能点「其他」自己填写&lt;/li>
+&lt;li>想封闭的题：参与者只能选预置选项，保证答案可控&lt;/li>
+&lt;/ul>
+&lt;p>比如满意度调查里，评分题保持封闭打分；&amp;ldquo;最喜欢的水果&amp;quot;这道题开放补充——有人选不到满意选项时可以直接填&amp;quot;榴莲&amp;rdquo;，不再将就。&lt;/p>
+&lt;p>结果页里，大家补充的内容会&lt;strong>单独列出来&lt;/strong>（相同内容自动归到一起并显示次数），不会和预置选项的票数混在一起，一眼就能看出补充意见集中在哪些。&lt;/p>
+&lt;h3 id="2-新题目默认就是单选">2. 新题目默认就是&amp;quot;单选&amp;quot;
+&lt;/h3>&lt;p>添加表单字段时，默认题型改为最高频的「单选」，少一步选择；题型下拉列表里&amp;quot;单选&amp;quot;也排到了第一位。&lt;/p>
+&lt;h3 id="3-题目顺序随时调整">3. 题目顺序随时调整
+&lt;/h3>&lt;p>每道题卡片右上角有 &lt;strong>↑ / ↓&lt;/strong> 按钮，点一下就能把题目往上移或往下移，顺序随你排。调整后，参与者和结果页都会按新顺序展示。&lt;/p>
+&lt;hr>
+&lt;h2 id="四完整流程从创建到看结果">四、完整流程：从创建到看结果
+&lt;/h2>&lt;p>&lt;strong>第 1 步：新建投票&lt;/strong>
+进入「投票管理」，点新建，填好标题和说明，选择类型。&lt;/p>
+&lt;p>&lt;strong>第 2 步：搭题目（表单收集类型）&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>点「添加字段」新增题目，默认就是单选&lt;/li>
+&lt;li>每道题可设置：题型、标签（即问题内容）、是否必填、字数上限（文本类）、选项内容&lt;/li>
+&lt;li>需要开放补充的选择题，勾选「允许补充自定义选项」&lt;/li>
+&lt;li>用 ↑ / ↓ 调整题目顺序&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>第 3 步：预览一下&lt;/strong>
+不用急着发布——点「预览」会&lt;strong>自动保存为草稿&lt;/strong>并打开参与者视角的页面，可以先检查排版和交互，随时点「返回」继续改。&lt;/p>
+&lt;p>&lt;strong>第 4 步：发布&lt;/strong>
+发布时系统会做完整检查（必填项、选项数量、内容安全等），没问题就上线。可以设开始 / 结束时间、公开范围、结果可见时机。&lt;/p>
+&lt;p>&lt;strong>第 5 步：看结果&lt;/strong>
+在投票管理里打开结果页：预置选项以条形图 + 票数百分比展示；开放补充的题目，自定义内容单独列出；文本类填写内容可以逐条展开查看；还支持一键导出 CSV。&lt;/p>
+&lt;hr>
+&lt;h2 id="五几个实用小提示">五、几个实用小提示
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>草稿随便存&lt;/strong>：没编辑完就点「保存草稿」，下次继续，发布前别人看不到&lt;/li>
+&lt;li>&lt;strong>结果可见时机可设&lt;/strong>：投票后立即可见 / 结束后可见 / 仅自己可见，适合不同的玩法（比如先收答案后公布）&lt;/li>
+&lt;li>&lt;strong>防重复投票&lt;/strong>：系统会按登录账号或设备指纹做防刷，同一人重复提交会被拦住；还可以要求匿名投票先过验证码&lt;/li>
+&lt;li>&lt;strong>开放补充有底线&lt;/strong>：自定义选项有字数限制，且发布时会自动做内容安全校验，不合规内容无法提交&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="六常见问题">六、常见问题
+&lt;/h2>&lt;p>&lt;strong>Q：开放补充的题，参与者可以不填补充内容吗？&lt;/strong>
+可以。补充选项是可选的——参与者可以照常选预置选项，也可以选「其他」再填写；但如果选了「其他」却不填内容，提交会被提示补全。&lt;/p>
+&lt;p>&lt;strong>Q：发布后还能改题目顺序吗？&lt;/strong>
+发布后的投票选项和字段会锁定（避免破坏历史投票结果），要调整请在发布前用预览 / 草稿阶段完成。&lt;/p>
+&lt;p>&lt;strong>Q：补充的自定义选项会算进预置选项的票数吗？&lt;/strong>
+不会。预置选项各自计票，补充内容单独归类展示，互不干扰。&lt;/p>
+&lt;hr>
+&lt;p>&lt;em>如需了解本次更新的技术细节，可参考项目内开发文档。&lt;/em>&lt;/p></description></item><item><title>狼的提问箱 功能与修复变更记录 20260813</title><link>https://blog.tama.guru/record/tamabox_changelog_20260813.html</link><pubDate>Thu, 13 Aug 2026 01:08:54 +0800</pubDate><guid>https://blog.tama.guru/record/tamabox_changelog_20260813.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 狼的提问箱 功能与修复变更记录 20260813" />&lt;hr>
+&lt;h2 id="一新增功能">一、新增功能
+&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>#&lt;/th>
+&lt;th>功能&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>&lt;strong>问题置顶 / 精选回答&lt;/strong>&lt;/td>
+&lt;td>提问箱主人在管理页可置顶/取消置顶提问，公开主页置顶优先展示（&lt;code>is_pinned&lt;/code> 字段 + &lt;code>PinFirst&lt;/code> 排序）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>&lt;strong>单题分享图&lt;/strong>&lt;/td>
+&lt;td>单个问题（提问+回答）生成分享卡片图，仅公开且已回答可生成；复用主页分享图的绘制/缓存/字体模块&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>&lt;strong>回答后追问&lt;/strong>&lt;/td>
+&lt;td>提问者凭 token/登录身份对已回答的问题最多追问 3 次，主人可回复；事务+行锁保证并发上限；追问框仅在主人回复上一轮后显示，等待期间提示提问者&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4&lt;/td>
+&lt;td>&lt;strong>回答 Markdown 渲染&lt;/strong>&lt;/td>
+&lt;td>回答与追问回答支持 Markdown 排版，服务端渲染 + HTML 白名单过滤（防存储型 XSS），带 XSS 单测&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td>&lt;strong>深色模式&lt;/strong>&lt;/td>
+&lt;td>全站一键切换深/浅色（cookie 持久化 365 天）；桌面端顶栏图标、移动端底部固定操作栏，双入口&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>6&lt;/td>
+&lt;td>&lt;strong>同 IP 重复内容拦截&lt;/strong>&lt;/td>
+&lt;td>同一 IP 在 5 分钟内提交相同内容（提问/私聊首条）会被拒绝，防刷屏&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>7&lt;/td>
+&lt;td>&lt;strong>匿名 / 登录分级限流&lt;/strong>&lt;/td>
+&lt;td>登录用户享有 3 倍请求额度，匿名与登录独立限流器统计（滑动窗口）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>8&lt;/td>
+&lt;td>&lt;strong>封禁用户连带清理&lt;/strong>&lt;/td>
+&lt;td>新增 CLI 命令 &lt;code>TamaBox ban --email/--domain&lt;/code>：事务级联删除该用户提问、追问、私聊、消息、图片关联并物理删除账号（含二次确认）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>9&lt;/td>
+&lt;td>&lt;strong>提问箱统计看板&lt;/strong>&lt;/td>
+&lt;td>管理页顶部 6 张统计卡：总提问 / 已回答 / 未回答 / 私密 / 置顶 / 私聊会话&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>10&lt;/td>
+&lt;td>&lt;strong>热门标签榜&lt;/strong>&lt;/td>
+&lt;td>探索页展示高频用户标签（点击即搜索），热门问题区块按需移除&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>11&lt;/td>
+&lt;td>&lt;strong>全文搜索提问箱&lt;/strong>&lt;/td>
+&lt;td>管理页可按关键词搜索自己收到的提问与回答&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>12&lt;/td>
+&lt;td>&lt;strong>JSON 全量导出&lt;/strong>&lt;/td>
+&lt;td>&lt;code>/user/profile/export-json&lt;/code> 导出用户信息 + 提问/回答/追问/图片 + 私聊全部消息，满足数据可携带权；与既有 Excel 导出并存&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>13&lt;/td>
+&lt;td>&lt;strong>多语言（i18n）&lt;/strong>&lt;/td>
+&lt;td>简体中文 / 繁體中文 / English / 日本語；按 语言 cookie &amp;gt; 登录用户配置 &amp;gt; 提问箱主人配置 &amp;gt; 站点默认 解析；&lt;strong>注册页可直接选择界面语言&lt;/strong>（登录后即刻生效），注册成功提示跟随所选语言&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>14&lt;/td>
+&lt;td>&lt;strong>私聊&lt;/strong>（已有功能完善）&lt;/td>
+&lt;td>登录用户可向开启私聊的提问箱发起会话，支持图片、拉黑、每日条数上限、会话关闭&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>15&lt;/td>
+&lt;td>&lt;strong>页面密码 / 提问密码&lt;/strong>&lt;/td>
+&lt;td>提问箱页面可设置访问密码、提问可设置密码（bcrypt 存储）&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="二性能与体积优化分享图">二、性能与体积优化（分享图）
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>画布尺寸 1280×720 → 960×540&lt;/strong>：绘制与编码工作量降至约 40%&lt;/li>
+&lt;li>**输出体积约减小 90%，编码更快&lt;/li>
+&lt;li>&lt;strong>文字宽度测量改估算&lt;/strong>（逐字符宽度累加，替代每次创建 freetype.Context + DrawString 测量）&lt;/li>
+&lt;li>分享图结果缓存 TTL 由 30 分钟延长至 1 小时，远程图片缓存 1 小时不变&lt;/li>
+&lt;li>名称文字增加柔和投影，增强复杂背景上的可读性&lt;/li>
+&lt;/ul>
+&lt;h2 id="三新增命令与配置">三、新增命令与配置
+&lt;/h2>&lt;h3 id="配置项confappini">配置项（conf/app.ini）
+&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>配置&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>[app] default_lang&lt;/code>&lt;/td>
+&lt;td>站点默认语言（zh-CN / zh-TW / en / ja），留空默认简体中文&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>[security] ip_blacklist&lt;/code> / &lt;code>ip_blacklist_redirect_url&lt;/code>&lt;/td>
+&lt;td>逗号分隔 IP/CIDR 黑名单，命中跳转指定 URL&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>[security] trust_proxy&lt;/code>&lt;/td>
+&lt;td>反代部署且代理已覆盖 X-Real-IP/X-Forwarded-For 时设为 true，否则 false（防伪造 IP 绕过限流/黑名单）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>[recaptcha] captcha_type&lt;/code>&lt;/td>
+&lt;td>recaptcha / turnstile / math（本地算数验证码）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>[upload] image_*&lt;/code> / &lt;code>aliyun_*&lt;/code>&lt;/td>
+&lt;td>图片存储（R2/S3 或 OSS）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>[mail] skip_tls_verify&lt;/code>&lt;/td>
+&lt;td>自签名 SMTP 证书时跳过校验&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>[service] tls_insecure_skip_verify&lt;/code>&lt;/td>
+&lt;td>内网后端自签名证书时跳过校验&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>狼的提问箱新增功能：私聊和提问箱分享</title><link>https://blog.tama.guru/record/tamabox-update-20260513.html</link><pubDate>Wed, 13 May 2026 23:13:11 +0800</pubDate><guid>https://blog.tama.guru/record/tamabox-update-20260513.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 狼的提问箱新增功能：私聊和提问箱分享" />&lt;p>各位好，狼的提问箱断断续续运营至今已将近三年，并获得将近三百位用户,也算是有了一些流量。我也会时不时根据用户的反馈对提问箱进行调整和改进。近期一位用户反馈“可不可以实现提问后继续回复被提问者的功能，就像在同一层聊天一样；”其实这类建议并不是第一次被提到，趁着这两天有空，我姑且把功能的雏形做了出来。&lt;br>
 首先说一下提问箱分享，就是在个人主页会有一个“分享提问箱”的按钮，执行会生成一张1280*720大小的图片，图上包含头像、签名、社交信息以及访问二维码和链接，个人感觉比直接截图好看，且图片尺寸也更适合分享。&lt;br>
 接下来重点说一下私聊功能：&lt;br>
 &lt;strong>功能介绍&lt;/strong>&lt;br>
@@ -14,8 +245,10 @@
 &lt;li>邮箱发送的邮件不能正确显示私聊内容；&lt;/li>
 &lt;li>一些文字上表述的错乱，后期再进行优化。&lt;/li>
 &lt;/ul>
-&lt;p>&lt;strong>下一步改进计划&lt;/strong>&lt;br>
-增加私聊中的图片回复功能。&lt;/p></description></item><item><title>关于我不小心更新一加13被塞了防降级后退到含ARB的ColorOS15并Root导致黑砖的那些事</title><link>https://blog.tama.guru/record/oneplus13-arb-and-root.html</link><pubDate>Thu, 12 Mar 2026 18:57:11 +0800</pubDate><guid>https://blog.tama.guru/record/oneplus13-arb-and-root.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 关于我不小心更新一加13被塞了防降级后退到含ARB的ColorOS15并Root导致黑砖的那些事" />&lt;p>标题基本上已经把昨晚上我的经历全部说清楚了。从COS16版本16.0.3.501开始，一加就偷偷往更新包里面加料阻止用户进行降级，即所谓的防回滚保护机制（Anti-Rollback，简称 ARB），如果是喜欢更新体验最新系统的用户，完全就在不知不觉中中招，如果正巧升级后有降级需求，恭喜，喜提黑砖一台。ARB使用户无法将系统降级至16.0.3.501之前的任何版本，硬刷就会直接黑砖，据称即使找售后也只能换主板，完全无法修复。&lt;br>
+&lt;p>&lt;strong>下一步改进计划&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>增加私聊中的图片回复功能。&lt;/li>
+&lt;/ul></description></item><item><title>关于我不小心更新一加13被塞了防降级后退到含ARB的ColorOS15并Root导致黑砖的那些事</title><link>https://blog.tama.guru/record/oneplus13-arb-and-root.html</link><pubDate>Thu, 12 Mar 2026 18:57:11 +0800</pubDate><guid>https://blog.tama.guru/record/oneplus13-arb-and-root.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 关于我不小心更新一加13被塞了防降级后退到含ARB的ColorOS15并Root导致黑砖的那些事" />&lt;p>标题基本上已经把昨晚上我的经历全部说清楚了。从COS16版本16.0.3.501开始，一加就偷偷往更新包里面加料阻止用户进行降级，即所谓的防回滚保护机制（Anti-Rollback，简称 ARB），如果是喜欢更新体验最新系统的用户，完全就在不知不觉中中招，如果正巧升级后有降级需求，恭喜，喜提黑砖一台。ARB使用户无法将系统降级至16.0.3.501之前的任何版本，硬刷就会直接黑砖，据称即使找售后也只能换主板，完全无法修复。&lt;br>
 而我的运气还是比较好，在更新到502之后觉得系统的安装器广告实在太多了，本来想直接降级，但感觉降下去之后广告还是一样多，不如去XDA看看有没有好用的第三方ROM推荐，实在不行还可以切换到OOS。然后就看到了这条帖子： 。初略的看一下就是在说一加偷偷塞ARB不是人做的事什么的，以及因为OOS一直以来更新都会相对COS晚一些，目前还没有中招，但不久之后估计也会一样（后面确实也往OOS塞ARB了）。另外就是因为之前的大部分第三方ROM都是基于旧版本的固件改的，如果已经更新到501之后的版本想要刷到第三方固件也是一样的结果。&lt;br>
 目前官方放出了一个带ARB的COS15固件，可以去下载OPPO官方的ColorOS助手并使用其中的固件降级功能，它会自动检查能够适用于当前手机固件版本的降级包并下载安装，目前的版本号是15.0.0.862。降级也很简单，在手机上打开开发者设置和USB调试，然后数据线连接电脑并选择传输文件模式，这样ColorOS助手就能识别到手机，然后按步骤操作即可。需要注意的是降级也是需要格机的，所以需要&lt;strong>提前做好数据备份&lt;/strong>。&lt;br>
 因为ColorOS有些地方的广告实在是让人难以忍受，我这次选择降级之后直接Root了，方便后续系统再作妖的时候我能够做一些反击。看到很多人推荐使用KernelSU，我还以为和Magisk差不多，直接从ColorOS助手下载的降级包（顺带一提，这个ozip格式的降级包其实和一般的刷机包没有什么差异）提取了boot.img，然后在手机上安装KernelSU做修补，再用&lt;code>fastboot flash boot kernelsuxxx.img&lt;/code>写到手机去，结果发现KernelSU还是提示未安装，我还以为操作有问题就再反复操作一次，还是提示未安装。然后我就根据KernelSU的教程去下载了系统内核同版本的img固件（6.6.66），并把这个boot.img刷进手机里，悲剧便发生了。系统重启之后5秒会直接黑屏，一段时间后系统会检测到手机但是设备管理器提示900e错误，重启到bootloader我再用降级包原来的boot.img刷进去，重启之后还是原来的问题，这个时候我已经有点慌了。当想到还有Recovery模式的时候，我重启进去却发现只有格式化、重启、关机三个选项&amp;hellip;连sideload都没有。这时候我已经在思考要去哪里找售后了，但就在XDA上随便翻翻的时候，我看到一个OrangeFox的第三方Recovery项目（原谅我只知道TWRP，而且24年之后TWRP就没有更新了，我还以为没有第三方Recovery支持。），下载了他的Recovery镜像然后在bootloader下刷入:&lt;code>fastboot flash recovery OrangeFoxRecovery固件&lt;/code>然后重启到Recovery模式，发现能正常使用。因为图方便我想着用sideload的方式把降级包刷进去，结果直接报错了，还以为这个包只能用电脑刷&amp;hellip;最后我用OrangeFox把MTP打开把降级包固件复制到手机里，再执行安装zip，发现居然成功了（ozip的后缀不需要改，能够识别），再次重启发现已经能够进入系统初始化界面了。&lt;br>
