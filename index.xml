@@ -1,4 +1,42 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/</link><description>Recent content on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><atom:link href="https://blog.tama.guru/index.xml" rel="self" type="application/rss+xml"/><item><title>狼的提问箱 新增投票功能 20260825</title><link>https://blog.tama.guru/record/tamabox_changelog_20260825.html</link><pubDate>Tue, 25 Aug 2026 18:40:54 +0800</pubDate><guid>https://blog.tama.guru/record/tamabox_changelog_20260825.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 狼的提问箱 新增投票功能 20260825" />&lt;hr>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/</link><description>Recent content on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><atom:link href="https://blog.tama.guru/index.xml" rel="self" type="application/rss+xml"/><item><title>狼的提问箱 功能与修复变更记录 - 功能开关和全局屏蔽词</title><link>https://blog.tama.guru/record/tamabox_changelog_20260903.html</link><pubDate>Thu, 03 Sep 2026 00:26:54 +0800</pubDate><guid>https://blog.tama.guru/record/tamabox_changelog_20260903.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 狼的提问箱 功能与修复变更记录 - 功能开关和全局屏蔽词" />&lt;hr>
+&lt;h1 id="近期更新速览9-月-1-日--9-月-2-日">近期更新速览（9 月 1 日 — 9 月 2 日）
+&lt;/h1>&lt;blockquote>
+&lt;p>面向站点使用者的简要更新说明，已省略技术细节。
+提示：以下内容在服务端部署最新版本后才会全部生效。&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="2026-09-01">2026-09-01
+&lt;/h2>&lt;h3 id="新增--改进">新增 / 改进
+&lt;/h3>&lt;ul>
+&lt;li>管理后台的「功能设置」为提问、私聊、投票新增三种开放方式：&lt;strong>一直开放&lt;/strong>、&lt;strong>指定时间段开放&lt;/strong>、&lt;strong>每周固定时段循环开放&lt;/strong>。以前定时开放一旦结束，功能就会一直关闭；现在可以设定每周循环时间，到期自动开启与关闭。&lt;/li>
+&lt;li>未登录访客查看问题详情页时，「分享」按钮自动居中，页面更整齐。&lt;/li>
+&lt;/ul>
+&lt;h3 id="修复">修复
+&lt;/h3>&lt;ul>
+&lt;li>修复未登录用户切换界面语言不生效的问题。&lt;/li>
+&lt;li>全站提示文字（错误提示、操作结果、表单校验等）统一跟随所选界面语言显示，简体中文 / 繁體中文 / English / 日本語 不再混用。&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="2026-09-02">2026-09-02
+&lt;/h2>&lt;h3 id="新增--改进-1">新增 / 改进
+&lt;/h3>&lt;ul>
+&lt;li>投票的自定义回答框加入&lt;strong>实时字数统计&lt;/strong>，超过字数上限会标红并阻止提交，不再被悄悄截断。&lt;/li>
+&lt;li>站长创建投票时，每个选项文本的长度上限放宽到 300 字。&lt;/li>
+&lt;li>标签与屏蔽词改为「标签块」式输入：回车或逗号即可生成一个词，点 × 删除，无需手动敲英文逗号分隔，并实时显示数量。&lt;/li>
+&lt;li>提问、回答、追问、私聊消息的字数上限已统一，超出时会有明确提示。&lt;/li>
+&lt;li>私聊的会话消息条数上限可在 1～200 之间自行设置（新用户默认 200 条）。&lt;/li>
+&lt;/ul>
+&lt;h3 id="修复-1">修复
+&lt;/h3>&lt;ul>
+&lt;li>修复已发布投票在编辑保存后出现「未知的投票类型」、选项看似丢失的问题，现在保存后投票与选项均正常显示。&lt;/li>
+&lt;li>修复「加载更多」按钮失效：公开主页与后台投票列表可以正常翻页；列表到底后按钮不再出现，连点也不会重复加载。&lt;/li>
+&lt;li>修复头像、背景、分享卡片等图片偶尔加载超时失败的问题。&lt;/li>
+&lt;/ul>
+&lt;h3 id="调整">调整
+&lt;/h3>&lt;ul>
+&lt;li>屏蔽词现在对提问、私聊（对方发来的消息）与投票的自定义内容&lt;strong>同时生效&lt;/strong>；提问 / 私聊 / 投票三个设置面板展示同一份屏蔽词，改一处即全局同步。&lt;/li>
+&lt;li>精简后台投票设置页，移除重复的「投票内容管理」入口（投票列表仍可从顶栏进入）。&lt;/li>
+&lt;li>多项安全与稳定性加固（细节略）。&lt;/li>
+&lt;/ul></description></item><item><title>狼的提问箱 新增投票功能 20260825</title><link>https://blog.tama.guru/record/tamabox_changelog_20260825.html</link><pubDate>Tue, 25 Aug 2026 18:40:54 +0800</pubDate><guid>https://blog.tama.guru/record/tamabox_changelog_20260825.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 狼的提问箱 新增投票功能 20260825" />&lt;hr>
 &lt;h2 id="一投票功能能做什么">一、投票功能能做什么
 &lt;/h2>&lt;p>TamaBox 投票让你在自己的提问箱里发起各种投票或问卷，参与者打开链接就能投，完全不需要注册（也可以设置仅注册用户可投）。从简单的&amp;quot;大家更喜欢哪个选项&amp;quot;，到一份多题的结构化问卷，都能做。&lt;/p>
 &lt;p>适合的场景举例：&lt;/p>
@@ -94,7 +132,7 @@
 &lt;p>&lt;strong>Q：补充的自定义选项会算进预置选项的票数吗？&lt;/strong>
 不会。预置选项各自计票，补充内容单独归类展示，互不干扰。&lt;/p>
 &lt;hr>
-&lt;p>&lt;em>如需了解本次更新的技术细节，可参考项目内开发文档。&lt;/em>&lt;/p></description></item><item><title>狼的提问箱 功能与修复变更记录 20260813</title><link>https://blog.tama.guru/record/tamabox_changelog_20260813.html</link><pubDate>Thu, 13 Aug 2026 01:08:54 +0800</pubDate><guid>https://blog.tama.guru/record/tamabox_changelog_20260813.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 狼的提问箱 功能与修复变更记录 20260813" />&lt;hr>
+&lt;p>&lt;em>如需了解本次更新的技术细节，可参考项目内开发文档。&lt;/em>&lt;/p></description></item><item><title>狼的提问箱 重大更新：多语言、追问、搜索、深色模式等一系列功能实装</title><link>https://blog.tama.guru/record/tamabox_changelog_20260813.html</link><pubDate>Thu, 13 Aug 2026 01:08:54 +0800</pubDate><guid>https://blog.tama.guru/record/tamabox_changelog_20260813.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 狼的提问箱 重大更新：多语言、追问、搜索、深色模式等一系列功能实装" />&lt;hr>
 &lt;h2 id="一新增功能">一、新增功能
 &lt;/h2>&lt;table>
 &lt;thead>
@@ -229,7 +267,7 @@
 &lt;td>内网后端自签名证书时跳过校验&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>狼的提问箱新增功能：私聊和提问箱分享</title><link>https://blog.tama.guru/record/tamabox-update-20260513.html</link><pubDate>Wed, 13 May 2026 23:13:11 +0800</pubDate><guid>https://blog.tama.guru/record/tamabox-update-20260513.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 狼的提问箱新增功能：私聊和提问箱分享" />&lt;p>各位好，狼的提问箱断断续续运营至今已将近三年，并获得将近三百位用户,也算是有了一些流量。我也会时不时根据用户的反馈对提问箱进行调整和改进。近期一位用户反馈“可不可以实现提问后继续回复被提问者的功能，就像在同一层聊天一样；”其实这类建议并不是第一次被提到，趁着这两天有空，我姑且把功能的雏形做了出来。&lt;br>
+&lt;/table></description></item><item><title>狼的提问箱 新增功能：私聊和提问箱分享</title><link>https://blog.tama.guru/record/tamabox-update-20260513.html</link><pubDate>Wed, 13 May 2026 23:13:11 +0800</pubDate><guid>https://blog.tama.guru/record/tamabox-update-20260513.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 狼的提问箱 新增功能：私聊和提问箱分享" />&lt;p>各位好，狼的提问箱断断续续运营至今已将近三年，并获得将近三百位用户,也算是有了一些流量。我也会时不时根据用户的反馈对提问箱进行调整和改进。近期一位用户反馈“可不可以实现提问后继续回复被提问者的功能，就像在同一层聊天一样；”其实这类建议并不是第一次被提到，趁着这两天有空，我姑且把功能的雏形做了出来。&lt;br>
 首先说一下提问箱分享，就是在个人主页会有一个“分享提问箱”的按钮，执行会生成一张1280*720大小的图片，图上包含头像、签名、社交信息以及访问二维码和链接，个人感觉比直接截图好看，且图片尺寸也更适合分享。&lt;br>
 接下来重点说一下私聊功能：&lt;br>
 &lt;strong>功能介绍&lt;/strong>&lt;br>
