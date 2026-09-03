@@ -1,4 +1,312 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Nekobox on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/nekobox.html</link><description>Recent content in Nekobox on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Wed, 02 Sep 2026 16:29:28 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/nekobox/index.xml" rel="self" type="application/rss+xml"/><item><title>狼的提问箱 功能与修复变更记录 - 功能开关和全局屏蔽词</title><link>https://blog.tama.guru/record/tamabox_changelog_20260903.html</link><pubDate>Thu, 03 Sep 2026 00:26:54 +0800</pubDate><guid>https://blog.tama.guru/record/tamabox_changelog_20260903.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 狼的提问箱 功能与修复变更记录 - 功能开关和全局屏蔽词" />&lt;hr>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Nekobox on 狼的公告板 ver.Hugo</title><link>https://blog.tama.guru/tags/nekobox.html</link><description>Recent content in Nekobox on 狼的公告板 ver.Hugo</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>tamakyi</copyright><lastBuildDate>Thu, 03 Sep 2026 07:19:30 +0000</lastBuildDate><atom:link href="https://blog.tama.guru/tags/nekobox/index.xml" rel="self" type="application/rss+xml"/><item><title>以狼的提问箱为例-免备案双 CDN 分流实战教程：境内走 EdgeOne、境外走 Cloudflare</title><link>https://blog.tama.guru/record/tutorial-dual-cdn-split-routing.html</link><pubDate>Thu, 03 Sep 2026 15:26:54 +0800</pubDate><guid>https://blog.tama.guru/record/tutorial-dual-cdn-split-routing.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 以狼的提问箱为例-免备案双 CDN 分流实战教程：境内走 EdgeOne、境外走 Cloudflare" />&lt;blockquote>
+&lt;p>&lt;strong>教程性质&lt;/strong>：
+本文以 狼的提问箱 项目为例，但所有原理与步骤对任何「不备案、有海外用户、想让境内/境外各走最优线路」的站点通用。&lt;/p>
+&lt;p>场景速览：域名权威 DNS 托管在 &lt;strong>DNSPod&lt;/strong>（免费版支持按「境内 / 境外 / 默认」线路返回不同解析结果）；境内线路 CNAME 到&lt;strong>腾讯 EdgeOne 国际站&lt;/strong>（免备案区域，大陆用户落到香港等最近节点，走腾讯跨境骨干，比 Cloudflare 免费版大陆绕行明显更快）；境外/默认线路 CNAME 到 &lt;strong>Cloudflare 优选 IP&lt;/strong>（经 Cloudflare for SaaS 自定义主机名识别流量，由既有 Cloudflare Tunnel 回源）。&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="1-为什么能这么搭--三个关键认知">1. 为什么能这么搭 —— 三个关键认知
+&lt;/h2>&lt;p>整套方案成立的前提，是先把三个「概念解耦」想清楚：&lt;/p>
+&lt;h3 id="11-cloudflare-for-saas让流量识别与dns-解析权解耦">1.1 Cloudflare for SaaS：让「流量识别」与「DNS 解析权」解耦
+&lt;/h3>&lt;p>Cloudflare 普通接入（Free 套餐）要求把整域 NS 迁到 Cloudflare，这与「DNS 要放在 DNSPod 做分线路」&lt;strong>天然冲突&lt;/strong>——NS 在谁手里，谁才说了算。&lt;/p>
+&lt;p>Cloudflare for SaaS（免费额度 100 个自定义主机名）绕开这个限制：&lt;/p>
+&lt;ul>
+&lt;li>你有一个&lt;strong>承载 zone&lt;/strong>（例如 &lt;code>cf-zone.example.net&lt;/code>，托管在 Cloudflare）；&lt;/li>
+&lt;li>在承载 zone 里把目标域名（&lt;code>box.example.com&lt;/code>）加为 &lt;strong>Custom Hostname&lt;/strong>，并验证归属；&lt;/li>
+&lt;li>Cloudflare 边缘从此「认识」这个域名：&lt;strong>任何带着 &lt;code>Host: box.example.com&lt;/code> 到达 CF 边缘的请求&lt;/strong>，都会被匹配证书、按配置路由（本项目为 Tunnel 回源）。&lt;/li>
+&lt;/ul>
+&lt;p>关键结论：&lt;strong>CF 侧只负责&amp;quot;来了流量怎么认、怎么转&amp;quot;，不负责&amp;quot;流量怎么来&amp;quot;&lt;/strong>。流量能不能到 CF 边缘，取决于你自己的 DNS（DNSPod）把境外用户解析到哪。所以「境外走 CF」必须在 DNSPod 配一条境外线路指向 CF 的 IP/CNAME——CF 自己不会拉客。&lt;/p>
+&lt;h3 id="12-dnspod-分线路免费就能同一域名不同答案">1.2 DNSPod 分线路：免费就能「同一域名，不同答案」
+&lt;/h3>&lt;p>腾讯云解析（DNSPod）免费版就支持按查询来源返回不同记录：线路可选「中国境内 / 境外 / 默认」，境内细分到省、运营商。&lt;strong>默认线路是兜底&lt;/strong>，任何未命中的查询都走它。&lt;/p>
+&lt;p>要理解一个易错点：&lt;strong>分线路的判定发生在 DNSPod 的权威服务器上&lt;/strong>，依据是「递归 DNS 服务器的出口 IP 归属地」——所以「境外用户走境外线路」成立的前提是境外用户的递归 DNS（8.8.8.8 等）能真的问到 DNSPod 权威，且没被中间网络劫持/污染（第 6 节有实战案例）。&lt;/p>
+&lt;h3 id="13-edgeone-国际站选对加速区域就不用备案">1.3 EdgeOne 国际站：选对「加速区域」就不用备案
+&lt;/h3>&lt;p>EdgeOne 分「中国大陆可用区 / 全球可用区（不含中国大陆）/ 海外可用区」等区域配置。官方口径：&lt;/p>
+&lt;ul>
+&lt;li>选 &lt;strong>全球可用区（不含中国大陆）&lt;/strong> 或海外区域 → &lt;strong>不要求 ICP 备案&lt;/strong>；&lt;/li>
+&lt;li>选中国大陆区域 → 必须备案。&lt;/li>
+&lt;/ul>
+&lt;p>不备案的代价：大陆用户&lt;strong>没有本地节点&lt;/strong>，请求落到最近的海外节点（大陆一般落香港，也有日韩/新加坡等），由腾讯跨境骨干回源。实测体验通常仍明显优于 Cloudflare 免费版大陆线路（后者常绕美/日且抖动大）——所以「不备案也选 EO 当境内线路」是有实测前提的，切换前建议先测速对比。&lt;/p>
+&lt;blockquote>
+&lt;p>补充：Cloudflare for SaaS 启用通常需要账户先绑定支付方式，额度内不扣费。&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="2-目标架构">2. 目标架构
+&lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl"> DNS 层 DNSPod（example.com 整域权威，免费版支持按线路返回）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> NS = byron.dnspod.net / sunshine.dnspod.net（官方 NS）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> box CNAME 记录
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ├─ 境内 ──▶ box.example.com.edgeone.example （EdgeOne 接入目标）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ├─ 境外 ──▶ cf-pref.example.net （CF 优选 IP 域名）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> └─ 默认 ──▶ cf-pref.example.net （兜底，语义同境外）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ┌──────────────┴──────────────────────────────┐
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">大陆用户 ▶▶（命中境内线路） ◀◀ 海外用户（命中境外/默认线路）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ▼ ▼
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">EdgeOne 国际站 Cloudflare 边缘
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">区域: 全球(不含中国大陆) 优选 IP: 198.51.100.x（示例段）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">证书: TrustAsia, CN=box.example.com 识别: for SaaS 自定义主机名
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">回源: EO 直连源站公网端口 回源: Cloudflare Tunnel（纯出站）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> │ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> └──────────────────┬──────────────────────────┘
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ▼
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 源站防火墙 iptables+ipset（仅放行 EO 回源网段；cloudflared 走 127.0.0.1 不受影响）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ▼
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> HTTP 应用直接监听公网高位端口（本项目 TamaBox，无 nginx）
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>两条回源路径互不干扰：EO 是 &lt;strong>入站直连&lt;/strong>（需开放端口 + 白名单锁定），CF 是 &lt;strong>Tunnel 出站&lt;/strong>（无需任何入站规则）。&lt;/p>
+&lt;hr>
+&lt;h2 id="3-前置条件清单">3. 前置条件清单
+&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>#&lt;/th>
+&lt;th>条件&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>一个域名（&lt;code>example.com&lt;/code>），权威 DNS 托管在 DNSPod&lt;/td>
+&lt;td>免费版即可；注册局委派的 NS = byron/sunshine.dnspod.net&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>一个 Cloudflare 账户 + 承载 zone（&lt;code>cf-zone.example.net&lt;/code>）&lt;/td>
+&lt;td>用于 for SaaS 与 Tunnel；&lt;strong>域名本身的 DNS 不用迁给 CF&lt;/strong>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>cloudflared Tunnel 已在跑&lt;/td>
+&lt;td>服务器 → CF 纯出站连接，绑定承载域 &lt;code>box.cf-zone.example.net&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4&lt;/td>
+&lt;td>服务器有公网 IP，且能开一个高位入站端口&lt;/td>
+&lt;td>给 EO 回源用；&lt;strong>不需要 nginx&lt;/strong>，应用直接监听即可&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td>EdgeOne 账户（本例国际站 edgeone.ai）&lt;/td>
+&lt;td>选免备案区域&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>6&lt;/td>
+&lt;td>CF 账户已绑支付方式&lt;/td>
+&lt;td>启用 for SaaS 的前提（额度内不扣费）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>7&lt;/td>
+&lt;td>服务器 1C1G 级别即可&lt;/td>
+&lt;td>iptables/ipset 是内核规则，无常驻进程&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="4-分步实施">4. 分步实施
+&lt;/h2>&lt;blockquote>
+&lt;p>建议顺序：&lt;strong>先 CF（步骤 A）→ 再 EO（步骤 B）→ 再 DNS（步骤 C）→ 最后服务器（步骤 D）&lt;/strong>。
+前两步做完，流量仍在旧路径上，随时可暂停；步骤 C/D 才真正切换与收敛。&lt;/p>&lt;/blockquote>
+&lt;h3 id="step-a--cloudflare-侧saas-自定义主机名--tunnel本次零改动讲解原理">Step A —— Cloudflare 侧：SaaS 自定义主机名 + Tunnel（本次零改动，讲解原理）
+&lt;/h3>&lt;p>本项目 &lt;code>box.example.com&lt;/code> 的 SaaS 自定义主机名此前已配好（放在承载 zone &lt;code>cf-zone.example.net&lt;/code> 下），Tunnel 已正常回源。若从零配置，动作是：&lt;/p>
+&lt;ol>
+&lt;li>承载 zone &lt;code>cf-zone.example.net&lt;/code> → &lt;strong>SSL/TLS → Custom hostnames&lt;/strong> → Add custom hostname，填 &lt;code>box.example.com&lt;/code>；&lt;/li>
+&lt;li>按提示完成归属验证（加一条 TXT 或 CNAME 验证记录）；&lt;/li>
+&lt;li>在 Tunnel 的路由里把 &lt;code>box.example.com&lt;/code> 指到本地 HTTP 服务（&lt;code>http://127.0.0.1:端口&lt;/code>）；&lt;/li>
+&lt;li>记录页里能拿到该主机名的 &lt;strong>CNAME target&lt;/strong>（形如 &lt;code>&amp;lt;hash&amp;gt;.cdn.cloudflare.net&lt;/code>）——它是「把流量引到 CF 边缘」的官方入口。&lt;/li>
+&lt;/ol>
+&lt;blockquote>
+&lt;p>⚠️ 本项目实际没用 SaaS CNAME target，而是用&lt;strong>优选 IP CNAME（&lt;code>cf-pref.example.net&lt;/code>）&lt;/strong>：一个第三方维护的、解析到 CF 低延迟边缘 IP 的域名。原理相同——解析结果落在 CF 边缘，CF 靠 &lt;code>Host: box.example.com&lt;/code> 识别出这是 SaaS 自定义主机名流量再按 Tunnel 路由。&lt;strong>优选域名的可用性依赖第三方维护，失效时换回官方 CNAME target 即可&lt;/strong>（第 7 节维护清单）。&lt;/p>
+&lt;p>本项目 DNSPod 上境外/默认线路指向的是 &lt;code>cf-pref.example.net&lt;/code>。&lt;/p>&lt;/blockquote>
+&lt;h3 id="step-b--edgeone-侧添加站点cname-接入免备案区域">Step B —— EdgeOne 侧：添加站点（CNAME 接入，免备案区域）
+&lt;/h3>&lt;ol>
+&lt;li>EO 控制台 → 添加站点 → 填 &lt;code>box.example.com&lt;/code>；&lt;/li>
+&lt;li>&lt;strong>接入方式选 CNAME 接入&lt;/strong>（⚠️ 不要选 NS 接入——NS 接入会要求把域名托管给 EO，与 DNSPod 分线路冲突，和「DNS 在 CF 手里没法分线路」是同一个问题）；&lt;/li>
+&lt;li>&lt;strong>加速区域选「全球可用区（不含中国大陆）」&lt;/strong>（免备案的关键选择）；&lt;/li>
+&lt;li>归属验证：按 EO 提示添加验证记录（本项目用 TXT：&lt;code>edgeonereclaim.example.com TXT ...&lt;/code>），&lt;strong>记录加在 DNSPod 的默认线路&lt;/strong>（CA/验证服务器多在境外，放默认线路全球可见最稳）；&lt;/li>
+&lt;li>配置回源：源站地址 = 你的公网 IP + 高位端口，Host 头 = &lt;code>box.example.com&lt;/code>；回源协议按你的源站监听协议选（应用直监听 HTTP 就选 HTTP，TLS 由 EO 边缘终结）；&lt;/li>
+&lt;li>免费证书：CNAME 验证通过 + 回源配置就绪后，EO 自动签发（本项目 TrustAsia，&lt;code>CN=box.example.com&lt;/code>）。签发需要几分钟到几小时——&lt;strong>在证书签发完成前，443 会拿 &lt;code>*.cdn.myqcloud.com&lt;/code> 兜底证书应答&lt;/strong>，浏览器会出现证书/HSTS 报错（第 6 节排障 6.1），属正常过程，等签发即可；&lt;/li>
+&lt;li>&lt;strong>开启「客户端 IP 头」&lt;/strong>（关键，默认关闭！）：站点 → 网络优化 / 规则引擎 → 客户端 IP 头部 → 开启，&lt;strong>自定义头部名必须填 &lt;code>EO-Client-IP&lt;/code>&lt;/strong>——应用侧固定读取这个名字；&lt;/li>
+&lt;li>&lt;strong>删除/改写伪造的 CF 头&lt;/strong>：在 EO 加一条规则引擎规则，把客户端可能携带的 &lt;code>CF-Connecting-IP&lt;/code> / &lt;code>X-Real-IP&lt;/code> 等头删掉——否则大陆攻击者经 EO 带假 CF 头，会被应用当成 CF 流量优先信任（头信任模型见 Step D）。&lt;/li>
+&lt;/ol>
+&lt;h3 id="step-c--dnspod-分线路三条记录">Step C —— DNSPod 分线路：三条记录
+&lt;/h3>&lt;p>权威 DNS 在 DNSPod（整域 zone &lt;code>example.com&lt;/code>），所以&lt;strong>直接在整域 zone 里配，不需要任何子域委派&lt;/strong>。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>主机记录&lt;/th>
+&lt;th>类型&lt;/th>
+&lt;th>线路&lt;/th>
+&lt;th>记录值&lt;/th>
+&lt;th>TTL&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>box&lt;/code>&lt;/td>
+&lt;td>CNAME&lt;/td>
+&lt;td>&lt;strong>中国境内&lt;/strong>&lt;/td>
+&lt;td>&lt;code>box.example.com.edgeone.example&lt;/code>（EO 分配的目标）&lt;/td>
+&lt;td>120~600&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>box&lt;/code>&lt;/td>
+&lt;td>CNAME&lt;/td>
+&lt;td>&lt;strong>境外&lt;/strong>&lt;/td>
+&lt;td>&lt;code>cf-pref.example.net&lt;/code>（CF 优选 / 或 SaaS CNAME target）&lt;/td>
+&lt;td>600&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>box&lt;/code>&lt;/td>
+&lt;td>CNAME&lt;/td>
+&lt;td>&lt;strong>默认&lt;/strong>&lt;/td>
+&lt;td>&lt;code>cf-pref.example.net&lt;/code>（兜底，语义同境外）&lt;/td>
+&lt;td>600&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>要点：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>EO 归属验证 TXT 保持「默认」线路&lt;/strong>（全球可见），别只放境内；&lt;/li>
+&lt;li>若之前误把 EO 的 CNAME 建在「默认」线路，会导致全球都走 EO——把它改成「中国境内」，境外/默认补 CF 两条；&lt;/li>
+&lt;li>TTL 别太大，方便回滚与换优选域时快速生效。&lt;/li>
+&lt;/ul>
+&lt;h3 id="step-d--服务器侧应用监听--信任头--端口锁定">Step D —— 服务器侧：应用监听 + 信任头 + 端口锁定
+&lt;/h3>&lt;h4 id="d1-应用直接监听公网端口免-nginx">D1 应用直接监听公网端口（免 nginx）
+&lt;/h4>&lt;p>本项目 TamaBox 自带 HTTP 服务器，改配置即可：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-ini" data-lang="ini">&lt;span class="line">&lt;span class="cl">&lt;span class="k">[server]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="na">listen&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">0.0.0.0:18080 ; 从仅本机 127.0.0.1 改为全网卡，EO 才能远程连入（18080 仅为示例端口）&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>cloudflared 连的是 &lt;code>127.0.0.1:端口&lt;/code>，&lt;code>0.0.0.0&lt;/code> 监听兼容回环连入，&lt;strong>Tunnel 分支不受影响&lt;/strong>；&lt;/li>
+&lt;li>nginx 在本方案中从头到尾不是必需——防火墙（iptables/ufw）是内核规则，零常驻进程，比 nginx 轻得多，适合 1C1G 小机器。&lt;/li>
+&lt;/ul>
+&lt;h4 id="d2-应用信任两家-cdn-的权威头">D2 应用信任两家 CDN 的权威头
+&lt;/h4>&lt;p>&lt;code>conf/app.ini&lt;/code>：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-ini" data-lang="ini">&lt;span class="line">&lt;span class="cl">&lt;span class="k">[security]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="na">trust_proxy&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">true&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>配合代码层支持（本项目 &lt;code>internal/shared/ip.go&lt;/code> 的 &lt;code>ResolveClientIP&lt;/code>），信任顺序：&lt;/p>
+&lt;ol>
+&lt;li>&lt;code>CF-Connecting-IP&lt;/code>（Cloudflare 权威头，海外分支）；&lt;/li>
+&lt;li>&lt;code>EO-Client-IP&lt;/code>（EdgeOne 权威头，境内分支）；&lt;/li>
+&lt;li>兜底：TCP 对端 RemoteAddr。&lt;/li>
+&lt;/ol>
+&lt;blockquote>
+&lt;p>⚠️ &lt;strong>头信任的安全前提（缺一不可）&lt;/strong>：&lt;/p>
+&lt;ol>
+&lt;li>源站防火墙&lt;strong>只放行两家 CDN 的回源来源&lt;/strong>（EO 直连需要；CF 分支天然安全——Tunnel 是出站，外人到不了源站）；&lt;/li>
+&lt;li>EO 侧已删除伪造的 CF 头（Step B-8）；&lt;/li>
+&lt;li>若还有 CF 侧直连，同样在 CF 规则里删除伪造的 EO 头。&lt;/li>
+&lt;/ol>
+&lt;p>任一缺失，「信任头」就会被攻击者直连源站 + 自带假头绕过——限流/封禁会拿到伪造 IP。&lt;/p>&lt;/blockquote>
+&lt;h4 id="d3-端口白名单iptables--ipset-自动维护eo-免费档没有官方回源段">D3 端口白名单：iptables + ipset 自动维护（EO 免费档没有官方回源段）
+&lt;/h4>&lt;p>EO 官方回源清单由「源站防护 / Origin ACL」提供（配套 &lt;code>DescribeOriginACL&lt;/code> API），&lt;strong>但该功能只支持付费套餐&lt;/strong>——免费档在控制台找不到入口，也没有可拉取的清单 URL。因此免费档采用**「种子清单 + 连接观察学习 + 定期同步」**的方案：&lt;/p>
+&lt;p>交付脚本 &lt;code>scripts/edgeone-origin-whitelist.sh&lt;/code>（bash，需 root，架构要点）：&lt;/p>
+&lt;ul>
+&lt;li>白名单放 &lt;strong>ipset 集合&lt;/strong> &lt;code>EO_ORIGIN&lt;/code>，iptables 一条规则引用它：&lt;code>自建链 EO_IN&lt;/code> 内「放行 127.0.0.0/8（保 cloudflared 回环）→ 命中集合放行 → 其余 REJECT tcp-reset」；&lt;/li>
+&lt;li>更新走「临时集填充 → &lt;code>ipset swap&lt;/code> 原子替换」：&lt;strong>同步全程无规则清空窗口&lt;/strong>；&lt;/li>
+&lt;li>&lt;strong>fail-safe&lt;/strong>：拉取失败 / 清单为空 / 全非法 → 拒绝更新、保留现网，绝不误删导致端口裸奔；&lt;/li>
+&lt;li>命令：&lt;code>sync&lt;/code>（周期入口）/ &lt;code>learn&lt;/code>（从连接表收集当前实际回源源 IP，做种子）/ &lt;code>show&lt;/code> / &lt;code>flush&lt;/code>（回滚）/ &lt;code>--dry-run&lt;/code>；&lt;/li>
+&lt;li>清单来源：本地文件（&lt;code>/etc/edgeone-origin/cidr.txt&lt;/code>）+ 可选 URL，取并集。&lt;/li>
+&lt;/ul>
+&lt;p>落地四步：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 1. 改端口（默认 18080 → 你的实际端口）&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 2. 安装 ipset&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">apt-get install -y ipset
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 3. 生成种子：多跑几次 learn，把输出合并审阅后写入 cidr.txt（注意：种子是 EO 的&amp;#34;出口 IP&amp;#34;，&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 不是应用日志里的客户端 IP！日志里是 EO-Client-IP 客户端真实 IP，不能当白名单）&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">bash edgeone-origin-whitelist.sh learn
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">bash edgeone-origin-whitelist.sh sync --dry-run
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">bash edgeone-origin-whitelist.sh sync
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 4. 验证：外网机器 nc -zv &amp;lt;IP&amp;gt; 18080 应 refused；https://box.example.com 应正常&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 5. 挂定时：cron「17 4 * * *」或 systemd timer，每日一次足够（EO 段 3~6 个月才变）&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>日后升级付费套餐：把 &lt;code>DescribeOriginACL&lt;/code> API 的输出写入 &lt;code>cidr.txt&lt;/code> 即可，脚本零改动。&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="5-验证方法含大陆-dns-劫持陷阱">5. 验证方法（含大陆 DNS 劫持陷阱）
+&lt;/h2>&lt;h3 id="51-分线路是否生效-重点别在大陆本机-nslookup-境外-dns">5.1 分线路是否生效（🔴 重点：别在大陆本机 nslookup 境外 DNS）
+&lt;/h3>&lt;p>大陆网络对发往境外公共 DNS（8.8.8.8 / 1.1.1.1 / 9.9.9.9 / OpenDNS，&lt;strong>UDP 53 和 TCP 53 都会被劫持&lt;/strong>）的查询会返回&lt;strong>按境内线路伪造的答案&lt;/strong>——在本机 &lt;code>nslookup box.example.com 8.8.8.8&lt;/code> 永远显示 EO，即使境外线路早已配好。正确验证通道：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 境内视角（本机直接查即可，通道可信）&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">nslookup box.example.com 223.5.5.5 &lt;span class="c1"># 期望 → CNAME edgeone.example → 203.0.113.x（EO 示例段）&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">nslookup box.example.com 119.29.29.29 &lt;span class="c1"># 同上（DNSPod 自家 DNS）&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 境外视角：用「境外服务器代为查询」，浏览器直接打开下面两个 API 之一&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># https://api.hackertarget.com/dnslookup/?q=box.example.com&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># https://networkcalc.com/api/dns/lookup/box.example.com&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 期望 → CNAME cf-pref.example.net → 198.51.100.x（CF 边缘 IP 示例段）&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>两条结果&lt;strong>不一样 = 分线路生效&lt;/strong>。&lt;/p>
+&lt;h3 id="52-https-证书是否就绪">5.2 HTTPS 证书是否就绪
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="p">|&lt;/span> openssl s_client -connect box.example.com:443 -servername box.example.com &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> &lt;span class="p">|&lt;/span> openssl x509 -noout -subject -issuer -dates
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 期望 subject = CN=box.example.com（而不是 *.cdn.myqcloud.com 兜底证书）&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="53-真实-ip-是否被正确识别">5.3 真实 IP 是否被正确识别
+&lt;/h3>&lt;p>境内访问后看源站/EO 访问日志中的客户端 IP = 你的大陆公网出口 IP（说明 &lt;code>EO-Client-IP&lt;/code> 生效）；海外访问后同理应为你的海外出口 IP（&lt;code>CF-Connecting-IP&lt;/code>）。&lt;/p>
+&lt;hr>
+&lt;h2 id="6-今日排障实录每个坑都值得记">6. 今日排障实录（每个坑都值得记）
+&lt;/h2>&lt;h3 id="61-网站使用-hsts报错--eo-证书还没签发不是配置错">6.1 「网站使用 HSTS」报错 = EO 证书还没签发（不是配置错）
+&lt;/h3>&lt;p>现象：DNS 切到 EO 后浏览器报 HSTS 错误页。
+原因链：之前走 CF HTTPS 时应用下发了 &lt;code>Strict-Transport-Security: max-age=31536000; includeSubDomains&lt;/code>（按 ExternalURL 以 https 开头就对每个响应下发）→ 浏览器记录「一年内必须 HTTPS」→ 切到 EO 后证书尚未签发、443 拿 &lt;code>*.cdn.myqcloud.com&lt;/code> 兜底证书 → 证书与域名不匹配 → HSTS 错误页。
+处理：等 EO 证书签发（几分钟~几小时）即可，&lt;strong>域名不在 HSTS preload 列表，浏览器自动恢复，无需清缓存&lt;/strong>。紧急回滚 = DNS 改回 CF。
+（若在 preload 列表里才是真麻烦——需先修好证书再等 preload 移除，故平时别主动提交 preload。）&lt;/p>
+&lt;h3 id="62-误判权威-dns-在-cloudflare方向性错误">6.2 误判「权威 DNS 在 Cloudflare」（方向性错误）
+&lt;/h3>&lt;p>现象：一度以为 &lt;code>example.com&lt;/code> 权威在 Cloudflare，推导出「需要子域 NS 委派」的复杂方案，差点让用户在 CF 做一堆不存在 zone 的操作。
+根因：apex &lt;code>example.com&lt;/code> 本身是一条 CNAME → &lt;code>your-project.pages.dev&lt;/code>（Cloudflare Pages 项目）——nslookup 查 NS 时&lt;strong>一路跟随 CNAME 链&lt;/strong>走到 pages.dev 的 NS（CF），被误读为「example.com zone 在 CF」。
+正确做法：&lt;strong>查域名权威必须问注册局（RDAP）或直查 SOA&lt;/strong>，不能信递归 CNAME 链：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># RDAP（注册局铁证）：https://rdap.org/domain/example.com → 应返回 byron/sunshine.dnspod.net&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 或直查 SOA：nslookup -type=SOA example.com byron.dnspod.net&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>用户一句「我的 Cloudflare 根本没有 example.com zone」就是最有效的纠偏信号——&lt;strong>控制台里没有的 zone，DNS 上不可能归它管&lt;/strong>。&lt;/p>
+&lt;h3 id="63-境外也返回-eo的假象--大陆-dns-劫持连-tcp-53-都劫">6.3 「境外也返回 EO」的假象 = 大陆 DNS 劫持（连 TCP 53 都劫）
+&lt;/h3>&lt;p>现象：从大陆本机用 nslookup 测 8.8.8.8 / 9.9.9.9 / OpenDNS（UDP 和 TCP 都试），境外视角全部返回 EO，一度以为分线路没生效、甚至怀疑 DNSPod 配置错了。
+真相：大陆网络劫持出境 DNS 查询，返回按境内线路伪造的 EO 答案，请求根本没到境外服务器。
+破案手段：用&lt;strong>境外服务器&lt;/strong>（hackertarget / networkcalc API）代为查询，立刻看到 CF 答案——DNSPod 三线路配置完全正确，从未出过错。教训见 5.1。&lt;/p>
+&lt;h3 id="64-残留的阿里云验证记录">6.4 残留的阿里云验证记录
+&lt;/h3>&lt;p>实测发现 DNSPod 上有历史残留 &lt;code>_dnsauth.box.example.com CNAME → xxxxxxxx...aliyunauth.certificate-validations.com&lt;/code>（以前阿里云申请证书留下的）。&lt;code>_dnsauth&lt;/code> / &lt;code>_acme-challenge&lt;/code> 下的旧验证记录会干扰证书自动续期验证——&lt;strong>证书验证记录的坑&lt;/strong>，建议确认证书正常后删除。&lt;/p>
+&lt;h3 id="65-免费档没有源站防护回源-ip-段拿不到">6.5 免费档没有「源站防护」，回源 IP 段拿不到
+&lt;/h3>&lt;p>见 Step D3：免费档无官方清单，用 learn 观察法兜底；付费后切 &lt;code>DescribeOriginACL&lt;/code>，脚本零改动。&lt;/p>
+&lt;hr>
+&lt;h2 id="7-日常维护清单">7. 日常维护清单
+&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>周期&lt;/th>
+&lt;th>事项&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>证书到期前&lt;/td>
+&lt;td>EO 免费证书自动续期并&lt;strong>重新做域名验证&lt;/strong>——⚠️ CA 验证服务器多在境外，&lt;strong>所有验证记录务必放默认线路&lt;/strong>；到期前留意 EO 控制台证书状态，失败会提示重新验证&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>每日（定时任务）&lt;/td>
+&lt;td>白名单 sync（EO 回源段 3~6 个月才变，每日一次足够）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>每月&lt;/td>
+&lt;td>抽查 &lt;code>learn&lt;/code> 输出是否有新回源源 IP 需补种；确认优选域名 &lt;code>cf-pref.example.net&lt;/code> 仍解析到 CF 边缘（失效则换回官方 SaaS CNAME target，只改 DNSPod 一条记录）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>EO 回源突然失败&lt;/td>
+&lt;td>先临时放行全段定位，再按 learn 结果收紧——EO 免费档收不到段变更通知，要有这个预案&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>长期&lt;/td>
+&lt;td>若升级 EO 付费套餐：启用源站防护拿官方段 → 接入 DescribeOriginACL 输出到 cidr.txt&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="8-回滚">8. 回滚
+&lt;/h2>&lt;ol>
+&lt;li>&lt;strong>快速回滚（境外也要回 CF 之外的兜底）&lt;/strong>：DNSPod 把「境内」线路改指向 CF（或删掉境内线路，让默认兜底接管）→ 全球走 CF，分钟级生效；&lt;/li>
+&lt;li>&lt;strong>彻底回滚（回到纯 CF 时代）&lt;/strong>：删除 EO 站点/记录、撤防火墙放行、DNSPod 三线路合并为默认→CF；&lt;/li>
+&lt;li>EO 证书到期前回滚，记得去 EO 控制台删除站点避免残留验证记录干扰。&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h2 id="附配置快照示例2026-09-03-实测定稿域名已脱敏">附：配置快照（示例，2026-09-03 实测定稿，域名已脱敏）
+&lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">域名: box.example.com（权威 DNS: DNSPod，NS=byron/sunshine.dnspod.net）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">境内: CNAME box.example.com.edgeone.example → 203.0.113.x （EdgeOne 国际站，区域不含大陆，示例段）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">境外/默认: CNAME cf-pref.example.net → 198.51.100.x （CF 优选 IP，示例段）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">CF 侧: SaaS 自定义主机名（承载 zone cf-zone.example.net）+ Tunnel 出站回源
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">EO 证书: TrustAsia, CN=box.example.com（签发后约 90 天到期，自动续期）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">EO 归属验证: edgeonereclaim.example.com TXT（DNSPod 默认线路 ✅）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">EO 客户端头: EO-Client-IP（手动开启，头名固定 EO-Client-IP）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">源站: TamaBox 直监听 0.0.0.0:高位端口（无 nginx）；iptables+ipset 白名单
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">应用信任: trust_proxy=true；ResolveClientIP 信任 CF-Connecting-IP → EO-Client-IP → RemoteAddr
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>狼的提问箱 功能与修复变更记录 - 功能开关和全局屏蔽词</title><link>https://blog.tama.guru/record/tamabox_changelog_20260903.html</link><pubDate>Thu, 03 Sep 2026 00:26:54 +0800</pubDate><guid>https://blog.tama.guru/record/tamabox_changelog_20260903.html</guid><description>&lt;img src="https://images.337845818.best/20250806/6b0378c33ae92cb2cc02a8a7bce5a2fa.webp" alt="Featured image of post 狼的提问箱 功能与修复变更记录 - 功能开关和全局屏蔽词" />&lt;hr>
 &lt;h1 id="近期更新速览9-月-1-日--9-月-2-日">近期更新速览（9 月 1 日 — 9 月 2 日）
 &lt;/h1>&lt;blockquote>
 &lt;p>面向站点使用者的简要更新说明，已省略技术细节。
